@@ -1,0 +1,156 @@
+{
+  "agent": "main-thread-verification",
+  "captured_at": "2026-04-20",
+  "records": [
+    {
+      "claim_id": "swap_blueberry_jamun__anthocyanin",
+      "original_statement": "Jamun has higher anthocyanin density than blueberries.",
+      "verified_statement": "Jamun total anthocyanin content is COMPARABLE to blueberries, not conclusively higher. Reported jamun values range 230–438 mg cyanidin-3-glucoside equivalent / 100g (dry basis), highly dependent on extraction method, ripeness, and fresh-vs-dry basis. Multiple review papers describe jamun anthocyanin content as 'similar to blueberries'. Claim of 'higher' is not reliably supported in the peer-reviewed literature.",
+      "status": "partially_verified",
+      "sources": [
+        {"title":"Antioxidant and antiproliferative activities of anthocyanin/ellagitannin-enriched extracts from Syzygium cumini L.","url":"https://pubmed.ncbi.nlm.nih.gov/22420901/","type":"pubmed","pmid":"22420901","year":"2012","quality":"high"},
+        {"title":"Quantification and Concentration of Anthocyanidin from Indian Blackberry (Jamun)","url":"https://link.springer.com/article/10.1007/s11947-018-2176-4","type":"pubmed","year":"2018","quality":"medium"},
+        {"title":"Jamun Antioxidant Capacity and Cancer Protection (review)","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC3351850/","type":"pubmed","year":"2012","quality":"medium"}
+      ],
+      "recommended_fix": "Change 'higher anthocyanin density than blueberries' → 'comparable anthocyanin density to blueberries'."
+    },
+    {
+      "claim_id": "swap_blueberry_amla__vitamin_c",
+      "original_statement": "Amla has ~20× more vitamin C than blueberries.",
+      "verified_statement": "Amla (fresh) contains 193–720 mg vitamin C / 100g (typical ~478 mg). Blueberries contain ~9.7 mg / 100g (USDA). Actual ratio is ~20× at the low end and up to ~50–75× at the median — dossier claim of '20×' is CONSERVATIVE; reality is stronger.",
+      "status": "verified_stronger_than_claimed",
+      "sources": [
+        {"title":"Functional and Nutraceutical Significance of Amla (Phyllanthus emblica L.): A Review","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC9137578/","type":"pubmed","year":"2022","quality":"high"},
+        {"title":"USDA FoodData Central (Blueberries, raw)","url":"https://fdc.nal.usda.gov/","type":"usda","quality":"high"},
+        {"title":"Vitamin C content and antioxidant activity of Emblica officinalis","url":"https://www.researchgate.net/publication/7540788_Vitamin_C_content_and_antioxidant_activity_of_the_fruit_and_of_the_Ayurvedic_preparation_of_Emblica_officinalis_Gaertn","type":"pubmed","year":"2006","quality":"medium"}
+      ],
+      "recommended_fix": "Upgrade claim to 'amla has 20–50× the vitamin C of blueberries' (conservative-to-median range)."
+    },
+    {
+      "claim_id": "swap_macadamia_walnut__ala",
+      "original_statement": "Kashmiri walnuts have higher omega-3 (ALA) than macadamias; almonds beat macadamia on vitamin E.",
+      "verified_statement": "USDA data: walnuts ~9.1g ALA per 100g (highest of all tree nuts); macadamia <0.1g ALA. Claim VERIFIED generically for walnuts. 'Kashmiri-specific' nutritional data not separately indexed; Kashmiri walnuts are not meaningfully different in ALA from other Juglans regia cultivars. Almonds vs macadamia on vitamin E: almonds ~25.6 mg α-tocopherol / 100g, macadamia ~0.5 mg — VERIFIED.",
+      "status": "blocker_fix_applied",
+      "CRITICAL_CAVEAT": "ALA→EPA/DHA CONVERSION IS POPULATION-DEPENDENT. FADS1 rs174537 and FADS2 rs174575 polymorphisms modulate desaturase activity. South Asian (Indian) populations show elevated frequency of the FADS1 'derived' allele associated with HIGHER conversion efficiency than European populations — but absolute conversion is still only 5–8% ALA→EPA and <0.5% ALA→DHA in most individuals. Women of reproductive age convert modestly better due to estrogen upregulation. For vegetarians with low baseline omega-3, ALA-rich walnuts help but do NOT substitute for direct EPA/DHA in high-risk individuals (elevated triglycerides, existing CVD, pregnancy). Dossier's walnut-replaces-EPA framing is partially defensible for general population but must flag the conversion ceiling.",
+      "sources": [
+        {"title":"USDA FoodData Central — Walnuts vs Macadamia","url":"https://tools.myfooddata.com/nutrition-comparison/170178-170187/100g-100g","type":"usda","quality":"high"},
+        {"title":"Omega-3 fatty acids in nuts (Nuts for Life — cites USDA)","url":"https://www.nutsforlife.com.au/resource/omega-3-fatty-acids-in-nuts/","type":"govt","quality":"medium"},
+        {"title":"Positive selection of a pro-inflammatory FADS variant in South Asian populations — Kothapalli et al.","url":"https://pubmed.ncbi.nlm.nih.gov/26432412/","type":"pubmed","pmid":"26432412","year":"2016","quality":"high"},
+        {"title":"Conversion of α-linolenic acid to EPA and DHA in humans — Burdge & Calder","url":"https://pubmed.ncbi.nlm.nih.gov/16188209/","type":"pubmed","pmid":"16188209","year":"2005","quality":"high"},
+        {"title":"FADS1/FADS2 polymorphisms and PUFA status in Indian populations — review","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC6567119/","type":"pubmed","year":"2019","quality":"high"}
+      ],
+      "recommended_fix": "Primary claim becomes: 'Walnuts 9.1g ALA/100g vs macadamia <0.1g — true. BUT ALA→EPA conversion caps at 5–8% and ALA→DHA at <0.5% even with favorable FADS genotype. Walnuts alone do not replace direct EPA/DHA for Indians with elevated triglycerides or CVD risk — algae-oil or fish-oil adjunct still warranted.' Drop 'Kashmiri' qualifier (nutritionally equivalent to other Juglans regia)."
+    },
+    {
+      "claim_id": "swap_sprouts_moringa__itc",
+      "original_statement": "Moringa has higher total isothiocyanates than broccoli.",
+      "verified_statement": "Moringa contains a DIFFERENT isothiocyanate (moringin, from glucomoringin) than broccoli sprouts (sulforaphane, from glucoraphanin). Moringin is more chemically stable and on a molar basis can be MORE potent than sulforaphane for Nrf2 induction. However, these are not the same molecule — they bind different protein targets at the margins and clinical endpoints studied differ. Total ITC concentration in moringa leaves is comparable or higher than in mature broccoli but not than in sprouted broccoli seeds, which remain the most concentrated plant source of chemoprotective ITCs.",
+      "status": "partially_verified_with_caveat",
+      "sources": [
+        {"title":"The Diversity of Chemoprotective Glucosinolates in Moringaceae","url":"https://www.nature.com/articles/s41598-018-26058-4","type":"pubmed","year":"2018","quality":"high"},
+        {"title":"A Strategy to Deliver Precise Oral Doses of the Glucosinolates or Isothiocyanates from Moringa oleifera Leaves","url":"https://www.mdpi.com/2072-6643/11/7/1547","type":"pubmed","year":"2019","quality":"high"},
+        {"title":"Stable, water extractable isothiocyanates from Moringa oleifera leaves attenuate inflammation in vitro","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC4071966/","type":"pubmed","year":"2014","quality":"high"}
+      ],
+      "recommended_fix": "Rephrase: 'Moringa leaves contain moringin — a different but comparably potent isothiocyanate. For equivalent sulforaphane dose, broccoli sprouts remain the gold standard.' Add honesty note rather than claim equivalence."
+    },
+    {
+      "claim_id": "swap_evoo_mustard__mufa",
+      "original_statement": "Mustard oil = 60% monounsaturated + allyl isothiocyanate (anti-inflammatory).",
+      "verified_statement": "Mustard oil is ~42% erucic acid + ~12% oleic + ~15% linoleic + ~6% ALA (traditional high-erucic cultivars) OR ~60% MUFA if low-erucic (LEAR / canola-type) cultivar. Dossier conflates the two. Contains allyl isothiocyanate (AITC) via myrosinase hydrolysis of sinigrin — documented anti-inflammatory in preclinical models but in humans topical AITC is used as a SURROGATE MODEL to INDUCE pain and neurogenic inflammation. Dietary anti-inflammatory claim is WEAKLY SUPPORTED.",
+      "status": "blocker_fix_applied",
+      "CRITICAL_CAVEAT": "ERUCIC ACID. Traditional Indian mustard oil (Brassica juncea, kachi ghani) contains 30–54% erucic acid. FSSAI permits up to 45% erucic acid in mustard oil in India (one of the highest national ceilings globally). EU limit: 2% in vegetable oils (Regulation 2019/1870). WHO/JECFA provisional max tolerable daily intake: 7 mg/kg body weight/day. Rat studies (Kramer et al.) show erucic-acid-induced myocardial lipidosis; human evidence limited but cardiac concerns persist. High-erucic mustard oil is BANNED for edible use in the US/EU/Canada. If recommending mustard oil, specify LOW-ERUCIC cultivar (Pusa Double Zero / Pusa Mustard 30) or use sparingly.",
+      "sources": [
+        {"title":"Dose-response study of topical allyl isothiocyanate as a human surrogate model of pain, hyperalgesia, and neurogenic inflammation","url":"https://pubmed.ncbi.nlm.nih.gov/28614189/","type":"pubmed","pmid":"28614189","year":"2017","quality":"high"},
+        {"title":"Erucic acid in feed and food — EFSA Scientific Opinion","url":"https://www.efsa.europa.eu/en/efsajournal/pub/4593","type":"govt","year":"2016","quality":"high"},
+        {"title":"FSSAI Food Safety and Standards (Food Products Standards) Regulations — Mustard Oil","url":"https://www.fssai.gov.in/upload/uploadfiles/files/Compendium_Food_Additives_Regulations_20_08_2020.pdf","type":"govt","quality":"high"},
+        {"title":"Commission Regulation (EU) 2019/1870 — erucic acid limits","url":"https://eur-lex.europa.eu/eli/reg/2019/1870/oj","type":"govt","year":"2019","quality":"high"},
+        {"title":"Low-erucic-acid mustard development in India (Pusa Double Zero)","url":"https://pubmed.ncbi.nlm.nih.gov/27536148/","type":"pubmed","year":"2016","quality":"high"}
+      ],
+      "recommended_fix": "PRIMARY claim must now read: 'Low-erucic mustard oil (Pusa Double Zero or Pusa Mustard 30) ~60% MUFA. Traditional high-erucic kachi-ghani mustard oil contains up to 54% erucic acid — FSSAI permits but EU/US ban; use sparingly or choose low-erucic cultivar.' Drop or soften the AITC dietary anti-inflammatory claim. Must appear on primary swap card, not only in a footnote."
+    },
+    {
+      "claim_id": "swap_shiitake_oyster__ergothioneine",
+      "original_statement": "Oyster mushroom has measurable ergothioneine. Button mushroom 64% lower MCI (Singapore cohort).",
+      "verified_statement": "Ergothioneine in oyster (Pleurotus ostreatus): 35–65 mg / 100g dry weight; in shiitake: 55–90 mg / 100g dry weight. So shiitake actually has MORE ergothioneine than oyster on average — the dossier's swap is still defensible (oyster has measurable amounts) but the implication that oyster is equivalent-or-better is wrong. Button mushroom MCI number is WRONG: Feng et al. 2019 (Journal of Alzheimer's Disease, PMID 30775990) found odds ratio 0.43 for MCI at ≥2 portions/week vs <1/week, which is a 57% reduction in odds — NOT 64%.",
+      "status": "two_errors_found",
+      "sources": [
+        {"title":"Assessing the nutritional quality of Pleurotus ostreatus (oyster mushroom)","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC10824988/","type":"pubmed","year":"2024","quality":"high"},
+        {"title":"The Association between Mushroom Consumption and Mild Cognitive Impairment — Feng et al. 2019","url":"https://pubmed.ncbi.nlm.nih.gov/30775990/","type":"pubmed","pmid":"30775990","year":"2019","quality":"high"}
+      ],
+      "recommended_fix": "(1) Fix '64% lower MCI' → '57% lower odds of MCI' (Feng 2019, OR 0.43). (2) Acknowledge shiitake has more ergothioneine than oyster; oyster is still a reasonable budget swap but not superior."
+    },
+    {
+      "claim_id": "swap_nmn_exercise__nad",
+      "original_statement": "Exercise raises NAD+ comparably to NMN supplementation.",
+      "verified_statement": "Aerobic and resistance training upregulate NAMPT (rate-limiting NAD+ salvage enzyme) and raise skeletal muscle NAD+ by ~25–30%. Chronic NMN supplementation (300–900 mg/day) raises blood NAD+ significantly but DOES NOT directly raise skeletal muscle NAD+ in available human trials. Systematic reviews find minimal NMN/NR benefit on muscle function endpoints (strength, gait speed, chair stand) in older adults. So the dossier's claim is directionally correct — exercise is a strong NAD+ lever and NMN's incremental benefit is not well-established for the outcomes most users care about. HOWEVER, 'comparable' is imprecise: NMN raises systemic NAD+ markers more than exercise alone does.",
+      "status": "partially_verified",
+      "sources": [
+        {"title":"Chronic NMN supplementation elevates NAD+ and alters muscle function in healthy older men","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC9158788/","type":"pubmed","year":"2022","quality":"high"},
+        {"title":"NAD+ Therapeutics and Skeletal Muscle Adaptation to Exercise in Humans (review)","url":"https://link.springer.com/article/10.1007/s40279-022-01772-2","type":"pubmed","year":"2022","quality":"high"},
+        {"title":"NMN enhances aerobic capacity in amateur runners (RCT)","url":"https://pubmed.ncbi.nlm.nih.gov/34238308/","type":"pubmed","pmid":"34238308","year":"2021","quality":"medium"}
+      ],
+      "recommended_fix": "Rephrase: 'Regular exercise produces meaningful NAD+ elevation in skeletal muscle (the tissue that matters for longevity endpoints); NMN raises blood NAD+ but human-outcome data is mixed. Exercise is the better-evidenced NAD+ intervention.' Retain ₹0 price point."
+    },
+    {
+      "claim_id": "swap_ashwa_ksm66__manufacturer",
+      "original_statement": "KSM-66 ashwagandha is manufactured in Hyderabad by Ixoreal Biomed.",
+      "verified_statement": "VERIFIED. Ixoreal Biomed Pvt Ltd is headquartered in Hyderabad, India, with an office in Los Angeles. Ixoreal has >46 quality certifications for KSM-66 and 50+ clinical trials supporting the extract. The sole manufacturer claim is accurate. KSM-66 is the same clinical-grade extract sold in Western longevity products.",
+      "status": "verified",
+      "sources": [
+        {"title":"Ixoreal Biomed Pvt Ltd corporate profile","url":"https://www.bus-ex.com/article/ixoreal-biomed-pvt-ltd","type":"other","quality":"medium"},
+        {"title":"KSM-66 official site — contact / manufacturing","url":"https://ksm66ashwagandhaa.com/","type":"other","quality":"medium"},
+        {"title":"Ixoreal Biomed LinkedIn (Hyderabad)","url":"https://www.linkedin.com/company/ixoreal-biomed","type":"other","quality":"medium"}
+      ],
+      "recommended_fix": "Keep as-is. This is one of the strongest claims in the dossier."
+    },
+    {
+      "claim_id": "swap_pomjuice_anar__ellagitannin",
+      "original_statement": "Whole anar is superior to pomegranate juice for urolithin A precursors; juice is a 'Western dilution'.",
+      "verified_statement": "FALSE FRAMING. Peer-reviewed pharmacokinetics (Seeram et al.): pomegranate juice, liquid extract, and powder extract produce STATISTICALLY EQUIVALENT plasma and urinary ellagitannin metabolite levels. Juice from whole fruit (with peel pressing) retains ellagitannins — particularly punicalagin — at the highest concentrations of any commonly consumed juice. The real bottleneck is not juice-vs-fruit but GUT MICROBIOME: only ~40% of humans convert ellagitannins to urolithin A efficiently. Price argument (whole fruit cheaper) holds; biology argument (whole fruit superior) does not.",
+      "status": "false_dossier_framing",
+      "sources": [
+        {"title":"Pomegranate Juice and Extracts Provide Similar Levels of Plasma and Urinary Ellagitannin Metabolites in Human Subjects","url":"https://pubmed.ncbi.nlm.nih.gov/18598186/","type":"pubmed","pmid":"18598186","year":"2008","quality":"high"},
+        {"title":"Pomegranate Ellagitannins — Herbal Medicine NCBI Bookshelf","url":"https://www.ncbi.nlm.nih.gov/books/NBK92772/","type":"govt","quality":"high"},
+        {"title":"Biological Significance of Urolithins (review)","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC3679724/","type":"pubmed","year":"2013","quality":"high"}
+      ],
+      "recommended_fix": "Reframe the swap on PRICE alone: 'Whole anar ₹60 vs cold-pressed juice ₹420 for equivalent ellagitannin delivery.' Remove 'juice is a Western dilution' claim — it's false. Add note: only ~40% of humans are urolithin-A 'producers'; the swap only matters if you're one."
+    },
+    {
+      "claim_id": "swap_cocoa_cacao__flavanol",
+      "original_statement": "Ariba / Wakao / Mason & Co Indian cacao = cold-processed, same flavanol preservation as Blueprint. Lab tests match.",
+      "verified_statement": "UNVERIFIED. No publicly available flavanol assay / COA exists for Ariba, Wakao, or Mason & Co cacao as of today. 'Lab tests match' is an unsupported claim. Cocoa flavanol content is HIGHLY dependent on processing (alkalization destroys 60–90% of flavanols) and non-Dutched raw cacao typically retains flavanols, but specific numbers require brand-published assays. Blueprint cocoa is third-party tested and publishes per-serving flavanol content (~700 mg / 6g serving); Indian brands do not publish comparable data.",
+      "status": "blocker_unverified",
+      "CRITICAL_CAVEAT": "Until Indian cacao brands publish independent flavanol COAs (HPLC quantification), the dossier's 'lab tests match' claim must be retracted. Unalkalized raw Indian cacao remains a plausible substitute on chemistry grounds — but the specific cocoa-flavanol-per-serving number (which is what Blueprint advertises and what dose-response papers measure) is not auditable for Indian brands.",
+      "sources": [
+        {"title":"Dark Chocolates, Cocoa Powders Review — ConsumerLab","url":"https://www.consumerlab.com/reviews/cocoa-powders-and-chocolates-sources-of-flavanols/cocoa-flavanols/","type":"other","quality":"medium"},
+        {"title":"How to Choose High Flavanol Cocoa","url":"https://www.longlifenutri.com/blogs/news/how-to-choose-high-flavanol-cocoa-for-maximum-health-benefits","type":"other","quality":"low"},
+        {"title":"COSMOS-Mind trial — cocoa flavanol dose and cognition","url":"https://pubmed.ncbi.nlm.nih.gov/37561467/","type":"pubmed","year":"2023","quality":"high"}
+      ],
+      "recommended_fix": "Drop 'lab tests match' claim. Replace with: 'Raw, non-alkalized Indian cacao is a chemically plausible substitute. Total flavanol per serving is brand-specific and not publicly verified — if flavanol dose matters for your goal, the only COA-backed option remains Blueprint cocoa or Mars CocoaVia.' Open R1 action: contact Ariba/Wakao/Mason & Co for HPLC-quantified flavanol COAs and either cite them in v2 or keep the caveat."
+    },
+    {
+      "claim_id": "swap_evoo_mustard__coherence_with_ghee",
+      "original_statement": "Alt fat stack = cold-press mustard oil + A2 ghee (combined replaces EVOO).",
+      "verified_statement": "COHERENCE FLAG. Dossier pairs mustard oil (60% MUFA low-erucic, or 42% erucic high-erucic) with A2 ghee as the EVOO replacement. Ghee is ~62% saturated fat, ~29% MUFA. Blending mustard oil + ghee does NOT replicate the specific phenolic profile of EVOO (oleocanthal, oleuropein, hydroxytyrosol) — the components responsible for EVOO's anti-inflammatory and COX-inhibitory effects in the PREDIMED cohort. Ghee contains butyrate (SCFA) with gut-epithelial benefits, which is a DIFFERENT benefit, not an EVOO-equivalent one. Combined saturated-fat load from 1 tbsp ghee + 1 tbsp mustard oil is ~5–6g SFA/day — within ICMR-NIN guidance but not neutral for Indian ApoE ε4 carriers (ApoE ε4 frequency ~8–15% in Indian populations).",
+      "status": "coherence_flag",
+      "sources": [
+        {"title":"PREDIMED primary prevention trial","url":"https://www.nejm.org/doi/full/10.1056/NEJMoa1800389","type":"pubmed","year":"2018","quality":"high"},
+        {"title":"Oleocanthal from EVOO — ibuprofen-like COX inhibition (Beauchamp et al., Nature 2005)","url":"https://www.nature.com/articles/437045a","type":"pubmed","year":"2005","quality":"high"},
+        {"title":"ApoE ε4 allele frequency in Indian populations","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC7734559/","type":"pubmed","year":"2020","quality":"medium"},
+        {"title":"Ghee butyrate content and gut-epithelial effects","url":"https://pubmed.ncbi.nlm.nih.gov/20096889/","type":"pubmed","year":"2010","quality":"medium"}
+      ],
+      "recommended_fix": "Split the EVOO swap into two honest claims: (1) 'Lab-tested Indian EVOO (Nature's Basket, Leonardo, Kama) at ₹600–1,200/L delivers the EVOO phenolic profile at ~15–25% the Blueprint EVOO import price — use this if you want PREDIMED-equivalent fat.' (2) 'If replacing with mustard + ghee, understand you are getting a DIFFERENT fat profile — MUFA + saturated + butyrate — not EVOO polyphenols. Cap ghee at 1 tsp/day if ApoE ε4 status unknown.'"
+    }
+  ],
+  "dossier_errors_found": [
+    {"severity":"blocker","claim_id":"swap_evoo_mustard__erucic","description":"Mustard oil erucic acid (up to 54% in traditional kachi ghani) is a CRITICAL safety/regulatory omission. FSSAI permits but EU/US ban high-erucic for edible use. Must appear on primary swap card, not a footnote."},
+    {"severity":"blocker","claim_id":"swap_macadamia_walnut__ala_conversion","description":"ALA→EPA conversion caps at 5–8%; ALA→DHA <0.5%. Walnut alone does not replace direct EPA/DHA in Indians with elevated triglycerides/CVD/pregnancy. Must flag FADS polymorphism and conversion ceiling."},
+    {"severity":"high","claim_id":"swap_shiitake_oyster__mci_number","description":"64% lower MCI → actually 57% (odds ratio 0.43, Feng 2019)."},
+    {"severity":"high","claim_id":"swap_pomjuice_anar__ellagitannin","description":"'Juice is a Western dilution' is false — juice and fruit are pharmacokinetically equivalent."},
+    {"severity":"medium","claim_id":"swap_blueberry_jamun__anthocyanin","description":"Jamun is comparable to, not higher than, blueberries in anthocyanins."},
+    {"severity":"medium","claim_id":"swap_sprouts_moringa__itc","description":"Moringin ≠ sulforaphane. Dossier implies chemical equivalence; they are different molecules."},
+    {"severity":"medium","claim_id":"swap_evoo_mustard__aitc_antiinflam","description":"AITC is a human pain/inflammation SURROGATE at topical doses; dietary anti-inflammatory claim is weakly supported."},
+    {"severity":"medium","claim_id":"swap_cocoa_cacao__flavanol","description":"'Lab tests match' for Indian cacao brands is unverified — no public COAs found."},
+    {"severity":"low","claim_id":"swap_blueberry_amla__vitamin_c","description":"Amla is ~50× blueberry vit C, not 20× — dossier understates."}
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "agent": "main-thread-verification",
+  "captured_at": "2026-04-20",
+  "records": [
+    {
+      "claim_id": "free5_smoking",
+      "original_statement": "Smoking cessation reduces all-cause mortality by ~50%.",
+      "verified_statement": "Doll & Peto British Doctors Study (50-yr follow-up): cessation at age 30/40/50/60 adds ~10/9/6/3 years of life expectancy. Cessation at 50 halves the excess mortality hazard of continued smoking. The '50% reduction' is shorthand for 'halves the hazard if quit mid-life' — defensible.",
+      "status": "verified",
+      "sources": [
+        {"title":"Mortality in relation to smoking: 50 years' observations on male British doctors (Doll et al.)","url":"https://pubmed.ncbi.nlm.nih.gov/15213107/","type":"pubmed","pmid":"15213107","year":"2004","quality":"high"},
+        {"title":"21st-century hazards of smoking and benefits of stopping (Million Women Study, Pirie et al.)","url":"https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(12)61720-6/fulltext","type":"pubmed","year":"2013","quality":"high"}
+      ]
+    },
+    {
+      "claim_id": "free5_weight",
+      "original_statement": "Weight control reduces all-cause mortality by ~40%.",
+      "verified_statement": "OVERSTATED. RCT meta-analysis of intentional weight loss: RR 0.85 = 15% reduction. For obese+unhealthy subgroup specifically: RR 0.84 = 16%. The '40%' figure likely derives from observational obesity-vs-normal-BMI mortality risk ratios, which are NOT the same as 'weight control reduces mortality by 40%' — that conflates risk of being obese with benefit of losing weight (which is much smaller in trials).",
+      "status": "overstated_by_dossier",
+      "sources": [
+        {"title":"Intentional Weight Loss and All-Cause Mortality: Meta-Analysis of RCTs","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC4368053/","type":"pubmed","year":"2015","quality":"high"},
+        {"title":"Body-mass index and all-cause mortality: individual-participant-data meta-analysis of 239 prospective studies","url":"https://www.thelancet.com/article/S0140-6736(16)30175-1/fulltext","type":"pubmed","year":"2016","quality":"high"}
+      ],
+      "recommended_fix": "Change to '~15–20% all-cause mortality reduction in RCTs of intentional weight loss in obese adults'. 40% was never defensible."
+    },
+    {
+      "claim_id": "free5_exercise",
+      "original_statement": "Regular exercise reduces all-cause mortality by ~35%.",
+      "verified_statement": "VERIFIED. Lancet PURE study (130,000 participants, 17 countries): high PA vs low PA HR 0.65 = 35% reduction. Dose-response is robust across cohorts.",
+      "status": "verified",
+      "sources": [
+        {"title":"Physical activity and mortality and CVD in 130,000 people — PURE study","url":"https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(17)31634-3/abstract","type":"pubmed","year":"2017","quality":"high"},
+        {"title":"Physical Activity, All-Cause and CV Mortality — review","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC6527136/","type":"pubmed","year":"2019","quality":"high"}
+      ]
+    },
+    {
+      "claim_id": "free5_bp",
+      "original_statement": "Blood pressure control reduces all-cause mortality by ~30%.",
+      "verified_statement": "CONTEXT-DEPENDENT. SPRINT: intensive BP (<120 SBP) vs standard (<140) showed ~25-27% all-cause mortality reduction in high-CV-risk non-diabetic adults. Meta-analyses across SPRINT+STEP+ACCORD in >60 age group show NO all-cause mortality reduction from intensive vs standard control. Aggressive meta-analysis comparing SBP 150→120 showed 49% mortality reduction. 30% is a reasonable middle estimate for high-risk populations but not universal.",
+      "status": "verified_with_caveat",
+      "sources": [
+        {"title":"SPRINT — Intensive vs Standard Blood-Pressure Control","url":"https://www.nejm.org/doi/full/10.1056/NEJMoa1511939","type":"pubmed","year":"2015","quality":"high"},
+        {"title":"Association of Blood Pressure Lowering With Mortality Across BP Levels: Meta-analysis","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC5833509/","type":"pubmed","year":"2017","quality":"high"}
+      ],
+      "recommended_fix": "Add 'in high-cardiovascular-risk adults' qualifier."
+    },
+    {
+      "claim_id": "free5_diet",
+      "original_statement": "Mediterranean / plant-forward diet reduces all-cause mortality by ~25%.",
+      "verified_statement": "CLOSE TO REALITY. Meta-analysis highest vs lowest MedDiet score: RR 0.79 = 21% reduction. Some cohorts: 23%. PREDIMED RCT specifically showed CV benefit but no all-cause mortality difference. '25%' is a ~4pp round-up over the best meta-analytic point estimate.",
+      "status": "slightly_overstated",
+      "sources": [
+        {"title":"Adherence to Mediterranean Diet and All-Cause Mortality: systematic review & meta-analysis","url":"https://www.sciencedirect.com/science/article/pii/S2161831322004422","type":"pubmed","year":"2022","quality":"high"},
+        {"title":"Mediterranean Diet and its components (meta-analysis, BJN)","url":"https://www.cambridge.org/core/journals/british-journal-of-nutrition/article/mediterranean-diet-and-its-components-in-relation-to-allcause-mortality-metaanalysis/81EB9EF4D5B7AD5BC3ADC8AEC86371E1","type":"pubmed","year":"2016","quality":"high"}
+      ],
+      "recommended_fix": "Use '20–25%' range."
+    },
+    {
+      "claim_id": "nuts_adventist",
+      "original_statement": "Nut consumption ≥5×/week associated with +2-3 years lifespan (Adventist Health Study).",
+      "verified_statement": "VERIFIED IN SPIRIT. AHS-1 and AHS-2: 5×/week nut consumption vs <1×/week associates with HR 0.56–0.82 for all-cause mortality (depends on subgroup). Specific '+2-3 year' figure is in older Fraser analyses and is defensible but derived. Recent NEJM analysis (Bao et al. 2013) shows dose-response across cohorts.",
+      "status": "verified",
+      "sources": [
+        {"title":"Association of Nut Consumption with Total and Cause-Specific Mortality (NEJM, Bao et al. 2013)","url":"https://www.nejm.org/doi/full/10.1056/NEJMoa1307352","type":"pubmed","year":"2013","quality":"high"},
+        {"title":"Vegetarian Dietary Patterns and Mortality in Adventist Health Study 2","url":"https://pubmed.ncbi.nlm.nih.gov/23836264/","type":"pubmed","year":"2013","quality":"high"},
+        {"title":"Nut consumption and CVD/cancer meta-analysis — Aune et al.","url":"https://pubmed.ncbi.nlm.nih.gov/27916000/","type":"pubmed","year":"2016","quality":"high"}
+      ]
+    },
+    {
+      "claim_id": "legume_loma",
+      "original_statement": "Daily legume consumption associated with 8% lower all-cause mortality (Loma Linda).",
+      "verified_statement": "SLIGHTLY OVERSTATED. Most recent meta-analysis (Viguiliouk et al., prospective cohorts): HR 0.94 per 50g/day increment = 6% reduction, not 8%. Highest vs lowest overall: 6% reduction.",
+      "status": "slightly_overstated",
+      "sources": [
+        {"title":"Legume Consumption and Risk of All-Cause and Cause-Specific Mortality: Meta-analysis","url":"https://pubmed.ncbi.nlm.nih.gov/36811595/","type":"pubmed","year":"2023","quality":"high"},
+        {"title":"Legume Consumption and All-Cause and CVD Mortality (PMC)","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC5688364/","type":"pubmed","year":"2017","quality":"medium"}
+      ],
+      "recommended_fix": "Use '6% lower all-cause mortality per 50g/day legume intake'."
+    },
+    {
+      "claim_id": "sauna_finnish",
+      "original_statement": "Finnish sauna 4-7×/week: 63% lower CV mortality, 40% lower all-cause (Laukkanen).",
+      "verified_statement": "PARTIALLY VERIFIED / CONFLATED. Laukkanen 2015 (PMID 25705824, JAMA IM, 2,315 Finnish men, 20.7-yr follow-up): 4-7 sauna sessions/wk vs 1/wk showed HR 0.37 for Sudden Cardiac Death (63% reduction), HR 0.52 for fatal CHD, HR 0.50 for fatal CVD. All-cause mortality HR was ~0.60 (~40% reduction). Dossier's '63% CV mortality' number is specifically SCD not fatal CVD — should be 50% for fatal CVD. All-cause 40% is approximately correct.",
+      "status": "blocker_fix_applied",
+      "CRITICAL_CAVEAT_generalizability": "COHORT LIMITATION. KIHD cohort = middle-aged Finnish MEN with a cultural baseline of daily sauna from childhood, in a cool climate with easy re-cooling. Indian users face: (1) ambient thermal load already high (Indian summer wet-bulb temperatures can exceed 32°C in parts of eastern/southern India — layered thermal stress on an acclimatized-to-heat population is not equivalent to Finnish cold→hot exposure), (2) dehydration risk amplified by existing heat-acclimated sweat rates, (3) infra-red blanket / 60–70°C IR ≠ 80–100°C Finnish steam sauna on cardiovascular training stimulus. The Laukkanen effect sizes should NOT be directly transplanted to Indian users. The 2018 BMC Medicine paper extended findings to women but remained in Finnish population.",
+      "CONTRAINDICATIONS": [
+        "Pregnancy (especially 1st trimester — hyperthermia >39°C core linked to neural tube defects)",
+        "Uncontrolled hypertension (SBP >180 / DBP >110) — sauna acutely drops BP but causes pre-sauna hypertensive surges",
+        "Recent myocardial infarction (<6 weeks), unstable angina, severe aortic stenosis",
+        "Active infection with fever",
+        "Acute alcohol intoxication — doubles SCD risk during sauna",
+        "Severe dehydration, diuretic therapy without medical oversight",
+        "Children under 12 (thermoregulation immature)",
+        "Indian summer (Apr–Jun): skip or reduce sessions if ambient WBGT >28°C and user has not pre-hydrated"
+      ],
+      "sources": [
+        {"title":"Association between sauna bathing and fatal CV and all-cause mortality (Laukkanen 2015)","url":"https://pubmed.ncbi.nlm.nih.gov/25705824/","type":"pubmed","pmid":"25705824","year":"2015","quality":"high"},
+        {"title":"Sauna bathing and CV mortality in men and women — 2018 BMC Medicine","url":"https://pubmed.ncbi.nlm.nih.gov/30486813/","type":"pubmed","year":"2018","quality":"high"},
+        {"title":"Cardiovascular and other health benefits of sauna bathing — review","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC6011838/","type":"pubmed","year":"2018","quality":"high"},
+        {"title":"Maternal hyperthermia and neural tube defects — meta-analysis","url":"https://pubmed.ncbi.nlm.nih.gov/15812475/","type":"pubmed","year":"2005","quality":"high"},
+        {"title":"Alcohol consumption and sudden cardiac death during and after sauna — Kenttämies & Karkola","url":"https://pubmed.ncbi.nlm.nih.gov/18454025/","type":"pubmed","year":"2008","quality":"medium"}
+      ],
+      "recommended_fix": "Change '63% CV mortality' → '63% lower sudden cardiac death / 50% lower fatal CVD' AND '40% all-cause (Finnish men, KIHD cohort).' Add explicit generalizability caveat: 'Indian heat-acclimatized populations and IR saunas differ from 80–100°C Finnish steam; effect sizes may not transplant directly.' Contraindications block must appear on the swap card, not in a collapsible-only."
+    }
+  ],
+  "dossier_errors_found": [
+    {"severity":"blocker","claim_id":"sauna_finnish__generalizability","description":"Finnish-men-only cohort and 80–100°C steam sauna findings must not be directly transplanted to Indian IR-blanket users. Contraindications (pregnancy, uncontrolled HTN, recent MI, alcohol) must appear on the primary swap card."},
+    {"severity":"high","claim_id":"free5_weight","description":"'40% mortality reduction from weight control' is not supported. RCT evidence shows 15%."},
+    {"severity":"medium","claim_id":"legume_loma","description":"'8% lower all-cause' → actual is 6% per 50g/day."},
+    {"severity":"low","claim_id":"free5_diet","description":"'25% MedDiet mortality reduction' → actual ~21%."},
+    {"severity":"low","claim_id":"free5_bp","description":"'30% BP mortality reduction' is OK in high-risk but no benefit in elderly >60 subgroup."},
+    {"severity":"medium","claim_id":"sauna_finnish","description":"63% number is SCD, not fatal CVD; fatal CVD is 50%. 40% all-cause approximately correct but Finnish-male specific."}
+  ]
+}

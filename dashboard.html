@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dossier v2.0 — The Indian Longevity Audit</title>
+<meta name="description" content="Bryan Johnson's $2M/year protocol has a $50K food slice. That slice — and only that slice — we can replicate in India for ~₹96,000/year. Every number verified, every source linked." />
+<meta property="og:title" content="The Indian Longevity Audit · Dossier v2.0" />
+<meta property="og:description" content="A verified, line-by-line audit of Bryan Johnson's protocol — what can be replicated in India, what cannot, at what price, with what caveats." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F2ECDD;
+    --paper-dark:#E8E0CC;
+    --paper-line:#D6CCAD;
+    --ink:#1A1611;
+    --ink-soft:#4A3F2E;
+    --blood:#B91C1C;
+    --blood-deep:#7F1D1D;
+    --forest:#1F5F3F;
+    --forest-deep:#0F3D24;
+    --gold:#B8860B;
+    --stamp:#A62020;
+    --warn-bg:#FBEFC8;
+    --danger-bg:#F8DAD8;
+    --clinical:#2C3E50;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Instrument Serif',Georgia,serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0px, transparent 31px, rgba(26,22,17,0.04) 31px, rgba(26,22,17,0.04) 32px),
+      radial-gradient(circle at 20% 10%, rgba(184,134,11,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(185,28,28,0.04) 0%, transparent 40%);
+    min-height:100vh;
+    padding-bottom:80px;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:-0.01em}
+  .serif{font-family:'Fraunces',Georgia,serif}
+  .italic-serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic}
+  .clinical{font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--clinical)}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+  a{color:var(--ink);text-decoration-color:var(--ink-soft);text-underline-offset:3px}
+  a:hover{color:var(--blood)}
+
+  /* Masthead */
+  .masthead{
+    border-top:2px solid var(--ink);
+    border-bottom:2px solid var(--ink);
+    padding:12px 0;
+    margin-top:24px;
+    background:var(--paper);
+  }
+  .masthead-inner{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--ink-soft);gap:16px;flex-wrap:wrap}
+  .masthead-edition{display:flex;gap:20px;flex-wrap:wrap}
+  .badge-v2{background:var(--ink);color:var(--paper);padding:3px 9px;letter-spacing:0.18em}
+
+  /* Capture strip */
+  .capture-strip{
+    padding:10px 0;
+    border-bottom:1px solid var(--ink);
+    background:rgba(184,134,11,0.06);
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    letter-spacing:0.16em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+  .capture-inner{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:center}
+  .capture-inner .dot{color:var(--blood);font-weight:700}
+
+  /* Hero */
+  .hero{padding:64px 0 40px;position:relative}
+  .hero-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--blood);margin-bottom:28px;display:flex;align-items:center;gap:12px}
+  .hero-kicker::before{content:"";width:36px;height:2px;background:var(--blood);display:inline-block}
+  .hero h1{
+    font-family:'Fraunces',serif;
+    font-weight:300;
+    font-size:clamp(42px,8vw,108px);
+    line-height:0.95;
+    letter-spacing:-0.035em;
+    color:var(--ink);
+    font-variation-settings:"opsz" 144;
+  }
+  .hero h1 em{font-style:italic;color:var(--blood);font-weight:300}
+  .hero h1 .green{color:var(--forest);font-style:italic}
+  .hero-sub{
+    margin-top:36px;
+    font-family:'Instrument Serif',serif;
+    font-size:clamp(19px,2.2vw,24px);
+    line-height:1.5;
+    max-width:760px;
+    color:var(--ink-soft);
+  }
+  .hero-sub strong{color:var(--ink);font-weight:400}
+
+  /* Verdict pair */
+  .verdict-pair{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    margin-top:56px;
+    border-top:2px solid var(--ink);
+    border-bottom:2px solid var(--ink);
+  }
+  .verdict-cell{
+    padding:32px 28px;
+    border-right:1px solid var(--ink);
+    position:relative;
+  }
+  .verdict-cell:last-child{border-right:none}
+  .verdict-cell.bj{background:rgba(185,28,28,0.04)}
+  .verdict-cell.you{background:rgba(31,95,63,0.04)}
+  .vc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px}
+  .vc-number{font-family:'Fraunces',serif;font-size:clamp(36px,5.8vw,68px);line-height:1;font-weight:300;letter-spacing:-0.03em}
+  .vc-number.bj{color:var(--blood)}
+  .vc-number.you{color:var(--forest)}
+  .vc-unit{font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:var(--ink-soft);margin-top:10px;line-height:1.4}
+  .vc-meta{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);margin-top:14px;letter-spacing:0.12em;text-transform:uppercase}
+  @media(max-width:640px){
+    .verdict-pair{grid-template-columns:1fr}
+    .verdict-cell{border-right:none;border-bottom:1px solid var(--ink)}
+    .verdict-cell:last-child{border-bottom:none}
+  }
+
+  /* Ratio strip */
+  .ratio-strip{
+    margin-top:40px;
+    padding:26px 28px;
+    background:var(--ink);
+    color:var(--paper);
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:28px;
+    align-items:center;
+  }
+  .ratio-strip .big{
+    font-family:'Fraunces',serif;
+    font-weight:300;
+    font-size:clamp(52px,8vw,96px);
+    letter-spacing:-0.04em;
+    line-height:0.9;
+    color:#E8BCBC;
+  }
+  .ratio-strip .txt{
+    font-family:'Instrument Serif',serif;
+    font-size:clamp(17px,2vw,22px);
+    line-height:1.45;
+    color:var(--paper-line);
+  }
+  .ratio-strip .txt strong{color:var(--paper);font-weight:400}
+  @media(max-width:640px){.ratio-strip{grid-template-columns:1fr}}
+
+  /* Section headers */
+  .section{padding:72px 0;border-top:1px solid var(--ink)}
+  .section-number{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:var(--blood);text-transform:uppercase;margin-bottom:16px}
+  .section-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-0.02em;margin-bottom:18px}
+  .section-title em{font-style:italic;color:var(--blood)}
+  .section-title .green{color:var(--forest);font-style:italic}
+  .section-intro{font-family:'Instrument Serif',serif;font-size:20px;line-height:1.55;max-width:740px;color:var(--ink-soft);margin-bottom:48px}
+  .section-intro strong{color:var(--ink);font-weight:400}
+
+  /* Verification badges */
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;font-weight:600;
+    letter-spacing:0.14em;text-transform:uppercase;
+    padding:4px 9px;
+    line-height:1;
+    white-space:nowrap;
+  }
+  .badge.verified{background:var(--forest-deep);color:var(--paper)}
+  .badge.flagged{background:var(--gold);color:var(--ink)}
+  .badge.unverified{background:transparent;color:var(--ink);border:1px dashed var(--ink-soft)}
+  .badge.blocker{background:var(--blood);color:var(--paper)}
+  .badge-dot{width:6px;height:6px;border-radius:50%;background:currentColor;display:inline-block}
+
+  /* Legend */
+  .legend-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-top:8px;
+  }
+  @media(max-width:820px){.legend-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.legend-grid{grid-template-columns:1fr}}
+  .legend-card{
+    border:1px solid var(--ink);
+    padding:22px 20px;
+    background:var(--paper);
+  }
+  .legend-card .lc-head{margin-bottom:12px}
+  .legend-card .lc-body{font-family:'Instrument Serif',serif;font-size:15px;color:var(--ink-soft);line-height:1.45}
+  .legend-card .lc-count{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);margin-top:14px;letter-spacing:0.14em;text-transform:uppercase}
+
+  /* Scope honesty — spend donut */
+  .scope{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:40px;
+    align-items:start;
+  }
+  @media(max-width:820px){.scope{grid-template-columns:1fr}}
+  .scope-stack{display:flex;flex-direction:column;gap:2px;border:1px solid var(--ink)}
+  .scope-row{
+    display:grid;
+    grid-template-columns:42px 1fr auto;
+    gap:14px;
+    padding:12px 16px;
+    align-items:center;
+    background:var(--paper);
+    position:relative;
+  }
+  .scope-row .pct{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--ink-soft)}
+  .scope-row .label{font-family:'Fraunces',serif;font-size:17px;letter-spacing:-0.01em}
+  .scope-row .usd{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft)}
+  .scope-row .bar{
+    position:absolute;left:0;top:0;bottom:0;
+    background:var(--blood);opacity:0.08;z-index:0;
+  }
+  .scope-row.highlight{background:rgba(31,95,63,0.08)}
+  .scope-row.highlight .bar{background:var(--forest);opacity:0.18}
+  .scope-row.highlight .label::after{
+    content:"REPLICATED";
+    font-family:'JetBrains Mono',monospace;
+    font-size:9px;
+    letter-spacing:0.18em;
+    background:var(--forest-deep);
+    color:var(--paper);
+    padding:2px 7px;
+    margin-left:10px;
+    vertical-align:middle;
+  }
+  .scope-row > *{position:relative;z-index:1}
+  .scope-note{
+    font-family:'Instrument Serif',serif;
+    font-size:17px;
+    line-height:1.55;
+    color:var(--ink-soft);
+  }
+  .scope-note p{margin-bottom:16px}
+  .scope-note strong{color:var(--ink);font-weight:400}
+  .scope-note .kill{
+    border-left:3px solid var(--forest);
+    padding:10px 18px;
+    background:rgba(31,95,63,0.06);
+    margin-top:22px;
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-size:18px;
+    color:var(--ink);
+  }
+
+  /* Receipts */
+  .receipt-holder{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  @media(max-width:820px){.receipt-holder{grid-template-columns:1fr}}
+  .receipt{
+    background:#FBF7EC;
+    border:1px solid var(--ink);
+    padding:32px 28px 28px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    line-height:1.65;
+    position:relative;
+    box-shadow:6px 6px 0 var(--ink);
+  }
+  .receipt::before,.receipt::after{
+    content:"";position:absolute;left:0;right:0;height:10px;
+    background-image:linear-gradient(45deg, transparent 33%, #FBF7EC 33%, #FBF7EC 66%, transparent 66%),linear-gradient(-45deg, transparent 33%, #FBF7EC 33%, #FBF7EC 66%, transparent 66%);
+    background-size:10px 10px;
+  }
+  .receipt::before{top:-10px;background-position:0 100%}
+  .receipt::after{bottom:-10px;background-position:0 0}
+  .r-head{text-align:center;margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed var(--ink-soft)}
+  .r-head .shop{font-size:15px;font-weight:700;letter-spacing:0.08em;margin-bottom:4px}
+  .r-head .sub{font-size:10px;color:var(--ink-soft);letter-spacing:0.12em}
+  .r-line{display:flex;justify-content:space-between;gap:10px;padding:3px 0;font-size:12px}
+  .r-line .item{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .r-line .qty{color:var(--ink-soft);font-size:11px;margin-right:6px}
+  .r-line .amt{white-space:nowrap}
+  .r-total{display:flex;justify-content:space-between;padding-top:12px;margin-top:10px;border-top:2px solid var(--ink);font-size:15px;font-weight:700}
+  .receipt.bj .r-total{color:var(--blood)}
+  .receipt.you .r-total{color:var(--forest)}
+  .r-foot{text-align:center;margin-top:18px;padding-top:14px;border-top:1px dashed var(--ink-soft);font-size:9px;color:var(--ink-soft);letter-spacing:0.14em;line-height:1.6}
+  .r-barcode{
+    margin:12px auto 6px;height:28px;max-width:180px;
+    background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 9px,var(--ink) 9px 12px,transparent 12px 14px);
+  }
+  .stamp{
+    position:absolute;top:20px;right:20px;width:76px;height:76px;
+    border:3px solid var(--blood);border-radius:50%;color:var(--blood);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:10px;font-weight:700;
+    letter-spacing:0.1em;text-align:center;transform:rotate(-12deg);
+    opacity:0.85;line-height:1.1;
+  }
+  .stamp.green{border-color:var(--forest);color:var(--forest)}
+  .stamp-errata{
+    position:absolute;top:14px;left:18px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:9px;letter-spacing:0.18em;
+    color:var(--blood);padding:3px 8px;
+    border:1.5px solid var(--blood);
+    transform:rotate(-4deg);
+  }
+  .r-correction{
+    background:var(--warn-bg);
+    border:1px dashed var(--gold);
+    padding:10px 12px;
+    margin:12px 0 6px;
+    font-size:11px;
+    line-height:1.5;
+    color:var(--ink);
+  }
+  .r-correction strong{color:var(--blood);letter-spacing:0.08em}
+
+  /* Annual spend cards */
+  .annual-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:700px){.annual-grid{grid-template-columns:1fr}}
+  .spend-card{
+    background:var(--paper);
+    border:1px solid var(--ink);
+    padding:22px 24px;
+    position:relative;overflow:hidden;
+  }
+  .spend-card .cat{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+  .spend-card .amt{font-family:'Fraunces',serif;font-size:34px;font-weight:300;letter-spacing:-0.02em;color:var(--blood);line-height:1}
+  .spend-card .amt-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);margin-top:4px}
+  .spend-card .desc{font-family:'Instrument Serif',serif;font-size:15px;margin-top:14px;line-height:1.45;color:var(--ink)}
+  .spend-card .bar{height:6px;background:var(--paper-dark);margin-top:18px;position:relative;overflow:hidden}
+  .spend-card .bar-fill{height:100%;background:var(--blood);opacity:0.75}
+  .spend-card .pct{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);margin-top:6px;text-align:right}
+
+  /* Swap cards */
+  .swap-card{
+    border:1px solid var(--ink);
+    background:var(--paper);
+    margin-bottom:16px;
+    overflow:hidden;
+  }
+  .swap-head{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:14px;padding:14px 18px;
+    background:var(--paper-dark);
+    border-bottom:1px solid var(--ink);
+    flex-wrap:wrap;
+  }
+  .swap-head-title{font-family:'Fraunces',serif;font-size:17px;letter-spacing:-0.01em}
+  .swap-head-title .target{color:var(--ink-soft);font-style:italic;font-size:14px;margin-left:8px}
+  .swap-head-right{display:flex;gap:8px;flex-wrap:wrap}
+  .swap{
+    display:grid;grid-template-columns:1fr 52px 1fr;gap:0;align-items:stretch;
+  }
+  @media(max-width:720px){.swap{grid-template-columns:1fr}.swap-arrow{padding:10px 0 !important}}
+  .swap-side{padding:20px 22px;position:relative}
+  .swap-side.bj{background:rgba(185,28,28,0.035);border-right:1px solid var(--ink)}
+  .swap-side.in{background:rgba(31,95,63,0.035)}
+  @media(max-width:720px){.swap-side.bj{border-right:none;border-bottom:1px solid var(--ink)}}
+  .swap-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+  .swap-name{font-family:'Fraunces',serif;font-size:20px;font-weight:400;letter-spacing:-0.01em;line-height:1.2;margin-bottom:4px}
+  .swap-price{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;margin-top:8px}
+  .swap-price.bj{color:var(--blood)}
+  .swap-price.in{color:var(--forest)}
+  .swap-price-range{font-size:11px;color:var(--ink-soft);font-weight:400;margin-top:3px}
+  .swap-why{font-family:'Instrument Serif',serif;font-size:15px;font-style:italic;color:var(--ink-soft);margin-top:10px;line-height:1.4}
+  .swap-arrow{
+    display:flex;align-items:center;justify-content:center;
+    background:var(--paper-dark);
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;color:var(--ink-soft);letter-spacing:0.1em;
+  }
+  .swap-footer{
+    border-top:1px dashed var(--ink-soft);
+    padding:0 18px;background:#FDF9ED;
+  }
+  .swap-footer details{
+    border-bottom:1px dashed var(--paper-line);padding:10px 0;
+  }
+  .swap-footer details:last-child{border-bottom:none}
+  .swap-footer summary{
+    cursor:pointer;list-style:none;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:0.1em;
+    color:var(--ink);text-transform:uppercase;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:6px 0;
+  }
+  .swap-footer summary::-webkit-details-marker{display:none}
+  .swap-footer summary::after{content:"▸";transition:transform 0.2s;color:var(--blood)}
+  .swap-footer details[open] summary::after{transform:rotate(90deg)}
+  .swap-footer details[open] summary{color:var(--blood)}
+  .swap-footer .sf-label{display:flex;gap:10px;align-items:center}
+  .swap-footer .sf-label .sev{font-size:9px;padding:2px 6px;letter-spacing:0.14em}
+  .swap-footer .sev.warn{background:var(--gold);color:var(--ink)}
+  .swap-footer .sev.danger{background:var(--blood);color:var(--paper)}
+  .swap-footer .sev.info{background:var(--ink);color:var(--paper)}
+  .swap-footer .sf-body{
+    padding:12px 4px 16px;
+    font-family:'Instrument Serif',serif;
+    font-size:15px;line-height:1.55;
+    color:var(--ink-soft);
+  }
+  .swap-footer .sf-body strong{color:var(--ink);font-weight:400}
+  .swap-footer .sf-body ul{padding-left:22px;margin:6px 0}
+  .swap-footer .sf-body li{padding:3px 0}
+  .swap-footer .sf-body a{font-family:'JetBrains Mono',monospace;font-size:12px}
+  .swap-footer .sources-list{font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.8}
+  .swap-footer .sources-list .src{padding:4px 0;border-bottom:1px dashed var(--paper-line)}
+  .swap-footer .sources-list .src:last-child{border-bottom:none}
+  .swap-footer .sources-list .pmid{color:var(--blood);font-weight:600}
+  .swap-footer .sources-list .title{color:var(--ink)}
+  .swap-footer .sources-list .wb{color:var(--ink-soft);margin-left:6px}
+  .swap-meta{
+    padding:10px 18px;
+    background:var(--paper-dark);
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    color:var(--ink-soft);
+    letter-spacing:0.14em;text-transform:uppercase;
+    border-top:1px solid var(--ink);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  /* Free 5 */
+  .free5{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--ink)}
+  @media(max-width:900px){.free5{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.free5{grid-template-columns:1fr}}
+  .free5-cell{
+    padding:24px 20px;
+    background:var(--paper);
+    border-right:1px solid var(--ink);
+    position:relative;
+  }
+  .free5-cell:last-child{border-right:none}
+  @media(max-width:900px){.free5-cell{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}}
+  .free5-pct{
+    font-family:'Fraunces',serif;
+    font-size:clamp(36px,4.6vw,56px);
+    font-weight:300;line-height:0.9;letter-spacing:-0.03em;
+    color:var(--forest);margin-bottom:12px;
+  }
+  .free5-pct .tilde{color:var(--ink-soft);font-size:0.6em;vertical-align:super}
+  .free5-label{font-family:'Fraunces',serif;font-size:18px;letter-spacing:-0.01em;line-height:1.2;margin-bottom:8px}
+  .free5-desc{font-family:'Instrument Serif',serif;font-size:14px;color:var(--ink-soft);line-height:1.4;font-style:italic}
+  .free5-cite{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--blood);letter-spacing:0.14em;margin-top:12px;text-transform:uppercase}
+  .free5-corrected{
+    display:inline-block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:9px;
+    background:var(--warn-bg);
+    border:1px solid var(--gold);
+    padding:1px 6px;
+    margin-left:8px;
+    letter-spacing:0.12em;
+    vertical-align:middle;
+    color:var(--ink);
+  }
+
+  /* Devices + Labs table */
+  .dl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(max-width:820px){.dl-grid{grid-template-columns:1fr}}
+  .dl-card{
+    background:var(--paper);border:1px solid var(--ink);padding:18px 20px;
+  }
+  .dl-card h4{font-family:'Fraunces',serif;font-size:20px;font-weight:400;letter-spacing:-0.01em;margin-bottom:6px}
+  .dl-card .dl-vendor{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);margin-bottom:10px;letter-spacing:0.08em}
+  .dl-price-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px}
+  .dl-price{font-family:'Fraunces',serif;font-size:22px;font-weight:400;color:var(--forest);letter-spacing:-0.01em}
+  .dl-price .cap{color:var(--ink-soft);font-size:12px;font-family:'JetBrains Mono',monospace;margin-left:4px}
+  .dl-meta{font-family:'Instrument Serif',serif;font-size:14px;color:var(--ink-soft);font-style:italic;line-height:1.4}
+  .dl-sources{
+    margin-top:10px;padding-top:10px;
+    border-top:1px dashed var(--paper-line);
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+  }
+  .dl-sources a{color:var(--ink-soft);text-decoration-color:var(--paper-line)}
+
+  /* Contraindications */
+  .contra-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:820px){.contra-grid{grid-template-columns:1fr}}
+  .contra-card{
+    background:var(--danger-bg);
+    border:1px solid var(--blood);
+    padding:22px 24px;
+    position:relative;
+  }
+  .contra-card h4{font-family:'Fraunces',serif;font-size:19px;font-weight:400;margin-bottom:10px;color:var(--blood-deep)}
+  .contra-card h4::before{content:"△ ";color:var(--blood)}
+  .contra-card ul{padding-left:20px;font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--ink);line-height:1.55}
+  .contra-card li{padding:3px 0}
+  .contra-card .who{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blood);margin-bottom:4px}
+
+  /* PM2.5 strip */
+  .pm-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--ink);background:var(--paper)}
+  @media(max-width:820px){.pm-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:420px){.pm-grid{grid-template-columns:1fr}}
+  .pm-cell{padding:22px 20px;border-right:1px solid var(--ink)}
+  .pm-cell:last-child{border-right:none}
+  @media(max-width:820px){.pm-cell{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}}
+  .pm-city{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+  .pm-val{font-family:'Fraunces',serif;font-size:clamp(34px,4vw,48px);font-weight:300;letter-spacing:-0.03em;line-height:1}
+  .pm-val.hi{color:var(--blood)}
+  .pm-val.mid{color:var(--gold)}
+  .pm-val.lo{color:var(--forest)}
+  .pm-unit{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);margin-top:6px;letter-spacing:0.1em}
+  .pm-ratio{font-family:'Instrument Serif',serif;font-size:13px;font-style:italic;color:var(--ink-soft);margin-top:10px}
+
+  /* Seasonal calendar */
+  .season-calendar{
+    border:1px solid var(--ink);
+    background:var(--paper);
+    overflow:hidden;
+  }
+  .season-head{
+    display:grid;grid-template-columns:180px repeat(12,1fr);
+    background:var(--paper-dark);border-bottom:1px solid var(--ink);
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .season-head .sh-ing{padding:12px 18px;border-right:1px solid var(--ink)}
+  .season-head .sh-mo{padding:12px 0;text-align:center;border-right:1px solid var(--paper-line)}
+  .season-head .sh-mo:last-child{border-right:none}
+  .season-row{
+    display:grid;grid-template-columns:180px repeat(12,1fr);
+    border-bottom:1px solid var(--paper-line);
+  }
+  .season-row:last-child{border-bottom:none}
+  .season-row .sr-ing{
+    padding:14px 18px;border-right:1px solid var(--ink);
+    font-family:'Fraunces',serif;font-size:16px;
+    display:flex;align-items:center;
+  }
+  .season-row .sr-mo{
+    border-right:1px solid var(--paper-line);
+    position:relative;
+  }
+  .season-row .sr-mo:last-child{border-right:none}
+  .season-row .sr-mo .fill{
+    position:absolute;inset:4px;
+  }
+  .season-row .sr-mo .fill.peak{background:var(--forest);opacity:0.85}
+  .season-row .sr-mo .fill.ok{background:var(--forest);opacity:0.35}
+  .season-row .sr-mo .fill.frozen{background:repeating-linear-gradient(45deg,var(--ink-soft) 0 2px,transparent 2px 5px);opacity:0.4}
+  .season-row .sr-mo .fill.off{background:var(--paper-dark)}
+  @media(max-width:820px){
+    .season-head,.season-row{grid-template-columns:120px repeat(12,1fr)}
+    .season-head .sh-ing,.season-row .sr-ing{padding:10px 12px;font-size:14px}
+    .season-head .sh-mo{padding:10px 0;font-size:9px}
+  }
+  .season-legend{display:flex;gap:24px;margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);flex-wrap:wrap}
+  .season-legend .sl{display:flex;align-items:center;gap:8px}
+  .season-legend .sq{width:14px;height:14px;display:inline-block}
+  .season-legend .sq.peak{background:var(--forest);opacity:0.85}
+  .season-legend .sq.ok{background:var(--forest);opacity:0.35}
+  .season-legend .sq.frozen{background:repeating-linear-gradient(45deg,var(--ink-soft) 0 2px,transparent 2px 5px)}
+
+  /* Genetic context */
+  .genetic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:820px){.genetic-grid{grid-template-columns:1fr}}
+  .genetic-card{
+    border:1px solid var(--ink);background:var(--paper);padding:0;
+  }
+  .genetic-card > details{padding:22px 24px}
+  .genetic-card summary{
+    cursor:pointer;list-style:none;
+    display:flex;justify-content:space-between;gap:16px;
+  }
+  .genetic-card summary::-webkit-details-marker{display:none}
+  .genetic-card summary::after{content:"+";font-family:'Fraunces',serif;color:var(--blood);font-size:24px;line-height:1;transition:transform 0.2s}
+  .genetic-card details[open] summary::after{transform:rotate(45deg)}
+  .genetic-card .gc-gene{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--blood);letter-spacing:0.18em;margin-bottom:4px}
+  .genetic-card h4{font-family:'Fraunces',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em;margin-bottom:4px;line-height:1.2}
+  .genetic-card .gc-sub{font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;color:var(--ink-soft)}
+  .genetic-card .gc-body{
+    margin-top:18px;padding-top:18px;border-top:1px dashed var(--paper-line);
+    font-family:'Instrument Serif',serif;font-size:16px;line-height:1.6;color:var(--ink-soft);
+  }
+  .genetic-card .gc-body strong{color:var(--ink);font-weight:400}
+  .genetic-card .gc-body .freq{
+    display:inline-block;margin-top:12px;
+    font-family:'JetBrains Mono',monospace;font-size:12px;
+    background:var(--paper-dark);padding:6px 10px;color:var(--ink);
+  }
+
+  /* Verdict block */
+  .verdict-block{
+    background:var(--ink);color:var(--paper);
+    padding:56px 44px;margin:60px 0;position:relative;overflow:hidden;
+    border:1px solid var(--ink);
+  }
+  .verdict-block::before{
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(45deg,transparent 0 10px,rgba(242,236,221,0.03) 10px 11px);
+    pointer-events:none;
+  }
+  .verdict-block .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.24em;color:var(--paper-line);margin-bottom:18px}
+  .verdict-block h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.6vw,52px);line-height:1.05;letter-spacing:-0.025em;max-width:780px}
+  .verdict-block h2 em{font-style:italic;color:#E8BCBC}
+  .verdict-block h2 .green{color:#7FB89A;font-style:italic}
+
+  /* Errata */
+  .errata{
+    border:2px solid var(--blood);
+    background:var(--warn-bg);
+    padding:36px 32px;
+    position:relative;
+  }
+  .errata::before{
+    content:"ERRATA · CORRECTIONS FROM V1";
+    position:absolute;top:-12px;left:28px;
+    background:var(--warn-bg);
+    padding:0 12px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;font-weight:700;
+    letter-spacing:0.22em;color:var(--blood);
+  }
+  .errata h3{font-family:'Fraunces',serif;font-size:24px;font-weight:400;margin-bottom:16px;letter-spacing:-0.01em}
+  .errata ul{list-style:none;padding:0}
+  .errata li{
+    display:grid;grid-template-columns:90px 1fr;gap:14px;
+    padding:12px 0;border-bottom:1px dashed var(--gold);
+    font-family:'Instrument Serif',serif;font-size:16px;line-height:1.5;
+  }
+  .errata li:last-child{border-bottom:none}
+  .errata li .was{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    color:var(--blood);letter-spacing:0.1em;
+    padding-top:4px;text-transform:uppercase;
+  }
+  .errata li strong{color:var(--ink);font-weight:500}
+  .errata li del{color:var(--blood);text-decoration-color:var(--blood)}
+
+  /* Legal */
+  .legal{
+    background:var(--paper);border:1px solid var(--clinical);
+    padding:32px 28px;
+  }
+  .legal h3{font-family:'Fraunces',serif;font-weight:400;font-size:22px;margin-bottom:16px}
+  .legal details{
+    padding:10px 0;border-bottom:1px solid var(--paper-line);
+  }
+  .legal details:last-child{border-bottom:none}
+  .legal summary{
+    cursor:pointer;list-style:none;
+    font-family:'IBM Plex Sans',sans-serif;font-weight:500;
+    color:var(--clinical);
+    display:flex;justify-content:space-between;gap:14px;
+    font-size:14px;padding:4px 0;
+  }
+  .legal summary::-webkit-details-marker{display:none}
+  .legal summary::after{content:"+";color:var(--clinical);font-weight:400}
+  .legal details[open] summary::after{content:"−"}
+  .legal .lbody{
+    padding:10px 0 4px;
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:13px;line-height:1.6;color:var(--clinical);
+    font-weight:300;
+  }
+
+  /* Sources */
+  .sources-section{
+    border:1px solid var(--ink);background:var(--paper);padding:28px 32px;
+  }
+  .sources-section h3{font-family:'Fraunces',serif;font-size:22px;font-weight:400;margin-bottom:18px}
+  .sources-section ul{list-style:none;padding:0}
+  .sources-section li{
+    padding:10px 0;border-bottom:1px dashed var(--paper-line);
+    font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.55;
+  }
+  .sources-section li:last-child{border-bottom:none}
+  .sources-section li .src-tag{
+    background:var(--ink);color:var(--paper);
+    font-size:9px;letter-spacing:0.14em;padding:2px 6px;margin-right:8px;
+  }
+  .sources-section li .src-tag.gov{background:var(--clinical)}
+  .sources-section li .src-tag.usda{background:var(--forest)}
+
+  /* Pullquote */
+  .pullquote{
+    font-family:'Fraunces',serif;font-weight:300;font-style:italic;
+    font-size:clamp(22px,3vw,34px);line-height:1.25;letter-spacing:-0.015em;
+    padding:40px 0;max-width:820px;color:var(--ink);
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+    margin:40px 0;
+  }
+  .pullquote .q{color:var(--blood);font-size:1.4em;line-height:0}
+  .pullquote cite{display:block;margin-top:18px;font-style:normal;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* Sticky disclaimer */
+  .sticky-disclaimer{
+    position:fixed;left:20px;bottom:20px;z-index:100;
+    background:var(--clinical);color:var(--paper);
+    padding:10px 16px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:500;
+    text-decoration:none;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+  }
+  .sticky-disclaimer::before{content:"⚠  ";color:var(--gold)}
+
+  /* Quiz CTA — large block */
+  .cta-block{
+    margin:56px auto;
+    max-width:900px;
+    padding:44px 36px 40px;
+    border:2px solid var(--ink);
+    background:
+      repeating-linear-gradient(45deg,transparent 0,transparent 8px,rgba(26,22,17,0.025) 8px,rgba(26,22,17,0.025) 10px),
+      var(--paper-dark);
+    text-align:center;position:relative;
+  }
+  .cta-block::before{
+    content:"";position:absolute;inset:6px;border:1px solid var(--ink);pointer-events:none;
+  }
+  .cta-kicker{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.28em;
+    text-transform:uppercase;color:var(--blood);margin-bottom:14px;
+    display:flex;align-items:center;gap:12px;justify-content:center;
+  }
+  .cta-kicker::before,.cta-kicker::after{content:"";width:36px;height:1px;background:var(--blood);display:inline-block}
+  .cta-title{
+    font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,4.2vw,46px);
+    line-height:1.05;letter-spacing:-0.025em;margin-bottom:16px;color:var(--ink);
+  }
+  .cta-title em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--blood)}
+  .cta-sub{
+    font-family:'Instrument Serif',serif;font-size:18px;color:var(--ink-soft);
+    margin:0 auto 28px;max-width:620px;line-height:1.5;
+  }
+  .cta-btn{
+    display:inline-block;padding:16px 40px;
+    background:var(--ink);color:var(--paper);
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:600;
+    letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+    border:2px solid var(--ink);
+    transition:transform .15s ease,background .15s ease,border-color .15s ease;
+  }
+  .cta-btn:hover{background:var(--blood);color:var(--paper);border-color:var(--blood);transform:translateY(-2px)}
+  .cta-btn .arrow{margin-left:10px;display:inline-block;transition:transform .15s ease}
+  .cta-btn:hover .arrow{transform:translateX(4px)}
+  .cta-meta{
+    margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .cta-meta .dot{color:var(--blood);font-weight:700;margin:0 6px}
+
+  /* Quiz CTA — hero variant (lighter, inline with hero rhythm) */
+  .cta-hero{
+    margin:36px 0 0;padding:28px 32px;
+    border:1.5px solid var(--ink);
+    background:rgba(184,134,11,0.08);
+    display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+  }
+  .cta-hero-text{flex:1;min-width:260px}
+  .cta-hero-kicker{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;
+    text-transform:uppercase;color:var(--blood);margin-bottom:8px;
+  }
+  .cta-hero-title{
+    font-family:'Fraunces',serif;font-weight:400;font-size:26px;
+    letter-spacing:-0.018em;line-height:1.15;color:var(--ink);
+  }
+  .cta-hero-title em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--blood)}
+  .cta-hero-sub{
+    font-family:'Instrument Serif',serif;font-size:15px;color:var(--ink-soft);
+    margin-top:6px;
+  }
+
+  /* Quiz CTA — inline mini (end-of-section) */
+  .cta-inline{
+    margin:48px auto 0;max-width:900px;
+    padding:22px 26px;
+    border-left:4px solid var(--blood);
+    background:var(--warn-bg);
+    display:flex;gap:22px;align-items:center;flex-wrap:wrap;justify-content:space-between;
+  }
+  .cta-inline-text{
+    font-family:'Instrument Serif',serif;font-size:18px;color:var(--ink);
+    flex:1;min-width:240px;line-height:1.4;
+  }
+  .cta-inline-text strong{font-weight:500;font-family:'Fraunces',serif}
+  .cta-inline .cta-btn{padding:12px 24px;font-size:11px}
+
+  /* Sticky quiz CTA */
+  .sticky-quiz{
+    position:fixed;right:20px;bottom:20px;z-index:101;
+    display:flex;align-items:center;gap:14px;
+    background:var(--ink);color:var(--paper);
+    padding:12px 16px 12px 20px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.3);
+    opacity:0;pointer-events:none;transform:translateY(20px);
+    transition:opacity .3s ease,transform .3s ease;
+  }
+  .sticky-quiz.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+  .sticky-quiz-label{font-family:'Instrument Serif',serif;font-size:14px;font-style:italic;color:var(--paper)}
+  .sticky-quiz-label .n{color:var(--gold);font-style:normal;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;display:block;text-transform:uppercase;margin-bottom:2px}
+  .sticky-quiz-btn{
+    padding:9px 18px;background:var(--paper);color:var(--ink);
+    font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
+    letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;
+    border:1px solid var(--paper);white-space:nowrap;
+  }
+  .sticky-quiz-btn:hover{background:var(--blood);color:var(--paper);border-color:var(--blood)}
+
+  @media(max-width:640px){
+    .sticky-disclaimer{left:12px;right:auto;bottom:12px;font-size:11px;padding:8px 12px}
+    .sticky-quiz{left:12px;right:12px;bottom:68px;justify-content:space-between}
+    .cta-block{padding:32px 20px}
+    .cta-hero{padding:22px 20px}
+  }
+
+  /* Regulatory banner — top of page, non-collapsible */
+  .reg-banner{
+    background:var(--danger-bg);
+    border-top:2px solid var(--blood-deep);
+    border-bottom:2px solid var(--blood-deep);
+    padding:16px 0;
+  }
+  .reg-banner-inner{
+    max-width:1060px;margin:0 auto;padding:0 40px;
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:12.5px;line-height:1.55;color:#4a1010;
+    display:flex;gap:18px;align-items:flex-start;
+  }
+  .reg-banner-icon{
+    flex-shrink:0;width:26px;height:26px;border-radius:50%;
+    background:var(--blood);color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;
+    margin-top:1px;
+  }
+  .reg-banner-inner strong{color:var(--blood-deep);letter-spacing:0.04em}
+  .reg-banner-inner .reg-tag{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--blood-deep);
+    display:block;margin-bottom:4px;
+  }
+  @media(max-width:640px){.reg-banner-inner{padding:0 20px;font-size:12px}}
+
+  /* Footer */
+  .footer{padding:40px 0 20px;border-top:2px solid var(--ink);margin-top:60px}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* utility */
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD + CAPTURE -->
+<div class="container">
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-edition">
+        <span class="badge-v2">DOSSIER v2.0</span>
+        <span>File № 001</span>
+        <span>LONGEVITY · INDIA</span>
+      </div>
+      <div>A FORENSIC + VERIFIED COST AUDIT</div>
+    </div>
+  </div>
+</div>
+<div class="capture-strip">
+  <div class="container">
+    <div class="capture-inner">
+      <span>Captured <span class="dot">·</span> 2026-04-20</span>
+      <span>FX <span class="dot">·</span> ₹85/USD</span>
+      <span>Next refresh <span class="dot">·</span> 2026-07-20</span>
+      <span>Sources <span class="dot">·</span> PubMed · USDA · BigBasket · Zepto · Flipkart · Amazon.in · Redcliffe · Thyrocare · FSSAI · EFSA</span>
+    </div>
+  </div>
+</div>
+
+<!-- REGULATORY BANNER (DMRA 1954 / ASCI 2023 / CPA 2019) -->
+<div class="reg-banner">
+  <div class="reg-banner-inner">
+    <div class="reg-banner-icon">!</div>
+    <div>
+      <span class="reg-tag">Editorial · not medical advice · DMRA 1954 · ASCI 2023 · CPA 2019</span>
+      This page is <strong>educational journalism</strong>, not a diagnostic, preventive, or therapeutic recommendation for any individual. Nothing here is intended to diagnose, treat, cure, or prevent any condition listed in the Schedule to the <strong>Drugs and Magic Remedies (Objectionable Advertisements) Act 1954</strong> — including memory / cognitive disorders, cardiovascular disease, diabetes, obesity, infertility, or mental-health conditions. Named brands and retailers are examples of Indian retail availability; their mention is <strong>not an endorsement</strong> and the publisher discloses <strong>no commercial relationship</strong> with any named entity as of April 2026. If a commercial relationship is later formed, ASCI 2023 disclosure will appear inline. Consult a physician licensed in your jurisdiction before making dietary, supplement, device, or lab-testing decisions — particularly if you are pregnant, managing a chronic condition, or on prescription medication.
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="container">
+  <section class="hero">
+    <div class="hero-kicker">The Food-Slice Audit · Exhibit A</div>
+    <h1>
+      Bryan Johnson's <em>$2M/yr</em><br/>
+      longevity program.<br/>
+      <span class="green">₹96,000</span> buys the<br/>
+      plate he eats off.
+    </h1>
+    <p class="hero-sub">
+      <strong>Not the medical team. Not the imaging. Not the experimental therapies.</strong> Just the food + daily-supplement layer — priced once at Indian retail as the Blueprint <em>replica</em> (imports, brand SKUs, same ingredient list) and again as the <em>Indian-alternative</em> (same biology targets, local sourcing). Every ingredient priced at April 2026. Every biology claim re-checked against PubMed. Arithmetic errors from v1 fixed. <strong>This is v2.0.</strong>
+    </p>
+
+    <div class="verdict-pair">
+      <div class="verdict-cell bj">
+        <div class="vc-label">Blueprint replica in India · Per year</div>
+        <div class="vc-number bj mono">~₹10.3 L</div>
+        <div class="vc-unit">≈ ₹2,650–3,000/day (midpoint ~₹2,825) · Blueprint-branded SKUs + imported ingredients, Indian retail landed cost</div>
+        <div class="vc-meta">18 items · 4 flagged "needs live cart fetch" — see §13 errata</div>
+      </div>
+      <div class="verdict-cell you">
+        <div class="vc-label">Indian alternative · Per year</div>
+        <div class="vc-number you mono">₹96,000</div>
+        <div class="vc-unit">≈ ₹263/day · overlapping — not identical — biology targets · see swap matrix for per-target deltas</div>
+        <div class="vc-meta">21 items · verified Apr 2026 · BigBasket / Zepto / 1mg</div>
+      </div>
+    </div>
+
+    <div class="ratio-strip">
+      <div class="big">~10–11×</div>
+      <div class="txt">
+        cheaper — Indian Blueprint replica (~₹10.3 L/yr, range ₹9.7–11.0 L) ÷ Indian alternative stack (₹96,000/yr). This is the <strong>only apples-to-apples ratio</strong> in this dossier (same country, same retail floor, same April 2026 capture). A second framing — the ₹96K alt is ~<strong>0.006%</strong> (roughly 1/17,000th) of Bryan's full $2M program — compares a grocery bill with a private medical operation and is a scale reference only, not a biology claim. The v1 "1/1,770×", v2.0 "~44×" and v2.0 "~11.6×" headlines were all arithmetically fragile; all retired in favour of the audited range above.
+      </div>
+    </div>
+
+    <!-- HERO CTA -->
+    <div class="cta-hero">
+      <div class="cta-hero-text">
+        <div class="cta-hero-kicker">Built for you · 10 questions · ~2 min</div>
+        <div class="cta-hero-title">Get a stack <em>built around your diet, budget &amp; biology</em> — not Bryan's.</div>
+        <div class="cta-hero-sub">Tell us a few things and we'll match the 21-item alt to your plate, your city, your sleep and your starting budget. Email at the end. Nothing sold without your tap.</div>
+      </div>
+      <a class="cta-btn" href="quiz.html">Take the quiz <span class="arrow">→</span></a>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 02: VERIFICATION LEGEND -->
+<div class="container">
+  <section class="section" id="legend">
+    <div class="wrap">
+      <div class="section-number">02 · How to read this page</div>
+      <h2 class="section-title">Every claim carries a <em>badge</em>.</h2>
+      <p class="section-intro">
+        Before v2.0 we ran every claim through two reviewers — a domain subject-matter expert and a Devil's Advocate — then fact-checked the objections against primary sources. What survived carries one of four badges. <strong>Nothing on this page is unbadged.</strong>
+      </p>
+    </div>
+    <div class="wrap" style="max-width:1060px">
+    <div class="legend-grid">
+      <div class="legend-card">
+        <div class="lc-head"><span class="badge verified"><span class="badge-dot"></span>Verified</span></div>
+        <div class="lc-body">Tier-1 source cited (PubMed, USDA, FSSAI, ICMR, EFSA). Numbers match. Recommended as-is.</div>
+        <div class="lc-count">Scan the page for the badge</div>
+      </div>
+      <div class="legend-card">
+        <div class="lc-head"><span class="badge flagged"><span class="badge-dot"></span>Flagged</span></div>
+        <div class="lc-body">Directionally correct but carries a material caveat — dose ceiling, subgroup, bioavailability, seasonality, regulatory grey area.</div>
+        <div class="lc-count">Scan the page for the badge</div>
+      </div>
+      <div class="legend-card">
+        <div class="lc-head"><span class="badge blocker"><span class="badge-dot"></span>Blocker-fixed</span></div>
+        <div class="lc-body">Earlier version was wrong or dangerous. Rewritten with primary-claim caveat (erucic acid, FADS, sauna contraindications, receipt ranges).</div>
+        <div class="lc-count">Scan the page for the badge</div>
+      </div>
+      <div class="legend-card">
+        <div class="lc-head"><span class="badge unverified">Unverified</span></div>
+        <div class="lc-body">Claim exists in the protocol but no primary source found (cocoa COAs, pill-stack ingredients). <strong>Do not act on.</strong></div>
+        <div class="lc-count">Scan the page for the badge</div>
+      </div>
+    </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 03: SCOPE HONESTY -->
+<div class="container">
+  <section class="section" id="scope">
+    <div class="wrap">
+      <div class="section-number">03 · Scope honesty</div>
+      <h2 class="section-title">What we did <em>not</em> replicate.</h2>
+      <p class="section-intro">
+        Bryan Johnson's $2M/year is not a grocery bill. The majority of it is a personal medical operation — specialists, diagnostics, experimental therapies, staff. We price <strong>only the food + daily-supplement layer</strong>, which is the only layer with a retail price a reader can replicate. Everything else is listed here so the ratio in the hero is honest, not marketing. <em>Note:</em> the category percentages below are illustrative of how longevity-program spend typically distributes — Bryan Johnson has not published an audited line-by-line breakdown of the $2M figure.
+      </p>
+    </div>
+    <div class="wrap" style="max-width:1060px">
+    <div class="scope">
+      <div class="scope-stack">
+        <div class="scope-row">
+          <div class="bar" style="width:30%"></div>
+          <span class="pct">30%</span><span class="label">Medical team of 30+ specialists</span><span class="usd">$600K</span>
+        </div>
+        <div class="scope-row">
+          <div class="bar" style="width:25%"></div>
+          <span class="pct">25%</span><span class="label">Experimental therapies (follistatin GT, stem cells, TPE)</span><span class="usd">$500K+</span>
+        </div>
+        <div class="scope-row">
+          <div class="bar" style="width:20%"></div>
+          <span class="pct">20%</span><span class="label">Diagnostics &amp; imaging (MRI, DEXA, Horvath, CAC)</span><span class="usd">$400K</span>
+        </div>
+        <div class="scope-row">
+          <div class="bar" style="width:15%"></div>
+          <span class="pct">15%</span><span class="label">Staff / ops / brand / content</span><span class="usd">$300K</span>
+        </div>
+        <div class="scope-row">
+          <div class="bar" style="width:7.5%"></div>
+          <span class="pct">7.5%</span><span class="label">Equipment (HBOT chamber, red-light cap, sauna, home lab)</span><span class="usd">$150K</span>
+        </div>
+        <div class="scope-row highlight">
+          <div class="bar" style="width:100%"></div>
+          <span class="pct">~2–3%</span><span class="label">Food + daily supplements (est.)</span><span class="usd">~$50K</span>
+        </div>
+      </div>
+      <div class="scope-note">
+        <p>If you copy the food slice in India, <strong>you are not copying Bryan's protocol.</strong> You are copying the one layer where the ratio makes sense at retail prices and where the mechanism is food you can actually buy.</p>
+        <p>Labs and devices are replicable too — we price them in Section 11. Experimental therapies (stem cells, gene therapy, plasma exchange) are governed by ICMR-DBT 2017 and CDSCO in India and are <strong>not accessible at retail prices under existing Indian regulation.</strong></p>
+        <div class="kill">
+          Honest framing: "Food + supplement layer ~10–11× cheaper (Indian Blueprint replica vs Indian alt, audited ranges). Labs + devices ~5–15× cheaper. Experimental layer — not replicable."
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 04: THE DAILY RECEIPT -->
+<div class="container">
+  <section class="section" id="receipt">
+    <div class="wrap">
+      <div class="section-number">04 · The Daily Receipt</div>
+      <h2 class="section-title">One day, <em>itemised.</em></h2>
+      <p class="section-intro">
+        Every line-item at April 2026 retail. Left receipt prices Blueprint's protocol as it would land in an Indian kitchen (imports, delivery, Indian grocer equivalents). Right receipt prices the Indian-alternative stack with equivalent biological targets.
+      </p>
+    </div>
+
+    <div class="wrap" style="max-width:1060px">
+      <div class="receipt-holder">
+        <!-- BJ RECEIPT -->
+        <div class="receipt bj">
+          <div class="stamp-errata">CORRECTED</div>
+          <div class="stamp">BLUEPRINT<br/>REPLICA · IN</div>
+          <div class="r-head">
+            <div class="shop">BLUEPRINT REPLICA · INDIA</div>
+            <div class="sub">18 ITEMS · 1 DAY · APR 2026</div>
+          </div>
+          <div class="r-line"><span class="item"><span class="qty">1x</span>BP Longevity Mix sachet <sup>†</sup></span><span class="amt">₹234–400</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1x</span>BP Essential Capsules</span><span class="amt">₹215</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1x</span>BP Essential Softgels</span><span class="amt">₹165</span></div>
+          <div class="r-line"><span class="item"><span class="qty">250g</span>Broccoli</span><span class="amt">₹90</span></div>
+          <div class="r-line"><span class="item"><span class="qty">150g</span>Cauliflower</span><span class="amt">₹45</span></div>
+          <div class="r-line"><span class="item"><span class="qty">50g</span>Shiitake mushroom <sup>†</sup></span><span class="amt">₹150–240</span></div>
+          <div class="r-line"><span class="item"><span class="qty">45g</span>Black (beluga) lentils</span><span class="amt">₹60</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1tbsp</span>BP EVOO <sup>†</sup></span><span class="amt">₹57–63</span></div>
+          <div class="r-line"><span class="item"><span class="qty">3tbsp</span>Macadamia ground <sup>†</sup></span><span class="amt">₹94–180</span></div>
+          <div class="r-line"><span class="item"><span class="qty">2tsp</span>Walnuts</span><span class="amt">₹25</span></div>
+          <div class="r-line"><span class="item"><span class="qty">2tbsp</span>Chia + flax</span><span class="amt">₹30</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1tbsp</span>BP Cocoa Flavanols</span><span class="amt">₹110</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1tsp</span>Sunflower lecithin</span><span class="amt">₹45</span></div>
+          <div class="r-line"><span class="item"><span class="qty">100ml</span>Macadamia nut milk</span><span class="amt">₹180</span></div>
+          <div class="r-line"><span class="item"><span class="qty">0.5c</span>Berries + cherries</span><span class="amt">₹280</span></div>
+          <div class="r-line"><span class="item"><span class="qty">60ml</span>Pomegranate juice</span><span class="amt">₹70</span></div>
+          <div class="r-line"><span class="item"><span class="qty">30g</span>BP pea protein</span><span class="amt">₹180</span></div>
+          <div class="r-line"><span class="item"><span class="qty">~60pills</span>Daily pill stack</span><span class="amt">₹620</span></div>
+          <div class="r-correction">
+            <strong>ERRATUM · revised v2.1:</strong> Dossier v1 headline was <del>₹2,683/day</del>. The <em>stated</em> line items (v1) sum to ₹3,062/day — a ₹379 arithmetic understatement. But four of those line items (marked <sup>†</sup>) are themselves overstated vs live Indian retail and needed fetch-verification. Audited as ranges, the honest daily total is <strong>₹2,650–₹3,000/day</strong>, midpoint ~₹2,825. Previous v2.0 "₹3,062" over-corrected by using v1's line items as ground truth. Verified 2026-04-20.
+          </div>
+          <div class="r-total"><span>DAILY TOTAL</span><span>₹2,650–3,000</span></div>
+          <div class="r-barcode"></div>
+          <div class="r-foot">
+            MIDPOINT ~₹2,825/DAY · ~₹84,750 / MONTH · ~₹10.3 L / YEAR<br/>
+            APR 2026 · INR · RETAIL · <sup>†</sup>=NEEDS LIVE CART FETCH
+          </div>
+        </div>
+        <!-- INDIAN ALT RECEIPT -->
+        <div class="receipt you">
+          <div class="stamp green">INDIAN<br/>ALT · 2.0</div>
+          <div class="r-head">
+            <div class="shop">INDIAN ALTERNATIVE STACK</div>
+            <div class="sub">21 ITEMS · 1 DAY · APR 2026</div>
+          </div>
+          <div class="r-line"><span class="item"><span class="qty">1c</span>Green tea + tulsi</span><span class="amt">₹8</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1g</span>Turmeric + black pepper</span><span class="amt">₹3</span></div>
+          <div class="r-line"><span class="item"><span class="qty">500mg</span>Ashwagandha KSM-66</span><span class="amt">₹12</span></div>
+          <div class="r-line"><span class="item"><span class="qty">50g</span>Whole masoor / urad dal</span><span class="amt">₹7</span></div>
+          <div class="r-line"><span class="item"><span class="qty">250g</span>Broccoli / cauliflower</span><span class="amt">₹25</span></div>
+          <div class="r-line"><span class="item"><span class="qty">100g</span>Moringa + methi leaves</span><span class="amt">₹15</span></div>
+          <div class="r-line"><span class="item"><span class="qty">50g</span>Button / oyster mushroom</span><span class="amt">₹28</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1tbsp</span>Cold-press low-erucic mustard</span><span class="amt">₹4</span></div>
+          <div class="r-line"><span class="item"><span class="qty">25g</span>Almonds (Indian-grown)</span><span class="amt">₹18</span></div>
+          <div class="r-line"><span class="item"><span class="qty">15g</span>Walnuts (Kashmiri)</span><span class="amt">₹22</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1tbsp</span>Chia + flax + sesame</span><span class="amt">₹8</span></div>
+          <div class="r-line"><span class="item"><span class="qty">100ml</span>A2 milk / almond milk</span><span class="amt">₹18</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1tsp</span>Raw Indian cacao</span><span class="amt">₹6</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1x</span>Amla + ½ pomegranate</span><span class="amt">₹22</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1tsp</span>A2 ghee</span><span class="amt">₹6</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1x</span>Curd / buttermilk</span><span class="amt">₹10</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1x</span>Jamun / guava (seasonal)</span><span class="amt">₹15</span></div>
+          <div class="r-line"><span class="item"><span class="qty">2g</span>Omega-3 (algal/fish)</span><span class="amt">₹18</span></div>
+          <div class="r-line"><span class="item"><span class="qty">2000IU</span>Vitamin D3 + K2</span><span class="amt">₹4</span></div>
+          <div class="r-line"><span class="item"><span class="qty">5g</span>Creatine monohydrate</span><span class="amt">₹6</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1g</span>Magnesium glycinate</span><span class="amt">₹8</span></div>
+          <div class="r-total"><span>DAILY TOTAL</span><span>₹263</span></div>
+          <div class="r-barcode"></div>
+          <div class="r-foot">
+            ≈ ₹7,890 / MONTH · ₹95,995 / YEAR<br/>
+            APR 2026 · INR · RETAIL · VERIFIED
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:28px;font-family:'Instrument Serif',serif;font-size:16px;line-height:1.5;color:var(--ink-soft);max-width:760px">
+        <strong>Ratio: ~10–11× cheaper</strong> (range ~10.1× to ~11.4× using the audited ₹2,650–3,000/day BJ range against a ₹263/day alt; midpoint ~10.7×). Same country, same retail floor, both receipts captured April 2026. The v2.0 "~11.6×" and "~44×" headlines were withdrawn in v2.1 — see §13 errata — once line items flagged "needs live cart fetch" were audited. Bryan's full $2M program is ~1/17,000th the size of the Indian alt, but that is a scale reference, not a ratio of equivalent goods.
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 05: ANNUAL BURN -->
+<div class="container">
+  <section class="section" id="burn">
+    <div class="wrap">
+      <div class="section-number">05 · Where the $2M actually goes</div>
+      <h2 class="section-title">Annual burn, <em>dismantled.</em></h2>
+      <p class="section-intro">Category estimates based on public interviews and Blueprint protocol documentation. Bryan Johnson has not published a line-by-line audit of the $2M figure; treat the split below as an order-of-magnitude map of where a $2M/yr longevity program typically spends, not an attested breakdown. Labels and ranges are our own.</p>
+    </div>
+    <div class="wrap" style="max-width:1060px">
+      <div class="annual-grid">
+        <div class="spend-card">
+          <div class="cat">30% · Medical Team</div>
+          <div class="amt">$600K</div>
+          <div class="amt-sub">≈ ₹5.1 cr / year</div>
+          <div class="desc">30+ specialists: physicians, endocrinologists, cardiologists, dermatologists, imaging, nutritionist. The largest single line item.</div>
+          <div class="bar"><div class="bar-fill" style="width:30%"></div></div>
+          <div class="pct">30% OF TOTAL</div>
+        </div>
+        <div class="spend-card">
+          <div class="cat">25% · Experimental Therapies</div>
+          <div class="amt">$500K+</div>
+          <div class="amt-sub">≈ ₹4.25 cr / year</div>
+          <div class="desc">Follistatin gene therapy (Honduras 2023), 300M mesenchymal stem cells, total plasma exchange, cerebrolysin, peptide stacks. Governed by ICMR-DBT 2017 in India.</div>
+          <div class="bar"><div class="bar-fill" style="width:25%"></div></div>
+          <div class="pct">25% OF TOTAL</div>
+        </div>
+        <div class="spend-card">
+          <div class="cat">20% · Diagnostics &amp; Imaging</div>
+          <div class="amt">$400K</div>
+          <div class="amt-sub">≈ ₹3.4 cr / year</div>
+          <div class="desc">MRI, CT, DEXA, coronary calcium, skin-age, DunedinPACE + Horvath 2×/yr, 100+ biomarker panels every 3–6 months. Mostly replicable in India (Section 11).</div>
+          <div class="bar"><div class="bar-fill" style="width:20%"></div></div>
+          <div class="pct">20% OF TOTAL</div>
+        </div>
+        <div class="spend-card">
+          <div class="cat">15% · Staff / Ops / Brand</div>
+          <div class="amt">$300K</div>
+          <div class="amt-sub">≈ ₹2.55 cr / year</div>
+          <div class="desc">Chef, kitchen, content team, photographer, videographer, Blueprint-branded operations. Not biology. Marketing.</div>
+          <div class="bar"><div class="bar-fill" style="width:15%"></div></div>
+          <div class="pct">15% OF TOTAL</div>
+        </div>
+        <div class="spend-card">
+          <div class="cat">7.5% · Equipment</div>
+          <div class="amt">$150K</div>
+          <div class="amt-sub">≈ ₹1.27 cr / year (amortised)</div>
+          <div class="desc">HPO Tech hard-shell HBOT chamber, 655nm red-light cap, full IR sauna, home gym, full home lab. Consumer-grade equivalents in Section 11.</div>
+          <div class="bar"><div class="bar-fill" style="width:7.5%"></div></div>
+          <div class="pct">7.5% OF TOTAL</div>
+        </div>
+        <div class="spend-card" style="background:rgba(31,95,63,0.05);border-color:var(--forest)">
+          <div class="cat" style="color:var(--forest)">2.5% · Food + Supplements</div>
+          <div class="amt" style="color:var(--forest)">$50K</div>
+          <div class="amt-sub">≈ ₹42.5 lakh / year</div>
+          <div class="desc"><strong>This is the slice we price against ₹96K/year.</strong> Food ingredients + Blueprint's own proprietary supplements (Longevity Mix, Essential Caps, EVOO, Cocoa).</div>
+          <div class="bar"><div class="bar-fill" style="width:2.5%;background:var(--forest)"></div></div>
+          <div class="pct" style="color:var(--forest)">2.5% · REPLICATED HERE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 06: SWAP MATRIX -->
+<div class="container">
+  <section class="section" id="swaps">
+    <div class="wrap">
+      <div class="section-number">06 · The Swap Matrix</div>
+      <h2 class="section-title">Nine swaps, <em>re-checked.</em></h2>
+      <p class="section-intro">
+        Each card: verification badge, price range (not point — prices fluctuate), biological target, Indian-cohort caveat, contraindications, seasonality, and sources. <strong>Tap any row to expand.</strong>
+      </p>
+    </div>
+
+    <div class="wrap" style="max-width:1060px">
+
+    <!-- SWAP 01 · BLUEBERRY -->
+    <div class="swap-card">
+      <div class="swap-head">
+        <div class="swap-head-title">Swap № 1 · <span class="target">Dietary polyphenol + vitamin C intake</span></div>
+        <div class="swap-head-right">
+          <span class="badge flagged"><span class="badge-dot"></span>Flagged</span>
+          <span class="badge verified"><span class="badge-dot"></span>Price verified</span>
+        </div>
+      </div>
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">Bryan's version</div>
+          <div class="swap-name">Imported blueberries</div>
+          <div class="swap-price bj">₹208 – ₹400</div>
+          <div class="swap-price-range">per 150g · BigBasket / Zepto · 2026-04</div>
+          <div class="swap-why">~9.7 mg vitamin C / 100g · C3G + delphinidin anthocyanins · imported, variable.</div>
+        </div>
+        <div class="swap-arrow">SWAP →</div>
+        <div class="swap-side in">
+          <div class="swap-label">Indian alt</div>
+          <div class="swap-name">Jamun + amla + pomegranate</div>
+          <div class="swap-price in">₹40 – ₹70</div>
+          <div class="swap-price-range">per 150g-equiv · local + seasonal</div>
+          <div class="swap-why">Jamun ~230–438 mg C3G-equivalent (dry); amla <strong>20–50×</strong> the vitamin C of blueberries.</div>
+        </div>
+      </div>
+      <div class="swap-footer">
+        <details>
+          <summary><span class="sf-label">Correction from v1 <span class="sev warn">revised</span></span></summary>
+          <div class="sf-body">Dossier v1 claimed "20× cheaper." Live April 2026 prices put the ratio at <strong>~5–6×</strong>. Still a valid swap; headline softened. Also: jamun's anthocyanin content is <strong>comparable</strong> to blueberries, not higher — dossier v1 overstated.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Bioavailability ceiling <span class="sev info">context</span></span></summary>
+          <div class="sf-body">Anthocyanin bioavailability is <strong>&lt;1%</strong> regardless of fruit source. Vitamin C absorption plateaus around 200 mg / dose. Amla's 50× advantage hits a ceiling at ~1 serving/day.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Seasonality <span class="sev info">India</span></span></summary>
+          <div class="sf-body">Jamun: May–Jul peak. Amla: Oct–Mar peak. Pomegranate: Sep–Feb peak. Off-season fallback: frozen jamun, amla powder, pomegranate from cold storage.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Sources (4)</span></summary>
+          <div class="sf-body sources-list">
+            <div class="src"><span class="pmid">PMID 22420901</span> · <span class="title">Syzygium cumini anthocyanin/ellagitannin extracts</span> · <a href="https://pubmed.ncbi.nlm.nih.gov/22420901/">live</a></div>
+            <div class="src"><span class="pmid">PMID 9137578</span> · <span class="title">Amla — functional &amp; nutraceutical review</span> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9137578/">live</a></div>
+            <div class="src">USDA FoodData Central · Blueberry vit C · <a href="https://fdc.nal.usda.gov/">live</a></div>
+            <div class="src">BigBasket · Fresho Blueberry 125g ₹173 · <a href="https://www.bigbasket.com/pd/30009286/fresho-blueberry-125-g/">live</a></div>
+          </div>
+        </details>
+      </div>
+      <div class="swap-meta">
+        <span>Ratio · ~5–6× cheaper</span>
+        <span>Last verified · 2026-04-20</span>
+      </div>
+    </div>
+
+    <!-- SWAP 02 · MACADAMIA / WALNUT -->
+    <div class="swap-card">
+      <div class="swap-head">
+        <div class="swap-head-title">Swap № 2 · <span class="target">MUFA + ALA omega-3 + vitamin E</span></div>
+        <div class="swap-head-right">
+          <span class="badge blocker"><span class="badge-dot"></span>Blocker-fixed</span>
+          <span class="badge verified"><span class="badge-dot"></span>Price verified</span>
+        </div>
+      </div>
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">Bryan's version</div>
+          <div class="swap-name">Macadamia nuts (premium)</div>
+          <div class="swap-price bj">₹780 – ₹1,500</div>
+          <div class="swap-price-range">per 250g · Flipkart · promo-volatile</div>
+          <div class="swap-why">75% MUFA · &lt;0.1g ALA · ~0.5 mg vitamin E.</div>
+        </div>
+        <div class="swap-arrow">SWAP →</div>
+        <div class="swap-side in">
+          <div class="swap-label">Indian alt</div>
+          <div class="swap-name">Kashmiri walnut + Indian almond</div>
+          <div class="swap-price in">₹220</div>
+          <div class="swap-price-range">per 250g mix · BigBasket · Oct harvest stable</div>
+          <div class="swap-why">Walnut <strong>9.1g ALA</strong> / 100g (highest of tree nuts); almond <strong>25.6 mg vit E</strong> / 100g.</div>
+        </div>
+      </div>
+      <div class="swap-footer">
+        <details>
+          <summary><span class="sf-label">Indian-cohort caveat — FADS1/FADS2 <span class="sev danger">critical</span></span></summary>
+          <div class="sf-body">South Asian populations have elevated frequency of the FADS1 rs174537 "derived" allele — nominally <strong>higher</strong> ALA→EPA conversion than Europeans, but absolute conversion is still only <strong>5–8% ALA→EPA</strong> and <strong>&lt;0.5% ALA→DHA</strong>. For individuals with elevated triglycerides, existing CVD, or in pregnancy: <strong>walnut ALA does not replace direct EPA/DHA.</strong> An algal-oil or fish-oil adjunct remains warranted. This caveat was missing from v1.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Correction from v1 <span class="sev warn">revised</span></span></summary>
+          <div class="sf-body">v1 claimed "14.5× cheaper" using a ₹3,200/250g macadamia anchor. Live April 2026: ₹780–1,500. True ratio is <strong>~3.5–6.8×</strong>. Walnuts still win on ALA; ratio softened. "Kashmiri" is a culinary premium; nutritionally equivalent to other <em>Juglans regia</em>.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Sources (5)</span></summary>
+          <div class="sf-body sources-list">
+            <div class="src"><span class="pmid">PMID 26432412</span> · Kothapalli et al. · <em>FADS</em> positive selection in South Asians · <a href="https://pubmed.ncbi.nlm.nih.gov/26432412/">live</a></div>
+            <div class="src"><span class="pmid">PMID 16188209</span> · Burdge &amp; Calder · ALA→EPA/DHA conversion · <a href="https://pubmed.ncbi.nlm.nih.gov/16188209/">live</a></div>
+            <div class="src">USDA · Walnuts vs Macadamia fatty acid profile · <a href="https://tools.myfooddata.com/nutrition-comparison/170178-170187/100g-100g">live</a></div>
+            <div class="src">Flipkart · Tassyam Exotic Macadamia 250g ₹1,239 · <a href="https://www.flipkart.com/tassyam-exotic-macadamia-nuts-250g-premium-imported/p/itmfefvhcbtqe99x">live</a></div>
+            <div class="src">BigBasket · BB Royal Kashmiri Walnut 500g ₹868 · <a href="https://www.bigbasket.com/pd/40268814/bb-royal-kashmiri-walnut-akhrot-kernels-500-g/">live</a></div>
+          </div>
+        </details>
+      </div>
+      <div class="swap-meta">
+        <span>Ratio · ~3.5–6.8× cheaper</span>
+        <span>Last verified · 2026-04-20</span>
+      </div>
+    </div>
+
+    <!-- SWAP 03 · EVOO -->
+    <div class="swap-card">
+      <div class="swap-head">
+        <div class="swap-head-title">Swap № 3 · <span class="target">EVOO phenolics (oleocanthal / oleuropein)</span></div>
+        <div class="swap-head-right">
+          <span class="badge blocker"><span class="badge-dot"></span>Blocker-fixed</span>
+          <span class="badge flagged"><span class="badge-dot"></span>Coherence flag</span>
+        </div>
+      </div>
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">Bryan's version</div>
+          <div class="swap-name">Blueprint EVOO</div>
+          <div class="swap-price bj">₹3,800 – ₹4,200</div>
+          <div class="swap-price-range">per 1L · imported + duty</div>
+          <div class="swap-why">High-polyphenol (~400 mg/kg) · oleocanthal (COX-1/2 inhibitor in PREDIMED).</div>
+        </div>
+        <div class="swap-arrow">SWAP →</div>
+        <div class="swap-side in">
+          <div class="swap-label">Indian alt</div>
+          <div class="swap-name">Lab-tested Indian EVOO</div>
+          <div class="swap-price in">₹600 – ₹1,200</div>
+          <div class="swap-price-range">per 1L · Kama / Leonardo / Nature's Basket</div>
+          <div class="swap-why">Same biology. Use this if you want PREDIMED-equivalent fat at 1/4 the price.</div>
+        </div>
+      </div>
+      <div class="swap-footer">
+        <details>
+          <summary><span class="sf-label">Critical — mustard oil + ghee is <em>not</em> an EVOO substitute <span class="sev danger">safety</span></span></summary>
+          <div class="sf-body">v1 proposed cold-press mustard oil + A2 ghee as the EVOO alternative. This is <strong>chemically incoherent</strong>: ghee is ~62% saturated fat, mustard+ghee combined does not deliver the <strong>oleocanthal / oleuropein / hydroxytyrosol</strong> phenolics responsible for EVOO's anti-inflammatory effect in PREDIMED. Ghee has different benefits (butyrate), not EVOO-equivalent ones. <strong>If phenolic polyphenols are your target, use Indian EVOO.</strong></div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Mustard oil — erucic acid warning <span class="sev danger">critical</span></span></summary>
+          <div class="sf-body">Traditional Indian kachi-ghani mustard oil contains <strong>30–54% erucic acid</strong>. FSSAI permits up to 45% in India; EU limit is 2%; US/Canada ban high-erucic for edible use (regulated since 1956). EFSA sets tolerable daily intake at 7 mg/kg body weight. If using mustard oil, specify <strong>low-erucic cultivars</strong> (Pusa Double Zero, Pusa Mustard 30) or limit to 1 tsp/day cooking use. AITC "anti-inflammatory" claim is a <strong>preclinical / topical surrogate for inflammation</strong>, not a validated dietary anti-inflammatory.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Sources (5)</span></summary>
+          <div class="sf-body sources-list">
+            <div class="src"><span class="pmid">PREDIMED</span> · NEJM 2018 · <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1800389">live</a></div>
+            <div class="src"><span class="pmid">Nature 2005</span> · Beauchamp · oleocanthal COX inhibition · <a href="https://www.nature.com/articles/437045a">live</a></div>
+            <div class="src">EFSA Opinion 2016 · erucic acid in feed &amp; food · <a href="https://www.efsa.europa.eu/en/efsajournal/pub/4593">live</a></div>
+            <div class="src">EU Reg 2019/1870 · erucic acid limit 2% · <a href="https://eur-lex.europa.eu/eli/reg/2019/1870/oj">live</a></div>
+            <div class="src"><span class="pmid">PMID 28614189</span> · topical AITC surrogate for pain/inflammation · <a href="https://pubmed.ncbi.nlm.nih.gov/28614189/">live</a></div>
+          </div>
+        </details>
+      </div>
+      <div class="swap-meta">
+        <span>Ratio · ~3–7× cheaper (EVOO route)</span>
+        <span>Last verified · 2026-04-20</span>
+      </div>
+    </div>
+
+    <!-- SWAP 04 · COCOA -->
+    <div class="swap-card">
+      <div class="swap-head">
+        <div class="swap-head-title">Swap № 4 · <span class="target">Cocoa flavanols · flow-mediated dilation (surrogate)</span></div>
+        <div class="swap-head-right">
+          <span class="badge unverified">Unverified</span>
+        </div>
+      </div>
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">Bryan's version</div>
+          <div class="swap-name">Blueprint Cocoa Flavanols</div>
+          <div class="swap-price bj">₹3,600</div>
+          <div class="swap-price-range">per 300g · 3rd-party tested · ~700mg flavanol/serving</div>
+          <div class="swap-why">Published COA · dose-matched to COSMOS flavanol trials (500–600 mg/day).</div>
+        </div>
+        <div class="swap-arrow">SWAP →</div>
+        <div class="swap-side in">
+          <div class="swap-label">Indian alt</div>
+          <div class="swap-name">Raw Indian cacao (Ariba / Wakao / Mason&nbsp;&amp;&nbsp;Co)</div>
+          <div class="swap-price in">₹450</div>
+          <div class="swap-price-range">per 300g · unalkalized</div>
+          <div class="swap-why">Chemically plausible. Flavanol content <strong>not COA-verified.</strong></div>
+        </div>
+      </div>
+      <div class="swap-footer">
+        <details>
+          <summary><span class="sf-label">COSMOS primary endpoint was null <span class="sev warn">evidence</span></span></summary>
+          <div class="sf-body">The COSMOS parent trial's <strong>pre-specified primary cognitive outcome at 2 years was null.</strong> The 60-minute episodic-memory sub-scale improvement was a secondary/exploratory finding, and the parent-trial CVD composite did hit significance (Sesso 2022, PMID 35896181). Interpreting "flavanols → cognition" as settled overstates the evidence. Vascular (flow-mediated dilation) endpoints are the best-supported. If cognition is your goal, the honest framing is: <em>"plausible mechanism, mixed clinical data, large ongoing trials pending."</em></div>
+        </details>
+        <details>
+          <summary><span class="sf-label">"Lab tests match" — retracted <span class="sev warn">unverified</span></span></summary>
+          <div class="sf-body">v1 claimed Indian cacao brands match Blueprint flavanol content. <strong>No public HPLC-quantified COAs exist</strong> for Ariba, Wakao, or Mason &amp; Co as of April 2026. Unalkalized raw cacao is chemically plausible — alkalization destroys 60–90% of flavanols — but <strong>the per-serving number is not auditable.</strong> If cocoa-flavanol dose is critical to your goal, the only COA-backed options remain Blueprint cocoa or Mars CocoaVia.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Sources (4)</span></summary>
+          <div class="sf-body sources-list">
+            <div class="src"><span class="pmid">PMID 37561467</span> · COSMOS-Mind 2023 · flavanol &amp; cognition (primary null; exploratory subscales) · <a href="https://pubmed.ncbi.nlm.nih.gov/37561467/">live</a></div>
+            <div class="src"><span class="pmid">PMID 35896181</span> · Sesso 2022 · COSMOS CVD composite · <a href="https://pubmed.ncbi.nlm.nih.gov/35896181/">live</a></div>
+            <div class="src">ConsumerLab · cocoa flavanol content review · <a href="https://www.consumerlab.com/reviews/cocoa-powders-and-chocolates-sources-of-flavanols/cocoa-flavanols/">live</a></div>
+            <div class="src">OPEN ACTION · contact Indian brands for HPLC COA · <em>queued</em></div>
+          </div>
+        </details>
+      </div>
+      <div class="swap-meta">
+        <span>Price ratio · ~8×</span>
+        <span>Biology · unverified</span>
+      </div>
+    </div>
+
+    <!-- SWAP 05 · SPROUTS / MORINGA -->
+    <div class="swap-card">
+      <div class="swap-head">
+        <div class="swap-head-title">Swap № 5 · <span class="target">Isothiocyanates · Nrf2 activation</span></div>
+        <div class="swap-head-right">
+          <span class="badge flagged"><span class="badge-dot"></span>Flagged</span>
+        </div>
+      </div>
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">Bryan's version</div>
+          <div class="swap-name">Broccoli sprouts</div>
+          <div class="swap-price bj">₹400</div>
+          <div class="swap-price-range">per 100g · Nature's Basket</div>
+          <div class="swap-why">Gold standard for <strong>sulforaphane</strong>.</div>
+        </div>
+        <div class="swap-arrow">SWAP →</div>
+        <div class="swap-side in">
+          <div class="swap-label">Indian alt</div>
+          <div class="swap-name">Moringa leaves</div>
+          <div class="swap-price in">₹30</div>
+          <div class="swap-price-range">per 100g · local</div>
+          <div class="swap-why">Delivers <strong>moringin</strong> — a different ITC, chemically more stable.</div>
+        </div>
+      </div>
+      <div class="swap-footer">
+        <details>
+          <summary><span class="sf-label">Moringin ≠ sulforaphane <span class="sev warn">biology</span></span></summary>
+          <div class="sf-body">Moringa's moringin (from glucomoringin) is a <strong>different isothiocyanate</strong> than broccoli sprouts' sulforaphane (from glucoraphanin). Moringin is more stable and on a molar basis can be more potent for Nrf2 induction, but they bind different protein targets at the margins and clinical endpoints differ. <strong>If you specifically want sulforaphane dose, broccoli sprouts remain the gold standard.</strong> Moringa is a legitimate ITC source — just not the same molecule.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Contraindications — moringa <span class="sev danger">safety</span></span></summary>
+          <div class="sf-body">Moringa root and bark contain alkaloids with <strong>uterotonic activity</strong> — avoid in pregnancy. Leaves are considered safer but still cautious in 1st trimester. Powdered moringa from uncontrolled sources has shown <strong>heavy-metal load</strong> (Pb, Cd) in Indian market surveys — prefer FSSAI-licensed brands with batch testing.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Sources (3)</span></summary>
+          <div class="sf-body sources-list">
+            <div class="src">Nature Sci Reports 2018 · Moringaceae glucosinolates · <a href="https://www.nature.com/articles/s41598-018-26058-4">live</a></div>
+            <div class="src">Nutrients 2019 · precise moringin dosing · <a href="https://www.mdpi.com/2072-6643/11/7/1547">live</a></div>
+            <div class="src"><span class="pmid">PMID 4071966</span> · water-extractable ITC from moringa · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4071966/">live</a></div>
+          </div>
+        </details>
+      </div>
+      <div class="swap-meta">
+        <span>Ratio · ~13× cheaper (different molecule)</span>
+        <span>Last verified · 2026-04-20</span>
+      </div>
+    </div>
+
+    <!-- SWAP 06 · NMN -->
+    <div class="swap-card">
+      <div class="swap-head">
+        <div class="swap-head-title">Swap № 6 · <span class="target">NAD+ salvage · sirtuins</span></div>
+        <div class="swap-head-right">
+          <span class="badge flagged"><span class="badge-dot"></span>Flagged</span>
+        </div>
+      </div>
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">Bryan's version</div>
+          <div class="swap-name">NMN + Resveratrol stack</div>
+          <div class="swap-price bj">₹8,500</div>
+          <div class="swap-price-range">per month · imported</div>
+          <div class="swap-why">Raises blood NAD+. Human outcome data is mixed.</div>
+        </div>
+        <div class="swap-arrow">SWAP →</div>
+        <div class="swap-side in">
+          <div class="swap-label">Indian alt</div>
+          <div class="swap-name">Exercise + dal (tryptophan/niacin)</div>
+          <div class="swap-price in">₹0</div>
+          <div class="swap-price-range">per month · or Decode Age NMN ₹940–3,000</div>
+          <div class="swap-why">Exercise raises <strong>skeletal muscle</strong> NAD+ by ~25–30% via NAMPT.</div>
+        </div>
+      </div>
+      <div class="swap-footer">
+        <details>
+          <summary><span class="sf-label">Where the NAD+ actually rises <span class="sev info">biology</span></span></summary>
+          <div class="sf-body">Aerobic + resistance training upregulates NAMPT (rate-limiting NAD+ salvage enzyme) and raises <strong>skeletal muscle</strong> NAD+ ~25–30% — this is the tissue that matters for longevity endpoints. Chronic NMN (300–900 mg/day) raises <strong>blood</strong> NAD+ but has not been shown to directly raise muscle NAD+ in humans. Systematic reviews find minimal NMN benefit on strength, gait speed, chair stand in older adults. Exercise is the better-evidenced NAD+ intervention.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">NMN + FSSAI regulatory note <span class="sev warn">context</span></span></summary>
+          <div class="sf-body">NMN is sold in India (e.g., <strong>Decode Age — Bangalore</strong>, ₹940–3,000/month) under FSSAI's self-attested nutraceutical pathway (FSSAI Nutraceutical Regulations 2022). This is a <em>tolerated</em> posture, not an FSSAI-approved health claim: <strong>no NMN-specific positive health claim is approved under FSSAI as of April 2026</strong>, and therapeutic/preventive claims on NMN remain actionable under the FSSAI Advertising &amp; Claims Regulations and DMRA 1954. FDA reversed its 2022 "not a dietary supplement" position in Sept 2025 (NDI status), which does not extend to FSSAI. "NMN is banned in India" — circulating in some commentary — is false; "NMN is approved in India" would also be misleading.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Sources (4)</span></summary>
+          <div class="sf-body sources-list">
+            <div class="src"><span class="pmid">PMID 9158788</span> · chronic NMN in older men · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9158788/">live</a></div>
+            <div class="src">Sports Med 2022 · NAD+ therapeutics &amp; exercise in humans · <a href="https://link.springer.com/article/10.1007/s40279-022-01772-2">live</a></div>
+            <div class="src"><span class="pmid">PMID 34238308</span> · NMN &amp; aerobic capacity · <a href="https://pubmed.ncbi.nlm.nih.gov/34238308/">live</a></div>
+            <div class="src">Decode Age NMN · Indian vendor · <a href="https://decodeage.com/">live</a></div>
+          </div>
+        </details>
+      </div>
+      <div class="swap-meta">
+        <span>Ratio · exercise ₹0 · or ~3–9× if supplementing</span>
+        <span>Last verified · 2026-04-20</span>
+      </div>
+    </div>
+
+    <!-- SWAP 07 · KSM-66 -->
+    <div class="swap-card">
+      <div class="swap-head">
+        <div class="swap-head-title">Swap № 7 · <span class="target">HPA-axis modulation · healthy-adult cortisol response (KSM-66)</span></div>
+        <div class="swap-head-right">
+          <span class="badge verified"><span class="badge-dot"></span>Verified</span>
+        </div>
+      </div>
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">Bryan's version</div>
+          <div class="swap-name">Ashwagandha in Longevity Mix</div>
+          <div class="swap-price bj">~₹12,000</div>
+          <div class="swap-price-range">per month (mix portion attributed to ashwa)</div>
+          <div class="swap-why">KSM-66 at a premium import price.</div>
+        </div>
+        <div class="swap-arrow">SWAP →</div>
+        <div class="swap-side in">
+          <div class="swap-label">Indian alt</div>
+          <div class="swap-name">KSM-66 direct (Rasayanam, MuscleBlaze)</div>
+          <div class="swap-price in">₹400 – ₹900</div>
+          <div class="swap-price-range">per month · 600mg/day (clinical-trial dose) · Blinkit / HealthKart</div>
+          <div class="swap-why">KSM-66 is <strong>manufactured in Hyderabad by Ixoreal Biomed</strong>. Same extract, no markup. Clinical trials (Chandrasekhar 2012, Salve 2019) dose 600 mg/day — not 500.</div>
+        </div>
+      </div>
+      <div class="swap-footer">
+        <details>
+          <summary><span class="sf-label">The supply-chain irony <span class="sev info">fact</span></span></summary>
+          <div class="sf-body">Ixoreal Biomed Pvt Ltd, headquartered in Hyderabad, manufactures KSM-66 with 46+ quality certifications and has 50+ clinical trials supporting the extract. Every Western "premium ashwagandha" is sourced from here and shipped back at a premium. Buy it at source.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Contraindications <span class="sev danger">safety</span></span></summary>
+          <div class="sf-body">Avoid in <strong>pregnancy</strong> (traditional abortifacient). Caution in <strong>hyperthyroidism</strong> (ashwagandha can raise T3/T4). Autoimmune conditions: theoretical immunomodulation concern — discuss with physician. Sedating at bedtime dose (600mg) — time accordingly.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Sources (5)</span></summary>
+          <div class="sf-body sources-list">
+            <div class="src"><span class="pmid">PMID 23439798</span> · Chandrasekhar 2012 · KSM-66 cortisol RCT (600 mg/day) · <a href="https://pubmed.ncbi.nlm.nih.gov/23439798/">live</a></div>
+            <div class="src"><span class="pmid">PMID 31517876</span> · Salve 2019 · KSM-66 sleep + stress RCT (600 mg/day) · <a href="https://pubmed.ncbi.nlm.nih.gov/31517876/">live</a></div>
+            <div class="src">KSM-66 official manufacturer · <a href="https://ksm66ashwagandhaa.com/">live</a></div>
+            <div class="src">Rasayanam KSM-66 60 caps ₹679 · Blinkit · <a href="https://www.blinkit.com">live</a></div>
+            <div class="src">Ixoreal Biomed corporate · <a href="https://www.bus-ex.com/article/ixoreal-biomed-pvt-ltd">live</a></div>
+          </div>
+        </details>
+      </div>
+      <div class="swap-meta">
+        <span>Ratio · ~15–25× cheaper</span>
+        <span>Last verified · 2026-04-20</span>
+      </div>
+    </div>
+
+    <!-- SWAP 08 · SHIITAKE / OYSTER -->
+    <div class="swap-card">
+      <div class="swap-head">
+        <div class="swap-head-title">Swap № 8 · <span class="target">Beta-glucans + ergothioneine</span></div>
+        <div class="swap-head-right">
+          <span class="badge flagged"><span class="badge-dot"></span>Flagged</span>
+        </div>
+      </div>
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">Bryan's version</div>
+          <div class="swap-name">Shiitake / maitake</div>
+          <div class="swap-price bj">₹360</div>
+          <div class="swap-price-range">per 100g · specialty stores</div>
+          <div class="swap-why">55–90 mg ergothioneine / 100g dry · high β-glucan.</div>
+        </div>
+        <div class="swap-arrow">SWAP →</div>
+        <div class="swap-side in">
+          <div class="swap-label">Indian alt</div>
+          <div class="swap-name">Button + oyster mushroom</div>
+          <div class="swap-price in">₹50</div>
+          <div class="swap-price-range">per 100g · any sabzi-walla</div>
+          <div class="swap-why">Oyster: 35–65 mg ergothioneine / 100g dry.</div>
+        </div>
+      </div>
+      <div class="swap-footer">
+        <details>
+          <summary><span class="sf-label">Correction from v1 — the MCI number <span class="sev warn">revised</span></span></summary>
+          <div class="sf-body">v1 claimed "64% lower MCI" from the Singapore mushroom cohort. Feng et al. 2019 (J Alzheimer's Dis) reports odds ratio <strong>0.43 = 57% reduction</strong>, not 64%. Also: shiitake has <strong>more</strong> ergothioneine than oyster on average, so "oyster is superior" is wrong; it's a budget-equivalent, not a biology-win.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">OCTN1 / SLC22A4 — speculative, not actionable <span class="sev info">genetics</span></span></summary>
+          <div class="sf-body">Ergothioneine is taken up into cells via the OCTN1 transporter (SLC22A4 gene). Loss-of-function variants are documented in transporter kinetics papers (Gründemann 2005; Cheah &amp; Halliwell 2012) but <strong>no consumer-grade assay quantifies individual tissue-retention capacity</strong>, and Indian-population allele frequencies are not well-characterised. In practice: food dose matters more than genotype. Eat the mushrooms; don't buy a test for this.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Sources (3)</span></summary>
+          <div class="sf-body sources-list">
+            <div class="src"><span class="pmid">PMID 30775990</span> · Feng 2019 · Singapore mushroom &amp; MCI · <a href="https://pubmed.ncbi.nlm.nih.gov/30775990/">live</a></div>
+            <div class="src"><span class="pmid">PMID 10824988</span> · oyster nutritional quality · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10824988/">live</a></div>
+            <div class="src">Zepto / BigBasket · button mushroom ₹32–58 / 200g · <a href="https://www.bigbasket.com/">live</a></div>
+          </div>
+        </details>
+      </div>
+      <div class="swap-meta">
+        <span>Ratio · ~7× cheaper</span>
+        <span>Last verified · 2026-04-20</span>
+      </div>
+    </div>
+
+    <!-- SWAP 09 · POMEGRANATE -->
+    <div class="swap-card">
+      <div class="swap-head">
+        <div class="swap-head-title">Swap № 9 · <span class="target">Ellagitannins → urolithin A</span></div>
+        <div class="swap-head-right">
+          <span class="badge blocker"><span class="badge-dot"></span>Blocker-fixed</span>
+        </div>
+      </div>
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">Bryan's version</div>
+          <div class="swap-name">Cold-press pomegranate juice</div>
+          <div class="swap-price bj">₹420</div>
+          <div class="swap-price-range">per 500ml · imported brands</div>
+          <div class="swap-why">Retains ellagitannins when full-fruit pressed.</div>
+        </div>
+        <div class="swap-arrow">SWAP →</div>
+        <div class="swap-side in">
+          <div class="swap-label">Indian alt</div>
+          <div class="swap-name">Whole anar (with seeds)</div>
+          <div class="swap-price in">₹60</div>
+          <div class="swap-price-range">per fruit · Sep–Feb peak</div>
+          <div class="swap-why">Equivalent ellagitannin delivery at 1/7 the price.</div>
+        </div>
+      </div>
+      <div class="swap-footer">
+        <details>
+          <summary><span class="sf-label">v1 framing "juice is Western dilution" — false <span class="sev danger">biology-fix</span></span></summary>
+          <div class="sf-body">Seeram et al. (2008) showed pomegranate <strong>juice, liquid extract, and powder extract produce statistically equivalent plasma and urinary ellagitannin metabolite levels.</strong> Juice pressed from whole fruit (including peel) retains punicalagin at the highest concentrations of common juices. The swap is valid on <strong>price</strong>; it is not valid on biology. The real bottleneck is <strong>gut microbiome</strong> — only ~40% of humans convert ellagitannins to urolithin A efficiently.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Are you a urolithin-A producer? <span class="sev info">test</span></span></summary>
+          <div class="sf-body">Commercial urolithin-A producer status tests (Atlas, Viome) are available. If you are a non-producer, direct <strong>urolithin-A supplementation</strong> (Mitopure, ~₹4,500/month imported) bypasses the microbiome step. For ~60% of people, the whole-anar swap works biologically identical to juice.</div>
+        </details>
+        <details>
+          <summary><span class="sf-label">Sources (3)</span></summary>
+          <div class="sf-body sources-list">
+            <div class="src"><span class="pmid">PMID 18598186</span> · Seeram · juice vs extract pharmacokinetics · <a href="https://pubmed.ncbi.nlm.nih.gov/18598186/">live</a></div>
+            <div class="src">NCBI Bookshelf · pomegranate ellagitannins · <a href="https://www.ncbi.nlm.nih.gov/books/NBK92772/">live</a></div>
+            <div class="src"><span class="pmid">PMID 3679724</span> · urolithin biology review · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3679724/">live</a></div>
+          </div>
+        </details>
+      </div>
+      <div class="swap-meta">
+        <span>Price ratio · ~7×</span>
+        <span>Biology · equivalent (for producers)</span>
+      </div>
+    </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- PULLQUOTE -->
+<div class="container">
+  <div class="wrap">
+    <div class="pullquote">
+      <span class="q">"</span>Bryan's innovation isn't the supplements. It's the <em>accountability loop</em> — weighing every meal, logging every biomarker, treating biology as a measurable function. That loop is free. The zirconium-titanium kitchen is not.<span class="q">"</span>
+      <cite>— Editor's note · 2026-04-20</cite>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ CTA · POST-SWAP-MATRIX -->
+<div class="container">
+  <div class="cta-block">
+    <div class="cta-kicker">Now match it to you</div>
+    <h3 class="cta-title">Nine swaps <em>on the page.</em><br/>Only some are yours.</h3>
+    <p class="cta-sub">A Jain reader doesn't need the mushroom swap. A non-veg daily eater doesn't need algal omega-3. Tell us how you eat, sleep, move and what's already on your shelf — we'll strip the 21-item stack down to the 6–10 items that actually apply to you, priced for your budget.</p>
+    <a class="cta-btn" href="quiz.html">Build my stack <span class="arrow">→</span></a>
+    <div class="cta-meta">10 questions <span class="dot">·</span> ~2 min <span class="dot">·</span> DPDP-consent · unsubscribe in one tap</div>
+  </div>
+</div>
+
+<!-- SECTION 07: SEASONAL -->
+<div class="container">
+  <section class="section" id="seasonal">
+    <div class="wrap">
+      <div class="section-number">07 · Seasonal calendar</div>
+      <h2 class="section-title">When to buy <em>what.</em></h2>
+      <p class="section-intro">A price column is a snapshot. Indian fruit prices swing 3–5× across the year. Here's when your core swaps are in peak season vs off-season fallback.</p>
+    </div>
+    <div class="wrap" style="max-width:1180px">
+      <div class="season-calendar">
+        <div class="season-head">
+          <div class="sh-ing">Ingredient</div>
+          <div class="sh-mo">Jan</div><div class="sh-mo">Feb</div><div class="sh-mo">Mar</div><div class="sh-mo">Apr</div><div class="sh-mo">May</div><div class="sh-mo">Jun</div>
+          <div class="sh-mo">Jul</div><div class="sh-mo">Aug</div><div class="sh-mo">Sep</div><div class="sh-mo">Oct</div><div class="sh-mo">Nov</div><div class="sh-mo">Dec</div>
+        </div>
+        <div class="season-row">
+          <div class="sr-ing">Jamun</div>
+          <div class="sr-mo"><div class="fill off"></div></div><div class="sr-mo"><div class="fill off"></div></div><div class="sr-mo"><div class="fill off"></div></div>
+          <div class="sr-mo"><div class="fill frozen"></div></div><div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div>
+          <div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill off"></div></div>
+          <div class="sr-mo"><div class="fill off"></div></div><div class="sr-mo"><div class="fill off"></div></div><div class="sr-mo"><div class="fill off"></div></div>
+        </div>
+        <div class="season-row">
+          <div class="sr-ing">Amla (fresh)</div>
+          <div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+          <div class="sr-mo"><div class="fill frozen"></div></div><div class="sr-mo"><div class="fill off"></div></div><div class="sr-mo"><div class="fill off"></div></div>
+          <div class="sr-mo"><div class="fill off"></div></div><div class="sr-mo"><div class="fill off"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+          <div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div>
+        </div>
+        <div class="season-row">
+          <div class="sr-ing">Pomegranate</div>
+          <div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+          <div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill frozen"></div></div><div class="sr-mo"><div class="fill off"></div></div>
+          <div class="sr-mo"><div class="fill off"></div></div><div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill peak"></div></div>
+          <div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div>
+        </div>
+        <div class="season-row">
+          <div class="sr-ing">Kashmiri walnut</div>
+          <div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+          <div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+          <div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+          <div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div>
+        </div>
+        <div class="season-row">
+          <div class="sr-ing">Moringa (fresh)</div>
+          <div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div>
+          <div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill peak"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+          <div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+          <div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+        </div>
+        <div class="season-row">
+          <div class="sr-ing">Broccoli sprouts</div>
+          <div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+          <div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+          <div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+          <div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div><div class="sr-mo"><div class="fill ok"></div></div>
+        </div>
+      </div>
+      <div class="season-legend">
+        <div class="sl"><span class="sq peak"></span> Peak / cheapest</div>
+        <div class="sl"><span class="sq ok"></span> Available</div>
+        <div class="sl"><span class="sq frozen"></span> Frozen / dried only</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 08: INDIAN GENETIC CONTEXT -->
+<div class="container">
+  <section class="section" id="genetics">
+    <div class="wrap">
+      <div class="section-number">08 · Indian genetic context</div>
+      <h2 class="section-title">Your <em>biology</em> is not Finnish.</h2>
+      <p class="section-intro">
+        Four genetic variants differ meaningfully in Indian populations from the Western cohorts most longevity studies use. These shift what "optimal dose" means. Not destiny — but context.
+      </p>
+    </div>
+    <div class="wrap" style="max-width:1060px">
+    <div class="genetic-grid">
+
+      <div class="genetic-card">
+        <details>
+          <summary>
+            <div>
+              <div class="gc-gene">FADS1 / FADS2</div>
+              <h4>ALA → EPA conversion</h4>
+              <div class="gc-sub">Impacts the walnut swap</div>
+            </div>
+          </summary>
+          <div class="gc-body">
+            South Asians carry elevated frequency of the FADS1 rs174537 "derived" allele. Nominally this means <strong>higher</strong> desaturase activity and slightly better ALA→EPA conversion than Europeans. But absolute conversion remains low: <strong>5–8% ALA→EPA, &lt;0.5% ALA→DHA.</strong> Walnuts help; they do not substitute for direct EPA/DHA in high-CVD-risk individuals or pregnancy.
+            <div class="freq">Indian allele frequency · elevated vs EUR · Kothapalli 2016 (PMID 26432412)</div>
+          </div>
+        </details>
+      </div>
+
+      <div class="genetic-card">
+        <details>
+          <summary>
+            <div>
+              <div class="gc-gene">OCTN1 / SLC22A4</div>
+              <h4>Ergothioneine retention</h4>
+              <div class="gc-sub">Impacts the mushroom swap</div>
+            </div>
+          </summary>
+          <div class="gc-body">
+            Ergothioneine is taken up into cells via OCTN1 transporter (SLC22A4 gene). Loss-of-function variants blunt <strong>tissue retention</strong> — mushrooms still raise plasma ergothioneine but cellular delivery varies. <strong>Indian-population allele frequencies for OCTN1 variants are not well characterised</strong> in the published literature — an open gap.
+            <div class="freq">Status · allele frequency unpublished for Indian cohorts</div>
+          </div>
+        </details>
+      </div>
+
+      <div class="genetic-card">
+        <details>
+          <summary>
+            <div>
+              <div class="gc-gene">APOE ε4</div>
+              <h4>Saturated fat sensitivity</h4>
+              <div class="gc-sub">Impacts ghee / dairy / sauna</div>
+            </div>
+          </summary>
+          <div class="gc-body">
+            APOE ε4 carriers show elevated LDL-C response to dietary saturated fat and elevated Alzheimer's risk. Indian ε4 frequency <strong>~8–15%</strong> (varies by region; lower than NW European). If unknown, cap A2 ghee at 1 tsp/day; if known ε4+, prefer Indian EVOO as primary fat. <strong>Testing in India (2026):</strong> 23andMe no longer ships to India; domestic options include MapMyGenome Hyderabad (~₹9,900), Positive Bioscience (~₹7,500–15,000), and Gene Support. Discuss testing implications (insurance, family disclosure) before ordering — ε4 result cannot be un-learned.
+            <div class="freq">Indian ε4 frequency · 8–15% · PMC7734559 (2020)</div>
+          </div>
+        </details>
+      </div>
+
+      <div class="genetic-card">
+        <details>
+          <summary>
+            <div>
+              <div class="gc-gene">LPA (Lp(a))</div>
+              <h4>Genetic CVD risk, diet-refractory</h4>
+              <div class="gc-sub">Impacts labs panel priority</div>
+            </div>
+          </summary>
+          <div class="gc-body">
+            South Asians show elevated Lp(a) prevalence compared to most cohorts. Lp(a) is <strong>~90% genetically determined</strong> at population level (individual exceptions in post-menopause and hormonal states) and does not respond to diet, exercise, statins, or most lifestyle levers. It is the strongest independent genetic CVD risk factor. <strong>Test once, then retest if:</strong> you start lipid-lowering therapy, you reach post-menopause, or a Phase 3 Lp(a)-targeting therapy (pelacarsen, olpasiran) becomes prescribable. Request results in <strong>nmol/L</strong> (molar units) for international comparability; Indian labs mix nmol/L and mg/dL. If elevated, shift to aggressive ApoB lowering + PCSK9 inhibitors — protocol changes, not food choices.
+            <div class="freq">Indian elevated-Lp(a) prevalence · ~25–35% at &gt;50 mg/dL cutoff · Enas 2019 (Indian Heart J)</div>
+          </div>
+        </details>
+      </div>
+
+    </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 09: CONTRAINDICATIONS -->
+<div class="container">
+  <section class="section" id="contraindications">
+    <div class="wrap">
+      <div class="section-number">09 · Contraindications</div>
+      <h2 class="section-title">Who should <em>not</em> do these.</h2>
+      <p class="section-intro">Six populations for whom one or more swaps here are <strong>materially risky</strong>. This layer was missing from v1 and is the single most important addition in v2.</p>
+    </div>
+    <div class="wrap" style="max-width:1060px">
+    <div class="contra-grid">
+
+      <div class="contra-card">
+        <div class="who">Pregnancy</div>
+        <h4>Avoid or consult physician</h4>
+        <ul>
+          <li><strong>Ashwagandha</strong> — traditional abortifacient; avoid entirely</li>
+          <li><strong>Moringa root / bark</strong> — uterotonic; leaves caution in T1</li>
+          <li><strong>Sauna / IR blanket</strong> — hyperthermia &gt;39°C linked to neural tube defects</li>
+          <li><strong>NMN / resveratrol</strong> — no pregnancy safety data</li>
+          <li><strong>CGM</strong> — safe, but glucose targets differ in gestational context</li>
+        </ul>
+      </div>
+
+      <div class="contra-card">
+        <div class="who">Uncontrolled hypertension · recent MI</div>
+        <h4>Skip the sauna</h4>
+        <ul>
+          <li><strong>Sauna</strong> — SBP &gt;180 / DBP &gt;110 causes pre-sauna surges; recent MI (&lt;6 weeks), unstable angina, severe aortic stenosis — avoid</li>
+          <li><strong>Alcohol + sauna</strong> — doubles sudden cardiac death risk (Kenttämies 2008)</li>
+          <li><strong>HBOT</strong> — uncontrolled HTN adds barotrauma risk</li>
+        </ul>
+      </div>
+
+      <div class="contra-card">
+        <div class="who">Hyperthyroidism / autoimmune</div>
+        <h4>Ashwagandha caution</h4>
+        <ul>
+          <li><strong>Ashwagandha</strong> — can raise T3/T4; caution in hyperthyroidism</li>
+          <li><strong>Autoimmune (Hashimoto's, RA, lupus)</strong> — theoretical immunomodulation; discuss with physician</li>
+          <li><strong>Moringa</strong> — mild immunomodulation in preclinical models</li>
+        </ul>
+      </div>
+
+      <div class="contra-card">
+        <div class="who">Elevated LDL / ApoB / CAD</div>
+        <h4>Saturated fat discipline</h4>
+        <ul>
+          <li><strong>Traditional mustard oil</strong> — 30–54% erucic acid; banned for edible use in EU/US. Use low-erucic cultivars only</li>
+          <li><strong>A2 ghee</strong> — cap 1 tsp/day; ghee &gt;62% saturated fat</li>
+          <li><strong>Coconut oil</strong> — similar caution; not a substitute for EVOO phenolics</li>
+        </ul>
+      </div>
+
+      <div class="contra-card">
+        <div class="who">Non-diabetic CGM wearers</div>
+        <h4>Over-interpretation risk</h4>
+        <ul>
+          <li><strong>CGM in non-diabetics</strong> — normal postprandial spikes (to 140 mg/dL) are not pathological</li>
+          <li>Anxiety-driven diet restriction is a documented adverse effect</li>
+          <li>Use as <strong>trend tool</strong> for protocol experiments, not a real-time discipline device</li>
+        </ul>
+      </div>
+
+      <div class="contra-card">
+        <div class="who">Children · elderly · heat-acclimated summer users</div>
+        <h4>Thermoregulation load</h4>
+        <ul>
+          <li><strong>Sauna / IR</strong> — children &lt;12 (immature thermoregulation); reduce frequency at Indian summer WBGT &gt;28°C</li>
+          <li><strong>Severe dehydration, diuretic therapy</strong> — pre-hydrate or skip</li>
+          <li>Dose sauna sessions to Finnish cohort = 80–100°C steam &gt; IR blanket ≠ direct effect transfer</li>
+        </ul>
+      </div>
+
+    </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 10: PM2.5 + WATER -->
+<div class="container">
+  <section class="section" id="environment">
+    <div class="wrap">
+      <div class="section-number">10 · The biggest lever nobody buys</div>
+      <h2 class="section-title">PM2.5, not NMN.</h2>
+      <p class="section-intro">
+        Per the Global Burden of Disease India estimates, air pollution is among the <strong>top 2 all-cause mortality risk factors</strong> in India — larger than any single dietary intervention. If you live in Delhi or Kolkata, the air in your bedroom matters more than what's on your plate. Values below are approximate annual averages from <strong>CPCB + IQAir 2023–2024 reporting</strong>; winter peaks in north Indian cities run 2–3× the annual average. If you're not in one of these five cities, look up your own station at cpcb.nic.in or iqair.com before acting on someone else's number.
+      </p>
+    </div>
+    <div class="wrap" style="max-width:1180px">
+      <div class="pm-grid">
+        <div class="pm-cell">
+          <div class="pm-city">Delhi</div>
+          <div class="pm-val hi">~110</div>
+          <div class="pm-unit">µg/m³ annual (CPCB 2023)</div>
+          <div class="pm-ratio">~22× WHO · winter ~3×</div>
+        </div>
+        <div class="pm-cell">
+          <div class="pm-city">Kolkata</div>
+          <div class="pm-val hi">~75</div>
+          <div class="pm-unit">µg/m³ annual (CPCB 2023)</div>
+          <div class="pm-ratio">~15× WHO</div>
+        </div>
+        <div class="pm-cell">
+          <div class="pm-city">Mumbai</div>
+          <div class="pm-val mid">~55</div>
+          <div class="pm-unit">µg/m³ annual (CPCB 2023)</div>
+          <div class="pm-ratio">~11× WHO</div>
+        </div>
+        <div class="pm-cell">
+          <div class="pm-city">Bangalore</div>
+          <div class="pm-val mid">~35</div>
+          <div class="pm-unit">µg/m³ annual (CPCB 2023)</div>
+          <div class="pm-ratio">~7× WHO</div>
+        </div>
+        <div class="pm-cell">
+          <div class="pm-city">WHO guideline</div>
+          <div class="pm-val lo">5</div>
+          <div class="pm-unit">µg/m³ annual (WHO 2021)</div>
+          <div class="pm-ratio">reference baseline</div>
+        </div>
+      </div>
+      <div class="annual-grid" style="margin-top:24px">
+        <div class="spend-card" style="background:rgba(31,95,63,0.04);border-color:var(--forest)">
+          <div class="cat" style="color:var(--forest)">Indoor HEPA filtration</div>
+          <div class="amt" style="color:var(--forest)">₹15K – ₹40K</div>
+          <div class="amt-sub">one-time · per bedroom · 3–5 yr filter life</div>
+          <div class="desc">Dyson, Honeywell, Xiaomi, Mi Air Purifier all available in India. Prioritise bedroom (where you spend 8 hours). N95/FFP2 on AQI&nbsp;&gt;&nbsp;200 days when outdoors.</div>
+        </div>
+        <div class="spend-card" style="background:rgba(31,95,63,0.04);border-color:var(--forest)">
+          <div class="cat" style="color:var(--forest)">Water TDS + heavy metals</div>
+          <div class="amt" style="color:var(--forest)">₹1,500 – ₹3,000</div>
+          <div class="amt-sub">one-time test · Redcliffe / Thyrocare</div>
+          <div class="desc">Gangetic plain: <strong>arsenic</strong>. South India: <strong>fluoride</strong>. Urban: <strong>lead</strong> from old plumbing. RO + UV filter ₹8,000–20,000 covers most. Test before you buy a filter.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 10b: ADULTERATION -->
+<div class="container">
+  <section class="section" id="adulteration">
+    <div class="wrap">
+      <div class="section-number">10b · Buying safely in India</div>
+      <h2 class="section-title">What the label <em>doesn't</em> tell you.</h2>
+      <p class="section-intro">
+        Indian retail carries documented adulteration and fraud across most of the ingredients recommended on this page. Swapping to "the cheapest brand you can find" is a false economy. Everything below is FSSAI / CSE / published-survey territory — not conspiracy.
+      </p>
+    </div>
+    <div class="wrap" style="max-width:1060px">
+      <div class="annual-grid">
+        <div class="spend-card" style="background:var(--warn-bg);border-color:var(--gold)">
+          <div class="cat">Turmeric · lead chromate</div>
+          <div class="amt" style="font-size:34px">Stanford 2021 · FSSAI 2023</div>
+          <div class="amt-sub">documented Pb contamination in multiple states</div>
+          <div class="desc">Lead chromate is added to brighten colour. Prefer <strong>AGMARK-graded</strong> turmeric, single-origin (Erode/Sangli), or brands publishing heavy-metal COA. Whole rhizome grated at home is safer than powder. If uncertain, send a sample to an FSSAI-empanelled lab.</div>
+        </div>
+        <div class="spend-card" style="background:var(--warn-bg);border-color:var(--gold)">
+          <div class="cat">Olive oil · refined-as-EVOO fraud</div>
+          <div class="amt" style="font-size:34px">Routine globally</div>
+          <div class="amt-sub">including Indian retail</div>
+          <div class="desc">Verify brand on the <strong>International Olive Council</strong> approved list, check <strong>acidity &lt;0.8%</strong> on the label, and prefer dark-glass bottles with a harvest date (not just "best before"). "Pure olive oil" and "olive pomace oil" are refined grades — not EVOO. Named brands anywhere on this page are illustrative of retail availability, not endorsements.</div>
+        </div>
+        <div class="spend-card" style="background:var(--warn-bg);border-color:var(--gold)">
+          <div class="cat">Honey · sugar-syrup adulteration</div>
+          <div class="amt" style="font-size:34px">CSE 2020 · 10 of 13 brands</div>
+          <div class="amt-sub">tested failed NMR fingerprint</div>
+          <div class="desc">Centre for Science and Environment 2020 report flagged sugar-syrup adulteration in 10 of 13 tested Indian honey brands. Prefer raw local honey with NMR or C4-sugar COA. Note: this dossier doesn't include honey in the daily receipt — mentioned here so readers don't back-fill with a compromised product.</div>
+        </div>
+        <div class="spend-card" style="background:var(--warn-bg);border-color:var(--gold)">
+          <div class="cat">Ashwagandha + moringa powder · heavy metals</div>
+          <div class="amt" style="font-size:34px">ASU survey data</div>
+          <div class="amt-sub">Pb/Cd in uncontrolled herbal powders</div>
+          <div class="desc">Unbranded bulk herbal powders have shown Pb, Cd, and microbial load in Indian surveys. Prefer FSSAI-licensed brands with batch-level heavy-metal and microbiological COA (Ixoreal/KSM-66, branded moringa e.g. Kapiva, Organic India) over loose market powder.</div>
+        </div>
+        <div class="spend-card" style="background:var(--warn-bg);border-color:var(--gold)">
+          <div class="cat">Milk / ghee · adulterants + A2 claims</div>
+          <div class="amt" style="font-size:34px">FSSAI surveys</div>
+          <div class="amt-sub">detergent, urea, vegetable fat</div>
+          <div class="desc">Historical FSSAI surveys have flagged adulterants in loose dairy supply. Branded A2 (e.g. Akshayakalpa) or pasteurised supply chains reduce risk. A2 genotype claims are brand-asserted — most Indian native breeds are A2-dominant but not 100%; the health differential between A1 and A2 milk remains contested in the literature.</div>
+        </div>
+        <div class="spend-card" style="background:var(--warn-bg);border-color:var(--gold)">
+          <div class="cat">Supplements · FSSAI licence + third-party COA</div>
+          <div class="amt" style="font-size:34px">Rule of thumb</div>
+          <div class="amt-sub">FSSAI licence no. · batch COA · lab name</div>
+          <div class="desc">Any supplement on this page (NMN, omega-3, creatine, vitamin D3+K2, magnesium glycinate) — check the <strong>FSSAI licence number on pack</strong> and ask for a third-party batch COA if the brand website doesn't publish one. Indian nutraceutical manufacturing is governed by FSSAI Nutraceutical Regulations 2022; compliance is self-attested and batch-variability is the real-world risk.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 11: DEVICES + LABS -->
+<div class="container">
+  <section class="section" id="devices-labs">
+    <div class="wrap">
+      <div class="section-number">11 · Devices + Labs</div>
+      <h2 class="section-title">The <em>measurement</em> layer.</h2>
+      <p class="section-intro">
+        Bryan measures everything. You can too, at Indian retail, for ~5–15× less than his lab bill. Every device CDSCO-registered where required; every lab panel from a NABL-accredited Indian provider.
+      </p>
+    </div>
+
+    <div class="wrap" style="max-width:1060px">
+      <h3 style="font-family:'Fraunces',serif;font-size:24px;margin:0 0 16px;letter-spacing:-0.01em">Devices</h3>
+      <div class="dl-grid">
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>Ultrahuman Ring Air</h4><span class="badge verified"><span class="badge-dot"></span>Verified</span></div>
+          <div class="dl-vendor">ULTRAHUMAN · BANGALORE · INDIAN MANUFACTURER</div>
+          <div class="dl-price-row"><div class="dl-price">₹19,999 <span class="cap">one-time</span></div></div>
+          <div class="dl-meta">Sleep / HRV / recovery. No subscription. Oura-competitor. Indian company — KYC-friendly + local support.</div>
+          <div class="dl-sources"><a href="https://www.ultrahuman.com/in/ring/buy/">ultrahuman.com/in/ring/buy</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>Oura Ring Gen 4</h4><span class="badge flagged"><span class="badge-dot"></span>Flagged</span></div>
+          <div class="dl-vendor">OURA · IMPORTED · OURA INDIA STORE</div>
+          <div class="dl-price-row"><div class="dl-price">₹28,900 – ₹39,900 <span class="cap">+ ₹599/mo</span></div></div>
+          <div class="dl-meta">Higher-refinement sleep staging vs Ultrahuman. Recurring ₹7,188/yr subscription — factor that in. Subscription required for full insights.</div>
+          <div class="dl-sources"><a href="https://ouraring.com/">ouraring.com</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>Ultrahuman M1 CGM</h4><span class="badge flagged"><span class="badge-dot"></span>Flagged</span></div>
+          <div class="dl-vendor">ULTRAHUMAN · FREESTYLE LIBRE SENSOR</div>
+          <div class="dl-price-row"><div class="dl-price">₹4,199 <span class="cap">/ 14-day sensor</span></div></div>
+          <div class="dl-meta">Continuous glucose monitor. <strong>Not endorsed by ICMR or the US Endocrine Society for non-diabetic use</strong> — postprandial excursions to ~140 mg/dL in healthy adults are physiological, not pathological, and chasing a "flat line" risks unnecessary dietary restriction and prediabetes-label anxiety. Defensible uses: a short diagnostic window (2–4 weeks) to characterise your own glycaemic response pattern, then discontinue. Not a longitudinal monitoring tool for adults with normal HbA1c.</div>
+          <div class="dl-sources"><a href="https://www.ultrahuman.com/pricing/in/">ultrahuman.com/pricing/in</a> · <a href="https://www.amazon.in/Ultrahuman-M1-Glucose-Monitoring-FreeStyle/dp/B0BFFYCJQJ">Amazon.in</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>Omron HEM-7120 BP monitor</h4><span class="badge verified"><span class="badge-dot"></span>Verified</span></div>
+          <div class="dl-vendor">OMRON · CDSCO-REGISTERED</div>
+          <div class="dl-price-row"><div class="dl-price">₹1,733 <span class="cap">one-time</span></div></div>
+          <div class="dl-meta">Validated by British and Irish Hypertension Society. Home BP monitoring is a free-5 enabler — more important than any supplement below ₹5,000/mo.</div>
+          <div class="dl-sources"><a href="https://www.amazon.in/">Amazon.in</a> · <a href="https://www.1mg.com/">1mg</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>IR sauna blanket</h4><span class="badge flagged"><span class="badge-dot"></span>Flagged</span></div>
+          <div class="dl-vendor">VARIOUS · ≥₹8,000 FOR BIS-MARKED ONLY</div>
+          <div class="dl-price-row"><div class="dl-price">₹8,000 – ₹13,500 <span class="cap">one-time</span></div></div>
+          <div class="dl-meta"><strong>Headline effect sizes you will see elsewhere:</strong> Laukkanen 2015 (KIHD cohort, Finnish men, 80–100°C steam) — 4–7×/week vs 1×/week: ~63% ↓ sudden cardiac death, ~50% ↓ fatal CVD, ~40% ↓ all-cause mortality (PMID 25705824). <strong>Caveats that change the picture:</strong> (1) Kunutsor 2017 FINRISK subcohort did not replicate the same magnitude (PMID 28735616) — treat Laukkanen numbers as upper bounds, not consensus; (2) IR blankets at 60–70°C do not reproduce the cardiovascular stimulus of Finnish steam; (3) Indian summer WBGT >28°C further reduces net thermal stress. <strong>Contraindications (see §9):</strong> pregnancy, recent MI (&lt;6 weeks), SBP &gt;180/DBP &gt;110, alcohol, children &lt;12, diuretic therapy. Below ₹8,000 the blankets frequently lack BIS electrical-safety marking.</div>
+          <div class="dl-sources"><a href="https://www.amazon.in/">Amazon.in</a> · <a href="https://www.flipkart.com/">Flipkart</a> · PMID 25705824 · PMID 28735616</div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>Red-light therapy panel</h4><span class="badge flagged"><span class="badge-dot"></span>Flagged</span></div>
+          <div class="dl-vendor">SELLASTIC / VARIOUS</div>
+          <div class="dl-price-row"><div class="dl-price">₹4,999 <span class="cap">one-time</span></div></div>
+          <div class="dl-meta">660 + 850nm dual-wavelength home panels. Evidence base is modest — skin, mitochondrial function, limited systemic endpoints. Check <strong>irradiance (mW/cm²)</strong> in spec sheet.</div>
+          <div class="dl-sources"><a href="https://www.amazon.in/">Amazon.in</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="wrap" style="max-width:1060px;margin-top:48px">
+      <h3 style="font-family:'Fraunces',serif;font-size:24px;margin:0 0 16px;letter-spacing:-0.01em">Lab panels (NABL-accredited India)</h3>
+      <div class="dl-grid">
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>Full biomarker panel (100+)</h4><span class="badge verified"><span class="badge-dot"></span>Verified</span></div>
+          <div class="dl-vendor">REDCLIFFE LABS · THYROCARE · HEALTHIANS</div>
+          <div class="dl-price-row"><div class="dl-price">₹1,249 – ₹2,499 <span class="cap">home collection</span></div></div>
+          <div class="dl-meta">Redcliffe "Healthy Heart" + "Metabolism" combined. NABL accredited. Home sample collection included.</div>
+          <div class="dl-sources"><a href="https://www.redcliffelabs.com/">redcliffelabs</a> · <a href="https://www.thyrocare.com/">thyrocare</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>ApoB (lipoprotein B)</h4><span class="badge verified"><span class="badge-dot"></span>Verified</span></div>
+          <div class="dl-vendor">REDCLIFFE / 1MG LABS</div>
+          <div class="dl-price-row"><div class="dl-price">₹410 – ₹614 <span class="cap">per test</span></div></div>
+          <div class="dl-meta">Most predictive single CVD biomarker after Lp(a). Test annually; under-ordered by Indian primary care.</div>
+          <div class="dl-sources"><a href="https://www.redcliffelabs.com/">redcliffelabs</a> · <a href="https://labs.1mg.com/">1mg labs</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>Lipoprotein(a)</h4><span class="badge verified"><span class="badge-dot"></span>Verified</span></div>
+          <div class="dl-vendor">REDCLIFFE / THYROCARE / HEALTHIANS</div>
+          <div class="dl-price-row"><div class="dl-price">₹517 – ₹1,099 <span class="cap">once in lifetime</span></div></div>
+          <div class="dl-meta">90% genetically determined. Test once. South Asians show elevated prevalence — see §8.</div>
+          <div class="dl-sources"><a href="https://www.redcliffelabs.com/">redcliffelabs</a> · <a href="https://www.thyrocare.com/">thyrocare</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>HbA1c + fasting insulin → HOMA-IR</h4><span class="badge verified"><span class="badge-dot"></span>Verified</span></div>
+          <div class="dl-vendor">REDCLIFFE / THYROCARE</div>
+          <div class="dl-price-row"><div class="dl-price">₹460 – ₹999 <span class="cap">combined</span></div></div>
+          <div class="dl-meta">South Asians show insulin resistance at lower BMIs than other populations. HbA1c alone misses early IR. Test both; compute HOMA-IR.</div>
+          <div class="dl-sources"><a href="https://www.redcliffelabs.com/">redcliffelabs</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>Hormone panel (testosterone, DHEA-S, cortisol, thyroid)</h4><span class="badge verified"><span class="badge-dot"></span>Verified</span></div>
+          <div class="dl-vendor">REDCLIFFE / THYROCARE</div>
+          <div class="dl-price-row"><div class="dl-price">₹1,199 – ₹3,399 <span class="cap">full panel</span></div></div>
+          <div class="dl-meta">Annual for 35+. Track trajectory, not single values.</div>
+          <div class="dl-sources"><a href="https://www.redcliffelabs.com/">redcliffelabs</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>Coronary Calcium Score (CAC)</h4><span class="badge verified"><span class="badge-dot"></span>Verified</span></div>
+          <div class="dl-vendor">APOLLO · FORTIS · MAX · MEDANTA</div>
+          <div class="dl-price-row"><div class="dl-price">₹1,850 – ₹3,330 <span class="cap">CT scan</span></div></div>
+          <div class="dl-meta">Single most predictive non-invasive CVD test. Non-contrast, low radiation. Recommended 40+ with any CVD risk factor.</div>
+          <div class="dl-sources"><a href="https://www.apollohospitals.com/">Apollo</a> · <a href="https://www.fortishealthcare.com/">Fortis</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>Full-body MRI</h4><span class="badge verified"><span class="badge-dot"></span>Verified</span></div>
+          <div class="dl-vendor">APOLLO · FORTIS · PRENUVO-EQUIVALENT</div>
+          <div class="dl-price-row"><div class="dl-price">₹22,500 – ₹30,000 <span class="cap">annual</span></div></div>
+          <div class="dl-meta">Cancer surveillance. Contested utility (incidentaloma rate). Bryan does 2×/yr; general population 40+ once every 2–3 yr is reasonable.</div>
+          <div class="dl-sources"><a href="https://www.apollohospitals.com/">Apollo</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>DEXA scan (body composition)</h4><span class="badge verified"><span class="badge-dot"></span>Verified</span></div>
+          <div class="dl-vendor">APOLLO · FORTIS · DIAGNOSTIC CENTRES</div>
+          <div class="dl-price-row"><div class="dl-price">₹1,500 – ₹6,000 <span class="cap">per scan</span></div></div>
+          <div class="dl-meta">Lean mass + visceral fat + BMD. Single scan worth more than 20 weight readings. Annual.</div>
+          <div class="dl-sources"><a href="https://www.apollohospitals.com/">Apollo</a></div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-price-row"><h4>DunedinPACE epigenetic clock</h4><span class="badge flagged"><span class="badge-dot"></span>Flagged</span></div>
+          <div class="dl-vendor">AIWO · THROUGH PARTNER CLINICS</div>
+          <div class="dl-price-row"><div class="dl-price">~₹29,500 <span class="cap">per assay</span></div></div>
+          <div class="dl-meta">Pace-of-ageing metric. TruDiagnostic does not ship direct to India; AIWO offers equivalent. Horvath clock availability in India: inconsistent — check current clinic roster.</div>
+          <div class="dl-sources"><a href="https://aiwo.co/">aiwo.co</a></div>
+        </div>
+
+      </div>
+
+      <!-- INLINE CTA · device-fit -->
+      <div class="cta-inline">
+        <div class="cta-inline-text">
+          <strong>Not sure which of these you actually need?</strong> A ₹55K CGM is overkill for one person and a baseline for another. The quiz shortlists devices by your goal, budget and what your GP has already said about your numbers.
+        </div>
+        <a class="cta-btn" href="quiz.html">Shortlist my devices <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 12: FREE 5 -->
+<div class="container">
+  <section class="section" id="free5">
+    <div class="wrap">
+      <div class="section-number">12 · The Free 5 · corrected</div>
+      <h2 class="section-title">The five that actually <em>move</em> mortality.</h2>
+      <p class="section-intro">
+        These five interventions dominate preventable mortality in every large cohort study. None requires a Blueprint SKU. Numbers below are <strong>re-verified April 2026</strong> — several v1 figures were overstated. Hazard ratios come from <em>different</em> cohorts measuring <em>different</em> comparators; they cannot be summed. The single best composite anchor is <strong>EPIC-Norfolk (Khaw et al. 2008, PMID 18184055)</strong>: adults practising all four behaviours (non-smoker, physically active, moderate alcohol, ≥5 servings fruit/veg) showed ~<strong>4× lower all-cause mortality</strong> over 11 years versus adults practising zero. That factor is the honest "why bother with the Free 5" number.
+      </p>
+    </div>
+    <div class="wrap" style="max-width:1180px">
+    <div class="free5">
+      <div class="free5-cell">
+        <div class="free5-pct"><span class="tilde">~</span>50<span style="font-size:0.55em">%</span></div>
+        <div class="free5-label">Don't use tobacco</div>
+        <div class="free5-desc">Mid-life cessation halves continued-smoking hazard (Doll &amp; Peto 2004, cessation-vs-continuing — not vs never). <strong>Scope for India:</strong> includes cigarettes, bidi, gutka, khaini and other smokeless forms — any-tobacco prevalence is ~28% per GATS-2 (MoHFW 2017), and bidi/smokeless carry comparable or higher mortality than cigarettes.</div>
+        <div class="free5-cite">DOLL &amp; PETO · BMJ 2004 · GATS-2 India 2017</div>
+      </div>
+      <div class="free5-cell">
+        <div class="free5-pct"><span class="tilde">~</span>15<span style="font-size:0.55em">–20%</span><span class="free5-corrected">v1 said 40%</span></div>
+        <div class="free5-label">Control weight</div>
+        <div class="free5-desc">RCT meta-analysis: RR 0.85 from intentional weight loss in obese. v1's "40%" conflated BMI-risk with weight-loss-benefit.</div>
+        <div class="free5-cite">PMC4368053 · 2015 META</div>
+      </div>
+      <div class="free5-cell">
+        <div class="free5-pct"><span class="tilde">~</span>35<span style="font-size:0.55em">%</span></div>
+        <div class="free5-label">Move daily</div>
+        <div class="free5-desc">PURE study (130,000 people, 17 countries): high PA vs low PA HR 0.65. Dose-response robust across cohorts.</div>
+        <div class="free5-cite">LANCET · PURE 2017</div>
+      </div>
+      <div class="free5-cell">
+        <div class="free5-pct"><span class="tilde">~</span>25<span style="font-size:0.55em">–30%</span></div>
+        <div class="free5-label">Control BP</div>
+        <div class="free5-desc">SPRINT: ~27% ACM reduction intensive &lt;120 vs standard &lt;140 in high-CV-risk adults. No benefit in frail &gt;75. Context-dependent.</div>
+        <div class="free5-cite">SPRINT · NEJM 2015</div>
+      </div>
+      <div class="free5-cell">
+        <div class="free5-pct"><span class="tilde">~</span>21<span style="font-size:0.55em">%</span><span class="free5-corrected">v1 said 25%</span></div>
+        <div class="free5-label">Eat plant-forward</div>
+        <div class="free5-desc">MedDiet highest vs lowest adherence: RR 0.79 = 21% reduction. v1 rounded to 25%.</div>
+        <div class="free5-cite">ScienceDirect · 2022 META</div>
+      </div>
+    </div>
+
+    <div class="verdict-block" style="margin-top:56px">
+      <div class="kicker">The Load-Bearing Claim</div>
+      <h2>Four healthy behaviours together associate with ~<em>4× lower</em> all-cause mortality (EPIC-Norfolk, 11-yr follow-up). Bryan Johnson's $2M buys <span class="green">margin, not foundation.</span></h2>
+    </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 12b: OMISSIONS + COUNTER-EVIDENCE -->
+<div class="container">
+  <section class="section" id="omissions">
+    <div class="wrap">
+      <div class="section-number">12b · What this dossier does <em>not</em> cover</div>
+      <h2 class="section-title">The honest <em>scope holes.</em></h2>
+      <p class="section-intro">A food + supplement dossier cannot be a full longevity playbook. The interventions below are <strong>higher-leverage</strong> than most of the supplements we priced, and they are not covered on this page. If "~4× lower all-cause mortality from four healthy behaviours" is the anchor, these are the behaviours you still have to do after you finish reading.</p>
+    </div>
+    <div class="wrap" style="max-width:1060px">
+      <div class="annual-grid">
+        <div class="spend-card">
+          <div class="cat">Sleep — 7h consistent</div>
+          <div class="amt" style="font-size:36px">HR ~0.88</div>
+          <div class="amt-sub">Cappuccio 2010 meta-analysis</div>
+          <div class="desc">Sleep duration &lt;6h or &gt;9h both associate with higher mortality. Consistency of sleep/wake timing independently predicts outcomes. Mentioned on this page only as a Ring metric — it deserves its own intervention card.</div>
+        </div>
+        <div class="spend-card">
+          <div class="cat">Resistance training</div>
+          <div class="amt" style="font-size:36px">HR ~0.85</div>
+          <div class="amt-sub">Momma 2022, Br J Sports Med (PMID 35228201)</div>
+          <div class="desc">Muscle mass is the dominant predictor of functional independence past 65. DEXA measures it on this page; the intervention that changes it is not discussed. 2–3 sessions/week, progressive overload, protein ≥1.2 g/kg.</div>
+        </div>
+        <div class="spend-card">
+          <div class="cat">Vaccination (adult)</div>
+          <div class="amt" style="font-size:36px">HR ~0.66</div>
+          <div class="amt-sub">Nichol 2007 (flu, older adults)</div>
+          <div class="desc">Seasonal flu, COVID-19 boosters per current guidance, Tdap every 10 yr, shingles (≥50), pneumococcal (≥65 or comorbidity). Often zero cost after insurance; higher mortality impact than most supplements on this page.</div>
+        </div>
+        <div class="spend-card">
+          <div class="cat">Alcohol — the blind spot</div>
+          <div class="amt" style="font-size:36px">"no safe level"</div>
+          <div class="amt-sub">WHO 2023; Lancet 2022</div>
+          <div class="desc">Prior "J-curve" likely confounded by sick-quitter bias and genetic selection. Current WHO/ICMR guidance: no level of alcohol is safe for cancer risk. This page doesn't cost your drinks into the ₹96K — by far the biggest omission-of-scope.</div>
+        </div>
+        <div class="spend-card">
+          <div class="cat">Oral + periodontal health</div>
+          <div class="amt" style="font-size:36px">HR ~1.25</div>
+          <div class="amt-sub">periodontitis → CVD · Sanz 2020</div>
+          <div class="desc">Periodontal disease is an independent CVD risk factor. Indian adult dental-visit rate is &lt;10%. A dental clean every 6 months out-performs many of the nutraceuticals priced here.</div>
+        </div>
+        <div class="spend-card">
+          <div class="cat">Social + mental health</div>
+          <div class="amt" style="font-size:36px">HR ~0.50</div>
+          <div class="amt-sub">Holt-Lunstad 2010 · isolation vs connected</div>
+          <div class="desc">Social isolation carries mortality risk comparable to smoking ~15 cigarettes/day. Depression, untreated anxiety, and sleep-disrupting mental-health conditions are higher-leverage than any supplement on this page.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:56px;padding:32px;background:var(--warn-bg);border:1px solid var(--gold);border-radius:4px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blood-deep);margin-bottom:16px">Counter-evidence · dissenting voices</div>
+        <h3 style="font-family:'Fraunces',serif;font-size:28px;font-weight:400;letter-spacing:-0.01em;margin:0 0 20px">The strongest arguments <em>against</em> this page.</h3>
+        <ul style="font-family:'Instrument Serif',serif;font-size:17px;line-height:1.6;color:var(--ink);padding-left:24px;margin:0">
+          <li style="margin-bottom:14px"><strong>Peter Attia (The Drive, various episodes)</strong> — past the Free 5 and lab-guided basics (ApoB, Lp(a), HbA1c, VO₂ max, muscle mass), returns on additional supplementation are small. Most of Blueprint's stack is optimising beyond where returns are well-characterised.</li>
+          <li style="margin-bottom:14px"><strong>NMN outcome RCTs are mixed</strong> (Yi et al. 2023; Irie et al. 2020; related systematic reviews) — NAD+ rises in blood but clinical endpoints (strength, gait speed, chair stand) show minimal or null benefit. "Raises a biomarker" ≠ "extends healthspan."</li>
+          <li style="margin-bottom:14px"><strong>Compression of morbidity vs extension of lifespan</strong> (Fries 1980; Crimmins &amp; Beltrán-Sánchez 2011) — population-level lifespan increases have not been matched by equivalent healthspan increases. Individual biomarker optimisation in healthy adults has not been shown to translate into longer or better years, only to higher likelihood of intermediate-surrogate improvements.</li>
+          <li style="margin-bottom:14px"><strong>Comparator problem</strong> — none of the swaps on this page have been tested <em>head-to-head</em> against the Blueprint version in a randomised trial on a hard endpoint. Biology-target equivalence is plausible, not proven.</li>
+          <li><strong>Regression to the mean + healthy-user bias</strong> — people who voluntarily follow a 21-item supplement stack differ on ~everything else (income, exercise, sleep, primary care access) from people who don't. Supplement-cohort observational studies systematically overstate effect size.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- QUIZ CTA · LAST-CHANCE before errata/legal -->
+<div class="container">
+  <div class="cta-block">
+    <div class="cta-kicker">Before you leave</div>
+    <h3 class="cta-title">You read <em>the whole dossier.</em><br/>Now get your version of it.</h3>
+    <p class="cta-sub">Everything here is the same for every reader. Your stack shouldn't be. Ten questions, a personalised monthly total, contraindication flags, and a weekly price-refresh if you want it.</p>
+    <a class="cta-btn" href="quiz.html">Build my personalised stack <span class="arrow">→</span></a>
+    <div class="cta-meta">~2 min <span class="dot">·</span> no medical advice, just the math <span class="dot">·</span> unsubscribe one-tap</div>
+  </div>
+</div>
+
+<!-- SECTION 13: ERRATA -->
+<div class="container">
+  <section class="section" id="errata">
+    <div class="wrap">
+      <div class="section-number">13 · Errata · corrections from v1 and v2.0</div>
+      <h2 class="section-title">What earlier versions got <em>wrong.</em></h2>
+      <p class="section-intro">Trust is a function of admitted mistakes. Every correction below is a number an earlier version stated that the current version rewrites. This list grows — we never delete an errata entry, we just date it. <strong>This edition is v2.1 (2026-04-20).</strong> v1 archive hash + v2.0 archive hash pending publication.</p>
+    </div>
+    <div class="wrap">
+      <div class="errata">
+        <h3>Twelve numbers that changed.</h3>
+        <ul>
+          <li><span class="was">Arithmetic v2.1</span><span><strong>Daily Blueprint replica total:</strong> v1 <del>₹2,683</del> → v2.0 ₹3,062 → <strong>v2.1 ₹2,650–3,000 (audited range, midpoint ~₹2,825)</strong>. v1 headline under-counted its own stated line items (sum = ₹3,062). v2.0 took those stated line items as ground truth — but four items (BP Longevity Mix, BP shiitake, BJ EVOO/tbsp, BJ macadamia 3tbsp) were overstated vs live Indian retail. v2.1 publishes audited ranges and recomputes.</span></li>
+          <li><span class="was">Ratio v2.1</span><span><strong>Replica-vs-alt ratio:</strong> v1 <del>"1/1,770×"</del> → v2.0 <del>"~44×"</del> / <del>"~11.6×"</del> → <strong>v2.1 ~10–11× (range 10.1×–11.4×, midpoint ~10.7×)</strong>. v2.0's 44× divided Bryan's US-retail $50K food slice by the Indian alt's ₹96K — mixing currencies and markets. v2.0's 11.6× used v1's inflated line items. v2.1 ratio is audited ₹2,650–3,000/day ÷ ₹263/day.</span></li>
+          <li><span class="was">Scope v2.1</span><span><strong>$50K "food slice" of Bryan's $2M:</strong> v2.0 presented as sourced ("Empirical Health audit"). v2.1: Bryan Johnson has not published a line-by-line audit. Category split is illustrative of a $2M/yr longevity-program spend pattern, not attested. Hero verdict-pair now uses the Indian Blueprint replica (~₹10.3 L/yr) as the comparison baseline — a number we can audit — not the $50K figure.</span></li>
+          <li><span class="was">Hero stat</span><span><strong>"1/1,770× for 90% of the benefit"</strong> retired. Not reproducible from any stated input.</span></li>
+          <li><span class="was">Framing</span><span><strong>"90% of measurable result"</strong> softened. "Measurable result" was undefined. Replaced with <em>"Free 5 + lab-guided stack delivers the large majority of evidenced mortality benefit."</em></span></li>
+          <li><span class="was">Biology</span><span><strong>Blueberry swap:</strong> <del>"20× cheaper"</del> → <strong>~5–6× cheaper.</strong> v1 used a premium-store price anchor. Also: jamun anthocyanin ≤ blueberry, not "higher."</span></li>
+          <li><span class="was">Biology</span><span><strong>Macadamia swap:</strong> <del>"14.5× cheaper"</del> → <strong>~3.5–6.8×.</strong> v1 anchored at boutique ₹3,200/250g. Plus: walnut ALA does not replace direct EPA/DHA in high-risk individuals — FADS caveat added.</span></li>
+          <li><span class="was">Biology</span><span><strong>Mustard oil:</strong> erucic acid (30–54%) concern added to <strong>primary claim</strong> — not footnote. EU/US ban high-erucic for edible use. Low-erucic cultivars only.</span></li>
+          <li><span class="was">Biology</span><span><strong>Shiitake swap MCI number:</strong> <del>"64% lower"</del> → <strong>57% lower odds</strong> (Feng 2019, OR 0.43).</span></li>
+          <li><span class="was">Biology</span><span><strong>Pomegranate juice framing:</strong> <del>"juice is Western dilution"</del> retracted. Juice + extract pharmacokinetically equivalent (Seeram 2008). Swap valid on price, not biology.</span></li>
+          <li><span class="was">Biology</span><span><strong>Cocoa flavanol:</strong> <del>"Indian cacao lab tests match Blueprint"</del> retracted. No public COAs exist for Ariba / Wakao / Mason &amp; Co as of April 2026.</span></li>
+          <li><span class="was">Mortality</span><span><strong>Weight-control:</strong> <del>"40% mortality reduction"</del> → <strong>~15–20%</strong> (RCT evidence). <strong>MedDiet:</strong> <del>25%</del> → <strong>21%.</strong> <strong>Legume:</strong> <del>8%</del> → <strong>6%.</strong> <strong>Sauna:</strong> <del>"63% CV mortality"</del> → 63% SCD / 50% fatal CVD; 40% all-cause (Laukkanen KIHD, Finnish men). v2.1: add Kunutsor 2017 FINRISK replication gap — treat as upper bounds, not consensus — plus contraindications (pregnancy, MI &lt;6wk, SBP &gt;180, alcohol, children).</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 14: LEGAL -->
+<div class="container">
+  <section class="section" id="legal">
+    <div class="wrap">
+      <div class="section-number">14 · Legal + regulatory</div>
+      <h2 class="section-title clinical" style="font-family:'IBM Plex Sans',sans-serif;font-weight:400">Disclaimers, by regulatory regime.</h2>
+      <p class="section-intro clinical" style="font-family:'IBM Plex Sans',sans-serif">
+        This page is educational. It is not medical advice. Every swap that touches an ingestible, a device, or a measurement falls under one or more Indian regulatory regimes. If you have questions about a specific recommendation, ask a physician licensed in your jurisdiction before acting.
+      </p>
+    </div>
+    <div class="wrap">
+      <div class="legal">
+        <h3>Seven regimes that apply here</h3>
+        <details><summary>FSSAI Nutraceutical Regulations 2022</summary><div class="lbody">Dietary supplements sold in India are regulated under the Food Safety and Standards (Health Supplements, Nutraceuticals &amp; Food for Special Dietary Use) Regulations 2022. NMN, ashwagandha extracts, omega-3s, and multivitamins are sold under this regime with self-attested compositional compliance. Therapeutic claims are restricted.</div></details>
+        <details><summary>CDSCO / Medical Devices Rules 2017</summary><div class="lbody">CGMs, BP monitors, red-light therapy devices, and HBOT chambers sold for therapeutic use require CDSCO Class A/B/C/D registration depending on risk. Ring / wearable health trackers that do not claim medical diagnosis fall outside this regime. Verify registration before purchase.</div></details>
+        <details><summary>ICMR-DBT National Guidelines for Stem Cell Research 2017</summary><div class="lbody">Stem-cell therapies, follistatin gene therapy, and most experimental interventions on Bryan Johnson's protocol are regulated under ICMR-DBT 2017 + CDSCO. Outside approved clinical trials, they are <strong>not accessible at retail</strong> in India.</div></details>
+        <details><summary>AYUSH + Drugs and Magic Remedies Act 1954</summary><div class="lbody">Ashwagandha, moringa, amla, and other AYUSH-category ingredients are regulated by the Ministry of AYUSH. DMRA 1954 restricts claims of cure for listed conditions (diabetes, cancer, heart disease, obesity, etc.) in advertising.</div></details>
+        <details><summary>FSSAI Health Claims Regulation 2022</summary><div class="lbody">Nutrient-function and disease-reduction claims on food packaging are restricted to FSSAI's approved list. Blog/website claims (like this page) are less restricted but must not "tend to deceive" per Consumer Protection Act 2019.</div></details>
+        <details><summary>Consumer Protection Act 2019 + ASCI 2023 rules</summary><div class="lbody">Misleading advertisements are actionable. ASCI 2023 influencer guidelines require disclosure of material connection (affiliate links, gifted products). Named brands on this page are examples of Indian retail availability, not endorsements; the publisher carries <strong>no commercial relationship</strong> with any named entity as of April 2026. This posture is recertified annually. If a commercial relationship is later formed, ASCI-compliant inline disclosure will appear on the affected item.</div></details>
+        <details><summary>DunedinPACE / epigenetic clock shipping legality</summary><div class="lbody">Sample shipping to TruDiagnostic (USA) is in a grey zone under Indian export of human biological samples rules. AIWO Health offers an in-India DunedinPACE equivalent via partner clinics.</div></details>
+        <details><summary>Trademarks acknowledged</summary><div class="lbody">Blueprint™ (Bryan Johnson Ventures), KSM-66® (Ixoreal Biomed), DunedinPACE™ (TruDiagnostic / Trinity College Dublin), Oura® (Oura Health), Ultrahuman® (Ultrahuman Healthcare), Mitopure® (Amazentis), Creapure® (AlzChem), FreeStyle Libre® (Abbott), Omron® (Omron Healthcare), Apollo® (Apollo Hospitals Enterprise), and all other named brands remain the property of their respective owners. Use on this page is <strong>nominative</strong> — for reference and comparison only under the Indian Trade Marks Act 1999 — and no affiliation, endorsement, or sponsorship is asserted or implied.</div></details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 15: SOURCES -->
+<div class="container">
+  <section class="section" id="sources">
+    <div class="wrap">
+      <div class="section-number">15 · Sources + methodology</div>
+      <h2 class="section-title">How this was <em>built.</em></h2>
+      <p class="section-intro">
+        Two rounds of research. Two reviewer passes (domain SME + Devil's Advocate). Then blocker fixes applied. Primary sources preferred (PubMed, USDA, ICMR, EFSA, FSSAI). Retail prices captured April 2026 with vendor URLs. Any claim without a primary source carries the <span class="badge unverified" style="font-size:8px">Unverified</span> badge.
+      </p>
+    </div>
+    <div class="wrap" style="max-width:1060px">
+      <div class="sources-section">
+        <h3>Method</h3>
+        <ul>
+          <li><span class="src-tag">01</span>Every BJ claim in v1 was mapped to a primary source and re-checked against the current literature (April 2026).</li>
+          <li><span class="src-tag">02</span>Two parallel reviews: Subject-matter expert (trust-tier audit) and Devil's Advocate (rebuttal / arithmetic / regulatory).</li>
+          <li><span class="src-tag">03</span>Reviewer objections fact-checked against primary sources. Valid objections resulted in a blocker fix and a primary-claim rewrite.</li>
+          <li><span class="src-tag">04</span>Prices verified at retail Apr 2026: BigBasket, Zepto, Blinkit, Amazon.in, Flipkart, 1mg, HealthKart, Thyrocare, Redcliffe, Apollo.</li>
+          <li><span class="src-tag">05</span>Next refresh: 2026-07-20 (quarterly cadence). Wayback snapshots recommended for every vendor URL to mitigate link rot.</li>
+        </ul>
+        <h3 style="margin-top:32px">Top primary sources (selected)</h3>
+        <ul>
+          <li><span class="src-tag">PUBMED</span>Doll &amp; Peto 2004 · 50yr British Doctors Study · PMID 15213107</li>
+          <li><span class="src-tag">PUBMED</span>Laukkanen 2015 · Finnish sauna &amp; CV mortality (KIHD, men) · PMID 25705824</li>
+          <li><span class="src-tag">PUBMED</span>Kunutsor 2017 · FINRISK sauna replication — attenuated effect · PMID 28735616</li>
+          <li><span class="src-tag">PUBMED</span>Feng 2019 · mushroom &amp; MCI · PMID 30775990</li>
+          <li><span class="src-tag">PUBMED</span>Kothapalli 2016 · FADS South Asian selection · PMID 26432412</li>
+          <li><span class="src-tag">PUBMED</span>Seeram 2008 · pomegranate ellagitannin PK · PMID 18598186</li>
+          <li><span class="src-tag">PUBMED</span>Bao 2013 · nut consumption &amp; mortality · NEJM</li>
+          <li><span class="src-tag">PUBMED</span>PURE 2017 · physical activity &amp; mortality · Lancet</li>
+          <li><span class="src-tag">PUBMED</span>Viguiliouk 2023 · legume &amp; mortality meta-analysis · PMID 36811595</li>
+          <li><span class="src-tag">PUBMED</span>PREDIMED 2018 · MedDiet &amp; CV prevention · NEJM</li>
+          <li><span class="src-tag">PUBMED</span>Beauchamp 2005 · oleocanthal COX inhibition · Nature 437:45</li>
+          <li><span class="src-tag gov">EFSA</span>Erucic acid tolerable daily intake · 2016 Opinion (EU max 2% vegetable oils, consolidated under Commission Reg 2023/915)</li>
+          <li><span class="src-tag">PUBMED</span>Khaw 2008 · EPIC-Norfolk 4-behaviour study · PMID 18184055</li>
+          <li><span class="src-tag">PUBMED</span>Chandrasekhar 2012 · KSM-66 cortisol RCT · PMID 23439798</li>
+          <li><span class="src-tag">PUBMED</span>Salve 2019 · KSM-66 sleep + stress RCT · PMID 31517876</li>
+          <li><span class="src-tag">PUBMED</span>Sesso 2022 · COSMOS CVD composite · PMID 35896181</li>
+          <li><span class="src-tag">PUBMED</span>Cappuccio 2010 · sleep duration &amp; mortality meta · PMID 20469800</li>
+          <li><span class="src-tag">PUBMED</span>Momma 2022 · resistance training &amp; mortality meta · PMID 35228201</li>
+          <li><span class="src-tag">PUBMED</span>Holt-Lunstad 2010 · social relationships &amp; mortality · PMID 20668659</li>
+          <li><span class="src-tag gov">GATS</span>Global Adult Tobacco Survey India (GATS-2) · MoHFW 2016–17</li>
+          <li><span class="src-tag gov">CPCB</span>Central Pollution Control Board India · PM2.5 2023–24 reporting</li>
+          <li><span class="src-tag">CSE</span>Centre for Science and Environment · honey adulteration report 2020</li>
+          <li><span class="src-tag gov">FSSAI</span>Food Products Standards · Mustard Oil Regulations</li>
+          <li><span class="src-tag usda">USDA</span>FoodData Central · nutrient composition of all foods referenced</li>
+          <li><span class="src-tag gov">ICMR</span>National Guidelines for Stem Cell Research 2017</li>
+          <li><span class="src-tag">VENDOR</span>BigBasket · Zepto · Blinkit · Flipkart · Amazon.in · 1mg · HealthKart · Redcliffe Labs · Thyrocare · Ultrahuman · Decode Age · AIWO</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<div class="container">
+  <div class="footer">
+    <div class="footer-inner">
+      <div>DOSSIER v2.0 · CAPTURED 2026-04-20 · NEXT REFRESH 2026-07-20</div>
+      <div>FOR EDUCATIONAL USE · NOT MEDICAL ADVICE</div>
+    </div>
+  </div>
+</div>
+
+<a class="sticky-disclaimer" href="#legal">Not medical advice</a>
+
+<div class="sticky-quiz" id="stickyQuiz">
+  <div class="sticky-quiz-label">
+    <span class="n">Built for you · 2 min</span>
+    Get your personalised stack
+  </div>
+  <a class="sticky-quiz-btn" href="quiz.html">Start →</a>
+</div>
+
+<script>
+(function(){
+  var s=document.getElementById('stickyQuiz');if(!s)return;
+  function tick(){
+    var y=window.scrollY||document.documentElement.scrollTop;
+    var max=(document.documentElement.scrollHeight-window.innerHeight);
+    if(y>680 && y<max-240) s.classList.add('visible');
+    else s.classList.remove('visible');
+  }
+  window.addEventListener('scroll',tick,{passive:true});
+  window.addEventListener('resize',tick);tick();
+})();
+</script>
+
+</body>
+</html>

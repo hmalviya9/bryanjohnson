@@ -1,0 +1,596 @@
+{
+  "captured_at": "2026-04-20",
+  "general_disclaimer": "This app provides general wellness information for Indian-market longevity optimization. It is NOT medical advice. All recommendations must be evaluated against individual medical history, current medications, pregnancy/lactation status, and lab values. Users with diagnosed conditions (cardiovascular disease, diabetes, autoimmune disease, thyroid dysfunction, pregnancy) MUST consult a qualified physician before initiating any supplement, dietary, or thermal/exercise protocol. Many products referenced (NMN, peptides, gene therapy, stem cells, red-light devices) are not approved for consumer use under FSSAI / CDSCO / ICMR-DBT Indian regulations; those are described for context only and are not recommended as consumer pathways. Therapeutic disease-prevention claims under the Drugs & Magic Remedies (Objectionable Advertisements) Act 1954 and the FSSAI Health Claims Regulation 2022 require substantiation; we use general-wellness framing only. Prices, product availability, and regulatory status may change — re-verify before purchase.",
+  "contraindications": [
+    {
+      "subject": "KSM-66 ashwagandha (Withania somnifera)",
+      "contraindicated_in": [
+        "pregnancy and lactation",
+        "autoimmune disease (Hashimoto's thyroiditis, Graves, lupus/SLE, rheumatoid arthritis, multiple sclerosis)",
+        "hyperthyroidism or uncontrolled thyroid disease",
+        "concurrent sedatives / benzodiazepines / barbiturates / alcohol (additive CNS depression)",
+        "concurrent thyroid hormone replacement (may potentiate T4/T3)",
+        "concurrent immunosuppressants (tacrolimus, cyclosporine, mycophenolate, post-transplant) — may antagonize immunosuppression",
+        "scheduled surgery within 2 weeks (sedative / anaesthetic interaction)",
+        "significant hepatic impairment (rare DILI case reports 2019-2023)"
+      ],
+      "reason": "Ashwagandha is a documented immunostimulant (↑Th1, ↑NK activity) and can worsen autoimmune flares. It raises free T4/T3 in euthyroid and hypothyroid subjects (Sharma 2018, PMID 29076790), which is desirable in hypothyroidism but risky in hyperthyroidism or on replacement therapy. CNS-depressant potentiation is documented in animal models and traditional use. Emerging case reports of ashwagandha-associated hepatitis (LiverTox NIH, 2023).",
+      "source_pmid_or_guideline": "PMID 29076790 (Sharma 2018, thyroid effect); LiverTox NIH (2023) ashwagandha hepatotoxicity review; ICMR-NIN AYUSH safety monograph",
+      "severity": "absolute (pregnancy, hyperthyroidism, active autoimmune flare); relative (sedatives, surgery, thyroid replacement)",
+      "affected_claim_ids": ["alt_ksm66", "swap_ashwa_ksm66", "price_ksm66_ashwagandha"]
+    },
+    {
+      "subject": "Mustard oil (cold-press, high-erucic)",
+      "contraindicated_in": [
+        "established coronary artery disease (CAD) / prior MI",
+        "elevated ApoB or LDL-C on lipid-lowering therapy",
+        "familial hypercholesterolemia",
+        "paediatric populations (infants/children) as sole cooking oil",
+        "pregnancy at high daily intake (>1-2 tbsp/day)"
+      ],
+      "reason": "Mustard oil contains 30-54% erucic acid. EFSA 2016 set a Tolerable Daily Intake of 7 mg/kg bw/day for erucic acid — 1-2 tbsp/day can exceed this for a 60 kg adult. Long-term high-erucic diets cause myocardial lipidosis in animal models; human cardioprotective evidence is weaker but ICMR-NIN 2024 Dietary Guidelines recommend oil rotation specifically because of mustard-oil erucic-acid concerns. Mustard oil has ZERO of the oleocanthal/hydroxytyrosol polyphenols that drive EVOO's EU-approved LDL-oxidation-reduction claim — it is not a polyphenol-functional substitute.",
+      "source_pmid_or_guideline": "EFSA Journal 2016;14(11):4593 (erucic acid scientific opinion); ICMR-NIN Dietary Guidelines for Indians 2024 (edible oils section); FSSAI Regulation on Fats & Oils; EU Commission Regulation 432/2012 (olive polyphenol health claim)",
+      "severity": "relative (general adult); absolute-relative (established CAD, paediatric as sole oil)",
+      "affected_claim_ids": ["swap_evoo_mustard", "swap_evoo_mustard__mufa", "alt_mustard_oil"]
+    },
+    {
+      "subject": "A2 ghee / clarified butter (daily >1 tsp)",
+      "contraindicated_in": [
+        "elevated ApoB or LDL-C (especially >100 mg/dL)",
+        "established atherosclerotic cardiovascular disease (ASCVD)",
+        "familial hypercholesterolemia",
+        "NAFLD / MAFLD with elevated triglycerides",
+        "on statin therapy with unmet LDL targets"
+      ],
+      "reason": "Ghee is ~62% saturated fat. Saturated-fat load is identical between A1 and A2 dairy; the A1/A2 casein distinction is about gut tolerance, not atherogenicity. Indian populations (LASI, ICMR-INDIAB) have elevated background ApoB and high-prevalence Lp(a). Daily ghee in such a population without a lipid-panel precondition is inconsistent with the app's Mediterranean/plant-forward framing.",
+      "source_pmid_or_guideline": "ICMR-NIN Dietary Guidelines for Indians 2024; AHA 2021 Dietary Guidance scientific statement on saturated fat; LASI wave-1 lipid epidemiology",
+      "severity": "relative (gate behind ApoB/LDL measurement; cap at flavor-only <1 tsp/day if lipids uncontrolled)",
+      "affected_claim_ids": ["alt_ghee", "alt_a2_milk"]
+    },
+    {
+      "subject": "Infrared / Finnish-style sauna, heat therapy",
+      "contraindicated_in": [
+        "uncontrolled hypertension (resting BP >180/110)",
+        "unstable angina / recent MI within 3 months",
+        "severe aortic stenosis",
+        "pregnancy (especially first trimester — neural-tube and hyperthermia risk)",
+        "alcohol intoxication",
+        "acute febrile illness / infection",
+        "severe hypotension or autonomic dysfunction (risk of syncope)",
+        "dehydration or hyponatremia",
+        "children under 12",
+        "paroxysmal or uncontrolled arrhythmia",
+        "implanted medical devices not rated for heat (some pumps/pacemakers check manufacturer)"
+      ],
+      "reason": "Sauna induces significant peripheral vasodilation, tachycardia (HR to 100-150), and plasma-volume shift. The Laukkanen Finnish cohort was 2,315 male Finnish subjects with lifelong sauna adaptation using traditional Finnish dry-humid saunas — generalizability to Indian women, infrared saunas, and users in a hot ambient climate (Indian summer heat stress already high) is unvalidated. Additional risk in Indian climate: dehydration and electrolyte loss are pre-existing. Pregnancy hyperthermia risk: core temp >39°C in first trimester is associated with NTD.",
+      "source_pmid_or_guideline": "Laukkanen JAMA IM 2015 (PMID 25705824); 2018 BMC Med Laukkanen mixed-sex data; ACC/AHA heat-therapy consensus; ACOG pregnancy hyperthermia guidance",
+      "severity": "absolute (uncontrolled HT, recent MI, aortic stenosis, first-trimester pregnancy); relative (elderly frailty, hot-climate hydration)",
+      "affected_claim_ids": ["sauna_finnish", "free5_sauna_finnish", "dev_ir_sauna"]
+    },
+    {
+      "subject": "Continuous Glucose Monitor (CGM) in non-diabetic adults",
+      "contraindicated_in": [
+        "history of disordered eating / anorexia / orthorexia",
+        "significant health anxiety or OCD tendencies",
+        "users without access to physician interpretation",
+        "pediatric use without endocrinology supervision"
+      ],
+      "reason": "CGM for non-diabetics is NOT endorsed by ICMR, Endocrine Society, or ADA 2024 Standards of Care. Postprandial glucose excursions to 140-180 mg/dL in healthy non-diabetics are physiological, not pathological. Free-floating CGM data without clinical interpretation creates false-positive prediabetes anxiety and can trigger or worsen restrictive eating patterns. Abbott FreeStyle Libre sensor accuracy is adequate; the issue is interpretation, not measurement.",
+      "source_pmid_or_guideline": "ADA Standards of Medical Care in Diabetes 2024; Endocrine Society position 2022 on CGM in non-diabetics; ICMR Indian Diabetes Guidelines",
+      "severity": "relative (requires interpretation layer; not recommended as free-standing consumer tool)",
+      "affected_claim_ids": ["dev_cgm", "price_ultrahuman_m1_cgm"]
+    },
+    {
+      "subject": "NMN (nicotinamide mononucleotide)",
+      "contraindicated_in": [
+        "all Indian consumer use — no FSSAI nutraceutical listing",
+        "active malignancy (theoretical concern: NAD+ restoration may support proliferation of NAD-dependent tumours)",
+        "pregnancy and lactation (no safety data)",
+        "pediatric use"
+      ],
+      "reason": "NMN has no approved nutraceutical status under FSSAI Nutraceutical Regulations 2022 (Schedule VII). US FDA removed NMN from NDI status in October 2022. Indian NMN products are grey-market imports. Oncology theoretical concern based on Warburg-tumour NAD dependence (preclinical). No human safety data in pregnancy.",
+      "source_pmid_or_guideline": "US FDA NDI rejection letter on NMN (October 2022); FSSAI Nutraceutical Regulations 2022 Schedule VII; no ICMR approval",
+      "severity": "absolute (regulatory — do not recommend purchase in India); relative (oncology, pregnancy)",
+      "affected_claim_ids": ["swap_nmn_diet", "swap_nmn_exercise__nad"]
+    },
+    {
+      "subject": "Moringa (Moringa oleifera) leaves and powder",
+      "contraindicated_in": [
+        "pregnancy (especially bark/root/seed extracts — uterotonic activity in traditional literature)",
+        "concurrent levothyroxine (moringa has thyroid-active compounds; timing separation needed)",
+        "concurrent antidiabetic drugs (additive hypoglycemia possible)",
+        "commercial powdered products without heavy-metal COA (Pb/Cd/As risk)"
+      ],
+      "reason": "Moringa is a phytoremediator — it preferentially accumulates heavy metals (Pb, Cd, As) from contaminated soil, a documented issue in Indian commercial supply. FSSAI plant-food heavy-metal standards apply. Bark/root extracts have uterotonic activity in ethnobotanical and rodent literature; leaves are generally considered safer but still not recommended in pregnancy without supervision. Dried powder loses myrosinase enzyme, so glucomoringin → moringin conversion in gut requires co-ingestion of a myrosinase source (e.g., mustard seed) or fresh leaves.",
+      "source_pmid_or_guideline": "Waterman 2014 (moringa isothiocyanate processing); FSSAI heavy-metal standards for plant foods; Indian ethnobotanical safety review on moringa uterotonic activity",
+      "severity": "absolute (pregnancy, bark/root/seed); relative (leaves — require COA-verified brand)",
+      "affected_claim_ids": ["swap_sprouts_moringa", "swap_sprouts_moringa__itc", "alt_moringa_methi"]
+    },
+    {
+      "subject": "Amla (Phyllanthus emblica) high-dose",
+      "contraindicated_in": [
+        "concurrent anticoagulants (warfarin, DOACs — additive bleeding risk from vitamin C + tannin effects)",
+        "pre-surgical period (stop 2 weeks before)",
+        "severe GERD or peptic ulcer (acidic load)",
+        "oxalate kidney stone history at very high intake (vitamin C → oxalate conversion)"
+      ],
+      "reason": "High-dose vitamin C (via amla) can potentiate anticoagulant-associated bleeding and at very high chronic doses converts to oxalate. Acidic fruit load can aggravate GERD. Note bioavailability: oral vitamin C absorption plateaus at ~200 mg/day (Levine et al.), so super-physiological amla intake does not proportionately raise plasma ascorbate.",
+      "source_pmid_or_guideline": "Levine PNAS 1996 on oral vitamin C pharmacokinetics (PMID 8623000); NIH ODS vitamin C fact sheet",
+      "severity": "relative",
+      "affected_claim_ids": ["swap_blueberry_amla", "swap_blueberry_amla__vitamin_c", "alt_amla_pom"]
+    },
+    {
+      "subject": "Curcumin / turmeric high-dose (with piperine)",
+      "contraindicated_in": [
+        "gallbladder disease / biliary obstruction (curcumin is choleretic)",
+        "concurrent anticoagulants (antiplatelet effect)",
+        "pre-surgical period (stop 2 weeks before)",
+        "concurrent chemotherapy (CYP3A4 interactions with docetaxel, cyclophosphamide, others)",
+        "iron-deficiency anemia (curcumin chelates iron)",
+        "known susceptibility to DILI (case reports of curcumin-associated hepatitis 2022-2023)"
+      ],
+      "reason": "Curcumin requires piperine or lipid matrix for absorption (bioavailability <1% without). Piperine inhibits CYP3A4 and P-gp — significant drug-interaction potential. Choleretic effect contraindicates in gallstones. Iron chelation documented. Emerging DILI case reports with high-dose supplements (especially piperine-enhanced formulations).",
+      "source_pmid_or_guideline": "Shoba 1998 piperine-curcumin bioavailability (PMID 9619120); LiverTox NIH curcumin entry 2023; NCCIH turmeric safety",
+      "severity": "relative",
+      "affected_claim_ids": ["alt_turmeric_pepper"]
+    },
+    {
+      "subject": "Pomegranate (Punica granatum) and ellagitannins",
+      "contraindicated_in": [
+        "concurrent statins (CYP3A4 inhibition at high juice intake — like grapefruit juice, though milder)",
+        "concurrent warfarin / anticoagulants",
+        "ACE-inhibitor therapy (additive BP-lowering possible)",
+        "hypotension-prone individuals"
+      ],
+      "reason": "Pomegranate juice inhibits CYP3A4 at high intake, comparable to grapefruit (though clinical significance contested). BP-lowering effect can be additive to antihypertensives. Urolithin-A conversion requires specific gut microbiota — only ~40% of humans are producers; non-producers get cardiometabolic benefit but not mitophagy benefit.",
+      "source_pmid_or_guideline": "Hidaka 2005 pomegranate CYP3A4 (PMID 15680228); Tomas-Barberan 2014 on urolithin-A metabotypes",
+      "severity": "relative",
+      "affected_claim_ids": ["swap_pomjuice_anar", "swap_pomjuice_anar__ellagitannin", "bj_pom_juice", "alt_amla_pom"]
+    },
+    {
+      "subject": "Peptides / experimental therapies (BPC-157, TB-500, epithalon, cerebrolysin, follistatin gene therapy, mesenchymal stem cells)",
+      "contraindicated_in": [
+        "all Indian consumer use (not CDSCO-approved)",
+        "any unmonitored self-administration"
+      ],
+      "reason": "Peptides (BPC-157, TB-500, epithalon) are not approved by CDSCO for consumer use. Stem-cell therapies for longevity indications are restricted under ICMR-DBT National Guidelines 2017 and CDSCO — only approved for specific clinical indications. Gene therapy requires DCGI approval. Describing these as replicable consumer protocol items is a regulatory-advice failure.",
+      "source_pmid_or_guideline": "ICMR-DBT National Guidelines for Stem Cell Research 2017; CDSCO Medical Devices Rules 2017; DCGI gene therapy framework",
+      "severity": "absolute (regulatory)",
+      "affected_claim_ids": ["burn_experimental"]
+    },
+    {
+      "subject": "Red-light therapy caps / devices with medical claims",
+      "contraindicated_in": [
+        "active scalp malignancy or suspicious lesions",
+        "photosensitizing medications (amiodarone, doxycycline, isotretinoin, methoxsalen)",
+        "active lupus (photosensitivity)",
+        "pregnancy (data absent — precautionary)",
+        "uncharacterized pigmented lesions in treatment field"
+      ],
+      "reason": "Medical-claim RLT devices fall under CDSCO Medical Devices Rules 2017. Only CDSCO-registered devices should be recommended. Photosensitizing drug interactions documented. Lifestyle/cosmetic framing required under Drugs & Magic Remedies Act.",
+      "source_pmid_or_guideline": "CDSCO Medical Devices Rules 2017; DMRA 1954",
+      "severity": "relative",
+      "affected_claim_ids": ["dev_redlight_cap"]
+    },
+    {
+      "subject": "Hyperbaric oxygen therapy (HBOT)",
+      "contraindicated_in": [
+        "untreated pneumothorax (ABSOLUTE)",
+        "uncontrolled asthma / severe COPD",
+        "claustrophobia",
+        "middle-ear / sinus disease with inability to equalize",
+        "bleomycin exposure (pulmonary toxicity potentiation)",
+        "cisplatin / doxorubicin / disulfiram concurrent use",
+        "recent thoracic or ear surgery",
+        "seizure disorder (oxygen toxicity)",
+        "pregnancy (relative — only emergency indications)"
+      ],
+      "reason": "Pneumothorax is an absolute contraindication per UHMS (Undersea & Hyperbaric Medical Society). Oxygen toxicity seizures and middle-ear barotrauma are recognized adverse events. Longevity HBOT at 1.3-2.0 ATA is off-label in India — only specific CDSCO-approved indications exist.",
+      "source_pmid_or_guideline": "UHMS Hyperbaric Oxygen Therapy Indications (15th ed.); CDSCO approved indications list",
+      "severity": "absolute (pneumothorax); relative (others)",
+      "affected_claim_ids": ["dev_hyperbaric"]
+    },
+    {
+      "subject": "Intensive blood pressure control (SPRINT-style SBP <120)",
+      "contraindicated_in": [
+        "diabetes mellitus (EXCLUDED from SPRINT — generalizability fails)",
+        "prior stroke (EXCLUDED from SPRINT)",
+        "age >80 with frailty (high orthostatic / fall / AKI risk)",
+        "advanced CKD eGFR <20",
+        "symptomatic orthostatic hypotension",
+        "polypharmacy elderly (drug-drug and fall risk)"
+      ],
+      "reason": "SPRINT 2015 explicitly excluded these populations. Intensive BP control has documented harms (syncope, AKI, hyponatremia, electrolyte disturbance, fall/hip-fracture in elderly). J-curve: below DBP 60 in CAD patients, event risk may rise. Indian hypertensive population has high diabetes comorbidity — SPRINT generalizability is limited.",
+      "source_pmid_or_guideline": "SPRINT NEJM 2015 (PMID 26551272); SPRINT subgroup analyses; Messerli J-curve meta-analyses",
+      "severity": "relative (target-dependent)",
+      "affected_claim_ids": ["free5_bp"]
+    },
+    {
+      "subject": "Time-restricted eating (6-hour pre-noon window) / prolonged fasting",
+      "contraindicated_in": [
+        "pregnancy and lactation",
+        "history of eating disorders",
+        "type 1 diabetes",
+        "type 2 diabetes on insulin or sulfonylureas (hypoglycemia risk)",
+        "underweight (BMI <18.5) — in Indian population note thin-fat phenotype",
+        "children and adolescents",
+        "elderly frail with sarcopenia",
+        "concurrent medications requiring food (metformin XR tolerability, NSAIDs)"
+      ],
+      "reason": "Hypoglycemia risk on sulfonylureas/insulin; amenorrhea and bone-loss risk in low-BMI women; paediatric growth concerns. No Indian-population TRE mortality data at the 6-hour pre-noon window. Indian meal timing intersects with family/cultural eating patterns — adherence and relational cost should be considered.",
+      "source_pmid_or_guideline": "ADA 2024 Standards of Care (hypoglycemia prevention on sulfonylureas); NEDA clinical guidance on fasting in ED history",
+      "severity": "absolute (T1DM without supervision, pregnancy, ED history); relative (others)",
+      "affected_claim_ids": ["life_fasting"]
+    },
+    {
+      "subject": "Extended sleep duration >8.5 hours",
+      "contraindicated_in": [
+        "users with untreated sleep-disordered breathing (OSA) — extended time in bed without treatment worsens outcomes",
+        "depressive disorders (hypersomnia may be symptom, not target)",
+        "chronic fatigue where extended sleep is symptomatic rather than protective"
+      ],
+      "reason": "Multiple mortality meta-analyses show a U-shaped curve: sleep >9 hours is associated with HIGHER all-cause mortality (though reverse causation — occult illness — confounds). The 8.5-hour target is Bryan-specific self-report, not a population-level optimum. For users with undiagnosed OSA, prolonged time in bed without CPAP is not protective.",
+      "source_pmid_or_guideline": "Cappuccio Sleep 2010 meta-analysis U-shape (PMID 20469800); AASM clinical practice guideline on sleep duration 2015",
+      "severity": "relative (reverse-causation caution; screen for OSA)",
+      "affected_claim_ids": ["life_sleep"]
+    },
+    {
+      "subject": "ALA (walnut, flax, chia) as sole omega-3 source",
+      "contraindicated_in": [
+        "established cardiovascular disease requiring EPA/DHA cardioprotection",
+        "elevated triglycerides requiring EPA-level intervention",
+        "pregnancy (DHA requirement not met by ALA conversion)",
+        "South Asian users with likely FADS1/FADS2 minor-allele burden"
+      ],
+      "reason": "ALA→EPA conversion in humans is 5-10%; ALA→DHA conversion <0.5%. FADS1/FADS2 polymorphisms common in South Asians further reduce conversion (Chilton/Sergeant). High linoleic-acid (refined Indian oil) background suppresses conversion further. ALA walnut intake is NOT equivalent to marine EPA/DHA for cardioprotection.",
+      "source_pmid_or_guideline": "Brenna 2009 on ALA conversion efficiency (PMID 19269799); Chilton 2014 on FADS polymorphism in South Asians (PMID 24566443)",
+      "severity": "relative (inform users; retain algal/fish oil line item)",
+      "affected_claim_ids": ["swap_macadamia_walnut", "swap_macadamia_walnut__ala", "alt_walnut", "bj_walnuts"]
+    }
+  ],
+  "indian_genetic_context": [
+    {
+      "variant": "FADS1 / FADS2 (rs174537, rs174547 and haplotypes)",
+      "relevance": "ALA → EPA / DHA conversion inefficiency — the minor/ancestral allele associated with reduced Δ5/Δ6 desaturase activity is high-frequency in South Asian populations (Chilton et al. 2014). Compounds the already-low baseline ALA conversion (5-10% to EPA, <0.5% to DHA). Users relying on walnut/flax/chia as sole omega-3 source may achieve sub-therapeutic tissue EPA/DHA.",
+      "source_pmid_or_guideline": "PMID 24566443 (Chilton); PMID 24858913 (Sergeant)",
+      "affected_claim_ids": ["swap_macadamia_walnut", "swap_macadamia_walnut__ala", "alt_walnut", "alt_omega3", "bj_walnuts", "bj_chia_flax", "alt_seed_mix"]
+    },
+    {
+      "variant": "OCTN1 / SLC22A4 (rs1050152 and others)",
+      "relevance": "Ergothioneine cellular uptake and tissue retention — OCTN1 is the primary ergothioneine transporter. Loss-of-function variants result in near-zero plasma ergothioneine retention regardless of dietary intake. Polymorphism frequency variable; Indian-population allele frequencies are incompletely characterized but should be assumed variable. Mushroom ergothioneine-mediated benefits (MCI protection in Singapore cohort) may not transfer to OCTN1-low-function users.",
+      "source_pmid_or_guideline": "Pfeiffer et al. on OCTN1 ergothioneine kinetics (source: null, needs_verification: true); Beelman dietary ergothioneine targets",
+      "needs_verification": true,
+      "affected_claim_ids": ["swap_shiitake_oyster", "swap_shiitake_oyster__ergothioneine", "bj_shiitake", "alt_mushroom"]
+    },
+    {
+      "variant": "APOE ε4 (rs429358)",
+      "relevance": "Apolipoprotein E ε4 carriers have elevated LDL-cholesterol responsiveness to saturated fat, higher late-onset Alzheimer risk, and differential response to DHA supplementation (some data suggest ε4 carriers may paradoxically need higher DHA due to impaired BBB transport). Indian APOE ε4 prevalence ~7-10% (regional variation). Relevant to ghee/saturated-fat dose ceilings and to omega-3 strategy in older users.",
+      "source_pmid_or_guideline": "source: null, needs_verification: true (Indian APOE prevalence — regional studies exist but not consolidated here)",
+      "needs_verification": true,
+      "affected_claim_ids": ["alt_ghee", "alt_a2_milk", "alt_omega3", "bj_walnuts", "swap_macadamia_walnut__ala"]
+    },
+    {
+      "variant": "LPA (LPA gene — isoform size / Kringle IV repeats) — elevated Lp(a)",
+      "relevance": "Lipoprotein(a) is a genetically determined, independent, causal CV risk factor. South Asian populations have elevated prevalence of high Lp(a) (>50 mg/dL or >125 nmol/L) — estimates 25-30% vs ~20% Western. Lp(a) does not respond meaningfully to diet or statins; it is identification-only (currently). Highly relevant to any lab-panel recommendation — ApoB alone underestimates risk in South Asians without Lp(a) measurement.",
+      "source_pmid_or_guideline": "Enas INTERHEART Lp(a) South Asian data; Reyes-Soffer 2022 AHA scientific statement on Lp(a)",
+      "affected_claim_ids": ["lab_apob_lpa", "lab_full_panel", "free5_bp", "free5_diet", "free5_weight"]
+    },
+    {
+      "variant": "MTHFR C677T / A1298C",
+      "relevance": "Reduced methylenetetrahydrofolate reductase activity affects folate metabolism and homocysteine. Indian-population minor-allele frequency estimated ~10-20% TT homozygotes regionally. May inform B-vitamin supplementation strategy (methylfolate vs folic acid).",
+      "source_pmid_or_guideline": "source: null, needs_verification: true",
+      "needs_verification": true,
+      "affected_claim_ids": ["bj_essential_caps"]
+    },
+    {
+      "variant": "G6PD deficiency",
+      "relevance": "High prevalence in certain Indian subpopulations (~8-10% in some communities). Relevant because high-dose vitamin C (amla megadose), fava beans, and certain drugs trigger hemolysis. Relevant to amla supplementation at super-physiological doses.",
+      "source_pmid_or_guideline": "ICMR-NIN monographs on G6PD; NIH G6PD MedlinePlus",
+      "affected_claim_ids": ["swap_blueberry_amla__vitamin_c", "alt_amla_pom"]
+    }
+  ],
+  "dose_ceilings_and_bioavailability": [
+    {
+      "compound": "vitamin C (oral)",
+      "ceiling": "~200 mg/day absorption plateau; plasma saturation at ~400 mg/day; intakes above this result in dose-proportional renal excretion",
+      "source": "Levine et al. PNAS 1996 (PMID 8623000); NIH ODS Vitamin C Fact Sheet",
+      "affected_claim_ids": ["swap_blueberry_amla", "swap_blueberry_amla__vitamin_c", "alt_amla_pom"]
+    },
+    {
+      "compound": "anthocyanins (cyanidin-3-glucoside and related)",
+      "ceiling": "<1% systemic bioavailability as parent compound; circulating metabolites (protocatechuic acid, phenolic acid derivatives) mediate most effects; bioavailability heavily dependent on gut microbiome and food matrix",
+      "source": "Manach 2005 polyphenol bioavailability review (PMID 15640486); Kay 2017 anthocyanin metabolism",
+      "affected_claim_ids": ["swap_blueberry_jamun", "swap_blueberry_jamun__anthocyanin", "bj_berries"]
+    },
+    {
+      "compound": "ALA → EPA conversion",
+      "ceiling": "5-10% in young women; 2-5% in men; further reduced (likely 1-3%) in FADS1/FADS2 minor-allele carriers common in South Asians",
+      "source": "Brenna 2009 (PMID 19269799); Burdge & Calder 2005 (PMID 16188209)",
+      "affected_claim_ids": ["swap_macadamia_walnut", "swap_macadamia_walnut__ala", "bj_walnuts", "alt_walnut", "bj_chia_flax"]
+    },
+    {
+      "compound": "ALA → DHA conversion",
+      "ceiling": "<0.5% in most adults; effectively negligible in men and older adults",
+      "source": "Brenna 2009 (PMID 19269799)",
+      "affected_claim_ids": ["swap_macadamia_walnut__ala", "alt_walnut", "alt_omega3", "bj_chia_flax"]
+    },
+    {
+      "compound": "curcumin (unmodified)",
+      "ceiling": "<1% oral bioavailability without piperine / lipid / nanoformulation; 2000% increase with 20 mg piperine per 2g curcumin",
+      "source": "Shoba 1998 (PMID 9619120); Anand 2007 bioavailability review",
+      "affected_claim_ids": ["alt_turmeric_pepper"]
+    },
+    {
+      "compound": "ergothioneine",
+      "ceiling": "No hard ceiling but target plasma maintenance requires ~3-5 mg/day dietary intake; 50g fresh oyster mushroom (~90% water) delivers only ~0.5-3 mg (dossier figures are dry-weight); OCTN1 genotype caps tissue retention regardless of intake",
+      "source": "Beelman 2019 dietary ergothioneine review; Halliwell 2018",
+      "affected_claim_ids": ["swap_shiitake_oyster", "swap_shiitake_oyster__ergothioneine", "alt_mushroom", "bj_shiitake"]
+    },
+    {
+      "compound": "urolithin A (from ellagitannin precursors)",
+      "ceiling": "Only ~40% of humans are 'producer' metabotype; non-producers convert little to no urolithin-A from pomegranate/walnut ellagitannins. Producer status is partially inducible with sustained intake (4-8 weeks).",
+      "source": "Tomas-Barberan 2014 urolithin metabotypes; Andreux 2019 Nature Metabolism urolithin-A human RCT",
+      "affected_claim_ids": ["swap_pomjuice_anar", "swap_pomjuice_anar__ellagitannin", "bj_pom_juice", "alt_amla_pom"]
+    },
+    {
+      "compound": "cocoa flavanols",
+      "ceiling": "FDA 2023 qualified health claim requires ~200 mg cocoa flavanols/day for CV benefit; alkalization (Dutching) destroys flavanols; non-alkalized cacao retains them but content is brand- and batch-variable without COA",
+      "source": "FDA 2023 qualified health claim on cocoa flavanols; COSMOS trial (PMID 35381708)",
+      "affected_claim_ids": ["swap_cocoa_cacao", "swap_cocoa_cacao__flavanol", "bj_cocoa", "alt_cacao"]
+    },
+    {
+      "compound": "erucic acid (mustard oil)",
+      "ceiling": "EFSA 2016 TDI 7 mg/kg bw/day; easily exceeded at 1-2 tbsp/day mustard oil (30-54% erucic)",
+      "source": "EFSA Journal 2016;14(11):4593",
+      "affected_claim_ids": ["swap_evoo_mustard", "swap_evoo_mustard__mufa", "alt_mustard_oil"]
+    },
+    {
+      "compound": "legumes (all-cause mortality)",
+      "ceiling": "Meta-analytic HR 0.94 per 50g/day cooked, data range ~0-150g/day; linear extrapolation beyond 150g not supported. Typical Indian dal intake already in 80-150g range — near saturation.",
+      "source": "Darmadi-Blackberry 2004 (Asia Pac J Clin Nutr); Schwingshackl 2017 meta-analysis",
+      "affected_claim_ids": ["legume_loma", "alt_dal", "bj_beluga_lentil"]
+    },
+    {
+      "compound": "oral vitamin D3",
+      "ceiling": "IOM tolerable UL 4000 IU/day in adults; toxicity (hypercalcemia) at sustained >10,000 IU/day; Indian deficiency prevalence high (~70-90%) so baseline 2000 IU/day reasonable but dose should be titrated to 25(OH)D level",
+      "source": "IOM 2011 Dietary Reference Intakes for Calcium and Vitamin D; Endocrine Society Clinical Practice Guideline 2011/2024",
+      "affected_claim_ids": ["alt_d3k2", "bj_essential_caps"]
+    },
+    {
+      "compound": "creatine monohydrate",
+      "ceiling": "3-5 g/day maintenance is well-tolerated; loading (20 g/day x 5-7 days) causes GI upset in some; caution in severe renal impairment (eGFR <30) though creatine itself is not nephrotoxic in healthy subjects",
+      "source": "ISSN Position Stand on Creatine 2021 (PMID 33557850)",
+      "affected_claim_ids": ["alt_creatine"]
+    }
+  ],
+  "bioavailability_conditioners": [
+    {
+      "compound": "curcumin",
+      "note": "Requires piperine (20 mg per 2g curcumin for ~20x AUC) or lipid co-ingestion for meaningful absorption; aqueous curcumin powder alone is ~1% absorbed",
+      "affected_claim_ids": ["alt_turmeric_pepper"]
+    },
+    {
+      "compound": "moringa glucomoringin → moringin",
+      "note": "Requires myrosinase enzyme; dried/heat-processed moringa powder has near-zero active myrosinase. Use fresh leaves OR co-ingest with a myrosinase source (crushed mustard seed, daikon radish, fresh rocket/arugula)",
+      "affected_claim_ids": ["swap_sprouts_moringa", "swap_sprouts_moringa__itc", "alt_moringa_methi"]
+    },
+    {
+      "compound": "broccoli sprout glucoraphanin → sulforaphane",
+      "note": "Same myrosinase rule — cooked broccoli loses enzyme; sprouts or raw florets + 30-min chop-rest maximize sulforaphane yield",
+      "affected_claim_ids": ["swap_sprouts_moringa", "alt_brassica", "bj_broccoli"]
+    },
+    {
+      "compound": "vitamin D3 / K2",
+      "note": "Fat-soluble — absorb best with a meal containing fat; empty-stomach dosing markedly reduces uptake",
+      "affected_claim_ids": ["alt_d3k2", "bj_essential_caps"]
+    },
+    {
+      "compound": "iron from plant sources (amla, moringa, greens)",
+      "note": "Non-heme iron absorption enhanced by co-ingested vitamin C (amla pairing is functional); inhibited by tea/coffee tannins and calcium within 1 hour",
+      "affected_claim_ids": ["swap_blueberry_amla__vitamin_c", "alt_moringa_methi"]
+    },
+    {
+      "compound": "algal DHA / fish oil",
+      "note": "Triglyceride and re-esterified TG forms have better absorption than ethyl-ester forms; take with fat-containing meal; oxidation state (peroxide value) matters — avoid rancid oils",
+      "affected_claim_ids": ["alt_omega3"]
+    },
+    {
+      "compound": "anthocyanins (jamun, berries)",
+      "note": "Absorption depends heavily on gut microbiome; intact anthocyanins are <1% bioavailable but protocatechuic-acid and phenolic-acid metabolites (produced by gut bacteria) carry most biological activity. Freezing preserves; shelf oxidation degrades fresh berries.",
+      "affected_claim_ids": ["swap_blueberry_jamun__anthocyanin", "bj_berries", "price_imported_blueberry"]
+    },
+    {
+      "compound": "amla vitamin C (processed forms)",
+      "note": "Fresh amla ≠ murabba ≠ dried powder ≠ chyawanprash. Processed/candied amla loses 30-70% vitamin C; chyawanprash amla may retain <20%. Tannins in amla delay oxidation relative to synthetic ascorbate — the matrix matters.",
+      "affected_claim_ids": ["swap_blueberry_amla__vitamin_c", "alt_amla_pom"]
+    },
+    {
+      "compound": "cocoa flavanols (non-alkalized vs Dutched)",
+      "note": "Alkalization (Dutching) destroys 60-90% of flavanols. 'Raw' Indian cacao usually means non-alkalized (may be lightly fermented/sun-dried) — plausibly flavanol-retaining but quantitation requires HPLC COA.",
+      "affected_claim_ids": ["swap_cocoa_cacao", "swap_cocoa_cacao__flavanol", "bj_cocoa", "alt_cacao"]
+    },
+    {
+      "compound": "tryptophan → NAD+ (de novo pathway)",
+      "note": "Extremely inefficient (~60:1 tryptophan:niacin equivalent); dietary dal tryptophan does NOT meaningfully raise NAD+; serotonin synthesis competes for tryptophan. Niacin / NR are much more efficient precursors.",
+      "affected_claim_ids": ["swap_nmn_diet", "swap_nmn_exercise__nad"]
+    },
+    {
+      "compound": "ergothioneine (fresh vs dry mushroom)",
+      "note": "Published 35-90 mg/100g figures are DRY weight. 50g fresh oyster mushroom ≈ 5g dry → 1.5-4 mg ergothioneine per serving. To hit the ~5 mg/day maintenance target, fresh-weight servings may need to be ~100-150g or supplemented.",
+      "affected_claim_ids": ["swap_shiitake_oyster__ergothioneine", "bj_shiitake", "alt_mushroom"]
+    }
+  ],
+  "seasonal_availability": [
+    {
+      "item": "jamun (Syzygium cumini)",
+      "months_available": "May-July (8-10 weeks, peak monsoon onset)",
+      "frozen_backup": "Frozen jamun pulp and freeze-dried jamun powder retain anthocyanins reasonably (~70-85% vs fresh); commercial availability limited — regional online sellers. Recommend purchasing in season and freezing at home.",
+      "source_pmid_or_guideline": "IFCT 2017 NIN India; general tropical fruit seasonality references",
+      "affected_claim_ids": ["swap_blueberry_jamun", "swap_blueberry_jamun__anthocyanin", "alt_seasonal_fruit"]
+    },
+    {
+      "item": "amla (Phyllanthus emblica)",
+      "months_available": "October-March (winter harvest; peak Nov-Jan)",
+      "frozen_backup": "Frozen amla pieces retain >80% vitamin C; amla juice (bottled, no added sugar) acceptable; dried powder and murabba LOSE substantial vitamin C (see bioavailability section). Recommend freezing fresh in season.",
+      "source_pmid_or_guideline": "IFCT 2017; Indian horticulture crop calendars",
+      "affected_claim_ids": ["swap_blueberry_amla", "swap_blueberry_amla__vitamin_c", "alt_amla_pom"]
+    },
+    {
+      "item": "pomegranate (fresh)",
+      "months_available": "September-February (peak Oct-Dec); Maharashtra year-round cultivation gives extended but variable availability",
+      "frozen_backup": "Frozen arils widely available at quick-commerce (₹300-400/500g); retain ellagitannins well. Cold-pressed NFC juice (not from concentrate) is acceptable off-season.",
+      "source_pmid_or_guideline": "ICAR-NRCP pomegranate production data",
+      "affected_claim_ids": ["swap_pomjuice_anar", "swap_pomjuice_anar__ellagitannin", "bj_pom_juice", "alt_amla_pom"]
+    },
+    {
+      "item": "Kashmiri walnuts (fresh-crop)",
+      "months_available": "October harvest; shelled nuts available year-round in cold storage but freshest Oct-Feb",
+      "frozen_backup": "Vacuum-sealed refrigerated/frozen storage preserves ALA (omega-3 is heat/oxidation-sensitive). Avoid rancid stock — smell-check.",
+      "source_pmid_or_guideline": "J&K Horticulture Department data",
+      "affected_claim_ids": ["swap_macadamia_walnut", "price_kashmiri_walnut", "alt_walnut", "bj_walnuts"]
+    },
+    {
+      "item": "moringa fresh leaves",
+      "months_available": "March-October in most of peninsular India; can be year-round in South India; dried powder year-round",
+      "frozen_backup": "Blanched + frozen moringa leaves retain most glucomoringin and partial myrosinase; drying destroys myrosinase. Home-grown preferred given heavy-metal variability in commercial supply.",
+      "source_pmid_or_guideline": "ICAR moringa cultivation data",
+      "affected_claim_ids": ["swap_sprouts_moringa", "swap_sprouts_moringa__itc", "alt_moringa_methi"]
+    },
+    {
+      "item": "fresh broccoli sprouts",
+      "months_available": "Year-round (home-sprouted from seed in 3-5 days)",
+      "frozen_backup": "Home-sprouting is trivial and cheaper than store-bought; broccoli seeds available year-round from Indian seed retailers. No frozen/dried substitute matches fresh sprout sulforaphane yield.",
+      "source_pmid_or_guideline": "Fahey JHMI sulforaphane work",
+      "affected_claim_ids": ["swap_sprouts_moringa", "alt_brassica"]
+    },
+    {
+      "item": "fresh berries (imported blueberry / strawberry)",
+      "months_available": "Imported blueberry available year-round via quick-commerce; Indian strawberry (Mahabaleshwar/Nainital) peak Nov-March",
+      "frozen_backup": "Frozen blueberry (₹169-250/150g) is nutritionally comparable or superior for anthocyanins — freezing preserves, shelf oxidation degrades fresh. Frozen is a valid middle-ground option that price-file spot-check confirmed.",
+      "source_pmid_or_guideline": "USDA FoodData Central; anthocyanin stability in frozen vs fresh literature",
+      "affected_claim_ids": ["swap_blueberry_jamun", "price_imported_blueberry", "bj_berries"]
+    },
+    {
+      "item": "shiitake / fresh mushroom",
+      "months_available": "Year-round at urban modern trade; oyster and button most widely available; shiitake fresh limited to Tier-1 cities, dried shiitake year-round",
+      "frozen_backup": "Dried shiitake (reconstituted) retains ergothioneine well; sun-dried shiitake actually has elevated vitamin D2 (UV exposure). Use dried for steady supply.",
+      "source_pmid_or_guideline": "general mycology food-science references",
+      "affected_claim_ids": ["swap_shiitake_oyster", "swap_shiitake_oyster__ergothioneine", "bj_shiitake", "alt_mushroom"]
+    }
+  ],
+  "price_and_market_safety_notes": [
+    {
+      "note": "Quick-commerce URL link-rot: BigBasket, Zepto, Blinkit SKU URLs expire. Every verified price claim should also record an archive.org Wayback timestamp and a vendor category URL as fallback. Monthly re-verification required before launch.",
+      "affected_claim_ids": ["price_imported_blueberry", "price_macadamia_250g", "price_kashmiri_walnut"]
+    },
+    {
+      "note": "Promotional pricing contamination: nuturge macadamia ₹780 low-end was a discount floor, not steady-state. Use non-discounted anchors (₹1,239-1,500) as consumer-facing baseline.",
+      "affected_claim_ids": ["price_macadamia_250g"]
+    },
+    {
+      "note": "Dose-price mapping for branded ashwagandha: ₹350/month is consistent with generic ashwagandha powder, not patent-protected KSM-66 at clinical dose (300-600 mg/day). Branded KSM-66 (Rasayanam, MuscleBlaze) is ₹550-700/month. Do not quote low prices without naming SKU + mg/dose + capsule count.",
+      "affected_claim_ids": ["alt_ksm66", "swap_ashwa_ksm66", "price_ksm66_ashwagandha"]
+    }
+  ],
+  "cohort_generalizability_flags": [
+    {
+      "cohort": "Laukkanen 2015 Finnish sauna — 2,315 men, traditional dry-humid Finnish sauna, lifelong adaptation",
+      "generalizability_gap": "Indian women, infrared-sauna users, hot-climate baseline heat stress, no cultural adaptation",
+      "affected_claim_ids": ["sauna_finnish", "free5_sauna_finnish", "dev_ir_sauna"]
+    },
+    {
+      "cohort": "Singapore MCI ergothioneine cohort — ethnic Chinese",
+      "generalizability_gap": "Direct transfer to Indian populations unvalidated; OCTN1 genotype frequencies differ",
+      "affected_claim_ids": ["swap_shiitake_oyster__ergothioneine", "bj_shiitake"]
+    },
+    {
+      "cohort": "Adventist Health Study-2 nuts/legumes — self-selected US vegetarian, low-alcohol, low-smoking, suburban",
+      "generalizability_gap": "Healthy-user confounding; US caloric/macronutrient baseline; Indian dal intake already near-saturation",
+      "affected_claim_ids": ["nuts_adventist", "legume_loma", "alt_dal", "bj_beluga_lentil"]
+    },
+    {
+      "cohort": "SPRINT 2015 intensive BP — excluded diabetes, prior stroke, frail >80",
+      "generalizability_gap": "Indian hypertensive population has high diabetes comorbidity; generalizability poor",
+      "affected_claim_ids": ["free5_bp"]
+    },
+    {
+      "cohort": "PURE exercise — HR 0.65 at high-PA vs low-PA extremes",
+      "generalizability_gap": "At guideline-minimum dose (150 min/week), mortality reduction is ~20-25%, not 35%. Dose-response plateau at 3-5x guidelines. Indian non-recreational (occupational/transport) PA counts equally.",
+      "affected_claim_ids": ["free5_exercise", "life_exercise"]
+    }
+  ],
+  "regulatory_flags_india": [
+    {
+      "regulation": "FSSAI Nutraceutical Regulations 2022 (Schedule VII permitted ingredients)",
+      "affected_items": ["NMN", "some peptide-based supplements"],
+      "action": "Do not recommend purchase pathways for non-listed ingredients",
+      "affected_claim_ids": ["swap_nmn_diet", "swap_nmn_exercise__nad"]
+    },
+    {
+      "regulation": "CDSCO Medical Devices Rules 2017",
+      "affected_items": ["red-light caps", "HBOT chambers", "IR saunas", "BP monitors", "CGMs"],
+      "action": "Only recommend CDSCO-registered devices; record registration numbers",
+      "affected_claim_ids": ["dev_redlight_cap", "dev_hyperbaric", "dev_ir_sauna", "dev_cgm", "dev_bloodpressure", "price_ultrahuman_m1_cgm", "price_ultrahuman_ring_air"]
+    },
+    {
+      "regulation": "ICMR-DBT National Guidelines for Stem Cell Research 2017 / DCGI",
+      "affected_items": ["mesenchymal stem cells for longevity", "follistatin gene therapy", "peptides (BPC-157, TB-500, epithalon, cerebrolysin)"],
+      "action": "Mark as not legal / not approved in India — context only",
+      "affected_claim_ids": ["burn_experimental"]
+    },
+    {
+      "regulation": "Drugs & Magic Remedies (Objectionable Advertisements) Act 1954",
+      "affected_items": ["ashwagandha 'anti-anxiety'", "moringa 'superfood'", "amla 'immunity'", "turmeric 'anti-inflammatory'", "red-light 'hair regrowth'", "sauna 'cardiovascular'"],
+      "action": "Use general-wellness language; avoid disease-treatment/prevention framing in consumer copy",
+      "affected_claim_ids": ["alt_ksm66", "alt_moringa_methi", "alt_amla_pom", "alt_turmeric_pepper", "dev_redlight_cap", "sauna_finnish"]
+    },
+    {
+      "regulation": "FSSAI Health Claims Regulation 2022",
+      "affected_items": ["all nutrient-function and disease-risk reduction claims"],
+      "action": "Substantiation dossier required before commercial promotion of specific health claims",
+      "affected_claim_ids": ["swap_blueberry_jamun__anthocyanin", "swap_blueberry_amla__vitamin_c", "swap_cocoa_cacao__flavanol", "free5_smoking", "free5_weight", "free5_exercise", "free5_bp", "free5_diet"]
+    },
+    {
+      "regulation": "FSSAI plant-food heavy-metal standards (Pb/Cd/As)",
+      "affected_items": ["moringa powder", "amla powder", "turmeric", "herbal supplements"],
+      "action": "Require COA-backed brands; do not recommend unsourced commercial powders",
+      "affected_claim_ids": ["swap_sprouts_moringa__itc", "alt_moringa_methi", "alt_amla_pom", "alt_turmeric_pepper"]
+    },
+    {
+      "regulation": "ASCI Influencer Guidelines 2023",
+      "affected_items": ["all affiliate / vendor / product-link monetization"],
+      "action": "Disclose paid partnerships on every affiliate link",
+      "affected_claim_ids": []
+    }
+  ],
+  "gaps_not_sourced_from_review_files": [
+    {
+      "gap": "Indian-specific APOE ε4 allele frequencies by region — mentioned but not quantified in review files",
+      "needs_verification": true
+    },
+    {
+      "gap": "MTHFR C677T/A1298C Indian-population prevalence — not in review files",
+      "needs_verification": true
+    },
+    {
+      "gap": "OCTN1 / SLC22A4 polymorphism frequencies in Indian subpopulations — not in review files",
+      "needs_verification": true
+    },
+    {
+      "gap": "Water quality (TDS, fluoride, arsenic) regional risk — flagged by SME as scope gap, not a contraindication per se but deserves safety-layer entry in future revision",
+      "needs_verification": true
+    },
+    {
+      "gap": "Air quality (PM2.5) — flagged by SME as larger mortality modifier than most interventions; not a contraindication per se; separate risk-modifier layer recommended",
+      "needs_verification": true
+    },
+    {
+      "gap": "Pill-stack ingredient safety (rapamycin, metformin, acarbose off-label for longevity) — neither reviewer verified ingredient-level safety; not addressed here pending ingredient list",
+      "needs_verification": true
+    },
+    {
+      "gap": "DunedinPACE / Horvath / TruDiagnostic shipping and regulatory status in India — SME scope gap",
+      "needs_verification": true
+    }
+  ]
+}

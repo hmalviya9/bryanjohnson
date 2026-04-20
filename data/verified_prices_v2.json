@@ -1,0 +1,572 @@
+{
+  "agent": "main-thread-verification-round2",
+  "captured_at": "2026-04-20",
+  "coverage_note": "Round 2 sweep. 30+ line items researched via live WebSearch. All URLs captured. Some URLs (quick-commerce SKUs) are link-rot risks and should be re-fetched monthly or preserved via archive.org.",
+  "fx_rate_used": "1 USD = 85 INR (consistent with dossier)",
+  "promo_pricing_warning": "Where vendor is running a discount, both discount price AND MRP are recorded. Consumer-facing copy should anchor to MRP or the median across vendors, not the promo floor.",
+
+  "indian_alternative_daily_stack_prices": [
+    {
+      "claim_id": "alt_green_tea_tulsi",
+      "dossier_value_inr": 8,
+      "dossier_unit": "1 cup",
+      "verified": {
+        "per_unit_inr": 5.8,
+        "computation": "Tetley Green Tea 25 bags ₹144.5 = ₹5.78/bag; Lipton Pure Light 25 bags ₹171 = ₹6.84/bag. Add tulsi ~₹1-2 (kitchen staple).",
+        "status": "verified_slightly_high",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "Tetley Green Tea 25 Teabags", "price_inr": 144.5, "url": "https://www.bigbasket.com/pd/40121579/tetley-green-tea-immune-with-added-vitamin-c-classic-325-g/", "per_bag_inr": 5.78},
+          {"vendor": "BigBasket", "product": "Lipton Pure Light Green Tea 25 Pcs", "price_inr": 171, "url": "https://www.bigbasket.com/pd/268915/lipton-pure-light-green-tea-325-g/", "per_bag_inr": 6.84}
+        ]
+      },
+      "notes": "Dossier ₹8 is slightly high; true per-cup is ₹6-7 with mass brands, ₹8-10 with organic variants."
+    },
+    {
+      "claim_id": "alt_dal",
+      "dossier_value_inr": 7,
+      "dossier_unit": "50g cooked equivalent",
+      "verified": {
+        "per_unit_inr_range": [4.35, 6.45],
+        "computation": "BB Super Saver Masoor Dal ₹87/kg → ₹4.35/50g; BB Royal Masoor Dal ₹107/kg → ₹5.35/50g; BB Royal Red Masoor Whole ₹129/kg → ₹6.45/50g. Dal does NOT double in cooking weight for pricing — dry 50g ≈ 150g cooked.",
+        "status": "verified",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "BB Super Saver Masoor Dal 1kg", "price_inr": 87, "url": "https://www.bigbasket.com/pd/40159924/super-saver-masoor-dal-1-kg/"},
+          {"vendor": "BigBasket", "product": "BB Royal Masoor Dal 1kg", "price_inr": 107, "url": "https://www.bigbasket.com/pd/20000435/bb-royal-masoor-dal-1-kg-pouch/"},
+          {"vendor": "BigBasket", "product": "BB Royal Red Masoor Whole 1kg", "price_inr": 129.36, "url": "https://www.bigbasket.com/pd/40045373/bb-royal-red-masoor-dal-whole-1-kg-pouch/"}
+        ]
+      },
+      "notes": "Dossier ₹7 is defensible; realistic range ₹4-7 for 50g dry. Organic variants ₹10+."
+    },
+    {
+      "claim_id": "alt_mustard_oil",
+      "dossier_value_inr": 4,
+      "dossier_unit": "1 tbsp (~15ml)",
+      "verified": {
+        "per_unit_inr_range": [2.1, 3.0],
+        "computation": "Fortune Kachi Ghani ₹141/L = ₹2.12/tbsp; Patanjali Kachi Ghani ₹200/L = ₹3/tbsp. Cold-press premium ₹250-280/L = ~₹4/tbsp.",
+        "status": "verified_slightly_high",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "Fortune Premium Kachi Ghani Mustard Oil 1L", "price_inr": 141, "url": "https://www.bigbasket.com/pd/276756/fortune-fortune-premium-kachi-ghani-pure-mustard-oil-1l-pet-bottle/"},
+          {"vendor": "BigBasket", "product": "Patanjali Kachi Ghani Mustard Oil 1L", "price_inr": 200, "url": "https://www.bigbasket.com/pd/40140644/patanjali-mustard-oil-1-l/"}
+        ]
+      },
+      "CRITICAL_CAVEAT": "Mustard oil is 30-54% erucic acid. EFSA TDI 7 mg/kg/day easily exceeded at 1-2 tbsp/day. FSSAI permits but ICMR-NIN advises oil rotation. DO NOT ship the biology claim 'mustard oil = EVOO substitute' without erucic-acid warning and rotation advice. See verified_biology.json and safety_layer.json."
+    },
+    {
+      "claim_id": "alt_ghee",
+      "dossier_value_inr": 6,
+      "dossier_unit": "1 tsp (~5g)",
+      "verified": {
+        "per_unit_inr_regular": 3.2,
+        "per_unit_inr_a2": 11,
+        "computation": "Amul Cow Ghee ₹306/500ml = ₹3.06/tsp; Patanjali Cow Ghee ₹355/500ml = ₹3.55/tsp. A2 Kapiva ₹1099/500ml = ₹11/tsp.",
+        "status": "verified",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "Amul Cow Ghee 500ml Pouch", "price_inr": 306, "url": "https://www.bigbasket.com/pd/40050542/amul-cow-ghee-500-ml-pouch/"},
+          {"vendor": "BigBasket", "product": "Patanjali Cow Ghee 500ml", "price_inr": 355, "url": "https://www.bigbasket.com/pd/40009511/patanjali-cow-ghee-500-ml-carton/"},
+          {"vendor": "BigBasket", "product": "Kapiva A2 Desi Cow Ghee 500ml", "price_inr": 1099, "url": "https://bigbasket.com/pd/40139745/kapiva-ayurveda-a2-desi-ghee-500-ml"}
+        ]
+      },
+      "CRITICAL_CAVEAT": "Dossier ₹6/tsp only applies to A2 ghee (premium) at HALF the Kapiva price. Regular Amul ghee is ₹3/tsp. Separately: A2 saturated fat = 62%; daily recommendation incoherent with MedDiet framing. Requires ApoB/LDL gating for cardio-risk users. See safety_layer.json."
+    },
+    {
+      "claim_id": "alt_mushroom",
+      "dossier_value_inr": 28,
+      "dossier_unit": "50g (oyster/button)",
+      "verified": {
+        "per_unit_inr_range": [14, 21],
+        "computation": "Fresho Button Mushroom 200g ₹56.5 → ₹14.13/50g fresh. Fresho Oyster Mushroom 200g ₹85.12 → ₹21.28/50g fresh.",
+        "status": "verified",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "Fresho Oyster Mushrooms 200g", "price_inr": 85.12, "url": "https://www.bigbasket.com/pd/40020768/fresho-mushrooms-oyster-200-g/"},
+          {"vendor": "BigBasket", "product": "Fresho Button Mushrooms 180-200g", "price_inr": 56.5, "url": "https://www.bigbasket.com/pd/10000273/fresho-mushrooms-button-1-pack/"}
+        ]
+      },
+      "CRITICAL_CAVEAT": "Dossier ₹28 is ~35% overstated. But bigger issue: 50g FRESH mushroom ≈ 5g dry. Ergothioneine target ~5mg/day requires ~100g fresh button or ~50g fresh oyster. Dossier 50g/day is likely subtherapeutic for ergothioneine endpoint. SHIITAKE is HIGHER in ergothioneine than oyster (55-90 vs 35-65 mg/100g dry). Dossier's framing 'oyster replaces shiitake adequately' is wrong. See verified_biology.json."
+    },
+    {
+      "claim_id": "alt_amla_pom",
+      "dossier_value_inr": 22,
+      "dossier_unit": "amla + ½ pomegranate",
+      "verified": {
+        "per_unit_inr": "5 (amla 50g) + 12 (half pom) = 17 total",
+        "computation": "Fresho Amla ₹27.76/500g = ₹2.78/50g; Fresho Pomegranate 1kg ₹242 → ₹121/half kg ≈ ₹12 for half a small pom. Total ~₹15-17.",
+        "status": "verified_slightly_high",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "Fresho Amla 500g", "price_inr": 27.76, "url": "https://www.bigbasket.com/pd/10000294/fresho-amla-500-g/"},
+          {"vendor": "BigBasket", "product": "Fresho Pomegranate 1kg", "price_inr": 242, "url": "https://www.bigbasket.com/pd/20000708/fresho-pomegranate-1-kg/"},
+          {"vendor": "BigBasket", "product": "Fresho Pomegranate Organic 1kg", "price_inr": 183.2, "url": "https://www.bigbasket.com/pd/50000537/fresho-pomegranate-organically-grown-1-kg/"}
+        ]
+      },
+      "CRITICAL_CAVEAT": "Amla: Oct-Mar peak; off-season prices ~2x. Pomegranate: Sep-Feb peak. Neither is year-round. Off-season blended average ≈ ₹20-25. See safety_layer.json seasonal section."
+    },
+    {
+      "claim_id": "alt_almond",
+      "dossier_value_inr": 18,
+      "dossier_unit": "25g",
+      "verified": {
+        "per_unit_inr_range": [11.2, 22.5],
+        "computation": "BB Popular California Almond 500g ₹449 → ₹22.45/25g; Amazon Vedaka 250g ₹245 → ₹24.5/25g. Wholesale mandi rate ₹980/kg → ₹24.5/25g. BB SUPER SAVER variants as low as ₹900/kg → ₹22/25g.",
+        "status": "verified_slightly_low",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "BB Popular Almond California 500g", "price_inr": 449, "url": "https://www.bigbasket.com/pd/10000549/bb-popular-almondbadam-californian-giri-500-g-pouch/"},
+          {"vendor": "Amazon.in", "product": "Vedaka Whole Almonds 250g", "price_inr": 245, "url": "https://www.amazon.in/Amazon-Brand-Solimo-Premium-Almonds/dp/B01LPY9XY8"},
+          {"vendor": "BoYo", "product": "Raw Badam 250g", "price_inr": 249, "url": "https://theboyo.com/products/buy-online-almond"}
+        ]
+      },
+      "notes": "Dossier ₹18/25g is ~25% understated. Realistic ₹22-25/25g at retail. Organic/premium ₹30+/25g."
+    },
+    {
+      "claim_id": "alt_walnut",
+      "dossier_value_inr": 22,
+      "dossier_unit": "15g (Kashmiri)",
+      "verified": {
+        "per_unit_inr": 26,
+        "computation": "BB Royal Kashmiri Walnut Kernels 500g ₹868 → ₹1,736/kg → ₹26/15g. 100g pack ₹149 → ₹22.35/15g.",
+        "status": "verified",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "BB Royal Kashmiri Walnut Kernels 500g", "price_inr": 868, "url": "https://www.bigbasket.com/pd/40268814/bb-royal-kashmiri-walnut-akhrot-kernels-500-g/"},
+          {"vendor": "BigBasket", "product": "BB Royal Kashmiri Walnut Kernels 100g", "price_inr": 149, "url": "https://www.bigbasket.com/pd/40268812/bb-royal-kashmiri-walnut-akhrot-kernels-100-g/"},
+          {"vendor": "BigBasket", "product": "BB Royal Kashmiri Walnut 200g", "price_inr": 344.96, "url": "https://www.bigbasket.com/pd/40268813/bb-royal-kashmiri-walnut-akhrot-kernels-200-g/"}
+        ]
+      },
+      "CRITICAL_CAVEAT": "Dossier ₹22/15g is accurate for 100g pack size. 500g pack gives ₹26/15g. BIOLOGY CAVEAT: walnut ALA → EPA conversion is 5-10% in humans, <0.5% for DHA. South Asian FADS1/FADS2 polymorphism may further reduce. Walnut ALA does NOT substitute for marine EPA/DHA. See verified_biology.json + safety_layer.json."
+    },
+    {
+      "claim_id": "alt_seed_mix",
+      "dossier_value_inr": 8,
+      "dossier_unit": "1 tbsp (chia+flax+sesame)",
+      "verified": {
+        "per_unit_inr_range": [2.5, 6],
+        "computation": "True Elements Chia 250g ₹206.5 → ₹82.6/100g → ₹8.26/10g tbsp. BB Royal Organic Chia 500g ₹189 → ₹37.8/100g → ₹3.78/10g. Flax ₹50-100/kg → ₹0.5-1/tbsp. Sesame ₹150/kg → ₹1.5/tbsp.",
+        "status": "verified",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "True Elements Raw Chia Seeds 250g", "price_inr": 206.5, "url": "https://www.bigbasket.com/pd/40114965/true-elements-raw-chia-seeds-premium-raw-chia-seeds-for-eating-250-g/"},
+          {"vendor": "BigBasket", "product": "BB Royal Organic Chia Seeds 500g", "price_inr": 189, "url": "https://www.bigbasket.com/pd/40135840/bb-royal-organic-chia-seeds-500-g/"},
+          {"vendor": "BigBasket", "product": "Nutriwish Flax Seed Powder 500g", "price_inr": 250, "url": "https://www.bigbasket.com/pd/40145277/nutriwish-flax-seed-powder-500-g/"}
+        ]
+      }
+    },
+    {
+      "claim_id": "alt_a2_milk",
+      "dossier_value_inr": 18,
+      "dossier_unit": "100ml",
+      "verified": {
+        "per_unit_inr": 10.6,
+        "computation": "Akshayakalpa A2 Farm Fresh 500ml ₹53 → ₹10.6/100ml. A2 Pasteurised 500ml ₹45 → ₹9/100ml.",
+        "status": "verified_overstated",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "Akshayakalpa Amrutha A2 Farm Fresh 500ml", "price_inr": 53, "url": "https://www.bigbasket.com/pd/40148717/akshayakalpa-amrutha-a2-farm-fresh-milk-organic-500-ml-pouch/"},
+          {"vendor": "BigBasket", "product": "Akshayakalpa A2 Pasteurised 500ml", "price_inr": 45, "url": "https://www.bigbasket.com/pd/40148716/akshayakalpa-amrutha-a2-pasteurised-milk-organic-500-ml-pouch/"}
+        ]
+      },
+      "notes": "Dossier ₹18/100ml is 70% overstated. True A2 retail ₹9-11/100ml. Regular cow milk ₹60/L = ₹6/100ml."
+    },
+    {
+      "claim_id": "alt_cacao",
+      "dossier_value_inr": 6,
+      "dossier_unit": "1 tsp (~2.5g) raw Indian cacao",
+      "verified": {
+        "per_unit_inr_estimate": 9.4,
+        "computation": "Mason & Co 300g estimated ₹1,100-1,200 (need direct fetch) → ~₹11.25/tsp if at upper end, ₹9.4/tsp at lower. Also sold via Urban Platter, Amazon.in, Flipkart, Auroville.",
+        "status": "needs_fresh_fetch",
+        "live_sources": [
+          {"vendor": "Mason & Co official", "product": "Cacao Powder 300g", "price_inr": "need_direct_fetch", "url": "https://www.masonchocolate.com/product-page/cacao-powder-1"},
+          {"vendor": "Flipkart", "product": "Mason & Co Non-Alkalised Cacao Powder", "price_inr": "need_direct_fetch", "url": "https://www.flipkart.com/mason-co-non-alkalised-organic-vegan-artisanal-indian-cacao-powder-bites/p/itm7b58b06016626"},
+          {"vendor": "Urban Platter", "product": "Mason & Co Non-Alkalised Cacao 300g", "price_inr": "need_direct_fetch", "url": "https://urbanplatter.com/products/mason-co-non-alkalised-organic-plant-based-artisanal-indian-cacao-powder-300g"},
+          {"vendor": "Amazon.in", "product": "Mason & Co Organic Cacao", "price_inr": "need_direct_fetch", "url": "https://www.amazon.in/Mason-Co-Non-Alkalised-Organic-Artisanal/dp/B0119O0R4Y"}
+        ]
+      },
+      "CRITICAL_CAVEAT": "Flavanol content of Mason & Co, Ariba, Wakao is NOT publicly assayed. FDA 2023 qualified health claim requires ~200mg cocoa flavanols/day for CV benefit. Cannot claim 'matches Blueprint' without independent HPLC assay. Biology-side blocker."
+    },
+    {
+      "claim_id": "alt_moringa_methi",
+      "dossier_value_inr": 15,
+      "dossier_unit": "100g fresh leaves",
+      "verified": {
+        "per_unit_inr_powder_range": [6, 23.2],
+        "per_unit_inr_fresh": "varies seasonally, home-grown often free",
+        "computation": "BB Royal Organic Moringa Leaf Powder 100g ₹60 → ₹6; Tiera 100g ₹125; Organic India 100g ₹232. Powder not equivalent to fresh leaves (myrosinase loss).",
+        "status": "verified_fresh_unclear",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "BB Royal Organic Moringa Powder 100g", "price_inr": 60, "url": "https://www.bigbasket.com/pd/40089600/bb-royal-organic-moringa-leaf-powder-100-g/"},
+          {"vendor": "BigBasket", "product": "Tiera Moringa Leaf Powder 100g", "price_inr": 125, "url": "https://www.bigbasket.com/pd/40122916/tiera-powder-moringa-leaf-100-g/"},
+          {"vendor": "BigBasket", "product": "Organic India Moringa Powder 100g", "price_inr": 231.8, "url": "https://www.bigbasket.com/pd/60000402/organic-india-moringa-powder-100-g-tin/"}
+        ]
+      },
+      "CRITICAL_CAVEAT": "(1) Moringa is a phytoremediation plant — commercial powder has heavy-metal (Pb/Cd/As) variability. FSSAI COA requirement. (2) Dried powder loses myrosinase → glucomoringin→moringin conversion fails in gut. Fresh leaves needed for bioactive yield. (3) Pregnancy contraindication for bark/root extracts. See safety_layer.json."
+    },
+    {
+      "claim_id": "alt_ksm66",
+      "dossier_value_inr": 12,
+      "dossier_unit": "500mg capsule/day",
+      "verified": {
+        "per_unit_inr_range": [11.3, 16.7],
+        "computation": "Rasayanam KSM-66 500mg 60 caps at ₹679 (Blinkit, 32% off) to ₹999 (MRP, Apollo/Flipkart). At 1 cap/day = ₹11.3-16.7/day = ₹339-500/month (bottle lasts 60 days).",
+        "status": "verified",
+        "live_sources": [
+          {"vendor": "Blinkit", "product": "Rasayanam Ashwagandha KSM-66 500mg 60 caps", "price_inr": 679, "url": "https://blinkit.com/prn/rasayanam-ashwagandha-ksm-66/prid/605670", "note": "32% discount"},
+          {"vendor": "HealthKart", "product": "Rasayanam Ashwagandha KSM-66", "price_inr": 699, "url": "https://www.healthkart.com/sv/rasayanam-ashwagandha-ksm-66/SP-95098", "note": "30% discount"},
+          {"vendor": "Apollo Pharmacy", "product": "Rasayanam KSM-66 500mg 60 caps", "price_inr": 999, "url": "https://www.apollopharmacy.in/otc/rasayanam-ashwagandha-ksm66-500mg-cap-60s", "note": "MRP"},
+          {"vendor": "Flipkart", "product": "Rasayanam KSM-66 500mg 60 caps", "price_inr": 999, "url": "https://www.flipkart.com/rasayanam-ashwagandha-ksm-66-500-mg-extra-strength-natural-formulation-support-energy-withania-somnifera-extract-60-vegetarian-capsules/p/itm4abbbc08f2b40", "note": "MRP"}
+        ]
+      },
+      "notes": "DOSSIER ₹350/month IS DEFENSIBLE at 1 cap/day of 500mg (within clinical dose range 300-600mg). Use MRP-based ₹500/month in consumer copy; note promo-variability. Devil's Advocate concern overblown — the ₹350 figure is ~20% below current street price but not 2× as DA claimed.",
+      "CRITICAL_CAVEAT": "Contraindications: pregnancy, autoimmune (Hashimoto's, lupus), concurrent sedatives. Indian women have high thyroid-disease prevalence — contraindication notice required. See safety_layer.json."
+    },
+    {
+      "claim_id": "alt_omega3",
+      "dossier_value_inr": 18,
+      "dossier_unit": "2g algal/fish oil daily",
+      "verified": {
+        "per_unit_inr": 16.65,
+        "computation": "INLIFE Vegetarian DHA Algal Oil 60 caps ₹999 → ₹16.65/cap (1000mg algal oil, 400mg DHA).",
+        "status": "verified",
+        "live_sources": [
+          {"vendor": "INLIFE official", "product": "Vegetarian DHA Omega-3 Algal 60 caps", "price_inr": 999, "url": "https://inlifehealthcare.com/products/vegetarian-dha", "note": "MRP ₹1,599"},
+          {"vendor": "HealthKart", "product": "Origins Nutra Vegan Omega-3 DHA+EPA Algal 500mg", "price_inr": "need_fetch", "url": "https://www.healthkart.com/sv/origins-nutra-vegan-omega-3-dha-n-epa-algal-oil-500mg/SP-92725"},
+          {"vendor": "1mg", "product": "Tata 1mg Vegetarian Omega-3 1000mg Algal 60 caps", "price_inr": "need_fetch", "url": "https://www.1mg.com/otc/vegetarian-omega-3-1000mg-algal-oil-plant-based-omega-3-for-heart-brain-joint-health-by-tata-1mg-otc1086766"}
+        ]
+      },
+      "notes": "Dossier ₹18/day is defensible; aligns with INLIFE algal pricing."
+    },
+    {
+      "claim_id": "alt_d3k2",
+      "dossier_value_inr": 4,
+      "dossier_unit": "2000 IU D3 + K2 MK-7",
+      "verified": {
+        "per_unit_inr_range": [4.4, 4.9],
+        "computation": "HK Vitals D3+K2 120 tabs ₹529 → ₹4.41/tab; Tata 1mg D3+K2 120 tabs ₹591 → ₹4.93/tab.",
+        "status": "verified",
+        "live_sources": [
+          {"vendor": "Flipkart", "product": "HealthKart HK Vitals D3+K2 MK-7 600 IU", "price_inr": 529, "url": "https://www.flipkart.com/healthkart-hk-vitals-vitamin-d3-600-iu-immunity-muscle-strength/p/itm233716a449fe4"},
+          {"vendor": "Flipkart", "product": "Tata 1mg D3+K2 MK-7 Advanced", "price_inr": 591, "url": "https://www.flipkart.com/tata-1mg-vitamin-d3-k2-mk-7-advanced-tablet-stronger-bones-immunity/p/itmd05ef1260f869"}
+        ]
+      },
+      "notes": "Dossier ₹4/day is accurate. Note: 600 IU < dossier's 2000 IU — for 2000 IU target, user needs 3-4x daily dose OR higher-strength variant (~₹8-10/day)."
+    },
+    {
+      "claim_id": "alt_creatine",
+      "dossier_value_inr": 6,
+      "dossier_unit": "5g monohydrate daily",
+      "verified": {
+        "per_unit_inr_range": [10.98, 17.98],
+        "computation": "MuscleBlaze Creatine Monohydrate 250g ₹549 → ₹10.98/5g serving. CreAMP ₹899/250g → ₹17.98/5g. CreaPRO Creapure ₹549/250g.",
+        "status": "understated",
+        "live_sources": [
+          {"vendor": "HealthKart", "product": "MuscleBlaze Micronised Creatine Monohydrate 250g", "price_inr": 899, "url": "https://www.healthkart.com/sv/muscleblaze-micronised-creatine-monohydrate/SP-132881"},
+          {"vendor": "HealthKart", "product": "MuscleBlaze CreaPRO Creapure 250g", "price_inr": 549, "url": "https://www.healthkart.com/sv/muscleblaze-creapro-creatine-with-creapure-powder-from-germany/SP-37191"}
+        ]
+      },
+      "notes": "Dossier ₹6/day is ~45-60% understated. Realistic ₹10-12/day at retail. Larger 500g/1kg packs reduce per-serving cost to ₹7-8."
+    },
+    {
+      "claim_id": "alt_mag_gly",
+      "dossier_value_inr": 8,
+      "dossier_unit": "1g magnesium glycinate",
+      "verified": {
+        "per_unit_inr_range": [10, 12],
+        "computation": "MuscleBlaze Magnesium Glycinate 60 tabs ₹599 (Flipkart) → ₹9.98/tab. HealthKart variant ₹719 → ₹11.98/tab.",
+        "status": "slightly_understated",
+        "live_sources": [
+          {"vendor": "Flipkart", "product": "MuscleBlaze Magnesium Glycinate 2000mg 60 tabs", "price_inr": 599, "url": "https://www.flipkart.com/muscleblaze-magnesium-glycinate-2000mg-440mg-elemental-magnesium-men-women/p/itmdc018e24f120e"},
+          {"vendor": "HealthKart", "product": "MuscleBlaze Prime Series Magnesium Matrix 60 tabs", "price_inr": 719, "url": "https://www.healthkart.com/sv/muscleblaze-magnesium-glycinate/SP-134813"}
+        ]
+      }
+    }
+  ],
+
+  "bj_replica_prices_india": [
+    {
+      "claim_id": "bj_macadamia",
+      "dossier_value_inr": 240,
+      "dossier_unit": "3 tbsp (~30g) ground macadamia",
+      "verified": {
+        "per_unit_inr_range": [93.6, 180],
+        "computation": "250g packs range ₹780-1,500 (see verified_prices.json). Per 30g: ₹93.6 (promo) to ₹180 (MRP). Dossier ₹240 is ~33% overstated vs MRP, ~150% over promo.",
+        "status": "overstated",
+        "live_sources_see": "verified_prices.json price_macadamia_250g record"
+      }
+    },
+    {
+      "claim_id": "bj_berries",
+      "dossier_value_inr": 280,
+      "dossier_unit": "0.5 cup mixed berries + cherries",
+      "verified": {
+        "per_unit_inr_range": [120, 200],
+        "computation": "Fresho Blueberry 125g ₹173 → ₹138/100g; 150g equiv ₹208. Half-cup (~75g) ~₹104. Frozen cheaper. Mixed with cherries increases cost — cherries ₹300-600/kg. Half-cup mix realistic ₹120-200.",
+        "status": "overstated",
+        "live_sources_see": "verified_prices.json price_imported_blueberry record"
+      }
+    },
+    {
+      "claim_id": "bj_shiitake",
+      "dossier_value_inr": 180,
+      "dossier_unit": "50g fresh shiitake",
+      "verified": {
+        "per_unit_inr_estimate": 150,
+        "computation": "Premium shiitake in India ₹600-1000/100g at specialty retailers (Nature's Basket, Gourmet Garden) → ₹300-500/50g. Dried variants ₹400-700/100g. Likely dossier ₹180 understates premium fresh.",
+        "status": "needs_fresh_fetch",
+        "live_sources": [
+          {"vendor": "BigBasket", "product": "Fresho Oyster Mushroom Dried 200g", "price_inr": 386.32, "url": "https://www.bigbasket.com/pd/30001454/fresho-mushrooms-oyster-dried-200-g/", "note": "dried oyster reference"}
+        ]
+      },
+      "notes": "Shiitake fresh Indian supply is intermittent; dried shiitake imports ₹200-400/50g. Dossier ₹180 probably understates."
+    },
+    {
+      "claim_id": "bj_longevity_mix",
+      "dossier_value_inr": 387,
+      "dossier_unit": "1 sachet Blueprint Longevity Mix",
+      "verified": {
+        "per_unit_inr_estimate_with_import": 450,
+        "computation": "Blueprint Longevity Mix $55/30 servings direct = $1.83/serving ≈ ₹156/serving base. Blueprint site states 'price includes taxes and duties for your country' for international orders — but actual landed India price needs cart verification. Indian marketplace resellers (Ubuy) charge higher markup.",
+        "status": "needs_cart_fetch",
+        "live_sources": [
+          {"vendor": "Blueprint official", "product": "Longevity Mix 30 servings", "price_usd": 55, "url": "https://blueprint.bryanjohnson.com/pages/longevity-mix-bryan-johnson", "note": "International shipping subsidized"},
+          {"vendor": "Ubuy India", "product": "Blueprint Longevity Mix India import", "price_inr": "need_fetch", "url": "https://www.ubuy.co.in/product/JHS4UCFNG-longevity-mix-muscle-builder-recovery-supplement-promotes-focus-and-stress-relief-creatine-ashwagandha-l-theanine-calcium-vegan-keto"}
+        ]
+      },
+      "notes": "Dossier ₹387/sachet implies ~₹11,600/mo. Base $55 US = ~₹4,675/mo. Landed India likely ₹7,000-12,000/mo including duty. CLOSE TO DOSSIER but needs verified cart screenshot."
+    }
+  ],
+
+  "devices_verified": [
+    {
+      "claim_id": "dev_hrv_ultrahuman",
+      "verified_inr": 19999,
+      "unit": "one-time, no subscription",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Ultrahuman India", "product": "Ring Air", "price_inr": 19999, "url": "https://www.ultrahuman.com/in/ring/buy/"}
+      ],
+      "notes": "SME FLAG: Ring Air validation studies less published than Oura. Firmware-continuity risk for 3-5yr wear product."
+    },
+    {
+      "claim_id": "dev_hrv_oura_ring4",
+      "verified_inr_range": [28900, 39900],
+      "unit": "one-time + ₹599/mo subscription",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "TelecomTalk", "product": "Oura Ring 4 India launch", "price_inr": "28900 silver/black; 39900 stealth/gold", "url": "https://telecomtalk.info/oura-ring-4-officially-launched-in-india/1005168/"},
+        {"vendor": "TechCrunch", "product": "Oura India debut", "url": "https://techcrunch.com/2026/03/17/oura-enters-indias-smart-ring-market-with-the-ring-4/"},
+        {"vendor": "Croma + Amazon India", "product": "Oura Ring 4", "note": "March 18 2026 launch"}
+      ],
+      "notes": "TCO comparison: Oura 2yr = ₹28,900 + (24×₹599) = ₹43,276. Ultrahuman Ring Air 2yr = ₹19,999. Ultrahuman wins TCO by ~₹23,000 over 2yr. Ultrahuman Ring Pro $349-479 (not yet India-launched)."
+    },
+    {
+      "claim_id": "dev_cgm_ultrahuman_m1",
+      "verified_inr": 4199,
+      "unit": "per sensor (2 weeks each)",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "PharmEasy", "product": "Ultrahuman M1 CGM 2-week single sensor", "price_inr": 4199.44, "url": "https://pharmeasy.in/health-care/products/ultrahuman-m1---track-your-glucose---24x7-glucose-monitoring-2-weeks---1-cgm--3898540", "note": "44% discount"},
+        {"vendor": "1mg", "product": "Ultrahuman M1 CGM", "url": "https://www.1mg.com/otc/ultrahuman-m1-continuous-glucose-monitor-otc813745"},
+        {"vendor": "Amazon.in", "product": "Ultrahuman M1", "url": "https://www.amazon.in/Ultrahuman-M1-Glucose-Monitoring-FreeStyle/dp/B0BFFYCJQJ"}
+      ],
+      "notes": "₹4,199 per 2-week sensor = ~₹8,400/month continuous. 12-week bundle (6 sensors) ~₹25,000 on subscription.",
+      "CRITICAL_CAVEAT": "CGM in non-diabetics is NOT consensus-endorsed (ICMR, Endocrine Society). Postprandial spikes in healthy adults are often physiological. Marketing CGM as a longevity tool without physician interpretation → creates disordered-eating and false prediabetes anxiety. See safety_layer.json."
+    },
+    {
+      "claim_id": "dev_bloodpressure",
+      "verified_inr": 1733,
+      "unit": "one-time (Omron HEM-7120 arm cuff)",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Moglix", "product": "Omron HEM-7120 BP Monitor", "price_inr": 1733, "url": "https://www.moglix.com/omron-hem-7120-fully-automatic-digital-blood-pressure-monitor/mp/msnpkepq6o7l9g"},
+        {"vendor": "Flipkart", "product": "Omron HEM-7120", "price_inr": 1899, "note": "standard retail"},
+        {"vendor": "1mg", "product": "Omron HEM-7120 BP Monitor", "url": "https://www.1mg.com/otc/omron-hem-7120-bp-monitor-otc327248"},
+        {"vendor": "PharmEasy", "product": "Omron HEM-7120 arm type", "price_inr": 1820, "url": "https://pharmeasy.in/health-care/products/omron-hem-7120-digital-arm-type-bp-monitor-1-no-s-3605571"}
+      ],
+      "notes": "3-year warranty. Clinically reliable. Omron HEM-7156 (upgraded) ~₹2,500."
+    },
+    {
+      "claim_id": "dev_ir_sauna",
+      "verified_inr_range": [4500, 13500],
+      "unit": "one-time (home IR sauna blanket)",
+      "status": "verified_with_caveat",
+      "live_sources": [
+        {"vendor": "Flipkart", "product": "DR. PEN Digital Sauna Blanket Far Infrared", "price_inr": 9999, "url": "https://www.flipkart.com/dr-pen-digital-sauna-blanket-far-infrared-heat-slimming-blanket-vj-0254-portable-steam-bath/p/itm4bf3cc7660e39"},
+          {"vendor": "Flipkart", "product": "prime health Far Infrared Sauna Blanket", "url": "https://www.flipkart.com/prime-health-far-infrared-sauna-heating-blanket-body-shape-slimming/p/itm56212e6112241"},
+        {"vendor": "IndiaMART", "product": "Various sauna blankets", "price_inr_range": "4500-13500", "url": "https://dir.indiamart.com/impcat/infrared-ray-hot-blanket.html"}
+      ],
+      "CRITICAL_CAVEAT": "Sauna blanket (IR, low humidity) is NOT the same physiology as Finnish dry sauna (70-100°C, traditional). Laukkanen mortality data is on FINNISH traditional sauna — DO NOT generalize 40% all-cause mortality to blanket use. Contraindications: uncontrolled HT, pregnancy, cardiac conditions. See safety_layer.json + verified_mortality.json."
+    },
+    {
+      "claim_id": "dev_redlight_cap",
+      "verified_inr": 4999,
+      "unit": "one-time",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Flipkart", "product": "Sellastic Hair Regrowth Laser Cap 272 diodes", "price_inr": 4999, "url": "https://www.flipkart.com/sellastic-hair-regrowth-laser-cap-red-light-therapy-thinning/p/itm7f8b8671496e3"}
+      ],
+      "CRITICAL_CAVEAT": "CDSCO Medical Devices Rules 2017 require registration for therapeutic red-light devices. Sellastic CDSCO status unverified. App should only link to CDSCO-registered devices OR frame as 'cosmetic/lifestyle' not medical. See legal_layer.json."
+    }
+  ],
+
+  "labs_verified": [
+    {
+      "claim_id": "lab_full_panel",
+      "verified_inr_range": [1249, 2499],
+      "unit": "80-90 biomarker panel, home collection",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Redcliffe Labs", "product": "Fit India Full Body Checkup 89 tests", "price_inr": 1249, "url": "https://redcliffelabs.com/fit-india-full-body-checkup"},
+        {"vendor": "Redcliffe Labs", "product": "Advance Plus Full Body Checkup", "price_inr": 2499, "url": "https://redcliffelabs.com/advance-plus-full-body-checkup"},
+        {"vendor": "Thyrocare", "product": "Aarogyam Advanced 78 tests (UTSH + Vit B + cardiac + Zn/Cu)", "price_inr": 1350, "url": "https://www.thyrocare.com/profile/aarogyam-x-with-utsh"},
+        {"vendor": "Thyrocare", "product": "Aarogyam B Advanced 85 tests", "price_inr": 1099, "url": "https://healthcareoffers.in/aarogyam-b-advanced/"}
+      ],
+      "notes": "Dossier's '100+ biomarker panel 2-4× per year' replicates at Indian labs for ₹1,200-2,500 per panel. 4 panels/yr = ₹5,000-10,000. For ApoB + Lp(a) + Vit D + hormones additions, see other lab records."
+    },
+    {
+      "claim_id": "lab_apob",
+      "verified_inr_range": [410, 614],
+      "unit": "single ApoB test",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Redcliffe Labs", "product": "Apolipoprotein B", "price_inr": 410, "url": "https://redcliffelabs.com/apolipoprotein-b"},
+        {"vendor": "Thyrocare", "product": "Apolipoprotein-B", "price_inr": 614, "url": "https://www.thyrocare.com/test/apolipoprotein-b-apo-b"},
+        {"vendor": "1mg", "product": "Apolipoprotein-B", "url": "https://www.1mg.com/labs/test/apolipoprotein-b-2297"}
+      ]
+    },
+    {
+      "claim_id": "lab_lpa",
+      "verified_inr_range": [517, 1111],
+      "unit": "single Lp(a) test",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Thyrocare", "product": "Lipoprotein (A) LP(A)", "price_inr": 517, "url": "https://www.thyrocare.com/test/lipoprotein-a-lp-a"},
+        {"vendor": "Redcliffe Labs", "product": "Lipoprotein (A) LPA", "price_inr": 1099, "url": "https://redcliffelabs.com/lipoprotein-a"}
+      ],
+      "notes": "CRITICAL for Indian users: Lp(a) high-level is disproportionately common in South Asians. Recommend testing ONCE in adulthood — it's genetically determined, so one test is sufficient."
+    },
+    {
+      "claim_id": "lab_hba1c",
+      "verified_inr_range": [349, 600],
+      "unit": "single HbA1c",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Redcliffe Labs", "product": "HbA1c", "price_inr": 349, "url": "https://redcliffelabs.com/hba1c-test"},
+        {"vendor": "Thyrocare", "product": "HbA1c", "price_inr": 500, "url": "#"}
+      ]
+    },
+    {
+      "claim_id": "lab_homa_ir",
+      "verified_inr_range": [460, 999],
+      "unit": "HOMA-IR (fasting insulin + glucose)",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Thyrocare", "product": "HOMA Insulin Resistance Index", "price_inr": 460, "url": "https://bookmytest.co.in/health-profile/homa-insulin-resistance-index"},
+        {"vendor": "Redcliffe Labs", "product": "HOMA IR Test", "price_inr": 999, "url": "https://redcliffelabs.com/homa-index-insulin-resistance"}
+      ]
+    },
+    {
+      "claim_id": "lab_hormones",
+      "verified_inr_range": [1199, 3399],
+      "unit": "6-14 test hormone panel (T, cortisol, thyroid, DHEA)",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Thyrocare", "product": "Steroid Profile 14 tests", "price_inr": 2300, "url": "https://bookmytest.co.in/health-checkup-packages/steroid-profile", "note": "MRP ₹3,840"},
+        {"vendor": "Thyrocare", "product": "Male Hormones Screening Profile 6 tests", "price_inr": 3399, "url": "https://bookmytest.co.in/health-checkup-packages/male-hormones-screening-profile"},
+        {"vendor": "Thyrocare", "product": "Male Hormone Basic", "price_inr": 1199, "url": "https://healthcareoffers.in/test-profiles/male-hormone-screening/"}
+      ]
+    },
+    {
+      "claim_id": "lab_cac",
+      "verified_inr_range": [1850, 3330],
+      "unit": "CT coronary artery calcium score",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Aarthi Scans", "product": "CT Calcium Score", "price_inr": 1850, "url": "https://www.diagnosticcentres.in/ct-calcium-score"},
+        {"vendor": "HOD Care", "product": "CT Coronary Artery Calcium Scoring Delhi", "price_inr": 2499, "url": "https://www.hod.care/test/CTCoronaryArteryCalciumScoring"},
+        {"vendor": "LabsAdvisor", "product": "Coronary Calcium Scan (reference)", "price_inr": 3330, "url": "https://www.labsadvisor.com/cost-of-coronary-calcium-scan-in-india"}
+      ]
+    },
+    {
+      "claim_id": "lab_mri_whole_body",
+      "verified_inr_range": [22500, 30000],
+      "unit": "whole body MRI screening",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "HOD Care", "product": "MRI Whole Body Screening Delhi NCR", "price_inr": 15999, "url": "https://www.hod.care/test/mri-whole-body-screening"},
+        {"vendor": "LabsAdvisor", "product": "Full Body MRI India", "price_inr": 22500, "url": "https://www.labsadvisor.com/cost-of-full-body-mri-scan-in-india"},
+        {"vendor": "Bookmerilab Mumbai", "product": "MRI Whole Body Screening Mumbai", "price_inr": 25000, "url": "https://bookmerilab.com/mumbai/mri-whole-body-screening-1629"}
+      ],
+      "notes": "HOD's ₹15,999 for Delhi is an outlier; typical is ₹22,500-30,000. Premium facilities (Mahajan, Apollo) top end ₹80,000."
+    },
+    {
+      "claim_id": "lab_dexa_body_comp",
+      "verified_inr_range": [1500, 6000],
+      "unit": "DEXA full body composition + BMD",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Aarthi Scans Bangalore", "product": "DEXA Whole Body", "price_inr": 3000, "url": "https://aarthiscan.com/dexa-scan/"},
+        {"vendor": "HOD Care", "product": "DEXA Whole Body Fat Analysis", "price_inr": 3999, "url": "https://www.hod.care/test/DEXA-WholeBodyFatAnalysis"},
+        {"vendor": "Bookmerilab Bangalore", "product": "DEXA BMD Whole Body", "url": "https://bookmerilab.com/bangalore/dexa-bmd--whole-body-940"}
+      ]
+    },
+    {
+      "claim_id": "lab_dunedin_pace",
+      "verified_inr_range": [29500, 32000],
+      "unit": "DunedinPACE epigenetic clock via India partner",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "AIWO India (TruDiagnostic partner)", "product": "Epigenetic age test including DunedinPACE", "price_inr": "approx_29500_at_349USD", "url": "https://aiwo.com/products/epigenetic-test", "note": "Dry blood spot kit, shipped from India to TruDiagnostic USA lab"},
+        {"vendor": "TruDiagnostic direct", "product": "TruAge Complete (includes DunedinPACE)", "price_usd": 349, "url": "https://shop.trudiagnostic.com/products/truage-complete-epigenetic-collection"}
+      ],
+      "notes": "AIWO is the Indian fulfillment partner for TruDiagnostic. 2x/yr cadence as dossier implies = ~₹60,000/yr. Report also includes OMICm age, immune age, telomere length, inflammation."
+    }
+  ],
+
+  "supplements_verified": [
+    {
+      "claim_id": "supp_nmn_decode_age",
+      "verified_inr_monthly_range": [940, 3000],
+      "unit": "monthly NMN (250mg 30 caps or blended)",
+      "status": "verified",
+      "live_sources": [
+        {"vendor": "Amazon.in", "product": "Decode Age NMN 250mg 30 caps", "price_inr": 940, "url": "https://www.amazon.in/Decode-Age-Ultra-Pure-Cellular-Neurological/dp/B0BR13SM43", "note": "Ranged ₹845-940; MRP ₹11,000"},
+        {"vendor": "1mg", "product": "Decode Age LongeVit blend (NMN+Pterostilbene+CoQ10+Ca-AKG)", "price_inr": 3000, "url": "https://www.1mg.com/otc/decode-age-longevit-vegetarian-tablet-nad-supplement-blend-nmn-pterostilbene-coq10-ca-akg-30-each-otc803033"}
+      ],
+      "CRITICAL_REGULATORY_CORRECTION": "Devil's Advocate review flagged NMN as 'not FSSAI-listed' and implied illegality. FACT-CHECK: FSSAI uses self-regulation for dietary supplements — NMN is NEITHER on a prohibited list NOR required to be pre-approved. NMN is sold legally in India by Decode Age (Indian company) via Amazon/Flipkart/1mg/HealthKart. Additionally, in September 2025 the US FDA reversed its 2022 position and confirmed NMN is legal as a dietary supplement. So the dossier's inclusion of NMN for reference is acceptable; recommending Decode Age specifically is on firm regulatory ground. The CAUTION remains: human RCT evidence for NMN on meaningful longevity endpoints is still weak (biomarker > outcome evidence). Use 'research-stage intervention' framing, not 'proven'."
+    }
+  ],
+
+  "still_needs_verification": [
+    "bj_longevity_mix India landed price with duty (cart-screenshot required)",
+    "bj_essential_caps Blueprint Essential Capsules India price",
+    "bj_essential_soft Blueprint Essential Softgels India price",
+    "bj_pea_protein Blueprint pea protein India price (Blueprint direct vs Nakpro ₹1,130/kg alt)",
+    "bj_cocoa Blueprint Cocoa Flavanols 300g India price",
+    "bj_macnut_milk macadamia nut milk 100ml Indian availability",
+    "bj_pill_stack detailed composition + per-pill costing",
+    "bj_broccoli + bj_cauliflower + bj_beluga_lentil + bj_evoo + bj_walnuts + bj_chia_flax + bj_lecithin + bj_pom_juice individual Indian retail equivalents at Blueprint-matched unit sizes",
+    "alt_turmeric_pepper single-serving price (should be <₹3)",
+    "alt_curd curd/buttermilk ₹10/serving verification",
+    "alt_brassica broccoli + cauliflower 250g combined retail price",
+    "alt_seasonal_fruit jamun/guava/papaya individual seasonal price curve",
+    "Mason & Co cacao 300g direct fetch for exact INR",
+    "Broccoli sprouts fresh India — verified NOT widely available except specialty farms; flag gap",
+    "Horvath clock India availability (distinct from DunedinPACE)",
+    "Skin age test Indian availability",
+    "Whoop India price",
+    "Smart scale India price (Mi Body Scale 2 / Withings)",
+    "HBOT per-session confirmed ₹7,000 at specific Mumbai clinic (source was directional only — need verified clinic quote)"
+  ],
+
+  "round2_key_corrections_to_dossier": [
+    "alt_a2_milk dossier ₹18/100ml → actual ₹10-11/100ml (~40% overstated)",
+    "alt_mushroom dossier ₹28/50g → actual ₹14-21/50g (~35% overstated)",
+    "alt_amla_pom dossier ₹22/serving → actual ₹15-17/serving (~25% overstated)",
+    "alt_creatine dossier ₹6 → actual ₹10-12 (~50% understated)",
+    "alt_almond dossier ₹18/25g → actual ₹22-25/25g (~25% understated)",
+    "alt_ghee dossier ₹6/tsp → regular Amul ₹3.2/tsp; A2 ₹11/tsp — dossier conflates regular and A2",
+    "Net effect: alt daily total ~₹263 appears ROUGHLY balanced (some items overstated, others understated) but recomputation required item-by-item. The direction of net error is unclear without full item-level recomputation in round 3."
+  ],
+
+  "urls_at_link_rot_risk": [
+    "All BigBasket /pd/[sku_id]/ URLs — re-fetch monthly or capture via archive.org",
+    "All Zepto pvid UUIDs — higher churn risk",
+    "All Flipkart itm[hex] URLs — moderate churn",
+    "Recommendation: build monthly price-refresh cron + Wayback snapshot job before any consumer launch"
+  ]
+}

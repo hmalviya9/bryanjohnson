@@ -1,0 +1,254 @@
+{
+  "reviewer": "SME",
+  "reviewed_at": "2026-04-20",
+  "per_claim": [
+    {
+      "claim_id": "swap_blueberry_jamun__anthocyanin",
+      "file": "verified_biology.json",
+      "verdict": "FLAG",
+      "sme_notes": "The corrected statement ('comparable, not higher') is defensible, but the 230-438 mg/100g jamun figure is reported on DRY WEIGHT basis while blueberry reference values are typically FRESH WEIGHT (~160-300 mg/100g fresh for high-bush blueberries). Comparing dry-basis jamun to fresh-basis blueberry invites a unit-mismatch error that a nutrition reviewer will catch immediately. Additionally, anthocyanin bioavailability is notoriously low (<1% systemic) and depends heavily on gut microbiome and food matrix — 'density' in the fruit matters less than absorbed anthocyanin metabolites. Seasonality not noted: jamun is available ~6-8 weeks/year in most Indian regions (monsoon), a major adherence constraint users must plan around.",
+      "required_change": "Normalize both values to fresh weight OR explicitly state 'dry basis vs fresh basis' in the comparison; add seasonality caveat; note bioavailability ceiling.",
+      "additional_sources_suggested": ["IFCT 2017 (NIN India) fresh-weight anthocyanin data for jamun", "a human bioavailability study comparing anthocyanin metabolite AUC between berries"],
+      "nuance_to_add": "Fresh-weight vs dry-weight units; jamun seasonality (monsoon only); anthocyanin absorption is <1% so small absolute differences between fruits are clinically meaningless."
+    },
+    {
+      "claim_id": "swap_blueberry_amla__vitamin_c",
+      "file": "verified_biology.json",
+      "verdict": "FLAG",
+      "sme_notes": "Directionally correct and the '20-50x' upgrade is honest. However, vitamin C in amla is notoriously heat-labile AND paradoxically thermostable compared to pure ascorbate due to polyphenol co-factors (tannins) that protect it during cooking. The dossier doesn't specify form (fresh fruit vs murabba vs candy vs powder vs juice) — processed amla products (which most Indian consumers actually eat) lose 30-70% of vitamin C. Dried amla powder used in chyawanprash can retain <20%. Without form-specificity, the 20-50x headline is misleading for real-world intake. Also: vitamin C absorption plateaus at ~200 mg/day orally; above that, most is excreted, so the 'ratio' of vitamin C is not proportionate to bioavailable intake.",
+      "required_change": "Specify 'fresh amla' in the claim and add a note that processed forms (candy, powder, murabba) lose substantial vitamin C; note absorption plateau.",
+      "additional_sources_suggested": ["Study on vitamin C retention in processed amla products (Indian food tech literature)", "Levine et al. on oral vitamin C pharmacokinetics for absorption ceiling"],
+      "nuance_to_add": "Form matters (fresh vs dried vs murabba); absorption ceiling ~200 mg/day; tannins in amla delay oxidation relative to synthetic ascorbate."
+    },
+    {
+      "claim_id": "swap_macadamia_walnut__ala",
+      "file": "verified_biology.json",
+      "verdict": "BLOCKER",
+      "sme_notes": "The biggest missing nuance in the entire biology file is here: ALA (plant omega-3 in walnuts) has poor conversion to EPA/DHA in humans — typically 5-10% to EPA and <0.5% to DHA, with further reductions in males, South Asians, and those with common FADS1/FADS2 polymorphisms which are HIGH-frequency in Indian populations. Swapping walnuts for macadamia 'for omega-3' without mentioning this makes the swap biologically weaker than advertised. A 9.1g ALA serving does NOT equal a 9.1g marine omega-3 serving. For users with CV risk who need EPA/DHA, this swap is inadequate and a fish oil / algal oil addition is required — which the dossier elsewhere lists (alt_omega3 ₹18) but doesn't connect to this swap. Also, walnuts are extremely omega-6 heavy (~38g linoleic per 100g) — net anti-inflammatory impact is debated.",
+      "required_change": "Add mandatory caveat: 'Walnut ALA -> EPA conversion in humans is 5-10%; for cardioprotective marine omega-3 effects, pair with algal oil or fatty fish. Indian South-Asian FADS polymorphism may further reduce conversion.'",
+      "additional_sources_suggested": ["Brenna et al. on ALA->EPA/DHA conversion efficiency in humans", "Sergeant et al. or Chilton et al. on FADS polymorphism prevalence in South Asian populations"],
+      "nuance_to_add": "ALA is not a substitute for EPA/DHA; FADS genotype affects conversion; walnut omega-6:omega-3 ratio is still ~4:1."
+    },
+    {
+      "claim_id": "swap_sprouts_moringa__itc",
+      "file": "verified_biology.json",
+      "verdict": "FLAG",
+      "sme_notes": "The corrected framing ('different ITC, comparable potency, broccoli sprouts remain gold standard for sulforaphane') is defensible. Missing: moringa glucosinolate content varies 5-10x between cultivars, leaf age, and drying method; commercially sold dried moringa powder often has near-zero intact myrosinase activity, meaning the glucomoringin -> moringin conversion does NOT happen in the gut efficiently without the enzyme. This is the same problem that kills cooked broccoli's sulforaphane yield. The dossier doesn't distinguish fresh vs dried moringa. Also, human RCT evidence for moringin at dietary doses producing Nrf2 activation in vivo is extremely thin — most evidence is in vitro or rodent. The gold-standard-sprout line is correct, but users taking '1 tsp moringa powder' get a small fraction of the theoretical ITC dose.",
+      "required_change": "Specify fresh moringa leaves vs dried powder; flag myrosinase loss in dried product; temper in-vivo human efficacy claim.",
+      "additional_sources_suggested": ["Waterman et al. 2014 on moringa isothiocyanate yield in processed forms", "human bioavailability study of moringa bioactives"],
+      "nuance_to_add": "Dried moringa loses myrosinase; fresh leaves or enzyme co-ingestion (e.g., mustard seed) needed to actually liberate moringin in the gut."
+    },
+    {
+      "claim_id": "swap_evoo_mustard__mufa",
+      "file": "verified_biology.json",
+      "verdict": "BLOCKER",
+      "sme_notes": "The erucic acid concern is acknowledged in recommended_fix but NOT in the verified_statement body — it needs to be in the core claim, not a footnote. Mustard oil is 30-54% erucic acid. FSSAI permits mustard oil in India (unlike EU/US/Canada where blended or low-erucic 'canola' is standard). ICMR-NIN dietary guidelines specifically advise rotating oils partly due to mustard oil concerns. Long-term high erucic intake is associated with myocardial lipidosis in animal models; human evidence is weaker but EFSA set a TDI of 7 mg/kg/day (easily exceeded at 1-2 tbsp/day). For a LONGEVITY product, recommending a cardiolipotoxic-candidate oil without rotation guidance is a liability. Additionally, EVOO's polyphenols (oleocanthal, hydroxytyrosol) are the ACTIVE cardioprotective ingredient per EU health claims — mustard oil has ZERO of these. The swap is not function-for-function; it's MUFA-for-MUFA only, missing the polyphenol mechanism entirely.",
+      "required_change": "Add erucic-acid cap and oil-rotation language to the primary claim; explicitly state mustard oil is NOT a polyphenol match for EVOO; recommend pairing mustard oil with low-erucic oils (sesame, groundnut) or using low-erucic mustard cultivars.",
+      "additional_sources_suggested": ["EFSA 2016 scientific opinion on erucic acid in food", "ICMR-NIN 2024 dietary guidelines section on edible oils", "EU health claim 432/2012 on olive oil polyphenols and LDL oxidation"],
+      "nuance_to_add": "Erucic acid TDI; oil rotation recommendation; polyphenol profile mismatch; FSSAI labeling."
+    },
+    {
+      "claim_id": "swap_shiitake_oyster__ergothioneine",
+      "file": "verified_biology.json",
+      "verdict": "FLAG",
+      "sme_notes": "The corrections (ergothioneine actually higher in shiitake; MCI odds 57% not 64%) are accurate and important. However, the 50g/day serving in the dossier is fresh weight, while the 35-90 mg ergothioneine figures cited are dry weight. At 50g fresh oyster mushroom (~90% water), actual ergothioneine intake is ~0.5-3 mg. Mori et al. (Japan) and Beelman et al. estimate ~5 mg/day as a reasonable target for plasma ergothioneine maintenance. So BOTH the shiitake and oyster 50g servings may be SUBTHERAPEUTIC at dossier doses — the whole swap pivots on unit confusion. Also, ergothioneine accumulates via the OCTN1 transporter, which is highly variable between humans — some people have null-variant OCTN1 and don't retain ergothioneine at all. Singapore MCI cohort was ethnic Chinese — direct generalization to Indian populations is unvalidated.",
+      "required_change": "Recompute ergothioneine delivery at 50g FRESH weight and state the actual mg/serving; flag that both options may be subtherapeutic; note OCTN1 variability and cohort ethnicity.",
+      "additional_sources_suggested": ["Beelman et al. on dietary ergothioneine targets", "Pfeiffer et al. on OCTN1/SLC22A4 polymorphism and ergothioneine retention"],
+      "nuance_to_add": "Dry vs fresh weight; target intake ~5 mg/day; OCTN1 genotype affects retention; Singapore cohort is Chinese, not Indian."
+    },
+    {
+      "claim_id": "swap_nmn_exercise__nad",
+      "file": "verified_biology.json",
+      "verdict": "FLAG",
+      "sme_notes": "The nuanced verified_statement is actually one of the better-written records in the file, and the recommended_fix is good. Gaps: (1) NMN is no longer on the US FDA GRAS/NDI pathway (2022 NDI rejection) — regulatory risk not mentioned, which matters for Indian users because the Indian supplement supply relies on US-certified material. (2) Niacin/NR/NMN/tryptophan are NOT interchangeable NAD+ precursors — tryptophan -> NAD+ via de novo pathway is extremely inefficient (~60:1 ratio) and competes with serotonin synthesis. The dossier's alt claim 'tryptophan-rich dal + niacin + exercise' overstates the NAD+ contribution of dal. (3) Exercise's NAD+ benefit is tissue-specific (muscle) and doesn't raise liver/brain NAD+ the way supplementation might.",
+      "required_change": "Add regulatory context (NMN FDA status 2022); correct the implication that tryptophan from dal raises NAD+ meaningfully (it doesn't, in a dose-relevant way).",
+      "additional_sources_suggested": ["FDA NDI letter on NMN (2022)", "review of niacin/NR/NMN/NAM tissue-specific pharmacokinetics"],
+      "nuance_to_add": "Tryptophan-to-NAD is ~60:1 inefficient; exercise NAD+ gain is muscle-specific; NMN regulatory flux in US/India."
+    },
+    {
+      "claim_id": "swap_ashwa_ksm66__manufacturer",
+      "file": "verified_biology.json",
+      "verdict": "PASS",
+      "sme_notes": "Factual manufacturer claim is verified and accurate. Only minor nuance: KSM-66 is one of several clinical-grade extracts (Sensoril is another, made by Natreon). The dossier implicitly conflates 'KSM-66' with 'all clinical-grade ashwagandha' — most RCTs are on KSM-66, but some are on Sensoril (different extraction: whole plant vs root-only) and results differ on cortisol vs cognition endpoints. Not a blocker — the manufacturer claim itself is clean.",
+      "required_change": "None required; optional: note that KSM-66 is root-only while Sensoril is whole-plant and they're not always interchangeable in trials.",
+      "additional_sources_suggested": [],
+      "nuance_to_add": "KSM-66 (root) vs Sensoril (whole plant) extraction differences."
+    },
+    {
+      "claim_id": "swap_pomjuice_anar__ellagitannin",
+      "file": "verified_biology.json",
+      "verdict": "PASS",
+      "sme_notes": "Excellent correction. The 'juice is Western dilution' reframe is handled well, and the urolithin-A-producer caveat is specifically called out (40% of humans convert efficiently). One small addition: urolithin-A producer status can be induced in non-producers by regular ellagitannin intake over 4-8 weeks in some studies (microbiome adaptation), so the 'only matters if you're one' line is slightly pessimistic. Mitobiogenesis benefit data in humans is still early-stage (Andreux et al. 2019 is the main RCT, small n).",
+      "required_change": "None required. Optional: soften 'only matters if you're a producer' to 'producer status is variable and can improve with sustained intake'.",
+      "additional_sources_suggested": [],
+      "nuance_to_add": "Producer status is modifiable; urolithin-A direct supplementation (Mitopure / Amazentis) bypasses producer limitation and exists on Indian market."
+    },
+    {
+      "claim_id": "swap_cocoa_cacao__flavanol",
+      "file": "verified_biology.json",
+      "verdict": "PASS",
+      "sme_notes": "The honest 'unverified — no public COAs' stance is correct and shippable as-is. Optional: FDA qualified health claim language (2023) requires ~200 mg cocoa flavanols/day for CV benefit — this target is useful as a benchmark in the final product copy. Also worth noting: most 'raw' Indian cacao is actually lightly fermented and sun-dried, not truly raw — alkalization (Dutching) is the main flavanol killer, not mild fermentation. So non-alkalized Indian cacao is plausibly high-flavanol even without published COAs, but we can't quantify without testing.",
+      "required_change": "None. Flag for R1 revisit is appropriate.",
+      "additional_sources_suggested": ["FDA 2023 qualified health claim on cocoa flavanols and CVD"],
+      "nuance_to_add": "200 mg flavanols/day benchmark; 'raw' often means 'non-alkalized' not truly unfermented."
+    },
+    {
+      "claim_id": "free5_smoking",
+      "file": "verified_mortality.json",
+      "verdict": "PASS",
+      "sme_notes": "Defensible. Doll & Peto is the canonical source and the 'halves excess hazard if quit mid-life' framing is correct. Only gap: Indian smoking prevalence is bimodal (bidi/tobacco chewing vs cigarettes) and the Indian cohorts (e.g., INTERHEART India, Gupta et al.) show even steeper mortality gradients for tobacco chewing + bidi users than Western cigarette smokers. Not strictly needed for a '~50%' headline.",
+      "required_change": "None.",
+      "additional_sources_suggested": ["Gupta et al. Mumbai Cohort on tobacco mortality in India — for India-specific relevance"],
+      "nuance_to_add": "Indian tobacco patterns (bidi/chewing) have similar or larger mortality signals; cessation benefits extrapolate."
+    },
+    {
+      "claim_id": "free5_weight",
+      "file": "verified_mortality.json",
+      "verdict": "PASS",
+      "sme_notes": "The correction (15-20% from RCT meta, not 40%) is correct and is a critical fix. The explanation of the observational-vs-interventional confusion is exactly right. Only additional nuance worth including: GLP-1 RAs (semaglutide, tirzepatide) in SELECT and SURMOUNT-MMO trials are showing 15-20% weight loss with cardiovascular mortality benefits in the 15-20% range — so the new pharma-driven weight-loss evidence is consistent with the meta-analytic estimate. Also: 'weight control' in Indian populations has the added complexity of the 'thin-fat' phenotype (normal BMI, high visceral fat, high metabolic risk) — BMI-based trials underestimate risk in South Asians, where waist circumference / WHtR matters more.",
+      "required_change": "None for the RR fix. Optional add: WHtR/waist-circumference framing for Indian users.",
+      "additional_sources_suggested": ["SELECT trial (semaglutide MACE)", "Misra & Khurana on thin-fat phenotype in South Asians"],
+      "nuance_to_add": "South Asian thin-fat phenotype; WHtR > BMI for Indian users."
+    },
+    {
+      "claim_id": "free5_exercise",
+      "file": "verified_mortality.json",
+      "verdict": "FLAG",
+      "sme_notes": "HR 0.65 (35%) from PURE is defensible but represents high-PA vs low-PA extremes. More nuanced dose-response data (Arem 2015 JAMA IM, 600K participants): mortality benefit plateaus at ~3-5x minimum recommended PA (~450-750 min moderate/week), with hazard nadir HR ~0.61. At the TYPICAL recommendation dose (150 min/week moderate), hazard reduction is ~20-25%, not 35%. So '35%' is the ceiling not the floor. Indian context: PURE's South Asia subcohort actually showed a steeper benefit gradient for non-recreational PA (occupational, transportation) — important because recreational exercise is class-biased in India and walking/cycling for commute may be the dominant PA.",
+      "required_change": "Add dose-response caveat: '35% is at high-PA tier; ~20% at guideline-minimum dose'; add occupational/transport PA counts for Indian context.",
+      "additional_sources_suggested": ["Arem et al. 2015 JAMA IM dose-response meta-analysis", "PURE South Asia subanalysis"],
+      "nuance_to_add": "Dose-response plateau at 3-5x guidelines; non-recreational PA counts equally in Indian cohorts."
+    },
+    {
+      "claim_id": "free5_bp",
+      "file": "verified_mortality.json",
+      "verdict": "FLAG",
+      "sme_notes": "Subgroup caveat ('high-CV-risk adults') is correctly added. What's missing: SPRINT specifically EXCLUDED diabetics, people with prior stroke, and people over 80 with frailty — the headline 30% does not apply to those groups (large Indian hypertensive population has high diabetes comorbidity, so SPRINT generalizability to India is limited). Also, intensive BP control in Indian primary-care settings is complicated by orthostatic hypotension in elderly (fall risk, hip fracture) and drug cost/adherence. A pure mortality number without side-effect context oversimplifies. J-curve debate (risk at very low DBP in CAD patients) also not mentioned.",
+      "required_change": "Add exclusion criteria note (diabetes, frailty, stroke hx); acknowledge J-curve debate; mention orthostatic/fall risk in elderly.",
+      "additional_sources_suggested": ["SPRINT subgroup analyses (frailty, age)", "Messerli J-curve meta-analyses"],
+      "nuance_to_add": "SPRINT excluded diabetics; intensive BP has harms (syncope, AKI, hyponatremia) in the elderly; J-curve."
+    },
+    {
+      "claim_id": "free5_diet",
+      "file": "verified_mortality.json",
+      "verdict": "FLAG",
+      "sme_notes": "Correction to 21% is accurate. Bigger issue: 'Mediterranean/plant-forward' is not equivalent to Indian traditional diets. Indian vegetarian diets are HIGH in refined carbs (white rice, wheat), HIGH in dairy (saturated fat from ghee/paneer), HIGH in oil (especially at restaurant/street food level), and LOW in nuts/legumes at population level despite individual availability. A direct MedDiet score applied to Indian foods would score poorly due to grain quality and dairy load. The product needs an explicit 'Indianized MedDiet score' or at least a caveat that the 21% benefit requires specific food choices (olive oil or mustard, whole grains not polished rice, regular legumes, limited dairy, fish/plant protein). Without this, readers will assume 'I'm already vegetarian, so I get 21%' which is wrong.",
+      "required_change": "Add 'Indian plant-forward diet' caveat: refined-grain and dairy-heavy Indian vegetarian diets do NOT automatically confer the 21%; structure matters.",
+      "additional_sources_suggested": ["ICMR-INDIAB diet-mortality data", "Indian Migration Study diet analyses"],
+      "nuance_to_add": "Indian vegetarian != Mediterranean; refined carb and dairy load matter."
+    },
+    {
+      "claim_id": "nuts_adventist",
+      "file": "verified_mortality.json",
+      "verdict": "FLAG",
+      "sme_notes": "HR range is correctly cited. Critical missing caveat: Adventist Health Study-2 is a self-selected, low-alcohol, low-smoking, vegetarian-skewed, US-suburban cohort. Healthy-user confounding is enormous — people who eat 5+ servings of nuts/week also exercise more, have higher education, and lower BMI. The HR 0.56-0.82 range reflects residual confounding as much as nuts. NEJM Bao 2013 (Nurses' Health + HPFS) is more generalizable but also has healthy-user bias. For Indian users: nut consumption at 30g/day is substantially more calorie-dense than average Indian snack intake and may displace dal/fruit rather than adding benefit. The '+2-3 year lifespan' figure is a MODELED projection, not a direct observation — should be labeled as such.",
+      "required_change": "Label '+2-3 years' as modeled/derived, not observed; add healthy-user confounding caveat; note Adventist cohort demographics.",
+      "additional_sources_suggested": ["Aune et al. 2016 meta for broader generalizability", "GBD India dietary risk factor analyses"],
+      "nuance_to_add": "Cohort selection bias; modeled vs observed lifespan gain; caloric displacement in Indian diet."
+    },
+    {
+      "claim_id": "legume_loma",
+      "file": "verified_mortality.json",
+      "verdict": "FLAG",
+      "sme_notes": "HR 0.94 per 50g/day (6% not 8%) is the correct number. However, 50g/day of cooked legume is well below typical Indian dal intake (often 80-150g cooked/day in North Indian households). Extrapolating linearly beyond the data range (the meta-analytic range is ~0-150g) is not supported. Also, the Loma Linda cohort is Adventist — same healthy-user bias as above. Indian observational data (e.g., ICMR-INDIAB, PURE India) on legume intake and mortality specifically is under-represented. Finally, 'legume' aggregates beans, lentils, soy, peanuts — each with different metabolic profiles; the dossier's 'dal' substitute is primarily lentils/chickpeas, not the pooled mix in meta-analyses.",
+      "required_change": "Correct 8% to 6% (already done). Add: effect is per 50g/day, linear extrapolation beyond 150g unsupported; Indian dal intake may already be at saturation.",
+      "additional_sources_suggested": ["PURE India legume subanalysis", "ICMR-INDIAB dietary intake data"],
+      "nuance_to_add": "Dose-ceiling at ~150g/day; legume heterogeneity (soy vs lentil vs peanut); Indian baseline intake already high."
+    },
+    {
+      "claim_id": "sauna_finnish",
+      "file": "verified_mortality.json",
+      "verdict": "BLOCKER",
+      "sme_notes": "The numerical correction (63% is SCD, not fatal CVD — fatal CVD is 50%) is essential and correctly flagged. But the bigger issue remains: the Laukkanen cohort is 2,315 Finnish MEN, all in a population with a millennia-long cultural sauna adaptation, using traditional high-humidity Finnish saunas (70-100 C, humidity intermittent). Generalizing to Indian users — women, different thermoregulatory physiology, no cultural adaptation, typically dry infrared saunas (very different hemodynamics from Finnish), and in a hot climate where heat stress is already high — is a significant extrapolation. The 40% all-cause and 50% CV mortality numbers should NOT be quoted as applicable to Indian users without explicit caveat. Additionally: sauna is contraindicated in uncontrolled hypertension, pregnancy, certain cardiac conditions — none of which the dossier flags. For a longevity product shipping to Indian users in a hot climate, sauna recommendations need a climate-contextualized dose discussion (cold-water immersion post-sauna, hydration, contraindications).",
+      "required_change": "Add prominent generalizability caveat: 'Male Finnish cohort, traditional Finnish sauna; translation to Indian women / infrared / hot-climate users is unvalidated.' Add contraindications section.",
+      "additional_sources_suggested": ["2018 BMC Med (already cited) has mixed-sex data — use those HRs for women", "infrared sauna hemodynamic studies (they differ from Finnish)", "ACC/AHA heat therapy guidance"],
+      "nuance_to_add": "Sex-specific data; infrared vs traditional differ; contraindications; hydration in Indian climate; cultural adaptation effect."
+    },
+    {
+      "claim_id": "price_imported_blueberry",
+      "file": "verified_prices.json",
+      "verdict": "PASS",
+      "sme_notes": "Correction from ₹800 to ₹208-400 is well-sourced with multiple vendor checks. The '20x cheaper -> 5-6x cheaper' recalculation is honest. Good work. Minor: frozen blueberry (₹169/150g equiv) is nutritionally comparable or superior for anthocyanins (freezing preserves; oxidation on the shelf degrades fresh berries), so the swap story could be partially undermined by frozen availability. Worth flagging in the biology side too.",
+      "required_change": "None on price. Consider cross-referencing frozen blueberry as a middle-ground option.",
+      "additional_sources_suggested": [],
+      "nuance_to_add": "Frozen blueberries preserve anthocyanins well and are cheaper than fresh."
+    },
+    {
+      "claim_id": "price_macadamia_250g",
+      "file": "verified_prices.json",
+      "verdict": "PASS",
+      "sme_notes": "Correction from ₹3,200 to ₹780-1,500 is well-sourced. The impact note (swap still wins on ALA, but magnitude softens) is correct. No issues.",
+      "required_change": "None.",
+      "additional_sources_suggested": [],
+      "nuance_to_add": ""
+    },
+    {
+      "claim_id": "price_kashmiri_walnut",
+      "file": "verified_prices.json",
+      "verdict": "PASS",
+      "sme_notes": "Multi-vendor verification, in-line with retail. Clean.",
+      "required_change": "None.",
+      "additional_sources_suggested": [],
+      "nuance_to_add": ""
+    },
+    {
+      "claim_id": "price_ksm66_ashwagandha",
+      "file": "verified_prices.json",
+      "verdict": "FLAG",
+      "sme_notes": "Correctly flagged as partially_verified_need_deeper_fetch. Missing: dose-equivalence check. The alt stack shows KSM-66 'at 500 mg' (alt_ksm66 in claims.json) but most KSM-66 RCTs use 300-600 mg/day; ₹350/mo might buy 300 mg/day generic while branded Rasayanam 600 mg/day is ₹700+. User comparing at the wrong dose gets the wrong benefit. Also: ashwagandha is contraindicated in pregnancy, autoimmune conditions (Hashimoto's, lupus — relevant to Indian women given high thyroid disease prevalence), and with sedatives. Dossier mentions none of this.",
+      "required_change": "Specify dose in the price check (mg/day); add contraindications.",
+      "additional_sources_suggested": ["KSM-66 clinical trial doses (Ixoreal publication list)", "ashwagandha safety review for autoimmune/thyroid"],
+      "nuance_to_add": "Dose-price mapping; autoimmune/thyroid/pregnancy contraindications."
+    },
+    {
+      "claim_id": "price_ultrahuman_ring_air",
+      "file": "verified_prices.json",
+      "verdict": "FLAG",
+      "sme_notes": "Correctly flagged as a dossier gap. Ring Air at ₹19,999 one-time is a strong Indian-market play. However, validation data for Ring Air's HRV and sleep-stage accuracy relative to polysomnography/ECG gold standards is thin compared to Oura Gen3 (which has peer-reviewed validation studies). Recommending it to longevity users without accuracy disclosure is a subtle trust issue. Also: Ultrahuman is a subscription-free hardware play but future firmware/app support is not contractually guaranteed — a real risk for a 3-5 year wear product.",
+      "required_change": "Add validation-accuracy note (Ring Air validation is less published than Oura); flag firmware/app support continuity as a buyer risk.",
+      "additional_sources_suggested": ["any peer-reviewed Ring Air validation vs PSG/ECG", "Oura Gen3 validation studies for comparison baseline"],
+      "nuance_to_add": "Validation gap vs Oura; hardware-only models carry support-continuity risk."
+    },
+    {
+      "claim_id": "price_ultrahuman_m1_cgm",
+      "file": "verified_prices.json",
+      "verdict": "FLAG",
+      "sme_notes": "Status 'partial — need direct page fetch' is honest. What's missing: CGM for NON-diabetics in India is a contested use case. ICMR and most endocrinologists do not endorse CGM for non-diabetics due to over-interpretation of postprandial spikes as pathological when they are often physiological. Recommending CGM as a longevity tool to healthy Indian users without a physician interpretation layer risks creating disordered eating patterns and false-positive 'prediabetes' anxiety. The underlying sensor (Abbott FreeStyle Libre) is accurate, but clinical interpretation guidance is missing.",
+      "required_change": "Numeric price is a data gap. But the bigger required_change is an interpretation-guidance caveat: CGM for non-diabetics needs context, not free-floating spike anxiety.",
+      "additional_sources_suggested": ["endocrinology position statements on CGM in non-diabetics (Endocrine Society, ADA 2024)", "ICMR Indian diabetes guidelines"],
+      "nuance_to_add": "CGM in non-diabetics is not consensus-endorsed; postprandial spikes in non-diabetics are often physiological."
+    }
+  ],
+  "gaps_in_scope": [
+    "LABS (entire I_labs_diagnostics section unverified): no pricing or verification for ApoB, Lp(a), HbA1c, fasting insulin, advanced lipid panels, hormone panels at Indian labs (Redcliffe, Thyrocare, 1mg, Metropolis, SRL). This is the highest-user-visibility gap — labs are what the product sells as the 'measurement' layer.",
+    "EPIGENETIC CLOCKS: DunedinPACE, Horvath — availability in India, whether TruDiagnostic/MyDNAge ship to India, prices, turnaround. Claimed 2x/yr in dossier, zero verification.",
+    "IMAGING: whole-body MRI, coronary artery calcium score, DEXA (bone and body comp) — Indian clinic prices unverified.",
+    "FASTING / TIME-RESTRICTED EATING: dossier claims 6-hour eating window pre-noon. No mortality or biomarker verification of TRE at this specific window for the Indian population (meal-timing interacts with Indian family eating patterns).",
+    "SLEEP: 8.5 hr sleep claim is Bryan-specific self-report; no mortality meta verification for >8 hours sleep (some meta-analyses show a U-shape with >8 hr sleep associated with HIGHER mortality — this is a potential reverse-finding the dossier should flag).",
+    "LIGHT EXPOSURE: no morning-light / evening-light-avoidance verification despite being central to circadian-biology-informed longevity protocols.",
+    "EXPERIMENTAL THERAPIES: follistatin gene therapy, stem cells, plasma exchange, peptides — mentioned only in burn breakdown, zero claim-level verification. Product doesn't need to recommend these, but should position them honestly.",
+    "PILL-STACK CONTENTS: the dossier lists ~60 pills/day at ₹620 but never verifies the INGREDIENT list — rapamycin, metformin, acarbose, etc. are in Bryan's stack but safety/efficacy for Indian off-label users is not addressed.",
+    "CGM / WEARABLE DATA INTERPRETATION: device prices partially covered but the interpretation layer (what do HRV trends, glucose variability, sleep stages actually mean for an Indian user) is absent.",
+    "WATER QUALITY: Bryan drinks specific water; Indian TDS/contaminant context (fluoride, arsenic in Gangetic plain, heavy metals) has no entry. Relevant for a longevity-safety audit.",
+    "AIR QUALITY: Indian PM2.5 exposure is a larger modifier of all-cause mortality than most diet interventions combined (GBD India: PM2.5 is the #1 or #2 risk factor). Completely absent from verification."
+  ],
+  "systemic_issues": [
+    "UNIT INCONSISTENCY: multiple biology records compare dry-weight concentrations to fresh-weight servings (jamun anthocyanin, mushroom ergothioneine). Need a unit-normalization pass across all food-compound claims.",
+    "BIOAVAILABILITY NOT CONSIDERED: 'same molecule' claims (anthocyanins, moringin, vitamin C) are repeatedly asserted without accounting for absorption ceiling, microbiome-dependence, or food-matrix effects. This is the #1 conceptual weakness.",
+    "COHORT GENERALIZABILITY: Finnish men (sauna), Adventist vegetarians (nuts, legumes), US Nurses (nuts), Singapore Chinese (MCI), SPRINT high-risk non-diabetics — ZERO of these are Indian cohorts, and NO record flags the extrapolation risk except tangentially on sauna. This is a bulk systemic issue.",
+    "CONTRAINDICATIONS MISSING: ashwagandha (autoimmune, pregnancy), mustard oil (erucic acid, cardiac), sauna (uncontrolled HT, pregnancy, cardiac), CGM (non-diabetic over-interpretation), NMN (regulatory flux). Product needs a cross-cutting safety/contraindications layer.",
+    "INDIAN GENETIC CONTEXT UNADDRESSED: FADS1/FADS2 polymorphism (ALA conversion), OCTN1 variants (ergothioneine retention), APOE, LPA — Indian South Asians have high-prevalence variants that modify several of the claimed benefits. No record addresses this.",
+    "SEASONALITY AND REGIONAL AVAILABILITY: jamun (monsoon only), pomegranate (winter), amla (winter), Kashmiri walnut (October harvest) — the dossier treats substitutes as year-round available. Adherence reality is seasonal.",
+    "TIER-1 CITATION SLIPPAGE: some records use Wikipedia (low quality) or brand/corporate sites (medium) to support claims that are labeled Tier-1-verified. Specifically: swap_evoo_mustard uses Wikipedia as a secondary cite; swap_ashwa_ksm66 relies on Ixoreal corporate profile + LinkedIn. Technically the manufacturer claim doesn't need peer review, but the trust-tier labeling should be honest.",
+    "NO DOSE-RESPONSE FRAMING: mortality claims are quoted as single point estimates (35%, 30%, 25%) without the U-shape or plateau structure that most of these have. Exercise and BP especially have important non-linear dose-responses.",
+    "PRICE FILE ONLY SPOT-CHECKED 6 ITEMS: the full claims.json has ~40+ priced line items in sections C, D, E. Price verification coverage is <15%."
+  ],
+  "top_5_blockers_to_fix_before_ship": [
+    "1. SAUNA (sauna_finnish): Add Finnish-men / infrared-vs-traditional / Indian-climate generalizability caveat AND contraindications. Shipping 'sauna = 40% lower all-cause mortality' to an Indian audience without these is the most embarrassing possible failure mode for a clinically literate reader.",
+    "2. MUSTARD OIL (swap_evoo_mustard__mufa): Erucic acid must be in the primary claim, not a footnote. Recommending mustard oil without cap/rotation guidance is a cardiometabolic liability for a longevity product.",
+    "3. WALNUT OMEGA-3 (swap_macadamia_walnut__ala): ALA->EPA conversion inefficiency + FADS polymorphism in Indians means walnut-for-marine-omega-3 is not a biologically clean swap. Must add.",
+    "4. LABS GAP: Entire I_labs_diagnostics section is unverified. Users buying this product expect lab-testing recommendations; shipping without ANY lab verification means the product has no measurement layer for its biology claims.",
+    "5. POMEGRANATE JUICE FRAMING (swap_pomjuice_anar__ellagitannin): Although the file now has the correction, the ORIGINAL DOSSIER still contains 'juice is a Western dilution' — if the dossier copy is not updated to match the verified record, shipping the old framing is scientifically wrong (juice and fruit are PK-equivalent). Make sure the correction is propagated downstream."
+  ],
+  "summary": "The three verification files show competent triage — real errors were caught (mushroom MCI 64->57%, weight-loss 40->15%, pomegranate juice framing, mustard oil AITC hype, blueberry prices), and the verifiers correctly used PubMed-tier sources for most claims. However, the pass is conceptually weak on bioavailability, dose-equivalence (dry vs fresh weight), Indian-population-specific genetics and cohort generalizability, and contraindications. The biggest structural gap is that labs and diagnostics — the entire measurement layer a longevity product depends on — were not verified at all, and price coverage was explicitly only 6 of 40+ items. The product is approximately 60-65% ready to ship on biology/mortality with the fixes in the recommended_fix fields applied, but requires a second pass on labs, devices, and contraindications before it can go to Indian users without embarrassing a clinically literate reviewer."
+}

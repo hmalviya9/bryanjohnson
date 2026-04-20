@@ -1,0 +1,99 @@
+{
+  "agent": "main-thread-verification",
+  "captured_at": "2026-04-20",
+  "coverage_note": "This pass spot-checked the highest-impact prices. A full price sweep (40+ line items) needs a second pass once the user confirms format.",
+  "records": [
+    {
+      "claim_id": "price_imported_blueberry",
+      "dossier_value_inr": 800,
+      "dossier_unit": "150g",
+      "verified_value_inr_range": [208, 400],
+      "verified_unit": "150g (normalized from 125g BigBasket packs and Zepto variable)",
+      "status": "materially_overstated",
+      "live_sources": [
+        {"vendor":"BigBasket","product":"Fresho Blueberry 125g","price_inr":173,"url":"https://www.bigbasket.com/pd/30009286/fresho-blueberry-125-g/","per_150g_equiv_inr":208},
+        {"vendor":"BigBasket","product":"Fresho Blueberry 125g (alt listing)","price_inr":199,"url":"https://www.bigbasket.com/pd/40083980/fresho-blueberry-125-g/","per_150g_equiv_inr":239},
+        {"vendor":"Zepto","product":"Blueberry Imported","price_inr":198,"url":"https://www.zepto.com/pn/blueberry-imported/pvid/c3777ec3-c903-4fe3-a764-b73f5ba45cd5","per_150g_equiv_inr":"198–237 depending on pack"},
+        {"vendor":"BigBasket","product":"Delishh Blueberries Frozen 200g","price_inr":225,"url":"https://www.bigbasket.com/pd/40007817/delishh-blueberries-frozen-fresh-200-g/","per_150g_equiv_inr":169}
+      ],
+      "impact_on_swap": "The blueberry-vs-jamun price ratio in the dossier is 20×. Actual ratio is closer to 5–6×. Still a valid swap, but the headline '20× cheaper' is exaggerated by ~4×.",
+      "notes": "Dossier likely used a premium store price (Nature's Basket, Gourmet Garden) or an earlier-season 2025 spike. Zepto/BigBasket live prices April 2026 are materially lower."
+    },
+    {
+      "claim_id": "price_macadamia_250g",
+      "dossier_value_inr": 3200,
+      "dossier_unit": "250g",
+      "verified_value_inr_range": [780, 1500],
+      "verified_unit": "250g",
+      "status": "overstated",
+      "live_sources": [
+        {"vendor":"Flipkart","product":"nuturge Macadamia Nuts 250g","price_inr":780,"url":"https://www.flipkart.com/","note":"was ₹1,583, current discount"},
+        {"vendor":"Flipkart","product":"Tassyam Exotic Macadamia 250g","price_inr":1239,"url":"https://www.flipkart.com/tassyam-exotic-macadamia-nuts-250g-premium-imported/p/itmfefvhcbtqe99x","note":"MRP ₹1,250, stock intermittent"},
+        {"vendor":"Flipkart","product":"Urban Platter Sea-Salt Macadamia 250g","price_inr":1500,"url":"https://www.flipkart.com/urban-platter-sea-salt-dry-roasted-macadamia-nuts-250g-nuts/p/itmfdgrnvg2rbtn3"}
+      ],
+      "impact_on_swap": "Dossier BJ price of ₹3,200/250g is ~2× current retail. True macadamia price ~₹800–1,500/250g. Walnut swap still wins on ALA but the dramatic headline is softened."
+    },
+    {
+      "claim_id": "price_kashmiri_walnut",
+      "dossier_value_inr": 22,
+      "dossier_unit": "15g (within Indian alt daily stack = ₹1,467/kg)",
+      "verified_value_inr_range": [1456, 1760],
+      "verified_unit": "per kg",
+      "status": "verified",
+      "live_sources": [
+        {"vendor":"BigBasket","product":"BB Royal Kashmiri Walnut Kernels 500g","price_inr":868,"url":"https://www.bigbasket.com/pd/40268814/bb-royal-kashmiri-walnut-akhrot-kernels-500-g/","per_kg_inr":1736},
+        {"vendor":"BigBasket","product":"BB Royal Kashmiri Walnut Kernels 100g","price_inr":149,"url":"https://www.bigbasket.com/pd/40268812/bb-royal-kashmiri-walnut-akhrot-kernels-100-g/","per_kg_inr":1490},
+        {"vendor":"IndiaMART wholesale bands","product":"Kashmiri walnut kernels","price_inr_range":[1200,1500],"url":"https://dir.indiamart.com/impcat/kashmiri-walnut-kernels.html","per_kg_inr":"1200-1500"}
+      ],
+      "impact_on_swap": "Dossier's Kashmiri walnut price is in-line with current retail. No correction needed."
+    },
+    {
+      "claim_id": "price_ksm66_ashwagandha",
+      "dossier_value_inr": 350,
+      "dossier_unit": "per month",
+      "verified_value_inr_range": [400, 700],
+      "verified_unit": "per month (60 capsules 300mg @ 1/day)",
+      "status": "partially_verified_need_deeper_fetch",
+      "live_sources": [
+        {"vendor":"HealthKart","product":"Rasayanam Ashwagandha KSM-66 (60 caps)","price_inr":"~599-699 (need direct fetch — search did not expose price)","url":"https://www.healthkart.com/sv/rasayanam-ashwagandha-ksm-66/SP-95098","note":"Need WebFetch to confirm exact Apr 2026 MRP."}
+      ],
+      "impact_on_swap": "The dossier's ₹350/month is aggressive — likely refers to generic KSM-66 rather than branded (Rasayanam, MuscleBlaze). Branded KSM-66 typically ₹500–700/month retail. Still >10× cheaper than Blueprint's ₹12,000/mo mix — swap direction is correct, magnitude needs fix."
+    },
+    {
+      "claim_id": "price_ultrahuman_ring_air",
+      "dossier_value_inr": null,
+      "dossier_unit": "not listed as device alternative in dossier",
+      "verified_value_inr": 19999,
+      "verified_unit": "one-time, no subscription",
+      "status": "new_evidence",
+      "live_sources": [
+        {"vendor":"Ultrahuman India","product":"Ring Air","price_inr":19999,"url":"https://www.ultrahuman.com/in/ring/buy/","note":"No recurring subscription. Indian company — KYC-friendly for Indian buyers. Cheaper than Oura (~$350+ imported to India)."}
+      ],
+      "impact_on_swap": "Gap in the dossier: no wearable recommendation was made for the HRV/sleep Bryan uses Oura for. Ultrahuman Ring Air at ₹19,999 is a one-time buy from an Indian company, dominating Oura on TCO. MUST appear in v2 of the product."
+    },
+    {
+      "claim_id": "price_ultrahuman_m1_cgm",
+      "dossier_value_inr": null,
+      "dossier_unit": "CGM not priced in dossier",
+      "verified_value_inr": "need direct page fetch",
+      "verified_unit": "subscription — 12-week (6 sensors) or 24-week (12 sensors) batches",
+      "status": "partial",
+      "live_sources": [
+        {"vendor":"Ultrahuman India","product":"M1 CGM","price_inr":"not shown in search snippet","url":"https://www.ultrahuman.com/pricing/in/?product=uh-m1-four-week_ref&type=otp","note":"Requires WebFetch for numeric price."},
+        {"vendor":"Amazon.in","product":"Ultrahuman M1 (FreeStyle Libre underlying sensor)","price_inr":"listed","url":"https://www.amazon.in/Ultrahuman-M1-Glucose-Monitoring-FreeStyle/dp/B0BFFYCJQJ"}
+      ]
+    }
+  ],
+  "open_items_for_next_pass": [
+    "Blueprint EVOO / Cocoa / Longevity Mix / Pea Protein — shipping-to-India cost and duty",
+    "Broccoli sprouts 100g price India (dossier ₹400 — likely only at Nature's Basket)",
+    "Shiitake vs oyster mushroom prices (per 100g)",
+    "Pomegranate juice (cold-pressed) price 500ml",
+    "NMN supplement monthly cost in India",
+    "Indian cacao brand prices (Ariba/Wakao/Mason & Co) AND their flavanol COAs",
+    "Hyperbaric chamber HBOT per-session cost at Indian clinics (Mumbai, Delhi, Bangalore)",
+    "Red-light cap (655nm) Indian options (price, irradiance)",
+    "DunedinPACE epigenetic clock — does TruDiagnostic ship to India?",
+    "100+ biomarker panel price and component list at Redcliffe / Healthians / Thyrocare / 1mg Labs"
+  ]
+}

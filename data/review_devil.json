@@ -1,0 +1,290 @@
+{
+  "reviewer": "devils_advocate",
+  "reviewed_at": "2026-04-20",
+  "attacks": [
+    {
+      "claim_id": "price_macadamia_250g",
+      "file": "verified_prices.json",
+      "attack_vector": "promo_pricing",
+      "attack": "The 'verified' low-end ₹780 for nuturge macadamia 250g is explicitly flagged in the source row itself as 'was ₹1,583, current discount'. That is a promotional price, not a stable retail anchor. The verified range [780, 1500] therefore spans a discount-floor to near-MRP and should not be treated as a steady-state price. The dossier's own verification is internally inconsistent: Tassyam is noted as 'stock intermittent', which is a second out-of-stock / volatile-supply red flag. A journalist comparing app-quoted prices against Flipkart next month will find this range collapses or spikes.",
+      "severity": "HIGH",
+      "recommended_action": "Use the non-discounted anchor (₹1,239–₹1,500) as the consumer-facing baseline. Add a disclaimer that prices are promo-volatile and re-verify monthly. Do not cite ₹780 without marking it as 'promo'."
+    },
+    {
+      "claim_id": "price_imported_blueberry",
+      "file": "verified_prices.json",
+      "attack_vector": "link_rot",
+      "attack": "All four verified sources are live BigBasket and Zepto product URLs with numeric SKU IDs (30009286, 40083980, 40007817, a UUID for Zepto). These URLs get retired, re-slugged, or 404'd on a routine basis — especially Zepto UUIDs. In three months every source link is likely dead, leaving the app's price claim unverifiable to any auditor. The dossier has no fallback to a stable mandi/wholesale reference or an archive.org snapshot.",
+      "severity": "HIGH",
+      "recommended_action": "For every quick-commerce URL, also record (a) an archive.org Wayback capture timestamp, (b) the vendor's category page not the SKU, and (c) a stable rupees-per-kg figure tied to APMC/mandi data where possible. Implement a monthly price-refresh job before launch."
+    },
+    {
+      "claim_id": "price_ksm66_ashwagandha",
+      "file": "verified_prices.json",
+      "attack_vector": "dose_misrepresentation",
+      "attack": "The dossier's ₹350/month is called 'aggressive' by the verifier, and the single live source (Rasayanam) is estimated at ₹599–₹699/month — nearly 2× the dossier price. Verifier status is 'partially_verified_need_deeper_fetch' but the dossier continues to quote ₹350. Clinical trials for KSM-66 anxiolytic / cortisol endpoints use 300–600 mg/day of the standardised extract. ₹350/month is consistent with generic ashwagandha powder, not patent-protected KSM-66 capsules. Selling this to a consumer as 'same clinical-grade molecule Bryan uses' at that price is a dosing-equivalence misrepresentation.",
+      "severity": "HIGH",
+      "recommended_action": "Raise the baseline consumer price to ₹550–₹700 per month reflecting Rasayanam / MuscleBlaze branded KSM-66 at 300 mg x 60 caps. Drop the ₹350 figure unless a specific branded, COA-backed product at that price is cited."
+    },
+    {
+      "claim_id": "swap_cocoa_cacao__flavanol",
+      "file": "verified_biology.json",
+      "attack_vector": "bioavailability",
+      "attack": "The verification explicitly states 'UNVERIFIED. No publicly available flavanol assay / COA exists for Ariba, Wakao, or Mason & Co'. The dossier's claim that Indian brands 'match Blueprint' on flavanols is therefore pure marketing assertion. In a legal dispute (Blueprint sends a cease-and-desist, or a consumer measures their cacao and it's 10× lower), the app has no defense. ConsumerLab data cited is not a COA for the specific products. Cocoa flavanol claims are also subject to FSSAI health-claim scrutiny.",
+      "severity": "CRITICAL",
+      "recommended_action": "Either (a) commission independent HPLC flavanol assays for all three brands and publish per-serving mg numbers, or (b) drop the 'matches Blueprint' claim entirely and describe it as 'raw, non-alkalised cacao, flavanol content brand-dependent and not independently verified'. Do not ship with current framing."
+    },
+    {
+      "claim_id": "swap_evoo_mustard__mufa",
+      "file": "verified_biology.json",
+      "attack_vector": "hidden_risk",
+      "attack": "The verified record flags that mustard oil contains 30–50% erucic acid and this caveat is 'missing entirely from the dossier'. Erucic acid has documented myocardial lipidosis concerns in animal studies and is regulated in the EU/UK (max 2% in food oils) and Codex. FSSAI permits mustard oil for human consumption but cardiac-risk literature in high-consumption South Asian populations is active (ICMR and NIN-India have published on this). Marketing 'cold-press mustard oil' as a heart-healthy swap to grandmothers with already-elevated ApoB is a product-liability landmine. If a reader with CAD uses this swap and suffers an event, the plaintiff's expert will cite the erucic-acid literature.",
+      "severity": "CRITICAL",
+      "recommended_action": "Add a mandatory warning: 'Mustard oil contains erucic acid (30–50%); populations with existing cardiovascular disease, elevated ApoB/LDL, or on lipid-lowering therapy should consult a physician before substituting mustard oil for their cooking fat.' Consider recommending low-erucic-acid 'kachchi ghani' variants or blending with rice-bran / groundnut oil. Add citations to ICMR/NIN guidance."
+    },
+    {
+      "claim_id": "swap_macadamia_walnut__ala",
+      "file": "verified_biology.json",
+      "attack_vector": "bioavailability",
+      "attack": "The dossier treats walnut ALA as if it substitutes for the EPA/DHA pool Bryan gets from fish oil/algal oil. ALA-to-EPA conversion in humans is <5–10% and to DHA <0.5%, with women, older adults, and those on high linoleic-acid (Indian refined oils!) diets converting even less. Telling Indian consumers 'walnuts give you the same omega-3 as fish oil' is a bioavailability misrepresentation. The verification confirms ALA content but does not address the conversion-efficiency gap.",
+      "severity": "HIGH",
+      "recommended_action": "Reframe: 'Walnuts provide ALA; for EPA/DHA targets (the marine-specific omega-3s) retain the algal/fish-oil line item at ₹18/day even when walnuts are in the stack.' Do not present walnut ALA as a substitute for marine omega-3."
+    },
+    {
+      "claim_id": "swap_pomjuice_anar__ellagitannin",
+      "file": "verified_biology.json",
+      "attack_vector": "subgroup",
+      "attack": "Verification acknowledges the ~40% urolithin-A producer rate (meaning ~60% of humans are non-producers) but the consumer-facing dossier language presents pomegranate as a universal urolithin-A delivery system. Without a stool microbiome test or urolithin-A urinary assay, 60% of users paying for pomegranate in the stack get zero target-biology benefit for this endpoint. Mitopure (Amazentis) exists specifically because of this issue — the dossier doesn't even mention non-producers to the consumer.",
+      "severity": "HIGH",
+      "recommended_action": "Add a consumer-facing note: 'Only ~40% of people efficiently convert pomegranate ellagitannins into urolithin A. Non-producers get cardiometabolic benefit from the fruit but not the mitophagy benefit.' Consider an optional urinary urolithin-A assay as a premium add-on."
+    },
+    {
+      "claim_id": "swap_ashwa_ksm66__manufacturer",
+      "file": "verified_biology.json",
+      "attack_vector": "dose_misrepresentation",
+      "attack": "Verification confirms Ixoreal manufactures KSM-66 in Hyderabad. This is true. But the dossier uses this fact to bridge to a ₹350/month consumer price — which is inconsistent with branded KSM-66 retail (₹550–₹700, per the prices file). The 'same dose Bryan uses' framing is only honest if the product actually contains standardised KSM-66 at 300–600 mg/day. If the app links users to generic ashwagandha at ₹350, the manufacturer claim becomes misleading.",
+      "severity": "MEDIUM",
+      "recommended_action": "Tie the ₹350 (or corrected ₹600) price to a specific, named KSM-66 SKU with mg-per-capsule and capsules-per-bottle disclosed. Do not conflate 'KSM-66 is made in India' with 'any ashwagandha at any price = KSM-66'."
+    },
+    {
+      "claim_id": "swap_sprouts_moringa__itc",
+      "file": "verified_biology.json",
+      "attack_vector": "hidden_risk",
+      "attack": "Moringa leaves from commercial Indian farms have documented Cd (cadmium) and Pb (lead) uptake — moringa is a phytoremediation plant, which means it preferentially accumulates heavy metals from contaminated soil. FSSAI and multiple Indian academic papers have flagged this. The dossier's 'grows in every backyard' framing ignores that commercial moringa leaf powder (the form most urban Indians would buy) varies enormously in heavy-metal load. Recommending it to pregnant women or children without a COA requirement is reckless.",
+      "severity": "HIGH",
+      "recommended_action": "Restrict moringa recommendation to (a) verified heavy-metal-tested brands (Kapiva, Organic India, etc., with published COAs), or (b) home-grown fresh leaves from known-clean soil. Add a pregnancy warning — moringa bark/root extracts have been associated with uterine contractions in traditional medicine literature."
+    },
+    {
+      "claim_id": "alt_ghee",
+      "file": "verified_prices.json",
+      "attack_vector": "hidden_risk",
+      "attack": "A2 ghee is listed at ₹6/tsp with no biology verification record and no caveat about saturated fat. Indian populations have extremely high background ApoB and LDL-C (LASI data, ICMR atherosclerosis studies) and ghee is ~62% saturated fat. Recommending daily ghee without an LDL/ApoB precondition is inconsistent with the app's own longevity framing — the very same stack that recommends plant-forward MedDiet (which is low in dairy fat) also recommends daily ghee. This is incoherent and likely to attract cardiology criticism.",
+      "severity": "HIGH",
+      "recommended_action": "Either remove A2 ghee from the daily stack, cap it at a 'flavour only' quantity (<1 tsp/day), or gate it behind a baseline ApoB/LDL-C measurement. Do not romanticise A2 branding — the A1/A2 casein literature is about gut tolerance, not atherogenicity; saturated-fat load is identical."
+    },
+    {
+      "claim_id": "swap_nmn_exercise__nad",
+      "file": "verified_biology.json",
+      "attack_vector": "regulatory",
+      "attack": "The swap is framed as 'NMN is expensive, exercise is free'. But the deeper regulatory issue is unaddressed: NMN is NOT approved as a dietary supplement in India in any settled way. The US FDA removed NMN from NDI status in 2022; India's FSSAI has not listed NMN as a permitted nutraceutical ingredient under Schedule VII / Nutraceutical Regulations 2022. Selling or recommending NMN to Indian consumers via an app carries FSSAI risk. Even acknowledging NMN as part of Bryan's stack in the dossier is fine, but if the app funnels users toward Indian NMN sellers (grey-market imports), that's a compliance failure.",
+      "severity": "CRITICAL",
+      "recommended_action": "Add an explicit regulatory box: 'NMN has no approved nutraceutical status under FSSAI; products sold in India as NMN are legally ambiguous. We do not recommend purchase until regulatory clarity exists.' Route users only to the exercise alternative. Do not link, affiliate, or partner with NMN sellers."
+    },
+    {
+      "claim_id": "burn_experimental",
+      "file": "claims.json",
+      "attack_vector": "regulatory",
+      "attack": "Follistatin gene therapy, mesenchymal stem cells from Swedish donors, total plasma exchange, cerebrolysin, and peptide stacks — these are described as Bryan's interventions and are not verified in any of the three files. In India: (a) stem cell therapies are restricted under ICMR-DBT National Guidelines 2017 and CDSCO — only for approved indications, not longevity; (b) peptides (BPC-157, TB-500, epithalon, etc.) are not approved by CDSCO; (c) gene therapy requires DCGI approval. Even merely describing these as replicable protocol elements could draw AYUSH/CDSCO attention if the app is positioned as health advice.",
+      "severity": "CRITICAL",
+      "recommended_action": "Mark these unambiguously as 'Not legal / not approved / not recommended in India — included for context only, not as a consumer pathway.' Do not list Indian clinics offering them. Add a disclaimer at the top of this section."
+    },
+    {
+      "claim_id": "dev_redlight_cap",
+      "file": "claims.json",
+      "attack_vector": "regulatory",
+      "attack": "Red-light therapy devices making therapeutic claims (hair regrowth, collagen, mitochondrial function) fall under the Medical Devices Rules 2017 (CDSCO) if marketed with medical claims, and under AYUSH scrutiny if marketed with Ayurvedic / rejuvenation claims. No verification exists for any recommended Indian RLT device. Claims file leaves this as open. Consumer-facing recommendations without CDSCO-registered devices could trigger Drug and Cosmetic Act issues.",
+      "severity": "HIGH",
+      "recommended_action": "Only recommend CDSCO-registered RLT devices. Record the CDSCO registration number for each recommended device. Frame the benefit claims as lifestyle/cosmetic, not medical."
+    },
+    {
+      "claim_id": "life_exercise",
+      "file": "claims.json",
+      "attack_vector": "stale_protocol",
+      "attack": "Bryan Johnson's protocol is versioned and changes frequently (sleep duration, meal window, supplement dosing, and meal composition have all been edited publicly on his blog / X feed across 2023–2025). The dossier captures a single snapshot ('150 min moderate + 75 min HIIT + 3× strength = 6 hrs/week') with no protocol-version or capture-date citation. This is unverified in all three files. If Bryan changes his numbers next month and a journalist compares, the app looks outdated.",
+      "severity": "MEDIUM",
+      "recommended_action": "Attach a protocol-version string (e.g., 'Blueprint v1.7, captured 2026-03-xx, source URL') to every Bryan-sourced claim. Commit to a quarterly refresh."
+    },
+    {
+      "claim_id": "life_fasting",
+      "file": "claims.json",
+      "attack_vector": "stale_protocol",
+      "attack": "'All meals in a 6-hour window pre-noon' reflects an older Bryan protocol; he has publicly discussed shifting his eating window in multiple 2024–2025 updates. Unverified.",
+      "severity": "LOW",
+      "recommended_action": "Re-verify against the current Blueprint protocol page before shipping. Cite source and date."
+    },
+    {
+      "claim_id": "free5_weight",
+      "file": "verified_mortality.json",
+      "attack_vector": "arithmetic",
+      "attack": "Verification explicitly flags '40% mortality reduction from weight control' as unsupported — RCT evidence is ~15%. Yet the rest of the dossier's 'Free 5' marketing appears to rely on the 40% number to give a clean step-function (50-40-35-30-25). Once corrected to 15%, the step-function collapses, and the headline 'Free 5' ordering needs resequencing. There is no evidence in any verified file that the rest of the project's copy has been updated to reflect 15%.",
+      "severity": "HIGH",
+      "recommended_action": "Rewrite all Free-5 marketing copy using the verified numbers: ~50% smoking, ~15-20% weight (RCT), ~35% exercise, ~25-30% BP (high-risk only), ~20-25% diet. Publicly acknowledge the correction — do not silently patch."
+    },
+    {
+      "claim_id": "macro_replica_daily",
+      "file": "claims.json",
+      "attack_vector": "arithmetic",
+      "attack": "Section C rows actually sum to ₹3,062 (not the ₹2,683 stated in the row 'bj_daily_total'). The discrepancy was noted by an earlier agent. NONE of the three verification files acknowledge or fix this arithmetic error. The ratio claim 'macro_ratio: 1/1,770th the price' is computed against the wrong denominator.",
+      "severity": "CRITICAL",
+      "recommended_action": "Recompute. If the true BJ-replica daily total is ₹3,062 and the Indian alt is ₹263, the ratio is ~11.6×, not 10.2×. Update every piece of copy, infographic, and hero stat that uses ₹2,683 or 1,770×. Add a verification record acknowledging the arithmetic error."
+    },
+    {
+      "claim_id": "swap_blueberry_jamun",
+      "file": "verified_biology.json",
+      "attack_vector": "seasonality",
+      "attack": "Jamun is available May–July in most of India. Amla is primarily Oct–March. Fresh pomegranate peaks Sep–Feb. The 'Indian alternative' daily stack assumes all three are year-round substitutes for blueberries. For 4–6 months of the year, at least one of the three is either out of season, imported (at elevated prices), or only available frozen/dried (different anthocyanin profile). The dossier does not include a year-round fallback and the verification files do not flag this.",
+      "severity": "HIGH",
+      "recommended_action": "Publish a seasonal substitution calendar. Recommend specific frozen/freeze-dried backups (jamun powder, amla powder, pomegranate arils frozen) with verified anthocyanin retention. Adjust the ₹40/day price to reflect off-season averages."
+    },
+    {
+      "claim_id": "alt_seasonal_fruit",
+      "file": "claims.json",
+      "attack_vector": "seasonality",
+      "attack": "The row literally names 'Jamun / guava / papaya (seasonal)' at ₹15/serving with no season specification and no biology verification. Jamun is 8–10 weeks/year; guava is ~Oct–Feb premium; papaya is year-round but ripeness and glycemic load varies. This is the only seasonal row flagged but it's treated as a constant daily cost.",
+      "severity": "MEDIUM",
+      "recommended_action": "Split this into a seasonal table with month-by-month price and availability. Reset the ₹15 to an off-season-weighted average."
+    },
+    {
+      "claim_id": "swap_shiitake_oyster__ergothioneine",
+      "file": "verified_biology.json",
+      "attack_vector": "other",
+      "attack": "Verification confirms shiitake has MORE ergothioneine than oyster (55–90 vs 35–65 mg/100g dry). The dossier's framing implies oyster is equivalent-or-better. The Singapore MCI number is also wrong (57% not 64%). Two independent errors in the same swap. If a journalist pulls either, the swap becomes a case study in misrepresentation.",
+      "severity": "HIGH",
+      "recommended_action": "Reframe as 'Oyster mushroom is a cheaper but lower-ergothioneine alternative to shiitake.' Fix 57% MCI with Feng 2019 PMID citation. Add a line: 'If budget allows, keep shiitake in the stack.'"
+    },
+    {
+      "claim_id": "free5_sauna_finnish",
+      "file": "verified_mortality.json",
+      "attack_vector": "subgroup",
+      "attack": "Laukkanen 2015 is a male-only Finnish cohort, median age 53, n=2,315. Generalising 'sauna 4–7×/week → 40% all-cause mortality reduction' to Indian urban women with different baseline CV risk, different sweat/electrolyte physiology, and effectively zero access to Finnish-style dry sauna (most Indian options are steam or infrared, different physiology entirely) is weak. The verification notes the generalisability caveat but nothing suggests the consumer copy has been updated.",
+      "severity": "MEDIUM",
+      "recommended_action": "Add 'male Finnish cohort; evidence in women, South Asians, and with infrared vs traditional sauna is limited'. Drop absolute percentage if recommending infrared sauna — the RCT evidence is on Finnish dry sauna."
+    },
+    {
+      "claim_id": "free5_diet",
+      "file": "verified_mortality.json",
+      "attack_vector": "arithmetic",
+      "attack": "Verified point estimate is ~21% (rounded to 20–25% range). Dossier claim is 25%. This is a 4 percentage-point overstatement on the most-cited lifestyle intervention. Combined with the 40%→15% weight-loss overstatement and the 6%→8% legume overstatement, a pattern emerges: the dossier consistently rounds UP the benefit side. Three independent upward roundings across the Free-5 is the kind of pattern an investigative journalist identifies as systematic bias.",
+      "severity": "HIGH",
+      "recommended_action": "Correct all five Free-5 numbers to the verification file's ranges. Acknowledge the pattern of upward rounding publicly and commit to always using meta-analytic point estimates, not rounded-up integers."
+    },
+    {
+      "claim_id": "macro_ratio",
+      "file": "claims.json",
+      "attack_vector": "other",
+      "attack": "'1/1,770th the price for ~90% of measurable result' is the headline ratio. Neither the '1,770×' nor the '90%' has a verification record. 'Measurable result' is not defined — measured by what? Biomarkers, mortality risk, epigenetic age? With the arithmetic error (C sums to 3,062), the annual BJ spend is $2M vs Indian alt ₹96,000/yr = $1,129/yr, which is ~1,771× — but this ignores that the Indian stack does NOT include labs, devices, epigenetic clocks, HBOT, plasma exchange, peptides, or the medical team. So the price ratio is comparing only the food+supplement slice. The '90% of result' claim is marketing, not evidence.",
+      "severity": "CRITICAL",
+      "recommended_action": "Remove '90% of measurable result' unless you can define the measurable endpoints and cite comparative data (which does not exist). Replace with 'the food + daily supplement slice of Blueprint can be replicated at ~1/1,770th the cost; labs, devices, and experimental therapies are NOT replicated at this price.' Separate food/supplement comparison from whole-protocol comparison."
+    },
+    {
+      "claim_id": "burn_diagnostics",
+      "file": "claims.json",
+      "attack_vector": "scope_gap",
+      "attack": "No verification record exists for any of the diagnostics/imaging items Bryan does (MRI, CT, DEXA, CAC, epigenetic clocks, 100+ biomarkers). The prices file open_items_for_next_pass explicitly lists these as un-done. The app cannot claim '90% of measurable result' when the measurement infrastructure itself is absent from the Indian alternative.",
+      "severity": "HIGH",
+      "recommended_action": "Complete section I (labs_diagnostics) verification before shipping. Without it, the entire value proposition is unverified."
+    }
+  ],
+  "killshots": [
+    "Arithmetic + rounding pattern: (a) Section C sums to ₹3,062 not ₹2,683, (b) weight-control mortality is 15% not 40%, (c) MedDiet is 21% not 25%, (d) legume is 6% not 8%, (e) mushroom MCI is 57% not 64%. Five independent errors, all rounded in the direction that flatters the sales pitch. One investigative journalist with a calculator writes 'An app that can't add up tells you what Indian food will add to your life' and the project is done.",
+    "The mustard-oil + A2-ghee combo with zero mention of erucic acid or saturated-fat risk in a population with epidemic ApoB/LDL elevation. A cardiology professor publishes a rebuttal or, worse, a reader with CAD uses the stack and has an event — the erucic-acid literature and ICMR/NIN guidance become Exhibit A in a product-liability or consumer-protection complaint.",
+    "The '90% of measurable result at 1/1,770th the price' headline is undefined, unverified, and compares a food-plus-supplements replica against a protocol whose ~92% of spend (medical team, experimental therapies, diagnostics, equipment) is not replicated at all. A hostile PhD draws the spend pie-chart and points out: you replicated the 2.5% food slice, not the longevity outcome. The ratio is true for the slice and a lie for the whole."
+  ],
+  "legal_and_regulatory_flags": [
+    "FSSAI Nutraceutical Regulations 2022 — NMN is not on the permitted list. Any app recommendation linking to Indian NMN sellers risks FSSAI action and consumer-protection claims.",
+    "CDSCO / peptides — BPC-157, TB-500, epithalon, cerebrolysin, follistatin gene therapy, and mesenchymal stem cells for longevity are not approved for consumer use in India under CDSCO / ICMR-DBT 2017 stem-cell guidelines. Describing these as replicable protocol items without a 'not legal in India' disclaimer is reckless.",
+    "AYUSH / Drug & Magic Remedies (Objectionable Advertisements) Act 1954 — therapeutic claims about red-light caps, saunas, ashwagandha ('anti-anxiety'), moringa, amla, ghee, and curcumin can fall under DMRA schedule if framed as disease treatment/prevention. App copy must use 'general wellness' language, not therapeutic claims.",
+    "Medical Devices Rules 2017 — red-light caps, HBOT chambers, IR saunas, BP monitors, and CGMs sold or recommended with health claims must reference CDSCO-registered devices. None of the verified records capture CDSCO registration numbers.",
+    "Mustard oil / erucic acid — FSSAI permits mustard oil but ICMR-NIN and multiple Indian cardiology bodies have flagged erucic-acid exposure. Recommending 'cold-press mustard oil as heart-healthy' without the erucic-acid caveat could support a consumer-protection misleading-advertisement complaint under the Consumer Protection Act 2019.",
+    "Heavy metals in moringa / amla / turmeric — FSSAI has standards for Pb/Cd/As in plant foods. Recommending commercial powdered moringa without a COA requirement exposes the app to FSSAI action if a user's sample tests hot.",
+    "Food health claims under FSSAI Health Claims Regulation 2022 — claims like 'reduces all-cause mortality by X%', 'cocoa flavanols match Blueprint', and 'jamun higher anthocyanins than blueberries' are nutrient/function/disease-risk claims that require FSSAI substantiation dossiers before commercial promotion.",
+    "Affiliate / influencer rules — ASCI 2023 influencer guidelines require disclosure of paid partnerships. If the app monetises via vendor affiliate links (Flipkart, Amazon, HealthKart, Ultrahuman), every such link needs disclosure."
+  ],
+  "scope_gaps": [
+    "macro_bj_annual",
+    "macro_replica_daily",
+    "macro_alt_daily",
+    "macro_ratio",
+    "macro_empirical_audit",
+    "burn_medical_team",
+    "burn_experimental",
+    "burn_diagnostics",
+    "burn_staff_ops",
+    "burn_equipment",
+    "burn_food_supp",
+    "bj_longevity_mix",
+    "bj_essential_caps",
+    "bj_essential_soft",
+    "bj_broccoli",
+    "bj_cauliflower",
+    "bj_shiitake",
+    "bj_beluga_lentil",
+    "bj_evoo",
+    "bj_walnuts",
+    "bj_chia_flax",
+    "bj_cocoa",
+    "bj_lecithin",
+    "bj_macnut_milk",
+    "bj_berries",
+    "bj_pom_juice",
+    "bj_pea_protein",
+    "bj_pill_stack",
+    "bj_daily_total",
+    "alt_green_tea_tulsi",
+    "alt_turmeric_pepper",
+    "alt_ksm66",
+    "alt_dal",
+    "alt_brassica",
+    "alt_moringa_methi",
+    "alt_mushroom",
+    "alt_mustard_oil",
+    "alt_almond",
+    "alt_walnut",
+    "alt_seed_mix",
+    "alt_a2_milk",
+    "alt_cacao",
+    "alt_amla_pom",
+    "alt_ghee",
+    "alt_curd",
+    "alt_seasonal_fruit",
+    "alt_omega3",
+    "alt_d3k2",
+    "alt_creatine",
+    "alt_mag_gly",
+    "alt_daily_total",
+    "nuts_adventist",
+    "life_sleep",
+    "life_exercise",
+    "life_fasting",
+    "life_weight_loss",
+    "dev_hyperbaric",
+    "dev_redlight_cap",
+    "dev_ir_sauna",
+    "dev_cgm",
+    "dev_hrv",
+    "dev_bloodpressure",
+    "dev_body_comp",
+    "dev_smart_scale",
+    "lab_full_panel",
+    "lab_dunedin",
+    "lab_horvath",
+    "lab_mri",
+    "lab_cac",
+    "lab_dexa_bone",
+    "lab_skin_age",
+    "lab_apob_lpa",
+    "lab_hba1c_fasting_ins",
+    "lab_hormones"
+  ],
+  "summary": "This project is not ready for a public ship. Biology verification caught real errors (4 swaps wrong, 2 mortality numbers overstated) but the consumer-facing implications — erucic-acid risk in mustard oil, saturated-fat load of A2 ghee, urolithin-A non-producers, ALA-vs-EPA bioavailability, heavy-metals in moringa, NMN/peptides regulatory status — are unaddressed. Pricing verification is promo-contaminated and link-rot-fragile; the arithmetic error (C sums to ₹3,062 not ₹2,683) has not been acknowledged anywhere; and the bulk of the claim surface — devices, labs, epigenetic clocks, experimental therapies, full cost macros, ~74 claim IDs — has zero verification record. A hostile journalist, PhD, regulator, or lawyer can each find a career-ending quote in this dossier today."
+}

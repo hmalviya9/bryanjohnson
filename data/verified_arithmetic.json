@@ -1,0 +1,77 @@
+{
+  "agent": "main-thread-verification",
+  "captured_at": "2026-04-20",
+  "purpose": "Recompute every headline ratio, total, and ratio-claim in the dossier against its own line items. Catch arithmetic and rounding errors raised by the Devil's Advocate review.",
+  "records": [
+    {
+      "claim_id": "macro_replica_daily",
+      "dossier_value": 2683,
+      "verified_value": 3062,
+      "unit": "INR/day",
+      "status": "dossier_arithmetic_error",
+      "computation": "Sum of section C line items: 387+215+165+90+45+180+60+140+240+25+30+110+45+180+280+70+180+620 = 3,062.",
+      "discrepancy_inr": 379,
+      "notes": "Dossier headline ₹2,683/day is ₹379 lower than the literal sum of its own listed components. Cannot locate a stated rounding convention. Either (a) line item values must be raised to justify 2,683 (unlikely — values already at retail floor), (b) headline must be corrected to ~₹3,062/day ~= ₹1.12 lakh/mo, or (c) one line item should be flagged as optional / non-daily and excluded. Recommendation: update headline to ₹3,062/day (~₹91,860/mo) and keep all 18 line items.",
+      "downstream_impact": "Monthly replica cost moves from ₹80,490 → ₹91,860. Annual from ₹9.79L → ₹11.17L. The 'still fractional to Bryan's $2M/yr' framing is unaffected but the displayed number must match."
+    },
+    {
+      "claim_id": "macro_alt_daily",
+      "dossier_value": 263,
+      "verified_value": 263,
+      "unit": "INR/day",
+      "status": "verified",
+      "computation": "Sum of section D line items: 8+3+12+7+25+15+28+4+18+22+8+18+6+22+6+10+15+18+4+6+8 = 263.",
+      "notes": "Alt stack sums exactly to ₹263/day. Monthly ~₹7,890. Annual ~₹95,995 (dossier claims ~₹96,000/yr — rounded correctly)."
+    },
+    {
+      "claim_id": "macro_ratio_1770x",
+      "dossier_value": "1/1,770th",
+      "verified_value": "1/11.64th (food+supp stack only) OR 1/1,064th (if BJ's $2M/yr included)",
+      "status": "dossier_framing_misleading",
+      "computation": "Apples-to-apples: BJ food+supp replica ₹3,062/day vs alt ₹263/day = ratio 11.64×. Apples-to-BJ-entire-budget: BJ's ~$2M/yr ≈ ₹16.6 cr/yr ÷ alt ₹95,995/yr ≈ 17,293×. Dossier's 1,770× figure is neither (probably an intermediate calculation conflating BJ's estimated monthly burn with our monthly alt stack).",
+      "notes": "The headline '1/1,770th for 90% of the benefit' number cannot be reproduced from any stated inputs. DA is correct that this is mathematically undefined. MUST be replaced with a specific, reproducible framing: (a) 'Indian food+supp alt is ~11.6× cheaper than our Blueprint replica in India' (food-slice ratio), OR (b) 'Indian alt stack costs ~₹96,000/yr vs Bryan's $2M/yr program (~₹16.6 cr) = 0.006%' (1/17,000-th) — pick one explicitly.",
+      "recommended_fix": "Retire 1,770× hero. Use dual framing: 'Food-slice ratio ~12× cheaper vs our Blueprint replica; ~0.006% of Bryan's full-program spend.'"
+    },
+    {
+      "claim_id": "macro_90pct_of_benefit",
+      "dossier_value": "~90% of measurable result",
+      "verified_value": "UNSUPPORTED",
+      "status": "not_verifiable",
+      "notes": "'90% of benefit' requires a defined outcome metric (all-cause mortality, biological age reduction, specific biomarker shift, etc.) and a reproducible calculation. None exists in the dossier or literature. The Free 5 (smoking, weight, exercise, BP, diet) collectively dominate all-cause mortality reduction (~70% of preventable mortality in Western cohorts, e.g. EPIC study), and none of these require Blueprint-branded products — but '90%' is not a number anyone can audit. DA is correct that this must be softened.",
+      "recommended_fix": "Replace '90% of benefit' with: 'The Free 5 (smoking cessation, weight control, exercise, BP control, Mediterranean/plant-forward diet) + lab-guided supplementation deliver the large majority of measurable mortality and cardiometabolic benefit. Blueprint's branded products add marginal, not categorical, upside.' Or state explicitly: 'Rough ballpark: 70–85% of the evidenced-based mortality benefit' with the EPIC-Norfolk 4-behaviour study as anchor."
+    },
+    {
+      "claim_id": "blueberry_ratio",
+      "dossier_value": "20× cheaper",
+      "verified_value": "5–6× cheaper",
+      "status": "overstated",
+      "computation": "Blueberry 150g ₹208–400 (Apr 2026 live, BigBasket/Zepto) vs jamun+amla+pom 150g equivalent ~₹40–70 = ratio ~5–6×, not 20×.",
+      "notes": "Carry through from verified_prices_v2 blueberry fix. Update the swap card text."
+    },
+    {
+      "claim_id": "macadamia_ratio",
+      "dossier_value": "14.5× cheaper (₹3,200/250g vs ₹220/250g)",
+      "verified_value": "3.5–6.8× cheaper",
+      "status": "overstated",
+      "computation": "Macadamia 250g ₹780–1,500 (Apr 2026 live Flipkart) vs almonds+walnuts 250g ~₹220 = ratio 3.5–6.8×.",
+      "notes": "Dossier overstates by using high point-estimate ₹3,200 which was only ever the Mumbai boutique price."
+    },
+    {
+      "claim_id": "ashwa_ratio",
+      "dossier_value": "34× cheaper (₹12,000/mo vs ₹350/mo)",
+      "verified_value": "15–35× cheaper",
+      "status": "partially_verified",
+      "computation": "Blueprint mix ~$50–200/mo ashwagandha-portion (imputed from full stack cost). KSM-66 direct: Rasayanam 60 caps @ 500mg ₹679 on Blinkit April 2026 = 30-day supply = ~₹680/mo at 1 cap/day (500mg). At 2 caps/day (1000mg clinical trial dose) = ₹1,360/mo. Dossier's ₹350/mo requires generic (non-Rasayanam) KSM-66 at ~₹5.8/day = plausible only at the cheapest generic extract, not branded.",
+      "notes": "The 34× figure is achievable only if alt is ₹350/mo AND BJ allocation is the full ₹12,000 ashwagandha-portion — both assumption-heavy. Honest framing: '~15–25× cheaper using branded KSM-66 in India vs Blueprint full stack.'"
+    }
+  ],
+  "dossier_arithmetic_corrections_required": [
+    {"severity":"blocker","item":"macro_replica_daily","change":"₹2,683 → ₹3,062 (or explicitly exclude one line item)"},
+    {"severity":"blocker","item":"macro_ratio_1770x","change":"Retire 1,770× hero; replace with dual framing (food-slice ~12× + full-program ~17,000×)"},
+    {"severity":"high","item":"macro_90pct_of_benefit","change":"Replace '90% of measurable result' with auditable framing (Free 5 + lab-guided stack)"},
+    {"severity":"medium","item":"blueberry_ratio","change":"20× → 5–6×"},
+    {"severity":"medium","item":"macadamia_ratio","change":"14.5× → 3.5–6.8×"},
+    {"severity":"low","item":"ashwa_ratio","change":"34× → 15–25× with branded KSM-66 caveat"}
+  ],
+  "notes": "Every ratio cited in the dossier has been re-derived from first-principles math here. All headline numbers must flow from these verified computations or be dropped. Dossier's consistent rounding-upward pattern (noted by Devil's Advocate) is confirmed across at least 5 claims."
+}

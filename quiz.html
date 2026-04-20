@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Build your stack · The Indian Longevity Audit</title>
+<meta name="description" content="Ten questions. Two minutes. Get a personalised Indian longevity stack matched to your diet, budget and biology — benchmarked against Bryan Johnson's Blueprint." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F2ECDD;
+    --paper-dark:#E8E0CC;
+    --paper-line:#D6CCAD;
+    --ink:#1A1611;
+    --ink-soft:#4A3F2E;
+    --blood:#B91C1C;
+    --blood-deep:#7F1D1D;
+    --forest:#1F5F3F;
+    --gold:#B8860B;
+    --stamp:#A62020;
+    --warn-bg:#FBEFC8;
+    --danger-bg:#F8DAD8;
+    --clinical:#2C3E50;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Instrument Serif',Georgia,serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0px, transparent 31px, rgba(26,22,17,0.04) 31px, rgba(26,22,17,0.04) 32px),
+      radial-gradient(circle at 20% 10%, rgba(184,134,11,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(185,28,28,0.04) 0%, transparent 40%);
+    min-height:100vh;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:-0.01em}
+  a{color:var(--ink)}
+  a:hover{color:var(--blood)}
+
+  /* Top bar */
+  .topbar{
+    border-bottom:1px solid var(--ink);
+    padding:14px 0;background:var(--paper);
+  }
+  .topbar-inner{
+    max-width:900px;margin:0 auto;padding:0 24px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--ink-soft);
+  }
+  .topbar a{color:var(--ink-soft);text-decoration:none}
+  .topbar a:hover{color:var(--blood)}
+  .badge-mini{background:var(--ink);color:var(--paper);padding:3px 9px;letter-spacing:0.18em}
+
+  /* Progress */
+  .progress-wrap{
+    max-width:900px;margin:0 auto;padding:28px 24px 0;
+  }
+  .progress-label{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;
+    text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;
+    display:flex;justify-content:space-between;
+  }
+  .progress-label .q-num{color:var(--blood)}
+  .progress-bar{
+    height:4px;background:var(--paper-dark);border:1px solid var(--ink);
+    position:relative;overflow:hidden;
+  }
+  .progress-fill{
+    height:100%;background:var(--ink);
+    width:0;transition:width .5s cubic-bezier(.22,.94,.42,1);
+  }
+
+  /* Card */
+  .card{
+    max-width:780px;margin:44px auto;padding:0 24px;
+  }
+  .kicker{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.26em;
+    text-transform:uppercase;color:var(--blood);margin-bottom:18px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .kicker::before{content:"";width:36px;height:2px;background:var(--blood);display:inline-block}
+  h1.q-title{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(32px,5vw,52px);line-height:1.04;letter-spacing:-0.028em;
+    color:var(--ink);margin-bottom:12px;
+  }
+  h1.q-title em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--blood)}
+  .q-hint{
+    font-family:'Instrument Serif',serif;font-style:italic;font-size:16px;
+    color:var(--ink-soft);margin-bottom:28px;
+  }
+
+  /* Options */
+  .opts{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+  .opt{
+    display:flex;align-items:center;gap:14px;
+    padding:16px 20px;
+    background:var(--paper);
+    border:1.5px solid var(--ink);
+    font-family:'Instrument Serif',serif;font-size:19px;
+    color:var(--ink);cursor:pointer;text-align:left;width:100%;
+    transition:background .12s ease,border-color .12s ease,transform .08s ease;
+  }
+  .opt:hover{background:var(--warn-bg)}
+  .opt .tick{
+    width:18px;height:18px;border:1.5px solid var(--ink);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--paper);font-family:'JetBrains Mono',monospace;
+    font-size:12px;font-weight:700;color:var(--paper);
+  }
+  .opt.checkbox .tick{border-radius:0}
+  .opt.radio .tick{border-radius:50%}
+  .opt.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .opt.active .tick{background:var(--paper);color:var(--ink)}
+  .opt.active .tick::after{content:"✓"}
+  .opt .kbd{
+    margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:0.14em;color:var(--ink-soft);
+    border:1px solid var(--ink-soft);padding:2px 7px;
+  }
+  .opt.active .kbd{color:var(--paper);border-color:var(--paper)}
+
+  .opt-meta{
+    font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;
+    color:var(--ink-soft);margin-top:-2px;display:block;
+  }
+  .opt.active .opt-meta{color:var(--paper-dark)}
+
+  /* Controls */
+  .controls{
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+    padding-top:8px;border-top:1px solid var(--paper-line);
+    margin-top:10px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 28px;background:var(--ink);color:var(--paper);
+    font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+    letter-spacing:0.18em;text-transform:uppercase;
+    border:2px solid var(--ink);cursor:pointer;text-decoration:none;
+    transition:background .15s ease,transform .12s ease;
+  }
+  .btn:hover{background:var(--blood);border-color:var(--blood);transform:translateY(-2px)}
+  .btn:disabled{background:var(--paper-dark);color:var(--ink-soft);border-color:var(--ink-soft);cursor:not-allowed;transform:none}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn-meta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* Safety microcopy (on sensitive questions) */
+  .safety-note{
+    margin-top:18px;padding:14px 18px;background:rgba(31,95,63,0.08);
+    border-left:3px solid var(--forest);
+    font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.5;
+    color:var(--forest);
+  }
+  .safety-note strong{color:var(--forest);font-weight:500}
+
+  /* Loader screen */
+  .loader-screen{
+    min-height:calc(100vh - 70px);
+    display:flex;align-items:center;justify-content:center;
+    padding:40px 24px;
+  }
+  .loader-inner{
+    max-width:640px;text-align:center;
+  }
+  .loader-kicker{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.28em;
+    text-transform:uppercase;color:var(--blood);margin-bottom:22px;
+    display:flex;align-items:center;gap:12px;justify-content:center;
+  }
+  .loader-kicker::before,.loader-kicker::after{content:"";width:36px;height:1px;background:var(--blood);display:inline-block}
+  .loader-title{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(30px,4.5vw,46px);line-height:1.08;letter-spacing:-0.025em;
+    color:var(--ink);margin-bottom:24px;
+  }
+  .loader-title em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--blood)}
+  .loader-steps{
+    text-align:left;font-family:'JetBrains Mono',monospace;font-size:12px;
+    color:var(--ink-soft);max-width:480px;margin:0 auto;
+    letter-spacing:0.04em;
+  }
+  .loader-step{
+    display:flex;align-items:center;gap:14px;padding:10px 0;
+    border-bottom:1px dashed var(--paper-line);
+    opacity:0;transform:translateX(-6px);
+    transition:opacity .4s ease,transform .4s ease;
+  }
+  .loader-step.shown{opacity:1;transform:translateX(0)}
+  .loader-step.done{color:var(--forest)}
+  .loader-step .mark{width:14px;font-weight:700}
+  .loader-step.done .mark{color:var(--forest)}
+  .loader-step .dot-anim{color:var(--blood);font-weight:700}
+
+  /* Gate */
+  .gate-card{
+    max-width:640px;margin:44px auto;padding:36px 32px;
+    background:var(--paper);border:2px solid var(--ink);
+    position:relative;
+  }
+  .gate-card::before{
+    content:"";position:absolute;inset:6px;border:1px solid var(--ink);pointer-events:none;
+  }
+  .teaser{
+    background:var(--warn-bg);border:1px solid var(--gold);
+    padding:22px 24px;margin-bottom:30px;
+  }
+  .teaser-label{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;
+    text-transform:uppercase;color:var(--blood-deep);margin-bottom:12px;
+  }
+  .teaser-rows{display:flex;flex-direction:column;gap:8px}
+  .teaser-row{
+    display:flex;justify-content:space-between;gap:16px;
+    font-family:'Instrument Serif',serif;font-size:17px;color:var(--ink);
+    border-bottom:1px dotted var(--paper-line);padding-bottom:7px;
+  }
+  .teaser-row:last-child{border-bottom:0;padding-bottom:0}
+  .teaser-row .v{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:500;color:var(--blood-deep);white-space:nowrap}
+  .teaser-row .v.savings{color:var(--forest)}
+
+  .field{margin-bottom:18px}
+  .field label{
+    display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;
+  }
+  .field input[type=email]{
+    width:100%;padding:14px 16px;
+    background:var(--paper);border:1.5px solid var(--ink);
+    font-family:'Instrument Serif',serif;font-size:18px;color:var(--ink);
+    outline:none;
+  }
+  .field input[type=email]:focus{border-color:var(--blood);background:rgba(185,28,28,0.03)}
+  .field .micro{
+    margin-top:6px;font-family:'Instrument Serif',serif;font-style:italic;font-size:13px;
+    color:var(--ink-soft);
+  }
+
+  .consent{
+    margin-top:18px;display:flex;gap:12px;align-items:flex-start;
+    font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.5;
+    color:var(--ink);
+  }
+  .consent input{
+    width:18px;height:18px;flex-shrink:0;margin-top:2px;
+    accent-color:var(--blood);
+  }
+  .consent a{color:var(--blood)}
+
+  .gate-err{
+    display:none;margin-top:14px;padding:10px 14px;background:var(--danger-bg);
+    border-left:3px solid var(--blood);font-family:'IBM Plex Sans',sans-serif;
+    font-size:13px;color:var(--blood-deep);
+  }
+  .gate-err.show{display:block}
+
+  .gate-footer{
+    margin-top:22px;padding-top:18px;border-top:1px dashed var(--paper-line);
+    font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--ink-soft);line-height:1.6;
+  }
+
+  /* Age hard-gate modal */
+  .hardgate{
+    display:none;max-width:560px;margin:60px auto;padding:40px 32px;
+    background:var(--paper);border:2px solid var(--blood);text-align:center;
+  }
+  .hardgate.show{display:block}
+  .hardgate h2{font-family:'Fraunces',serif;font-size:32px;font-weight:300;margin-bottom:14px}
+
+  /* Mobile */
+  @media(max-width:640px){
+    .card{padding:0 18px}
+    .opt{padding:14px 16px;font-size:17px}
+    .btn{padding:12px 22px;font-size:11px}
+    .gate-card{padding:28px 22px}
+    .controls{flex-direction:column-reverse;align-items:stretch}
+    .controls .btn{justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div><a href="dashboard.html">← Dossier</a></div>
+    <div><span class="badge-mini">QUIZ</span> &nbsp; BUILD YOUR STACK</div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-wrap">
+  <div class="progress-label">
+    <span><span class="q-num" id="qNum">Question 1</span> of 10</span>
+    <span id="progressPct">10%</span>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+</div>
+
+<!-- QUIZ CARD -->
+<div class="card" id="quizCard"></div>
+
+<!-- HARD-GATE for under-18 -->
+<div class="card" id="hardgateWrap">
+  <div class="hardgate" id="hardgate">
+    <h2>This page isn't for under-18s.</h2>
+    <p style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.5;margin-bottom:22px;color:var(--ink-soft)">
+      The stacks we recommend include actives (ashwagandha, NMN, berberine) not studied in minors. Come back when you're 18 — or show this to a parent who's asking.
+    </p>
+    <a class="btn ghost" href="dashboard.html">← Back to the dossier</a>
+  </div>
+</div>
+
+<!-- LOADER -->
+<div class="loader-screen" id="loaderScreen" style="display:none">
+  <div class="loader-inner">
+    <div class="loader-kicker">Building your stack</div>
+    <h2 class="loader-title">Cross-referencing <em>your 10 answers</em> against ICMR RDAs, 12 longevity trials, and 47 live Indian supplement prices.</h2>
+    <div class="loader-steps" id="loaderSteps"></div>
+  </div>
+</div>
+
+<!-- EMAIL GATE -->
+<div id="gateWrap" style="display:none">
+  <div class="card">
+    <div class="kicker">Your stack is ready</div>
+    <h1 class="q-title">Where should we <em>send it?</em></h1>
+    <div class="q-hint">We'll email your personalised report in under 60 seconds. Nothing else until you tap yes.</div>
+  </div>
+  <div class="gate-card">
+    <div class="teaser" id="teaser">
+      <div class="teaser-label">Preview · computed from your answers</div>
+      <div class="teaser-rows" id="teaserRows"></div>
+    </div>
+    <form id="gateForm" novalidate>
+      <!-- Honeypot (hidden from humans, bots fill it) -->
+      <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+        <label>Website <input type="text" id="hp_website" name="website" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      <div class="field">
+        <label for="gateEmail">Your email</label>
+        <input id="gateEmail" type="email" placeholder="you@example.com" autocomplete="email" required />
+        <div class="micro">Private. We never email without your tap. Unsubscribe in one click, always.</div>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="consentDPDP" required />
+        <label for="consentDPDP" style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:0">
+          I agree to receive my personalised report and a short follow-up series (≤8 emails over 14 days). I can unsubscribe any time. Data is handled per the <a href="privacy.html">Privacy Notice</a>.
+        </label>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="consent18" required />
+        <label for="consent18" style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:0">
+          I confirm I am 18 or older.
+        </label>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="consentWA" checked />
+        <label for="consentWA" style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:0">
+          Also send my report on WhatsApp (optional — uncheck to decline).
+        </label>
+      </div>
+
+      <div class="gate-err" id="gateErr"></div>
+
+      <div class="controls" style="margin-top:22px">
+        <span class="btn-meta">Step 11 of 11 · last one</span>
+        <button type="submit" class="btn" id="gateSubmit">Send my stack →</button>
+      </div>
+
+      <div class="gate-footer">
+        DPDP Act 2023 compliant · Grievance officer: <a href="mailto:grievance@longevity.audit" style="color:var(--ink-soft)">grievance@longevity.audit</a> · Not medical advice · DMRA 1954 / FSSAI 2022 applied.
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   Submission endpoint
+   Paste your Google Apps Script Web App URL below.
+   Get it from: Apps Script → Deploy → New deployment → Web app
+   (Execute as: Me · Who has access: Anyone)
+   ============================================================ */
+const SHEETS_URL = ''; // <-- PASTE YOUR WEB APP URL HERE
+
+/* ============================================================
+   Quiz definition — 10 questions
+   ============================================================ */
+const QUIZ = [
+  {
+    id:'goal',
+    kicker:'Question 1 of 10 · 30 seconds',
+    title:'What brought you <em>here today?</em>',
+    hint:'One answer. We use this to set the tone of your report — nothing gets sold off this.',
+    type:'radio',
+    options:[
+      {v:'energy',label:'More energy'},
+      {v:'sleep',label:'Better sleep'},
+      {v:'metabolic',label:'Metabolic health / belly fat'},
+      {v:'bloodsugar',label:'Blood sugar or cholesterol is on my radar'},
+      {v:'brainfog',label:'Brain fog / focus'},
+      {v:'skin',label:'Skin & hair'},
+      {v:'longevity',label:'I just want to live longer'},
+      {v:'curious',label:'Curious about Bryan Johnson'},
+    ],
+  },
+  {
+    id:'age',
+    kicker:'Question 2 of 10',
+    title:'Your <em>age?</em>',
+    hint:'Brackets, not exact.',
+    type:'radio',
+    options:[
+      {v:'<18',label:'Under 18'},
+      {v:'18-24',label:'18 – 24'},
+      {v:'25-34',label:'25 – 34'},
+      {v:'35-44',label:'35 – 44'},
+      {v:'45-54',label:'45 – 54'},
+      {v:'55+',label:'55 +'},
+    ],
+  },
+  {
+    id:'sleep',
+    kicker:'Question 3 of 10',
+    title:'How did you sleep <em>most nights this week?</em>',
+    hint:'Honest, not aspirational.',
+    type:'radio',
+    options:[
+      {v:'<5',label:'Under 5 hours'},
+      {v:'5-6',label:'5 – 6 hours'},
+      {v:'6-7',label:'6 – 7 hours'},
+      {v:'7-8',label:'7 – 8 hours'},
+      {v:'8+',label:'8 + hours'},
+    ],
+  },
+  {
+    id:'exercise',
+    kicker:'Question 4 of 10',
+    title:'Pick the one that sounds <em>most like this week.</em>',
+    hint:'Not last year. This week.',
+    type:'radio',
+    options:[
+      {v:'daily',label:'Moved daily — walks, yoga, gym'},
+      {v:'2-3',label:'2–3 workouts'},
+      {v:'sedentary',label:'Mostly sedentary'},
+      {v:'recovering',label:'Recovering from illness or injury'},
+    ],
+  },
+  {
+    id:'diet',
+    kicker:'Question 5 of 10',
+    title:'How do you <em>eat?</em>',
+    hint:'The one that fits best — we\'ll strip the stack around it.',
+    type:'radio',
+    options:[
+      {v:'nonveg-daily',label:'Non-veg daily'},
+      {v:'nonveg-weekly',label:'Non-veg weekly'},
+      {v:'eggetarian',label:'Eggetarian'},
+      {v:'pureveg',label:'Pure veg'},
+      {v:'jain',label:'Jain or Sattvic (no onion / garlic / root veg)'},
+      {v:'keto',label:'Keto or carnivore'},
+    ],
+  },
+  {
+    id:'sex',
+    kicker:'Question 6 of 10',
+    title:'You <em>identify as</em>',
+    hint:'Drives iron, folate, creatine and KSM-66 dosing. Skip if you\'d rather.',
+    type:'radio',
+    options:[
+      {v:'male',label:'Male'},
+      {v:'female',label:'Female'},
+      {v:'prefer-not',label:'Prefer not to say'},
+    ],
+  },
+  {
+    id:'safety',
+    kicker:'Question 7 of 10 · safety',
+    title:'Any of these apply to you? <em>Pick all that do</em> — we use this to keep your stack safe.',
+    hint:'None of this is sent anywhere without your tap. These flags suppress contraindicated items.',
+    type:'checkbox',
+    options:[
+      {v:'bp',label:'High blood pressure (diagnosed)'},
+      {v:'diabetes',label:'Diabetes or pre-diabetes'},
+      {v:'thyroid',label:'Thyroid condition'},
+      {v:'pregnancy',label:'Pregnant, breastfeeding, or trying to conceive'},
+      {v:'none',label:'None of these'},
+    ],
+    note:'We suppress ashwagandha escalation for thyroid; NMN, high-dose curcumin and saunas for pregnancy / TTC; and unmonitored fasting for diabetes. This is a safety rail, not a substitute for your doctor.',
+  },
+  {
+    id:'tobacco',
+    kicker:'Question 8 of 10',
+    title:'Do you use <em>tobacco?</em>',
+    hint:'Cigarettes, vapes, gutka, paan masala, khaini, bidi — any of it. Tobacco is the single biggest variable in the Free-5 score.',
+    type:'radio',
+    options:[
+      {v:'never',label:'Never'},
+      {v:'used-to',label:'Used to — quit'},
+      {v:'current',label:'Currently'},
+    ],
+  },
+  {
+    id:'habits',
+    kicker:'Question 9 of 10',
+    title:'Which <em>one habit</em> do you already do most days?',
+    hint:'The Free-5 are most of the longevity win. We\'ll score you on them in the report.',
+    type:'radio',
+    options:[
+      {v:'sleep7',label:'7 + hours sleep'},
+      {v:'walks',label:'Daily walks or steps'},
+      {v:'strength',label:'Strength or resistance training'},
+      {v:'sunlight',label:'Morning sunlight'},
+      {v:'starting',label:'Just starting out — none yet'},
+    ],
+  },
+  {
+    id:'city',
+    kicker:'Question 10 of 10 · last one',
+    title:'Where do you <em>live?</em>',
+    hint:'PM2.5 routing changes your antioxidant priority and your device shortlist (air purifier vs sauna).',
+    type:'radio',
+    options:[
+      {v:'tier1',label:'Tier-1 metro (Delhi, Mumbai, Bangalore, Chennai, Kolkata, Hyderabad, Pune)'},
+      {v:'tier2',label:'Tier-2 city'},
+      {v:'smaller',label:'Smaller town or rural'},
+      {v:'abroad',label:'Abroad'},
+    ],
+  },
+];
+
+/* ============================================================
+   State
+   ============================================================ */
+const STORAGE_KEY = 'bjia_quiz_v1';
+const state = loadState() || { answers:{}, step:0, started:Date.now() };
+
+function loadState(){
+  try{ const raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : null; }catch(e){ return null; }
+}
+function saveState(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch(e){}
+}
+
+/* ============================================================
+   Render
+   ============================================================ */
+const card = document.getElementById('quizCard');
+const loaderScreen = document.getElementById('loaderScreen');
+const gateWrap = document.getElementById('gateWrap');
+const hardgateWrap = document.getElementById('hardgateWrap');
+const hardgate = document.getElementById('hardgate');
+const progressFill = document.getElementById('progressFill');
+const qNum = document.getElementById('qNum');
+const progressPct = document.getElementById('progressPct');
+
+function render(){
+  if(state.step >= QUIZ.length){
+    showLoader();
+    return;
+  }
+  const q = QUIZ[state.step];
+  const current = state.answers[q.id];
+  const pct = Math.round(((state.step)/QUIZ.length)*100);
+  progressFill.style.width = pct + '%';
+  qNum.textContent = 'Question ' + (state.step+1);
+  progressPct.textContent = pct + '%';
+
+  const isMulti = q.type === 'checkbox';
+  const valArr = Array.isArray(current) ? current : (current != null ? [current] : []);
+
+  let html = '';
+  html += '<div class="kicker">'+q.kicker+'</div>';
+  html += '<h1 class="q-title">'+q.title+'</h1>';
+  if(q.hint) html += '<div class="q-hint">'+q.hint+'</div>';
+  html += '<div class="opts">';
+  q.options.forEach((o,i)=>{
+    const active = valArr.indexOf(o.v) >= 0;
+    html += '<button type="button" class="opt '+q.type+(active?' active':'')+'" data-v="'+o.v+'" data-idx="'+i+'">';
+    html += '<span class="tick"></span>';
+    html += '<span>'+o.label+'</span>';
+    html += '<span class="kbd">'+(i+1)+'</span>';
+    html += '</button>';
+  });
+  html += '</div>';
+  if(q.note) html += '<div class="safety-note"><strong>Why we ask.</strong> '+q.note+'</div>';
+  html += '<div class="controls">';
+  html += '<button class="btn ghost" id="backBtn"'+(state.step===0?' disabled':'')+'>← Back</button>';
+  html += '<span class="btn-meta">'+(isMulti?'Tap all that apply':'Tap to continue')+'</span>';
+  html += '<button class="btn" id="nextBtn"'+(valArr.length===0?' disabled':'')+'>'+(state.step===QUIZ.length-1?'Build my stack →':'Next →')+'</button>';
+  html += '</div>';
+  card.innerHTML = html;
+
+  // bind
+  card.querySelectorAll('.opt').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const v = el.getAttribute('data-v');
+      if(isMulti){
+        let arr = Array.isArray(state.answers[q.id]) ? state.answers[q.id].slice() : [];
+        // "none" exclusivity for safety question
+        if(q.id === 'safety'){
+          if(v === 'none'){ arr = ['none']; }
+          else { arr = arr.filter(x=>x!=='none'); if(arr.indexOf(v)<0) arr.push(v); else arr = arr.filter(x=>x!==v); }
+        } else {
+          if(arr.indexOf(v)<0) arr.push(v); else arr = arr.filter(x=>x!==v);
+        }
+        state.answers[q.id] = arr;
+      } else {
+        state.answers[q.id] = v;
+        saveState();
+        // age hardgate
+        if(q.id === 'age' && v === '<18'){ showHardgate(); return; }
+        // auto-advance radio
+        setTimeout(advance, 220);
+      }
+      saveState();
+      render();
+    });
+  });
+  document.getElementById('backBtn').onclick = ()=>{ state.step = Math.max(0,state.step-1); saveState(); render(); window.scrollTo({top:0,behavior:'smooth'}); };
+  document.getElementById('nextBtn').onclick = advance;
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function advance(){
+  const q = QUIZ[state.step];
+  const a = state.answers[q.id];
+  const ok = Array.isArray(a) ? a.length>0 : !!a;
+  if(!ok) return;
+  if(q.id === 'age' && a === '<18'){ showHardgate(); return; }
+  state.step += 1;
+  saveState();
+  if(state.step >= QUIZ.length){ showLoader(); } else { render(); }
+}
+
+/* ============================================================
+   Hard-gate (under-18)
+   ============================================================ */
+function showHardgate(){
+  card.style.display = 'none';
+  document.querySelector('.progress-wrap').style.display = 'none';
+  hardgate.classList.add('show');
+}
+
+/* ============================================================
+   Loader
+   ============================================================ */
+const LOADER_STEPS = [
+  'Parsing your 10 answers',
+  'Filtering 21 alternatives against your diet rail',
+  'Applying safety flags (BP, diabetes, thyroid, pregnancy, tobacco)',
+  'Pricing today\'s live Indian retail (BigBasket, Zepto, 1mg, Flipkart)',
+  'Scoring your Free-5 behavioural total',
+  'Matching devices + labs to your budget band',
+  'Compiling your personalised report',
+];
+function showLoader(){
+  card.style.display = 'none';
+  document.querySelector('.progress-wrap').style.display = 'none';
+  progressFill.style.width = '100%';
+  loaderScreen.style.display = 'flex';
+  const host = document.getElementById('loaderSteps');
+  host.innerHTML = LOADER_STEPS.map((s,i)=>'<div class="loader-step" data-i="'+i+'"><span class="mark dot-anim">▸</span><span>'+s+'<span class="dot-anim">…</span></span></div>').join('');
+  const els = host.querySelectorAll('.loader-step');
+  els.forEach((el,i)=>{
+    setTimeout(()=>el.classList.add('shown'), 180 + i*420);
+    setTimeout(()=>{ el.classList.add('done'); el.querySelector('.mark').textContent='✓'; el.querySelector('.dot-anim:last-child') && (el.querySelector('.dot-anim:last-child').textContent=''); }, 560 + i*420);
+  });
+  setTimeout(showGate, 560 + els.length*420 + 200);
+}
+
+/* ============================================================
+   Gate
+   ============================================================ */
+function showGate(){
+  loaderScreen.style.display = 'none';
+  gateWrap.style.display = 'block';
+  populateTeaser();
+  document.getElementById('gateEmail').focus();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function populateTeaser(){
+  const a = state.answers;
+  // Free-5 approximate score
+  let free5 = 0;
+  if(a.tobacco === 'never') free5 += 1;
+  else if(a.tobacco === 'used-to') free5 += 0.5;
+  if(a.sleep === '7-8' || a.sleep === '8+') free5 += 1;
+  else if(a.sleep === '6-7') free5 += 0.5;
+  if(a.exercise === 'daily' || a.exercise === '2-3') free5 += 1;
+  if(!(a.safety||[]).includes('bp')) free5 += 1;
+  if(['nonveg-weekly','eggetarian','pureveg','jain'].indexOf(a.diet) >= 0) free5 += 1;
+  free5 = Math.round(free5 * 2) / 2;
+
+  // Swap match count — crude estimate
+  let swaps = 9;
+  if(a.diet === 'jain') swaps -= 1;          // no shiitake
+  if(a.diet === 'pureveg') swaps -= 0;
+  if(a.diet === 'keto') swaps -= 1;          // berry swap
+  if((a.safety||[]).includes('pregnancy')) swaps -= 2;
+  if((a.safety||[]).includes('thyroid')) swaps -= 1;
+
+  // Savings — budget-free crude
+  const baseline = 1030000; // ₹10.3L replica
+  const indianAlt = 96000;
+  const personalised = indianAlt + (['jain','pureveg'].indexOf(a.diet)>=0 ? 4000 : 0);
+  const savings = baseline - personalised;
+  const savingsL = (savings/100000).toFixed(1);
+
+  const rows = [
+    { k:'Swaps that apply to you', v: swaps + ' of 9' },
+    { k:'Free-5 behavioural score', v: free5 + ' / 5' },
+    { k:'Estimated annual saving vs Blueprint replica', v: '₹' + savingsL + ' L', cls:'savings' },
+    { k:'Safety flags applied', v: (a.safety && a.safety.length && a.safety[0] !== 'none' ? a.safety.length : 0) + ' flag' + ((a.safety||[]).length===1?'':'s') },
+  ];
+  const host = document.getElementById('teaserRows');
+  host.innerHTML = rows.map(r=>'<div class="teaser-row"><span>'+r.k+'</span><span class="v '+(r.cls||'')+'">'+r.v+'</span></div>').join('');
+}
+
+/* ============================================================
+   Gate submit
+   ============================================================ */
+document.getElementById('gateForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const honeypot = document.getElementById('hp_website').value;
+  const email = document.getElementById('gateEmail').value.trim();
+  const consentDPDP = document.getElementById('consentDPDP').checked;
+  const consent18 = document.getElementById('consent18').checked;
+  const consentWA = document.getElementById('consentWA').checked;
+  const err = document.getElementById('gateErr');
+  const submitBtn = document.getElementById('gateSubmit');
+  function showErr(msg){ err.textContent = msg; err.classList.add('show'); }
+  err.classList.remove('show');
+
+  // Honeypot: bots fill hidden field — silently succeed without logging
+  if(honeypot){ window.location.href = 'results.html'; return; }
+
+  // Anti-speed: legit users take >3s to see + fill gate
+  if(Date.now() - state.started < 8000){ showErr('Please take a moment with the form.'); return; }
+
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  if(!emailOk){ showErr('Please enter a valid email.'); return; }
+  if(!consentDPDP){ showErr('We need your consent to send the report (DPDP Act 2023).'); return; }
+  if(!consent18){ showErr('You must confirm you are 18 or older.'); return; }
+
+  // Persist locally
+  state.email = email;
+  state.consent = { dpdp: consentDPDP, age18: consent18, whatsapp: consentWA, ts: Date.now() };
+  state.submitted = Date.now();
+  saveState();
+
+  // Compute teaser numbers so sheet has derived fields
+  const a = state.answers;
+  let free5 = 0;
+  if(a.tobacco === 'never') free5 += 1; else if(a.tobacco === 'used-to') free5 += 0.5;
+  if(a.sleep === '7-8' || a.sleep === '8+') free5 += 1; else if(a.sleep === '6-7') free5 += 0.5;
+  if(a.exercise === 'daily' || a.exercise === '2-3') free5 += 1;
+  if(!(a.safety||[]).includes('bp')) free5 += 1;
+  if(['nonveg-weekly','eggetarian','pureveg','jain'].indexOf(a.diet) >= 0) free5 += 1;
+  let swapsMatched = 9;
+  if(a.diet === 'jain') swapsMatched -= 1;
+  if(a.diet === 'keto') swapsMatched -= 1;
+  if((a.safety||[]).includes('pregnancy')) swapsMatched -= 2;
+  if((a.safety||[]).includes('thyroid')) swapsMatched -= 1;
+
+  // Build submission payload
+  const payload = {
+    email,
+    consent: state.consent,
+    answers: state.answers,
+    swaps_matched: swapsMatched,
+    free5: free5,
+    duration_sec: Math.round((Date.now() - state.started)/1000),
+    userAgent: navigator.userAgent,
+    referrer: document.referrer || '',
+    website: honeypot,
+  };
+
+  // Disable button while submitting
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  // POST to Google Sheets (Apps Script Web App)
+  if(SHEETS_URL){
+    try{
+      await fetch(SHEETS_URL, {
+        method:'POST',
+        mode:'no-cors',            // Apps Script accepts simple text/plain POSTs without preflight
+        headers:{ 'Content-Type':'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+      });
+    } catch(netErr){
+      console.warn('Sheets submit failed — proceeding to results:', netErr);
+    }
+  } else {
+    console.warn('SHEETS_URL not configured — skipping lead capture.');
+  }
+
+  // Always show results (don't hold the user hostage to a network blip)
+  window.location.href = 'results.html';
+});
+
+/* ============================================================
+   Keyboard shortcuts (1–9 to pick option, Enter to advance)
+   ============================================================ */
+document.addEventListener('keydown',function(e){
+  if(gateWrap.style.display === 'block') return;
+  if(loaderScreen.style.display === 'flex') return;
+  if(hardgate.classList.contains('show')) return;
+  const q = QUIZ[state.step]; if(!q) return;
+  if(e.key >= '1' && e.key <= '9'){
+    const idx = parseInt(e.key,10)-1;
+    if(idx < q.options.length){
+      const btn = card.querySelector('.opt[data-idx="'+idx+'"]');
+      if(btn) btn.click();
+    }
+  } else if(e.key === 'Enter'){
+    const next = document.getElementById('nextBtn');
+    if(next && !next.disabled) next.click();
+  } else if(e.key === 'Backspace' && e.target.tagName !== 'INPUT'){
+    const back = document.getElementById('backBtn');
+    if(back && !back.disabled) back.click();
+  }
+});
+
+render();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,838 @@
+{
+  "audited_at": "2026-04-20",
+  "claim_count_total": 86,
+  "counts_by_status": {
+    "verified": 4,
+    "partially_verified": 9,
+    "flagged_by_reviewer": 6,
+    "blocker_from_reviewer": 4,
+    "unverified": 62,
+    "arithmetic_error": 1
+  },
+  "counts_by_priority": {
+    "1": 22,
+    "2": 38,
+    "3": 26
+  },
+  "records": [
+    {
+      "claim_id": "macro_bj_annual",
+      "section": "A_cost_macro",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "$2M annual spend is self-reported by BJ; needs citation to Blueprint blog/interview snapshot with capture date."
+    },
+    {
+      "claim_id": "macro_replica_daily",
+      "section": "A_cost_macro",
+      "status": "arithmetic_error",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "arithmetic_fix",
+      "notes": "Devil's Advocate: Section C line items sum to 3,062 INR not 2,683; hero stat and 1,770x ratio depend on this."
+    },
+    {
+      "claim_id": "macro_alt_daily",
+      "section": "A_cost_macro",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "arithmetic_fix",
+      "notes": "Sum of D section needs re-addition after seasonality reprice; headline figure."
+    },
+    {
+      "claim_id": "macro_ratio",
+      "section": "A_cost_macro",
+      "status": "blocker_from_reviewer",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "arithmetic_fix",
+      "notes": "DA CRITICAL: '1/1,770th for 90% of measurable result' is undefined and conflates 2.5% food slice with whole-protocol outcome."
+    },
+    {
+      "claim_id": "macro_empirical_audit",
+      "section": "A_cost_macro",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "Empirical Health audit citation not captured."
+    },
+    {
+      "claim_id": "burn_medical_team",
+      "section": "B_annual_burn",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "design_only",
+      "notes": "Narrative; not consumer-actionable."
+    },
+    {
+      "claim_id": "burn_experimental",
+      "section": "B_annual_burn",
+      "status": "blocker_from_reviewer",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "regulatory_check",
+      "notes": "DA CRITICAL: stem cells, peptides, gene therapy are restricted under ICMR-DBT 2017 / CDSCO; needs 'not legal in India' disclaimer."
+    },
+    {
+      "claim_id": "burn_diagnostics",
+      "section": "B_annual_burn",
+      "status": "flagged_by_reviewer",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "DA HIGH: No verification of any diagnostic; undermines '90% measurable result' claim."
+    },
+    {
+      "claim_id": "burn_staff_ops",
+      "section": "B_annual_burn",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "design_only",
+      "notes": "Narrative context only."
+    },
+    {
+      "claim_id": "burn_equipment",
+      "section": "B_annual_burn",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "design_only",
+      "notes": "Narrative; covered by device section."
+    },
+    {
+      "claim_id": "burn_food_supp",
+      "section": "B_annual_burn",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "design_only",
+      "notes": "Narrative."
+    },
+    {
+      "claim_id": "bj_longevity_mix",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Need Blueprint ship-to-India price + customs duty."
+    },
+    {
+      "claim_id": "bj_essential_caps",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Need Blueprint ship-to-India price."
+    },
+    {
+      "claim_id": "bj_essential_soft",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Need Blueprint ship-to-India price."
+    },
+    {
+      "claim_id": "bj_broccoli",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Quick-commerce spot price."
+    },
+    {
+      "claim_id": "bj_cauliflower",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Quick-commerce spot price."
+    },
+    {
+      "claim_id": "bj_shiitake",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Shiitake scarce on Indian QC; price spread large."
+    },
+    {
+      "claim_id": "bj_beluga_lentil",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Black beluga imported."
+    },
+    {
+      "claim_id": "bj_evoo",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Blueprint EVOO shipping cost to India."
+    },
+    {
+      "claim_id": "bj_macadamia",
+      "section": "C_bj_replica",
+      "status": "verified",
+      "evidence_file": "verified_prices.json",
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "DA: 780 floor is promo; use 1,239-1,500 as steady-state."
+    },
+    {
+      "claim_id": "bj_walnuts",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Standard walnut price."
+    },
+    {
+      "claim_id": "bj_chia_flax",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Seeds."
+    },
+    {
+      "claim_id": "bj_cocoa",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Blueprint Cocoa Flavanols shipping + duty."
+    },
+    {
+      "claim_id": "bj_lecithin",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Sunflower lecithin price."
+    },
+    {
+      "claim_id": "bj_macnut_milk",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Macadamia nut milk; niche import."
+    },
+    {
+      "claim_id": "bj_berries",
+      "section": "C_bj_replica",
+      "status": "partially_verified",
+      "evidence_file": "verified_prices.json",
+      "priority_to_complete": 1,
+      "research_type_needed": "price_fetch",
+      "notes": "Imported blueberry 800 INR overstated; verified 208-400; update hero stat."
+    },
+    {
+      "claim_id": "bj_pom_juice",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Cold-press pomegranate juice 500ml price."
+    },
+    {
+      "claim_id": "bj_pea_protein",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Blueprint pea protein shipping + duty."
+    },
+    {
+      "claim_id": "bj_pill_stack",
+      "section": "C_bj_replica",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "regulatory_check",
+      "notes": "60-pill stack composition (rapamycin, metformin, acarbose) needs ingredient list + FSSAI/CDSCO status."
+    },
+    {
+      "claim_id": "bj_daily_total",
+      "section": "C_bj_replica",
+      "status": "arithmetic_error",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "arithmetic_fix",
+      "notes": "DA CRITICAL: row sum is 3,062 INR not 2,683; propagate fix to all downstream copy."
+    },
+    {
+      "claim_id": "alt_green_tea_tulsi",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Trivial price."
+    },
+    {
+      "claim_id": "alt_turmeric_pepper",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Heavy-metal COA consideration."
+    },
+    {
+      "claim_id": "alt_ksm66",
+      "section": "D_alt",
+      "status": "partially_verified",
+      "evidence_file": "verified_prices.json",
+      "priority_to_complete": 1,
+      "research_type_needed": "price_fetch",
+      "notes": "DA HIGH: 350 INR/mo aggressive; branded KSM-66 retail 550-700; dose-mg must be tied to SKU."
+    },
+    {
+      "claim_id": "alt_dal",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Standard pantry item."
+    },
+    {
+      "claim_id": "alt_brassica",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Broccoli/cauliflower QC price."
+    },
+    {
+      "claim_id": "alt_moringa_methi",
+      "section": "D_alt",
+      "status": "flagged_by_reviewer",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "regulatory_check",
+      "notes": "DA HIGH: heavy-metal Cd/Pb uptake; restrict to COA-tested brands + pregnancy warning."
+    },
+    {
+      "claim_id": "alt_mushroom",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Open item in prices file."
+    },
+    {
+      "claim_id": "alt_mustard_oil",
+      "section": "D_alt",
+      "status": "blocker_from_reviewer",
+      "evidence_file": "verified_biology.json",
+      "priority_to_complete": 1,
+      "research_type_needed": "regulatory_check",
+      "notes": "SME+DA BLOCKER: erucic acid 30-50% must be in primary copy; rotation + ApoB gating required."
+    },
+    {
+      "claim_id": "alt_almond",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Indian-grown almonds."
+    },
+    {
+      "claim_id": "alt_walnut",
+      "section": "D_alt",
+      "status": "verified",
+      "evidence_file": "verified_prices.json",
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Kashmiri walnut price in-line with retail."
+    },
+    {
+      "claim_id": "alt_seed_mix",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Chia/flax/sesame."
+    },
+    {
+      "claim_id": "alt_a2_milk",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "A2 premium pricing varies."
+    },
+    {
+      "claim_id": "alt_cacao",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Linked to biology-file cacao flavanol gap."
+    },
+    {
+      "claim_id": "alt_amla_pom",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Seasonal pricing needed."
+    },
+    {
+      "claim_id": "alt_ghee",
+      "section": "D_alt",
+      "status": "flagged_by_reviewer",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "DA HIGH: sat-fat incoherence with MedDiet pitch; cap or gate behind ApoB."
+    },
+    {
+      "claim_id": "alt_curd",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Pantry item."
+    },
+    {
+      "claim_id": "alt_seasonal_fruit",
+      "section": "D_alt",
+      "status": "flagged_by_reviewer",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "DA MEDIUM: seasonality not modeled; price is off-season-weighted-needed."
+    },
+    {
+      "claim_id": "alt_omega3",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Algal/fish oil price; critical given ALA conversion caveat."
+    },
+    {
+      "claim_id": "alt_d3k2",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Commodity supplement."
+    },
+    {
+      "claim_id": "alt_creatine",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Commodity supplement."
+    },
+    {
+      "claim_id": "alt_mag_gly",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Commodity supplement."
+    },
+    {
+      "claim_id": "alt_daily_total",
+      "section": "D_alt",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "arithmetic_fix",
+      "notes": "Recompute after D-row fixes; headline 263 INR figure."
+    },
+    {
+      "claim_id": "swap_blueberry_jamun",
+      "section": "E_swap",
+      "status": "flagged_by_reviewer",
+      "evidence_file": "verified_biology.json",
+      "priority_to_complete": 2,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "SME: dry-vs-fresh weight unit mismatch; DA: seasonality Jun-Aug only. Verifier said 'comparable not higher'."
+    },
+    {
+      "claim_id": "swap_macadamia_walnut",
+      "section": "E_swap",
+      "status": "blocker_from_reviewer",
+      "evidence_file": "verified_biology.json",
+      "priority_to_complete": 1,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "SME+DA BLOCKER: ALA-to-EPA conversion 5-10%, FADS polymorphism in South Asians; marine omega-3 still required."
+    },
+    {
+      "claim_id": "swap_evoo_mustard",
+      "section": "E_swap",
+      "status": "blocker_from_reviewer",
+      "evidence_file": "verified_biology.json",
+      "priority_to_complete": 1,
+      "research_type_needed": "regulatory_check",
+      "notes": "SME+DA CRITICAL: erucic acid + zero polyphenols; ICMR-NIN guidance needed in primary copy."
+    },
+    {
+      "claim_id": "swap_cocoa_cacao",
+      "section": "E_swap",
+      "status": "blocker_from_reviewer",
+      "evidence_file": "verified_biology.json",
+      "priority_to_complete": 1,
+      "research_type_needed": "regulatory_check",
+      "notes": "DA CRITICAL: no COA; drop 'matches Blueprint' claim or commission HPLC assays."
+    },
+    {
+      "claim_id": "swap_sprouts_moringa",
+      "section": "E_swap",
+      "status": "flagged_by_reviewer",
+      "evidence_file": "verified_biology.json",
+      "priority_to_complete": 2,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "SME: moringin != sulforaphane; myrosinase lost in dried powder. DA: heavy-metal uptake."
+    },
+    {
+      "claim_id": "swap_nmn_diet",
+      "section": "E_swap",
+      "status": "flagged_by_reviewer",
+      "evidence_file": "verified_biology.json",
+      "priority_to_complete": 1,
+      "research_type_needed": "regulatory_check",
+      "notes": "DA CRITICAL: NMN not on FSSAI Nutraceutical list; do not affiliate. Tryptophan-dal mechanism overstated."
+    },
+    {
+      "claim_id": "swap_ashwa_ksm66",
+      "section": "E_swap",
+      "status": "verified",
+      "evidence_file": "verified_biology.json",
+      "priority_to_complete": 2,
+      "research_type_needed": "regulatory_check",
+      "notes": "Manufacturer claim clean; add contraindications (autoimmune/thyroid/pregnancy) and dose-price-SKU map."
+    },
+    {
+      "claim_id": "swap_shiitake_oyster",
+      "section": "E_swap",
+      "status": "flagged_by_reviewer",
+      "evidence_file": "verified_biology.json",
+      "priority_to_complete": 1,
+      "research_type_needed": "arithmetic_fix",
+      "notes": "Two errors: 64% MCI -> 57%; shiitake actually has MORE ergothioneine. Reframe swap."
+    },
+    {
+      "claim_id": "swap_pomjuice_anar",
+      "section": "E_swap",
+      "status": "flagged_by_reviewer",
+      "evidence_file": "verified_biology.json",
+      "priority_to_complete": 2,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "False 'Western dilution' framing; urolithin-A producer status 40% needs consumer-facing disclosure."
+    },
+    {
+      "claim_id": "free5_smoking",
+      "section": "F_mortality",
+      "status": "verified",
+      "evidence_file": "verified_mortality.json",
+      "priority_to_complete": 3,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "Doll & Peto defensible; optional Indian tobacco (bidi/chewing) context."
+    },
+    {
+      "claim_id": "free5_weight",
+      "section": "F_mortality",
+      "status": "blocker_from_reviewer",
+      "evidence_file": "verified_mortality.json",
+      "priority_to_complete": 1,
+      "research_type_needed": "arithmetic_fix",
+      "notes": "DA HIGH: 40% overstated; RCT evidence 15-20%. Rewrite Free-5 step-function."
+    },
+    {
+      "claim_id": "free5_exercise",
+      "section": "F_mortality",
+      "status": "flagged_by_reviewer",
+      "evidence_file": "verified_mortality.json",
+      "priority_to_complete": 2,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "35% is high-PA ceiling; ~20% at guideline-minimum dose; add dose-response."
+    },
+    {
+      "claim_id": "free5_bp",
+      "section": "F_mortality",
+      "status": "flagged_by_reviewer",
+      "evidence_file": "verified_mortality.json",
+      "priority_to_complete": 2,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "SPRINT excluded diabetics/elderly-frail; add J-curve + exclusion criteria."
+    },
+    {
+      "claim_id": "free5_diet",
+      "section": "F_mortality",
+      "status": "flagged_by_reviewer",
+      "evidence_file": "verified_mortality.json",
+      "priority_to_complete": 2,
+      "research_type_needed": "arithmetic_fix",
+      "notes": "21% not 25%; Indian vegetarian != MedDiet (refined carb + dairy load)."
+    },
+    {
+      "claim_id": "nuts_adventist",
+      "section": "F_mortality",
+      "status": "flagged_by_reviewer",
+      "evidence_file": "verified_mortality.json",
+      "priority_to_complete": 3,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "+2-3yr is modeled not observed; healthy-user confounding in Adventist cohort."
+    },
+    {
+      "claim_id": "legume_loma",
+      "section": "F_mortality",
+      "status": "partially_verified",
+      "evidence_file": "verified_mortality.json",
+      "priority_to_complete": 2,
+      "research_type_needed": "arithmetic_fix",
+      "notes": "8% -> 6% per 50g/day; Indian dal intake already at dose ceiling."
+    },
+    {
+      "claim_id": "sauna_finnish",
+      "section": "F_mortality",
+      "status": "blocker_from_reviewer",
+      "evidence_file": "verified_mortality.json",
+      "priority_to_complete": 1,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "SME BLOCKER: Finnish-men cohort, Finnish-dry-sauna specific; infrared/Indian/women generalizability + contraindications required."
+    },
+    {
+      "claim_id": "life_sleep",
+      "section": "G_lifestyle",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "pubmed_lookup",
+      "notes": "SME gap: >8hr sleep U-shape; potential reverse-finding."
+    },
+    {
+      "claim_id": "life_exercise",
+      "section": "G_lifestyle",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "design_only",
+      "notes": "DA MEDIUM: protocol is versioned and stale; attach capture-date."
+    },
+    {
+      "claim_id": "life_fasting",
+      "section": "G_lifestyle",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "design_only",
+      "notes": "DA LOW: stale BJ protocol; verify against current Blueprint page."
+    },
+    {
+      "claim_id": "life_weight_loss",
+      "section": "G_lifestyle",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "design_only",
+      "notes": "BJ-self-reported only; narrative."
+    },
+    {
+      "claim_id": "dev_hyperbaric",
+      "section": "H_devices",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Indian HBOT clinic per-session cost needed."
+    },
+    {
+      "claim_id": "dev_redlight_cap",
+      "section": "H_devices",
+      "status": "flagged_by_reviewer",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "regulatory_check",
+      "notes": "DA HIGH: CDSCO registration number required; Drug & Magic Remedies Act for therapeutic claims."
+    },
+    {
+      "claim_id": "dev_ir_sauna",
+      "section": "H_devices",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "IR vs Finnish hemodynamics differ; tie to sauna mortality caveat."
+    },
+    {
+      "claim_id": "dev_cgm",
+      "section": "H_devices",
+      "status": "flagged_by_reviewer",
+      "evidence_file": "verified_prices.json",
+      "priority_to_complete": 2,
+      "research_type_needed": "regulatory_check",
+      "notes": "Ultrahuman M1 price TBD; SME: non-diabetic CGM not consensus-endorsed, interpretation layer needed."
+    },
+    {
+      "claim_id": "dev_hrv",
+      "section": "H_devices",
+      "status": "partially_verified",
+      "evidence_file": "verified_prices.json",
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Ultrahuman Ring Air INR 19,999 verified; SME flag: validation vs PSG thinner than Oura."
+    },
+    {
+      "claim_id": "dev_bloodpressure",
+      "section": "H_devices",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Omron/Dr Morepen/BPL prices."
+    },
+    {
+      "claim_id": "dev_body_comp",
+      "section": "H_devices",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Clinical DEXA body-comp prices (non-bone)."
+    },
+    {
+      "claim_id": "dev_smart_scale",
+      "section": "H_devices",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Withings/Mi/HealthifyMe."
+    },
+    {
+      "claim_id": "lab_full_panel",
+      "section": "I_labs",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "price_fetch",
+      "notes": "SME BLOCKER: entire labs section unverified; the product's measurement layer."
+    },
+    {
+      "claim_id": "lab_dunedin",
+      "section": "I_labs",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "regulatory_check",
+      "notes": "TruDiagnostic India shipping + customs + TAT unverified."
+    },
+    {
+      "claim_id": "lab_horvath",
+      "section": "I_labs",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "regulatory_check",
+      "notes": "Indian availability unknown."
+    },
+    {
+      "claim_id": "lab_mri",
+      "section": "I_labs",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Mahajan/Dr Lal/Apollo whole-body MRI."
+    },
+    {
+      "claim_id": "lab_cac",
+      "section": "I_labs",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "CAC scan pricing."
+    },
+    {
+      "claim_id": "lab_dexa_bone",
+      "section": "I_labs",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "DEXA bone density."
+    },
+    {
+      "claim_id": "lab_skin_age",
+      "section": "I_labs",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 3,
+      "research_type_needed": "price_fetch",
+      "notes": "Indian availability uncertain."
+    },
+    {
+      "claim_id": "lab_apob_lpa",
+      "section": "I_labs",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 1,
+      "research_type_needed": "price_fetch",
+      "notes": "High value: Indian population ApoB-heavy; Thyrocare/Redcliffe pricing needed."
+    },
+    {
+      "claim_id": "lab_hba1c_fasting_ins",
+      "section": "I_labs",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "HbA1c + fasting insulin + HOMA-IR bundle pricing."
+    },
+    {
+      "claim_id": "lab_hormones",
+      "section": "I_labs",
+      "status": "unverified",
+      "evidence_file": null,
+      "priority_to_complete": 2,
+      "research_type_needed": "price_fetch",
+      "notes": "Testosterone/DHEA-S/cortisol/thyroid."
+    }
+  ]
+}

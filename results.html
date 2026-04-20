@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your personalised stack · The Indian Longevity Audit</title>
+<meta name="description" content="Your Bryan Johnson-vs-India stack, matched to your diet, budget, city, and safety flags." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F2ECDD;--paper-dark:#E8E0CC;--paper-line:#D6CCAD;
+    --ink:#1A1611;--ink-soft:#4A3F2E;
+    --blood:#B91C1C;--blood-deep:#7F1D1D;
+    --forest:#1F5F3F;--forest-deep:#0F3D24;
+    --gold:#B8860B;--stamp:#A62020;
+    --warn-bg:#FBEFC8;--danger-bg:#F8DAD8;
+    --clinical:#2C3E50;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Instrument Serif',Georgia,serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0px, transparent 31px, rgba(26,22,17,0.04) 31px, rgba(26,22,17,0.04) 32px),
+      radial-gradient(circle at 20% 10%, rgba(184,134,11,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(185,28,28,0.04) 0%, transparent 40%);
+    min-height:100vh;padding-bottom:80px;
+  }
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:-0.01em}
+  a{color:var(--ink)}
+  a:hover{color:var(--blood)}
+
+  /* Top */
+  .topbar{border-bottom:1px solid var(--ink);padding:14px 0;background:var(--paper)}
+  .topbar-inner{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
+  .topbar a{color:var(--ink-soft);text-decoration:none}
+  .topbar a:hover{color:var(--blood)}
+  .badge-mini{background:var(--ink);color:var(--paper);padding:3px 9px;letter-spacing:0.18em}
+
+  /* Hero */
+  .hero{padding:56px 0 28px}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--blood);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+  .kicker::before{content:"";width:36px;height:2px;background:var(--blood);display:inline-block}
+  h1.title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(38px,6.4vw,84px);line-height:0.98;letter-spacing:-0.032em;color:var(--ink);font-variation-settings:"opsz" 144}
+  h1.title em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--blood)}
+  h1.title .green{color:var(--forest)}
+  .sub{margin-top:24px;font-size:19px;color:var(--ink-soft);max-width:720px;line-height:1.55}
+  .sub strong{color:var(--ink);font-weight:500}
+
+  /* Scorecard */
+  .scorecard{
+    margin:40px 0 16px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  }
+  .score{
+    padding:20px 22px;background:var(--paper);border:1.5px solid var(--ink);
+  }
+  .score .lab{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+  .score .v{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;line-height:1}
+  .score .v.blood{color:var(--blood-deep)}
+  .score .v.forest{color:var(--forest-deep)}
+  .score .m{margin-top:8px;font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;color:var(--ink-soft)}
+  @media(max-width:900px){.scorecard{grid-template-columns:repeat(2,1fr)}}
+
+  /* Section */
+  .section{padding:52px 0 12px;border-top:1px solid var(--paper-line)}
+  .section-number{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+  .section-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.6vw,48px);line-height:1.05;letter-spacing:-0.025em;margin-bottom:16px}
+  .section-title em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--blood)}
+  .section-intro{font-size:17px;color:var(--ink-soft);margin-bottom:24px;max-width:780px;line-height:1.55}
+
+  /* Budget filter */
+  .budget{
+    max-width:900px;margin:0 auto;padding:22px 24px;
+    background:var(--warn-bg);border:1px solid var(--gold);
+    display:flex;gap:20px;align-items:center;flex-wrap:wrap;
+  }
+  .budget .lab{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blood-deep);flex-shrink:0}
+  .budget .chips{display:flex;gap:8px;flex-wrap:wrap;flex:1}
+  .budget .chip{
+    padding:8px 14px;background:var(--paper);border:1.5px solid var(--ink);
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;
+    text-transform:uppercase;cursor:pointer;color:var(--ink);
+  }
+  .budget .chip:hover{background:var(--ink);color:var(--paper)}
+  .budget .chip.active{background:var(--ink);color:var(--paper)}
+
+  /* Swap cards */
+  .swaps{display:flex;flex-direction:column;gap:14px;max-width:1060px;margin:0 auto}
+  .swap{
+    background:var(--paper);border:1.5px solid var(--ink);
+    padding:22px 24px;
+    display:grid;grid-template-columns:1fr auto;gap:18px;
+  }
+  .swap.suppressed{opacity:0.45;background:var(--paper-dark)}
+  .swap .title{font-family:'Fraunces',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em;color:var(--ink);margin-bottom:6px}
+  .swap .target{font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-bottom:10px}
+  .swap .vs{display:flex;gap:12px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);margin-bottom:8px}
+  .swap .vs .bj{color:var(--blood-deep)}
+  .swap .vs .alt{color:var(--forest-deep)}
+  .swap .why{font-family:'Instrument Serif',serif;font-size:16px;color:var(--ink);line-height:1.5}
+  .swap .cost-col{text-align:right;min-width:160px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end}
+  .swap .cost-big{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:500;color:var(--forest-deep);letter-spacing:-0.01em}
+  .swap .cost-unit{font-family:'Instrument Serif',serif;font-style:italic;font-size:13px;color:var(--ink-soft);margin-top:2px}
+  .swap .save-tag{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 8px;background:var(--forest);color:var(--paper)}
+  .swap .flag-tag{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 8px;background:var(--blood);color:var(--paper)}
+  .swap a{color:var(--blood);text-decoration-color:var(--blood-deep)}
+  @media(max-width:720px){
+    .swap{grid-template-columns:1fr}
+    .swap .cost-col{align-items:flex-start;text-align:left}
+  }
+
+  /* Contraindications banner */
+  .contra{
+    max-width:900px;margin:28px auto 0;padding:22px 26px;
+    background:var(--danger-bg);border-left:4px solid var(--blood-deep);
+    font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--blood-deep);line-height:1.55;
+  }
+  .contra h4{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:10px;color:var(--blood-deep)}
+  .contra ul{padding-left:20px;margin-top:6px}
+
+  /* Free-5 */
+  .free5-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-width:1060px;margin:0 auto}
+  .f5-cell{padding:18px 16px;background:var(--paper);border:1.5px solid var(--ink);text-align:center}
+  .f5-cell.hit{background:var(--forest);color:var(--paper);border-color:var(--forest-deep)}
+  .f5-cell .l{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px}
+  .f5-cell .m{font-family:'Fraunces',serif;font-size:28px;font-weight:300;letter-spacing:-0.01em;line-height:1}
+  .f5-cell.hit .m::after{content:" ✓"}
+  .f5-cell .d{margin-top:10px;font-family:'Instrument Serif',serif;font-size:13px;font-style:italic}
+  @media(max-width:700px){.free5-grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* Devices */
+  .devices{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:1060px;margin:0 auto}
+  .dev{padding:20px 22px;background:var(--paper);border:1.5px solid var(--ink)}
+  .dev h4{font-family:'Fraunces',serif;font-size:20px;font-weight:400;letter-spacing:-0.01em;margin-bottom:6px}
+  .dev .p{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:500;color:var(--forest-deep);margin-bottom:10px}
+  .dev .d{font-family:'Instrument Serif',serif;font-size:15px;color:var(--ink-soft);line-height:1.5}
+  .dev .tag{margin-top:10px;display:inline-block;padding:3px 8px;background:var(--warn-bg);border:1px solid var(--gold);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blood-deep)}
+  @media(max-width:700px){.devices{grid-template-columns:1fr}}
+
+  /* Total */
+  .total{
+    max-width:900px;margin:40px auto 0;padding:30px 32px;
+    background:var(--ink);color:var(--paper);
+    display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;
+  }
+  .total .lab{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--paper-dark);margin-bottom:6px}
+  .total .big{font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:500;letter-spacing:-0.01em;color:var(--paper)}
+  .total .vs-bj{text-align:right;font-family:'Instrument Serif',serif;font-size:16px;font-style:italic;color:var(--paper-dark)}
+  .total .vs-bj strong{color:var(--gold);font-weight:500}
+
+  /* Share + email state */
+  .share{
+    max-width:900px;margin:40px auto 0;padding:24px;
+    background:var(--paper);border:1.5px dashed var(--ink);
+    display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between;
+  }
+  .share .t{font-family:'Instrument Serif',serif;font-size:17px;color:var(--ink);flex:1;min-width:220px}
+  .share .t strong{font-family:'Fraunces',serif;font-weight:500}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--ink);color:var(--paper);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid var(--ink);cursor:pointer;text-decoration:none;transition:background .15s ease,transform .12s ease}
+  .btn:hover{background:var(--blood);border-color:var(--blood);transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+  /* Empty state */
+  .empty{max-width:640px;margin:80px auto;padding:40px 32px;background:var(--paper);border:2px solid var(--ink);text-align:center}
+  .empty h2{font-family:'Fraunces',serif;font-size:32px;font-weight:300;margin-bottom:14px}
+
+  /* Footer */
+  .footer{padding:40px 0 20px;border-top:2px solid var(--ink);margin-top:60px}
+  .footer-inner{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* Email confirmation banner */
+  .email-banner{
+    background:rgba(31,95,63,0.1);border-top:1px solid var(--forest);border-bottom:1px solid var(--forest);
+    padding:14px 0;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--forest-deep);text-align:center;
+  }
+  .email-banner strong{color:var(--forest-deep);font-weight:500}
+
+  /* === PLAYBOOK ADDITIONS === */
+
+  /* Menu card */
+  .menu-card{
+    max-width:1060px;margin:0 auto;background:var(--paper);border:1.5px solid var(--ink);
+  }
+  .menu-head{
+    padding:22px 26px;border-bottom:1.5px solid var(--ink);background:var(--paper-dark);
+    display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  }
+  .menu-head .lab{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blood-deep)}
+  .menu-head .tot{font-family:'Fraunces',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em}
+  .menu-head .tot .m{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);margin-left:6px}
+  .menu-row{
+    display:grid;grid-template-columns:96px 1fr 180px;gap:22px;padding:20px 26px;
+    border-bottom:1px dashed var(--paper-line);align-items:flex-start;
+  }
+  .menu-row:last-child{border-bottom:0}
+  .menu-row .time{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--blood-deep);font-weight:500;padding-top:2px}
+  .menu-row .meal-name{font-family:'Fraunces',serif;font-size:19px;font-weight:400;margin-bottom:4px;letter-spacing:-0.01em}
+  .menu-row .meal-body{font-family:'Instrument Serif',serif;font-size:16px;color:var(--ink);line-height:1.5}
+  .menu-row .meal-why{margin-top:8px;font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;color:var(--ink-soft);line-height:1.45}
+  .menu-row .meal-sub{margin-top:6px;font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--forest-deep)}
+  .menu-row .stats{text-align:right;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);line-height:1.7}
+  .menu-row .stats .kcal{color:var(--ink);font-weight:500;font-size:16px;letter-spacing:-0.01em}
+  .menu-row .stats .cost{color:var(--forest-deep);font-weight:500}
+  @media(max-width:780px){
+    .menu-row{grid-template-columns:1fr;gap:8px}
+    .menu-row .stats{text-align:left;display:flex;gap:12px}
+  }
+
+  /* Tier cards */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1060px;margin:0 auto}
+  .tier{
+    background:var(--paper);border:1.5px solid var(--ink);padding:22px 22px 18px;position:relative;
+  }
+  .tier.match{border-color:var(--forest-deep);border-width:2px;box-shadow:0 0 0 4px rgba(31,95,63,0.08)}
+  .tier .badge{
+    position:absolute;top:-11px;left:18px;background:var(--forest);color:var(--paper);
+    font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.22em;
+    text-transform:uppercase;padding:4px 10px;
+  }
+  .tier .t-name{font-family:'Fraunces',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em;margin-bottom:4px}
+  .tier .t-price{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:500;color:var(--forest-deep);letter-spacing:-0.01em;margin-bottom:4px}
+  .tier .t-tag{font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;color:var(--ink-soft);margin-bottom:14px}
+  .tier ul{list-style:none;padding:0;margin:0;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.55;color:var(--ink)}
+  .tier li{padding:8px 0;border-top:1px dashed var(--paper-line)}
+  .tier li:first-child{border-top:0}
+  .tier li strong{font-family:'Fraunces',serif;font-weight:500;font-size:14.5px}
+  .tier li .brand{color:var(--ink-soft);font-size:12px;display:block;margin-top:2px;font-family:'JetBrains Mono',monospace;letter-spacing:-0.01em}
+  @media(max-width:900px){.tiers{grid-template-columns:1fr}}
+
+  /* Protocol cards / morning stack */
+  .morning-stack{
+    max-width:900px;margin:0 auto 20px;background:var(--ink);color:var(--paper);padding:26px 30px;
+  }
+  .morning-stack .lab{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .morning-stack h3{font-family:'Fraunces',serif;font-size:28px;font-weight:300;letter-spacing:-0.02em;color:var(--paper);margin-bottom:14px;line-height:1.1}
+  .morning-stack .seq{display:flex;flex-direction:column;gap:10px}
+  .morning-stack .seq-row{
+    display:grid;grid-template-columns:70px 1fr;gap:14px;padding:10px 0;border-top:1px dashed rgba(242,236,221,0.2);
+    font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.5;
+  }
+  .morning-stack .seq-row:first-child{border-top:0}
+  .morning-stack .seq-row .clock{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);letter-spacing:-0.01em}
+  .morning-stack .seq-row strong{color:var(--paper);font-family:'Fraunces',serif;font-weight:400;font-size:16px}
+  .protocols{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:1060px;margin:0 auto}
+  .proto{padding:18px 20px;background:var(--paper);border:1.5px solid var(--ink)}
+  .proto h4{font-family:'Fraunces',serif;font-size:18px;font-weight:400;letter-spacing:-0.01em;margin-bottom:4px}
+  .proto .dose{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--blood-deep);letter-spacing:0.08em;margin-bottom:10px}
+  .proto .d{font-family:'Instrument Serif',serif;font-size:15px;color:var(--ink);line-height:1.5}
+  .proto .adj{margin-top:10px;padding:8px 10px;background:var(--warn-bg);border-left:3px solid var(--gold);font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.45;color:var(--blood-deep)}
+  .proto .pmid{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);letter-spacing:0.06em}
+  @media(max-width:700px){.protocols{grid-template-columns:1fr}}
+
+  /* Grocery table */
+  .grocery{
+    max-width:1060px;margin:0 auto;background:var(--paper);border:1.5px solid var(--ink);overflow:hidden;
+  }
+  .grocery-head{
+    padding:18px 26px;background:var(--paper-dark);border-bottom:1.5px solid var(--ink);
+    display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  }
+  .grocery-head .lab{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blood-deep)}
+  .grocery-head .tot{font-family:'Fraunces',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em}
+  .grocery table{width:100%;border-collapse:collapse}
+  .grocery th,.grocery td{padding:12px 22px;text-align:left;border-bottom:1px dashed var(--paper-line);font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.45}
+  .grocery th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);background:var(--paper)}
+  .grocery td.qty{font-family:'JetBrains Mono',monospace;color:var(--ink-soft);font-size:12.5px;width:120px}
+  .grocery td.cost{font-family:'JetBrains Mono',monospace;color:var(--forest-deep);font-weight:500;text-align:right;width:90px}
+  .grocery tr:last-child td{border-bottom:0}
+  .grocery .item-why{display:block;margin-top:2px;font-family:'Instrument Serif',serif;font-style:italic;font-size:13px;color:var(--ink-soft);line-height:1.4}
+
+  /* Batch prep cards */
+  .batch{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:1060px;margin:22px auto 0}
+  .batch-card{padding:20px 22px;background:var(--paper);border:1.5px solid var(--ink)}
+  .batch-card .n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--blood-deep);letter-spacing:0.18em;margin-bottom:6px}
+  .batch-card h4{font-family:'Fraunces',serif;font-size:18px;font-weight:400;letter-spacing:-0.01em;margin-bottom:6px}
+  .batch-card .time{font-family:'Instrument Serif',serif;font-style:italic;color:var(--ink-soft);font-size:13px;margin-bottom:8px}
+  .batch-card ol{padding-left:20px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.55;color:var(--ink);margin:0}
+  .batch-card ol li{margin-bottom:4px}
+  @media(max-width:720px){.batch{grid-template-columns:1fr}}
+
+  /* Plate-rule diagram */
+  .plate-wrap{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+  .plate-diag{aspect-ratio:1/1;max-width:360px;border:2px solid var(--ink);border-radius:50%;position:relative;background:var(--paper);margin:0 auto;overflow:hidden}
+  .plate-diag .half{position:absolute;inset:0 50% 0 0;background:var(--forest);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:15px;padding:0 14px;text-align:center;line-height:1.3}
+  .plate-diag .q-top{position:absolute;top:0;right:0;width:50%;height:50%;background:var(--blood);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:14px;padding:0 10px;text-align:center;line-height:1.3}
+  .plate-diag .q-bot{position:absolute;bottom:0;right:0;width:50%;height:50%;background:var(--gold);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:14px;padding:0 10px;text-align:center;line-height:1.3}
+  .plate-rules{list-style:none;padding:0;margin:0}
+  .plate-rules li{padding:12px 0;border-bottom:1px dashed var(--paper-line);font-family:'Instrument Serif',serif;font-size:17px;line-height:1.5}
+  .plate-rules li:last-child{border-bottom:0}
+  .plate-rules li strong{font-family:'Fraunces',serif;font-weight:500;color:var(--ink);display:block;margin-bottom:2px}
+  @media(max-width:780px){.plate-wrap{grid-template-columns:1fr}}
+
+  /* Top 7 / Brands / Stop-buy trio */
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1060px;margin:28px auto 0}
+  .trio-card{padding:22px 22px 18px;background:var(--paper);border:1.5px solid var(--ink)}
+  .trio-card.stop{background:var(--danger-bg);border-color:var(--blood-deep)}
+  .trio-card.brands{background:var(--warn-bg);border-color:var(--gold)}
+  .trio-card.foods{background:rgba(31,95,63,0.08);border-color:var(--forest-deep)}
+  .trio-card h4{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
+  .trio-card.stop h4{color:var(--blood-deep)}
+  .trio-card.brands h4{color:var(--blood-deep)}
+  .trio-card.foods h4{color:var(--forest-deep)}
+  .trio-card ol{padding-left:20px;margin:0;font-family:'Instrument Serif',serif;font-size:15px;line-height:1.55}
+  .trio-card ol li{margin-bottom:10px;color:var(--ink)}
+  .trio-card strong{font-family:'Fraunces',serif;font-weight:500}
+  .trio-card .why{display:block;margin-top:2px;font-size:13px;color:var(--ink-soft);font-style:italic}
+  @media(max-width:900px){.trio{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div><a href="dashboard.html">← Dossier</a></div>
+    <div><span class="badge-mini">YOUR STACK</span> &nbsp; PERSONALISED · <span id="dateTag">APR 2026</span></div>
+  </div>
+</div>
+
+<!-- EMAIL CONFIRMATION -->
+<div class="email-banner" id="emailBanner" style="display:none">
+  Sent to <strong id="emailDisplay"></strong>. Check your inbox in the next 60 seconds — including Promotions tab.
+</div>
+
+<!-- EMPTY STATE (no quiz data) -->
+<div id="emptyState" style="display:none">
+  <div class="empty">
+    <h2>No quiz on file.</h2>
+    <p style="font-family:'Instrument Serif',serif;font-size:18px;line-height:1.5;margin-bottom:24px;color:var(--ink-soft)">
+      You reached this page without filling the quiz. Take the 2-minute version and we'll build your stack.
+    </p>
+    <a class="btn" href="quiz.html">Take the quiz →</a>
+  </div>
+</div>
+
+<!-- RESULTS BODY -->
+<div id="resultsBody" style="display:none">
+
+  <!-- HERO -->
+  <div class="container">
+    <section class="hero">
+      <div class="kicker">Your personalised stack · built from 10 answers</div>
+      <h1 class="title"><span id="swapsMatch">—</span> of 9 swaps match you.<br/>Your monthly total: <span class="green" id="monthlyTotalHero">—</span>.</h1>
+      <p class="sub"><strong id="personaSummary">—</strong>. We've filtered the dossier's 21-item alt stack to the items that actually apply to you, priced at live Indian retail (Apr 2026), with safety flags suppressing anything contraindicated. Budget slider below reshuffles the list.</p>
+
+      <div class="scorecard">
+        <div class="score"><div class="lab">Swaps applied</div><div class="v forest" id="swapsCount">—</div><div class="m">of 9 on the dossier</div></div>
+        <div class="score"><div class="lab">Free-5 score</div><div class="v" id="free5Score">—</div><div class="m">behavioural baseline</div></div>
+        <div class="score"><div class="lab">Annual stack cost</div><div class="v blood" id="annualCost">—</div><div class="m">at current Indian retail</div></div>
+        <div class="score"><div class="lab">Saving vs replica</div><div class="v forest" id="annualSaving">—</div><div class="m">vs Blueprint replica (~₹10.3 L)</div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- BUDGET FILTER -->
+  <div class="container">
+    <section class="section">
+      <div class="wrap">
+        <div class="section-number">01 · Filter by your budget</div>
+        <h2 class="section-title">Show me the <em>stack that fits.</em></h2>
+        <p class="section-intro">Pick a monthly ceiling — we'll hide items that push you over. The total above updates live.</p>
+      </div>
+      <div class="budget">
+        <span class="lab">Monthly ceiling</span>
+        <div class="chips" id="budgetChips">
+          <button class="chip" data-cap="1000">Under ₹1K</button>
+          <button class="chip" data-cap="3000">₹1–3K</button>
+          <button class="chip" data-cap="6000">₹3–6K</button>
+          <button class="chip" data-cap="12000">₹6–12K</button>
+          <button class="chip active" data-cap="999999">Show the full range</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SWAPS -->
+  <div class="container">
+    <section class="section" style="padding-top:24px;border-top:0">
+      <div class="wrap">
+        <div class="section-number">02 · Your matched swaps</div>
+        <h2 class="section-title">The <em>six to nine</em> that apply to you.</h2>
+        <p class="section-intro">Suppressed items shown dimmed with a reason tag — kept visible so you can see exactly why something was left out.</p>
+      </div>
+      <div class="swaps" id="swapsList"></div>
+      <div class="total" id="totalBar">
+        <div><div class="lab">Your monthly stack · filtered</div><div class="big" id="monthlyTotal">—</div></div>
+        <div class="vs-bj">vs Blueprint replica <strong id="replicaMonthly">~₹83,000</strong> / month<br/>Saving: <strong id="monthlySave">—</strong></div>
+      </div>
+      <div id="contraBanner"></div>
+    </section>
+  </div>
+
+  <!-- FREE-5 -->
+  <div class="container">
+    <section class="section">
+      <div class="wrap">
+        <div class="section-number">03 · Your Free-5 baseline</div>
+        <h2 class="section-title">The foundation <em>under</em> any stack.</h2>
+        <p class="section-intro">EPIC-Norfolk (Khaw 2008): adults doing all four healthy behaviours had ~4× lower all-cause mortality at 11-year follow-up. No supplement on the page beats that. Your current standing:</p>
+      </div>
+      <div class="free5-grid" id="free5Grid"></div>
+    </section>
+  </div>
+
+  <!-- DEVICES -->
+  <div class="container">
+    <section class="section">
+      <div class="wrap">
+        <div class="section-number">04 · Devices + labs for your goal</div>
+        <h2 class="section-title">Your <em>device shortlist.</em></h2>
+        <p class="section-intro">Filtered by your goal, budget and city. Everything else on the dossier's device list is available, just not prioritised for you.</p>
+      </div>
+      <div class="devices" id="devicesList"></div>
+    </section>
+  </div>
+
+  <!-- DAILY MENU -->
+  <div class="container">
+    <section class="section">
+      <div class="wrap">
+        <div class="section-number">05 · Your daily menu</div>
+        <h2 class="section-title">What to eat <em>tomorrow.</em></h2>
+        <p class="section-intro" id="menuIntro">A full day mapped to your diet profile — breakfast through dinner with calories, protein and rupees per meal. Built from Indian retail staples, no imported-berry ritual required.</p>
+      </div>
+      <div class="menu-card" id="menuCard"></div>
+    </section>
+  </div>
+
+  <!-- SUPPLEMENT TIERS -->
+  <div class="container">
+    <section class="section">
+      <div class="wrap">
+        <div class="section-number">06 · Your supplement stack — tiered</div>
+        <h2 class="section-title">Three budgets. <em>Real brands.</em></h2>
+        <p class="section-intro">Start at Tier 1 — it's the floor, not the ceiling. Climb only when Tier 1's already daily. Branded, FSSAI-listed picks where they matter; commodity where they don't. Your budget chip above highlights your tier.</p>
+      </div>
+      <div class="tiers" id="tiersGrid"></div>
+      <div class="contra" style="margin-top:22px;background:var(--warn-bg);border-left-color:var(--gold);color:var(--ink)">
+        <h4 style="color:var(--blood-deep)">⚠ Stacking order matters</h4>
+        <p><strong>With food:</strong> Vit D3+K2, Omega-3, CoQ10 (all fat-soluble). <strong>Empty stomach:</strong> Creatine, Berberine, Ashwagandha. <strong>Avoid within 2h of thyroid meds:</strong> Calcium, Iron, Magnesium. <strong>Never combine:</strong> Ashwagandha + sedatives/thyroid hormone without medical supervision.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- MORNING PROTOCOL -->
+  <div class="container">
+    <section class="section">
+      <div class="wrap">
+        <div class="section-number">07 · Your tomorrow morning</div>
+        <h2 class="section-title">45 minutes, <em>zero spend.</em></h2>
+        <p class="section-intro">Seven PMID-backed protocols stack into one morning. Adjusted for Indian apartments, AQI reality, and women's safety. Do this for 30 days before you buy another supplement.</p>
+      </div>
+      <div class="morning-stack">
+        <div class="lab">Your 45-minute stacked morning</div>
+        <h3>6:30 AM wake · 7:15 AM fed · 7:20 AM working.</h3>
+        <div class="seq">
+          <div class="seq-row"><div class="clock">6:30 AM</div><div><strong>10 min sunlight</strong> on balcony or open window. Set circadian, vit D floor. Skip sunscreen for these 10 min only.</div></div>
+          <div class="seq-row"><div class="clock">6:40 AM</div><div><strong>2 min cold shower</strong> — start warm, end cold 30–60s. BAT activation + alertness spike.</div></div>
+          <div class="seq-row"><div class="clock">6:42 AM</div><div><strong>5 min box breathwork</strong> — 4-4-4-4. Drops cortisol tonic.</div></div>
+          <div class="seq-row"><div class="clock">6:47 AM</div><div><strong>15 min Zone-2 walk</strong> — slow, nasal breath only. Indoors on AQI &gt; 150 days (Delhi Nov–Feb).</div></div>
+          <div class="seq-row"><div class="clock">7:02 AM</div><div><strong>12 min home strength</strong> — 3 rounds: 12 pushups + 15 squats + 10 rows. One pair dumbbells is enough.</div></div>
+          <div class="seq-row"><div class="clock">7:14 AM</div><div><strong>Breakfast</strong> — your diet-matched menu (above). Eat in sunlight if possible.</div></div>
+        </div>
+      </div>
+      <div class="protocols" id="protoGrid"></div>
+    </section>
+  </div>
+
+  <!-- SHOPPING CART + BATCH PREP -->
+  <div class="container">
+    <section class="section">
+      <div class="wrap">
+        <div class="section-number">08 · Your Sunday shopping cart</div>
+        <h2 class="section-title">One list. <em>One trip.</em> One week.</h2>
+        <p class="section-intro" id="groceryIntro">Matched to your diet profile — designed for BigBasket / Zepto / local mandi runs. Target ≈ ₹2,000/week for one adult. Swap seasonally (see calendar below the table).</p>
+      </div>
+      <div class="grocery" id="groceryTable"></div>
+      <div class="wrap" style="margin-top:40px">
+        <div class="section-number">08b · Sunday batch-prep</div>
+        <h2 class="section-title" style="font-size:32px">90 minutes on Sunday = <em>7 weekday wins.</em></h2>
+        <p class="section-intro">The single highest-leverage habit on this page. Protein and fibre are the two things Indians underhit — both are fixed by prep, not willpower.</p>
+      </div>
+      <div class="batch">
+        <div class="batch-card"><div class="n">BATCH 01</div><h4>Moong sprouts</h4><div class="time">~10 min Sun + 24h passive</div><ol><li>Rinse 150g moong dal, soak 8h overnight.</li><li>Drain, tie loosely in wet muslin.</li><li>Hang in colander 18–24h at room temp.</li><li>Refrigerate Mon morning. Eats 4 breakfasts.</li></ol></div>
+        <div class="batch-card"><div class="n">BATCH 02</div><h4>Overnight-oats jars</h4><div class="time">~15 min Sun</div><ol><li>5 glass jars × (40g oats + 150ml milk/curd + 1 tbsp chia + chopped amla/jamun + dates for sweet).</li><li>Lid, refrigerate. Lasts 5 days.</li><li>Grab one per weekday morning. Zero cook-time.</li></ol></div>
+        <div class="batch-card"><div class="n">BATCH 03</div><h4>Home ghee from butter</h4><div class="time">~20 min Sun</div><ol><li>500g Amul salted butter in heavy-bottom pan, medium-low flame.</li><li>Foam → clear golden in 15 min. Milk solids turn brown (not black).</li><li>Cool 5 min. Strain through muslin into jar.</li><li>Yields ~380g. ₹250 vs ₹550 retail A2.</li></ol></div>
+        <div class="batch-card"><div class="n">BATCH 04</div><h4>Freeze jamun + amla (in season)</h4><div class="time">~20 min Sun</div><ol><li>Wash 500g, pat fully dry.</li><li>Spread single-layer on tray, freeze 2h.</li><li>Transfer to airtight bag — lasts 6 months.</li><li>Jamun Jun–Aug; amla Oct–Feb. Stock when ₹40/kg, not ₹300.</li></ol></div>
+        <div class="batch-card"><div class="n">BATCH 05</div><h4>Home curd (dahi)</h4><div class="time">~10 min + 8h passive</div><ol><li>Boil 500ml full-fat milk, cool to wrist-warm (~43°C).</li><li>Whisk in 1 tsp existing curd as starter.</li><li>Cover, leave 8h in warm corner (oven with light on works).</li><li>Refrigerate. Daily starter for next batch.</li></ol></div>
+        <div class="batch-card"><div class="n">BATCH 06</div><h4>Salad base (chop-once)</h4><div class="time">~15 min Sun</div><ol><li>Chop 1 cucumber, 1 onion, 2 tomato, handful coriander into airtight container.</li><li>Add 1 tbsp lemon juice (preserves + adds vit C).</li><li>Refrigerate. 3-day shelf life.</li><li>Mon–Wed lunches: scoop 1 cup, add protein-of-day.</li></ol></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PLATE RULE + TOP 7 + BRANDS + STOP -->
+  <div class="container">
+    <section class="section">
+      <div class="wrap">
+        <div class="section-number">09 · The Free-5 plate rule</div>
+        <h2 class="section-title">If you remember <em>one</em> thing from this page.</h2>
+        <p class="section-intro">Works for every meal, every diet, every budget. No app, no tracking, no measuring. Build every plate in these proportions and you'll hit ~80% of what the supplement stack above is trying to fix.</p>
+      </div>
+      <div class="plate-wrap">
+        <div class="plate-diag">
+          <div class="half">½ plate<br/>vegetables<br/>+ greens</div>
+          <div class="q-top">¼ protein<br/><span style="font-size:12px;opacity:.85">dal / eggs / fish / paneer</span></div>
+          <div class="q-bot">¼ grain<br/><span style="font-size:12px;opacity:.85">ragi / brown rice / roti</span></div>
+        </div>
+        <ul class="plate-rules">
+          <li><strong>½ plate vegetables &amp; greens.</strong> Any colour, any cook method. Methi, palak, lauki, bhindi, tomato, gajar — all count.</li>
+          <li><strong>¼ plate protein.</strong> Target 1g/kg/day. Indians under-hit by ~30g average. Dal alone won't do it past age 35.</li>
+          <li><strong>¼ plate whole grain.</strong> Ragi &gt; brown rice &gt; atta &gt; white rice. Skip this quarter on keto days.</li>
+          <li><strong>1 thumb of fat.</strong> Ghee, cold-pressed mustard, EVOO, or 10g nuts. Not refined sunflower/palm blend.</li>
+          <li><strong>1 fist of fermented.</strong> Dahi, buttermilk, dhokla, dosa batter, kimchi if you have it. Daily, non-negotiable.</li>
+        </ul>
+      </div>
+      <div class="trio">
+        <div class="trio-card foods">
+          <h4>Top 7 Indian longevity foods</h4>
+          <ol>
+            <li><strong>Amla</strong><span class="why">Highest natural vit C by weight. ₹40/kg in season.</span></li>
+            <li><strong>Jamun</strong><span class="why">Anthocyanins + glycemic blunting. Freeze in Jul.</span></li>
+            <li><strong>Moong sprouts</strong><span class="why">Cheap protein + lysine. Raw or tadka.</span></li>
+            <li><strong>Curd / dahi</strong><span class="why">Daily fermented — single best gut habit.</span></li>
+            <li><strong>Cold-pressed mustard oil</strong><span class="why">MUFA + ALA. FSSAI 2022 caps erucic ≤5%.</span></li>
+            <li><strong>Turmeric + pepper</strong><span class="why">Curcumin bioavailability × 20 with piperine.</span></li>
+            <li><strong>Ragi</strong><span class="why">Calcium density rivals dairy. Roti / porridge / dosa.</span></li>
+          </ol>
+        </div>
+        <div class="trio-card brands">
+          <h4>3 brands worth the premium</h4>
+          <ol>
+            <li><strong>MuscleBlaze Creapure</strong><span class="why">Creapure source verified, cheapest per gram in India.</span></li>
+            <li><strong>Rasayanam KSM-66</strong><span class="why">Clinical-trial KSM-66 extract; not generic ashwa powder.</span></li>
+            <li><strong>Carbamide Forte D3+K2</strong><span class="why">D3 5000IU + K2 MK-7. ₹200 for 60 days.</span></li>
+          </ol>
+        </div>
+        <div class="trio-card stop">
+          <h4>3 things to stop buying</h4>
+          <ol>
+            <li><strong>Greens powders</strong><span class="why">₹2,000/mo replaceable by ₹10 of fresh amla + spinach.</span></li>
+            <li><strong>Unbranded berberine</strong><span class="why">Metformin-like interactions, zero QC on AIP sellers.</span></li>
+            <li><strong>Collagen powders</strong><span class="why">No oral-collagen RCT beats a whey scoop + vit C.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SHARE -->
+  <div class="container">
+    <section class="section">
+      <div class="wrap">
+        <div class="section-number">10 · Keep it handy</div>
+        <h2 class="section-title">Your weekly <em>price-refresh</em> is on.</h2>
+        <p class="section-intro">Every Sunday morning IST we'll email you which of your stack items dropped in price this week, and flag any supplement that just got an FSSAI licence change or recall. Unsubscribe in one tap.</p>
+      </div>
+      <div class="share">
+        <div class="t">Want this on WhatsApp too? <strong>98% open rate</strong> vs email's ~25% — we'll send a condensed version every Sunday.</div>
+        <button class="btn" id="waOpt">Send on WhatsApp →</button>
+        <a class="btn ghost" href="dashboard.html">← Back to dossier</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-inner">
+      <div>YOUR STACK · BUILT FROM YOUR 10 ANSWERS · NOT MEDICAL ADVICE</div>
+      <div>DPDP ACT 2023 · DMRA 1954 · FSSAI 2022</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   Load state
+   ============================================================ */
+const STORAGE_KEY = 'bjia_quiz_v1';
+let state = null;
+try{ state = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); }catch(e){}
+
+/* ============================================================
+   Swap definitions (matched to dashboard §6)
+   ============================================================ */
+const SWAPS = [
+  { id:'berries',   title:'Berries · anthocyanins',          target:'Dietary polyphenol + vitamin C intake',
+    bjLabel:'Blueprint blueberries 150g',            bjMonthly: 7800,
+    altLabel:'Jamun + amla + pomegranate 150g eq.', altMonthly: 1500,
+    why:'5–6× cheaper at Indian retail. Jamun + amla + pom anthocyanin profile overlaps blueberry, not identical. Seasonal — see §7.',
+    dietSkip:['keto'], },
+  { id:'nuts',      title:'Nuts · monos + polyphenols',      target:'MUFA + polyphenol + magnesium',
+    bjLabel:'Macadamia 3 tbsp', bjMonthly: 4300,
+    altLabel:'Almonds + walnuts + pistachio mix', altMonthly: 900,
+    why:'3.5–6.8× cheaper. Walnut ALA → EPA conversion ~5–8% (FADS ceiling in South Asians) — if on lipid-lowering protocol, add algal DHA directly.',
+    dietSkip:[], },
+  { id:'evoo',      title:'EVOO · oleocanthal',              target:'Mediterranean oil base',
+    bjLabel:'Blueprint EVOO 1 tbsp', bjMonthly: 2500,
+    altLabel:'Del Monte / Figaro EVOO 1 tbsp',    altMonthly: 650,
+    why:'~4× cheaper. Most Indian retail EVOO is refined — look for "extra virgin, cold pressed" on label and oleocanthal ≥200 mg/kg where disclosed.',
+    dietSkip:[], },
+  { id:'cocoa',     title:'Cocoa flavanols',                 target:'FMD surrogate (COSMOS null on primary cognitive endpoint)',
+    bjLabel:'Blueprint cocoa powder', bjMonthly: 2200,
+    altLabel:'Ariba / Wakao / Mason & Co 70%+',    altMonthly: 500,
+    why:'~4× cheaper. COSMOS primary cognitive endpoint was null (Sesso 2022, PMID 35896181). Cardiovascular-composite secondary was modestly positive. Don\'t treat as proven; treat as low-risk affordable addition.',
+    dietSkip:[], },
+  { id:'shiitake',  title:'Shiitake · eritadenine',          target:'Cholesterol-lowering + MCI-adjacent',
+    bjLabel:'Blueprint shiitake', bjMonthly: 5400,
+    altLabel:'Fresh shiitake (Bangalore / Pune)', altMonthly: 1400,
+    why:'Feng 2019: mushroom ≥2× / week → 57% lower MCI odds. 3–4× cheaper fresh. Dried-only option for smaller cities.',
+    dietSkip:['jain'], jainSkipReason:'Jain / Sattvic observance commonly excludes fungi.' },
+  { id:'ashwa',     title:'Ashwagandha KSM-66',              target:'HPA-axis · healthy-adult cortisol response',
+    bjLabel:'BJ full-stack ashwa portion', bjMonthly: 12000,
+    altLabel:'Rasayanam KSM-66 600 mg (clinical dose)', altMonthly: 700,
+    why:'15–25× cheaper with branded KSM-66. Clinical-trial dose Chandrasekhar 2012 (PMID 23439798) + Salve 2019 (PMID 31517876).',
+    safetySkip:['thyroid','pregnancy'], thyroidNote:'Ashwagandha may push borderline hypo-thyroid into over-treatment territory. Suppressed for your stack.', pregNote:'Insufficient safety data in pregnancy / TTC. Suppressed.' },
+  { id:'nmn',       title:'NMN vs exercise',                 target:'NAD+ — exercise beats any supplement for healthspan endpoints',
+    bjLabel:'Blueprint NMN 1g', bjMonthly: 9000,
+    altLabel:'2×/wk resistance training (free) — or Decode Age NMN', altMonthly: 1200,
+    why:'Exercise first. NMN RCTs on hard endpoints (gait, strength) are mixed (Yi 2023, Irie 2020). If you still want NMN, Decode Age is FSSAI-registered in India.',
+    safetySkip:['pregnancy'], pregNote:'NMN contraindicated in pregnancy / TTC.' },
+  { id:'creatine',  title:'Creatine monohydrate',            target:'Muscle + cognition · strongest-evidence supplement',
+    bjLabel:'Blueprint creatine', bjMonthly: 1800,
+    altLabel:'MuscleBlaze / HealthKart Creapure 5 g/day', altMonthly: 450,
+    why:'4× cheaper at the same Creapure source. Vegetarians often baseline-low on creatine; non-veg daily eaters already supplemented via diet.',
+    dietSkip:[], },
+  { id:'omega3',    title:'Omega-3 · EPA / DHA',             target:'FADS1/2 cover-the-gap for South Asians',
+    bjLabel:'Blueprint EPA + DHA 2 g', bjMonthly: 3500,
+    altLabel:'INLIFE / HealthKart fish oil OR Setu algal (veg)', altMonthly: 700,
+    why:'ALA → EPA conversion ceiling ~5–8% (Kothapalli 2016 PMID 26432412). Direct EPA/DHA matters more for Indians than for Western cohorts. Algal option for veg / Jain.',
+    dietSkip:[], },
+];
+
+/* ============================================================
+   Devices (budget + goal driven)
+   ============================================================ */
+const DEVICES = [
+  { id:'omron',     title:'Omron BP monitor',       price:'₹1,800–2,600', band:1,
+    desc:'The single highest-ROI device for anyone over 35 or with a family history of BP. BIHS / ESH validated models only.',
+    goals:['bloodsugar','longevity','metabolic'], safety:['bp'] },
+  { id:'scale',     title:'Body-comp scale',        price:'₹1,500–3,000', band:1,
+    desc:'Weekly weight + body-fat trend. Cheap Xiaomi / HealthSense are fine for trend; absolute accuracy is poor at any price.',
+    goals:['metabolic','energy','longevity'] },
+  { id:'cgm',       title:'FreeStyle Libre CGM',    price:'₹3,900 / 14-day sensor', band:2,
+    desc:'Two sensors ≈ ₹7,800 for a month of self-experiment. ICMR + Endocrine Society do not endorse in non-diabetics. Use as a meal-stimulus tool, not a diagnostic.',
+    goals:['bloodsugar','metabolic'] },
+  { id:'oura',      title:'Oura Ring Gen 3',        price:'₹28,000–40,000', band:3,
+    desc:'Sleep + HRV + temperature trend. Ultrahuman Ring Air is a cheaper Indian alternative. Only worth it if you\'ll act on the data.',
+    goals:['sleep','energy','longevity'] },
+  { id:'sauna',     title:'IR sauna / blanket',     price:'₹8,000–35,000', band:3,
+    desc:'Laukkanen KIHD: 4–7×/week → 63% SCD reduction. Kunutsor 2017 FINRISK replication was attenuated — treat as upper bound. BIS-marked units only.',
+    goals:['longevity'], safety:['pregnancy'], contraNote:'Sauna contraindicated in pregnancy, MI <6 weeks, SBP >180, or heavy alcohol intake on the day.', cityPrefer:['tier1','tier2'] },
+  { id:'purifier',  title:'Air purifier (HEPA)',    price:'₹12,000–25,000', band:2,
+    desc:'If you live in Delhi-NCR your single highest-leverage health purchase — PM2.5 exposure dwarfs most longevity interventions. Dyson / Philips / Mi 4 Pro are all acceptable. Filter change budget separately.',
+    goals:['longevity','brainfog','energy'], cityPrefer:['tier1'] },
+  { id:'lipid',     title:'Annual lipid + HbA1c + ApoB + Lp(a) panel', price:'₹2,500–4,500', band:1,
+    desc:'Thyrocare / Redcliffe / 1mg Labs. Lp(a) is the one lab your GP likely hasn\'t ordered — measure once in life, changes your CV risk framing.',
+    goals:['bloodsugar','longevity','metabolic'] },
+  { id:'pace',      title:'DunedinPACE via AIWO',   price:'~₹29,500 / assay', band:3,
+    desc:'Only worth it if you\'ll re-test in 12 months. TruDiagnostic does not ship to India; AIWO offers the Indian equivalent.',
+    goals:['longevity'] },
+];
+
+/* ============================================================
+   Personal summary copy
+   ============================================================ */
+function personaSummary(a){
+  const dietMap = {
+    'nonveg-daily':'a non-veg daily eater',
+    'nonveg-weekly':'a non-veg weekly eater',
+    'eggetarian':'an eggetarian',
+    'pureveg':'pure vegetarian',
+    'jain':'Jain / Sattvic',
+    'keto':'on a keto / carnivore track',
+  };
+  const ageMap = { '18-24':'in your early twenties', '25-34':'in your late twenties to mid-thirties','35-44':'in your late thirties to mid-forties','45-54':'in your late forties to mid-fifties','55+':'55+' };
+  const goalMap = {
+    'energy':'energy is your driver',
+    'sleep':'sleep is the priority',
+    'metabolic':'metabolic health is the target',
+    'bloodsugar':'blood sugar / lipids are on your radar',
+    'brainfog':'cognitive clarity is the priority',
+    'skin':'skin & hair is the driver',
+    'longevity':'playing the long game',
+    'curious':'here to audit the Bryan Johnson story',
+  };
+  const parts = [];
+  parts.push(ageMap[a.age] || 'an adult');
+  if(dietMap[a.diet]) parts.push(dietMap[a.diet]);
+  parts.push(goalMap[a.goal] || 'with longevity on your mind');
+  return 'You\'re ' + parts.join(', ');
+}
+
+/* ============================================================
+   Render
+   ============================================================ */
+let currentCap = 999999;
+
+function render(){
+  const a = state.answers;
+  document.getElementById('personaSummary').textContent = personaSummary(a);
+
+  // Free-5
+  renderFree5(a);
+
+  // Swaps
+  renderSwaps(a);
+
+  // Devices
+  renderDevices(a);
+
+  // Playbook
+  renderMenu(a);
+  renderTiers(a);
+  renderProtocols(a);
+  renderGrocery(a);
+
+  // Budget chips
+  document.querySelectorAll('#budgetChips .chip').forEach(c=>{
+    c.addEventListener('click',()=>{
+      document.querySelectorAll('#budgetChips .chip').forEach(x=>x.classList.remove('active'));
+      c.classList.add('active');
+      currentCap = parseInt(c.getAttribute('data-cap'),10);
+      renderSwaps(a);
+      renderTiers(a);
+    });
+  });
+
+  // WhatsApp opt
+  document.getElementById('waOpt').addEventListener('click',function(){
+    this.textContent='Added · we\'ll message Sunday';
+    this.disabled=true;
+    this.style.background='var(--forest)';
+    this.style.borderColor='var(--forest-deep)';
+  });
+
+  document.getElementById('dateTag').textContent = new Date().toLocaleDateString('en-IN',{month:'short',year:'numeric'}).toUpperCase();
+}
+
+function renderSwaps(a){
+  const host = document.getElementById('swapsList');
+  const contraHost = document.getElementById('contraBanner');
+  const safety = a.safety || [];
+  const hasSafety = (s)=> safety.indexOf(s) >= 0;
+
+  let monthly = 0;
+  let matched = 0;
+  let html = '';
+  const contraReasons = [];
+
+  SWAPS.forEach(s=>{
+    let suppressed = false;
+    let reason = '';
+
+    // Diet skip
+    if(s.dietSkip && s.dietSkip.indexOf(a.diet) >= 0){
+      suppressed = true;
+      reason = s.jainSkipReason || 'Your diet rules this out — skipped.';
+    }
+
+    // Safety skip
+    if(!suppressed && s.safetySkip){
+      for(const flag of s.safetySkip){
+        if(hasSafety(flag)){
+          suppressed = true;
+          reason = (flag==='thyroid' && s.thyroidNote) || (flag==='pregnancy' && s.pregNote) || 'Safety flag applied — suppressed.';
+          contraReasons.push(s.title + ' · ' + reason);
+          break;
+        }
+      }
+    }
+
+    // Budget skip (active swaps only)
+    const overBudget = !suppressed && s.altMonthly > currentCap;
+
+    if(!suppressed && !overBudget){
+      monthly += s.altMonthly;
+      matched += 1;
+    }
+
+    const bjINR = Math.round(s.bjMonthly).toLocaleString('en-IN');
+    const altINR = Math.round(s.altMonthly).toLocaleString('en-IN');
+
+    html += '<div class="swap'+(suppressed||overBudget?' suppressed':'')+'">';
+    html += '<div><div class="title">'+s.title+'</div>';
+    html += '<div class="target">'+s.target+'</div>';
+    html += '<div class="vs"><span class="bj">BJ replica · ₹'+bjINR+'/mo</span><span>·</span><span class="alt">India alt · ₹'+altINR+'/mo</span></div>';
+    html += '<div class="why">'+s.why+'</div>';
+    if(suppressed) html += '<div class="flag-tag">Suppressed · '+reason+'</div>';
+    else if(overBudget) html += '<div class="flag-tag">Over your ceiling — raise the slider to include</div>';
+    html += '</div>';
+    html += '<div class="cost-col"><div><div class="cost-big">₹'+altINR+'</div><div class="cost-unit">/ month (alt)</div></div>';
+    if(!suppressed && !overBudget){
+      const save = Math.round((s.bjMonthly - s.altMonthly)/1000);
+      html += '<div class="save-tag">Saves ₹'+save+'K/mo</div>';
+    }
+    html += '</div></div>';
+  });
+
+  host.innerHTML = html;
+
+  // Totals
+  document.getElementById('monthlyTotal').textContent = '₹' + monthly.toLocaleString('en-IN');
+  document.getElementById('monthlyTotalHero').textContent = '₹' + monthly.toLocaleString('en-IN');
+  const annual = monthly * 12;
+  document.getElementById('annualCost').textContent = '₹' + (annual/1000).toFixed(0) + 'K';
+  const replicaAnnual = 1030000;
+  document.getElementById('annualSaving').textContent = '₹' + ((replicaAnnual - annual)/100000).toFixed(1) + ' L';
+  document.getElementById('replicaMonthly').textContent = '~₹' + Math.round(replicaAnnual/12).toLocaleString('en-IN');
+  const saveMonthly = Math.round(replicaAnnual/12) - monthly;
+  document.getElementById('monthlySave').textContent = '₹' + saveMonthly.toLocaleString('en-IN') + '/mo';
+  document.getElementById('swapsMatch').textContent = matched;
+  document.getElementById('swapsCount').textContent = matched;
+
+  // Contraindication banner
+  if(contraReasons.length){
+    contraHost.innerHTML = '<div class="contra"><h4>⚠ Safety flags applied to your stack</h4>'+
+      '<p>Based on what you told us, these items were suppressed. This is a rail, not a diagnosis — talk to your GP before changing any prescription.</p>'+
+      '<ul>'+contraReasons.map(r=>'<li>'+r+'</li>').join('')+'</ul></div>';
+  } else {
+    contraHost.innerHTML = '';
+  }
+}
+
+function renderFree5(a){
+  const host = document.getElementById('free5Grid');
+  const cells = [
+    { l:'No tobacco',     hit:(a.tobacco==='never'),    d:a.tobacco==='never'?'Clean baseline':(a.tobacco==='used-to'?'Quit — big win, hazard decays ~10 yr':'Still using — mid-life cessation halves the remaining hazard (Doll & Peto 2004)') },
+    { l:'Weight control', hit:(['nonveg-weekly','eggetarian','pureveg','jain'].indexOf(a.diet)>=0), d:'RCT evidence ~15–20% mortality reduction with intentional weight loss (2015 meta).' },
+    { l:'Move daily',     hit:(a.exercise==='daily'||a.exercise==='2-3'), d:a.exercise==='daily'?'PURE: HR 0.65 vs low-activity.':'PURE 2017 (Lancet): high activity → HR 0.65. Worth adding 3× week.' },
+    { l:'Control BP',     hit:!(a.safety||[]).includes('bp'), d:(a.safety||[]).includes('bp')?'Diagnosed — SPRINT: intensive <120 vs <140 → ~27% ACM reduction in high-risk adults.':'No diagnosis — keep an Omron at home for monthly checks.' },
+    { l:'Plant-forward',  hit:(['pureveg','jain','eggetarian'].indexOf(a.diet)>=0||a.diet==='nonveg-weekly'), d:'MedDiet meta-analysis: RR 0.79 = 21% reduction at highest adherence.' },
+  ];
+  host.innerHTML = cells.map(c=>'<div class="f5-cell'+(c.hit?' hit':'')+'"><div class="l">'+c.l+'</div><div class="m">'+(c.hit?'Yes':'Not yet')+'</div><div class="d">'+c.d+'</div></div>').join('');
+
+  const hits = cells.filter(c=>c.hit).length;
+  document.getElementById('free5Score').textContent = hits + ' / 5';
+}
+
+function renderDevices(a){
+  const host = document.getElementById('devicesList');
+  const budgetBand = ({'tier1':3,'tier2':2,'smaller':1,'abroad':3})[a.city] || 2;
+  const safety = a.safety || [];
+  const goalSet = [a.goal, 'longevity'];
+
+  const relevant = DEVICES.filter(d=>{
+    if(d.band > budgetBand + 1) return false;
+    if(d.safety && d.safety.some(s=>safety.indexOf(s)>=0) && !d.contraNote) return false;
+    if(d.goals && !d.goals.some(g=>goalSet.indexOf(g)>=0)) return false;
+    if(d.cityPrefer && d.cityPrefer.indexOf(a.city) < 0 && d.band >= 3) return false;
+    return true;
+  }).slice(0,6);
+
+  host.innerHTML = relevant.map(d=>{
+    const contra = d.safety && d.safety.some(s=>safety.indexOf(s)>=0) ? '<span class="tag">⚠ '+d.contraNote+'</span>' : '';
+    return '<div class="dev"><h4>'+d.title+'</h4><div class="p">'+d.price+'</div><div class="d">'+d.desc+'</div>'+contra+'</div>';
+  }).join('');
+}
+
+/* ============================================================
+   Playbook data (daily menu by diet)
+   ============================================================ */
+const MEALS = {
+  'nonveg-daily': {
+    label:'Non-veg daily eater', totKcal:1950, totProtein:131, totCost:360,
+    rows:[
+      { time:'7:00 AM', name:'Breakfast', body:'2 eggs scrambled in ½ tsp ghee · 40g oats with milk + chopped amla · 1 banana · black coffee', why:'Protein floor at wake (26g) — crushes 11 AM carb crash.', sub:'Sub: paneer bhurji 100g for veg-flex days.', kcal:430, protein:26, cost:45 },
+      { time:'11:00 AM', name:'Mid-morning', body:'Handful almonds (20g) + 1 orange', why:'MUFA + vit C spacer. Keeps lunch sane.', sub:'', kcal:180, protein:6, cost:25 },
+      { time:'1:30 PM', name:'Lunch', body:'150g grilled/tandoori chicken · 1 cup brown rice · ½ cup dal · sabzi (any green) · ½ cup curd', why:'Protein 48g in one meal — does the heavy lifting.', sub:'Sub: 120g tofu + 30g peanuts if meatless.', kcal:620, protein:48, cost:120 },
+      { time:'5:00 PM', name:'Snack', body:'1 cup moong sprouts chaat (with tomato, lemon, chaat masala) · masala chai (less sugar)', why:'Plant protein + fibre before the evening hunger spike.', sub:'', kcal:200, protein:15, cost:20 },
+      { time:'8:00 PM', name:'Dinner', body:'120g rohu/salmon/mackerel · 2 rotis · palak sabzi · small cucumber-tomato salad', why:'Fatty fish 2–3× week hits EPA/DHA floor (FADS1 cover).', sub:'Sub: 150g paneer if fish unavailable.', kcal:520, protein:36, cost:150 },
+    ],
+  },
+  'nonveg-weekly': {
+    label:'Non-veg weekly eater', totKcal:1900, totProtein:110, totCost:300,
+    rows:[
+      { time:'7:00 AM', name:'Breakfast', body:'Besan chilla (2) with coriander + 1 cup buttermilk · 1 banana', why:'Plant protein 20g to start the day. Chilla beats toast every metric.', sub:'', kcal:410, protein:22, cost:35 },
+      { time:'11:00 AM', name:'Mid-morning', body:'30g roasted channa + 1 amla', why:'Cheapest protein-per-rupee on the list.', sub:'', kcal:150, protein:10, cost:15 },
+      { time:'1:30 PM', name:'Lunch', body:'100g paneer OR 2 eggs · 1 cup brown rice · dal · sabzi · curd', why:'Swap chicken/fish in here 2–3× a week — keep the structure.', sub:'', kcal:580, protein:32, cost:90 },
+      { time:'5:00 PM', name:'Snack', body:'Moong sprouts chaat · masala chai', why:'Plant protein + fibre spacer.', sub:'', kcal:200, protein:15, cost:20 },
+      { time:'8:00 PM', name:'Dinner', body:'Rajma or chole 1 cup · 2 rotis · sabzi · salad · curd', why:'Legume-grain pairing hits complete amino profile.', sub:'Non-veg day: 120g chicken/fish replaces legume.', kcal:560, protein:31, cost:140 },
+    ],
+  },
+  'eggetarian': {
+    label:'Eggetarian', totKcal:1920, totProtein:108, totCost:290,
+    rows:[
+      { time:'7:00 AM', name:'Breakfast', body:'3-egg omelette with spinach + cheese · 1 slice whole-wheat toast · black coffee', why:'24g protein at breakfast — rare in Indian diets.', sub:'', kcal:440, protein:24, cost:55 },
+      { time:'11:00 AM', name:'Mid-morning', body:'30g roasted channa + 1 orange', why:'Plant protein + vit C.', sub:'', kcal:160, protein:10, cost:20 },
+      { time:'1:30 PM', name:'Lunch', body:'100g paneer tikka · 1 cup brown rice · dal · sabzi · ½ cup curd', why:'Paneer + dal = 30g+ protein combo.', sub:'', kcal:600, protein:32, cost:95 },
+      { time:'5:00 PM', name:'Snack', body:'Boiled egg (1) + cucumber slices + hummus tbsp', why:'Lazy but hits macros.', sub:'', kcal:180, protein:13, cost:25 },
+      { time:'8:00 PM', name:'Dinner', body:'Egg curry (2 eggs) · 2 rotis · sabzi · salad · curd', why:'Back-loaded protein keeps you full till morning.', sub:'', kcal:540, protein:29, cost:95 },
+    ],
+  },
+  'pureveg': {
+    label:'Pure vegetarian', totKcal:1890, totProtein:101, totCost:240,
+    rows:[
+      { time:'7:00 AM', name:'Breakfast', body:'1 cup poha with 20g peanuts · 1 cup buttermilk · 1 banana', why:'Fermented dairy first thing — single best gut habit.', sub:'Sub: overnight oats jar (pre-prepped).', kcal:380, protein:14, cost:30 },
+      { time:'11:00 AM', name:'Mid-morning', body:'30g roasted channa + 1 amla + 10g almonds', why:'₹15 hits 10g protein — nothing else comes close.', sub:'', kcal:180, protein:11, cost:18 },
+      { time:'1:30 PM', name:'Lunch', body:'100g paneer (palak/butter) · 1 cup brown rice · dal · sabzi · ½ cup curd', why:'Paneer + dal amino-pair covers lysine + methionine.', sub:'Jain-compatible: see below.', kcal:610, protein:32, cost:95 },
+      { time:'5:00 PM', name:'Snack', body:'Moong sprouts chaat (1 cup) · masala chai', why:'Veg protein spacer. Add a scoop whey if still under target.', sub:'', kcal:200, protein:15, cost:20 },
+      { time:'8:00 PM', name:'Dinner', body:'2 rotis · tofu/paneer sabzi · moong dal · salad · curd', why:'Target 25–30g protein at dinner or you undershoot the day.', sub:'', kcal:550, protein:30, cost:80 },
+    ],
+  },
+  'jain': {
+    label:'Jain / Sattvic', totKcal:1920, totProtein:84, totCost:260, note:'No onion, garlic, or root vegetables. No sunset eating (adjust last meal to ~6:30 PM). Fungi skipped from swap list.',
+    rows:[
+      { time:'6:30 AM', name:'Breakfast', body:'Poha without onion + peanuts + 1 cup buttermilk', why:'Buttermilk is sattvic; poha no-tadka works.', sub:'', kcal:380, protein:14, cost:30 },
+      { time:'11:00 AM', name:'Mid-morning', body:'1 amla + 2 dates + 15g almonds', why:'Dates beat refined sugar spacer.', sub:'', kcal:180, protein:6, cost:25 },
+      { time:'1:30 PM', name:'Lunch', body:'Paneer sabzi (no onion/garlic) · jeera rice · moong dal · lauki/tori sabzi · ½ cup curd', why:'Bottle-gourd, ridge-gourd, pumpkin — all above-ground, Jain-compatible.', sub:'', kcal:600, protein:28, cost:95 },
+      { time:'4:00 PM', name:'Snack', body:'5 dhokla pieces · green chutney · chai', why:'Fermented besan — Jain-friendly probiotic.', sub:'', kcal:220, protein:10, cost:30 },
+      { time:'6:30 PM', name:'Dinner', body:'2 rotis · paneer sabzi · moong dal · cucumber-tomato salad · curd', why:'Finish before sunset when observed.', sub:'', kcal:540, protein:26, cost:80 },
+    ],
+  },
+  'keto': {
+    label:'Keto / carnivore track', totKcal:2000, totProtein:148, totCost:565, note:'Net carbs <30g/day. EVOO/ghee unlimited. Skip the grain quarter of the plate rule.',
+    rows:[
+      { time:'7:30 AM', name:'Breakfast', body:'3-egg omelette + 25g cheese + spinach · bulletproof coffee (1 tbsp ghee)', why:'Fat-adapted start. No carbs.', sub:'', kcal:480, protein:28, cost:60 },
+      { time:'11:00 AM', name:'Mid-morning', body:'25g cheddar + 15g walnuts', why:'Fat-heavy spacer.', sub:'', kcal:200, protein:8, cost:35 },
+      { time:'1:30 PM', name:'Lunch', body:'200g grilled chicken · sautéed greens in EVOO · 1 tbsp tahini', why:'Protein 52g + MUFA 20g.', sub:'', kcal:640, protein:52, cost:180 },
+      { time:'5:00 PM', name:'Snack', body:'85g canned tuna on cucumber rounds + EVOO drizzle', why:'Omega-3 + lean protein.', sub:'', kcal:180, protein:20, cost:90 },
+      { time:'8:00 PM', name:'Dinner', body:'150g fish/salmon · roasted broccoli · cauliflower rice · 1 tbsp EVOO', why:'EPA/DHA + cruciferous fibre.', sub:'', kcal:500, protein:40, cost:200 },
+    ],
+  },
+};
+
+function renderMenu(a){
+  const host = document.getElementById('menuCard');
+  const intro = document.getElementById('menuIntro');
+  const profile = MEALS[a.diet] || MEALS['pureveg'];
+  const note = profile.note ? '<div style="padding:14px 26px;background:var(--warn-bg);border-bottom:1.5px solid var(--gold);font-family:\'IBM Plex Sans\',sans-serif;font-size:13px;color:var(--blood-deep);line-height:1.5"><strong>Diet note:</strong> '+profile.note+'</div>' : '';
+  let html = '<div class="menu-head">'+
+    '<div><div class="lab">Diet profile</div><div class="tot">'+profile.label+'<span class="m">· daily target</span></div></div>'+
+    '<div style="text-align:right"><div class="lab">Day total</div><div class="tot">'+profile.totKcal+' kcal <span class="m">· '+profile.totProtein+'g protein · ₹'+profile.totCost+'</span></div></div>'+
+    '</div>'+note;
+  profile.rows.forEach(r=>{
+    html += '<div class="menu-row">'+
+      '<div class="time">'+r.time+'<br/><span style="color:var(--ink-soft);font-size:10.5px;letter-spacing:0.1em">'+r.name.toUpperCase()+'</span></div>'+
+      '<div><div class="meal-name">'+r.name+'</div><div class="meal-body">'+r.body+'</div>'+
+      '<div class="meal-why">'+r.why+'</div>'+
+      (r.sub?'<div class="meal-sub">↳ '+r.sub+'</div>':'')+
+      '</div>'+
+      '<div class="stats"><div class="kcal">'+r.kcal+' kcal</div><div>'+r.protein+'g protein</div><div class="cost">₹'+r.cost+'</div></div>'+
+      '</div>';
+  });
+  host.innerHTML = html;
+  intro.textContent = 'A full day mapped to your '+profile.label.toLowerCase()+' profile — breakfast through dinner with calories, protein and rupees per meal. Built from Indian retail staples, no imported-berry ritual required.';
+}
+
+/* ============================================================
+   Supplement tiers
+   ============================================================ */
+const TIERS = [
+  { cap:500, name:'Tier 1 · The floor', price:'₹500/mo', tag:'Two supplements that outperform 20 fancy ones.',
+    items:[
+      { h:'Vit D3 + K2 · 5000IU', brand:'Carbamide Forte 60 tabs · ₹200 / 2-mo supply', body:'South-Asian deficiency baseline ~70%. Take with a fat-containing meal.' },
+      { h:'Omega-3 · 1000mg EPA+DHA', brand:'WOW fish oil / Setu algal (veg) · ₹400–500/mo', body:'FADS1/2 ceiling makes direct EPA/DHA non-optional for Indians. Algal for veg/Jain.' },
+    ]},
+  { cap:1500, name:'Tier 2 · The workhorse', price:'₹1,500/mo', tag:'Adds the two most-studied additions on the planet.',
+    items:[
+      { h:'Everything in Tier 1', brand:'', body:'Foundation stays. Don\'t drop D3 or omega-3 to "afford" the additions.' },
+      { h:'Creatine monohydrate · 5g/day', brand:'MuscleBlaze Creapure 250g · ₹1,100 / 50-day supply', body:'Strongest-evidence supplement on Earth. Muscle + cognition. Creapure source matters.' },
+      { h:'Ashwagandha KSM-66 · 600mg', brand:'Rasayanam KSM-66 60 caps · ₹680/mo', body:'Branded KSM-66 at clinical-trial dose. Skip if thyroid flagged.' },
+      { h:'Magnesium glycinate · 200mg PM', brand:'Wellbeing Nutrition 60 tabs · ₹450 / 2-mo', body:'Sleep + insulin. Take 1h before bed.' },
+    ]},
+  { cap:6000, name:'Tier 3 · The optimiser', price:'₹3,500–4,500/mo', tag:'Only climb here when Tiers 1–2 are daily habit.',
+    items:[
+      { h:'Everything in Tier 2', brand:'', body:'Non-negotiable foundation.' },
+      { h:'NMN · 250mg', brand:'Decode Age NMN 30 caps · ₹2,500/mo', body:'RCTs mixed on hard endpoints. Only FSSAI-registered option in India. Exercise first, NMN last.' },
+      { h:'CoQ10 ubiquinol · 100mg', brand:'Healthyhey / Now Foods · ₹800/mo', body:'If on statins, non-optional. Otherwise optional after 45.' },
+      { h:'Berberine · 500mg pre-meal', brand:'Only from FSSAI-licensed seller · ₹500/mo', body:'Metformin-like effects on A1c. Avoid with diabetes meds without doctor supervision.' },
+    ]},
+];
+
+function renderTiers(a){
+  const host = document.getElementById('tiersGrid');
+  host.innerHTML = TIERS.map(t=>{
+    const match = (currentCap === t.cap || (currentCap===3000 && t.cap===1500) || (currentCap===12000 && t.cap===6000) || (currentCap===999999 && t.cap===6000));
+    const items = t.items.map(i=>'<li><strong>'+i.h+'</strong>'+(i.brand?'<span class="brand">'+i.brand+'</span>':'')+'<div style="margin-top:4px;font-style:italic;color:var(--ink-soft);font-size:13px">'+i.body+'</div></li>').join('');
+    return '<div class="tier'+(match?' match':'')+'">'+
+      (match?'<div class="badge">Your tier</div>':'')+
+      '<div class="t-name">'+t.name+'</div>'+
+      '<div class="t-price">'+t.price+'</div>'+
+      '<div class="t-tag">'+t.tag+'</div>'+
+      '<ul>'+items+'</ul>'+
+      '</div>';
+  }).join('');
+}
+
+/* ============================================================
+   Protocol cards (free interventions)
+   ============================================================ */
+const PROTOCOLS = [
+  { h:'Morning sunlight', dose:'10 min · pre-7:30 AM', d:'Sets circadian, suppresses evening melatonin-delay. Hits vit D synthesis floor in summer even with sunscreen off the forearms for 10 min.',
+    adj:'Indian AQI: if PM2.5 > 150, stand at a south/east window with glass open — still get UVB.', pmid:'PMID 35173022 (Hattar 2022)' },
+  { h:'Zone-2 walk', dose:'150 min/week · pace you can nasal-breathe', d:'PURE 2017 (Lancet): high activity → HR 0.65 for ACM. Cheaper and harder to skip than a gym.',
+    adj:'Mumbai/Bangalore: parks after 6 PM or 6 AM. Delhi Nov–Feb: treadmill indoors when AQI > 150.', pmid:'PMID 28797653 (Lear 2017)' },
+  { h:'Post-meal walk · 10 min', dose:'Within 30 min of lunch + dinner', d:'Reisin 2022: a 10-min walk post-meal drops glucose spike ~12% vs sitting. Bigger effect than most supplements.',
+    adj:'Apartment loop or terrace works. Pair with a phone call so you\'ll actually do it.', pmid:'PMID 36100775 (Buffey 2022)' },
+  { h:'Cold exposure · 2 min', dose:'End your shower cold, 30–60s', d:'Brown-adipose activation + norepinephrine bump. Full ice bath unnecessary; contrast shower works.',
+    adj:'Indian municipal water is cold enough Nov–Feb — free. Summer: pre-chill a bucket.', pmid:'PMID 35226431 (Zhurakivska 2022)' },
+  { h:'Box breathwork', dose:'5 min · 4-4-4-4', d:'Drops tonic cortisol. Balasubramanian 2013: pranayama lowered perceived stress + BP in 8 weeks.',
+    adj:'Do it before the commute, not during. App optional.', pmid:'PMID 23532408 (Balasubramanian 2013)' },
+  { h:'Strength × 2/week', dose:'20–30 min · bodyweight OR one dumbbell pair', d:'Srikanthan 2014: muscle mass independently predicts ACM. Pushup/squat/row at home is enough.',
+    adj:'₹1,500 for a 10kg dumbbell pair. Space required: 2m × 2m. No gym membership.', pmid:'PMID 24561148 (Srikanthan 2014)' },
+  { h:'Sleep-wake consistency', dose:'Same wake time ±30 min, 7 days', d:'Chaput 2020: regularity matters more than total hours for metabolic markers. The boring answer wins.',
+    adj:'Weekend drift is the #1 saboteur. Alarm even on Sunday for 4 weeks — resets the clock.', pmid:'PMID 32066998 (Chaput 2020)' },
+];
+
+function renderProtocols(a){
+  const host = document.getElementById('protoGrid');
+  const safety = a.safety || [];
+  let list = PROTOCOLS.slice();
+  if(safety.indexOf('pregnancy') >= 0){
+    list = list.filter(p=>p.h !== 'Cold exposure · 2 min');
+  }
+  host.innerHTML = list.map(p=>
+    '<div class="proto"><h4>'+p.h+'</h4><div class="dose">'+p.dose+'</div><div class="d">'+p.d+'</div>'+
+    '<div class="adj"><strong>India adjust:</strong> '+p.adj+'</div>'+
+    '<div class="pmid">'+p.pmid+'</div></div>'
+  ).join('');
+}
+
+/* ============================================================
+   Grocery lists by diet
+   ============================================================ */
+const GROCERY = {
+  'nonveg-daily':{ total:2040, label:'non-veg daily', rows:[
+    { item:'Eggs', qty:'30 pcs', cost:180, why:'6 breakfasts + 4 curries.' },
+    { item:'Chicken (boneless)', qty:'1 kg', cost:250, why:'3–4 lunches.' },
+    { item:'Fish (rohu / mackerel)', qty:'1 kg', cost:300, why:'2× EPA/DHA hit.' },
+    { item:'Moong sprouts (raw moong dal)', qty:'500g', cost:60, why:'Sprout on Sunday (Batch 01).' },
+    { item:'Toor + moong dal', qty:'1 kg', cost:140, why:'Daily dal.' },
+    { item:'Brown rice', qty:'1 kg', cost:80, why:'Lunches. Ragi atta optional upgrade.' },
+    { item:'Rolled oats', qty:'500g', cost:120, why:'Breakfast base.' },
+    { item:'Curd / dahi', qty:'2 kg', cost:120, why:'Home-set (Batch 05) cuts this to ₹90.' },
+    { item:'Seasonal vegetables', qty:'3 kg', cost:300, why:'Palak, methi, lauki, tomato, cucumber, onion.' },
+    { item:'Fruits (banana, orange, amla)', qty:'mixed', cost:200, why:'Amla year-round Oct–Feb.' },
+    { item:'Almonds + walnuts', qty:'250g', cost:250, why:'Mid-morning spacer.' },
+    { item:'Cold-pressed mustard oil', qty:'500ml', cost:140, why:'FSSAI erucic-capped. Replaces refined.' },
+  ]},
+  'nonveg-weekly':{ total:1880, label:'non-veg weekly', rows:[
+    { item:'Eggs', qty:'24 pcs', cost:144, why:'4 breakfasts + 2 curries.' },
+    { item:'Chicken / fish', qty:'500g', cost:150, why:'1–2 non-veg meals.' },
+    { item:'Paneer', qty:'500g', cost:180, why:'2 lunches.' },
+    { item:'Moong sprouts', qty:'500g', cost:60, why:'Batch 01 Sun.' },
+    { item:'Dal (toor + moong + rajma)', qty:'1.5 kg', cost:210, why:'Rotate daily.' },
+    { item:'Brown rice + oats', qty:'1.5 kg', cost:200, why:'Staple base.' },
+    { item:'Curd', qty:'2 kg', cost:120, why:'Daily serving.' },
+    { item:'Seasonal veg', qty:'3 kg', cost:300, why:'Half-plate rule.' },
+    { item:'Fruits + amla', qty:'mixed', cost:200, why:'Seasonal rotation.' },
+    { item:'Almonds + walnuts', qty:'250g', cost:250, why:'Spacer + omega-3 ALA.' },
+    { item:'Mustard oil (cold-pressed)', qty:'500ml', cost:140, why:'Cooking fat.' },
+  ]},
+  'eggetarian':{ total:1800, label:'eggetarian', rows:[
+    { item:'Eggs', qty:'36 pcs', cost:216, why:'Daily breakfast + snack.' },
+    { item:'Paneer', qty:'750g', cost:270, why:'Main protein.' },
+    { item:'Tofu', qty:'500g', cost:150, why:'Variety.' },
+    { item:'Dal + moong sprouts', qty:'1.5 kg', cost:210, why:'Batch 01 + daily.' },
+    { item:'Brown rice + oats', qty:'1.5 kg', cost:200, why:'Staple base.' },
+    { item:'Curd', qty:'2 kg', cost:120, why:'Daily.' },
+    { item:'Seasonal veg', qty:'3 kg', cost:300, why:'½-plate rule.' },
+    { item:'Fruits + amla', qty:'mixed', cost:200, why:'Amla-jamun-pom rotation.' },
+    { item:'Almonds + walnuts', qty:'250g', cost:250, why:'MUFA spacer.' },
+    { item:'Mustard oil', qty:'500ml', cost:140, why:'Cold-pressed only.' },
+  ]},
+  'pureveg':{ total:1780, label:'pure vegetarian', rows:[
+    { item:'Paneer', qty:'1 kg', cost:350, why:'Main protein.' },
+    { item:'Tofu', qty:'500g', cost:150, why:'Rotation.' },
+    { item:'Dal mix (toor, moong, rajma, chana)', qty:'1.5 kg', cost:210, why:'Rotate for complete aminos.' },
+    { item:'Moong sprouts', qty:'500g', cost:60, why:'Batch 01 Sun.' },
+    { item:'Brown rice + oats', qty:'1.5 kg', cost:200, why:'Staple base.' },
+    { item:'Curd / dahi', qty:'2 kg', cost:120, why:'Daily.' },
+    { item:'Seasonal veg', qty:'3 kg', cost:300, why:'½-plate rule.' },
+    { item:'Fruits + amla', qty:'mixed', cost:200, why:'Amla, jamun (Jun–Aug), pom.' },
+    { item:'Almonds + walnuts', qty:'250g', cost:250, why:'MUFA + ALA.' },
+    { item:'Besan (for chilla)', qty:'500g', cost:40, why:'20g protein per chilla.' },
+    { item:'Mustard oil', qty:'500ml', cost:140, why:'Cold-pressed.' },
+  ]},
+  'jain':{ total:1810, label:'Jain / Sattvic', rows:[
+    { item:'Paneer', qty:'1 kg', cost:350, why:'Main protein.' },
+    { item:'Moong + toor dal', qty:'1.5 kg', cost:210, why:'Rotation (skip chana/rajma if strict).' },
+    { item:'Moong sprouts', qty:'500g', cost:60, why:'Batch 01.' },
+    { item:'Rice + ragi', qty:'1.5 kg', cost:200, why:'Ragi for calcium + phenolics.' },
+    { item:'Curd / dahi', qty:'2 kg', cost:120, why:'Daily — sattvic.' },
+    { item:'Above-ground veg (lauki, tori, pumpkin, palak, methi, tomato)', qty:'3 kg', cost:300, why:'Skip onion/garlic/potato/beetroot.' },
+    { item:'Fruits + amla + dates', qty:'mixed', cost:230, why:'Dates replace refined sugar.' },
+    { item:'Almonds + walnuts', qty:'250g', cost:250, why:'Spacer.' },
+    { item:'Besan + dhokla ingredients', qty:'500g besan', cost:50, why:'Batch fermented snack.' },
+    { item:'Mustard oil (or ghee)', qty:'500ml', cost:140, why:'Ghee if preferred sattvic fat.' },
+  ]},
+  'keto':{ total:2760, label:'keto / carnivore', rows:[
+    { item:'Eggs', qty:'30 pcs', cost:180, why:'Daily base.' },
+    { item:'Chicken', qty:'1.5 kg', cost:375, why:'5 lunches.' },
+    { item:'Fish / salmon', qty:'1 kg', cost:400, why:'EPA/DHA.' },
+    { item:'Paneer + cheese', qty:'500g + 200g', cost:400, why:'Snack fat.' },
+    { item:'Ghee (home-set, Batch 03)', qty:'250g', cost:200, why:'Bulletproof coffee.' },
+    { item:'EVOO', qty:'500ml', cost:650, why:'Salads + drizzle. Cold-pressed only.' },
+    { item:'Green veg (broccoli, palak, methi, cauliflower)', qty:'3 kg', cost:320, why:'Only carbs you get.' },
+    { item:'Walnuts + almonds', qty:'250g', cost:250, why:'Snacks.' },
+  ]},
+};
+
+function renderGrocery(a){
+  const host = document.getElementById('groceryTable');
+  const intro = document.getElementById('groceryIntro');
+  const g = GROCERY[a.diet] || GROCERY['pureveg'];
+  let html = '<div class="grocery-head">'+
+    '<div><div class="lab">Weekly list · '+g.label+'</div><div class="tot">1 adult · 7 days</div></div>'+
+    '<div style="text-align:right"><div class="lab">Week total</div><div class="tot">≈ ₹'+g.total.toLocaleString('en-IN')+'</div></div>'+
+    '</div>';
+  html += '<table><thead><tr><th>Item</th><th>Qty</th><th style="text-align:right">Cost</th></tr></thead><tbody>';
+  g.rows.forEach(r=>{
+    html += '<tr><td><strong>'+r.item+'</strong><span class="item-why">'+r.why+'</span></td><td class="qty">'+r.qty+'</td><td class="cost">₹'+r.cost+'</td></tr>';
+  });
+  html += '</tbody></table>';
+  host.innerHTML = html;
+  intro.textContent = 'Matched to your '+g.label+' profile — designed for BigBasket / Zepto / local mandi runs. Target ≈ ₹'+g.total+'/week for one adult. Swap seasonally (jamun Jun–Aug, amla Oct–Feb, strawberry Jan–Mar).';
+}
+
+/* ============================================================
+   Bootstrap — runs after all consts/functions are declared
+   ============================================================ */
+if(!state || !state.answers || Object.keys(state.answers).length < 5){
+  document.getElementById('emptyState').style.display = 'block';
+} else {
+  document.getElementById('resultsBody').style.display = 'block';
+  if(state.email){
+    document.getElementById('emailBanner').style.display = 'block';
+    document.getElementById('emailDisplay').textContent = state.email;
+  }
+  render();
+}
+</script>
+</body>
+</html>

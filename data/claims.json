@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "source_file": "bryan-johnson-receipt.html",
+    "dossier_date": "Apr 2026",
+    "capture_target_date": "2026-04-20",
+    "fx_rate_used_in_dossier": "1 USD = 85 INR",
+    "markets_in_scope": ["Pune", "Mumbai", "Delhi NCR", "Bangalore", "Hyderabad"],
+    "vendors_whitelist_prices": ["BigBasket", "Zepto", "Blinkit", "Amazon.in", "Flipkart", "1mg", "HealthKart", "Nature's Basket", "kirana/mandi averages"],
+    "vendors_whitelist_supplements": ["1mg", "HealthKart", "Amazon.in", "Flipkart Health+", "TrueBasics", "MuscleBlaze"],
+    "biology_trust_tiers": {
+      "tier1_accept_alone": ["PubMed peer-reviewed (PMID required)", "Cochrane", "USDA FoodData Central", "NIN-India IFCT", "ICMR guideline", "WHO", "govt or academic meta-analysis"],
+      "tier2_supplementary_only": ["brand COA / third-party lab report", "regulatory agency filing", "peer-reviewed preprint"],
+      "tier3_reject": ["blog posts", "Reddit", "influencer YouTube", "marketing PDFs", "news aggregators without primary source"]
+    },
+    "fabrication_rule": "If any field cannot be sourced, set it to null and add an entry to `unverified_reasons`. Never invent a URL, price, PMID, or claim."
+  },
+
+  "A_cost_macro": [
+    {"id":"macro_bj_annual","claim":"Bryan Johnson's total annual spend on longevity ≈ $2,000,000 (₹17 crore at ₹85/USD).","owner":"R3"},
+    {"id":"macro_replica_daily","claim":"A consumer-grade Blueprint replica costs ~₹2,683/day (~₹98,000/mo) in India.","owner":"R1"},
+    {"id":"macro_alt_daily","claim":"An Indian-alternative equivalent-benefit stack costs ~₹263/day (~₹96,000/yr).","owner":"R1"},
+    {"id":"macro_ratio","claim":"Indian alternative = 1/1,770th the price for ~90% of measurable result.","owner":"R3"},
+    {"id":"macro_empirical_audit","claim":"Empirical Health audit: lifestyle core (diet/exercise/sleep/bloodwork) replicable for <$2,000/yr.","owner":"R3"}
+  ],
+
+  "B_annual_burn_breakdown": [
+    {"id":"burn_medical_team","pct":30,"usd":"$600K","claim":"Medical team of 30+ specialists: physicians, endocrinologists, cardiologists, dermatologists, imaging specialist.","owner":"R3"},
+    {"id":"burn_experimental","pct":25,"usd":"$500K+","claim":"Experimental therapies: follistatin gene therapy (Honduras, 2023), 300M mesenchymal stem cells (Swedish donors), total plasma exchange, cerebrolysin, peptide stacks.","owner":"R3"},
+    {"id":"burn_diagnostics","pct":20,"usd":"$400K","claim":"Diagnostics & imaging: MRI, CT, DEXA, coronary calcium, skin age, DunedinPACE + Horvath epigenetic clocks 2×/yr, 100+ biomarker panels every 3-6 months.","owner":"R3"},
+    {"id":"burn_staff_ops","pct":15,"usd":"$300K","claim":"Staff/ops/brand: chef, kitchen, content team, photographer, videographer, Blueprint-branded everything.","owner":"R3"},
+    {"id":"burn_equipment","pct":7.5,"usd":"$150K","claim":"Equipment: HPO Tech hard-shell hyperbaric chamber, red-light cap (655nm), infrared sauna, home gym, full home lab.","owner":"R2"},
+    {"id":"burn_food_supp","pct":2.5,"usd":"$50K","claim":"Food + daily supplements for one person.","owner":"R1"}
+  ],
+
+  "C_daily_bj_replica_prices_india": [
+    {"id":"bj_longevity_mix","item":"Blueprint Longevity Mix (sachet, Essential blend)","qty":"1 sachet","price_inr":387,"owner":"R1"},
+    {"id":"bj_essential_caps","item":"Blueprint Essential Capsules","qty":"1 dose","price_inr":215,"owner":"R1"},
+    {"id":"bj_essential_soft","item":"Blueprint Essential Softgels","qty":"1 dose","price_inr":165,"owner":"R1"},
+    {"id":"bj_broccoli","item":"Broccoli","qty":"250g","price_inr":90,"owner":"R1"},
+    {"id":"bj_cauliflower","item":"Cauliflower","qty":"150g","price_inr":45,"owner":"R1"},
+    {"id":"bj_shiitake","item":"Shiitake mushroom","qty":"50g","price_inr":180,"owner":"R1"},
+    {"id":"bj_beluga_lentil","item":"Black (beluga) lentils","qty":"45g","price_inr":60,"owner":"R1"},
+    {"id":"bj_evoo","item":"Blueprint Extra Virgin Olive Oil","qty":"1 tbsp","price_inr":140,"owner":"R1"},
+    {"id":"bj_macadamia","item":"Macadamia nuts ground","qty":"3 tbsp","price_inr":240,"owner":"R1"},
+    {"id":"bj_walnuts","item":"Walnuts","qty":"2 tsp","price_inr":25,"owner":"R1"},
+    {"id":"bj_chia_flax","item":"Chia + flax seeds","qty":"2 tbsp","price_inr":30,"owner":"R1"},
+    {"id":"bj_cocoa","item":"Blueprint Cocoa Flavanols","qty":"1 tbsp","price_inr":110,"owner":"R1"},
+    {"id":"bj_lecithin","item":"Sunflower lecithin","qty":"1 tsp","price_inr":45,"owner":"R1"},
+    {"id":"bj_macnut_milk","item":"Macadamia nut milk","qty":"100ml","price_inr":180,"owner":"R1"},
+    {"id":"bj_berries","item":"Mixed berries + cherries","qty":"0.5 cup","price_inr":280,"owner":"R1"},
+    {"id":"bj_pom_juice","item":"Pomegranate juice (fresh)","qty":"60ml","price_inr":70,"owner":"R1"},
+    {"id":"bj_pea_protein","item":"Blueprint pea protein","qty":"30g","price_inr":180,"owner":"R1"},
+    {"id":"bj_pill_stack","item":"Daily pill stack ~60 pills","qty":"1 day","price_inr":620,"owner":"R1"},
+    {"id":"bj_daily_total","item":"Daily total","price_inr":2683,"owner":"R1"}
+  ],
+
+  "D_daily_indian_alternative_prices": [
+    {"id":"alt_green_tea_tulsi","item":"Green tea + tulsi","qty":"1 cup","price_inr":8,"owner":"R1"},
+    {"id":"alt_turmeric_pepper","item":"Turmeric + black pepper","qty":"1g","price_inr":3,"owner":"R1"},
+    {"id":"alt_ksm66","item":"Ashwagandha (KSM-66)","qty":"500mg","price_inr":12,"owner":"R1"},
+    {"id":"alt_dal","item":"Whole masoor / urad dal","qty":"50g","price_inr":7,"owner":"R1"},
+    {"id":"alt_brassica","item":"Broccoli / cauliflower","qty":"250g","price_inr":25,"owner":"R1"},
+    {"id":"alt_moringa_methi","item":"Moringa + methi leaves","qty":"100g","price_inr":15,"owner":"R1"},
+    {"id":"alt_mushroom","item":"Button / oyster mushroom","qty":"50g","price_inr":28,"owner":"R1"},
+    {"id":"alt_mustard_oil","item":"Cold-press mustard oil","qty":"1 tbsp","price_inr":4,"owner":"R1"},
+    {"id":"alt_almond","item":"Almonds (Indian-grown)","qty":"25g","price_inr":18,"owner":"R1"},
+    {"id":"alt_walnut","item":"Walnuts (Kashmiri)","qty":"15g","price_inr":22,"owner":"R1"},
+    {"id":"alt_seed_mix","item":"Chia + flax + sesame","qty":"1 tbsp","price_inr":8,"owner":"R1"},
+    {"id":"alt_a2_milk","item":"A2 milk / almond milk","qty":"100ml","price_inr":18,"owner":"R1"},
+    {"id":"alt_cacao","item":"Raw Indian cacao","qty":"1 tsp","price_inr":6,"owner":"R1"},
+    {"id":"alt_amla_pom","item":"Amla + ½ pomegranate","qty":"1 serving","price_inr":22,"owner":"R1"},
+    {"id":"alt_ghee","item":"A2 ghee","qty":"1 tsp","price_inr":6,"owner":"R1"},
+    {"id":"alt_curd","item":"Curd / buttermilk","qty":"1 serving","price_inr":10,"owner":"R1"},
+    {"id":"alt_seasonal_fruit","item":"Jamun / guava / papaya (seasonal)","qty":"1 serving","price_inr":15,"owner":"R1"},
+    {"id":"alt_omega3","item":"Omega-3 (algal / fish oil)","qty":"2g","price_inr":18,"owner":"R1"},
+    {"id":"alt_d3k2","item":"Vitamin D3 + K2","qty":"2000 IU","price_inr":4,"owner":"R1"},
+    {"id":"alt_creatine","item":"Creatine monohydrate","qty":"5g","price_inr":6,"owner":"R1"},
+    {"id":"alt_mag_gly","item":"Magnesium glycinate","qty":"1g","price_inr":8,"owner":"R1"},
+    {"id":"alt_daily_total","item":"Daily total","price_inr":263,"owner":"R1"}
+  ],
+
+  "E_swap_pairs": [
+    {"id":"swap_blueberry_jamun","bj":{"name":"Blueberries (imported)","price_inr":800,"unit":"150g"},"alt":{"name":"Jamun + Amla + Pomegranate","price_inr":40,"unit":"150g"},"biology_claim":"Jamun has higher anthocyanin density than blueberries; amla has ~20× vitamin C of blueberries.","target":"anthocyanins / oxidative stress / brain","owner":"R1"},
+    {"id":"swap_macadamia_walnut","bj":{"name":"Macadamia Nuts (premium)","price_inr":3200,"unit":"250g"},"alt":{"name":"Indian almonds + Kashmiri walnuts","price_inr":220,"unit":"250g"},"biology_claim":"Kashmiri walnuts higher ALA than macadamia; almonds beat macadamia on vitamin E gram-for-gram.","target":"MUFA + vitamin E","owner":"R1"},
+    {"id":"swap_evoo_mustard","bj":{"name":"Blueprint EVOO","price_inr":4200,"unit":"1L"},"alt":{"name":"Cold-press mustard oil + A2 ghee (or Indian EVOO)","price_inr":"180-600","unit":"1L"},"biology_claim":"Mustard oil = 60% MUFA + allyl isothiocyanate (anti-inflammatory); ghee butyrate-rich; lab-tested Indian EVOO available at ₹600/L.","target":"polyphenols oleocanthal/oleuropein","owner":"R1"},
+    {"id":"swap_cocoa_cacao","bj":{"name":"Blueprint Cocoa Flavanols","price_inr":3600,"unit":"300g"},"alt":{"name":"Raw Indian cacao (Ariba / Wakao / Mason & Co)","price_inr":450,"unit":"300g"},"biology_claim":"Cold-processed Indian cacao brands preserve flavanol content comparably to Blueprint.","target":"cocoa flavanols","owner":"R1"},
+    {"id":"swap_sprouts_moringa","bj":{"name":"Broccoli sprouts","price_inr":400,"unit":"100g"},"alt":{"name":"Moringa leaves","price_inr":30,"unit":"100g"},"biology_claim":"Moringa has higher total isothiocyanates than broccoli; 9g protein/100g.","target":"sulforaphane / Nrf2","owner":"R1"},
+    {"id":"swap_nmn_diet","bj":{"name":"NMN + Resveratrol stack","price_inr":8500,"unit":"per month"},"alt":{"name":"Tryptophan-rich dal + niacin + exercise","price_inr":0,"unit":"per month"},"biology_claim":"Exercise raises NAD+ comparably in humans; dietary niacin is rate-limiting precursor; NMN human evidence is early.","target":"NAD+ / sirtuins","owner":"R1"},
+    {"id":"swap_ashwa_ksm66","bj":{"name":"Ashwagandha + L-theanine (in mix)","price_inr":12000,"unit":"per month (mix)"},"alt":{"name":"KSM-66 ashwagandha direct","price_inr":350,"unit":"per month"},"biology_claim":"KSM-66 clinical-grade extract is manufactured by Ixoreal Biomed in Hyderabad, India.","target":"cortisol / stress / sleep","owner":"R1"},
+    {"id":"swap_shiitake_oyster","bj":{"name":"Shiitake / Maitake","price_inr":360,"unit":"100g"},"alt":{"name":"Oyster + button mushroom","price_inr":50,"unit":"100g"},"biology_claim":"Oyster has measurable ergothioneine; Singapore cohort linked ≥2 portions mushroom/week to 57% lower MCI (dossier claims 64%, VERIFY).","target":"beta-glucans / ergothioneine","owner":"R1"},
+    {"id":"swap_pomjuice_anar","bj":{"name":"Pomegranate juice (fresh/cold-press)","price_inr":420,"unit":"500ml"},"alt":{"name":"Whole anar (eaten with seeds)","price_inr":60,"unit":"1 fruit"},"biology_claim":"The fruit itself contains ellagitannins; whole fruit is not inferior to juice.","target":"urolithin A / ellagitannins","owner":"R1"}
+  ],
+
+  "F_mortality_claims_the_free5": [
+    {"id":"free5_smoking","claim":"Smoking cessation reduces all-cause mortality by ~50%.","owner":"R3"},
+    {"id":"free5_weight","claim":"Correcting obesity/weight control reduces all-cause mortality by ~40%.","owner":"R3"},
+    {"id":"free5_exercise","claim":"Regular exercise reduces all-cause mortality by ~35%.","owner":"R3"},
+    {"id":"free5_bp","claim":"Blood pressure control reduces all-cause mortality by ~30%.","owner":"R3"},
+    {"id":"free5_diet","claim":"Mediterranean / plant-forward diet reduces all-cause mortality by ~25%.","owner":"R3"},
+    {"id":"nuts_adventist","claim":"Nut consumption ≥5×/week associated with +2-3 years lifespan (Adventist Health Study).","owner":"R3"},
+    {"id":"legume_loma","claim":"Daily legume consumption associated with 8% lower all-cause mortality (Loma Linda).","owner":"R3"},
+    {"id":"sauna_finnish","claim":"Finnish sauna 4-7×/week: 63% lower CV mortality, 40% lower all-cause (Laukkanen et al.).","owner":"R3"}
+  ],
+
+  "G_lifestyle_protocol": [
+    {"id":"life_sleep","claim":"Bryan sleeps 8.5 hrs with a fixed 8:30 PM bedtime.","owner":"R3"},
+    {"id":"life_exercise","claim":"Bryan's exercise = 150 min moderate + 75 min HIIT + 3× strength = 6 hrs/week.","owner":"R3"},
+    {"id":"life_fasting","claim":"All meals in a 6-hour window pre-noon.","owner":"R3"},
+    {"id":"life_weight_loss","claim":"Bryan lost 60 lbs before experimental interventions (self-reported).","owner":"R3"}
+  ],
+
+  "H_devices_equipment": [
+    {"id":"dev_hyperbaric","claim":"HPO Tech hard-shell hyperbaric chamber — BJ uses.","alt_needed":"Indian market alternative or clinic-access cost.","owner":"R2"},
+    {"id":"dev_redlight_cap","claim":"Red-light cap at 655nm (scalp).","alt_needed":"Indian RLT devices or clinic panels.","owner":"R2"},
+    {"id":"dev_ir_sauna","claim":"Infrared sauna (home).","alt_needed":"Indian IR sauna / community sauna / portable sauna blanket cost.","owner":"R2"},
+    {"id":"dev_cgm","claim":"CGM usage (continuous glucose monitor).","alt_needed":"Indian CGM options (Abbott Libre, Dexcom import, Ultrahuman M1, HealthifyMe Pro).","owner":"R2"},
+    {"id":"dev_hrv","claim":"HRV / recovery tracking (Whoop / Oura).","alt_needed":"Indian availability + prices: Oura Ring, Whoop, Ultrahuman Ring Air, Apple Watch HRV.","owner":"R2"},
+    {"id":"dev_bloodpressure","claim":"Home BP monitor daily.","alt_needed":"Omron / Dr Morepen / BPL Indian prices.","owner":"R2"},
+    {"id":"dev_body_comp","claim":"DEXA scan for body composition (clinical).","alt_needed":"Indian DEXA body-comp clinic prices (not bone-density DEXA).","owner":"R2"},
+    {"id":"dev_smart_scale","claim":"Body composition scale.","alt_needed":"Indian smart scales Withings / Mi / HealthifyMe.","owner":"R2"}
+  ],
+
+  "I_labs_diagnostics": [
+    {"id":"lab_full_panel","claim":"100+ biomarker panel every 3-6 months.","alt_needed":"Equivalent Indian panels at Redcliffe, Healthians, Thyrocare, 1mg Labs, Tata 1mg, Apollo, Metropolis, SRL.","owner":"R3"},
+    {"id":"lab_dunedin","claim":"DunedinPACE epigenetic clock 2×/yr.","alt_needed":"Indian ordering availability, prices, TAT; TruDiagnostic, MyDNAge — do they ship to India?","owner":"R3"},
+    {"id":"lab_horvath","claim":"Horvath epigenetic clock 2×/yr.","alt_needed":"Indian availability, prices.","owner":"R3"},
+    {"id":"lab_mri","claim":"MRI scans (whole-body or targeted).","alt_needed":"Indian whole-body MRI prices (Mahajan, Dr Lal, Apollo).","owner":"R3"},
+    {"id":"lab_cac","claim":"Coronary artery calcium score.","alt_needed":"Indian CAC prices.","owner":"R3"},
+    {"id":"lab_dexa_bone","claim":"DEXA for bone density.","alt_needed":"Indian DEXA prices.","owner":"R3"},
+    {"id":"lab_skin_age","claim":"Skin age testing.","alt_needed":"Indian availability.","owner":"R3"},
+    {"id":"lab_apob_lpa","claim":"ApoB + Lp(a) + advanced lipid.","alt_needed":"Indian prices (Thyrocare, Redcliffe, 1mg Labs).","owner":"R3"},
+    {"id":"lab_hba1c_fasting_ins","claim":"HbA1c + fasting insulin + homa-IR.","alt_needed":"Indian prices.","owner":"R3"},
+    {"id":"lab_hormones","claim":"Full hormone panel (testosterone, DHEA-S, cortisol, thyroid).","alt_needed":"Indian prices.","owner":"R3"}
+  ]
+}
