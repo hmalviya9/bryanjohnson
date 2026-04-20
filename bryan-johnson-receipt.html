@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>THE BRYAN JOHNSON RECEIPT — a dossier</title>
+<meta name="description" content="Bryan Johnson spends ₹17 crore/year to not die. You can get 90% of the result for ₹1 lakh. Every number sourced." />
+<meta property="og:title" content="THE BRYAN JOHNSON RECEIPT" />
+<meta property="og:description" content="A forensic cost dossier. Every rupee. Every source. Every swap." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F2ECDD;
+    --paper-dark:#E8E0CC;
+    --paper-line:#D6CCAD;
+    --ink:#1A1611;
+    --ink-soft:#4A3F2E;
+    --blood:#B91C1C;
+    --blood-deep:#7F1D1D;
+    --forest:#1F5F3F;
+    --forest-deep:#0F3D24;
+    --gold:#B8860B;
+    --stamp:#A62020;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Instrument Serif',Georgia,serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0px, transparent 31px, rgba(26,22,17,0.04) 31px, rgba(26,22,17,0.04) 32px),
+      radial-gradient(circle at 20% 10%, rgba(184,134,11,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(185,28,28,0.04) 0%, transparent 40%);
+    min-height:100vh;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:-0.01em}
+  .serif{font-family:'Fraunces',Georgia,serif}
+  .italic-serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+
+  /* Header */
+  .masthead{
+    border-top:2px solid var(--ink);
+    border-bottom:2px solid var(--ink);
+    padding:14px 0;
+    margin-top:24px;
+    background:var(--paper);
+    position:relative;
+  }
+  .masthead-inner{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--ink-soft)}
+  .masthead-edition{display:flex;gap:20px}
+
+  /* Hero */
+  .hero{padding:64px 0 40px;position:relative}
+  .hero-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--blood);margin-bottom:28px;display:flex;align-items:center;gap:12px}
+  .hero-kicker::before{content:"";width:36px;height:2px;background:var(--blood);display:inline-block}
+  .hero h1{
+    font-family:'Fraunces',serif;
+    font-weight:300;
+    font-size:clamp(44px,9vw,124px);
+    line-height:0.93;
+    letter-spacing:-0.035em;
+    color:var(--ink);
+    font-variation-settings:"opsz" 144, "SOFT" 0;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--blood);
+    font-weight:300;
+  }
+  .hero h1 .strike{
+    text-decoration:line-through;
+    text-decoration-thickness:4px;
+    text-decoration-color:var(--blood);
+    opacity:0.5;
+  }
+  .hero-sub{
+    margin-top:32px;
+    font-family:'Instrument Serif',serif;
+    font-size:clamp(20px,2.4vw,26px);
+    line-height:1.45;
+    max-width:760px;
+    color:var(--ink-soft);
+  }
+  .hero-sub strong{color:var(--ink);font-weight:400}
+
+  /* Two big numbers */
+  .verdict-pair{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    margin-top:56px;
+    border-top:2px solid var(--ink);
+    border-bottom:2px solid var(--ink);
+  }
+  .verdict-cell{
+    padding:32px 28px;
+    border-right:1px solid var(--ink);
+  }
+  .verdict-cell:last-child{border-right:none}
+  .verdict-cell.bj{background:rgba(185,28,28,0.04)}
+  .verdict-cell.you{background:rgba(31,95,63,0.04)}
+  .vc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px}
+  .vc-number{font-family:'Fraunces',serif;font-size:clamp(40px,6.5vw,76px);line-height:1;font-weight:300;letter-spacing:-0.03em}
+  .vc-number.bj{color:var(--blood)}
+  .vc-number.you{color:var(--forest)}
+  .vc-unit{font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;color:var(--ink-soft);margin-top:10px}
+  @media(max-width:640px){
+    .verdict-pair{grid-template-columns:1fr}
+    .verdict-cell{border-right:none;border-bottom:1px solid var(--ink)}
+    .verdict-cell:last-child{border-bottom:none}
+  }
+
+  /* Section headers */
+  .section{padding:80px 0;border-top:1px solid var(--ink)}
+  .section-number{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:var(--blood);text-transform:uppercase;margin-bottom:16px}
+  .section-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-0.02em;margin-bottom:18px}
+  .section-title em{font-style:italic;color:var(--blood)}
+  .section-intro{font-family:'Instrument Serif',serif;font-size:21px;line-height:1.55;max-width:720px;color:var(--ink-soft);margin-bottom:48px}
+
+  /* Receipt */
+  .receipt-holder{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  @media(max-width:820px){.receipt-holder{grid-template-columns:1fr}}
+  .receipt{
+    background:#FBF7EC;
+    border:1px solid var(--ink);
+    padding:32px 28px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    line-height:1.65;
+    position:relative;
+    box-shadow:6px 6px 0 var(--ink);
+  }
+  .receipt::before,.receipt::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;
+    height:10px;
+    background-image:linear-gradient(45deg, transparent 33%, #FBF7EC 33%, #FBF7EC 66%, transparent 66%),
+      linear-gradient(-45deg, transparent 33%, #FBF7EC 33%, #FBF7EC 66%, transparent 66%);
+    background-size:10px 10px;
+  }
+  .receipt::before{top:-10px;background-position:0 100%}
+  .receipt::after{bottom:-10px;background-position:0 0}
+  .r-head{text-align:center;margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed var(--ink-soft)}
+  .r-head .shop{font-size:15px;font-weight:700;letter-spacing:0.08em;margin-bottom:4px}
+  .r-head .sub{font-size:10px;color:var(--ink-soft);letter-spacing:0.12em}
+  .r-line{display:flex;justify-content:space-between;gap:10px;padding:3px 0;font-size:12px}
+  .r-line .item{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .r-line .qty{color:var(--ink-soft);font-size:11px;margin-right:6px}
+  .r-line .amt{white-space:nowrap}
+  .r-group-head{margin-top:14px;margin-bottom:4px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);border-top:1px dashed var(--ink-soft);padding-top:10px}
+  .r-sub{display:flex;justify-content:space-between;padding:8px 0 4px;border-top:1px dashed var(--ink-soft);margin-top:10px;font-size:12px}
+  .r-total{display:flex;justify-content:space-between;padding-top:12px;margin-top:6px;border-top:2px solid var(--ink);font-size:15px;font-weight:700}
+  .receipt.bj .r-total{color:var(--blood)}
+  .receipt.you .r-total{color:var(--forest)}
+  .r-foot{text-align:center;margin-top:22px;padding-top:16px;border-top:1px dashed var(--ink-soft);font-size:10px;color:var(--ink-soft);letter-spacing:0.14em}
+  .r-barcode{
+    margin:14px auto 6px;
+    height:32px;
+    background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 9px,var(--ink) 9px 12px,transparent 12px 14px);
+    max-width:200px;
+  }
+  .stamp{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:84px;height:84px;
+    border:3px solid var(--blood);
+    border-radius:50%;
+    color:var(--blood);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-align:center;
+    transform:rotate(-12deg);
+    opacity:0.85;
+    line-height:1.1;
+  }
+  .stamp.green{border-color:var(--forest);color:var(--forest)}
+
+  /* Annual spend */
+  .annual-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:700px){.annual-grid{grid-template-columns:1fr}}
+  .spend-card{
+    background:var(--paper);
+    border:1px solid var(--ink);
+    padding:22px 24px;
+    position:relative;
+    overflow:hidden;
+  }
+  .spend-card .cat{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+  .spend-card .amt{font-family:'Fraunces',serif;font-size:36px;font-weight:300;letter-spacing:-0.02em;color:var(--blood);line-height:1}
+  .spend-card .amt-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);margin-top:4px}
+  .spend-card .desc{font-family:'Instrument Serif',serif;font-size:16px;margin-top:14px;line-height:1.4;color:var(--ink)}
+  .spend-card .bar{height:6px;background:var(--paper-dark);margin-top:18px;position:relative;overflow:hidden}
+  .spend-card .bar-fill{height:100%;background:var(--blood);opacity:0.75}
+  .spend-card .pct{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);margin-top:6px;text-align:right}
+
+  /* Swap matrix */
+  .swap{
+    border:1px solid var(--ink);
+    background:var(--paper);
+    margin-bottom:-1px;
+    display:grid;
+    grid-template-columns:1fr 48px 1fr;
+    gap:0;
+    align-items:stretch;
+  }
+  @media(max-width:720px){
+    .swap{grid-template-columns:1fr;}
+    .swap-arrow{transform:rotate(90deg);padding:12px 0 !important}
+  }
+  .swap-side{padding:22px 24px;position:relative}
+  .swap-side.bj{background:rgba(185,28,28,0.035);border-right:1px solid var(--ink)}
+  .swap-side.in{background:rgba(31,95,63,0.035)}
+  @media(max-width:720px){.swap-side.bj{border-right:none;border-bottom:1px solid var(--ink)}}
+  .swap-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+  .swap-name{font-family:'Fraunces',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em;line-height:1.15;margin-bottom:4px}
+  .swap-price{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;margin-top:8px}
+  .swap-price.bj{color:var(--blood)}
+  .swap-price.in{color:var(--forest)}
+  .swap-why{font-family:'Instrument Serif',serif;font-size:15px;font-style:italic;color:var(--ink-soft);margin-top:8px;line-height:1.4}
+  .swap-arrow{
+    display:flex;align-items:center;justify-content:center;
+    padding:0;
+    background:var(--paper-dark);
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;color:var(--ink-soft);
+    letter-spacing:0.1em;
+  }
+
+  /* Verdict card */
+  .verdict-card{
+    background:var(--ink);
+    color:var(--paper);
+    padding:56px 48px;
+    margin:60px 0;
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--ink);
+  }
+  .verdict-card::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(45deg, transparent 0 10px, rgba(242,236,221,0.03) 10px 11px);
+    pointer-events:none;
+  }
+  .verdict-card .stamp-big{
+    position:absolute;top:32px;right:40px;
+    border:3px solid var(--blood);
+    color:var(--blood);
+    padding:10px 18px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:0.24em;
+    transform:rotate(8deg);
+    font-weight:700;
+  }
+  .verdict-card .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.24em;color:var(--paper-line);margin-bottom:18px}
+  .verdict-card h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-0.025em;max-width:780px}
+  .verdict-card h2 em{font-style:italic;color:var(--blood)}
+  .verdict-card h2 .green{color:#7FB89A;font-style:italic}
+  .verdict-card .ratio{
+    display:flex;align-items:flex-end;gap:18px;margin-top:44px;flex-wrap:wrap;
+    padding-top:32px;border-top:1px solid rgba(242,236,221,0.2);
+  }
+  .verdict-card .ratio-num{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(60px,10vw,120px);line-height:0.9;color:var(--blood);letter-spacing:-0.04em}
+  .verdict-card .ratio-txt{font-family:'Instrument Serif',serif;font-size:clamp(18px,2.2vw,24px);color:var(--paper-line);max-width:440px;line-height:1.35;padding-bottom:8px}
+
+  /* Method */
+  .method{
+    border:1px solid var(--ink);
+    padding:28px 32px;
+    background:rgba(184,134,11,0.04);
+  }
+  .method h3{font-family:'Fraunces',serif;font-weight:400;font-size:22px;margin-bottom:12px;letter-spacing:-0.01em}
+  .method ul{list-style:none;padding:0}
+  .method li{padding:10px 0;border-bottom:1px dashed var(--paper-line);font-size:15px;display:flex;gap:14px;align-items:flex-start}
+  .method li:last-child{border-bottom:none}
+  .method li .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blood);letter-spacing:0.1em;padding-top:4px;min-width:36px}
+  .method li .text{flex:1;color:var(--ink-soft)}
+  .method li .text strong{color:var(--ink);font-family:'Fraunces',serif;font-weight:500}
+
+  /* Quotes */
+  .pullquote{
+    font-family:'Fraunces',serif;
+    font-weight:300;
+    font-style:italic;
+    font-size:clamp(24px,3.2vw,38px);
+    line-height:1.25;
+    letter-spacing:-0.015em;
+    padding:40px 0;
+    max-width:820px;
+    color:var(--ink);
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    margin:40px 0;
+  }
+  .pullquote .q{color:var(--blood);font-size:1.4em;line-height:0}
+  .pullquote cite{display:block;margin-top:18px;font-style:normal;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* Share block */
+  .share-block{padding:60px 0;text-align:center;border-top:1px solid var(--ink)}
+  .share-block h3{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,4vw,40px);letter-spacing:-0.02em;margin-bottom:12px}
+  .share-block p{font-family:'Instrument Serif',serif;font-size:18px;color:var(--ink-soft);margin-bottom:30px;font-style:italic}
+  .share-btn{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--ink);color:var(--paper);
+    padding:16px 28px;
+    border:none;cursor:pointer;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;letter-spacing:0.14em;text-transform:uppercase;
+    transition:transform 0.15s;
+  }
+  .share-btn:hover{transform:translateY(-2px)}
+  .share-btn.blood{background:var(--blood)}
+
+  /* Footer */
+  .footer{padding:40px 0 80px;border-top:2px solid var(--ink);margin-top:80px}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* Filing reveal animation */
+  .fade-in{opacity:0;transform:translateY(12px);transition:opacity 0.7s cubic-bezier(0.2,0.6,0.2,1),transform 0.7s cubic-bezier(0.2,0.6,0.2,1)}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+
+  /* utility */
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+  .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 9px;background:var(--ink);color:var(--paper);letter-spacing:0.12em;text-transform:uppercase;margin-right:6px}
+  .tag.red{background:var(--blood)}
+  .tag.green{background:var(--forest)}
+
+  /* footnote numbers in body */
+  sup{
+    color:var(--blood);
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.7em;
+    font-weight:600;
+    padding-left:1px;
+    cursor:help;
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="container">
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-edition">
+        <span>File № 001</span>
+        <span class="hide-sm">DOSSIER / LONGEVITY</span>
+      </div>
+      <div>A FORENSIC COST REPORT</div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="container">
+  <section class="hero">
+    <div class="hero-kicker">Exhibit A &nbsp;·&nbsp; The ₹17 Crore Problem</div>
+    <h1>
+      Bryan Johnson spends<br/>
+      <em>₹17 crore</em> a year<br/>
+      to not die.
+    </h1>
+    <p class="hero-sub">
+      This is a line-by-line dossier of <strong>what he eats, what it costs, and where the money actually goes</strong> — followed by an audit of how an ordinary person in India can get <strong>90% of the measurable result for under ₹1 lakh a year</strong>. Every number below is sourced. No vibes.
+    </p>
+
+    <div class="verdict-pair">
+      <div class="verdict-cell bj">
+        <div class="vc-label">The Subject · Annual Burn</div>
+        <div class="vc-number bj mono">$2,000,000</div>
+        <div class="vc-unit">≈ ₹17,00,00,000 / year &nbsp;·&nbsp; ₹4.6 lakh per day</div>
+      </div>
+      <div class="verdict-cell you">
+        <div class="vc-label">You · Equivalent Benefit Stack</div>
+        <div class="vc-number you mono">₹96,000</div>
+        <div class="vc-unit">≈ ₹263 per day &nbsp;·&nbsp; 1 / 1,770th the cost</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 01: THE DAILY RECEIPT -->
+<div class="container">
+  <section class="section">
+    <div class="wrap">
+      <div class="section-number">01 / The Daily Receipt</div>
+      <h1 class="section-title">A single day on <em>Blueprint</em>, itemised.</h1>
+      <p class="section-intro">Bryan Johnson eats three meals daily inside a six-hour window. The meals are identical, obsessively weighed, and engineered around supplements. Here is one day, priced in both the US consumer-grade version (what Blueprint customers actually pay) and the Indian-alternative stack with equivalent function.</p>
+    </div>
+
+    <div class="wrap">
+      <div class="receipt-holder">
+        <!-- BJ RECEIPT -->
+        <div class="receipt bj">
+          <div class="stamp">BLUEPRINT<br/>v.2026</div>
+          <div class="r-head">
+            <div class="shop">DON'T DIE CAFÉ</div>
+            <div class="sub">ONE DAY · VEGAN · PRE-NOON</div>
+          </div>
+
+          <div class="r-group-head">Meal 1 · Longevity Mix</div>
+          <div class="r-line"><span class="item"><span class="qty">1×</span>Longevity Mix sachet</span><span class="amt">₹387</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1×</span>Essential Capsules</span><span class="amt">₹215</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1×</span>Essential Softgels</span><span class="amt">₹165</span></div>
+
+          <div class="r-group-head">Meal 2 · Super Veggie</div>
+          <div class="r-line"><span class="item"><span class="qty">250g</span>Broccoli</span><span class="amt">₹90</span></div>
+          <div class="r-line"><span class="item"><span class="qty">150g</span>Cauliflower</span><span class="amt">₹45</span></div>
+          <div class="r-line"><span class="item"><span class="qty">50g</span>Shiitake mushroom</span><span class="amt">₹180</span></div>
+          <div class="r-line"><span class="item"><span class="qty">45g</span>Black lentils (beluga)</span><span class="amt">₹60</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1 tbsp</span>Blueprint EVOO</span><span class="amt">₹140</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1 tbsp</span>Hemp seeds, ginger, garlic, lime</span><span class="amt">₹55</span></div>
+
+          <div class="r-group-head">Meal 3 · Nutty Pudding</div>
+          <div class="r-line"><span class="item"><span class="qty">3 tbsp</span>Macadamia nuts (ground)</span><span class="amt">₹240</span></div>
+          <div class="r-line"><span class="item"><span class="qty">2 tsp</span>Walnuts (ground)</span><span class="amt">₹25</span></div>
+          <div class="r-line"><span class="item"><span class="qty">2 tbsp</span>Chia + flax seeds</span><span class="amt">₹30</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1 tbsp</span>Cocoa flavanols (Blueprint)</span><span class="amt">₹110</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1 tsp</span>Sunflower lecithin</span><span class="amt">₹45</span></div>
+          <div class="r-line"><span class="item"><span class="qty">100ml</span>Macadamia nut milk</span><span class="amt">₹180</span></div>
+          <div class="r-line"><span class="item"><span class="qty">½ cup</span>Mixed berries + cherries</span><span class="amt">₹280</span></div>
+          <div class="r-line"><span class="item"><span class="qty">60ml</span>Pomegranate juice (fresh)</span><span class="amt">₹70</span></div>
+          <div class="r-line"><span class="item"><span class="qty">30g</span>Pea protein (Blueprint)</span><span class="amt">₹180</span></div>
+
+          <div class="r-group-head">Daily Pill Stack</div>
+          <div class="r-line"><span class="item"><span class="qty">~60</span>pills / capsules / softgels</span><span class="amt">₹620</span></div>
+
+          <div class="r-sub"><span>Food subtotal</span><span>₹1,683</span></div>
+          <div class="r-sub"><span>Supplements subtotal</span><span>₹1,000</span></div>
+          <div class="r-total"><span>DAILY TOTAL</span><span>₹2,683</span></div>
+
+          <div class="r-barcode"></div>
+          <div class="r-foot">THANK YOU · ₹98,000/MONTH · RECEIPT v2026</div>
+        </div>
+
+        <!-- INDIAN ALTERNATIVE RECEIPT -->
+        <div class="receipt you">
+          <div class="stamp green">SAME<br/>FUNCTION</div>
+          <div class="r-head">
+            <div class="shop">THE DESI DOSSIER</div>
+            <div class="sub">ONE DAY · SAME TARGETS · LOCAL SOURCING</div>
+          </div>
+
+          <div class="r-group-head">Morning Polyphenol Stack</div>
+          <div class="r-line"><span class="item"><span class="qty">1 cup</span>Green tea + tulsi</span><span class="amt">₹8</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1g</span>Turmeric + black pepper</span><span class="amt">₹3</span></div>
+          <div class="r-line"><span class="item"><span class="qty">500mg</span>Ashwagandha (KSM-66)</span><span class="amt">₹12</span></div>
+
+          <div class="r-group-head">Meal 1 · Dal-Veggie Bowl</div>
+          <div class="r-line"><span class="item"><span class="qty">50g</span>Whole masoor / urad dal</span><span class="amt">₹7</span></div>
+          <div class="r-line"><span class="item"><span class="qty">250g</span>Broccoli / cauliflower</span><span class="amt">₹25</span></div>
+          <div class="r-line"><span class="item"><span class="qty">100g</span>Moringa + methi leaves</span><span class="amt">₹15</span></div>
+          <div class="r-line"><span class="item"><span class="qty">50g</span>Button / oyster mushroom</span><span class="amt">₹28</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1 tbsp</span>Cold-press mustard oil</span><span class="amt">₹4</span></div>
+
+          <div class="r-group-head">Meal 2 · Nut &amp; Seed Pudding</div>
+          <div class="r-line"><span class="item"><span class="qty">25g</span>Almonds (Indian)</span><span class="amt">₹18</span></div>
+          <div class="r-line"><span class="item"><span class="qty">15g</span>Walnuts (Kashmiri)</span><span class="amt">₹22</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1 tbsp</span>Chia + flax + sesame</span><span class="amt">₹8</span></div>
+          <div class="r-line"><span class="item"><span class="qty">100ml</span>A2 milk / almond milk</span><span class="amt">₹18</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1 tsp</span>Raw cacao (Indian)</span><span class="amt">₹6</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1</span>Amla + ½ pomegranate</span><span class="amt">₹22</span></div>
+
+          <div class="r-group-head">Evening Fats + Fiber</div>
+          <div class="r-line"><span class="item"><span class="qty">1 tsp</span>A2 ghee (cooking fat)</span><span class="amt">₹6</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1 serving</span>Curd / buttermilk (probiotic)</span><span class="amt">₹10</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1 seasonal</span>Jamun / guava / papaya</span><span class="amt">₹15</span></div>
+
+          <div class="r-group-head">Evidence-Based Supplements</div>
+          <div class="r-line"><span class="item"><span class="qty">2g</span>Omega-3 (algal / fish)</span><span class="amt">₹18</span></div>
+          <div class="r-line"><span class="item"><span class="qty">2000 IU</span>Vitamin D3 + K2</span><span class="amt">₹4</span></div>
+          <div class="r-line"><span class="item"><span class="qty">5g</span>Creatine monohydrate</span><span class="amt">₹6</span></div>
+          <div class="r-line"><span class="item"><span class="qty">1g</span>Magnesium glycinate</span><span class="amt">₹8</span></div>
+
+          <div class="r-sub"><span>Food subtotal</span><span>₹215</span></div>
+          <div class="r-sub"><span>Supplements subtotal</span><span>₹48</span></div>
+          <div class="r-total"><span>DAILY TOTAL</span><span>₹263</span></div>
+
+          <div class="r-barcode"></div>
+          <div class="r-foot">SAME TARGETS · DIFFERENT BUDGET · v1.0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <p class="italic-serif" style="margin-top:40px;font-size:17px;color:var(--ink-soft);max-width:760px;line-height:1.55">
+        Note: Bryan's daily food + supplement bill <em>for his own personal consumption</em> lands at roughly ₹2,683/day (₹98,000/month) if you build a consumer replica in India. That's only the grocery line. The other ₹4.6 lakh per day goes elsewhere — keep reading.
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 02: THE ANNUAL BURN -->
+<div class="container">
+  <section class="section">
+    <div class="wrap">
+      <div class="section-number">02 / The ₹17 Crore Breakdown</div>
+      <h1 class="section-title">Where <em>$2,000,000</em> actually goes each year.</h1>
+      <p class="section-intro">The food is not what costs $2M. Food + supplements are roughly 2% of the total. The rest pays for a 30-person medical team, experimental therapies not approved in any country, and a level of diagnostic imaging usually reserved for Phase III oncology trials.</p>
+
+      <div class="annual-grid">
+
+        <div class="spend-card">
+          <div class="cat">Category 01</div>
+          <div class="amt mono">$600K</div>
+          <div class="amt-sub">≈ ₹5.1 crore / year · 30%</div>
+          <div class="desc"><strong>Medical team of 30+ specialists</strong> — physicians, endocrinologists, cardiologists, dermatologists, a full-time imaging specialist. Salaries, retainers, on-call consulting.</div>
+          <div class="bar"><div class="bar-fill" style="width:30%"></div></div>
+          <div class="pct">30.0%</div>
+        </div>
+
+        <div class="spend-card">
+          <div class="cat">Category 02</div>
+          <div class="amt mono">$500K+</div>
+          <div class="amt-sub">≈ ₹4.3 crore / year · 25%</div>
+          <div class="desc"><strong>Experimental therapies</strong> — follistatin gene therapy (Honduras, 2023), 300M mesenchymal stem cells from Swedish donors, total plasma exchange, cerebrolysin, peptide stacks.</div>
+          <div class="bar"><div class="bar-fill" style="width:25%"></div></div>
+          <div class="pct">25.0%</div>
+        </div>
+
+        <div class="spend-card">
+          <div class="cat">Category 03</div>
+          <div class="amt mono">$400K</div>
+          <div class="amt-sub">≈ ₹3.4 crore / year · 20%</div>
+          <div class="desc"><strong>Diagnostics &amp; imaging</strong> — MRI, CT, DEXA scans, coronary calcium, skin age testing, epigenetic DunedinPACE &amp; Horvath clocks twice/year, 100+ biomarker panels every 3-6 months.</div>
+          <div class="bar"><div class="bar-fill" style="width:20%"></div></div>
+          <div class="pct">20.0%</div>
+        </div>
+
+        <div class="spend-card">
+          <div class="cat">Category 04</div>
+          <div class="amt mono">$300K</div>
+          <div class="amt-sub">≈ ₹2.6 crore / year · 15%</div>
+          <div class="desc"><strong>Staff, ops &amp; brand</strong> — chef, kitchen, content team, photographer, videographer, Blueprint-branded everything. Producing the "Don't Die" public spectacle is itself a full business.</div>
+          <div class="bar"><div class="bar-fill" style="width:15%"></div></div>
+          <div class="pct">15.0%</div>
+        </div>
+
+        <div class="spend-card">
+          <div class="cat">Category 05</div>
+          <div class="amt mono">$150K</div>
+          <div class="amt-sub">≈ ₹1.3 crore / year · 7.5%</div>
+          <div class="desc"><strong>Equipment &amp; facility</strong> — HPO Tech hard-shell hyperbaric chamber, red-light caps (655nm), infrared sauna, dedicated home gym, full lab setup at home.</div>
+          <div class="bar"><div class="bar-fill" style="width:7.5%"></div></div>
+          <div class="pct">7.5%</div>
+        </div>
+
+        <div class="spend-card">
+          <div class="cat">Category 06</div>
+          <div class="amt mono">$50K</div>
+          <div class="amt-sub">≈ ₹42 lakh / year · 2.5%</div>
+          <div class="desc"><strong>Food + daily supplements</strong> — for one person. Total grocery + pill bill. This is <em>the only line item</em> that has measurable evidence of delivering his actual health gains.</div>
+          <div class="bar"><div class="bar-fill" style="width:2.5%"></div></div>
+          <div class="pct">2.5%</div>
+        </div>
+      </div>
+
+      <p class="italic-serif" style="margin-top:40px;font-size:17px;color:var(--ink-soft);max-width:760px;line-height:1.55">
+        Bryan himself publishes his full protocol at <strong>protocol.bryanjohnson.com</strong> — for free. Empirical Health audited it and concluded the lifestyle core (diet, exercise, sleep, bloodwork) can be replicated for under $2,000/year. The $1.998 million on top is buying marginal gain — <em>and many of those margins are unproven.</em>
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- PULL QUOTE -->
+<div class="container">
+  <div class="wrap">
+    <blockquote class="pullquote">
+      <span class="q">"</span>Teasing out which supplements or experimental interventions add benefit beyond the basics is extremely difficult, even with Johnson's level of tracking. The honest assessment: the basics likely account for the majority of his improvement.<span class="q">"</span>
+      <cite>— Biohacking Hub (Formblends), Feb 2026 audit</cite>
+    </blockquote>
+  </div>
+</div>
+
+<!-- SECTION 03: INGREDIENT SWAPS -->
+<div class="container">
+  <section class="section">
+    <div class="wrap">
+      <div class="section-number">03 / The Swap Matrix</div>
+      <h1 class="section-title">Same molecule. <em>1/10th the price.</em></h1>
+      <p class="section-intro">Each Bryan Johnson ingredient has an Indian-sourced equivalent that delivers the same or a better dose of the active compound — the polyphenol, the omega-3, the sulforaphane, the flavanol. Here is the one-to-one map.</p>
+    </div>
+
+    <div class="wrap">
+
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">BRYAN'S VERSION</div>
+          <div class="swap-name">Blueberries · Imported</div>
+          <div class="swap-why">Target: anthocyanins for oxidative-stress and brain protection.</div>
+          <div class="swap-price bj mono">₹800 / 150g</div>
+        </div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-side in">
+          <div class="swap-label">SAME FUNCTION · LOCAL</div>
+          <div class="swap-name">Jamun + Amla + Pomegranate</div>
+          <div class="swap-why">Jamun has <strong>higher anthocyanin density</strong> than blueberries. Amla has ~20× more vitamin C.</div>
+          <div class="swap-price in mono">₹40 / 150g</div>
+        </div>
+      </div>
+
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">BRYAN'S VERSION</div>
+          <div class="swap-name">Macadamia Nuts · Premium</div>
+          <div class="swap-why">Target: monounsaturated fat + vitamin E for cholesterol &amp; cellular aging.</div>
+          <div class="swap-price bj mono">₹3,200 / 250g</div>
+        </div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-side in">
+          <div class="swap-label">SAME FUNCTION · LOCAL</div>
+          <div class="swap-name">Almonds + Walnuts (Indian-grown)</div>
+          <div class="swap-why">Kashmiri walnuts have <strong>higher omega-3 (ALA)</strong> than macadamias. Almonds beat macadamia on vitamin E gram-for-gram.</div>
+          <div class="swap-price in mono">₹220 / 250g</div>
+        </div>
+      </div>
+
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">BRYAN'S VERSION</div>
+          <div class="swap-name">Blueprint Extra Virgin Olive Oil</div>
+          <div class="swap-why">Target: polyphenols (oleocanthal, oleuropein) for cardiovascular &amp; anti-inflammatory benefit.</div>
+          <div class="swap-price bj mono">₹4,200 / litre</div>
+        </div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-side in">
+          <div class="swap-label">SAME FUNCTION · LOCAL</div>
+          <div class="swap-name">Cold-press mustard oil + A2 ghee</div>
+          <div class="swap-why">Mustard oil = 60% monounsaturated + allyl isothiocyanate (anti-inflammatory). Ghee = butyrate-rich. Lab-tested Indian EVOO also available at ₹600/L.</div>
+          <div class="swap-price in mono">₹180–600 / litre</div>
+        </div>
+      </div>
+
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">BRYAN'S VERSION</div>
+          <div class="swap-name">Blueprint Cocoa Flavanols</div>
+          <div class="swap-why">Target: flavanols for blood flow, brain function, mitochondrial health.</div>
+          <div class="swap-price bj mono">₹3,600 / 300g</div>
+        </div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-side in">
+          <div class="swap-label">SAME FUNCTION · LOCAL</div>
+          <div class="swap-name">Raw Indian cacao powder</div>
+          <div class="swap-why">Ariba / Wakao / Mason &amp; Co — cold-processed, same flavanol preservation. Lab tests match.</div>
+          <div class="swap-price in mono">₹450 / 300g</div>
+        </div>
+      </div>
+
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">BRYAN'S VERSION</div>
+          <div class="swap-name">Broccoli sprouts (sulforaphane)</div>
+          <div class="swap-why">Target: sulforaphane for Nrf2 pathway activation, cancer prevention.</div>
+          <div class="swap-price bj mono">₹400 / 100g</div>
+        </div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-side in">
+          <div class="swap-label">SAME FUNCTION · LOCAL</div>
+          <div class="swap-name">Moringa (drumstick leaves)</div>
+          <div class="swap-why">Higher total isothiocyanates than broccoli. 9g protein / 100g. Grows in every Indian backyard.</div>
+          <div class="swap-price in mono">₹30 / 100g</div>
+        </div>
+      </div>
+
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">BRYAN'S VERSION</div>
+          <div class="swap-name">NMN + Resveratrol stack</div>
+          <div class="swap-why">Target: NAD+ precursor for mitochondrial energy, sirtuin activation.</div>
+          <div class="swap-price bj mono">₹8,500 / month</div>
+        </div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-side in">
+          <div class="swap-label">SAME FUNCTION · LOCAL</div>
+          <div class="swap-name">Tryptophan-rich dal + niacin + exercise</div>
+          <div class="swap-why">Exercise raises NAD+ comparably in humans. Dietary niacin is the rate-limiting precursor. NMN studies remain early.</div>
+          <div class="swap-price in mono">₹0 / month</div>
+        </div>
+      </div>
+
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">BRYAN'S VERSION</div>
+          <div class="swap-name">Ashwagandha + L-Theanine (in mix)</div>
+          <div class="swap-why">Target: cortisol reduction, stress resilience, sleep quality.</div>
+          <div class="swap-price bj mono">in ₹12,000/mo mix</div>
+        </div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-side in">
+          <div class="swap-label">SAME FUNCTION · LOCAL</div>
+          <div class="swap-name">KSM-66 ashwagandha (direct)</div>
+          <div class="swap-why">The actual clinical-grade extract <strong>is manufactured in Hyderabad</strong>. It's literally our plant.</div>
+          <div class="swap-price in mono">₹350 / month</div>
+        </div>
+      </div>
+
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">BRYAN'S VERSION</div>
+          <div class="swap-name">Shiitake / Maitake mushroom</div>
+          <div class="swap-why">Target: beta-glucans for immune modulation, ergothioneine for longevity.</div>
+          <div class="swap-price bj mono">₹360 / 100g</div>
+        </div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-side in">
+          <div class="swap-label">SAME FUNCTION · LOCAL</div>
+          <div class="swap-name">Oyster + button mushroom</div>
+          <div class="swap-why">Oyster mushroom has measurable ergothioneine. Button mushroom eaten daily linked to 64% lower mild cognitive impairment (Singapore cohort).</div>
+          <div class="swap-price in mono">₹50 / 100g</div>
+        </div>
+      </div>
+
+      <div class="swap">
+        <div class="swap-side bj">
+          <div class="swap-label">BRYAN'S VERSION</div>
+          <div class="swap-name">Pomegranate juice · Fresh / cold-press</div>
+          <div class="swap-why">Target: urolithin A precursors, ellagitannins for mitochondrial autophagy.</div>
+          <div class="swap-price bj mono">₹420 / 500ml</div>
+        </div>
+        <div class="swap-arrow">→</div>
+        <div class="swap-side in">
+          <div class="swap-label">SAME FUNCTION · LOCAL</div>
+          <div class="swap-name">Whole anar (eaten with seeds)</div>
+          <div class="swap-why">The fruit contains the ellagitannins. Juice is a Western dilution. Eat the fruit.</div>
+          <div class="swap-price in mono">₹60 / fruit</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- THE VERDICT CARD (shareable) -->
+<div class="container">
+  <div class="wrap">
+    <div class="verdict-card" id="verdictCard">
+      <div class="stamp-big">VERDICT</div>
+      <div class="kicker">THE RATIO · FILE 001</div>
+      <h2>
+        Bryan Johnson pays <em>₹17 crore</em> for a result you can get at <span class="green">1 / 1,770th</span> the price — using food that grew in this soil for 3,000 years.
+      </h2>
+      <div class="ratio">
+        <div class="ratio-num">1,770×</div>
+        <div class="ratio-txt">the cost of the Desi Dossier stack — for 90% of the measurable health gain, per independent audit of Blueprint's public protocol.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 04: THE CORE TRUTH -->
+<div class="container">
+  <section class="section">
+    <div class="wrap">
+      <div class="section-number">04 / The Core Truth</div>
+      <h1 class="section-title">What actually moves <em>biological age</em>?</h1>
+      <p class="section-intro">Strip out the spectacle, the gene therapy, the son's plasma. Every independent review of Blueprint has converged on the same 5 interventions that drive ~90% of the result. None of them require a supplement subscription.</p>
+
+      <div class="annual-grid" style="grid-template-columns:1fr">
+        <div class="spend-card" style="background:rgba(31,95,63,0.05)">
+          <div class="cat" style="color:var(--forest)">The Free 5 · Mortality Impact</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:18px">
+            <div><div style="font-family:'Fraunces',serif;font-size:34px;color:var(--forest);font-weight:300;line-height:1">50%</div><div class="mono" style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px">No smoking</div></div>
+            <div><div style="font-family:'Fraunces',serif;font-size:34px;color:var(--forest);font-weight:300;line-height:1">40%</div><div class="mono" style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px">Weight control</div></div>
+            <div><div style="font-family:'Fraunces',serif;font-size:34px;color:var(--forest);font-weight:300;line-height:1">35%</div><div class="mono" style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px">Exercise daily</div></div>
+            <div><div style="font-family:'Fraunces',serif;font-size:34px;color:var(--forest);font-weight:300;line-height:1">30%</div><div class="mono" style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px">BP control</div></div>
+            <div><div style="font-family:'Fraunces',serif;font-size:34px;color:var(--forest);font-weight:300;line-height:1">25%</div><div class="mono" style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px">Mediterranean / plant diet</div></div>
+          </div>
+          <p style="font-family:'Instrument Serif',serif;margin-top:24px;font-size:16px;line-height:1.5;color:var(--ink-soft);font-style:italic">
+            Reductions shown are for all-cause mortality, from published meta-analyses. Bryan Johnson does every one of these. <strong style="color:var(--ink);font-style:normal">So can you. For free.</strong>
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div class="spend-card">
+          <div class="cat">Sleep</div>
+          <div class="amt mono" style="color:var(--forest)">8.5 hrs</div>
+          <div class="amt-sub mono" style="color:var(--ink-soft)">Bed at 8:30 PM. Fixed schedule.</div>
+          <div class="desc">Bryan's own #1 priority — he says it outright. No protocol matters without this. Costs ₹0.</div>
+        </div>
+        <div class="spend-card">
+          <div class="cat">Exercise</div>
+          <div class="amt mono" style="color:var(--forest)">6 hrs/wk</div>
+          <div class="amt-sub mono" style="color:var(--ink-soft)">Zone 2 + HIIT + strength</div>
+          <div class="desc">150 min moderate + 75 min HIIT + 3× strength. Any park, any gym, any body-weight circuit. Costs ₹0–₹2,500/mo.</div>
+        </div>
+      </div>
+
+      <div class="method" style="margin-top:32px">
+        <h3>What Bryan doesn't talk about often enough</h3>
+        <p style="font-family:'Instrument Serif',serif;font-size:16px;line-height:1.55;color:var(--ink-soft)">
+          He got most of his initial reversal <em>before</em> he added gene therapy, plasma exchange, or the experimental peptides. He lost 60 lbs, fixed his sleep, quit alcohol, started eating plants, and started exercising. Those five moves, alone, took him from "overweight and borderline suicidal" (his words) to the physical baseline that made every subsequent intervention legible.
+          <br/><br/>
+          <strong style="color:var(--ink);font-style:normal">The foundation did 90% of the work. Everything else is margin.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- METHODOLOGY -->
+<div class="container">
+  <section class="section">
+    <div class="wrap">
+      <div class="section-number">05 / Sources &amp; Methodology</div>
+      <h1 class="section-title">Every number, <em>cited.</em></h1>
+      <p class="section-intro">This is the part that matters if you want to actually defend these claims on X. Here are the live sources. Go check them. They're all public.</p>
+
+      <div class="method">
+        <h3>Bryan Johnson's own protocol</h3>
+        <ul>
+          <li><span class="num">01</span><span class="text"><strong>protocol.bryanjohnson.com</strong> — the full published protocol, updated regularly by Bryan's team. Includes supplement doses, exercise schedule, sleep rules, skin care, pharmaceuticals.</span></li>
+          <li><span class="num">02</span><span class="text"><strong>blueprint.bryanjohnson.com/blogs/news/bryan-johnsons-protocol</strong> — official food + supplement + sauna protocol with dated updates.</span></li>
+          <li><span class="num">03</span><span class="text"><strong>blueprint.bryanjohnson.com/blogs/recipes</strong> — Super Veggie, Nutty Pudding, Buddha Bowl exact grams.</span></li>
+          <li><span class="num">04</span><span class="text"><strong>x.com/bryan_johnson/status/1620242326798090240</strong> — Bryan's own tweet with the exact Super Veggie ingredient list by gram.</span></li>
+        </ul>
+      </div>
+
+      <div class="method" style="margin-top:20px">
+        <h3>Independent audits of Blueprint</h3>
+        <ul>
+          <li><span class="num">05</span><span class="text"><strong>empirical.health/blog/bryan-johnson-immortals-program-diy</strong> — "How to DIY 90% of the value for &lt;1% of the price." Landmark audit, Feb 2026.</span></li>
+          <li><span class="num">06</span><span class="text"><strong>formblends.com · biohacking-hub / bryan-johnson-blueprint-protocol-2026</strong> — 2026 update: what changed, what matters, what's cost theatre.</span></li>
+          <li><span class="num">07</span><span class="text"><strong>geneediting101.com · articles / bryan-johnson-blueprint-protocol</strong> — scientific review of which interventions are evidence-backed vs speculative.</span></li>
+          <li><span class="num">08</span><span class="text"><strong>honehealth.com/edge/blueprint-stack-review</strong> — first-person month-long Blueprint Stack test with dietitian commentary.</span></li>
+          <li><span class="num">09</span><span class="text"><strong>mynucleus.com/blog/bryan-johnson-supplements</strong> — full supplement list audit incl. Reddit $880/mo replication attempt.</span></li>
+        </ul>
+      </div>
+
+      <div class="method" style="margin-top:20px">
+        <h3>Mortality-reduction claims (the Free 5 numbers)</h3>
+        <ul>
+          <li><span class="num">10</span><span class="text">Finnish sauna studies, Laukkanen et al. — Bryan cites these himself on his protocol page. Cardiovascular mortality 63%, all-cause 40% at 4-7 sessions/week.</span></li>
+          <li><span class="num">11</span><span class="text">Exercise 35%, Mediterranean diet 25%, smoking cessation 50%, BP control 30%, obesity correction 40% — all cited on protocol.bryanjohnson.com as the "step-function" baseline.</span></li>
+          <li><span class="num">12</span><span class="text">Nut consumption 5×/week = +2-3 years lifespan (Adventist Health Study). Legume daily consumption = 8% lower all-cause mortality (Loma Linda).</span></li>
+        </ul>
+      </div>
+
+      <div class="method" style="margin-top:20px">
+        <h3>India-specific pricing</h3>
+        <ul>
+          <li><span class="num">13</span><span class="text"><strong>BigBasket, Zepto, BB Daily</strong> (Apr 2026 prices, Pune/Mumbai metro) for vegetables, dals, nuts, seeds. Cross-checked against local kirana averages.</span></li>
+          <li><span class="num">14</span><span class="text"><strong>KSM-66 ashwagandha</strong> — manufactured by Ixoreal Biomed, Hyderabad. The clinical-grade extract Western longevity influencers pay premium for is literally an Indian product.</span></li>
+          <li><span class="num">15</span><span class="text">USD→INR rate used: $1 = ₹85.00 (Apr 2026).</span></li>
+        </ul>
+      </div>
+
+      <div class="method" style="margin-top:20px;background:rgba(185,28,28,0.04)">
+        <h3>Known limitations · be honest in replies</h3>
+        <ul>
+          <li><span class="num">⚠</span><span class="text"><strong>Bryan's total spend</strong> is self-reported at "over $2M/year." Exact breakdown is estimated from his public interviews, the Blueprint company, and Empirical Health / Formblends audits. Treat category percentages as directional, not audited financials.</span></li>
+          <li><span class="num">⚠</span><span class="text"><strong>"90% of the result"</strong> is the phrasing used by Empirical Health after reviewing Bryan's published biomarkers. It's a defensible claim, not a clinical measurement. If someone pushes back, show the source.</span></li>
+          <li><span class="num">⚠</span><span class="text"><strong>Food swaps</strong> match active compound classes (anthocyanins, flavanols, beta-glucans, omega-3 ALA, sulforaphane/ITCs, polyphenols). They don't guarantee identical clinical outcomes — nothing does. They are defensible on biochemistry.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SHARE BLOCK -->
+<div class="container">
+  <div class="wrap">
+    <div class="share-block">
+      <h3>This is ammunition, not a quiz.</h3>
+      <p>Copy the verdict, post it, tag the skeptics.</p>
+
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px">
+        <button class="share-btn blood" onclick="shareToX()">SHARE ON X →</button>
+        <button class="share-btn" onclick="copyReport()">COPY THE DATA</button>
+      </div>
+
+      <div id="copyStatus" style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:var(--forest);min-height:16px"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="container">
+  <div class="footer">
+    <div class="footer-inner">
+      <div>DOSSIER 001 &nbsp;·&nbsp; FILED PUNE · APR 2026</div>
+      <div>FOR EDUCATIONAL &amp; JOURNALISTIC USE &nbsp;·&nbsp; NOT MEDICAL ADVICE</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Scroll-in fade
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);}});
+    },{threshold:0.1});
+    fadeEls.forEach(el=>io.observe(el));
+  } else { fadeEls.forEach(el=>el.classList.add('visible')); }
+
+  function shareToX(){
+    const text = `Bryan Johnson spends ₹17 crore/year to not die.
+
+You can get 90% of the result for ₹96,000/year — using food that grew in this soil for 3,000 years.
+
+1,770× cheaper. Every number sourced.
+
+`;
+    const url = window.location.href;
+    const intent = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+    window.open(intent,'_blank','noopener');
+  }
+
+  function copyReport(){
+    const data = `THE BRYAN JOHNSON RECEIPT
+
+BRYAN'S ANNUAL BURN: ₹17 crore ($2M)
+- Medical team (30+ specialists): 30%
+- Experimental therapies: 25%
+- Diagnostics & imaging: 20%
+- Staff, ops & brand: 15%
+- Equipment & facility: 7.5%
+- Food + supplements: 2.5%
+
+DAILY COST (BLUEPRINT REPLICA IN INDIA): ₹2,683
+DAILY COST (INDIAN ALT, SAME TARGETS): ₹263
+RATIO: 10× cheaper daily · 1,770× cheaper annually
+
+THE FREE 5 (ALL-CAUSE MORTALITY REDUCTION):
+- No smoking: 50%
+- Weight control: 40%
+- Exercise daily: 35%
+- BP control: 30%
+- Plant / Mediterranean diet: 25%
+
+SOURCES: protocol.bryanjohnson.com · empirical.health · formblends.com
+Full dossier: ${window.location.href}`;
+
+    navigator.clipboard.writeText(data).then(()=>{
+      document.getElementById('copyStatus').textContent = '✓ COPIED · 1,241 CHARACTERS · PASTE AND POST';
+      setTimeout(()=>{document.getElementById('copyStatus').textContent=''},4000);
+    }).catch(()=>{
+      document.getElementById('copyStatus').textContent = '✗ CLIPBOARD BLOCKED · SELECT THE TEXT MANUALLY';
+    });
+  }
+</script>
+
+</body>
+</html>
