@@ -364,13 +364,6 @@
         </label>
       </div>
 
-      <div class="consent">
-        <input type="checkbox" id="consentWA" checked />
-        <label for="consentWA" style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:0">
-          Also send my report on WhatsApp (optional — uncheck to decline).
-        </label>
-      </div>
-
       <div class="gate-err" id="gateErr"></div>
 
       <div class="controls" style="margin-top:22px">
@@ -739,7 +732,6 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
   const email = document.getElementById('gateEmail').value.trim();
   const consentDPDP = document.getElementById('consentDPDP').checked;
   const consent18 = document.getElementById('consent18').checked;
-  const consentWA = document.getElementById('consentWA').checked;
   const err = document.getElementById('gateErr');
   const submitBtn = document.getElementById('gateSubmit');
   function showErr(msg){ err.textContent = msg; err.classList.add('show'); }
@@ -758,7 +750,7 @@ document.getElementById('gateForm').addEventListener('submit', async function(e)
 
   // Persist locally
   state.email = email;
-  state.consent = { dpdp: consentDPDP, age18: consent18, whatsapp: consentWA, ts: Date.now() };
+  state.consent = { dpdp: consentDPDP, age18: consent18, ts: Date.now() };
   state.submitted = Date.now();
   saveState();
 

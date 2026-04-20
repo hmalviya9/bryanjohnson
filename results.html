@@ -562,8 +562,6 @@
         <p class="section-intro">Every Sunday morning IST we'll email you which of your stack items dropped in price this week, and flag any supplement that just got an FSSAI licence change or recall. Unsubscribe in one tap.</p>
       </div>
       <div class="share">
-        <div class="t">Want this on WhatsApp too? <strong>98% open rate</strong> vs email's ~25% — we'll send a condensed version every Sunday.</div>
-        <button class="btn" id="waOpt">Send on WhatsApp →</button>
         <a class="btn ghost" href="dashboard.html">← Back to dossier</a>
       </div>
     </section>
@@ -730,14 +728,6 @@ function render(){
       renderSwaps(a);
       renderTiers(a);
     });
-  });
-
-  // WhatsApp opt
-  document.getElementById('waOpt').addEventListener('click',function(){
-    this.textContent='Added · we\'ll message Sunday';
-    this.disabled=true;
-    this.style.background='var(--forest)';
-    this.style.borderColor='var(--forest-deep)';
   });
 
   document.getElementById('dateTag').textContent = new Date().toLocaleDateString('en-IN',{month:'short',year:'numeric'}).toUpperCase();
