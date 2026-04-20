@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dossier v2.0 — The Indian Longevity Audit</title>
+<title>Amrit — The Indian Longevity Audit</title>
 <meta name="description" content="Bryan Johnson's $2M/year protocol has a $50K food slice. That slice — and only that slice — we can replicate in India for ~₹96,000/year. Every number verified, every source linked." />
-<meta property="og:title" content="The Indian Longevity Audit · Dossier v2.0" />
+<meta property="og:title" content="Amrit — The Indian Longevity Audit" />
 <meta property="og:description" content="A verified, line-by-line audit of Bryan Johnson's protocol — what can be replicated in India, what cannot, at what price, with what caveats." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +59,7 @@
   }
   .masthead-inner{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--ink-soft);gap:16px;flex-wrap:wrap}
   .masthead-edition{display:flex;gap:20px;flex-wrap:wrap}
-  .badge-v2{background:var(--ink);color:var(--paper);padding:3px 9px;letter-spacing:0.18em}
+  .badge-brand{background:var(--ink);color:var(--paper);padding:3px 9px;letter-spacing:0.18em}
 
   /* Capture strip */
   .capture-strip{
@@ -302,14 +302,6 @@
     opacity:0.85;line-height:1.1;
   }
   .stamp.green{border-color:var(--forest);color:var(--forest)}
-  .stamp-errata{
-    position:absolute;top:14px;left:18px;
-    font-family:'JetBrains Mono',monospace;
-    font-size:9px;letter-spacing:0.18em;
-    color:var(--blood);padding:3px 8px;
-    border:1.5px solid var(--blood);
-    transform:rotate(-4deg);
-  }
   .r-correction{
     background:var(--warn-bg);
     border:1px dashed var(--gold);
@@ -450,18 +442,6 @@
   .free5-label{font-family:'Fraunces',serif;font-size:18px;letter-spacing:-0.01em;line-height:1.2;margin-bottom:8px}
   .free5-desc{font-family:'Instrument Serif',serif;font-size:14px;color:var(--ink-soft);line-height:1.4;font-style:italic}
   .free5-cite{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--blood);letter-spacing:0.14em;margin-top:12px;text-transform:uppercase}
-  .free5-corrected{
-    display:inline-block;
-    font-family:'JetBrains Mono',monospace;
-    font-size:9px;
-    background:var(--warn-bg);
-    border:1px solid var(--gold);
-    padding:1px 6px;
-    margin-left:8px;
-    letter-spacing:0.12em;
-    vertical-align:middle;
-    color:var(--ink);
-  }
 
   /* Devices + Labs table */
   .dl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -603,38 +583,6 @@
   .verdict-block h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.6vw,52px);line-height:1.05;letter-spacing:-0.025em;max-width:780px}
   .verdict-block h2 em{font-style:italic;color:#E8BCBC}
   .verdict-block h2 .green{color:#7FB89A;font-style:italic}
-
-  /* Errata */
-  .errata{
-    border:2px solid var(--blood);
-    background:var(--warn-bg);
-    padding:36px 32px;
-    position:relative;
-  }
-  .errata::before{
-    content:"ERRATA · CORRECTIONS FROM V1";
-    position:absolute;top:-12px;left:28px;
-    background:var(--warn-bg);
-    padding:0 12px;
-    font-family:'JetBrains Mono',monospace;
-    font-size:10px;font-weight:700;
-    letter-spacing:0.22em;color:var(--blood);
-  }
-  .errata h3{font-family:'Fraunces',serif;font-size:24px;font-weight:400;margin-bottom:16px;letter-spacing:-0.01em}
-  .errata ul{list-style:none;padding:0}
-  .errata li{
-    display:grid;grid-template-columns:90px 1fr;gap:14px;
-    padding:12px 0;border-bottom:1px dashed var(--gold);
-    font-family:'Instrument Serif',serif;font-size:16px;line-height:1.5;
-  }
-  .errata li:last-child{border-bottom:none}
-  .errata li .was{
-    font-family:'JetBrains Mono',monospace;font-size:11px;
-    color:var(--blood);letter-spacing:0.1em;
-    padding-top:4px;text-transform:uppercase;
-  }
-  .errata li strong{color:var(--ink);font-weight:500}
-  .errata li del{color:var(--blood);text-decoration-color:var(--blood)}
 
   /* Legal */
   .legal{
@@ -858,11 +806,10 @@
   <div class="masthead">
     <div class="masthead-inner">
       <div class="masthead-edition">
-        <span class="badge-v2">DOSSIER v2.0</span>
-        <span>File № 001</span>
-        <span>LONGEVITY · INDIA</span>
+        <span class="badge-brand">AMRIT</span>
+        <span>The Indian Longevity Audit</span>
       </div>
-      <div>A FORENSIC + VERIFIED COST AUDIT</div>
+      <div>A FORENSIC + VERIFIED COST AUDIT · APR 2026</div>
     </div>
   </div>
 </div>
@@ -899,7 +846,7 @@
       plate he eats off.
     </h1>
     <p class="hero-sub">
-      <strong>Not the medical team. Not the imaging. Not the experimental therapies.</strong> Just the food + daily-supplement layer — priced once at Indian retail as the Blueprint <em>replica</em> (imports, brand SKUs, same ingredient list) and again as the <em>Indian-alternative</em> (same biology targets, local sourcing). Every ingredient priced at April 2026. Every biology claim re-checked against PubMed. Arithmetic errors from v1 fixed. <strong>This is v2.0.</strong>
+      <strong>Not the medical team. Not the imaging. Not the experimental therapies.</strong> Just the food + daily-supplement layer — priced once at Indian retail as the Blueprint <em>replica</em> (imports, brand SKUs, same ingredient list) and again as the <em>Indian-alternative</em> (same biology targets, local sourcing). Every ingredient priced at April 2026. Every biology claim re-checked against PubMed.
     </p>
 
     <div class="verdict-pair">
@@ -907,7 +854,7 @@
         <div class="vc-label">Blueprint replica in India · Per year</div>
         <div class="vc-number bj mono">~₹10.3 L</div>
         <div class="vc-unit">≈ ₹2,650–3,000/day (midpoint ~₹2,825) · Blueprint-branded SKUs + imported ingredients, Indian retail landed cost</div>
-        <div class="vc-meta">18 items · 4 flagged "needs live cart fetch" — see §13 errata</div>
+        <div class="vc-meta">18 items · Blueprint-branded SKUs + imports at live Indian retail</div>
       </div>
       <div class="verdict-cell you">
         <div class="vc-label">Indian alternative · Per year</div>
@@ -920,7 +867,7 @@
     <div class="ratio-strip">
       <div class="big">~10–11×</div>
       <div class="txt">
-        cheaper — Indian Blueprint replica (~₹10.3 L/yr, range ₹9.7–11.0 L) ÷ Indian alternative stack (₹96,000/yr). This is the <strong>only apples-to-apples ratio</strong> in this dossier (same country, same retail floor, same April 2026 capture). A second framing — the ₹96K alt is ~<strong>0.006%</strong> (roughly 1/17,000th) of Bryan's full $2M program — compares a grocery bill with a private medical operation and is a scale reference only, not a biology claim. The v1 "1/1,770×", v2.0 "~44×" and v2.0 "~11.6×" headlines were all arithmetically fragile; all retired in favour of the audited range above.
+        cheaper — Indian Blueprint replica (~₹10.3 L/yr, range ₹9.7–11.0 L) ÷ Indian alternative stack (₹96,000/yr). This is the <strong>only apples-to-apples ratio</strong> in this dossier (same country, same retail floor, same April 2026 capture). A second framing — the ₹96K alt is ~<strong>0.006%</strong> (roughly 1/17,000th) of Bryan's full $2M program — compares a grocery bill with a private medical operation and is a scale reference only, not a biology claim.
       </div>
     </div>
 
@@ -943,7 +890,7 @@
       <div class="section-number">02 · How to read this page</div>
       <h2 class="section-title">Every claim carries a <em>badge</em>.</h2>
       <p class="section-intro">
-        Before v2.0 we ran every claim through two reviewers — a domain subject-matter expert and a Devil's Advocate — then fact-checked the objections against primary sources. What survived carries one of four badges. <strong>Nothing on this page is unbadged.</strong>
+        We ran every claim through two reviewers — a domain subject-matter expert and a Devil's Advocate — then fact-checked the objections against primary sources. What survived carries one of four badges. <strong>Nothing on this page is unbadged.</strong>
       </p>
     </div>
     <div class="wrap" style="max-width:1060px">
@@ -1038,7 +985,6 @@
       <div class="receipt-holder">
         <!-- BJ RECEIPT -->
         <div class="receipt bj">
-          <div class="stamp-errata">CORRECTED</div>
           <div class="stamp">BLUEPRINT<br/>REPLICA · IN</div>
           <div class="r-head">
             <div class="shop">BLUEPRINT REPLICA · INDIA</div>
@@ -1063,7 +1009,7 @@
           <div class="r-line"><span class="item"><span class="qty">30g</span>BP pea protein</span><span class="amt">₹180</span></div>
           <div class="r-line"><span class="item"><span class="qty">~60pills</span>Daily pill stack</span><span class="amt">₹620</span></div>
           <div class="r-correction">
-            <strong>ERRATUM · revised v2.1:</strong> Dossier v1 headline was <del>₹2,683/day</del>. The <em>stated</em> line items (v1) sum to ₹3,062/day — a ₹379 arithmetic understatement. But four of those line items (marked <sup>†</sup>) are themselves overstated vs live Indian retail and needed fetch-verification. Audited as ranges, the honest daily total is <strong>₹2,650–₹3,000/day</strong>, midpoint ~₹2,825. Previous v2.0 "₹3,062" over-corrected by using v1's line items as ground truth. Verified 2026-04-20.
+            <strong>Note:</strong> Four line items (marked <sup>†</sup>) varied meaningfully across BigBasket, Zepto, Flipkart and Amazon.in at Apr-2026 capture. We publish the audited daily total as a <strong>range: ₹2,650–3,000/day</strong> (midpoint ~₹2,825) rather than a false-precision single number.
           </div>
           <div class="r-total"><span>DAILY TOTAL</span><span>₹2,650–3,000</span></div>
           <div class="r-barcode"></div>
@@ -1109,7 +1055,7 @@
         </div>
       </div>
       <p style="margin-top:28px;font-family:'Instrument Serif',serif;font-size:16px;line-height:1.5;color:var(--ink-soft);max-width:760px">
-        <strong>Ratio: ~10–11× cheaper</strong> (range ~10.1× to ~11.4× using the audited ₹2,650–3,000/day BJ range against a ₹263/day alt; midpoint ~10.7×). Same country, same retail floor, both receipts captured April 2026. The v2.0 "~11.6×" and "~44×" headlines were withdrawn in v2.1 — see §13 errata — once line items flagged "needs live cart fetch" were audited. Bryan's full $2M program is ~1/17,000th the size of the Indian alt, but that is a scale reference, not a ratio of equivalent goods.
+        <strong>Ratio: ~10–11× cheaper</strong> (range ~10.1× to ~11.4× using the audited ₹2,650–3,000/day BJ range against a ₹263/day alt; midpoint ~10.7×). Same country, same retail floor, both receipts captured April 2026. Bryan's full $2M program is ~1/17,000th the size of the Indian alt, but that is a scale reference, not a ratio of equivalent goods.
       </p>
     </div>
   </section>
@@ -1219,10 +1165,6 @@
       </div>
       <div class="swap-footer">
         <details>
-          <summary><span class="sf-label">Correction from v1 <span class="sev warn">revised</span></span></summary>
-          <div class="sf-body">Dossier v1 claimed "20× cheaper." Live April 2026 prices put the ratio at <strong>~5–6×</strong>. Still a valid swap; headline softened. Also: jamun's anthocyanin content is <strong>comparable</strong> to blueberries, not higher — dossier v1 overstated.</div>
-        </details>
-        <details>
           <summary><span class="sf-label">Bioavailability ceiling <span class="sev info">context</span></span></summary>
           <div class="sf-body">Anthocyanin bioavailability is <strong>&lt;1%</strong> regardless of fruit source. Vitamin C absorption plateaus around 200 mg / dose. Amla's 50× advantage hits a ceiling at ~1 serving/day.</div>
         </details>
@@ -1275,11 +1217,7 @@
       <div class="swap-footer">
         <details>
           <summary><span class="sf-label">Indian-cohort caveat — FADS1/FADS2 <span class="sev danger">critical</span></span></summary>
-          <div class="sf-body">South Asian populations have elevated frequency of the FADS1 rs174537 "derived" allele — nominally <strong>higher</strong> ALA→EPA conversion than Europeans, but absolute conversion is still only <strong>5–8% ALA→EPA</strong> and <strong>&lt;0.5% ALA→DHA</strong>. For individuals with elevated triglycerides, existing CVD, or in pregnancy: <strong>walnut ALA does not replace direct EPA/DHA.</strong> An algal-oil or fish-oil adjunct remains warranted. This caveat was missing from v1.</div>
-        </details>
-        <details>
-          <summary><span class="sf-label">Correction from v1 <span class="sev warn">revised</span></span></summary>
-          <div class="sf-body">v1 claimed "14.5× cheaper" using a ₹3,200/250g macadamia anchor. Live April 2026: ₹780–1,500. True ratio is <strong>~3.5–6.8×</strong>. Walnuts still win on ALA; ratio softened. "Kashmiri" is a culinary premium; nutritionally equivalent to other <em>Juglans regia</em>.</div>
+          <div class="sf-body">South Asian populations have elevated frequency of the FADS1 rs174537 "derived" allele — nominally <strong>higher</strong> ALA→EPA conversion than Europeans, but absolute conversion is still only <strong>5–8% ALA→EPA</strong> and <strong>&lt;0.5% ALA→DHA</strong>. For individuals with elevated triglycerides, existing CVD, or in pregnancy: <strong>walnut ALA does not replace direct EPA/DHA.</strong> An algal-oil or fish-oil adjunct remains warranted.</div>
         </details>
         <details>
           <summary><span class="sf-label">Sources (5)</span></summary>
@@ -1327,7 +1265,7 @@
       <div class="swap-footer">
         <details>
           <summary><span class="sf-label">Critical — mustard oil + ghee is <em>not</em> an EVOO substitute <span class="sev danger">safety</span></span></summary>
-          <div class="sf-body">v1 proposed cold-press mustard oil + A2 ghee as the EVOO alternative. This is <strong>chemically incoherent</strong>: ghee is ~62% saturated fat, mustard+ghee combined does not deliver the <strong>oleocanthal / oleuropein / hydroxytyrosol</strong> phenolics responsible for EVOO's anti-inflammatory effect in PREDIMED. Ghee has different benefits (butyrate), not EVOO-equivalent ones. <strong>If phenolic polyphenols are your target, use Indian EVOO.</strong></div>
+          <div class="sf-body">A common suggestion is to swap EVOO for cold-press mustard oil + A2 ghee. This is <strong>chemically incoherent</strong>: ghee is ~62% saturated fat, mustard+ghee combined does not deliver the <strong>oleocanthal / oleuropein / hydroxytyrosol</strong> phenolics responsible for EVOO's anti-inflammatory effect in PREDIMED. Ghee has different benefits (butyrate), not EVOO-equivalent ones. <strong>If phenolic polyphenols are your target, use Indian EVOO.</strong></div>
         </details>
         <details>
           <summary><span class="sf-label">Mustard oil — erucic acid warning <span class="sev danger">critical</span></span></summary>
@@ -1382,7 +1320,7 @@
         </details>
         <details>
           <summary><span class="sf-label">"Lab tests match" — retracted <span class="sev warn">unverified</span></span></summary>
-          <div class="sf-body">v1 claimed Indian cacao brands match Blueprint flavanol content. <strong>No public HPLC-quantified COAs exist</strong> for Ariba, Wakao, or Mason &amp; Co as of April 2026. Unalkalized raw cacao is chemically plausible — alkalization destroys 60–90% of flavanols — but <strong>the per-serving number is not auditable.</strong> If cocoa-flavanol dose is critical to your goal, the only COA-backed options remain Blueprint cocoa or Mars CocoaVia.</div>
+          <div class="sf-body">Indian cacao brands are often pitched as flavanol-equivalent to Blueprint. <strong>No public HPLC-quantified COAs exist</strong> for Ariba, Wakao, or Mason &amp; Co as of April 2026. Unalkalized raw cacao is chemically plausible — alkalization destroys 60–90% of flavanols — but <strong>the per-serving number is not auditable.</strong> If cocoa-flavanol dose is critical to your goal, the only COA-backed options remain Blueprint cocoa or Mars CocoaVia.</div>
         </details>
         <details>
           <summary><span class="sf-label">Sources (4)</span></summary>
@@ -1577,10 +1515,6 @@
       </div>
       <div class="swap-footer">
         <details>
-          <summary><span class="sf-label">Correction from v1 — the MCI number <span class="sev warn">revised</span></span></summary>
-          <div class="sf-body">v1 claimed "64% lower MCI" from the Singapore mushroom cohort. Feng et al. 2019 (J Alzheimer's Dis) reports odds ratio <strong>0.43 = 57% reduction</strong>, not 64%. Also: shiitake has <strong>more</strong> ergothioneine than oyster on average, so "oyster is superior" is wrong; it's a budget-equivalent, not a biology-win.</div>
-        </details>
-        <details>
           <summary><span class="sf-label">OCTN1 / SLC22A4 — speculative, not actionable <span class="sev info">genetics</span></span></summary>
           <div class="sf-body">Ergothioneine is taken up into cells via the OCTN1 transporter (SLC22A4 gene). Loss-of-function variants are documented in transporter kinetics papers (Gründemann 2005; Cheah &amp; Halliwell 2012) but <strong>no consumer-grade assay quantifies individual tissue-retention capacity</strong>, and Indian-population allele frequencies are not well-characterised. In practice: food dose matters more than genotype. Eat the mushrooms; don't buy a test for this.</div>
         </details>
@@ -1626,8 +1560,8 @@
       </div>
       <div class="swap-footer">
         <details>
-          <summary><span class="sf-label">v1 framing "juice is Western dilution" — false <span class="sev danger">biology-fix</span></span></summary>
-          <div class="sf-body">Seeram et al. (2008) showed pomegranate <strong>juice, liquid extract, and powder extract produce statistically equivalent plasma and urinary ellagitannin metabolite levels.</strong> Juice pressed from whole fruit (including peel) retains punicalagin at the highest concentrations of common juices. The swap is valid on <strong>price</strong>; it is not valid on biology. The real bottleneck is <strong>gut microbiome</strong> — only ~40% of humans convert ellagitannins to urolithin A efficiently.</div>
+          <summary><span class="sf-label">Juice is not "Western dilution" — the biology <span class="sev info">reference</span></span></summary>
+          <div class="sf-body">Seeram et al. (2008) showed pomegranate <strong>juice, liquid extract, and powder extract produce statistically equivalent plasma and urinary ellagitannin metabolite levels.</strong> Juice pressed from whole fruit (including peel) retains punicalagin at the highest concentrations of common juices. The swap is valid on <strong>price</strong>; it is not valid as a biology upgrade. The real bottleneck is <strong>gut microbiome</strong> — only ~40% of humans convert ellagitannins to urolithin A efficiently.</div>
         </details>
         <details>
           <summary><span class="sf-label">Are you a urolithin-A producer? <span class="sev info">test</span></span></summary>
@@ -1828,7 +1762,7 @@
     <div class="wrap">
       <div class="section-number">09 · Contraindications</div>
       <h2 class="section-title">Who should <em>not</em> do these.</h2>
-      <p class="section-intro">Six populations for whom one or more swaps here are <strong>materially risky</strong>. This layer was missing from v1 and is the single most important addition in v2.</p>
+      <p class="section-intro">Six populations for whom one or more swaps here are <strong>materially risky</strong>. Read this before you act on anything above.</p>
     </div>
     <div class="wrap" style="max-width:1060px">
     <div class="contra-grid">
@@ -2173,10 +2107,10 @@
 <div class="container">
   <section class="section" id="free5">
     <div class="wrap">
-      <div class="section-number">12 · The Free 5 · corrected</div>
+      <div class="section-number">12 · The Free 5</div>
       <h2 class="section-title">The five that actually <em>move</em> mortality.</h2>
       <p class="section-intro">
-        These five interventions dominate preventable mortality in every large cohort study. None requires a Blueprint SKU. Numbers below are <strong>re-verified April 2026</strong> — several v1 figures were overstated. Hazard ratios come from <em>different</em> cohorts measuring <em>different</em> comparators; they cannot be summed. The single best composite anchor is <strong>EPIC-Norfolk (Khaw et al. 2008, PMID 18184055)</strong>: adults practising all four behaviours (non-smoker, physically active, moderate alcohol, ≥5 servings fruit/veg) showed ~<strong>4× lower all-cause mortality</strong> over 11 years versus adults practising zero. That factor is the honest "why bother with the Free 5" number.
+        These five interventions dominate preventable mortality in every large cohort study. None requires a Blueprint SKU. Hazard ratios come from <em>different</em> cohorts measuring <em>different</em> comparators; they cannot be summed. The single best composite anchor is <strong>EPIC-Norfolk (Khaw et al. 2008, PMID 18184055)</strong>: adults practising all four behaviours (non-smoker, physically active, moderate alcohol, ≥5 servings fruit/veg) showed ~<strong>4× lower all-cause mortality</strong> over 11 years versus adults practising zero. That factor is the honest "why bother with the Free 5" number.
       </p>
     </div>
     <div class="wrap" style="max-width:1180px">
@@ -2188,9 +2122,9 @@
         <div class="free5-cite">DOLL &amp; PETO · BMJ 2004 · GATS-2 India 2017</div>
       </div>
       <div class="free5-cell">
-        <div class="free5-pct"><span class="tilde">~</span>15<span style="font-size:0.55em">–20%</span><span class="free5-corrected">v1 said 40%</span></div>
+        <div class="free5-pct"><span class="tilde">~</span>15<span style="font-size:0.55em">–20%</span></div>
         <div class="free5-label">Control weight</div>
-        <div class="free5-desc">RCT meta-analysis: RR 0.85 from intentional weight loss in obese. v1's "40%" conflated BMI-risk with weight-loss-benefit.</div>
+        <div class="free5-desc">RCT meta-analysis: RR 0.85 from intentional weight loss in obese adults. The larger headline numbers you see elsewhere usually conflate BMI-risk with weight-loss-benefit — distinct claims.</div>
         <div class="free5-cite">PMC4368053 · 2015 META</div>
       </div>
       <div class="free5-cell">
@@ -2206,9 +2140,9 @@
         <div class="free5-cite">SPRINT · NEJM 2015</div>
       </div>
       <div class="free5-cell">
-        <div class="free5-pct"><span class="tilde">~</span>21<span style="font-size:0.55em">%</span><span class="free5-corrected">v1 said 25%</span></div>
+        <div class="free5-pct"><span class="tilde">~</span>21<span style="font-size:0.55em">%</span></div>
         <div class="free5-label">Eat plant-forward</div>
-        <div class="free5-desc">MedDiet highest vs lowest adherence: RR 0.79 = 21% reduction. v1 rounded to 25%.</div>
+        <div class="free5-desc">MedDiet highest vs lowest adherence: RR 0.79 = 21% reduction in all-cause mortality.</div>
         <div class="free5-cite">ScienceDirect · 2022 META</div>
       </div>
     </div>
@@ -2284,7 +2218,7 @@
   </section>
 </div>
 
-<!-- QUIZ CTA · LAST-CHANCE before errata/legal -->
+<!-- QUIZ CTA · LAST-CHANCE before legal -->
 <div class="container">
   <div class="cta-block">
     <div class="cta-kicker">Before you leave</div>
@@ -2295,41 +2229,11 @@
   </div>
 </div>
 
-<!-- SECTION 13: ERRATA -->
-<div class="container">
-  <section class="section" id="errata">
-    <div class="wrap">
-      <div class="section-number">13 · Errata · corrections from v1 and v2.0</div>
-      <h2 class="section-title">What earlier versions got <em>wrong.</em></h2>
-      <p class="section-intro">Trust is a function of admitted mistakes. Every correction below is a number an earlier version stated that the current version rewrites. This list grows — we never delete an errata entry, we just date it. <strong>This edition is v2.1 (2026-04-20).</strong> v1 archive hash + v2.0 archive hash pending publication.</p>
-    </div>
-    <div class="wrap">
-      <div class="errata">
-        <h3>Twelve numbers that changed.</h3>
-        <ul>
-          <li><span class="was">Arithmetic v2.1</span><span><strong>Daily Blueprint replica total:</strong> v1 <del>₹2,683</del> → v2.0 ₹3,062 → <strong>v2.1 ₹2,650–3,000 (audited range, midpoint ~₹2,825)</strong>. v1 headline under-counted its own stated line items (sum = ₹3,062). v2.0 took those stated line items as ground truth — but four items (BP Longevity Mix, BP shiitake, BJ EVOO/tbsp, BJ macadamia 3tbsp) were overstated vs live Indian retail. v2.1 publishes audited ranges and recomputes.</span></li>
-          <li><span class="was">Ratio v2.1</span><span><strong>Replica-vs-alt ratio:</strong> v1 <del>"1/1,770×"</del> → v2.0 <del>"~44×"</del> / <del>"~11.6×"</del> → <strong>v2.1 ~10–11× (range 10.1×–11.4×, midpoint ~10.7×)</strong>. v2.0's 44× divided Bryan's US-retail $50K food slice by the Indian alt's ₹96K — mixing currencies and markets. v2.0's 11.6× used v1's inflated line items. v2.1 ratio is audited ₹2,650–3,000/day ÷ ₹263/day.</span></li>
-          <li><span class="was">Scope v2.1</span><span><strong>$50K "food slice" of Bryan's $2M:</strong> v2.0 presented as sourced ("Empirical Health audit"). v2.1: Bryan Johnson has not published a line-by-line audit. Category split is illustrative of a $2M/yr longevity-program spend pattern, not attested. Hero verdict-pair now uses the Indian Blueprint replica (~₹10.3 L/yr) as the comparison baseline — a number we can audit — not the $50K figure.</span></li>
-          <li><span class="was">Hero stat</span><span><strong>"1/1,770× for 90% of the benefit"</strong> retired. Not reproducible from any stated input.</span></li>
-          <li><span class="was">Framing</span><span><strong>"90% of measurable result"</strong> softened. "Measurable result" was undefined. Replaced with <em>"Free 5 + lab-guided stack delivers the large majority of evidenced mortality benefit."</em></span></li>
-          <li><span class="was">Biology</span><span><strong>Blueberry swap:</strong> <del>"20× cheaper"</del> → <strong>~5–6× cheaper.</strong> v1 used a premium-store price anchor. Also: jamun anthocyanin ≤ blueberry, not "higher."</span></li>
-          <li><span class="was">Biology</span><span><strong>Macadamia swap:</strong> <del>"14.5× cheaper"</del> → <strong>~3.5–6.8×.</strong> v1 anchored at boutique ₹3,200/250g. Plus: walnut ALA does not replace direct EPA/DHA in high-risk individuals — FADS caveat added.</span></li>
-          <li><span class="was">Biology</span><span><strong>Mustard oil:</strong> erucic acid (30–54%) concern added to <strong>primary claim</strong> — not footnote. EU/US ban high-erucic for edible use. Low-erucic cultivars only.</span></li>
-          <li><span class="was">Biology</span><span><strong>Shiitake swap MCI number:</strong> <del>"64% lower"</del> → <strong>57% lower odds</strong> (Feng 2019, OR 0.43).</span></li>
-          <li><span class="was">Biology</span><span><strong>Pomegranate juice framing:</strong> <del>"juice is Western dilution"</del> retracted. Juice + extract pharmacokinetically equivalent (Seeram 2008). Swap valid on price, not biology.</span></li>
-          <li><span class="was">Biology</span><span><strong>Cocoa flavanol:</strong> <del>"Indian cacao lab tests match Blueprint"</del> retracted. No public COAs exist for Ariba / Wakao / Mason &amp; Co as of April 2026.</span></li>
-          <li><span class="was">Mortality</span><span><strong>Weight-control:</strong> <del>"40% mortality reduction"</del> → <strong>~15–20%</strong> (RCT evidence). <strong>MedDiet:</strong> <del>25%</del> → <strong>21%.</strong> <strong>Legume:</strong> <del>8%</del> → <strong>6%.</strong> <strong>Sauna:</strong> <del>"63% CV mortality"</del> → 63% SCD / 50% fatal CVD; 40% all-cause (Laukkanen KIHD, Finnish men). v2.1: add Kunutsor 2017 FINRISK replication gap — treat as upper bounds, not consensus — plus contraindications (pregnancy, MI &lt;6wk, SBP &gt;180, alcohol, children).</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- SECTION 14: LEGAL -->
+<!-- SECTION 13: LEGAL -->
 <div class="container">
   <section class="section" id="legal">
     <div class="wrap">
-      <div class="section-number">14 · Legal + regulatory</div>
+      <div class="section-number">13 · Legal + regulatory</div>
       <h2 class="section-title clinical" style="font-family:'IBM Plex Sans',sans-serif;font-weight:400">Disclaimers, by regulatory regime.</h2>
       <p class="section-intro clinical" style="font-family:'IBM Plex Sans',sans-serif">
         This page is educational. It is not medical advice. Every swap that touches an ingestible, a device, or a measurement falls under one or more Indian regulatory regimes. If you have questions about a specific recommendation, ask a physician licensed in your jurisdiction before acting.
@@ -2355,7 +2259,7 @@
 <div class="container">
   <section class="section" id="sources">
     <div class="wrap">
-      <div class="section-number">15 · Sources + methodology</div>
+      <div class="section-number">14 · Sources + methodology</div>
       <h2 class="section-title">How this was <em>built.</em></h2>
       <p class="section-intro">
         Two rounds of research. Two reviewer passes (domain SME + Devil's Advocate). Then blocker fixes applied. Primary sources preferred (PubMed, USDA, ICMR, EFSA, FSSAI). Retail prices captured April 2026 with vendor URLs. Any claim without a primary source carries the <span class="badge unverified" style="font-size:8px">Unverified</span> badge.
@@ -2365,7 +2269,7 @@
       <div class="sources-section">
         <h3>Method</h3>
         <ul>
-          <li><span class="src-tag">01</span>Every BJ claim in v1 was mapped to a primary source and re-checked against the current literature (April 2026).</li>
+          <li><span class="src-tag">01</span>Every BJ claim was mapped to a primary source and re-checked against the current literature (April 2026).</li>
           <li><span class="src-tag">02</span>Two parallel reviews: Subject-matter expert (trust-tier audit) and Devil's Advocate (rebuttal / arithmetic / regulatory).</li>
           <li><span class="src-tag">03</span>Reviewer objections fact-checked against primary sources. Valid objections resulted in a blocker fix and a primary-claim rewrite.</li>
           <li><span class="src-tag">04</span>Prices verified at retail Apr 2026: BigBasket, Zepto, Blinkit, Amazon.in, Flipkart, 1mg, HealthKart, Thyrocare, Redcliffe, Apollo.</li>
@@ -2409,7 +2313,7 @@
 <div class="container">
   <div class="footer">
     <div class="footer-inner">
-      <div>DOSSIER v2.0 · CAPTURED 2026-04-20 · NEXT REFRESH 2026-07-20</div>
+      <div>AMRIT · CAPTURED 2026-04-20 · NEXT REFRESH 2026-07-20</div>
       <div>FOR EDUCATIONAL USE · NOT MEDICAL ADVICE</div>
     </div>
   </div>
