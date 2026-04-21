@@ -50,6 +50,14 @@
 
   .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
+  /* Disclaimer banner */
+  .reg-banner{background:rgba(185,28,28,0.06);border-bottom:1px solid var(--ink)}
+  .reg-banner-inner{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;gap:16px;align-items:flex-start;font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.5;color:var(--ink-soft)}
+  .reg-banner-icon{flex-shrink:0;width:22px;height:22px;border:1.5px solid var(--blood);color:var(--blood);font-family:'Fraunces',serif;font-weight:400;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:1px;font-style:italic}
+  .reg-banner strong{color:var(--ink);font-weight:500}
+  .reg-banner em{font-style:italic;color:var(--blood)}
+  .reg-banner .reg-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blood);display:block;margin-bottom:4px}
+
   /* Hero */
   .hero{padding:80px 0 32px}
   .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--blood);margin-bottom:22px;display:flex;align-items:center;gap:14px}
@@ -205,6 +213,16 @@
       <a href="er-score.html" class="active">ER Score</a>
       <a href="quiz.html">Take the quiz</a>
     </nav>
+  </div>
+</div>
+
+<div class="reg-banner">
+  <div class="reg-banner-inner">
+    <div class="reg-banner-icon">i</div>
+    <div>
+      <span class="reg-tag">Editorial — not a diagnostic tool</span>
+      <strong>What the ER Score is (and isn't).</strong> This is a self-report heuristic calibrated against public research on mitochondrial psychobiology (Martin Picard, Columbia) and ancestral daily-rhythm practice (Ayurvedic Dinacharya). It is <em>not</em> a clinical test. For the real measurements: DEXA, fasting insulin, apoB, VO2 max, HRV — and a physician who reads them. <strong>ER scores shown for public figures are editorial estimates</strong>, not derived from the quiz below.
+    </div>
   </div>
 </div>
 

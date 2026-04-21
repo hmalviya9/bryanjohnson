@@ -54,6 +54,14 @@
   .topbar-nav a.active{color:var(--blood)}
   .badge-mini{background:var(--ink);color:var(--paper);padding:3px 9px;letter-spacing:0.18em}
 
+  /* Disclaimer banner */
+  .reg-banner{background:rgba(185,28,28,0.06);border-bottom:1px solid var(--ink)}
+  .reg-banner-inner{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;gap:16px;align-items:flex-start;font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.5;color:var(--ink-soft)}
+  .reg-banner-icon{flex-shrink:0;width:22px;height:22px;border:1.5px solid var(--blood);color:var(--blood);font-family:'Fraunces',serif;font-weight:400;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:1px;font-style:italic}
+  .reg-banner strong{color:var(--ink);font-weight:500}
+  .reg-banner em{font-style:italic;color:var(--blood)}
+  .reg-banner .reg-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blood);display:block;margin-bottom:4px}
+
   /* Hero */
   .hero{max-width:1200px;margin:0 auto;padding:80px 24px 40px}
   .kicker{
@@ -242,6 +250,16 @@
       <a href="er-score.html">ER Score</a>
       <a href="quiz.html">Take the quiz</a>
     </nav>
+  </div>
+</div>
+
+<div class="reg-banner">
+  <div class="reg-banner-inner">
+    <div class="reg-banner-icon">i</div>
+    <div>
+      <span class="reg-tag">Editorial — not medical advice · not a diagnostic tool</span>
+      <strong>Read this first.</strong> Spend figures and daily protocols are compiled from publicly available books, interviews, podcasts, documentaries, and press reporting. Linked sources on each dossier are the primary records we could verify; uncited references are well-attested but lack a single canonical URL. Items marked <em>estimated</em> are inferred from reported habits and industry pricing. <strong>ER scores for public figures are editorial estimates</strong>, not quiz-derived — they are calibrated judgments, not measurements. Nothing here is intended to diagnose, treat, or prevent any condition. Consult a licensed physician before changing diet, training, or supplement behaviour.
+    </div>
   </div>
 </div>
 

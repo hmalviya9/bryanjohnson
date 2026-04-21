@@ -51,6 +51,14 @@
 
   .container{max-width:1180px;margin:0 auto;padding:0 24px}
 
+  /* Disclaimer banner */
+  .reg-banner{background:rgba(185,28,28,0.06);border-bottom:1px solid var(--ink)}
+  .reg-banner-inner{max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;gap:16px;align-items:flex-start;font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.5;color:var(--ink-soft)}
+  .reg-banner-icon{flex-shrink:0;width:22px;height:22px;border:1.5px solid var(--blood);color:var(--blood);font-family:'Fraunces',serif;font-weight:400;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:1px;font-style:italic}
+  .reg-banner strong{color:var(--ink);font-weight:500}
+  .reg-banner em{font-style:italic;color:var(--blood)}
+  .reg-banner .reg-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blood);display:block;margin-bottom:4px}
+
   /* Masthead / return link */
   .return-bar{
     max-width:1180px;margin:0 auto;padding:20px 24px 0;
@@ -316,6 +324,16 @@
   </div>
 </div>
 
+<div class="reg-banner">
+  <div class="reg-banner-inner">
+    <div class="reg-banner-icon">i</div>
+    <div>
+      <span class="reg-tag">Editorial — not medical advice · not a diagnostic tool</span>
+      <strong>About this dossier.</strong> Protocol, spend, and ER score are compiled from publicly available books, interviews, podcasts, and press reporting. Linked citations below are the primary records we verified directly; uncited references are well-attested but lack a single canonical URL. Items marked <em>estimated</em> are inferred from reported habits and industry pricing. <strong>The ER score for this profile is an editorial estimate</strong>, not quiz-derived. Nothing here is intended to diagnose, treat, or prevent any condition. Consult a licensed physician before changing diet, training, or supplement behaviour.
+    </div>
+  </div>
+</div>
+
 <div class="return-bar">
   <a href="blueprints.html">← Back to all fifty dossiers</a>
 </div>
@@ -378,7 +396,7 @@
         <div class="spend-card">
           <div class="cat">${esc(sb.label)}</div>
           <div class="amt">${fmtUsd(sb.amount_usd)}</div>
-          <div class="amt-sub">${fmtInr((sb.amount_usd||0)*83)} / year</div>
+          <div class="amt-sub">${fmtInr((sb.amount_usd||0)*85)} / year</div>
           ${sb.note ? `<div class="desc">${esc(sb.note)}</div>` : ''}
           <div class="bar"><div class="bar-fill" style="width:${pct}%"></div></div>
           <div class="pct">${pct}% of total</div>
@@ -445,7 +463,7 @@
           <div class="h-stat">
             <div class="lbl">Annual spend</div>
             <div class="val"><em>${fmtUsd(profile.annual_spend_usd)}</em></div>
-            <div class="sub">${fmtInr(profile.annual_spend_inr || (profile.annual_spend_usd||0)*83)} · ${esc(profile.spend_confidence || profile.confidence || 'estimated')}</div>
+            <div class="sub">${fmtInr(profile.annual_spend_inr || (profile.annual_spend_usd||0)*85)} · ${esc(profile.spend_confidence || profile.confidence || 'estimated')}</div>
           </div>
           <div class="h-stat">
             <div class="lbl">ER Score</div>
