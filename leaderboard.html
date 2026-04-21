@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Leaderboard · The Longevity Audit</title>
+<meta name="description" content="Who spends the most. Who gets the most for their money. A ranked comparison of fifty longevity blueprints — spend, ER score, and longevity-per-dollar." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F2ECDD;
+    --paper-dark:#E8E0CC;
+    --paper-line:#D6CCAD;
+    --ink:#1A1611;
+    --ink-soft:#4A3F2E;
+    --blood:#B91C1C;
+    --blood-deep:#7F1D1D;
+    --forest:#1F5F3F;
+    --forest-deep:#0F3D24;
+    --gold:#B8860B;
+    --stamp:#A62020;
+    --warn-bg:#FBEFC8;
+    --danger-bg:#F8DAD8;
+    --clinical:#2C3E50;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Instrument Serif',Georgia,serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0px, transparent 31px, rgba(26,22,17,0.04) 31px, rgba(26,22,17,0.04) 32px),
+      radial-gradient(circle at 20% 10%, rgba(184,134,11,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(185,28,28,0.04) 0%, transparent 40%);
+    min-height:100vh;
+  }
+  a{color:var(--ink);text-decoration:none}
+  a:hover{color:var(--blood)}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:-0.01em}
+
+  .topbar{border-bottom:1px solid var(--ink);padding:14px 0;background:var(--paper);position:sticky;top:0;z-index:20}
+  .topbar-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
+  .topbar a{color:var(--ink-soft)}
+  .topbar a:hover{color:var(--blood)}
+  .topbar-nav{display:flex;gap:22px;flex-wrap:wrap}
+  .topbar-nav a.active{color:var(--blood)}
+  .badge-mini{background:var(--ink);color:var(--paper);padding:3px 9px;letter-spacing:0.18em}
+
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  .hero{padding:80px 0 40px}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:var(--blood);margin-bottom:22px;display:flex;align-items:center;gap:14px}
+  .kicker::before{content:"";width:40px;height:2px;background:var(--blood)}
+  h1.display{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(44px,7.5vw,96px);line-height:1.01;letter-spacing:-0.03em;color:var(--ink);margin-bottom:24px;max-width:15ch}
+  h1.display em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--blood)}
+  .lede{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--ink-soft);max-width:62ch;line-height:1.42;margin-bottom:32px}
+
+  .filter-row{padding:16px 0 40px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+  .filter-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft)}
+  .filter-group{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;padding:7px 14px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);cursor:pointer;transition:background .12s,color .12s}
+  .chip:hover{background:var(--warn-bg)}
+  .chip.active{background:var(--ink);color:var(--paper)}
+
+  /* Section */
+  .section{padding:72px 0;border-bottom:1px solid var(--ink)}
+  .section-number{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:var(--blood);text-transform:uppercase;margin-bottom:14px}
+  .section-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(32px,5vw,56px);line-height:1.02;letter-spacing:-0.02em;margin-bottom:18px}
+  .section-title em{font-style:italic;color:var(--blood)}
+  .section-intro{font-family:'Instrument Serif',serif;font-size:20px;line-height:1.55;max-width:720px;color:var(--ink-soft);margin-bottom:40px}
+
+  /* Bar chart */
+  .bars{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--ink)}
+  .bar-row{
+    display:grid;grid-template-columns:40px 1.5fr 4fr 120px 70px;gap:18px;
+    align-items:center;padding:14px 0;border-bottom:1px dashed var(--paper-line);
+    cursor:pointer;transition:background .1s;
+  }
+  .bar-row:hover{background:var(--warn-bg)}
+  .bar-rank{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink-soft);font-weight:600;text-align:right}
+  .bar-rank.top3{color:var(--blood);font-size:15px}
+  .bar-name{font-family:'Fraunces',serif;font-weight:300;font-size:22px;line-height:1.1;letter-spacing:-0.015em}
+  .bar-name .sub{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);letter-spacing:0.12em;margin-top:2px;text-transform:uppercase}
+  .bar-track{height:20px;background:var(--paper-dark);border:1px solid var(--ink);position:relative}
+  .bar-fill{height:100%;background:var(--blood);opacity:0.82;transition:width .6s cubic-bezier(.22,.94,.42,1)}
+  .bar-fill.forest{background:var(--forest)}
+  .bar-fill.gold{background:var(--gold)}
+  .bar-amt{font-family:'Fraunces',serif;font-size:22px;font-weight:300;letter-spacing:-0.02em;color:var(--ink);text-align:right}
+  .bar-amt em{font-style:italic;color:var(--blood);font-weight:400}
+  .bar-er{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink-soft);text-align:right;letter-spacing:0.06em}
+  .bar-er .n{font-family:'Fraunces',serif;font-size:20px;color:var(--forest);font-weight:400;letter-spacing:-0.02em}
+  .bar-er.mid .n{color:var(--gold)}
+  .bar-er.lo .n{color:var(--stamp)}
+  @media(max-width:780px){
+    .bar-row{grid-template-columns:30px 1fr 70px;gap:10px}
+    .bar-row .bar-track,.bar-row .bar-er{display:none}
+  }
+
+  /* Category averages */
+  .cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+  @media(max-width:900px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.cat-grid{grid-template-columns:1fr}}
+  .cat-cell{padding:26px 22px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper)}
+  .cat-cell .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blood);margin-bottom:12px}
+  .cat-cell .big{font-family:'Fraunces',serif;font-weight:300;font-size:36px;line-height:1;color:var(--ink);letter-spacing:-0.02em;margin-bottom:4px}
+  .cat-cell .big em{font-style:italic;color:var(--blood)}
+  .cat-cell .sub{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);letter-spacing:0.1em;margin-bottom:12px}
+  .cat-cell .er{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);letter-spacing:0.1em;padding-top:10px;border-top:1px dashed var(--paper-line)}
+  .cat-cell .er .n{font-family:'Fraunces',serif;font-size:20px;color:var(--forest);letter-spacing:-0.015em;margin-right:4px}
+
+  /* Efficiency ranking */
+  .eff-list{display:flex;flex-direction:column;border-top:1px solid var(--ink)}
+  .eff-row{
+    display:grid;grid-template-columns:40px 1fr 1fr 100px;gap:18px;
+    padding:18px 0;border-bottom:1px dashed var(--paper-line);
+    align-items:center;cursor:pointer;
+  }
+  .eff-row:hover{background:var(--warn-bg)}
+  .eff-rank{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--forest);font-weight:600;text-align:right}
+  .eff-name{font-family:'Fraunces',serif;font-weight:300;font-size:22px;line-height:1.1;letter-spacing:-0.015em}
+  .eff-name .sub{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);letter-spacing:0.12em;margin-top:2px;text-transform:uppercase}
+  .eff-ratio{font-family:'Instrument Serif',serif;font-style:italic;font-size:16px;color:var(--ink);line-height:1.35}
+  .eff-ratio strong{font-family:'Fraunces',serif;font-style:normal;color:var(--forest);font-size:22px;font-weight:400;letter-spacing:-0.02em;display:block}
+  .eff-er{text-align:right;font-family:'Fraunces',serif;font-size:24px;color:var(--forest);letter-spacing:-0.02em}
+  .eff-er .pts{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);letter-spacing:0.14em;display:block;margin-top:2px}
+  @media(max-width:700px){.eff-row{grid-template-columns:30px 1fr 80px}.eff-ratio{display:none}}
+
+  /* Stats strip */
+  .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin:32px 0}
+  .stat-cell{padding:22px 18px;border-right:1px solid var(--paper-line)}
+  .stat-cell:last-child{border-right:none}
+  .stat-num{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,3.2vw,42px);color:var(--ink);line-height:1;letter-spacing:-0.02em}
+  .stat-num em{font-style:italic;color:var(--blood)}
+  .stat-lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px}
+  @media(max-width:720px){.stats-strip{grid-template-columns:repeat(2,1fr)}.stat-cell{border-bottom:1px solid var(--paper-line)}.stat-cell:nth-last-child(-n+2){border-bottom:none}}
+
+  .loading{padding:80px 20px;text-align:center;font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;color:var(--ink-soft)}
+  .loading strong{display:block;font-family:'Fraunces',serif;font-weight:300;font-style:normal;font-size:28px;color:var(--ink);margin-bottom:10px}
+
+  footer{border-top:1px solid var(--ink);padding:40px 24px;background:var(--paper);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
+  .foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .disclaimer{max-width:620px;font-family:'Instrument Serif',serif;font-style:italic;font-size:13px;letter-spacing:0;text-transform:none;line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div><span class="badge-mini">v3</span> &nbsp; The Longevity Audit</div>
+    <nav class="topbar-nav">
+      <a href="dashboard.html">Dossier</a>
+      <a href="blueprints.html">Blueprints · 50</a>
+      <a href="leaderboard.html" class="active">Leaderboard</a>
+      <a href="er-score.html">ER Score</a>
+      <a href="quiz.html">Take the quiz</a>
+    </nav>
+  </div>
+</div>
+
+<section class="hero"><div class="container">
+  <div class="kicker">The Leaderboard · Dollars vs. Decades</div>
+  <h1 class="display">Who spends the most. Who <em>earns it back.</em></h1>
+  <p class="lede">One chart puts fifty blueprints side-by-side. Another asks the harder question: who's actually getting the most mitochondrial mileage out of every dollar they burn?</p>
+
+  <div class="stats-strip" id="statsStrip">
+    <div class="stat-cell"><div class="stat-num" id="statCount">—</div><div class="stat-lbl">Blueprints ranked</div></div>
+    <div class="stat-cell"><div class="stat-num" id="statTotal">—</div><div class="stat-lbl">Combined annual spend</div></div>
+    <div class="stat-cell"><div class="stat-num" id="statTop">—</div><div class="stat-lbl">Highest spend</div></div>
+    <div class="stat-cell"><div class="stat-num" id="statEff">—</div><div class="stat-lbl">Best ER / $1k</div></div>
+  </div>
+
+  <div class="filter-row">
+    <span class="filter-lbl">Filter</span>
+    <div class="filter-group" id="catFilters">
+      <button class="chip active" data-cat="all">All</button>
+      <button class="chip" data-cat="longevity">Longevity</button>
+      <button class="chip" data-cat="tech">Tech</button>
+      <button class="chip" data-cat="music">Music</button>
+      <button class="chip" data-cat="directors">Directors &amp; Artists</button>
+      <button class="chip" data-cat="athletes">Athletes &amp; Actors</button>
+    </div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-number">§01 · The Spend Ladder</div>
+  <h2 class="section-title">Annual <em>burn</em>, ranked.</h2>
+  <p class="section-intro">Highest-spend blueprints on top. Bars are scaled to the highest in the current filter — so the #1 is always 100%, and every other line shows how close it gets.</p>
+  <div class="bars" id="spendBars"><div class="loading"><strong>Loading rankings…</strong></div></div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-number">§02 · Category Averages</div>
+  <h2 class="section-title">What each <em>tribe</em> spends.</h2>
+  <p class="section-intro">The median blueprint in each category — who treats longevity as a job (and who treats it as a ritual).</p>
+  <div class="cat-grid" id="catGrid"></div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-number">§03 · Longevity per Dollar</div>
+  <h2 class="section-title">Who actually <em>earns</em> it back.</h2>
+  <p class="section-intro">ER score divided by annual spend (thousand-dollar units). Ranks the blueprints that extract the most measurable mitochondrial health per unit of money burned. Discipline, not dollars, wins here.</p>
+  <div class="eff-list" id="effList"></div>
+</div></section>
+
+<footer>
+  <div class="foot-inner">
+    <div>© Longevity Audit v3 &nbsp;·&nbsp; not medical advice</div>
+    <div class="disclaimer">Rankings use spend figures and ER scores compiled from public sources. Efficiency ratio is a synthetic metric — meant to provoke comparison, not replace clinical judgement.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  const $$ = s => Array.from(document.querySelectorAll(s));
+
+  const state = { all: [], cat: 'all' };
+
+  const fmtUsd = n => {
+    if(!n && n!==0) return '—';
+    if(n >= 1_000_000) return '$' + (n/1_000_000).toFixed(n%1_000_000===0?0:1) + 'M';
+    if(n >= 1_000) return '$' + (n/1_000).toFixed(0) + 'k';
+    return '$' + n;
+  };
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
+  const erClass = s => s>=80?'hi':s>=60?'mid':'lo';
+  const catLabel = c => ({longevity:'Longevity',tech:'Tech',music:'Music',directors:'Director · Artist',athletes:'Athlete · Actor'})[c] || c;
+
+  function load(){
+    fetch('data/profiles.json?cb=' + Date.now())
+      .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(j => {
+        state.all = (j.profiles || []).slice();
+        renderAll();
+      })
+      .catch(err => {
+        $('#spendBars').innerHTML = '<div class="loading"><strong>Data still compiling.</strong>Refresh in a moment.</div>';
+      });
+  }
+
+  function filtered(){
+    return state.cat === 'all' ? state.all : state.all.filter(p => p.category === state.cat);
+  }
+
+  function renderStats(){
+    const l = state.all;
+    const total = l.reduce((a,p) => a + (p.annual_spend_usd||0), 0);
+    const top = Math.max(...l.map(p => p.annual_spend_usd||0));
+    const eff = l
+      .filter(p => p.annual_spend_usd > 0 && p.er_score)
+      .map(p => ({ n: p.name, v: (p.er_score / (p.annual_spend_usd/1000)) }))
+      .sort((a,b) => b.v - a.v)[0];
+
+    $('#statCount').innerHTML = '<em>' + l.length + '</em>';
+    $('#statTotal').innerHTML = fmtUsd(total);
+    $('#statTop').innerHTML = fmtUsd(top);
+    $('#statEff').innerHTML = eff ? '<em>' + eff.n.split(' ')[0] + '</em>' : '—';
+  }
+
+  function renderSpendBars(){
+    const list = filtered().slice().sort((a,b) => (b.annual_spend_usd||0) - (a.annual_spend_usd||0));
+    const max = Math.max(...list.map(p => p.annual_spend_usd||0), 1);
+    $('#spendBars').innerHTML = list.map((p,i) => {
+      const pct = ((p.annual_spend_usd||0) / max) * 100;
+      const rank = i+1;
+      const rankCls = rank<=3 ? 'top3' : '';
+      const erCls = erClass(p.er_score||0);
+      return `
+        <a class="bar-row" href="profile.html?id=${encodeURIComponent(p.slug||p.id)}">
+          <div class="bar-rank ${rankCls}">${String(rank).padStart(2,'0')}</div>
+          <div class="bar-name">${esc(p.name)}<span class="sub">${catLabel(p.category)}</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
+          <div class="bar-amt"><em>${fmtUsd(p.annual_spend_usd)}</em></div>
+          <div class="bar-er ${erCls}"><span class="n">${p.er_score ?? '—'}</span>ER</div>
+        </a>`;
+    }).join('');
+  }
+
+  function renderCatGrid(){
+    const cats = ['longevity','tech','music','directors','athletes'];
+    $('#catGrid').innerHTML = cats.map(c => {
+      const list = state.all.filter(p => p.category === c);
+      if(!list.length) return '';
+      const spends = list.map(p => p.annual_spend_usd||0).sort((a,b)=>a-b);
+      const median = spends[Math.floor(spends.length/2)] || 0;
+      const ers = list.map(p => p.er_score||0).filter(n=>n);
+      const erAvg = ers.length ? Math.round(ers.reduce((a,b)=>a+b,0)/ers.length) : 0;
+      return `
+        <div class="cat-cell">
+          <div class="lbl">${catLabel(c)}</div>
+          <div class="big"><em>${fmtUsd(median)}</em></div>
+          <div class="sub">Median annual spend · ${list.length} blueprint${list.length!==1?'s':''}</div>
+          <div class="er"><span class="n">${erAvg}</span>avg ER score</div>
+        </div>`;
+    }).join('');
+  }
+
+  function renderEffList(){
+    const list = filtered()
+      .filter(p => p.annual_spend_usd > 0 && p.er_score)
+      .map(p => ({ ...p, eff: (p.er_score / (p.annual_spend_usd/1000)) }))
+      .sort((a,b) => b.eff - a.eff);
+    $('#effList').innerHTML = list.map((p,i) => `
+      <a class="eff-row" href="profile.html?id=${encodeURIComponent(p.slug||p.id)}">
+        <div class="eff-rank">${String(i+1).padStart(2,'0')}</div>
+        <div class="eff-name">${esc(p.name)}<span class="sub">${catLabel(p.category)}</span></div>
+        <div class="eff-ratio"><strong>${p.eff.toFixed(p.eff<1?2:1)}</strong>ER points per $1k/yr</div>
+        <div class="eff-er">${p.er_score}<span class="pts">ER Score</span></div>
+      </a>
+    `).join('');
+  }
+
+  function renderAll(){
+    renderStats();
+    renderSpendBars();
+    renderCatGrid();
+    renderEffList();
+  }
+
+  $$('#catFilters .chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      $$('#catFilters .chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.cat = btn.dataset.cat;
+      renderSpendBars();
+      renderEffList();
+    });
+  });
+
+  load();
+})();
+</script>
+
+</body>
+</html>

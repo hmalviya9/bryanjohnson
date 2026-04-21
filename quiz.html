@@ -53,6 +53,8 @@
   .topbar a{color:var(--ink-soft);text-decoration:none}
   .topbar a:hover{color:var(--blood)}
   .badge-mini{background:var(--ink);color:var(--paper);padding:3px 9px;letter-spacing:0.18em}
+  .topbar-nav{display:flex;gap:22px;flex-wrap:wrap}
+  .topbar-nav a.active{color:var(--blood)}
 
   /* Progress */
   .progress-wrap{
@@ -289,8 +291,14 @@
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div><a href="dashboard.html">← Dossier</a></div>
-    <div><span class="badge-mini">QUIZ</span> &nbsp; BUILD YOUR STACK</div>
+    <div><span class="badge-mini">v3</span> &nbsp; The Longevity Audit</div>
+    <nav class="topbar-nav">
+      <a href="dashboard.html">Dossier</a>
+      <a href="blueprints.html">Blueprints · 50</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="er-score.html">ER Score</a>
+      <a href="quiz.html" class="active">Quiz</a>
+    </nav>
   </div>
 </div>
 

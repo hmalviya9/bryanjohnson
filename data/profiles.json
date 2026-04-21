@@ -1,0 +1,2576 @@
+{
+  "meta": {
+    "version": "v3",
+    "generated": "2026-04-21",
+    "currency_note": "USD primary, INR converted at 83",
+    "disclaimer": "Spend figures and protocols compiled from publicly available interviews, books, podcasts, and reporting. Items marked estimated are inferred from reported habits and industry pricing — not disclosed directly by the subject."
+  },
+  "profiles": [
+    {
+      "id": "bryan-johnson",
+      "slug": "bryan-johnson",
+      "name": "Bryan Johnson",
+      "category": "longevity",
+      "subcategory": "Founder, Blueprint",
+      "age_approx": 47,
+      "confidence": "documented",
+      "tagline": "The open-source biohack. $2M a year, 67 supplements a day, biological age of 18.",
+      "hero_quote": "Don't die. Don't kill yourself. Don't kill others.",
+      "bio": "Founder who sold Braintree/Venmo to PayPal for $800M, then turned his own body into a research site. His Blueprint protocol is fully open-sourced with every biomarker published — an N=1 experiment running in public since 2021.",
+      "annual_spend_usd": 2000000,
+      "annual_spend_inr": 166000000,
+      "spend_confidence": "documented",
+      "spend_breakdown": [
+        {"label": "Diagnostics, MRI, blood panels, DEXA", "amount_usd": 500000, "note": "Quarterly full-body MRI, monthly blood panels across 70+ markers"},
+        {"label": "Supplements & compounds", "amount_usd": 180000, "note": "67 daily pills, NAD+ drips, peptides, rapamycin"},
+        {"label": "Food — organic, triple-tested", "amount_usd": 80000, "note": "1977 kcal/day, every ingredient lab-tested"},
+        {"label": "Medical & scientific team", "amount_usd": 800000, "note": "~30-person staff: physicians, researchers, chef, trainers"},
+        {"label": "Therapies — red light, plasma, HBOT", "amount_usd": 200000, "note": "Daily red light, weekly plasma, HBOT 5x/week"},
+        {"label": "Equipment & home facility", "amount_usd": 240000, "note": "Red light bed, hyperbaric chamber, cryotherapy unit"}
+      ],
+      "er_score": 92,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "Sleep is gospel (8.5h nightly, 67°F room, no food 6h before bed), diet is clean calorie-restriction, movement is daily zone-2 plus three strength sessions. The protocol exists specifically to lower mitochondrial wear — and the biomarkers back it up.",
+      "daily_routine": [
+        {"time": "04:30", "activity": "Wake. Red light therapy. Room at 67°F."},
+        {"time": "05:00", "activity": "45-min zone 2 cardio + 3x/week strength + HIIT accessories."},
+        {"time": "06:30", "activity": "Super Veggie — lentils, broccoli, cauliflower, shiitake."},
+        {"time": "09:00", "activity": "Green Giant — EVOO, cocoa, berries, nuts."},
+        {"time": "11:00", "activity": "Nutty Pudding. Final meal of the day."},
+        {"time": "20:30", "activity": "Blue-blocker glasses. Sleep preparation."},
+        {"time": "21:00", "activity": "Sleep — target 8.5 hours."}
+      ],
+      "protocol": {
+        "training": "45-min morning cardio in zone 2, 3x/week compound strength (deadlift, squat, bench, rows), HRV-gated — skips if variability drops.",
+        "diet": "Plant-forward, 1977 kcal/day, eating window 6:30am–11am. Every ingredient third-party tested. No alcohol, added sugar, or processed food.",
+        "sleep": "Perfect sleep score obsession. 8.5h nightly average. Room at 67°F. No food 6h before bed, no light after sunset.",
+        "breathwork": "Daily guided sessions. No extreme protocols — reports Wim Hof increases oxidative stress in his own labs.",
+        "supplements": "67 pills/day including rapamycin (6mg weekly), metformin, acarbose, NAC, collagen, creatine, taurine, lithium orotate, full-spectrum vitamins.",
+        "therapies": "Red light bed (daily), NAD+ IV (weekly), HBOT (5x/week), plasma therapy (quarterly), full-body MRI (quarterly)."
+      },
+      "signature_practices": [
+        "Plasma swap with his 17-year-old son (paused 2023 after flat results)",
+        "Nightly erection duration tracked as mitochondrial health marker",
+        "Entire Blueprint protocol open-sourced at blueprint.bryanjohnson.com",
+        "Publishes every biomarker publicly; invites critique"
+      ],
+      "sources": [
+        {"title": "Blueprint Protocol — official, open source", "url": "https://blueprint.bryanjohnson.com"},
+        {"title": "Don't Die — Netflix documentary (2025)", "url": "https://www.netflix.com"},
+        {"title": "The Peter Attia Drive, Episode 283", "url": ""},
+        {"title": "Bloomberg profile, 2023", "url": ""}
+      ]
+    },
+    {
+      "id": "peter-attia",
+      "slug": "peter-attia",
+      "name": "Peter Attia",
+      "category": "longevity",
+      "subcategory": "Physician, Outlive",
+      "age_approx": 52,
+      "confidence": "documented",
+      "tagline": "The longevity doctor to Silicon Valley. Author of Outlive. Zone 2 evangelist.",
+      "hero_quote": "The Centenarian Decathlon isn't ten events — it's the ten things you want to do at 95.",
+      "bio": "Stanford-trained surgeon who pivoted into longevity medicine, building a practice around the ultra-wealthy and publishing Outlive, the 2023 bestseller that turned Zone 2 cardio and VO2 max into household terms. Runs a popular podcast and clinical practice.",
+      "annual_spend_usd": 350000,
+      "annual_spend_inr": 29050000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Diagnostics — DEXA, CGM, apoB, advanced panels", "amount_usd": 60000, "note": "Quarterly comprehensive panels, CGM worn continuously"},
+        {"label": "Supplements & rapamycin", "amount_usd": 25000, "note": "Rapamycin, EPA, magnesium, vitamin D, creatine"},
+        {"label": "Food & nutrition coaching", "amount_usd": 40000, "note": "Protein-heavy, 1g/lb bodyweight daily, high-quality sourcing"},
+        {"label": "Training & gym", "amount_usd": 80000, "note": "Private coaching, Zone 2 bike, DEXA-calibrated strength work"},
+        {"label": "Therapies — sauna, cold, red light", "amount_usd": 45000, "note": "Home sauna and cold plunge, routine use"},
+        {"label": "Medical & lab infrastructure", "amount_usd": 100000, "note": "Clinical team access; specialised testing"}
+      ],
+      "er_score": 88,
+      "mito_type": "Steady Current",
+      "er_low_because": "Protein-forward diet, sub-180bpm Zone 2 cardio as daily cornerstone, 4-5 strength sessions per week, aggressive sleep discipline. The weak link Attia has publicly acknowledged is stress management — he struggled with it enough to write a whole chapter in Outlive.",
+      "daily_routine": [
+        {"time": "05:30", "activity": "Wake. Cold plunge (45°F) for 3 minutes."},
+        {"time": "06:00", "activity": "Zone 2 on the bike — 45–60 min, nasal breathing."},
+        {"time": "07:30", "activity": "Protein-heavy breakfast — eggs, Greek yogurt, berries."},
+        {"time": "13:00", "activity": "Strength training — compound lifts, rucking 2x/week."},
+        {"time": "18:00", "activity": "Family dinner — protein, slow carbs, no alcohol most nights."},
+        {"time": "22:00", "activity": "Sleep — target 8h, eye mask, blackout."}
+      ],
+      "protocol": {
+        "training": "Zone 2 cardio 4x/week (sub-lactate threshold), compound strength 4x/week, VO2 max intervals 1x/week, rucking.",
+        "diet": "1g protein per lb bodyweight. Low alcohol, no seed oils, minimal added sugar. Occasional extended fasts (dropped after finding them counterproductive for muscle).",
+        "sleep": "Non-negotiable 8h. Magnesium threonate, phosphatidylserine for stress nights. Screen curfew enforced.",
+        "breathwork": "Nasal breathing during cardio. Limited meditation practice — publicly discusses it as a weak point.",
+        "supplements": "Rapamycin (weekly), EPA/DHA, magnesium, vitamin D3+K2, creatine 5g/day, ashwagandha periodically.",
+        "therapies": "Cold plunge daily, sauna 4x/week (20 min @ 180°F), red light on recovery days."
+      },
+      "signature_practices": [
+        "The 'Centenarian Decathlon' — training for the 10 physical tasks you want at 95",
+        "Rucking as functional strength (pioneered the trend in longevity circles)",
+        "Public critic of resveratrol, NMN, and most hyped longevity supplements",
+        "Advocates for apoB screening over LDL"
+      ],
+      "sources": [
+        {"title": "Outlive — Random House, 2023", "url": ""},
+        {"title": "The Peter Attia Drive podcast archive", "url": "https://peterattiamd.com"},
+        {"title": "Early Medical clinical practice", "url": "https://www.earlymedical.com"}
+      ]
+    },
+    {
+      "id": "chris-hemsworth",
+      "slug": "chris-hemsworth",
+      "name": "Chris Hemsworth",
+      "category": "athletes",
+      "subcategory": "Actor, Centr",
+      "age_approx": 42,
+      "confidence": "reported",
+      "tagline": "Thor in production, surfer at rest. Owner of Centr, the $400/yr fitness app.",
+      "hero_quote": "I've never been interested in being ripped. I want to be functional and feel good.",
+      "bio": "Australian actor whose Thor transformations made hypertrophy-for-role a public fitness template. After learning in 2022 he carries two copies of the APOE4 gene (elevated Alzheimer's risk), he pivoted his protocol around brain health and published Limitless with Darren Aronofsky on Disney+.",
+      "annual_spend_usd": 400000,
+      "annual_spend_inr": 33200000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Personal trainer — Luke Zocchi", "amount_usd": 180000, "note": "Daily access, travels with productions"},
+        {"label": "Nutritionist & chef", "amount_usd": 90000, "note": "On-set and home, macro-tracked"},
+        {"label": "Diagnostics — genetic, cognitive, cardiac", "amount_usd": 40000, "note": "APOE4 protocol, quarterly panels"},
+        {"label": "Supplements", "amount_usd": 12000, "note": "Creatine, omega-3s, vitamin D, electrolytes"},
+        {"label": "Recovery — sauna, cold plunge, massage", "amount_usd": 50000, "note": "Home sauna, daily cold, deep-tissue 2x/week"},
+        {"label": "Centr R&D and equipment", "amount_usd": 28000, "note": "Home gym build, ongoing content production"}
+      ],
+      "er_score": 86,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "Surf-forward outdoor lifestyle, movement-first recovery rather than sedentary rest, heavy daily protein load, APOE4-conscious diet (low seed oils, high omega-3). The APOE4 diagnosis functions as a kind of forced discipline — he treats brain health as non-negotiable.",
+      "daily_routine": [
+        {"time": "05:30", "activity": "Wake. Surf check or outdoor movement."},
+        {"time": "07:00", "activity": "Strength session — 45 min, rotating split with Zocchi."},
+        {"time": "08:30", "activity": "Breakfast — eggs, avocado, oats or sweet potato."},
+        {"time": "14:00", "activity": "Surf or ocean swim with the kids."},
+        {"time": "19:00", "activity": "Family dinner — protein + vegetables, no alcohol in prep."},
+        {"time": "22:00", "activity": "Sleep — 8h target, blackout, cool room."}
+      ],
+      "protocol": {
+        "training": "High-volume hypertrophy during prep (2 sessions/day, 6–8 weeks out from role). Off-role: 45-min functional strength + surfing most days.",
+        "diet": "4000 kcal in bulk phases, 2500 in maintenance. Protein ~1g/lb. Low seed oil, Mediterranean-leaning since APOE4 diagnosis.",
+        "sleep": "8h minimum. Cool room, no screens past 9pm, meditation-assisted wind-down.",
+        "breathwork": "Wim Hof-style cold breath work before plunges. Regular guided meditation post-APOE4 news.",
+        "supplements": "Creatine, omega-3s, vitamin D, electrolytes. Intentionally minimal — no nootropics or PEDs (publicly stated).",
+        "therapies": "Cold plunge daily, sauna 3–4x/week, ocean recovery after sessions."
+      },
+      "signature_practices": [
+        "Two-a-days for 6–8 weeks before each Thor shoot — 25,000 kcal weeks in bulk",
+        "APOE4-targeted brain protocol: exercise, Mediterranean diet, stress reduction",
+        "Centr app operationalises his regimen — $400/yr, 2M+ subscribers",
+        "Took a break from acting in 2023 specifically to reduce cognitive load"
+      ],
+      "sources": [
+        {"title": "Limitless with Chris Hemsworth — Disney+, 2022", "url": ""},
+        {"title": "Men's Health cover, multiple years", "url": ""},
+        {"title": "Vanity Fair profile, November 2022", "url": ""},
+        {"title": "Centr app", "url": "https://centr.com"}
+      ]
+    },
+    {
+      "id": "andrew-huberman",
+      "slug": "andrew-huberman",
+      "name": "Andrew Huberman",
+      "category": "longevity",
+      "subcategory": "Neuroscientist, Stanford",
+      "age_approx": 50,
+      "confidence": "documented",
+      "tagline": "The podcast that made sunlight a protocol. Morning light, cold plunge, zone 2.",
+      "bio": "Stanford neuroscientist whose podcast turned obscure lab findings into mass-market morning routines — AG1, Athletic Greens, LMNT, and Momentous built businesses around his recommendations. Publicly criticised in 2024 for personal inconsistencies but protocol guidance remains influential.",
+      "annual_spend_usd": 80000,
+      "annual_spend_inr": 6640000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Supplements (personal)", "amount_usd": 18000, "note": "Momentous stack: magnesium, creatine, tongkat ali, rhodiola"},
+        {"label": "Training & recovery", "amount_usd": 20000, "note": "Gym, cold plunge, sauna"},
+        {"label": "Diagnostics", "amount_usd": 15000, "note": "Annual comprehensive panels, hormone testing"},
+        {"label": "Food quality", "amount_usd": 18000, "note": "Beef, fish, eggs heavy; minimal processed"},
+        {"label": "Tools & devices", "amount_usd": 9000, "note": "Red light, Brain.fm, Oura"}
+      ],
+      "er_score": 80,
+      "mito_type": "Steady Current",
+      "er_low_because": "Morning sunlight discipline, 11-min weekly deliberate cold exposure, fasted cardio, low-carbohydrate protein-forward eating. Stress management is the wild card — the 2024 personal reporting suggested more disorder than the protocol implies.",
+      "daily_routine": [
+        {"time": "06:00", "activity": "Wake. 10 min morning sunlight, no sunglasses."},
+        {"time": "06:30", "activity": "Fasted cardio — 30 min zone 2."},
+        {"time": "11:00", "activity": "Break fast — steak and eggs or similar."},
+        {"time": "15:00", "activity": "Strength training, 3–4x/week."},
+        {"time": "19:00", "activity": "Dinner — carbs timed to evening for sleep."},
+        {"time": "22:00", "activity": "Wind down, dim light, no screens after 10pm."}
+      ],
+      "protocol": {
+        "training": "Zone 2 cardio fasted, 3x/week strength (compound-heavy), rotating resistance and endurance blocks.",
+        "diet": "Low-carb morning, higher carb at dinner (sleep-loading). Beef, fish, eggs. 16h fasts 2–3x/week.",
+        "sleep": "8h target. Controversial 'afternoon NSDR' practice — non-sleep deep rest.",
+        "breathwork": "Cyclic sighing (two inhales, long exhale) for acute stress. Wim Hof occasional.",
+        "supplements": "Momentous magnesium threonate, creatine, tongkat ali, AG1, rhodiola, omega-3, vitamin D.",
+        "therapies": "Cold plunge 11 min/week total (protocol), sauna 1–2x/week, red light morning."
+      },
+      "signature_practices": [
+        "Popularised 'morning sunlight in the eyes' as a circadian reset",
+        "The '11 minutes of weekly cold' heuristic",
+        "NSDR (non-sleep deep rest) naps as cognition tool",
+        "Heavy commercial entanglement with recommended supplements — disclosed in 2024"
+      ],
+      "sources": [
+        {"title": "Huberman Lab podcast archive", "url": "https://hubermanlab.com"},
+        {"title": "New York Magazine profile, March 2024", "url": ""},
+        {"title": "Tim Ferriss Show, multiple episodes", "url": ""}
+      ]
+    },
+    {
+      "id": "david-sinclair",
+      "slug": "david-sinclair",
+      "name": "David Sinclair",
+      "category": "longevity",
+      "subcategory": "Geneticist, Harvard",
+      "age_approx": 56,
+      "confidence": "documented",
+      "tagline": "NMN's loudest advocate. Lifespan author. The sirtuins guy.",
+      "bio": "Harvard Medical School geneticist who turned his lab's work on sirtuins and NAD+ into a bestselling book (Lifespan, 2019) and a portfolio of biotech companies. Publicly claims his biological age is ~10 years below chronological — a claim that has drawn criticism for its marketing alignment.",
+      "annual_spend_usd": 60000,
+      "annual_spend_inr": 4980000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Supplements — NMN, resveratrol, metformin", "amount_usd": 18000, "note": "His own protocol, personally documented"},
+        {"label": "Diagnostics & epigenetic testing", "amount_usd": 15000, "note": "Horvath clocks, advanced panels"},
+        {"label": "Training & gym", "amount_usd": 10000, "note": "High-intensity intervals, light strength"},
+        {"label": "Food — plant-forward, time-restricted", "amount_usd": 12000, "note": "One main meal a day"},
+        {"label": "Tools & devices", "amount_usd": 5000, "note": "CGM, Oura, cold exposure gear"}
+      ],
+      "er_score": 78,
+      "mito_type": "Steady Current",
+      "er_low_because": "One-meal-a-day eating, consistent HIIT, cold exposure, sub-1800 kcal intake. The supplement stack is more famous than evidenced — Sinclair himself has published caveats that his daily regimen is self-experimentation, not a recommendation.",
+      "daily_routine": [
+        {"time": "06:30", "activity": "Wake. Yogurt with NMN, resveratrol, metformin."},
+        {"time": "07:00", "activity": "Cold shower or plunge."},
+        {"time": "09:00", "activity": "HIIT or brisk walking, 20–30 min."},
+        {"time": "14:00", "activity": "First real meal — plants-heavy, minimal sugar."},
+        {"time": "19:00", "activity": "Light dinner, no food after 20:00."},
+        {"time": "22:30", "activity": "Sleep — 7h average."}
+      ],
+      "protocol": {
+        "training": "Short daily HIIT, walking, minimal structured weight training.",
+        "diet": "Time-restricted feeding, one main meal per day. Plant-forward, low sugar, low red meat.",
+        "sleep": "7h target. Cold room, no late eating.",
+        "breathwork": "Occasional box breathing. Not a core practice.",
+        "supplements": "NMN 1g, resveratrol 1g (in yogurt for bioavailability), metformin 1g, TMG, vitamin D, K2, CoQ10, alpha-lipoic acid.",
+        "therapies": "Cold exposure (shower or plunge) daily. Intentional heat periodically."
+      },
+      "signature_practices": [
+        "The NMN + resveratrol protocol — massively popularised, scientifically contested",
+        "One meal a day with calorie restriction",
+        "Publishes his own biological-age readings",
+        "Founded Life Biosciences, sold Sirtris to GSK for $720M"
+      ],
+      "sources": [
+        {"title": "Lifespan — Atria Books, 2019", "url": ""},
+        {"title": "Lifespan Podcast archive", "url": ""},
+        {"title": "Sinclair Lab at Harvard Medical School", "url": "https://sinclair.hms.harvard.edu"}
+      ]
+    },
+    {
+      "id": "wim-hof",
+      "slug": "wim-hof",
+      "name": "Wim Hof",
+      "category": "longevity",
+      "subcategory": "Cold & breath practitioner",
+      "age_approx": 65,
+      "confidence": "documented",
+      "tagline": "The Iceman. Cold exposure, controlled hyperventilation, 26 world records.",
+      "bio": "Dutch extreme athlete who built a global practice around cold exposure and a proprietary breathing method, backed by Radboud University studies showing voluntary influence on the autonomic nervous system. The method is influential; the commercial ecosystem is contested.",
+      "annual_spend_usd": 15000,
+      "annual_spend_inr": 1245000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Food — simple, whole foods", "amount_usd": 6000, "note": "Minimal meat, raw vegetables, kefir"},
+        {"label": "Travel & outdoor expeditions", "amount_usd": 5000, "note": "Mountain climbs, cold-water entry"},
+        {"label": "Diagnostics — participates in academic studies", "amount_usd": 2000, "note": "Radboud & other research sites"},
+        {"label": "Minimal supplements / equipment", "amount_usd": 2000, "note": "Cold exposure gear, thermal"}
+      ],
+      "er_score": 82,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "Daily cold exposure, 30-minute morning breath-work, barefoot outdoor activity, minimal processed food, and no alcohol. Lives the protocol he teaches — the biomarkers from the 2014 Radboud study showed measurable autonomic control.",
+      "daily_routine": [
+        {"time": "06:00", "activity": "Wake. 30-min breath-work (3 rounds, retentions)."},
+        {"time": "07:00", "activity": "Cold immersion — 3–5 min, river or bath."},
+        {"time": "08:00", "activity": "Light breakfast — kefir, fruit."},
+        {"time": "11:00", "activity": "Outdoor walk, often barefoot."},
+        {"time": "18:00", "activity": "Main meal — vegetables, simple protein."},
+        {"time": "22:00", "activity": "Sleep — 7h average."}
+      ],
+      "protocol": {
+        "training": "Outdoor movement over gym work. Climbing, hiking, swimming in cold water.",
+        "diet": "Two meals/day usually, mostly plant-based. Kefir, grains, occasional fish.",
+        "sleep": "7h. Cold room, natural light cues.",
+        "breathwork": "Hof Method — 30–40 deep breaths, retention, repeat 3 rounds. Daily, morning.",
+        "supplements": "Minimal. Vitamin D in winter.",
+        "therapies": "Cold immersion daily. Heat contrast occasional."
+      },
+      "signature_practices": [
+        "Holds 26 Guinness records including longest ice bath (1h 52m)",
+        "Climbed Kilimanjaro shorts-and-shoes",
+        "Radboud 2014 study showed voluntary immune modulation",
+        "Pending lawsuits and family disputes around commercial empire"
+      ],
+      "sources": [
+        {"title": "Radboud University Medical Centre study, PNAS 2014", "url": ""},
+        {"title": "Wim Hof Method official site", "url": "https://wimhofmethod.com"},
+        {"title": "Vice documentary, 2015", "url": ""}
+      ]
+    },
+    {
+      "id": "jeff-bezos",
+      "slug": "jeff-bezos",
+      "name": "Jeff Bezos",
+      "category": "tech",
+      "subcategory": "Founder, Amazon",
+      "age_approx": 60,
+      "confidence": "reported",
+      "tagline": "Eight hours of sleep, famous transformation, and investor in Altos Labs.",
+      "bio": "Amazon founder whose physical transformation in his early 50s became a tabloid narrative, and whose checkbook backs Altos Labs — a stealth longevity biotech reported to have raised $3B+. Treats sleep as a CEO competency.",
+      "annual_spend_usd": 1200000,
+      "annual_spend_inr": 99600000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Personal trainer & coaching", "amount_usd": 300000, "note": "Reported daily access"},
+        {"label": "Diagnostics & concierge medicine", "amount_usd": 400000, "note": "Full-body screens, specialist access"},
+        {"label": "Food — private chef, quality sourcing", "amount_usd": 180000, "note": "Travels with chef"},
+        {"label": "Therapies — recovery, imaging, HBOT", "amount_usd": 200000, "note": "Estimated from industry norms"},
+        {"label": "Supplements & labs", "amount_usd": 60000, "note": "Private compounding"},
+        {"label": "Sleep environment & travel", "amount_usd": 60000, "note": "Controlled bedroom on yacht + homes"}
+      ],
+      "er_score": 76,
+      "mito_type": "Steady Current",
+      "er_low_because": "Publicly committed to 8h of sleep as a priority since the 2010s, regular strength training with visible results, active lifestyle (helicopter, fishing, Blue Origin training). Stress load is enormous but buffered by control over schedule.",
+      "daily_routine": [
+        {"time": "06:30", "activity": "Wake naturally — no alarm, prioritises sleep."},
+        {"time": "07:00", "activity": "Reads newspapers, coffee. Slow-morning discipline."},
+        {"time": "08:30", "activity": "Strength training — reported 4–5x/week."},
+        {"time": "10:00", "activity": "First meeting — no important decisions before this."},
+        {"time": "18:00", "activity": "Family dinner, blocks calendar for it."},
+        {"time": "22:30", "activity": "Sleep — 8h protected."}
+      ],
+      "protocol": {
+        "training": "Strength-heavy 4–5x/week with private coach. Rowing, helicopter training.",
+        "diet": "High-protein, quality sourcing. Breakfast of octopus publicly documented.",
+        "sleep": "8h non-negotiable. Publicly discussed as CEO competence.",
+        "breathwork": "Not publicly documented.",
+        "supplements": "Not publicly documented beyond standard concierge protocols.",
+        "therapies": "Estimated — executive-level recovery protocols standard in this tier."
+      },
+      "signature_practices": [
+        "Sleep-first philosophy: 'I make a small number of high-quality decisions'",
+        "Two-pizza rule for meetings, noon lunch",
+        "Backed Altos Labs with reported $3B toward cellular reprogramming",
+        "Transformation narrative documented in tabloids and Vogue"
+      ],
+      "sources": [
+        {"title": "Thrive Global interview, Arianna Huffington, 2018", "url": ""},
+        {"title": "Vogue profile, October 2023", "url": ""},
+        {"title": "MIT Technology Review on Altos Labs, 2022", "url": ""}
+      ]
+    },
+    {
+      "id": "mark-zuckerberg",
+      "slug": "mark-zuckerberg",
+      "name": "Mark Zuckerberg",
+      "category": "tech",
+      "subcategory": "Founder, Meta",
+      "age_approx": 40,
+      "confidence": "reported",
+      "tagline": "MMA phase, cattle raising, 4000-calorie bulks. The surprise longevity arc of the decade.",
+      "bio": "Meta CEO whose mid-30s pivot from pale hoodie into BJJ competitor became a cultural reset. Actively trains jiu-jitsu, surfs, and raises wagyu cattle in Hawaii — a physical curriculum that's clearly compensating for a decade of desk.",
+      "annual_spend_usd": 900000,
+      "annual_spend_inr": 74700000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "BJJ & MMA coaching", "amount_usd": 250000, "note": "Daily roll sessions, grappling coaches"},
+        {"label": "Private chef & food", "amount_usd": 180000, "note": "Reported 4000 kcal in bulking phases"},
+        {"label": "Diagnostics & medical", "amount_usd": 180000, "note": "Concierge medicine standard at tier"},
+        {"label": "Home gym & facilities", "amount_usd": 140000, "note": "Hawaii compound + training halls"},
+        {"label": "Supplements & recovery", "amount_usd": 80000, "note": "Estimated from reported stack"},
+        {"label": "Cattle operation (diet sourcing)", "amount_usd": 70000, "note": "Wagyu raising for personal consumption"}
+      ],
+      "er_score": 75,
+      "mito_type": "Steady Current",
+      "er_low_because": "Intense daily martial-arts training, frequent outdoor time in Hawaii, heavy protein intake, surfing and foiling. Sleep reported at 7h — the weak link in what's otherwise a high-performance profile.",
+      "daily_routine": [
+        {"time": "05:30", "activity": "Wake. Coffee, family time."},
+        {"time": "07:00", "activity": "BJJ roll or strength — 60–90 min."},
+        {"time": "09:00", "activity": "Breakfast — steak, eggs, carbs."},
+        {"time": "14:00", "activity": "Surf or foil session."},
+        {"time": "19:00", "activity": "Dinner with family — 4000 kcal day during bulks."},
+        {"time": "23:00", "activity": "Sleep — 7h, reported."}
+      ],
+      "protocol": {
+        "training": "BJJ 5x/week, strength 4x/week, surf/foil 3x/week. Competition prep cycles.",
+        "diet": "4000 kcal in training blocks. Wagyu, eggs, rice. Own cattle operation.",
+        "sleep": "7h reported. Cool room.",
+        "breathwork": "Cold immersion pre-training, standard pre-roll breath drills.",
+        "supplements": "Creatine, whey, omega-3 reported.",
+        "therapies": "Cold plunge, sauna at Kauai compound."
+      },
+      "signature_practices": [
+        "Competes in amateur BJJ tournaments",
+        "Raises macadamia-finished wagyu on Kauai",
+        "4000-calorie bulks to add mass for grappling",
+        "Daily foiling as active recovery"
+      ],
+      "sources": [
+        {"title": "Lex Fridman podcast #398", "url": ""},
+        {"title": "Joe Rogan Experience #2113", "url": ""},
+        {"title": "Wired cover story, 2023", "url": ""}
+      ]
+    },
+    {
+      "id": "elon-musk",
+      "slug": "elon-musk",
+      "name": "Elon Musk",
+      "category": "tech",
+      "subcategory": "Founder, Tesla/SpaceX/X",
+      "age_approx": 53,
+      "confidence": "reported",
+      "tagline": "Ozempic, Diet Coke, and a sleep deficit the size of a startup.",
+      "bio": "CEO of four companies whose personal protocol is more case study than template — publicly credited GLP-1s (Wegovy/Mounjaro) for his 2022 weight drop, operates on reported 5–6 hours of sleep, and consumes large amounts of Diet Coke. High performance by workload, high ER debt by biology.",
+      "annual_spend_usd": 500000,
+      "annual_spend_inr": 41500000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "GLP-1s & medical compounds", "amount_usd": 60000, "note": "Semaglutide/tirzepatide publicly credited"},
+        {"label": "Diagnostics", "amount_usd": 100000, "note": "Specialist access, MRIs post-stress events"},
+        {"label": "Private chef & food", "amount_usd": 90000, "note": "Minimal time to eat, protein shakes"},
+        {"label": "Personal trainer & gym", "amount_usd": 60000, "note": "Sporadic per reporting"},
+        {"label": "Recovery & sleep optimisation", "amount_usd": 90000, "note": "Attempts to recover from reported 5–6h sleep"},
+        {"label": "Concierge medicine & staff", "amount_usd": 100000, "note": "Estimated at tier"}
+      ],
+      "er_score": 45,
+      "mito_type": "Ghost Reactor",
+      "er_low_because": "Chronic sleep deficit is the single biggest ER tax, and Musk is publicly on the wrong side of it (5–6h nightly). Heavy Diet Coke, irregular eating, multi-company stress load all reinforce the pattern. The GLP-1 weight drop improved one marker; the underlying mitochondrial load is high.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. Diet Coke. Check replies on X."},
+        {"time": "09:00", "activity": "First meeting. Skips breakfast most days."},
+        {"time": "13:00", "activity": "Protein lunch if time permits — often skipped."},
+        {"time": "19:00", "activity": "Late meal — pasta, burgers, steak."},
+        {"time": "02:00", "activity": "Sleep — 5–6h reported."}
+      ],
+      "protocol": {
+        "training": "Irregular. Strength sessions sporadic. Martial arts claimed, rarely observed.",
+        "diet": "Famously poor — Diet Coke, fast food, irregular meals. Improved since GLP-1 usage.",
+        "sleep": "5–6h reported; Musk has described Ambien and red wine to sleep.",
+        "breathwork": "Not publicly documented.",
+        "supplements": "GLP-1s publicly disclosed. Standard vitamins assumed.",
+        "therapies": "MRIs after stress events; minimal ongoing recovery protocol."
+      },
+      "signature_practices": [
+        "Publicly credited Wegovy + fasting for 2022 weight drop",
+        "Sleeps on factory floors during production pushes",
+        "Tweeted about Ambien use — board cited it as a concern",
+        "Does not measure, does not track — inverse of Bryan Johnson"
+      ],
+      "sources": [
+        {"title": "Elon Musk by Walter Isaacson, 2023", "url": ""},
+        {"title": "Lex Fridman podcast, multiple", "url": ""},
+        {"title": "Twitter/X archive, 2022–2023", "url": ""}
+      ]
+    },
+    {
+      "id": "jack-dorsey",
+      "slug": "jack-dorsey",
+      "name": "Jack Dorsey",
+      "category": "tech",
+      "subcategory": "Founder, Block/Twitter",
+      "age_approx": 48,
+      "confidence": "reported",
+      "tagline": "One meal a day. Ice baths. Silent meditation retreats. The biohacking monk.",
+      "bio": "Ex-Twitter CEO, current Block chairman, whose 22-hour fasts and Vipassana retreats made him the face of tech minimalism. Has backed off some claims publicly (fasting intensity) but remains one of the most disciplined practitioners in the tech cohort.",
+      "annual_spend_usd": 120000,
+      "annual_spend_inr": 9960000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Vipassana retreats", "amount_usd": 10000, "note": "10-day silent retreats, annual"},
+        {"label": "Recovery gear — cold plunge, sauna", "amount_usd": 40000, "note": "Home cold plunge, IR sauna"},
+        {"label": "Diagnostics & CGM", "amount_usd": 18000, "note": "Comprehensive quarterly panels"},
+        {"label": "Supplements", "amount_usd": 8000, "note": "Minimalist: salt, vitamin D, creatine"},
+        {"label": "Training & gym", "amount_usd": 24000, "note": "Body-weight and HIIT"},
+        {"label": "Food (one meal a day)", "amount_usd": 20000, "note": "Quality sourcing — fish, vegetables, berries"}
+      ],
+      "er_score": 74,
+      "mito_type": "Cortex Burner",
+      "er_low_because": "Time-restricted eating (one meal a day), daily cold exposure, sauna, meditation retreats. Trade-off is low caloric density — muscle mass is modest and reported energy is uneven on long fasts.",
+      "daily_routine": [
+        {"time": "05:00", "activity": "Wake. Salt water. 10-min meditation."},
+        {"time": "05:30", "activity": "7-min HIIT or calisthenics."},
+        {"time": "06:30", "activity": "Ice bath — 3 min @ 37°F."},
+        {"time": "07:00", "activity": "Sauna — 15 min."},
+        {"time": "18:30", "activity": "Single meal — fish, vegetables, berries."},
+        {"time": "22:00", "activity": "Sleep — 7h, Oura-tracked."}
+      ],
+      "protocol": {
+        "training": "7-min high-intensity daily. Long walks. Minimal weight training.",
+        "diet": "One meal a day weekdays. Protein, vegetables, berries. Water-only fast Saturdays (dropped some weekends).",
+        "sleep": "7h target. No food 4h before bed.",
+        "breathwork": "Vipassana twice/year. Daily 10-min sit.",
+        "supplements": "Minimal — salt, vitamin D, creatine, magnesium.",
+        "therapies": "Cold plunge and sauna stacked daily."
+      },
+      "signature_practices": [
+        "Silent Vipassana retreats — 10 days, no phone, no talking",
+        "7-minute workout over extended gym sessions",
+        "Popularised the OMAD (one meal a day) protocol in tech",
+        "Walks 5 miles to work"
+      ],
+      "sources": [
+        {"title": "Ben Greenfield podcast, 2019", "url": ""},
+        {"title": "Joe Rogan Experience #1236", "url": ""},
+        {"title": "Wired feature, 2019", "url": ""}
+      ]
+    },
+    {
+      "id": "tim-ferriss",
+      "slug": "tim-ferriss",
+      "name": "Tim Ferriss",
+      "category": "tech",
+      "subcategory": "Author, 4-Hour Body",
+      "age_approx": 47,
+      "confidence": "documented",
+      "tagline": "The Slow-Carb diet. Ice baths before they were cool. The original biohacker.",
+      "bio": "Author whose 4-Hour Body (2010) was the mass-market biohacking bible a decade before Huberman. Runs the most comprehensive interview archive in the space; publicly open about depression, substance experimentation, and psychedelic integration.",
+      "annual_spend_usd": 150000,
+      "annual_spend_inr": 12450000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Diagnostics — full panels, DNA, gut", "amount_usd": 30000, "note": "Quarterly comprehensive panels"},
+        {"label": "Supplements & compounds", "amount_usd": 15000, "note": "Magnesium, lithium orotate, vitamin D"},
+        {"label": "Food & chef partial", "amount_usd": 30000, "note": "Slow-carb, grass-fed"},
+        {"label": "Training & coaching", "amount_usd": 25000, "note": "AcroYoga, BJJ, kettlebell"},
+        {"label": "Recovery tech — red light, cold, sauna", "amount_usd": 30000, "note": "Home setup"},
+        {"label": "Therapy & psychedelic integration", "amount_usd": 20000, "note": "Publicly disclosed"}
+      ],
+      "er_score": 76,
+      "mito_type": "Steady Current",
+      "er_low_because": "Slow-carb diet is mitochondrial-friendly, regular cold exposure, kettlebell-heavy strength work, solid sleep hygiene. Psychedelic integration and therapy address the cognitive-stress side — a more honest approach than most in this cohort.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. 20 min sun, journaling (Morning Pages)."},
+        {"time": "08:00", "activity": "Bulletproof-ish coffee or breakfast skip."},
+        {"time": "10:00", "activity": "Strength or kettlebell — 30–45 min."},
+        {"time": "13:00", "activity": "Slow-carb lunch — protein, legumes, vegetables."},
+        {"time": "19:00", "activity": "Dinner, cheat day Saturdays."},
+        {"time": "23:00", "activity": "Sleep — 8h target."}
+      ],
+      "protocol": {
+        "training": "Kettlebell swings, kettlebell clean-and-press. AcroYoga. BJJ. Minimalist effective work.",
+        "diet": "Slow-carb: protein + legumes + vegetables 6 days, unrestricted 'cheat day' on Saturday.",
+        "sleep": "8h target. NSDR-style naps when needed.",
+        "breathwork": "Box breathing. Occasional holotropic.",
+        "supplements": "Magnesium, lithium orotate, vitamin D3+K2, creatine, HMB, selenium.",
+        "therapies": "Cold plunge 2–3x/week, sauna, red light, IV therapy periodically."
+      },
+      "signature_practices": [
+        "Cheat-day protocol — massive Saturday refeed",
+        "Early adopter of ketamine-assisted therapy, publicly disclosed",
+        "AG1 investor before it was AG1",
+        "Donated $100k to MAPS for MDMA-therapy trials"
+      ],
+      "sources": [
+        {"title": "The 4-Hour Body — Crown, 2010", "url": ""},
+        {"title": "Tools of Titans — HMH, 2016", "url": ""},
+        {"title": "The Tim Ferriss Show archive", "url": "https://tim.blog"}
+      ]
+    },
+    {
+      "id": "peter-thiel",
+      "slug": "peter-thiel",
+      "name": "Peter Thiel",
+      "category": "tech",
+      "subcategory": "Founder, Palantir",
+      "age_approx": 56,
+      "confidence": "reported",
+      "tagline": "HGH whispers, parabiosis donations, a publicly-stated wish to live to 120.",
+      "bio": "PayPal co-founder whose investments in anti-aging and seasteading, plus statements about his own HGH regimen, make him the longevity-movement's ideological patron. The actual protocol is opaque — most of what's 'known' is inference from reporting.",
+      "annual_spend_usd": 1500000,
+      "annual_spend_inr": 124500000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Concierge medicine", "amount_usd": 300000, "note": "Reported specialist access"},
+        {"label": "HGH & hormonal therapy", "amount_usd": 250000, "note": "Publicly admitted in 2015"},
+        {"label": "Ambrosia-style parabiosis (historical)", "amount_usd": 40000, "note": "Reported interest, clinic now closed"},
+        {"label": "Diagnostics & imaging", "amount_usd": 200000, "note": "Estimated at billionaire tier"},
+        {"label": "Food, chef, staff", "amount_usd": 250000, "note": "Reported at this tier"},
+        {"label": "Research donations (Methuselah, SENS)", "amount_usd": 460000, "note": "Per foundation filings"}
+      ],
+      "er_score": 62,
+      "mito_type": "Cortex Burner",
+      "er_low_because": "Hormonal optimisation and concierge medicine compensate for a reported high-stress, high-cognitive-load lifestyle. Less evidence of the daily habits (sleep, training volume, time in nature) that actually drive mitochondrial efficiency.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. Coffee. Reading."},
+        {"time": "09:00", "activity": "First meetings — typically unstructured."},
+        {"time": "13:00", "activity": "Lunch — protein-heavy, reported."},
+        {"time": "18:00", "activity": "Chess or reading."},
+        {"time": "19:30", "activity": "Dinner."},
+        {"time": "23:30", "activity": "Sleep — 7h reported."}
+      ],
+      "protocol": {
+        "training": "Light. Long walks. No public record of structured strength training.",
+        "diet": "Low-carb, protein-heavy. Details not public.",
+        "sleep": "7h reported.",
+        "breathwork": "Not publicly documented.",
+        "supplements": "HGH, testosterone optimisation reported. Stack private.",
+        "therapies": "Access to the highest-tier concierge medicine network globally."
+      },
+      "signature_practices": [
+        "Donated to SENS, Methuselah Foundation, Halcyon Molecular",
+        "Publicly stated wish to live to 120",
+        "Invested in Unity Biotechnology, Gigagen",
+        "Considered Ambrosia-style young plasma infusions per reporting"
+      ],
+      "sources": [
+        {"title": "Bloomberg profile, 2015", "url": ""},
+        {"title": "Vanity Fair feature, 2014", "url": ""},
+        {"title": "Thiel Foundation filings", "url": ""}
+      ]
+    },
+    {
+      "id": "larry-ellison",
+      "slug": "larry-ellison",
+      "name": "Larry Ellison",
+      "category": "tech",
+      "subcategory": "Founder, Oracle",
+      "age_approx": 80,
+      "confidence": "estimated",
+      "tagline": "Funded the Ellison Medical Foundation for $450M. Lives on Lanai. Plays competitive tennis at 80.",
+      "bio": "Oracle founder, America's 5th-richest person, who at 80 still plays competitive tennis, sails, and owns 98% of the Hawaiian island Lanai (which he's turned into a longevity-tourism project). His foundation funded basic aging research for 15 years before transitioning to other causes.",
+      "annual_spend_usd": 2500000,
+      "annual_spend_inr": 207500000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Concierge medicine & home clinic", "amount_usd": 800000, "note": "Tier-1 specialist network"},
+        {"label": "Personal trainers & tennis coaches", "amount_usd": 400000, "note": "Competitive tennis at 80"},
+        {"label": "Diagnostics & monitoring", "amount_usd": 400000, "note": "Advanced imaging, genomics"},
+        {"label": "Private chef & Lanai food supply", "amount_usd": 300000, "note": "Organic farm, low-input sourcing"},
+        {"label": "Wellness staff on Lanai", "amount_usd": 400000, "note": "On-site wellness at Sensei Lanai"},
+        {"label": "Anti-aging research directed personally", "amount_usd": 200000, "note": "Ongoing after Ellison Medical Foundation sunset"}
+      ],
+      "er_score": 72,
+      "mito_type": "Steady Current",
+      "er_low_because": "Outdoor lifestyle (tennis daily, sailing), access to the best medicine money buys, decades of demonstrated discipline around performance. Age is the rate-limiter — what's notable is how little age is showing up in function.",
+      "daily_routine": [
+        {"time": "07:30", "activity": "Wake. Coffee. Light mobility work."},
+        {"time": "09:00", "activity": "Tennis — 90 min with coach."},
+        {"time": "11:30", "activity": "Breakfast — eggs, fruit, protein."},
+        {"time": "14:00", "activity": "Oracle or Lanai operations work."},
+        {"time": "18:30", "activity": "Dinner — fish, vegetables."},
+        {"time": "23:00", "activity": "Sleep — 7–8h, reported."}
+      ],
+      "protocol": {
+        "training": "Daily tennis with coach. Sailing, light strength.",
+        "diet": "Mediterranean-adjacent. Lanai-sourced where possible.",
+        "sleep": "7–8h, estimated.",
+        "breathwork": "Not publicly documented.",
+        "supplements": "Not publicly documented.",
+        "therapies": "Tier-1 concierge medicine. Sensei Lanai wellness access."
+      },
+      "signature_practices": [
+        "Owns 98% of Lanai, built Sensei — a $2000/night wellness retreat",
+        "Ellison Medical Foundation — $450M into aging research",
+        "Still competes in yacht racing and tennis at 80",
+        "Diet of fruits, vegetables, and fish — publicly discussed in interviews"
+      ],
+      "sources": [
+        {"title": "Bloomberg profile, 2022", "url": ""},
+        {"title": "Sensei Lanai official", "url": "https://sensei.com"},
+        {"title": "New York Times feature, 2019", "url": ""}
+      ]
+    },
+    {
+      "id": "naval-ravikant",
+      "slug": "naval-ravikant",
+      "name": "Naval Ravikant",
+      "category": "tech",
+      "subcategory": "Founder, AngelList",
+      "age_approx": 50,
+      "confidence": "reported",
+      "tagline": "Minimal supplements. Long walks. Twitter-as-philosophy. The $20k longevity stack.",
+      "bio": "AngelList founder whose Twitter-native philosophy turned him into the unofficial guru of tech minimalism. Famously avoids aggressive supplementation, prioritising walking, reading, and sleep as the core protocol.",
+      "annual_spend_usd": 40000,
+      "annual_spend_inr": 3320000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Training & gym", "amount_usd": 12000, "note": "Yoga, walking, rare gym"},
+        {"label": "Diagnostics", "amount_usd": 8000, "note": "Annual panels only"},
+        {"label": "Food", "amount_usd": 12000, "note": "Simple, Mediterranean-leaning"},
+        {"label": "Supplements", "amount_usd": 4000, "note": "Minimal — vitamin D, magnesium"},
+        {"label": "Recovery — sauna, walking", "amount_usd": 4000, "note": "No exotic recovery tech"}
+      ],
+      "er_score": 78,
+      "mito_type": "Steady Current",
+      "er_low_because": "'Walk 5 miles a day' is a deeply mitochondrial practice, even if he calls it something else. Minimal stress (post-AngelList operational phase), clean diet, and no ambient cortisol from overtraining or chronic caloric deficit.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake naturally. Reading."},
+        {"time": "08:30", "activity": "Long morning walk — 60+ min."},
+        {"time": "11:00", "activity": "Deep work or writing window."},
+        {"time": "14:00", "activity": "Lunch — simple, light."},
+        {"time": "18:00", "activity": "Second walk or yoga."},
+        {"time": "23:00", "activity": "Sleep — 8h."}
+      ],
+      "protocol": {
+        "training": "Walking is the primary protocol. Yoga occasional. Rare gym sessions.",
+        "diet": "Mediterranean-adjacent. Not aggressively calorie-restricted. Avoids alcohol lately.",
+        "sleep": "8h target, emphasises as foundational.",
+        "breathwork": "Meditation daily — Sam Harris Waking Up app publicly disclosed.",
+        "supplements": "Minimal. Vitamin D, magnesium, omega-3.",
+        "therapies": "Occasional sauna. No aggressive recovery tech."
+      },
+      "signature_practices": [
+        "The 'walk 5 miles a day' heuristic",
+        "Famous for owning fewer than 100 possessions",
+        "Publicly advocates minimalism over biohacking",
+        "Daily meditation via Waking Up app"
+      ],
+      "sources": [
+        {"title": "The Almanack of Naval Ravikant — Magrathea, 2020", "url": ""},
+        {"title": "Tim Ferriss Show #473", "url": ""},
+        {"title": "Naval podcast archive", "url": ""}
+      ]
+    },
+    {
+      "id": "jensen-huang",
+      "slug": "jensen-huang",
+      "name": "Jensen Huang",
+      "category": "tech",
+      "subcategory": "Founder, NVIDIA",
+      "age_approx": 61,
+      "confidence": "estimated",
+      "tagline": "Works 14 hours a day, sleeps 6–8, and credits 'pain and suffering' for the NVIDIA legend.",
+      "bio": "NVIDIA founder whose operational intensity is famously extreme — 14-hour days, daily emails to his entire org chart, and almost no public discussion of personal health protocols. Still in the chair at 61; whatever he's doing is keeping up with AI's moment.",
+      "annual_spend_usd": 200000,
+      "annual_spend_inr": 16600000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Concierge medicine", "amount_usd": 80000, "note": "Estimated at tier"},
+        {"label": "Personal trainer (reported)", "amount_usd": 40000, "note": "Private gym routine"},
+        {"label": "Private chef partial", "amount_usd": 30000, "note": "Taiwanese comfort food reported"},
+        {"label": "Diagnostics", "amount_usd": 25000, "note": "Advanced annual panels"},
+        {"label": "Travel medicine", "amount_usd": 15000, "note": "Global travel for keynotes, productions"},
+        {"label": "Recovery basics", "amount_usd": 10000, "note": "Sauna, standard"}
+      ],
+      "er_score": 68,
+      "mito_type": "Cortex Burner",
+      "er_low_because": "14-hour workdays and global travel are an ER tax, but Jensen is a rare example of sustained high output without visible burnout. Diet quality is reported good, sleep is reported 6–8h, and he reports joy in the work — which itself has measurable autonomic effects.",
+      "daily_routine": [
+        {"time": "06:00", "activity": "Wake. Coffee. Emails to entire org."},
+        {"time": "07:30", "activity": "Strength or walking — reported."},
+        {"time": "09:00", "activity": "First meeting."},
+        {"time": "13:00", "activity": "Lunch — Taiwanese comfort food, protein-heavy."},
+        {"time": "20:00", "activity": "Dinner."},
+        {"time": "23:30", "activity": "Sleep — 6–8h."}
+      ],
+      "protocol": {
+        "training": "Light strength 3–4x/week. Walking.",
+        "diet": "Protein-heavy, cultural foods. No reported restriction.",
+        "sleep": "6–8h, reported. 'I don't believe in work-life balance.'",
+        "breathwork": "Not publicly documented.",
+        "supplements": "Not publicly documented.",
+        "therapies": "Sauna. Nothing exotic."
+      },
+      "signature_practices": [
+        "Daily email to all direct reports (~60 people) summarising top priorities",
+        "Stanford commencement speech: 'I wish upon you ample doses of pain and suffering'",
+        "Signature black leather jacket, worn consistently for 20+ years",
+        "Rarely takes vacation; cited as both asset and risk"
+      ],
+      "sources": [
+        {"title": "Acquired Podcast — NVIDIA, 3-part series", "url": ""},
+        {"title": "Stanford commencement address, 2024", "url": ""},
+        {"title": "60 Minutes profile, 2024", "url": ""}
+      ]
+    },
+    {
+      "id": "sam-altman",
+      "slug": "sam-altman",
+      "name": "Sam Altman",
+      "category": "tech",
+      "subcategory": "Founder, OpenAI",
+      "age_approx": 39,
+      "confidence": "reported",
+      "tagline": "$180M into Retro Biosciences. Personal stack: metformin, testosterone, testim creams.",
+      "bio": "OpenAI CEO who put $180M of his own money into Retro Biosciences (a cellular-reprogramming longevity startup) and has publicly discussed a personal protocol that includes metformin and testosterone optimisation. Operationally high-stress; personally invested in fixing the stress.",
+      "annual_spend_usd": 300000,
+      "annual_spend_inr": 24900000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Testosterone & hormonal optimisation", "amount_usd": 60000, "note": "Publicly disclosed cream + monitoring"},
+        {"label": "Metformin & supplements", "amount_usd": 20000, "note": "Metformin, AG1, omega-3"},
+        {"label": "Diagnostics", "amount_usd": 50000, "note": "Quarterly panels"},
+        {"label": "Trainer & gym", "amount_usd": 60000, "note": "Private coaching, light strength"},
+        {"label": "Private chef partial", "amount_usd": 40000, "note": "Keto/low-carb reported"},
+        {"label": "Recovery", "amount_usd": 70000, "note": "Cold plunge, sauna, minor therapies"}
+      ],
+      "er_score": 70,
+      "mito_type": "Cortex Burner",
+      "er_low_because": "Medical management compensates for what the lifestyle lacks. Short sleep during product cycles, high cognitive load, limited social time — the protocol is propping up a system under stress, not optimising one at rest.",
+      "daily_routine": [
+        {"time": "06:30", "activity": "Wake. Coffee. Emails."},
+        {"time": "08:00", "activity": "Light strength or walking."},
+        {"time": "10:00", "activity": "Deep work or meetings."},
+        {"time": "14:00", "activity": "Lunch — protein-heavy, low carb."},
+        {"time": "20:00", "activity": "Dinner — typically late due to schedule."},
+        {"time": "24:00", "activity": "Sleep — 6–7h during ship cycles, 7–8 otherwise."}
+      ],
+      "protocol": {
+        "training": "Light strength 3x/week, walking daily.",
+        "diet": "Keto-leaning, intermittent fasting. High protein.",
+        "sleep": "6–8h variable. Publicly discusses it as inconsistent.",
+        "breathwork": "Not publicly documented.",
+        "supplements": "Metformin, testosterone (disclosed), vitamin D, omega-3.",
+        "therapies": "Cold plunge, sauna, reported IV drips periodically."
+      },
+      "signature_practices": [
+        "$180M of personal money into Retro Biosciences (cellular reprogramming)",
+        "Publicly discusses testosterone optimisation — rare for a Fortune tech CEO",
+        "Sam's shopping list meme: keto, metformin, cold plunge, Testim",
+        "Doomsday prepper — Big Sur property, gold, guns"
+      ],
+      "sources": [
+        {"title": "New York Magazine profile, 2024", "url": ""},
+        {"title": "Lex Fridman podcast #367", "url": ""},
+        {"title": "MIT Technology Review on Retro Biosciences, 2022", "url": ""}
+      ]
+    },
+    {
+      "id": "beyonce",
+      "slug": "beyonce",
+      "name": "Beyoncé",
+      "category": "music",
+      "subcategory": "Performer",
+      "age_approx": 43,
+      "confidence": "reported",
+      "tagline": "22-day plant-based resets. 90 minutes of choreo, daily. The cardiovascular engine of pop.",
+      "bio": "Touring Beyoncé is arguably the hardest cardio job in entertainment — two-hour choreographed shows at elevation, night after night. Her 22-Day vegan reset with trainer Marco Borges became a 2015 book and nutrition program.",
+      "annual_spend_usd": 600000,
+      "annual_spend_inr": 49800000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Trainer — Marco Borges", "amount_usd": 180000, "note": "Tour prep and maintenance"},
+        {"label": "Nutritionist & plant-based meals", "amount_usd": 120000, "note": "22 Days delivery integration"},
+        {"label": "Dance coaches & rehearsal", "amount_usd": 150000, "note": "Cardio load of choreo is the training"},
+        {"label": "Recovery — PT, cupping, cryo", "amount_usd": 80000, "note": "Post-show recovery infrastructure"},
+        {"label": "Diagnostics & tour medicine", "amount_usd": 50000, "note": "Tour-ready health screening"},
+        {"label": "Supplements", "amount_usd": 20000, "note": "Plant-based protein, B12, iron"}
+      ],
+      "er_score": 84,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "Few humans perform 90-minute choreographed cardio at altitude nightly — the work itself is elite zone-2/3 aerobic training. Plant-forward diet, disciplined sleep on tour, heavy post-show recovery.",
+      "daily_routine": [
+        {"time": "09:00", "activity": "Wake (late on tour, earlier off). Plant-based breakfast."},
+        {"time": "11:00", "activity": "Rehearsal block — choreo, vocal warm-ups."},
+        {"time": "14:00", "activity": "Strength or Pilates — 45 min."},
+        {"time": "18:00", "activity": "Pre-show meal, hydration load."},
+        {"time": "21:00", "activity": "Show — 2h cardio at elevation."},
+        {"time": "01:00", "activity": "Post-show recovery, cupping, sleep."}
+      ],
+      "protocol": {
+        "training": "Choreography is the cardio. Pilates, light strength, resistance bands 4–5x/week in prep.",
+        "diet": "Plant-based 22-day resets. Off-reset: mostly plants, occasional fish.",
+        "sleep": "Irregular on tour (7h target post-show), 8h+ on break.",
+        "breathwork": "Vocal breath work daily. Meditation occasional.",
+        "supplements": "Plant protein, B12, iron, vitamin D.",
+        "therapies": "Cryotherapy, cupping (visible marks have been photographed), IV hydration."
+      },
+      "signature_practices": [
+        "22 Days Nutrition — her plant-based reset program",
+        "Coachella '18 prep: 2 hours daily cardio + choreo, strict sugar elimination",
+        "Choreographer as training director, not trainer",
+        "Publicly discussed postpartum return pressure"
+      ],
+      "sources": [
+        {"title": "22-Day Revolution — Marco Borges, 2015", "url": ""},
+        {"title": "Vogue cover profile, 2018", "url": ""},
+        {"title": "Homecoming — Netflix, 2019", "url": ""}
+      ]
+    },
+    {
+      "id": "rihanna",
+      "slug": "rihanna",
+      "name": "Rihanna",
+      "category": "music",
+      "subcategory": "Performer, Fenty",
+      "age_approx": 36,
+      "confidence": "reported",
+      "tagline": "Builds empires, not abs. Treats balance as a protocol.",
+      "bio": "Pop star turned billion-dollar beauty and lingerie founder whose public position on 'diet culture' is near-opposite to Bryan Johnson — publicly refuses to obsess about weight, trained hard for Super Bowl 2023 but doesn't pretend it's her norm.",
+      "annual_spend_usd": 200000,
+      "annual_spend_inr": 16600000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Trainer — Gunnar Peterson (Super Bowl)", "amount_usd": 60000, "note": "Prep periods only"},
+        {"label": "Private chef", "amount_usd": 60000, "note": "Caribbean-influenced"},
+        {"label": "Recovery & medical", "amount_usd": 30000, "note": "Pregnancy & postpartum"},
+        {"label": "Supplements & wellness", "amount_usd": 15000, "note": "Minimal"},
+        {"label": "Home gym & trainer access", "amount_usd": 25000, "note": "On-call"},
+        {"label": "Diagnostics", "amount_usd": 10000, "note": "Annual"}
+      ],
+      "er_score": 71,
+      "mito_type": "Cortex Burner",
+      "er_low_because": "Happiness is mitochondrial — she's one of the few stars at this level who reports genuine enjoyment of food and rest. That said, sleep is often irregular (studio schedule), and training is cyclical rather than daily.",
+      "daily_routine": [
+        {"time": "10:00", "activity": "Wake. Coffee, family time."},
+        {"time": "12:00", "activity": "Fenty or studio work."},
+        {"time": "16:00", "activity": "Training 3x/week (non-prep), daily in prep phases."},
+        {"time": "19:00", "activity": "Family dinner — Caribbean-leaning."},
+        {"time": "02:00", "activity": "Sleep — studio hours, late but consistent."}
+      ],
+      "protocol": {
+        "training": "3x/week maintenance, 6x/week during Super Bowl and movie prep.",
+        "diet": "Caribbean-influenced, no restrictive phases publicly. 'I eat what I want.'",
+        "sleep": "7–8h, late schedule.",
+        "breathwork": "Not publicly documented.",
+        "supplements": "Minimal — prenatal vitamins postpartum.",
+        "therapies": "Spa and recovery standard, no exotic stack."
+      },
+      "signature_practices": [
+        "Publicly declined GLP-1 pressure narratives",
+        "Super Bowl '23 halftime prep: reported 6 days/week with Gunnar Peterson",
+        "Fenty Skin + Fenty Beauty are her daily health infrastructure",
+        "Back-to-back pregnancies with minimal post-partum pressure"
+      ],
+      "sources": [
+        {"title": "Vogue cover story, 2023", "url": ""},
+        {"title": "British GQ, 2020", "url": ""}
+      ]
+    },
+    {
+      "id": "madonna",
+      "slug": "madonna",
+      "name": "Madonna",
+      "category": "music",
+      "subcategory": "Performer, Icon",
+      "age_approx": 66,
+      "confidence": "documented",
+      "tagline": "40 years of macrobiotic discipline. Two hours of training, daily. Still on tour at 66.",
+      "bio": "Pop icon whose longevity in performance — Celebration Tour at 65 after a near-fatal ICU stay in 2023 — is a direct function of 40 years of macrobiotic eating, ballet, and physical therapy infrastructure. Few musicians have been this systematically optimised for this long.",
+      "annual_spend_usd": 700000,
+      "annual_spend_inr": 58100000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Personal trainer & PT", "amount_usd": 200000, "note": "Daily access, movement quality focus"},
+        {"label": "Macrobiotic chef", "amount_usd": 140000, "note": "40 years of documented discipline"},
+        {"label": "Medical & recovery post-2023 ICU", "amount_usd": 150000, "note": "Elevated since bacterial infection"},
+        {"label": "Dance & choreography coaches", "amount_usd": 100000, "note": "Tour prep"},
+        {"label": "Supplements & IV therapy", "amount_usd": 50000, "note": "Reported ongoing"},
+        {"label": "Alternative medicine — acupuncture, kabbalah", "amount_usd": 60000, "note": "Long documented practice"}
+      ],
+      "er_score": 79,
+      "mito_type": "Steady Current",
+      "er_low_because": "Four decades of macrobiotic eating, two hours of daily movement, and a full medical and movement-quality infrastructure. The 2023 ICU event was the exception that proves the rule — her recovery was faster than her age should have permitted.",
+      "daily_routine": [
+        {"time": "09:00", "activity": "Wake. Kabbalah meditation."},
+        {"time": "10:00", "activity": "Ballet barre or Pilates — 60 min."},
+        {"time": "12:00", "activity": "Macrobiotic breakfast."},
+        {"time": "15:00", "activity": "Strength or rehearsal block — 90 min."},
+        {"time": "20:00", "activity": "Dinner — vegetables, fish, grains."},
+        {"time": "01:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Ballet, Pilates, resistance training. 2 hours daily baseline.",
+        "diet": "Macrobiotic — brown rice, miso, vegetables, fish, no dairy/wheat/sugar.",
+        "sleep": "7h, late schedule.",
+        "breathwork": "Pranayama with Kabbalah practice.",
+        "supplements": "IV vitamin drips reported.",
+        "therapies": "Acupuncture, cupping, physical therapy daily."
+      },
+      "signature_practices": [
+        "Macrobiotic diet since 1984 — 40+ consecutive years",
+        "Celebration Tour at 65 after June 2023 ICU stay",
+        "Daily ballet regimen under Ana Garcia",
+        "Kabbalah practice integrated as stress protocol"
+      ],
+      "sources": [
+        {"title": "Vanity Fair profile, February 2023", "url": ""},
+        {"title": "Harper's Bazaar interview, 2017", "url": ""}
+      ]
+    },
+    {
+      "id": "lenny-kravitz",
+      "slug": "lenny-kravitz",
+      "name": "Lenny Kravitz",
+      "category": "music",
+      "subcategory": "Musician",
+      "age_approx": 60,
+      "confidence": "reported",
+      "tagline": "Plant-based since the 90s. Gyms in leather pants. Celibate by choice.",
+      "bio": "Rocker whose 2024 gym photos at 60 went viral, triggering the 'is-he-on-TRT' discourse. Publicly says no — credits 20 years of plant-based eating, yoga, and sobriety. A rare example of a rock star aging legibly.",
+      "annual_spend_usd": 180000,
+      "annual_spend_inr": 14940000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Personal trainer — Dodd Romero", "amount_usd": 90000, "note": "On-call global"},
+        {"label": "Plant-based chef", "amount_usd": 40000, "note": "Consistent since the 90s"},
+        {"label": "Supplements", "amount_usd": 8000, "note": "Plant protein, B12, creatine"},
+        {"label": "Recovery", "amount_usd": 20000, "note": "Cold plunge, sauna"},
+        {"label": "Diagnostics", "amount_usd": 12000, "note": "Annual panels"},
+        {"label": "Home gym", "amount_usd": 10000, "note": "Travels with equipment"}
+      ],
+      "er_score": 82,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "Decades of plant-based eating, functional strength training, reported sobriety (no alcohol for 20+ years), celibacy as stated discipline, and low chronic stress. The rare male rocker at 60 who kept building rather than managing decline.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. Meditation, 20 min."},
+        {"time": "08:00", "activity": "Strength session — 60 min, heavy compound."},
+        {"time": "09:30", "activity": "Plant-based breakfast — smoothie, oats."},
+        {"time": "14:00", "activity": "Second training block or walking."},
+        {"time": "19:00", "activity": "Dinner — plant-heavy, occasional fish."},
+        {"time": "23:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Heavy strength 5x/week. Compound lifts, visible size gains at 60.",
+        "diet": "Plant-based 20+ years. High protein (pea, hemp, soy). Minimal processed.",
+        "sleep": "7–8h.",
+        "breathwork": "Meditation daily.",
+        "supplements": "Plant protein, creatine, B12, vitamin D.",
+        "therapies": "Cold plunge, sauna, massage."
+      },
+      "signature_practices": [
+        "Plant-based since early 90s — pre-movement",
+        "Publicly stated celibacy, framed as discipline",
+        "'Dodd Romero' gym photos at 60 went viral 2024",
+        "Owns a kitchen in every tour stop city for food control"
+      ],
+      "sources": [
+        {"title": "Men's Health cover, April 2024", "url": ""},
+        {"title": "Esquire interview, 2022", "url": ""}
+      ]
+    },
+    {
+      "id": "pharrell-williams",
+      "slug": "pharrell-williams",
+      "name": "Pharrell Williams",
+      "category": "music",
+      "subcategory": "Producer, Louis Vuitton",
+      "age_approx": 51,
+      "confidence": "estimated",
+      "tagline": "Looks 35, acts 22. The most public ageing-in-reverse story in music.",
+      "bio": "Grammy producer and Louis Vuitton menswear director whose ageless appearance became a meme a decade ago — credits sunscreen, water, no red meat, and 'I have no idea what moisturiser does.' A case study in restraint over ritual.",
+      "annual_spend_usd": 150000,
+      "annual_spend_inr": 12450000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Skincare — dermatology tier", "amount_usd": 40000, "note": "His Humanrace line plus privately"},
+        {"label": "Diet & chef", "amount_usd": 40000, "note": "Pescatarian, low-inflammation"},
+        {"label": "Training", "amount_usd": 30000, "note": "Reported yoga, boxing"},
+        {"label": "Wellness & retreats", "amount_usd": 20000, "note": "Regular time off-grid"},
+        {"label": "Diagnostics", "amount_usd": 12000, "note": "Annual panels"},
+        {"label": "Supplements", "amount_usd": 8000, "note": "Minimal"}
+      ],
+      "er_score": 77,
+      "mito_type": "Steady Current",
+      "er_low_because": "Pescatarian diet, rigorous sun protection (mitochondrial skin health is real), low-stress demeanour. Travel load is high but rest is protected — the rare creative who publicly defends sleep.",
+      "daily_routine": [
+        {"time": "07:30", "activity": "Wake. Humanrace skincare routine."},
+        {"time": "08:30", "activity": "Light training — yoga, boxing, swimming."},
+        {"time": "10:00", "activity": "Studio or Louis Vuitton work."},
+        {"time": "14:00", "activity": "Pescatarian lunch."},
+        {"time": "19:00", "activity": "Dinner — fish and vegetables."},
+        {"time": "23:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Yoga, swimming, boxing — reported 4x/week.",
+        "diet": "Pescatarian, low red meat, high water.",
+        "sleep": "7–8h.",
+        "breathwork": "Breathwork reported via Humanrace wellness content.",
+        "supplements": "Minimal.",
+        "therapies": "Dermatology-led skincare, IV drips occasionally."
+      },
+      "signature_practices": [
+        "Founded Humanrace — his skin and wellness line",
+        "Publicly credits sunscreen and water for ageless appearance",
+        "No red meat for 20+ years",
+        "Still DJs arena-scale events at 51 — cardio on demand"
+      ],
+      "sources": [
+        {"title": "Esquire interview, 2019", "url": ""},
+        {"title": "Humanrace launch materials, 2020", "url": ""}
+      ]
+    },
+    {
+      "id": "bruce-springsteen",
+      "slug": "bruce-springsteen",
+      "name": "Bruce Springsteen",
+      "category": "music",
+      "subcategory": "Performer",
+      "age_approx": 75,
+      "confidence": "reported",
+      "tagline": "3-hour arena shows at 75. The working-class blueprint for late-life cardio.",
+      "bio": "Still delivering 3-hour E-Street Band shows at 75 — the most demanding cardio-endurance feat in rock, and evidence that consistent decades-long activity compounds. Public about depression and therapy; rare in the boomer cohort.",
+      "annual_spend_usd": 300000,
+      "annual_spend_inr": 24900000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Personal trainer", "amount_usd": 80000, "note": "Tour prep and maintenance"},
+        {"label": "Medical team — cardiac, PT", "amount_usd": 90000, "note": "Tour-critical monitoring"},
+        {"label": "Diet & chef", "amount_usd": 40000, "note": "Farm-to-table, reported"},
+        {"label": "Therapy & mental health", "amount_usd": 40000, "note": "Publicly discussed"},
+        {"label": "Recovery & PT on tour", "amount_usd": 35000, "note": "Daily"},
+        {"label": "Diagnostics", "amount_usd": 15000, "note": "Quarterly in tour years"}
+      ],
+      "er_score": 74,
+      "mito_type": "Steady Current",
+      "er_low_because": "The show itself is training. Decades of consistent physical work on stage, active New Jersey farm life, and a therapy practice that addresses the stress piece most icons ignore. 75-year-old cardio that still delivers 3-hour shows is rare.",
+      "daily_routine": [
+        {"time": "08:00", "activity": "Wake. Coffee. Reading."},
+        {"time": "10:00", "activity": "Farm work or strength training."},
+        {"time": "13:00", "activity": "Lunch — protein and vegetables."},
+        {"time": "16:00", "activity": "Vocal warm-ups (tour days)."},
+        {"time": "20:00", "activity": "Show — 3 hours."},
+        {"time": "01:00", "activity": "Sleep — 7–8h."}
+      ],
+      "protocol": {
+        "training": "Strength 3–4x/week, farm activity, horseback. Show cardio on tour.",
+        "diet": "Farm-to-table, protein-heavy, sober for years.",
+        "sleep": "7–8h.",
+        "breathwork": "Vocal breath work. Meditation occasional.",
+        "supplements": "Standard older-adult profile.",
+        "therapies": "Physical therapy daily on tour. Cold therapy post-show."
+      },
+      "signature_practices": [
+        "Public about depression — 'Born to Run' autobiography",
+        "3-hour arena shows at 75 — unmatched in peer group",
+        "Sobriety for decades",
+        "Horseback and farm work as everyday conditioning"
+      ],
+      "sources": [
+        {"title": "Born to Run autobiography, Simon & Schuster, 2016", "url": ""},
+        {"title": "Rolling Stone profile, 2023", "url": ""}
+      ]
+    },
+    {
+      "id": "jennifer-lopez",
+      "slug": "jennifer-lopez",
+      "name": "Jennifer Lopez",
+      "category": "music",
+      "subcategory": "Performer",
+      "age_approx": 55,
+      "confidence": "reported",
+      "tagline": "'I don't drink, I don't smoke, I sleep.' Has said this so many times it's become a meme.",
+      "bio": "Singer-actor-producer whose at-55 look became the early-2020s 'wellness discourse' pivot point. Credits discipline: no alcohol, no caffeine in recent years, strict sleep, and Tracy Anderson method.",
+      "annual_spend_usd": 550000,
+      "annual_spend_inr": 45650000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Tracy Anderson method & coaching", "amount_usd": 180000, "note": "Daily access"},
+        {"label": "JLo Beauty & skincare infrastructure", "amount_usd": 90000, "note": "Daily protocol + R&D"},
+        {"label": "Private chef", "amount_usd": 80000, "note": "Mediterranean, low sugar"},
+        {"label": "Diagnostics & medical", "amount_usd": 50000, "note": "Tier-1 access"},
+        {"label": "Recovery — IV, cryo, facials", "amount_usd": 100000, "note": "Reported weekly"},
+        {"label": "Supplements", "amount_usd": 50000, "note": "Premium stack"}
+      ],
+      "er_score": 78,
+      "mito_type": "Steady Current",
+      "er_low_because": "Cornerstone sleep discipline (9h routinely), sobriety, daily Tracy Anderson movement, Mediterranean-leaning diet. The skincare infrastructure is arguably overengineered but the cellular inputs are clean.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. JLo Beauty routine."},
+        {"time": "08:00", "activity": "Tracy Anderson method — 60–90 min."},
+        {"time": "10:00", "activity": "Mediterranean breakfast."},
+        {"time": "14:00", "activity": "Work or second workout."},
+        {"time": "19:00", "activity": "Dinner — lean protein, vegetables."},
+        {"time": "22:00", "activity": "Sleep — 8–9h."}
+      ],
+      "protocol": {
+        "training": "Tracy Anderson method daily, 60–90 min. Dance cardio during tour prep.",
+        "diet": "Mediterranean-adjacent. No alcohol, no caffeine for multi-year stretches.",
+        "sleep": "9h routinely — publicly cited as her #1 beauty secret.",
+        "breathwork": "Meditation 20 min, reported.",
+        "supplements": "Collagen, vitamin D, omega-3, premium.",
+        "therapies": "Weekly facials, cryotherapy, IV therapy reported."
+      },
+      "signature_practices": [
+        "9 hours of sleep as the non-negotiable",
+        "No alcohol, minimal caffeine",
+        "Tracy Anderson method — daily, 20+ years",
+        "JLo Beauty — her own R&D pipeline"
+      ],
+      "sources": [
+        {"title": "InStyle cover, 2022", "url": ""},
+        {"title": "Vogue interview, 2023", "url": ""}
+      ]
+    },
+    {
+      "id": "justin-bieber",
+      "slug": "justin-bieber",
+      "name": "Justin Bieber",
+      "category": "music",
+      "subcategory": "Performer",
+      "age_approx": 30,
+      "confidence": "reported",
+      "tagline": "Ramsay Hunt recovery. Public mental health arc. Still figuring out the protocol.",
+      "bio": "Pop star whose 2022 Ramsay Hunt syndrome (facial paralysis) and public mental health struggles reset his protocol — pivot to sobriety (reported), therapy, church, and more structured training. Ongoing arc.",
+      "annual_spend_usd": 400000,
+      "annual_spend_inr": 33200000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Trainer — Harley Pasternak", "amount_usd": 100000, "note": "On-call"},
+        {"label": "Medical — Ramsay Hunt recovery", "amount_usd": 90000, "note": "Neurology, PT"},
+        {"label": "Therapy & mental health", "amount_usd": 80000, "note": "Reported ongoing"},
+        {"label": "Chef & nutrition", "amount_usd": 60000, "note": "Low-inflammation"},
+        {"label": "Recovery — cryo, IV, red light", "amount_usd": 40000, "note": "Post-tour"},
+        {"label": "Diagnostics", "amount_usd": 30000, "note": "Elevated post-2022"}
+      ],
+      "er_score": 64,
+      "mito_type": "Cortex Burner",
+      "er_low_because": "Chronic stress and sleep irregularity from touring schedule hit him hard (Ramsay Hunt is immune-mediated). The recovery arc — therapy, faith community, structured training — is exactly the right move but the deficit is still paying off.",
+      "daily_routine": [
+        {"time": "09:00", "activity": "Wake. Prayer, reported."},
+        {"time": "10:00", "activity": "Training — 45–60 min with Pasternak."},
+        {"time": "12:00", "activity": "Breakfast — smoothie, protein."},
+        {"time": "15:00", "activity": "Studio or meetings."},
+        {"time": "19:00", "activity": "Dinner with family."},
+        {"time": "24:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "5-factor workouts with Pasternak, 45 min sessions.",
+        "diet": "Low-inflammation, smoothie-heavy, protein-forward.",
+        "sleep": "7h target, variable.",
+        "breathwork": "Prayer as breath work. Therapy integration.",
+        "supplements": "Vitamin D, omega-3, adaptogens reported.",
+        "therapies": "Cryo, IV therapy, PT post-Ramsay Hunt."
+      },
+      "signature_practices": [
+        "Ramsay Hunt syndrome 2022 — cancelled tour, prioritised recovery",
+        "Public faith practice (Hillsong historically, Judah Smith)",
+        "Sobriety reported since 2019",
+        "Pasternak's '5-factor' framework — 5 meals, 5 days, 5 exercises"
+      ],
+      "sources": [
+        {"title": "Seasons — YouTube Originals, 2020", "url": ""},
+        {"title": "Vogue profile, 2022", "url": ""}
+      ]
+    },
+    {
+      "id": "harry-styles",
+      "slug": "harry-styles",
+      "name": "Harry Styles",
+      "category": "music",
+      "subcategory": "Performer",
+      "age_approx": 31,
+      "confidence": "reported",
+      "tagline": "Pilates in Italy. Plant-forward. The low-key mitochondrial minimalist.",
+      "bio": "Pop star whose tour shape is built on Pilates, running, and plant-forward eating rather than traditional strength. Public about meditation and therapy. A quiet counterpoint to the testosterone-forward male pop template.",
+      "annual_spend_usd": 200000,
+      "annual_spend_inr": 16600000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Pilates & yoga instructors", "amount_usd": 60000, "note": "On-tour and at home"},
+        {"label": "Plant-based chef", "amount_usd": 50000, "note": "Mediterranean, pescatarian"},
+        {"label": "Therapy & coaching", "amount_usd": 35000, "note": "Publicly discussed"},
+        {"label": "Recovery & PT", "amount_usd": 25000, "note": "Tour load"},
+        {"label": "Diagnostics", "amount_usd": 15000, "note": "Annual"},
+        {"label": "Supplements", "amount_usd": 15000, "note": "Plant protein, vitamin D"}
+      ],
+      "er_score": 80,
+      "mito_type": "Steady Current",
+      "er_low_because": "Movement-first but not aggressive, genuine plant-forward diet, public commitment to therapy and meditation. Sleep is the variable — tour schedule is a known ER tax even at 31.",
+      "daily_routine": [
+        {"time": "09:30", "activity": "Wake. Coffee, journaling."},
+        {"time": "11:00", "activity": "Pilates or yoga — 60 min."},
+        {"time": "12:30", "activity": "Breakfast — oats, smoothie."},
+        {"time": "15:00", "activity": "Studio or rehearsal."},
+        {"time": "19:00", "activity": "Pasta or plant-based dinner."},
+        {"time": "01:00", "activity": "Sleep on tour nights."}
+      ],
+      "protocol": {
+        "training": "Pilates 4x/week. Running 3x/week. Minimal heavy strength.",
+        "diet": "Pescatarian, Mediterranean-leaning. Italian aesthetic.",
+        "sleep": "7–8h off tour.",
+        "breathwork": "Meditation and therapy integrated.",
+        "supplements": "Plant protein, vitamin D.",
+        "therapies": "Regular massage, PT during tour."
+      },
+      "signature_practices": [
+        "Pilates evangelism (pre-trend) — part of the 2020s male Pilates wave",
+        "Italian summer aesthetic as wellness infrastructure",
+        "Publicly discusses therapy as core practice",
+        "Does not drink on tour (reported)"
+      ],
+      "sources": [
+        {"title": "Better Homes & Gardens cover, 2022", "url": ""},
+        {"title": "Rolling Stone interview, 2022", "url": ""}
+      ]
+    },
+    {
+      "id": "jay-z",
+      "slug": "jay-z",
+      "name": "Jay-Z",
+      "category": "music",
+      "subcategory": "Founder",
+      "age_approx": 55,
+      "confidence": "estimated",
+      "tagline": "22 days vegan. Meditation practice. Built a billion-dollar stack around quiet.",
+      "bio": "First hip-hop billionaire whose protocol is more about what he's removed than added — completed a 22-day vegan cleanse in 2013, practises meditation, and has publicly discussed therapy. Calm as competitive advantage.",
+      "annual_spend_usd": 350000,
+      "annual_spend_inr": 29050000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Trainer & PT", "amount_usd": 90000, "note": "Reported ongoing"},
+        {"label": "Private chef — plant-forward", "amount_usd": 70000, "note": "22-day cleanses periodic"},
+        {"label": "Diagnostics & concierge medicine", "amount_usd": 80000, "note": "Tier-1 access"},
+        {"label": "Therapy & meditation coaching", "amount_usd": 40000, "note": "Publicly discussed"},
+        {"label": "Recovery — cryo, IV", "amount_usd": 40000, "note": "Reported"},
+        {"label": "Supplements", "amount_usd": 30000, "note": "Premium stack, plant-protein forward"}
+      ],
+      "er_score": 75,
+      "mito_type": "Steady Current",
+      "er_low_because": "Reduced alcohol (pivoted from heavy to occasional), committed to therapy and meditation, trains consistently. The work volume is extreme but the buffer — family, meditation, sobriety-adjacent — is operational.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. Meditation, 20 min."},
+        {"time": "08:00", "activity": "Strength or cardio — 60 min."},
+        {"time": "10:00", "activity": "Meetings or studio."},
+        {"time": "14:00", "activity": "Plant-forward lunch."},
+        {"time": "19:30", "activity": "Family dinner."},
+        {"time": "00:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Strength 4x/week, cardio 2x/week.",
+        "diet": "Plant-forward, 22-day vegan cleanses periodic.",
+        "sleep": "7–8h.",
+        "breathwork": "Meditation daily.",
+        "supplements": "Plant protein, premium vitamins.",
+        "therapies": "Reported — cryo, IV therapy."
+      },
+      "signature_practices": [
+        "22 Days vegan cleanse — 2013 birthday challenge",
+        "Publicly credited therapy in 4:44 album",
+        "Daily meditation practice",
+        "Pivoted from nightly drinking to occasional — marriage and children framed"
+      ],
+      "sources": [
+        {"title": "4:44 album + documentary, 2017", "url": ""},
+        {"title": "GQ cover, 2018", "url": ""}
+      ]
+    },
+    {
+      "id": "christopher-nolan",
+      "slug": "christopher-nolan",
+      "name": "Christopher Nolan",
+      "category": "directors",
+      "subcategory": "Filmmaker",
+      "age_approx": 54,
+      "confidence": "reported",
+      "tagline": "No phone. No email. No chair on set. Walks 5 miles a day across locations.",
+      "bio": "Filmmaker whose protocol is famously analog — no smartphone, limits email, refuses to sit on set, walks the production across locations. The discipline is as much cognitive protection as physical, and the output record (Oppenheimer, Tenet, Interstellar) is evidence.",
+      "annual_spend_usd": 80000,
+      "annual_spend_inr": 6640000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Personal trainer (light)", "amount_usd": 20000, "note": "Rotating, minimal"},
+        {"label": "Food — British plain fare", "amount_usd": 25000, "note": "Reported simple tastes"},
+        {"label": "Diagnostics", "amount_usd": 10000, "note": "Annual"},
+        {"label": "Supplements", "amount_usd": 5000, "note": "Minimal"},
+        {"label": "Travel & production medicine", "amount_usd": 15000, "note": "Location-based"},
+        {"label": "Recovery — basic", "amount_usd": 5000, "note": "No exotic tech"}
+      ],
+      "er_score": 76,
+      "mito_type": "Steady Current",
+      "er_low_because": "Walks 5+ miles a day on set, minimal phone-induced stress (no smartphone), regular sleep, low inflammation diet by default. A masterclass in subtraction as protocol.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. Tea. No phone check."},
+        {"time": "08:00", "activity": "Reading or writing — 2 hours."},
+        {"time": "10:00", "activity": "On set walking or office."},
+        {"time": "13:00", "activity": "Lunch — simple, protein."},
+        {"time": "19:30", "activity": "Family dinner."},
+        {"time": "23:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Walking is the primary training. Occasional strength.",
+        "diet": "British plain — Earl Grey tea, toast, roast. Reported stable across decades.",
+        "sleep": "7h, consistent.",
+        "breathwork": "Not documented.",
+        "supplements": "Minimal, if any.",
+        "therapies": "None reported."
+      },
+      "signature_practices": [
+        "Does not own a smartphone",
+        "Refuses chair on set — stands and walks for 14+ hour days",
+        "No email during production",
+        "Shoots IMAX locations in sequence — built-in cardio"
+      ],
+      "sources": [
+        {"title": "Variety profile, 2020", "url": ""},
+        {"title": "Wired interview, 2023", "url": ""}
+      ]
+    },
+    {
+      "id": "james-cameron",
+      "slug": "james-cameron",
+      "name": "James Cameron",
+      "category": "directors",
+      "subcategory": "Filmmaker",
+      "age_approx": 70,
+      "confidence": "documented",
+      "tagline": "Vegan since 2012. Deep-sea diver. Built a longevity protocol around saving the planet.",
+      "bio": "Filmmaker whose 2012 pivot to veganism (after making The Game Changers the following decade) was an ideological act that became a protocol. Still does physically punishing deep-sea and flight-based work at 70.",
+      "annual_spend_usd": 180000,
+      "annual_spend_inr": 14940000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Personal chef — vegan", "amount_usd": 70000, "note": "Consistent since 2012"},
+        {"label": "Personal trainer", "amount_usd": 40000, "note": "Strength, diving prep"},
+        {"label": "Diagnostics & medical", "amount_usd": 30000, "note": "Dive-capable medical clearance"},
+        {"label": "Diving & flight training", "amount_usd": 20000, "note": "Ongoing certification"},
+        {"label": "Supplements — plant-based", "amount_usd": 10000, "note": "B12, omega from algae"},
+        {"label": "Recovery", "amount_usd": 10000, "note": "Sauna, cold immersion"}
+      ],
+      "er_score": 77,
+      "mito_type": "Steady Current",
+      "er_low_because": "Vegan diet 12+ years, active deep-sea and aviation work (both high-intensity cardio-adjacent), strength training, and disciplined sleep. Vegan mitochondrial stack is often incomplete (B12, omega-3) but his is managed.",
+      "daily_routine": [
+        {"time": "06:30", "activity": "Wake. Vegan breakfast — oats, fruit, plant protein."},
+        {"time": "08:00", "activity": "Strength training or diving prep."},
+        {"time": "11:00", "activity": "Writing or design."},
+        {"time": "14:00", "activity": "Vegan lunch — legumes, vegetables."},
+        {"time": "19:00", "activity": "Dinner — whole food plant-based."},
+        {"time": "22:30", "activity": "Sleep — 7–8h."}
+      ],
+      "protocol": {
+        "training": "Strength 3x/week, diving, flying. Physical directing.",
+        "diet": "Whole-food plant-based since 2012. Wife Suzy Amis is a key nutrition advocate.",
+        "sleep": "7–8h.",
+        "breathwork": "Dive training includes advanced breath-holding.",
+        "supplements": "B12, vitamin D, algae omega-3.",
+        "therapies": "Sauna, cold immersion reported."
+      },
+      "signature_practices": [
+        "Vegan since 2012 — publicly stated for climate and health",
+        "Deep-sea solo dive to Mariana Trench (2012)",
+        "Produced The Game Changers, Seaspiracy",
+        "Pilots helicopters and planes into his 70s"
+      ],
+      "sources": [
+        {"title": "Men's Journal cover, 2020", "url": ""},
+        {"title": "The Game Changers — documentary, 2018", "url": ""}
+      ]
+    },
+    {
+      "id": "quentin-tarantino",
+      "slug": "quentin-tarantino",
+      "name": "Quentin Tarantino",
+      "category": "directors",
+      "subcategory": "Filmmaker",
+      "age_approx": 61,
+      "confidence": "estimated",
+      "tagline": "No smartphone. Writes by hand. The writing schedule is the protocol.",
+      "bio": "Filmmaker whose creative output (10 films, books, TV) is built on a famously analog process — writes longhand in notebooks, owns a vintage movie theatre, refuses conventional Hollywood routines. Mitochondrially, reads as a moderate case with concentrated creative work buffering the lifestyle.",
+      "annual_spend_usd": 60000,
+      "annual_spend_inr": 4980000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Food — private chef occasional", "amount_usd": 25000, "note": "Reported steak-heavy, simple"},
+        {"label": "Diagnostics", "amount_usd": 10000, "note": "Annual"},
+        {"label": "Light training access", "amount_usd": 10000, "note": "Gym membership tier"},
+        {"label": "Supplements", "amount_usd": 5000, "note": "Basic"},
+        {"label": "Travel medicine", "amount_usd": 5000, "note": "Production periods"},
+        {"label": "Recovery", "amount_usd": 5000, "note": "Minimal"}
+      ],
+      "er_score": 58,
+      "mito_type": "Ghost Reactor",
+      "er_low_because": "Reported irregular sleep during writing, heavy caffeine, moderate-to-high alcohol historically, foot-focused fetishising of traditional eating. Some creative joy buffer, but the protocol reads as a high-stress writer's life, not an optimised one.",
+      "daily_routine": [
+        {"time": "10:00", "activity": "Wake late. Coffee."},
+        {"time": "11:00", "activity": "Writing session — longhand in notebooks."},
+        {"time": "15:00", "activity": "Lunch — typically steak, potatoes."},
+        {"time": "17:00", "activity": "Films at New Beverly (owns the cinema)."},
+        {"time": "21:00", "activity": "Dinner."},
+        {"time": "02:00", "activity": "Sleep — 7h irregular."}
+      ],
+      "protocol": {
+        "training": "Reported minimal — walking, occasional gym.",
+        "diet": "American-style — red meat heavy, indifferent to trend.",
+        "sleep": "7h, variable schedule.",
+        "breathwork": "Not documented.",
+        "supplements": "Minimal.",
+        "therapies": "None reported."
+      },
+      "signature_practices": [
+        "Writes longhand — no laptop, no typewriter",
+        "Owns and programmes the New Beverly Cinema in LA",
+        "Ten-film limit, publicly stated since the 90s",
+        "Private, non-celebrity wellness footprint"
+      ],
+      "sources": [
+        {"title": "Rolling Stone profile, 2019", "url": ""},
+        {"title": "The Ringer interview, 2021", "url": ""}
+      ]
+    },
+    {
+      "id": "hans-zimmer",
+      "slug": "hans-zimmer",
+      "name": "Hans Zimmer",
+      "category": "directors",
+      "subcategory": "Composer",
+      "age_approx": 67,
+      "confidence": "estimated",
+      "tagline": "Composes 14-hour days. Kept the cardio from playing synth. The studio is his gym.",
+      "bio": "Film composer whose output (Dune, Interstellar, Inception, The Lion King) is delivered from a legendary multi-room studio in Santa Monica. Schedules are punishing, road tours in his 60s, and the protocol is less about training than about sustaining a creative life at industrial scale.",
+      "annual_spend_usd": 90000,
+      "annual_spend_inr": 7470000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Medical — touring cardiac clearance", "amount_usd": 25000, "note": "Tour prep is real cardio"},
+        {"label": "Training (modest)", "amount_usd": 20000, "note": "Bass-player strength"},
+        {"label": "Food — chef partial", "amount_usd": 20000, "note": "Long studio hours"},
+        {"label": "Supplements", "amount_usd": 10000, "note": "Basic"},
+        {"label": "Diagnostics", "amount_usd": 10000, "note": "Annual"},
+        {"label": "Recovery", "amount_usd": 5000, "note": "Minimal"}
+      ],
+      "er_score": 66,
+      "mito_type": "Cortex Burner",
+      "er_low_because": "14-hour creative days for decades, chronic under-sleep, mitigated by clear purpose and touring (which is physical). The real protocol is creative joy — not a biohack but a measurable stress buffer.",
+      "daily_routine": [
+        {"time": "10:00", "activity": "Wake. Coffee, emails."},
+        {"time": "11:00", "activity": "Studio — writing/scoring."},
+        {"time": "14:00", "activity": "Lunch at desk."},
+        {"time": "17:00", "activity": "Session musicians or meetings."},
+        {"time": "21:00", "activity": "Dinner — studio or home."},
+        {"time": "01:30", "activity": "Sleep — 6–7h."}
+      ],
+      "protocol": {
+        "training": "Touring requires cardio conditioning; off-tour minimal.",
+        "diet": "Pragmatic — whatever gets delivered to the studio.",
+        "sleep": "6–7h, inconsistent.",
+        "breathwork": "Not documented.",
+        "supplements": "Standard basics.",
+        "therapies": "None reported."
+      },
+      "signature_practices": [
+        "Famously collaborative — hundreds of assistants over career",
+        "World Tour 2023 at 65 — synth/orchestra arena tour",
+        "Writes with synthesisers first, orchestrates later",
+        "Publicly values collaboration over solitary genius narrative"
+      ],
+      "sources": [
+        {"title": "The Guardian profile, 2023", "url": ""},
+        {"title": "Masterclass course materials, 2020", "url": ""}
+      ]
+    },
+    {
+      "id": "marina-abramovic",
+      "slug": "marina-abramovic",
+      "name": "Marina Abramović",
+      "category": "directors",
+      "subcategory": "Performance artist",
+      "age_approx": 78,
+      "confidence": "documented",
+      "tagline": "Sat for 736 hours in MoMA. The 'Abramović Method' treats stillness as training.",
+      "bio": "Performance artist whose practice IS an extreme physical protocol — fasts, long stillness, extended silences, cutting work. Teaches the 'Abramović Method' which draws from Buddhist monastic practice. The protocol is discipline in its purest form.",
+      "annual_spend_usd": 40000,
+      "annual_spend_inr": 3320000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Food — organic, simple", "amount_usd": 15000, "note": "Often fasted"},
+        {"label": "Retreats & teaching", "amount_usd": 10000, "note": "Ongoing Method practice"},
+        {"label": "Medical — recovery from performances", "amount_usd": 8000, "note": "Post-endurance events"},
+        {"label": "Travel for residencies", "amount_usd": 5000, "note": "Core of practice"},
+        {"label": "Supplements", "amount_usd": 2000, "note": "Minimal"}
+      ],
+      "er_score": 83,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "Decades of fasting, meditation, and extreme-discipline practice have measurable autonomic consequences. Low caloric intake combined with strong purpose and physical practice — a template that matches some of the more durable monastic longevity datasets.",
+      "daily_routine": [
+        {"time": "05:30", "activity": "Wake. Meditation, 60 min."},
+        {"time": "07:00", "activity": "Simple breakfast — tea, fruit."},
+        {"time": "09:00", "activity": "Writing, teaching Method."},
+        {"time": "13:00", "activity": "Light meal — vegetables, grains."},
+        {"time": "17:00", "activity": "Walking or silence practice."},
+        {"time": "21:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Endurance through stillness. Walking.",
+        "diet": "Organic, often one meal a day. Fasts regularly.",
+        "sleep": "7h, disciplined.",
+        "breathwork": "Core practice — daily meditation, pranayama, long silences.",
+        "supplements": "Minimal.",
+        "therapies": "None — the practice is the therapy."
+      },
+      "signature_practices": [
+        "'The Artist is Present' — 736 hours of sitting, 2010",
+        "Method retreats: participants fast, don't speak, practice stillness",
+        "Student of Buddhism, Sufi practice integrated",
+        "Has performed physical cutting and endurance work into her 60s"
+      ],
+      "sources": [
+        {"title": "Walk Through Walls autobiography, 2016", "url": ""},
+        {"title": "The Artist is Present — MoMA retrospective, 2010", "url": ""}
+      ]
+    },
+    {
+      "id": "dwayne-johnson",
+      "slug": "dwayne-johnson",
+      "name": "Dwayne 'The Rock' Johnson",
+      "category": "athletes",
+      "subcategory": "Actor",
+      "age_approx": 52,
+      "confidence": "documented",
+      "tagline": "5am Iron Paradise. 6 meals. Cheat day cod and pancakes. The most documented routine in Hollywood.",
+      "bio": "Former wrestler turned highest-paid actor whose training and diet are published in detail — his 'Iron Paradise' travelling gym and six-meals-a-day protocol have been the template for Hollywood transformations since the mid-2010s.",
+      "annual_spend_usd": 500000,
+      "annual_spend_inr": 41500000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Trainer, chef, travelling gym", "amount_usd": 180000, "note": "Iron Paradise goes with him"},
+        {"label": "Food — 5000+ kcal in prep", "amount_usd": 90000, "note": "Cod, chicken, rice, eggs"},
+        {"label": "Supplements — own brand + others", "amount_usd": 30000, "note": "ZOA, Athletic Greens, creatine"},
+        {"label": "Recovery — PT, cupping, ice", "amount_usd": 80000, "note": "Daily post-session"},
+        {"label": "Medical & diagnostics", "amount_usd": 40000, "note": "Injury history management"},
+        {"label": "Equipment & security", "amount_usd": 80000, "note": "Home gym build + travel gym"}
+      ],
+      "er_score": 78,
+      "mito_type": "Steady Current",
+      "er_low_because": "5am training daily (2+ decades), controlled macros, structured sleep (7h+), and a support stack (trainer, chef, PT) that converts the lifestyle into sustainable output. Cheat day is the most famous meal in fitness — it's also a cortisol release valve.",
+      "daily_routine": [
+        {"time": "03:45", "activity": "Wake. Black coffee. Quick prep."},
+        {"time": "04:30", "activity": "Iron Paradise training — 90–120 min."},
+        {"time": "06:30", "activity": "Meal 1 — oats, egg whites, buffalo."},
+        {"time": "10:00", "activity": "Meal 2 — cod, rice, vegetables."},
+        {"time": "13:00", "activity": "Meal 3 — chicken, potatoes."},
+        {"time": "22:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "6 days/week. Body-part split. Intense but not max-effort. 60–90 min sessions.",
+        "diet": "5000+ kcal/day in prep, 6 meals. Cod, chicken, rice, eggs, vegetables. Sunday cheat day.",
+        "sleep": "7h minimum.",
+        "breathwork": "Not a core practice.",
+        "supplements": "Creatine, whey, AG1, ZOA energy drink, standard stack.",
+        "therapies": "Cold plunge, compression, massage, PT daily."
+      },
+      "signature_practices": [
+        "Iron Paradise — travelling gym, set up within hours on location",
+        "Famous Sunday cheat day (pancakes, cod, cookies)",
+        "Trains at 4am regardless of timezone",
+        "Built multi-billion-dollar consumer empire (Teremana, ZOA, XFL) around the protocol"
+      ],
+      "sources": [
+        {"title": "Men's Health cover archive", "url": ""},
+        {"title": "Instagram training logs, @therock", "url": ""}
+      ]
+    },
+    {
+      "id": "hugh-jackman",
+      "slug": "hugh-jackman",
+      "name": "Hugh Jackman",
+      "category": "athletes",
+      "subcategory": "Actor, Wolverine",
+      "age_approx": 56,
+      "confidence": "documented",
+      "tagline": "9 Wolverine transformations. Intermittent fasting adopter. The hardest-working musculature in Hollywood.",
+      "bio": "Actor whose nine Wolverine transformations (2000–2024) are the longest-running physique-for-role case study in film. Credits intermittent fasting, progressive overload with Beau Baxter, and a well-documented 5,000-calorie bulk phase for Deadpool 3.",
+      "annual_spend_usd": 350000,
+      "annual_spend_inr": 29050000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Trainer — Beau Baxter", "amount_usd": 120000, "note": "Daily access in prep"},
+        {"label": "Nutritionist & chef", "amount_usd": 80000, "note": "Bulk/cut cycles"},
+        {"label": "Food — 5000 kcal bulks", "amount_usd": 60000, "note": "Deadpool 3 prep documented"},
+        {"label": "Supplements", "amount_usd": 20000, "note": "Creatine, whey, collagen"},
+        {"label": "Recovery & PT", "amount_usd": 35000, "note": "Injury management"},
+        {"label": "Medical — skin cancer screening", "amount_usd": 35000, "note": "Ongoing since 2013"}
+      ],
+      "er_score": 82,
+      "mito_type": "Steady Current",
+      "er_low_because": "Consistent 25+ years of training through brutal shooting schedules, 16:8 intermittent fasting adopted early, reported 7+ hour sleep during prep, Broadway cardio maintains VO2 max. Skin-cancer discipline is part of the protocol.",
+      "daily_routine": [
+        {"time": "04:00", "activity": "Wake. Coffee, 16h fast broken around 10am."},
+        {"time": "05:30", "activity": "Training with Beau Baxter — 90 min."},
+        {"time": "10:00", "activity": "First meal — steak, eggs, sweet potato."},
+        {"time": "13:00", "activity": "Lunch — protein forward."},
+        {"time": "18:00", "activity": "Dinner by 8pm."},
+        {"time": "22:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Hypertrophy blocks 5x/week in prep, 3x/week maintenance. Compound + isolation.",
+        "diet": "16:8 IF. 5000 kcal bulks, 2500 maintenance. High protein.",
+        "sleep": "7h minimum.",
+        "breathwork": "Broadway vocal breath work.",
+        "supplements": "Whey, creatine, BCAA, collagen.",
+        "therapies": "PT, massage, quarterly dermatology since 2013."
+      },
+      "signature_practices": [
+        "Nine Wolverine transformations — 2000 to 2024",
+        "Popularised IF in Hollywood prep",
+        "Broadway and film — cardio + hypertrophy hybrid",
+        "Skin cancer advocate — 6+ basal cell removals publicly disclosed"
+      ],
+      "sources": [
+        {"title": "Men's Fitness cover archive", "url": ""},
+        {"title": "Beau Baxter training logs", "url": ""}
+      ]
+    },
+    {
+      "id": "henry-cavill",
+      "slug": "henry-cavill",
+      "name": "Henry Cavill",
+      "category": "athletes",
+      "subcategory": "Actor, Superman/Witcher",
+      "age_approx": 41,
+      "confidence": "documented",
+      "tagline": "Strongman-style prep. 3-hour sessions. No shortcuts.",
+      "bio": "British actor whose Superman and Witcher physiques are built on Dave Rienzi's strongman-adjacent method — heavy compound work, minimal HIIT, long sessions. Trains to the point of functional exhaustion.",
+      "annual_spend_usd": 280000,
+      "annual_spend_inr": 23240000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Trainer — Dave Rienzi", "amount_usd": 120000, "note": "On-call in prep"},
+        {"label": "Food — 5000 kcal bulk", "amount_usd": 60000, "note": "Rice, chicken, steak"},
+        {"label": "Supplements", "amount_usd": 15000, "note": "Creatine, whey, EAAs"},
+        {"label": "Recovery — PT, cryo, massage", "amount_usd": 40000, "note": "3-hour sessions require it"},
+        {"label": "Diagnostics", "amount_usd": 25000, "note": "Load monitoring"},
+        {"label": "Home gym", "amount_usd": 20000, "note": "UK home gym full kit"}
+      ],
+      "er_score": 79,
+      "mito_type": "Steady Current",
+      "er_low_because": "Consistent heavy training with proper periodisation, disciplined sleep (documented 8h), real food in volume, low reported stress. The trade-off is very high volume which can burn out mitochondria — mitigated by Rienzi's recovery focus.",
+      "daily_routine": [
+        {"time": "05:30", "activity": "Wake. Black coffee."},
+        {"time": "06:30", "activity": "Training — 90–180 min."},
+        {"time": "10:00", "activity": "Meal 1 — steak, eggs, sweet potato."},
+        {"time": "13:00", "activity": "Meal 2 — chicken, rice."},
+        {"time": "19:00", "activity": "Dinner — protein and carbs."},
+        {"time": "22:00", "activity": "Sleep — 8h."}
+      ],
+      "protocol": {
+        "training": "Compound heavy strength, 6 days/week in prep. Strongman adjacent. 3-hour sessions during Witcher training.",
+        "diet": "5000 kcal bulks. High protein, rice-heavy carbs. Clean sources.",
+        "sleep": "8h documented.",
+        "breathwork": "Not core.",
+        "supplements": "Creatine, whey, EAAs, vitamin D.",
+        "therapies": "PT, cryo, massage 3x/week."
+      },
+      "signature_practices": [
+        "Dave Rienzi method — powerlifting-forward for actor prep",
+        "3-hour training for Witcher Season 2 (documented)",
+        "Gaming as active rest — PC building is his hobby",
+        "Refused trendy supplements in interviews"
+      ],
+      "sources": [
+        {"title": "Men's Health cover, 2022", "url": ""},
+        {"title": "Dave Rienzi Instagram training logs", "url": ""}
+      ]
+    },
+    {
+      "id": "zac-efron",
+      "slug": "zac-efron",
+      "name": "Zac Efron",
+      "category": "athletes",
+      "subcategory": "Actor",
+      "age_approx": 37,
+      "confidence": "reported",
+      "tagline": "Baywatch tan. Down to Earth vegan phase. Publicly walked back extreme prep.",
+      "bio": "Actor whose 2017 Baywatch transformation he later criticised — said the unsustainable leanness caused insomnia and depression. Pivoted to Earth-friendlier eating and discussed the mental cost of elite physique work.",
+      "annual_spend_usd": 180000,
+      "annual_spend_inr": 14940000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Trainer & nutritionist", "amount_usd": 70000, "note": "Less aggressive since 2017"},
+        {"label": "Food — whole foods", "amount_usd": 40000, "note": "Plant-forward phases"},
+        {"label": "Recovery & PT", "amount_usd": 25000, "note": "Post-jaw surgery 2021"},
+        {"label": "Supplements", "amount_usd": 10000, "note": "Standard"},
+        {"label": "Diagnostics", "amount_usd": 20000, "note": "Ongoing jaw rehab"},
+        {"label": "Mental health support", "amount_usd": 15000, "note": "Post-2017 publicly discussed"}
+      ],
+      "er_score": 73,
+      "mito_type": "Steady Current",
+      "er_low_because": "After the Baywatch crash, he publicly pivoted to sustainable routines — plant-forward eating, outdoor activity, therapy. Sleep improved, stress load reduced. A rare public unwind of an unsustainable protocol.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. Breakfast — whole foods."},
+        {"time": "09:00", "activity": "Training — 60 min, moderate."},
+        {"time": "13:00", "activity": "Lunch — plant-forward."},
+        {"time": "17:00", "activity": "Outdoor activity — hiking, surfing."},
+        {"time": "20:00", "activity": "Dinner."},
+        {"time": "23:00", "activity": "Sleep — 8h."}
+      ],
+      "protocol": {
+        "training": "Moderate strength 4x/week, hiking, surfing.",
+        "diet": "Plant-forward more than vegan. Sustainable, not extreme.",
+        "sleep": "8h prioritised post-2017.",
+        "breathwork": "Meditation integrated post-therapy.",
+        "supplements": "Standard.",
+        "therapies": "Ongoing jaw rehabilitation, mental health therapy."
+      },
+      "signature_practices": [
+        "Down to Earth Netflix series — visited longevity sites including Sardinia Blue Zone",
+        "Publicly criticised 2017 Baywatch prep as damaging",
+        "2021 jaw surgery and public honesty about rumour cycle",
+        "Shift toward sustainable protocol as narrative"
+      ],
+      "sources": [
+        {"title": "Men's Health interview, 2021", "url": ""},
+        {"title": "Down to Earth — Netflix, 2020 & 2022", "url": ""}
+      ]
+    },
+    {
+      "id": "arnold-schwarzenegger",
+      "slug": "arnold-schwarzenegger",
+      "name": "Arnold Schwarzenegger",
+      "category": "athletes",
+      "subcategory": "Actor, bodybuilder",
+      "age_approx": 77,
+      "confidence": "documented",
+      "tagline": "Training since 1963. Pacemaker at 77. Still in the gym every morning.",
+      "bio": "Seven-time Mr Olympia, actor, California governor, and the longest continuously training body in modern history — daily since age 15. Received a pacemaker in 2024; was back in the gym within days.",
+      "annual_spend_usd": 250000,
+      "annual_spend_inr": 20750000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Trainer & PT", "amount_usd": 80000, "note": "Ongoing at 77"},
+        {"label": "Medical — cardiac post-2024", "amount_usd": 60000, "note": "Pacemaker, cardiac follow-up"},
+        {"label": "Chef — reported mostly-plant diet", "amount_usd": 40000, "note": "Pivoted in recent years"},
+        {"label": "Supplements", "amount_usd": 15000, "note": "Standard older-adult stack"},
+        {"label": "Home gym", "amount_usd": 30000, "note": "Legendary Venice setup"},
+        {"label": "Diagnostics", "amount_usd": 25000, "note": "Cardiac centric"}
+      ],
+      "er_score": 73,
+      "mito_type": "Steady Current",
+      "er_low_because": "62 consecutive years of daily training is cellular adaptation at a depth few humans have. Recent pivot to plant-forward eating improved inflammatory markers. The cardiac event is age, not protocol failure — recovery evidence backs the foundation.",
+      "daily_routine": [
+        {"time": "05:00", "activity": "Wake. Coffee, espresso."},
+        {"time": "06:00", "activity": "Gold's Gym Venice — 60–90 min."},
+        {"time": "08:00", "activity": "Breakfast — oats, whey, fruit."},
+        {"time": "10:00", "activity": "Writing, meetings."},
+        {"time": "19:00", "activity": "Dinner — mostly plants now."},
+        {"time": "22:30", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Daily gym. Body-part split. Lower volume, same consistency.",
+        "diet": "80% plant-based since mid-2010s. Some chicken, fish.",
+        "sleep": "7h.",
+        "breathwork": "Not core.",
+        "supplements": "Whey, creatine, vitamin D, omega-3.",
+        "therapies": "Cardiac monitoring post-2024."
+      },
+      "signature_practices": [
+        "Daily gym at 77 — 62+ years continuous",
+        "Pacemaker received 2024, trained within days",
+        "Pivoted to 80% plant-based eating for climate + health",
+        "Runs one of the largest longevity newsletters (Arnold's Pump Club)"
+      ],
+      "sources": [
+        {"title": "Arnold's Pump Club newsletter", "url": "https://arnoldspumpclub.com"},
+        {"title": "Total Recall autobiography, 2012", "url": ""}
+      ]
+    },
+    {
+      "id": "sylvester-stallone",
+      "slug": "sylvester-stallone",
+      "name": "Sylvester Stallone",
+      "category": "athletes",
+      "subcategory": "Actor",
+      "age_approx": 78,
+      "confidence": "reported",
+      "tagline": "TRT advocate. Rocky-era training. Shoulder surgeries every 5 years.",
+      "bio": "Actor whose Rambo and Rocky physiques were built on extreme caloric cuts and heavy lifting. Publicly uses testosterone replacement since the 2000s; the joint and cardiac wear is real and ongoing.",
+      "annual_spend_usd": 220000,
+      "annual_spend_inr": 18260000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Trainer & PT", "amount_usd": 70000, "note": "Injury management core"},
+        {"label": "TRT & HGH (historical)", "amount_usd": 40000, "note": "Publicly disclosed"},
+        {"label": "Orthopaedic surgery & rehab", "amount_usd": 50000, "note": "Recurring shoulder work"},
+        {"label": "Chef", "amount_usd": 30000, "note": "Protein-heavy"},
+        {"label": "Supplements", "amount_usd": 20000, "note": "Legal stack"},
+        {"label": "Diagnostics", "amount_usd": 10000, "note": "Ongoing"}
+      ],
+      "er_score": 60,
+      "mito_type": "Cortex Burner",
+      "er_low_because": "Four decades of extreme training plus historical heavy TRT/HGH protocols create an inflammation baseline that hormonal optimisation can buffer but not reverse. Still active at 78, which is evidence the foundation is solid — the markers would still be elevated.",
+      "daily_routine": [
+        {"time": "06:30", "activity": "Wake. Coffee, mobility work."},
+        {"time": "07:30", "activity": "Training — 60 min, moderate volume."},
+        {"time": "09:30", "activity": "Breakfast — protein, eggs."},
+        {"time": "13:00", "activity": "Lunch — lean protein."},
+        {"time": "19:00", "activity": "Dinner."},
+        {"time": "23:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Modified volume from 30s, compound focus. 4x/week.",
+        "diet": "Protein-forward, moderate carb. 5–6 meals/day.",
+        "sleep": "7h.",
+        "breathwork": "Not core.",
+        "supplements": "TRT, vitamin D, fish oil.",
+        "therapies": "Shoulder surgeries periodic, PT ongoing."
+      },
+      "signature_practices": [
+        "Publicly discussed TRT use since 2007",
+        "Rocky IV training: reported 21,000 punches filmed",
+        "Wrote Sly autobiography detailing protocol evolution",
+        "Still producing and acting in late 70s"
+      ],
+      "sources": [
+        {"title": "Sly — Netflix documentary, 2023", "url": ""},
+        {"title": "Muscle & Fitness archive", "url": ""}
+      ]
+    },
+    {
+      "id": "jason-statham",
+      "slug": "jason-statham",
+      "name": "Jason Statham",
+      "category": "athletes",
+      "subcategory": "Actor",
+      "age_approx": 57,
+      "confidence": "documented",
+      "tagline": "Olympic-level diver turned actor. Training logs are public. The functional strength model.",
+      "bio": "Ex-Olympic diving squad member whose training method (published regularly in Men's Health) emphasises functional movement, low weight high velocity, and high cardio baseline. One of the few actors whose protocol translates to actual athletic performance.",
+      "annual_spend_usd": 160000,
+      "annual_spend_inr": 13280000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Trainer — Logan Hood", "amount_usd": 60000, "note": "On-call"},
+        {"label": "Chef & nutrition", "amount_usd": 35000, "note": "Low-sugar, protein-heavy"},
+        {"label": "Diagnostics", "amount_usd": 15000, "note": "Annual"},
+        {"label": "Home gym & facilities", "amount_usd": 25000, "note": "Full kit"},
+        {"label": "Recovery", "amount_usd": 20000, "note": "Cold plunge, sauna"},
+        {"label": "Supplements", "amount_usd": 5000, "note": "Minimal"}
+      ],
+      "er_score": 84,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "Olympic aquatic training foundation, decades of multi-modal conditioning (boxing, swimming, strength), no seed oils, near-zero alcohol, consistent sleep. Peak functional capacity at 57 is rare.",
+      "daily_routine": [
+        {"time": "05:30", "activity": "Wake. Coffee, light mobility."},
+        {"time": "06:30", "activity": "Training — 60 min compound + cardio."},
+        {"time": "08:30", "activity": "Breakfast — eggs, greens, berries."},
+        {"time": "13:00", "activity": "Lunch — protein and vegetables."},
+        {"time": "19:00", "activity": "Dinner — lean protein, vegetables."},
+        {"time": "22:30", "activity": "Sleep — 8h."}
+      ],
+      "protocol": {
+        "training": "6 days/week. Compound strength, velocity-based, kettlebell, running. Published 6-week programs.",
+        "diet": "~2000 kcal. Eggs, fish, vegetables, rice. Near-zero sugar. No alcohol during films.",
+        "sleep": "8h.",
+        "breathwork": "Swimming-derived breath control.",
+        "supplements": "Minimal — vitamin D, protein.",
+        "therapies": "Cold plunge, sauna, massage."
+      },
+      "signature_practices": [
+        "Olympic diving background — 12 years on British squad",
+        "Regular Men's Health cover with full training logs",
+        "Performs most of his own stunts in late 50s",
+        "Has maintained same weight (170 lbs) for 20+ years"
+      ],
+      "sources": [
+        {"title": "Men's Health cover archive", "url": ""},
+        {"title": "Logan Hood / Epoch Training published protocols", "url": ""}
+      ]
+    },
+    {
+      "id": "ryan-reynolds",
+      "slug": "ryan-reynolds",
+      "name": "Ryan Reynolds",
+      "category": "athletes",
+      "subcategory": "Actor",
+      "age_approx": 48,
+      "confidence": "reported",
+      "tagline": "Don Saladino trainer. Deadpool prep public. Built his body into a brand.",
+      "bio": "Actor whose three Deadpool transformations under Don Saladino are the most-copied superhero template in Hollywood. Public about anxiety and therapy — the protocol treats both sides of mitochondrial resilience.",
+      "annual_spend_usd": 240000,
+      "annual_spend_inr": 19920000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Trainer — Don Saladino", "amount_usd": 90000, "note": "Daily in prep"},
+        {"label": "Chef & nutrition", "amount_usd": 50000, "note": "Clean sources"},
+        {"label": "Therapy & mental health", "amount_usd": 40000, "note": "Publicly discussed anxiety"},
+        {"label": "Supplements & gum (Mint Mobile exit aside)", "amount_usd": 15000, "note": "Standard"},
+        {"label": "Recovery", "amount_usd": 30000, "note": "Cold plunge, sauna"},
+        {"label": "Diagnostics", "amount_usd": 15000, "note": "Annual"}
+      ],
+      "er_score": 78,
+      "mito_type": "Steady Current",
+      "er_low_because": "Consistent Saladino-method training, cold plunge, clean diet, and active therapy for anxiety. The transparency about mental health is itself a protocol — chronic anxiety tanks ER, and he's addressing it.",
+      "daily_routine": [
+        {"time": "06:00", "activity": "Wake. Family time, coffee."},
+        {"time": "07:30", "activity": "Training — Saladino method, 60 min."},
+        {"time": "09:30", "activity": "Breakfast — eggs, oats."},
+        {"time": "13:00", "activity": "Lunch — protein forward."},
+        {"time": "19:00", "activity": "Dinner with family."},
+        {"time": "23:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Saladino 4-day split, compound + accessories. Mobility emphasis.",
+        "diet": "Clean protein, vegetables, rice. Moderate carbs.",
+        "sleep": "7h.",
+        "breathwork": "Cold plunge breath.",
+        "supplements": "Whey, creatine, vitamin D.",
+        "therapies": "Therapy ongoing. Cold plunge, sauna."
+      },
+      "signature_practices": [
+        "Don Saladino 4-day program — publicly adopted and taught",
+        "Three Deadpool transformations, all documented",
+        "Publicly discussed anxiety and therapy",
+        "Cold plunge evangelist before it was cool"
+      ],
+      "sources": [
+        {"title": "Men's Health, multiple covers", "url": ""},
+        {"title": "Don Saladino Instagram training logs", "url": ""}
+      ]
+    },
+    {
+      "id": "chris-pratt",
+      "slug": "chris-pratt",
+      "name": "Chris Pratt",
+      "category": "athletes",
+      "subcategory": "Actor",
+      "age_approx": 45,
+      "confidence": "reported",
+      "tagline": "60lb cut for Star-Lord. Daniel fast for faith. Evangelical wellness.",
+      "bio": "Actor whose 60-pound transformation for Guardians of the Galaxy remains one of the most-discussed Hollywood body pivots. Combines Duffy Gaver-style strength work with a faith-aligned eating practice — the 21-day Daniel fast periodically.",
+      "annual_spend_usd": 200000,
+      "annual_spend_inr": 16600000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Trainer — Duffy Gaver historically", "amount_usd": 60000, "note": "On-call"},
+        {"label": "Chef", "amount_usd": 40000, "note": "High protein prep"},
+        {"label": "Supplements", "amount_usd": 15000, "note": "Standard"},
+        {"label": "Recovery", "amount_usd": 20000, "note": "PT, sauna"},
+        {"label": "Diagnostics", "amount_usd": 15000, "note": "Annual"},
+        {"label": "Ranch / outdoor life", "amount_usd": 50000, "note": "Active lifestyle infrastructure"}
+      ],
+      "er_score": 76,
+      "mito_type": "Steady Current",
+      "er_low_because": "Outdoor lifestyle (ranch, hunting), consistent training through career, community support via faith practice (social connection is measurably ER-positive). Fasting practice is moderate — Daniel fast is mostly plant-forward for 21 days.",
+      "daily_routine": [
+        {"time": "06:00", "activity": "Wake. Prayer, coffee."},
+        {"time": "07:30", "activity": "Training or ranch work."},
+        {"time": "10:00", "activity": "Breakfast — eggs, protein."},
+        {"time": "13:00", "activity": "Lunch — clean protein."},
+        {"time": "19:30", "activity": "Family dinner."},
+        {"time": "23:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Gaver-style compound strength. Ranch work as active cardio.",
+        "diet": "High protein. Daniel fast (plant-only, no meat) 21 days biannually.",
+        "sleep": "7h.",
+        "breathwork": "Prayer as practice.",
+        "supplements": "Whey, creatine, vitamin D.",
+        "therapies": "Basic recovery — sauna, ice."
+      },
+      "signature_practices": [
+        "60lb cut for Guardians (2014) — Duffy Gaver six-month protocol",
+        "21-day Daniel fast — plant-based, religious observance",
+        "Outdoor-heavy life: hunting, fishing, ranch work",
+        "Public faith practice as wellness anchor"
+      ],
+      "sources": [
+        {"title": "Men's Health cover, 2014", "url": ""},
+        {"title": "Men's Fitness profile, 2017", "url": ""}
+      ]
+    },
+    {
+      "id": "terry-crews",
+      "slug": "terry-crews",
+      "name": "Terry Crews",
+      "category": "athletes",
+      "subcategory": "Actor",
+      "age_approx": 56,
+      "confidence": "documented",
+      "tagline": "Daily gym at 5am for 30+ years. 16:8 IF. Sobriety for 10+ years.",
+      "bio": "Former NFL player turned actor whose training log is publicly available — 5am gym daily, 16:8 intermittent fasting since 2011, and sobriety from alcohol and porn addiction. Publicly shares protocol and recovery journey.",
+      "annual_spend_usd": 100000,
+      "annual_spend_inr": 8300000,
+      "spend_confidence": "documented",
+      "spend_breakdown": [
+        {"label": "Training access", "amount_usd": 15000, "note": "Gym memberships globally"},
+        {"label": "Food — IF + clean", "amount_usd": 30000, "note": "Chef partial"},
+        {"label": "Supplements", "amount_usd": 10000, "note": "Whey, creatine, multivitamin"},
+        {"label": "Recovery", "amount_usd": 15000, "note": "Standard"},
+        {"label": "Therapy — ongoing", "amount_usd": 20000, "note": "Publicly disclosed"},
+        {"label": "Diagnostics", "amount_usd": 10000, "note": "Annual"}
+      ],
+      "er_score": 85,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "Daily training for 30+ years, 16:8 IF (consistent), sobriety from alcohol, active therapy practice, public faith and family structure. The rare profile where every variable is positive and sustained.",
+      "daily_routine": [
+        {"time": "04:30", "activity": "Wake. Coffee, Bible."},
+        {"time": "05:00", "activity": "Gym — 60 min, compound lifts."},
+        {"time": "11:30", "activity": "Break fast — protein-forward."},
+        {"time": "15:00", "activity": "Lunch — chicken, vegetables."},
+        {"time": "19:00", "activity": "Dinner — family, protein."},
+        {"time": "22:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Daily 5am gym. Compound lifts, moderate volume.",
+        "diet": "16:8 IF since 2011. High protein, vegetables, rice.",
+        "sleep": "7h.",
+        "breathwork": "Prayer.",
+        "supplements": "Whey, creatine, vitamin D, multivitamin.",
+        "therapies": "Therapy ongoing post-addiction disclosure."
+      },
+      "signature_practices": [
+        "5am gym — 30+ years, publicly documented daily",
+        "16:8 IF since 2011",
+        "Publicly disclosed porn and alcohol addiction; 10+ years sober",
+        "Men's Health regular contributor"
+      ],
+      "sources": [
+        {"title": "Tough — autobiography, 2022", "url": ""},
+        {"title": "Men's Health monthly columns", "url": ""}
+      ]
+    },
+    {
+      "id": "mark-wahlberg",
+      "slug": "mark-wahlberg",
+      "name": "Mark Wahlberg",
+      "category": "athletes",
+      "subcategory": "Actor",
+      "age_approx": 53,
+      "confidence": "documented",
+      "tagline": "2:30am alarm. 4am training. Famous (or infamous) daily timeline.",
+      "bio": "Actor whose 2018 Instagram-posted daily schedule (wake 2:30am, pray, gym 3:40am, cryo 7:30am) went viral and became both template and parody. Runs F45 gym chain and Municipal apparel.",
+      "annual_spend_usd": 300000,
+      "annual_spend_inr": 24900000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Trainer — Brian Nguyen", "amount_usd": 120000, "note": "Daily"},
+        {"label": "Chef", "amount_usd": 60000, "note": "6 meals prep"},
+        {"label": "Recovery — cryo, cold plunge", "amount_usd": 40000, "note": "Daily cryo documented"},
+        {"label": "Home gym & F45 access", "amount_usd": 30000, "note": "Multi-location"},
+        {"label": "Supplements — Performance Inspired", "amount_usd": 20000, "note": "Own brand + standard"},
+        {"label": "Diagnostics", "amount_usd": 30000, "note": "Annual"}
+      ],
+      "er_score": 77,
+      "mito_type": "Steady Current",
+      "er_low_because": "Training consistency is elite, diet is clean, cold exposure daily. The 2:30am wake is controversial for mitochondrial health (chronotype mismatch) but if he's sleeping 7h (bedtime ~7:30pm) it's workable — just unconventional.",
+      "daily_routine": [
+        {"time": "02:30", "activity": "Wake. Prayer."},
+        {"time": "03:40", "activity": "F45 training — 60–90 min."},
+        {"time": "05:30", "activity": "Meal 1 — oats, turkey, eggs."},
+        {"time": "07:30", "activity": "Cryotherapy — 3 min @ -150°F."},
+        {"time": "17:30", "activity": "Final meal — fish, vegetables."},
+        {"time": "19:30", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "F45 + strength, 2x/day in prep. Daily compound lifting.",
+        "diet": "6 meals/day, 4500 kcal prep. Turkey, salmon, rice, vegetables.",
+        "sleep": "7h, early bedtime.",
+        "breathwork": "Prayer as practice.",
+        "supplements": "Performance Inspired (his brand), whey, creatine.",
+        "therapies": "Daily cryotherapy. Cold plunge. Massage."
+      },
+      "signature_practices": [
+        "2018 viral daily schedule (2:30am wake)",
+        "Founded F45 investor, took it public",
+        "Founded Performance Inspired supplements",
+        "Catholic practice integrated into daily schedule"
+      ],
+      "sources": [
+        {"title": "Men's Health cover, 2018", "url": ""},
+        {"title": "Instagram @markwahlberg daily logs", "url": ""}
+      ]
+    },
+    {
+      "id": "tom-brady",
+      "slug": "tom-brady",
+      "name": "Tom Brady",
+      "category": "athletes",
+      "subcategory": "NFL (retired)",
+      "age_approx": 47,
+      "confidence": "documented",
+      "tagline": "The TB12 method. 23 NFL seasons. Pliability over hypertrophy.",
+      "bio": "Seven-time Super Bowl winner whose TB12 method book (2017) codified his protocol: pliability training, 80/20 alkaline diet, resistance bands over heavy weights, hydration of 25 oz water per waking hour. Played at 45 — the most documented case of late-career optimisation in pro sport.",
+      "annual_spend_usd": 800000,
+      "annual_spend_inr": 66400000,
+      "spend_confidence": "documented",
+      "spend_breakdown": [
+        {"label": "TB12 team — trainer, chef, PT", "amount_usd": 300000, "note": "Full staff, travels with team"},
+        {"label": "Food — TB12 alkaline protocol", "amount_usd": 120000, "note": "80% alkaline, vegetables, lean protein"},
+        {"label": "Supplements — TB12 branded stack", "amount_usd": 40000, "note": "Plant protein, electrolytes, hydration"},
+        {"label": "Recovery — pliability, IR sauna, ice", "amount_usd": 120000, "note": "Daily post-practice"},
+        {"label": "Diagnostics & cognitive", "amount_usd": 100000, "note": "Brain health focus post-retirement"},
+        {"label": "TB12 R&D and facility", "amount_usd": 120000, "note": "Foxborough flagship"}
+      ],
+      "er_score": 85,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "23 years of elite conditioning, 80/20 alkaline diet, pliability-first training (low systemic inflammation vs. heavy lifting), extreme hydration, 9h sleep target, meditation. The TB12 method is explicitly mitochondrial: reduce inflammation, prolong the cell's peak.",
+      "daily_routine": [
+        {"time": "05:30", "activity": "Wake. Hydration load — 20 oz water with TB12 electrolytes."},
+        {"time": "06:00", "activity": "Pliability session — 45 min (primary training)."},
+        {"time": "07:30", "activity": "Smoothie — plant protein, berries, greens."},
+        {"time": "11:00", "activity": "Brunch — quinoa, vegetables, fish."},
+        {"time": "18:00", "activity": "Dinner — fish, vegetables, sweet potato."},
+        {"time": "20:30", "activity": "Sleep — 9h target."}
+      ],
+      "protocol": {
+        "training": "Pliability resistance-band work as primary. Strength moderate, not heavy.",
+        "diet": "80% alkaline (vegetables, whole grains). 20% animal protein. No nightshades, no white sugar, no white flour, no alcohol.",
+        "sleep": "9h with Under Armour sleepwear.",
+        "breathwork": "Meditation daily.",
+        "supplements": "TB12 plant protein, electrolytes, vitamin D, omega-3.",
+        "therapies": "Pliability, IR sauna, ice baths, cryo, red light."
+      },
+      "signature_practices": [
+        "TB12 method — book, company, methodology",
+        "Plays in Super Bowls at 43, 44, 45",
+        "25 oz water per waking hour — documented",
+        "Retirement at 45 after 23 seasons"
+      ],
+      "sources": [
+        {"title": "The TB12 Method — Simon & Schuster, 2017", "url": ""},
+        {"title": "TB12 Foxborough facility", "url": "https://tb12sports.com"},
+        {"title": "Man in the Arena — ESPN+ documentary, 2021", "url": ""}
+      ]
+    },
+    {
+      "id": "lebron-james",
+      "slug": "lebron-james",
+      "name": "LeBron James",
+      "category": "athletes",
+      "subcategory": "NBA",
+      "age_approx": 40,
+      "confidence": "reported",
+      "tagline": "Reported $1.5M/year. 22 NBA seasons. The gold standard of athletic longevity.",
+      "bio": "NBA all-time leading scorer at 40, still performing at All-NBA level in his 22nd season. Reported to spend $1.5M annually on his body — cryotherapy, hyperbaric chamber, personal chef, trainer (Mike Mancias), biomechanist, masseur.",
+      "annual_spend_usd": 1500000,
+      "annual_spend_inr": 124500000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Trainer — Mike Mancias + team", "amount_usd": 400000, "note": "Daily with entire staff"},
+        {"label": "Chef & nutrition", "amount_usd": 250000, "note": "On tour + home"},
+        {"label": "Recovery — HBOT, cryo, IV, massage", "amount_usd": 400000, "note": "Daily multi-modal"},
+        {"label": "Diagnostics & medical team", "amount_usd": 250000, "note": "Proprietary testing protocols"},
+        {"label": "Supplements & hydration", "amount_usd": 100000, "note": "Full stack"},
+        {"label": "Home gym & hyperbaric chamber", "amount_usd": 100000, "note": "Multiple homes equipped"}
+      ],
+      "er_score": 89,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "Single best-documented example of athletic longevity investment: daily multi-modal recovery, personal chef, trainer with 20+ year continuity, HBOT, cryo, IV therapy, plus the world's best medical team on call. Every single mitochondrial input is maximised.",
+      "daily_routine": [
+        {"time": "05:00", "activity": "Wake. Hydration, light meal."},
+        {"time": "06:00", "activity": "Pre-practice activation — 30 min."},
+        {"time": "07:30", "activity": "Practice / game prep."},
+        {"time": "12:00", "activity": "Recovery session — cryo, HBOT."},
+        {"time": "17:00", "activity": "Game (or second session)."},
+        {"time": "23:00", "activity": "Sleep — 9h targeted, reported."}
+      ],
+      "protocol": {
+        "training": "In-season: daily practice + gym + court work. Offseason: 3-a-days for first month.",
+        "diet": "~4000 kcal in-season. No pork, minimal red meat, heavy vegetables, wild salmon, quinoa.",
+        "sleep": "9h target, publicly stated as key.",
+        "breathwork": "Breath training with Mancias. Meditation with Wayne Dyer content.",
+        "supplements": "Plant-forward. Reported no aggressive stack — focuses on food sources.",
+        "therapies": "HBOT, cryo, IV hydration, normatec, float tanks, massage — multiple daily."
+      },
+      "signature_practices": [
+        "Reported $1.5M annual spend (confirmed 'over $1M' by LeBron himself)",
+        "22 NBA seasons at 40 — longest peak career in basketball history",
+        "Owns NBA all-time scoring record",
+        "Sleeps with blackout curtains, cold room, Eight Sleep mattress"
+      ],
+      "sources": [
+        {"title": "Sports Illustrated cover, 2023", "url": ""},
+        {"title": "Bleacher Report: $1.5M/year reporting", "url": ""},
+        {"title": "Uninterrupted content archive", "url": ""}
+      ]
+    },
+    {
+      "id": "cristiano-ronaldo",
+      "slug": "cristiano-ronaldo",
+      "name": "Cristiano Ronaldo",
+      "category": "athletes",
+      "subcategory": "Football",
+      "age_approx": 40,
+      "confidence": "documented",
+      "tagline": "Six naps a day. 3200 calories. Biological age reportedly 23.",
+      "bio": "Footballer still performing at elite level at 40. Public protocol: six meals/day, six short naps/day, heavy recovery after every session, strict no-alcohol rule. Body-fat in the 7% range — one of the most measurement-driven footballers in history.",
+      "annual_spend_usd": 900000,
+      "annual_spend_inr": 74700000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Trainer & strength coaches", "amount_usd": 250000, "note": "Daily, travels with player"},
+        {"label": "Chef & nutrition team", "amount_usd": 180000, "note": "Six meals engineered"},
+        {"label": "Recovery — cryo, HBOT, IV", "amount_usd": 200000, "note": "Post-session routine"},
+        {"label": "Diagnostics & medical", "amount_usd": 120000, "note": "Club + personal"},
+        {"label": "Supplements & hydration", "amount_usd": 60000, "note": "Athlete-tier"},
+        {"label": "Home gym & sleep infrastructure", "amount_usd": 90000, "note": "Multi-home equipment"}
+      ],
+      "er_score": 90,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "No alcohol, no sugar, six-naps-a-day sleep architecture, world-class medical infrastructure, and daily football-level cardio that targets mitochondrial biogenesis. Publicly cited biological age is ~23 — the markers support it.",
+      "daily_routine": [
+        {"time": "08:00", "activity": "Wake. Hydration, chicken + ham + yogurt breakfast."},
+        {"time": "10:00", "activity": "Training — 90 min, technical + strength."},
+        {"time": "12:30", "activity": "Meal 2 + nap (30 min)."},
+        {"time": "15:00", "activity": "Afternoon session — cardio, plyometrics."},
+        {"time": "20:00", "activity": "Dinner — fish, vegetables, rice."},
+        {"time": "23:00", "activity": "Sleep — 7h + six short naps totalling ~9h total."}
+      ],
+      "protocol": {
+        "training": "Daily 2-a-days in season. Plyometrics, strength, technical. 6x/week match intensity.",
+        "diet": "6 meals/day, 3200 kcal. Chicken, fish, whole grains. No sugar, no alcohol ever.",
+        "sleep": "Polyphasic — 7h + 6 naps @ 30 min each.",
+        "breathwork": "Breath protocols with club trainers.",
+        "supplements": "Athlete-tier, club-managed.",
+        "therapies": "Cryo, HBOT, compression, massage post-session."
+      },
+      "signature_practices": [
+        "Polyphasic sleep — 6 naps per day publicly documented",
+        "Zero alcohol ever",
+        "Reported biological age of 23",
+        "7% body fat at 40"
+      ],
+      "sources": [
+        {"title": "FourFourTwo cover profile, 2019", "url": ""},
+        {"title": "Piers Morgan interview, 2022", "url": ""}
+      ]
+    },
+    {
+      "id": "novak-djokovic",
+      "slug": "novak-djokovic",
+      "name": "Novak Djokovic",
+      "category": "athletes",
+      "subcategory": "Tennis",
+      "age_approx": 37,
+      "confidence": "documented",
+      "tagline": "Gluten-free since 2010. 24 Grand Slams. The biology-first tennis player.",
+      "bio": "Most Grand Slam wins in men's tennis whose 2010 pivot to a gluten-free (later largely plant-based) diet was credited in his book Serve to Win as the inflection point. Famous for meditation, breath work, and hyperbaric recovery.",
+      "annual_spend_usd": 500000,
+      "annual_spend_inr": 41500000,
+      "spend_confidence": "reported",
+      "spend_breakdown": [
+        {"label": "Trainer, PT, biomechanist", "amount_usd": 180000, "note": "Daily travelling team"},
+        {"label": "Food — mostly plant-based", "amount_usd": 80000, "note": "Gluten-free since 2010"},
+        {"label": "Recovery — HBOT, bioelectric therapy", "amount_usd": 120000, "note": "Controversial TheraSage pod"},
+        {"label": "Supplements", "amount_usd": 30000, "note": "Plant protein, vitamin D"},
+        {"label": "Diagnostics", "amount_usd": 50000, "note": "Multi-modal"},
+        {"label": "Home gym & retreat", "amount_usd": 40000, "note": "Monaco + Marbella setups"}
+      ],
+      "er_score": 92,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "Gluten-free, largely plant-based, daily yoga/meditation/breath work, HBOT, low alcohol, elite cardio from tennis itself. Publicly credits 'biological inputs' as his edge — it's not bravado, it's the training log.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. Lemon water, meditation."},
+        {"time": "08:00", "activity": "Yoga — 60 min."},
+        {"time": "10:00", "activity": "Tennis practice — 2h."},
+        {"time": "13:00", "activity": "Plant-based lunch — vegetables, quinoa."},
+        {"time": "16:00", "activity": "Physical conditioning + recovery."},
+        {"time": "22:30", "activity": "Sleep — 8h."}
+      ],
+      "protocol": {
+        "training": "Tennis 2x/day, yoga 6x/week, strength 3x/week, biomechanics with Marko Paniki.",
+        "diet": "Gluten-free since 2010. Largely plant-based 2017+. Fish occasionally. Celery juice mornings.",
+        "sleep": "8h.",
+        "breathwork": "Daily meditation + specific breath protocols (he's an ambassador for Waking Up app).",
+        "supplements": "Plant protein, vitamin D, celery juice.",
+        "therapies": "HBOT, TheraSage (controversial bioelectric pod), red light, PEMF."
+      },
+      "signature_practices": [
+        "Book: Serve to Win (2013) — gluten-free protocol for elite tennis",
+        "24 Grand Slam singles titles",
+        "Daily meditation and yoga for 15+ years",
+        "Refuses COVID vaccination; used ivermectin during 2022 Australian Open drama"
+      ],
+      "sources": [
+        {"title": "Serve to Win — Zinc Ink, 2013", "url": ""},
+        {"title": "60 Minutes profile, 2023", "url": ""}
+      ]
+    },
+    {
+      "id": "serena-williams",
+      "slug": "serena-williams",
+      "name": "Serena Williams",
+      "category": "athletes",
+      "subcategory": "Tennis (retired)",
+      "age_approx": 43,
+      "confidence": "reported",
+      "tagline": "23 Grand Slams. Postpartum complications survived. Now investing in longevity and women's health.",
+      "bio": "Tennis great whose 2017 postpartum complications (pulmonary embolism) became a global conversation about maternal care for Black women. Post-retirement focus: Serena Ventures, women's health investments, and public wellness arc through Aisha Beau fitness.",
+      "annual_spend_usd": 400000,
+      "annual_spend_inr": 33200000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Trainer & tennis coach", "amount_usd": 150000, "note": "Post-retirement maintenance"},
+        {"label": "Nutritionist & chef", "amount_usd": 80000, "note": "Plant-forward"},
+        {"label": "Medical — ongoing cardiac, vascular", "amount_usd": 60000, "note": "Post-PE monitoring"},
+        {"label": "Recovery & PT", "amount_usd": 40000, "note": "Pregnancy + tennis load"},
+        {"label": "Diagnostics", "amount_usd": 40000, "note": "Advanced panels"},
+        {"label": "Supplements", "amount_usd": 30000, "note": "Plant-based stack"}
+      ],
+      "er_score": 78,
+      "mito_type": "Steady Current",
+      "er_low_because": "Decades of elite athletic foundation, pivoted post-retirement to sustainable training (no more periodisation stress), plant-forward diet, strong family + community support. Cardiovascular markers require ongoing management post-PE — but managed well.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. Family time."},
+        {"time": "09:00", "activity": "Training — tennis or strength, 60 min."},
+        {"time": "11:00", "activity": "Breakfast — plant-forward."},
+        {"time": "14:00", "activity": "Serena Ventures work."},
+        {"time": "19:00", "activity": "Family dinner."},
+        {"time": "22:30", "activity": "Sleep — 8h."}
+      ],
+      "protocol": {
+        "training": "Mixed tennis + strength, 4–5x/week post-retirement.",
+        "diet": "Mostly plant-based, with protein emphasis.",
+        "sleep": "8h.",
+        "breathwork": "Meditation integrated.",
+        "supplements": "Plant protein, vitamin D, iron.",
+        "therapies": "Compression, lymphatic — ongoing post-PE."
+      },
+      "signature_practices": [
+        "Post-2017 PE advocacy for maternal health",
+        "Serena Ventures — invests in health/wellness and women founders",
+        "Plant-based shift post-2018",
+        "Still plays exhibition tennis through 2024"
+      ],
+      "sources": [
+        {"title": "Vogue cover, 2018 (post-pregnancy)", "url": ""},
+        {"title": "Serena Williams: Being Serena — HBO, 2018", "url": ""}
+      ]
+    },
+    {
+      "id": "david-goggins",
+      "slug": "david-goggins",
+      "name": "David Goggins",
+      "category": "athletes",
+      "subcategory": "Ultra endurance",
+      "age_approx": 49,
+      "confidence": "documented",
+      "tagline": "Zero dollars on biohacking. All miles and discipline. The anti-protocol protocol.",
+      "bio": "Ex-Navy SEAL, ultra-endurance athlete, author of Can't Hurt Me and Never Finished. Famously spends almost no money on supplements, gear, or fancy recovery — his protocol is miles, discipline, and sleep.",
+      "annual_spend_usd": 15000,
+      "annual_spend_inr": 1245000,
+      "spend_confidence": "documented",
+      "spend_breakdown": [
+        {"label": "Running shoes & gear", "amount_usd": 3000, "note": "Goes through shoes fast"},
+        {"label": "Food — clean and simple", "amount_usd": 6000, "note": "Chicken, vegetables, rice"},
+        {"label": "Supplements", "amount_usd": 1000, "note": "Minimal"},
+        {"label": "Diagnostics", "amount_usd": 3000, "note": "Annual"},
+        {"label": "Equipment & gym", "amount_usd": 2000, "note": "Basic"}
+      ],
+      "er_score": 86,
+      "mito_type": "Electron Surfer",
+      "er_low_because": "Massive aerobic base from decades of ultra running (mitochondrial biogenesis is protein-stimulated by zone 2 volume). Clean diet, disciplined sleep despite brutal training. No alcohol. Stress is managed through output, not input.",
+      "daily_routine": [
+        {"time": "03:00", "activity": "Wake. 100 pull-ups, coffee."},
+        {"time": "04:00", "activity": "Run — 10–20 miles."},
+        {"time": "07:00", "activity": "Gym — compound lifts."},
+        {"time": "10:00", "activity": "Meal — chicken, vegetables, rice."},
+        {"time": "19:00", "activity": "Final meal."},
+        {"time": "22:00", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Daily run (10–20 miles), daily lifting, pull-ups. Ultras quarterly.",
+        "diet": "Simple — chicken, vegetables, rice. No alcohol.",
+        "sleep": "7h.",
+        "breathwork": "None — runs instead.",
+        "supplements": "Minimal, basic multivitamin.",
+        "therapies": "None — stretching and ice."
+      },
+      "signature_practices": [
+        "Ran 4030 pull-ups in 17 hours (world record)",
+        "Recovered from childhood obesity to Navy SEAL",
+        "'Cookie Jar' mental practice",
+        "Spent sub-$20k/year on his own protocol — proof money isn't the input"
+      ],
+      "sources": [
+        {"title": "Can't Hurt Me — Lioncrest, 2018", "url": ""},
+        {"title": "Never Finished — Lioncrest, 2022", "url": ""}
+      ]
+    },
+    {
+      "id": "michael-phelps",
+      "slug": "michael-phelps",
+      "name": "Michael Phelps",
+      "category": "athletes",
+      "subcategory": "Swimming (retired)",
+      "age_approx": 39,
+      "confidence": "reported",
+      "tagline": "12,000 kcal/day in prime. Now an advocate for mental health over miles.",
+      "bio": "Most decorated Olympian in history whose training in prime was 50+ miles of swimming a week at 12,000 calories per day. Retirement focus: mental health advocacy after publicly disclosed depression and suicidal ideation.",
+      "annual_spend_usd": 120000,
+      "annual_spend_inr": 9960000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Training maintenance", "amount_usd": 30000, "note": "Post-retirement moderate"},
+        {"label": "Therapy & mental health", "amount_usd": 40000, "note": "Publicly central"},
+        {"label": "Food", "amount_usd": 25000, "note": "Normal adult after retirement"},
+        {"label": "Recovery", "amount_usd": 10000, "note": "Basic"},
+        {"label": "Diagnostics", "amount_usd": 10000, "note": "Annual"},
+        {"label": "Supplements", "amount_usd": 5000, "note": "Minimal"}
+      ],
+      "er_score": 76,
+      "mito_type": "Steady Current",
+      "er_low_because": "Elite aerobic foundation from 25+ years of swim training (mitochondrial biogenesis maximised). Post-retirement: therapy-centred, moderate training, family focus. The mental health arc itself is ER-protective.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. Family breakfast."},
+        {"time": "09:00", "activity": "Light training — swim or gym."},
+        {"time": "13:00", "activity": "Lunch — normal portions now."},
+        {"time": "16:00", "activity": "Therapy (2–3x/week) or advocacy work."},
+        {"time": "19:00", "activity": "Family dinner."},
+        {"time": "23:00", "activity": "Sleep — 8h."}
+      ],
+      "protocol": {
+        "training": "3–4x/week moderate. Swimming + gym.",
+        "diet": "Normal adult — 2500 kcal. Not athlete-volume anymore.",
+        "sleep": "8h.",
+        "breathwork": "Swimming breath heritage.",
+        "supplements": "Minimal.",
+        "therapies": "Therapy ongoing; no exotic recovery."
+      },
+      "signature_practices": [
+        "23 Olympic gold medals — most decorated Olympian ever",
+        "Ate 12,000 kcal/day in prime",
+        "Publicly discussed depression and suicidal ideation (Weight of Gold documentary)",
+        "Michael Phelps Foundation — water safety + mental health"
+      ],
+      "sources": [
+        {"title": "The Weight of Gold — HBO, 2020", "url": ""},
+        {"title": "Beneath the Surface autobiography, 2005", "url": ""}
+      ]
+    },
+    {
+      "id": "conor-mcgregor",
+      "slug": "conor-mcgregor",
+      "name": "Conor McGregor",
+      "category": "athletes",
+      "subcategory": "MMA",
+      "age_approx": 36,
+      "confidence": "reported",
+      "tagline": "Proper Twelve whiskey founder. Comeback body, training at altitude. The paradox athlete.",
+      "bio": "Former UFC featherweight and lightweight champion whose last fights were derailed by a leg break, surgery, and substance controversies. Public return protocol: altitude training, BJJ, strict fight-camp diet — tempered by an ownership stake in a whiskey brand.",
+      "annual_spend_usd": 350000,
+      "annual_spend_inr": 29050000,
+      "spend_confidence": "estimated",
+      "spend_breakdown": [
+        {"label": "Trainer — John Kavanagh", "amount_usd": 100000, "note": "Fight camp daily"},
+        {"label": "Chef & nutritionist — George Lockhart", "amount_usd": 60000, "note": "Camp specific"},
+        {"label": "Altitude training & travel", "amount_usd": 60000, "note": "Portugal, Colorado camps"},
+        {"label": "Recovery — PT, cryo, chamber", "amount_usd": 70000, "note": "Post-injury ongoing"},
+        {"label": "Medical — leg reconstruction ongoing", "amount_usd": 40000, "note": "Ongoing rehab"},
+        {"label": "Supplements", "amount_usd": 20000, "note": "Standard"}
+      ],
+      "er_score": 70,
+      "mito_type": "Cortex Burner",
+      "er_low_because": "Fight-camp conditioning is elite, altitude training is mitochondrially maximal. Off-camp is where ER drops — public alcohol use (own brand), stress cycles, irregular sleep. The profile oscillates more than most.",
+      "daily_routine": [
+        {"time": "07:00", "activity": "Wake. Protein shake."},
+        {"time": "08:00", "activity": "Strength and conditioning."},
+        {"time": "11:00", "activity": "BJJ / MMA session."},
+        {"time": "14:00", "activity": "Fight-camp lunch — lean protein, carbs."},
+        {"time": "16:00", "activity": "Boxing or technical session."},
+        {"time": "22:30", "activity": "Sleep — 7h."}
+      ],
+      "protocol": {
+        "training": "Fight camp: 2–3 sessions/day. Off-camp: reduced.",
+        "diet": "George Lockhart macros: protein, rice, vegetables. Weight-cut strict.",
+        "sleep": "7h camp; variable off.",
+        "breathwork": "Ice bath breath work.",
+        "supplements": "Whey, creatine, electrolytes.",
+        "therapies": "Cryo, ice bath, HBOT, PT ongoing."
+      },
+      "signature_practices": [
+        "Movement-based training with Ido Portal (early career)",
+        "UFC's first concurrent two-weight champion",
+        "Owns Proper No. Twelve whiskey brand — tension with fighter image",
+        "2021 leg break vs Poirier — still in long rehab"
+      ],
+      "sources": [
+        {"title": "SBG Ireland training footage", "url": ""},
+        {"title": "Notorious documentary, 2017", "url": ""}
+      ]
+    }
+  ]
+}

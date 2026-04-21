@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ER Score · The Longevity Audit</title>
+<meta name="description" content="Energy Resistance — your mitochondrial signature. Seven questions, one score, honest answers. Grounded in Martin Picard's research (Columbia) and ancestral practice." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F2ECDD;
+    --paper-dark:#E8E0CC;
+    --paper-line:#D6CCAD;
+    --ink:#1A1611;
+    --ink-soft:#4A3F2E;
+    --blood:#B91C1C;
+    --blood-deep:#7F1D1D;
+    --forest:#1F5F3F;
+    --forest-deep:#0F3D24;
+    --gold:#B8860B;
+    --stamp:#A62020;
+    --warn-bg:#FBEFC8;
+    --danger-bg:#F8DAD8;
+    --clinical:#2C3E50;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Instrument Serif',Georgia,serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0px, transparent 31px, rgba(26,22,17,0.04) 31px, rgba(26,22,17,0.04) 32px),
+      radial-gradient(circle at 20% 10%, rgba(184,134,11,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(185,28,28,0.04) 0%, transparent 40%);
+    min-height:100vh;
+  }
+  a{color:var(--ink);text-decoration:none}
+  a:hover{color:var(--blood)}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:-0.01em}
+
+  .topbar{border-bottom:1px solid var(--ink);padding:14px 0;background:var(--paper);position:sticky;top:0;z-index:20}
+  .topbar-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
+  .topbar a{color:var(--ink-soft)}
+  .topbar a:hover{color:var(--blood)}
+  .topbar-nav{display:flex;gap:22px;flex-wrap:wrap}
+  .topbar-nav a.active{color:var(--blood)}
+  .badge-mini{background:var(--ink);color:var(--paper);padding:3px 9px;letter-spacing:0.18em}
+
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* Hero */
+  .hero{padding:80px 0 32px}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--blood);margin-bottom:22px;display:flex;align-items:center;gap:14px}
+  .kicker::before{content:"";width:40px;height:2px;background:var(--blood)}
+  h1.display{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(44px,7vw,96px);line-height:1.01;letter-spacing:-0.03em;color:var(--ink);margin-bottom:24px;max-width:16ch}
+  h1.display em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--blood)}
+  .lede{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--ink-soft);max-width:60ch;line-height:1.42;margin-bottom:32px}
+
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--ink);color:var(--paper);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid var(--ink);cursor:pointer;text-decoration:none;transition:background .15s,transform .12s}
+  .btn:hover{background:var(--blood);border-color:var(--blood);transform:translateY(-2px);color:var(--paper)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+  /* Section */
+  .section{padding:72px 0;border-top:1px solid var(--ink)}
+  .section-number{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:var(--blood);text-transform:uppercase;margin-bottom:14px}
+  .section-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(32px,5vw,56px);line-height:1.02;letter-spacing:-0.02em;margin-bottom:18px}
+  .section-title em{font-style:italic;color:var(--blood)}
+  .section-intro{font-family:'Instrument Serif',serif;font-size:20px;line-height:1.55;max-width:720px;color:var(--ink-soft);margin-bottom:40px}
+
+  /* What is ER */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+  @media(max-width:820px){.pillars{grid-template-columns:1fr}}
+  .pillar{padding:32px 28px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper)}
+  .pillar .n{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:44px;color:var(--blood);line-height:1;margin-bottom:16px}
+  .pillar h3{font-family:'Fraunces',serif;font-weight:300;font-size:26px;letter-spacing:-0.02em;margin-bottom:10px}
+  .pillar h3 em{font-style:italic;color:var(--blood)}
+  .pillar p{font-family:'Instrument Serif',serif;font-size:17px;line-height:1.5;color:var(--ink-soft)}
+
+  /* Celebrity ER strip */
+  .celeb-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+  @media(max-width:820px){.celeb-row{grid-template-columns:repeat(2,1fr)}}
+  .celeb-card{padding:22px 20px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper);transition:background .12s;cursor:pointer;display:flex;flex-direction:column;gap:10px;min-height:180px}
+  .celeb-card:hover{background:var(--warn-bg)}
+  .celeb-top{display:flex;justify-content:space-between;align-items:flex-start}
+  .celeb-cat{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft)}
+  .celeb-big{font-family:'Fraunces',serif;font-weight:300;font-size:44px;color:var(--forest);letter-spacing:-0.03em;line-height:0.9}
+  .celeb-big.mid{color:var(--gold)}
+  .celeb-big.lo{color:var(--stamp)}
+  .celeb-big .pts{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);letter-spacing:0.14em;vertical-align:super}
+  .celeb-name{font-family:'Fraunces',serif;font-weight:300;font-size:22px;line-height:1.05;letter-spacing:-0.015em;margin-top:4px}
+  .celeb-mito{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blood);letter-spacing:0.14em;text-transform:uppercase;margin-top:auto;padding-top:8px;border-top:1px dashed var(--paper-line)}
+
+  /* Quiz */
+  .quiz-wrap{padding:72px 0;background:var(--paper);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+  .progress-wrap{max-width:780px;margin:0 auto 28px;padding:0 24px}
+  .progress-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;display:flex;justify-content:space-between}
+  .progress-label .q-num{color:var(--blood)}
+  .progress-bar{height:4px;background:var(--paper-dark);border:1px solid var(--ink);position:relative;overflow:hidden}
+  .progress-fill{height:100%;background:var(--ink);width:0;transition:width .5s cubic-bezier(.22,.94,.42,1)}
+
+  .qcard{max-width:780px;margin:0 auto;padding:0 24px}
+  .qcard .q-kicker{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.26em;text-transform:uppercase;color:var(--blood);margin-bottom:18px;display:flex;align-items:center;gap:14px}
+  .qcard .q-kicker::before{content:"";width:36px;height:2px;background:var(--blood)}
+  .qcard h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,4.5vw,44px);line-height:1.05;letter-spacing:-0.025em;margin-bottom:12px}
+  .qcard h2 em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--blood)}
+  .qcard .q-hint{font-family:'Instrument Serif',serif;font-style:italic;font-size:16px;color:var(--ink-soft);margin-bottom:24px}
+
+  .opts{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+  .opt{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--paper);border:1.5px solid var(--ink);font-family:'Instrument Serif',serif;font-size:18px;color:var(--ink);cursor:pointer;text-align:left;width:100%;transition:background .12s,border-color .12s}
+  .opt:hover{background:var(--warn-bg)}
+  .opt .tick{width:18px;height:18px;border:1.5px solid var(--ink);border-radius:50%;flex-shrink:0;background:var(--paper);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--paper)}
+  .opt.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .opt.active .tick{background:var(--paper);color:var(--ink)}
+  .opt.active .tick::after{content:"✓"}
+  .opt .kbd{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:var(--ink-soft);border:1px solid var(--ink-soft);padding:2px 7px}
+  .opt.active .kbd{color:var(--paper);border-color:var(--paper)}
+
+  .controls{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-top:12px;border-top:1px solid var(--paper-line);margin-top:8px}
+  .btn-sm{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--ink);color:var(--paper);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid var(--ink);cursor:pointer;transition:background .15s,transform .12s}
+  .btn-sm:hover{background:var(--blood);border-color:var(--blood);transform:translateY(-2px)}
+  .btn-sm:disabled{background:var(--paper-dark);color:var(--ink-soft);border-color:var(--ink-soft);cursor:not-allowed;transform:none}
+  .btn-sm.ghost{background:transparent;color:var(--ink)}
+  .btn-sm.ghost:hover{background:var(--ink);color:var(--paper)}
+
+  /* Loading */
+  .loader-screen{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:40px 24px}
+  .loader-inner{max-width:640px;text-align:center}
+  .loader-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--blood);margin-bottom:22px;display:flex;align-items:center;gap:12px;justify-content:center}
+  .loader-kicker::before,.loader-kicker::after{content:"";width:36px;height:1px;background:var(--blood);display:inline-block}
+  .loader-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,4.5vw,46px);line-height:1.08;letter-spacing:-0.025em;color:var(--ink);margin-bottom:24px}
+  .loader-title em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--blood)}
+  .loader-steps{text-align:left;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);max-width:440px;margin:0 auto;letter-spacing:0.04em}
+  .loader-step{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px dashed var(--paper-line);opacity:0;transform:translateX(-6px);transition:opacity .4s,transform .4s}
+  .loader-step.shown{opacity:1;transform:translateX(0)}
+  .loader-step.done{color:var(--forest)}
+  .loader-step .mark{width:14px;font-weight:700}
+  .loader-step.done .mark{color:var(--forest)}
+
+  /* Results reveal */
+  .reveal{padding:72px 0}
+  .score-hero{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;padding-bottom:48px;border-bottom:1px solid var(--ink)}
+  @media(max-width:720px){.score-hero{grid-template-columns:1fr;gap:16px}}
+  .score-big{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(120px,20vw,220px);line-height:0.88;letter-spacing:-0.04em;color:var(--forest)}
+  .score-big.mid{color:var(--gold)}
+  .score-big.lo{color:var(--stamp)}
+  .score-big .of{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--ink-soft);letter-spacing:0.12em;vertical-align:super}
+  .score-meta .lbl{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.26em;text-transform:uppercase;color:var(--blood);margin-bottom:14px}
+  .score-meta h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(32px,4.5vw,52px);line-height:1.02;letter-spacing:-0.025em;margin-bottom:14px}
+  .score-meta h2 em{font-style:italic;color:var(--forest)}
+  .score-meta p{font-family:'Instrument Serif',serif;font-size:19px;line-height:1.5;color:var(--ink);max-width:560px}
+  .mito-chip{display:inline-block;padding:4px 12px;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;background:var(--forest);color:var(--paper)}
+
+  /* Zone breakdown */
+  .zones{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);margin-top:40px}
+  @media(max-width:820px){.zones{grid-template-columns:repeat(2,1fr)}}
+  .zone-cell{padding:26px 22px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper)}
+  .zone-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px}
+  .zone-val{font-family:'Fraunces',serif;font-weight:300;font-size:52px;line-height:1;letter-spacing:-0.03em;color:var(--forest)}
+  .zone-val.mid{color:var(--gold)}
+  .zone-val.lo{color:var(--stamp)}
+  .zone-bar{height:6px;background:var(--paper-dark);margin-top:16px;position:relative;overflow:hidden}
+  .zone-bar-fill{height:100%;background:var(--forest);transition:width .8s}
+  .zone-bar-fill.mid{background:var(--gold)}
+  .zone-bar-fill.lo{background:var(--stamp)}
+  .zone-desc{font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;color:var(--ink-soft);margin-top:12px;line-height:1.4}
+
+  /* Interventions */
+  .interv-list{display:flex;flex-direction:column;border-top:1px solid var(--ink)}
+  .interv-row{display:grid;grid-template-columns:50px 1fr auto;gap:22px;padding:22px 0;border-bottom:1px dashed var(--paper-line);align-items:center}
+  .interv-rank{font-family:'Fraunces',serif;font-style:italic;font-size:36px;color:var(--blood);line-height:1;font-weight:300}
+  .interv-title{font-family:'Fraunces',serif;font-weight:300;font-size:24px;letter-spacing:-0.015em;line-height:1.15;margin-bottom:4px}
+  .interv-desc{font-family:'Instrument Serif',serif;font-size:16px;color:var(--ink-soft);line-height:1.45;max-width:640px}
+  .interv-impact{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;padding:5px 12px;background:var(--warn-bg);color:var(--blood);border:1px solid var(--blood);white-space:nowrap}
+
+  /* Hidden state helpers */
+  .hide{display:none !important}
+
+  /* Science strip */
+  .science-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+  @media(max-width:720px){.science-grid{grid-template-columns:1fr}}
+  .sci-cell{padding:32px 28px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper)}
+  .sci-cell .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blood);margin-bottom:14px}
+  .sci-cell h3{font-family:'Fraunces',serif;font-weight:300;font-size:26px;letter-spacing:-0.02em;margin-bottom:12px}
+  .sci-cell h3 em{font-style:italic;color:var(--blood)}
+  .sci-cell p{font-family:'Instrument Serif',serif;font-size:17px;line-height:1.52;color:var(--ink)}
+
+  footer{border-top:1px solid var(--ink);padding:40px 24px;background:var(--paper);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)}
+  .foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .disclaimer{max-width:620px;font-family:'Instrument Serif',serif;font-style:italic;font-size:13px;letter-spacing:0;text-transform:none;line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div><span class="badge-mini">v3</span> &nbsp; The Longevity Audit</div>
+    <nav class="topbar-nav">
+      <a href="dashboard.html">Dossier</a>
+      <a href="blueprints.html">Blueprints · 50</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="er-score.html" class="active">ER Score</a>
+      <a href="quiz.html">Take the quiz</a>
+    </nav>
+  </div>
+</div>
+
+<section class="hero" id="heroScreen"><div class="container">
+  <div class="kicker">Energy Resistance · Mitochondrial Signature</div>
+  <h1 class="display">How well is your body <em>holding its charge?</em></h1>
+  <p class="lede">The ER Score is a shortcut for one of the hardest questions in longevity: how much useful energy your mitochondria are still producing. Seven questions, grounded in Martin Picard's research at Columbia — and the daily rhythms your grandmother already knew.</p>
+
+  <div class="hero-cta">
+    <button class="btn" id="startBtn">Take the 7-question test</button>
+    <a class="btn ghost" href="#science">Read the method</a>
+  </div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-number">§01 · What ER Measures</div>
+  <h2 class="section-title">Three things at <em>cellular level</em>.</h2>
+  <p class="section-intro">Your mitochondria don't just "make energy" — they signal stress, regulate hormones, and stamp themselves onto your skin, your mood, and the way you recover. ER is a proxy for how well that system is running today.</p>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="n">I.</div>
+      <h3>Energy <em>output</em></h3>
+      <p>How quickly you recover from exertion. How much work you can stack before the quality of your focus drops. This is the visible side of ER — what Picard's lab measures as membrane potential and respiration rate.</p>
+    </div>
+    <div class="pillar">
+      <div class="n">II.</div>
+      <h3>Stress <em>buffer</em></h3>
+      <p>Mitochondrial resilience to chronic cortisol, inflammation, and poor sleep. People with high ER shake off bad days. People with low ER compound them — premature greying, brain fog, hormonal drift.</p>
+    </div>
+    <div class="pillar">
+      <div class="n">III.</div>
+      <h3>Signal <em>clarity</em></h3>
+      <p>Mitochondria are also communication organs — they release signals that tune immunity, mood, and circadian rhythm. Low ER scrambles the signal. High ER keeps the body legible to itself.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-number">§02 · How the Fifty Score</div>
+  <h2 class="section-title">ER scores across <em>the dossiers</em>.</h2>
+  <p class="section-intro">Pulled from the fifty blueprints we've audited. Sorted by score. Click any card to read their full protocol.</p>
+  <div class="celeb-row" id="celebRow"></div>
+</div></section>
+
+<section class="quiz-wrap" id="quizScreen" style="display:none">
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>Question <span class="q-num" id="qNum">1</span> / 7</span>
+      <span id="qTopic">Sleep</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progFill" style="width:14%"></div></div>
+  </div>
+
+  <div class="qcard" id="qCard"></div>
+</section>
+
+<section class="loader-screen" id="loadingScreen" style="display:none">
+  <div class="loader-inner">
+    <div class="loader-kicker">Calibrating · cross-referencing</div>
+    <h2 class="loader-title">Matching you to the <em>mito-type archive</em>.</h2>
+    <div class="loader-steps" id="loaderSteps">
+      <div class="loader-step"><span class="mark">01</span><span>Parsing the seven inputs</span></div>
+      <div class="loader-step"><span class="mark">02</span><span>Weighting zones: brain, metabolism, muscle, hormonal</span></div>
+      <div class="loader-step"><span class="mark">03</span><span>Cross-referencing Picard 2022 membrane model</span></div>
+      <div class="loader-step"><span class="mark">04</span><span>Mapping to ancestral Dinacharya rhythm</span></div>
+      <div class="loader-step"><span class="mark">05</span><span>Ranking interventions by leverage</span></div>
+      <div class="loader-step"><span class="mark">06</span><span>Assigning mitochondrial archetype</span></div>
+      <div class="loader-step"><span class="mark">07</span><span>Compiling dossier</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal container" id="revealScreen" style="display:none">
+  <div class="section-number">Your ER Dossier</div>
+  <div class="score-hero">
+    <div class="score-big" id="scoreBig">—<span class="of">/100</span></div>
+    <div class="score-meta">
+      <div class="lbl">Mitochondrial signature</div>
+      <h2 id="mitoName">—<em>.</em></h2>
+      <p id="mitoDesc">—</p>
+      <span class="mito-chip" id="mitoChip">—</span>
+    </div>
+  </div>
+
+  <div style="padding:56px 0 0">
+    <div class="section-number">§ · The Four Zones</div>
+    <h3 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,4vw,42px);letter-spacing:-0.02em;margin-bottom:14px">Where your <em style="font-style:italic;color:var(--blood)">charge</em> is — and isn't.</h3>
+    <p class="section-intro" style="margin-bottom:24px">Each zone weights the seven inputs differently. A high overall score can still hide a weak zone — which is where most of the easy gains live.</p>
+    <div class="zones" id="zonesGrid"></div>
+  </div>
+
+  <div style="padding:64px 0 0">
+    <div class="section-number">§ · Your Top Levers</div>
+    <h3 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,4vw,42px);letter-spacing:-0.02em;margin-bottom:14px">Five interventions, <em style="font-style:italic;color:var(--blood)">ranked by impact</em>.</h3>
+    <p class="section-intro" style="margin-bottom:12px">Ordered for <em>your</em> answers — not a generic protocol. Start at the top and move down.</p>
+    <div class="interv-list" id="intervList"></div>
+  </div>
+
+  <div style="padding:56px 0 0;display:flex;gap:14px;flex-wrap:wrap">
+    <button class="btn" id="retakeBtn">Retake the test</button>
+    <a class="btn ghost" href="blueprints.html">Compare to the fifty</a>
+  </div>
+</section>
+
+<section class="section" id="science"><div class="container">
+  <div class="section-number">§03 · The Method</div>
+  <h2 class="section-title">Where the <em>numbers</em> come from.</h2>
+  <p class="section-intro">Two traditions informed this test. One is Martin Picard's mitochondrial psychobiology lab at Columbia, where researchers measure how stress, sleep, and social connection leave a chemical imprint on mitochondria. The other is Ayurvedic Dinacharya — a 3,000-year-old body of daily-rhythm practice that anticipated circadian biology by several millennia.</p>
+
+  <div class="science-grid">
+    <div class="sci-cell">
+      <div class="lbl">The inputs</div>
+      <h3>Seven levers, not <em>seventy</em>.</h3>
+      <p>Sleep, stress, exercise, social connection, diet quality, premature greying, cognitive clarity. Each is on a 5-point scale. The shortness is the point — more inputs would flatter the number without improving its signal.</p>
+    </div>
+    <div class="sci-cell">
+      <div class="lbl">The zones</div>
+      <h3>Four domains, weighted.</h3>
+      <p>Brain (cognition + stress + sleep). Metabolism (diet + sleep + exercise). Muscle (exercise + diet + sleep). Hormonal (social + stress + greying). Aggregate scores hide where the body is actually struggling — the zones surface it.</p>
+    </div>
+    <div class="sci-cell">
+      <div class="lbl">The archetypes</div>
+      <h3>Five mito <em>types</em>.</h3>
+      <p>Electron Surfer (90+), Steady Current (75–89), Cortex Burner (60–74), Ghost Reactor (40–59), Overclocker (&lt;40). Not diagnoses — pattern-recognisers. The label tells you which kind of debt your mitochondria are carrying.</p>
+    </div>
+    <div class="sci-cell">
+      <div class="lbl">The caveats</div>
+      <h3>What this <em>is not</em>.</h3>
+      <p>ER is not a clinical test. It is a self-report inference, calibrated against public habits of fifty highly-documented people. Treat it as a mirror, not a diagnosis. For the real thing: DEXA, fasting insulin, VO2 max, HRV, and a doctor who reads them.</p>
+    </div>
+  </div>
+</div></section>
+
+<footer>
+  <div class="foot-inner">
+    <div>© Longevity Audit v3 &nbsp;·&nbsp; not medical advice</div>
+    <div class="disclaimer">ER scoring derived from Martin Picard's published mitochondrial psychobiology research (Columbia) and Ayurvedic Dinacharya tradition. Self-report inference only — not a diagnostic tool.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  const $$ = s => Array.from(document.querySelectorAll(s));
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
+
+  // Quiz data
+  const QUESTIONS = [
+    {
+      key: 'sleep', topic: 'Sleep',
+      title: 'How would you rate your <em>sleep</em>?',
+      hint: 'Averaged across the last two weeks. Be honest — blue-blockers don\'t fool the mitochondria.',
+      options: [
+        { label: 'Eight hours most nights. I wake before my alarm.', score: 5 },
+        { label: 'Seven hours most nights, with occasional dips.', score: 4 },
+        { label: 'Six to seven hours. I\'m functional, not rested.', score: 3 },
+        { label: 'Five to six hours, often broken.', score: 2 },
+        { label: 'Under five hours or genuinely chaotic.', score: 1 },
+      ],
+    },
+    {
+      key: 'stress', topic: 'Stress',
+      title: 'How loud is <em>the noise</em> in your head?',
+      hint: 'Chronic stress burns through mitochondrial reserve faster than almost anything else.',
+      options: [
+        { label: 'Low. I recover from setbacks within a day.', score: 5 },
+        { label: 'Manageable. Weekly stress, weekly recovery.', score: 4 },
+        { label: 'Moderate. I feel it in my shoulders and sleep.', score: 3 },
+        { label: 'High. It follows me into the weekend.', score: 2 },
+        { label: 'Relentless. I haven\'t felt calm in months.', score: 1 },
+      ],
+    },
+    {
+      key: 'exercise', topic: 'Movement',
+      title: 'How much are you <em>moving</em>?',
+      hint: 'Combined zone-2 cardio and resistance work — steps alone don\'t count.',
+      options: [
+        { label: '5+ real sessions a week, mix of cardio and strength.', score: 5 },
+        { label: '3–4 sessions a week, consistent for 6+ months.', score: 4 },
+        { label: '2 sessions a week, often missed.', score: 3 },
+        { label: 'Under 2 sessions a week. Mostly sitting.', score: 2 },
+        { label: 'Sedentary. Haven\'t trained in a while.', score: 1 },
+      ],
+    },
+    {
+      key: 'social', topic: 'Connection',
+      title: 'How <em>connected</em> do you feel?',
+      hint: 'Social connection is mitochondrial fuel. Picard\'s lab measured it directly.',
+      options: [
+        { label: 'Deep. I have 3+ people I\'d call at 3am.', score: 5 },
+        { label: 'Solid. I feel seen most weeks.', score: 4 },
+        { label: 'Okay. I\'m surrounded but often alone.', score: 3 },
+        { label: 'Thin. One or two real ties, stretched thin.', score: 2 },
+        { label: 'Isolated. I can\'t remember my last deep conversation.', score: 1 },
+      ],
+    },
+    {
+      key: 'diet', topic: 'Diet',
+      title: 'What does your <em>plate</em> usually look like?',
+      hint: 'Not perfect — typical. Across a normal week, including the weekends.',
+      options: [
+        { label: 'Whole foods, plants-first, rarely ultra-processed.', score: 5 },
+        { label: 'Mostly good, with some processed convenience food.', score: 4 },
+        { label: 'Mixed. Good intentions, chaotic execution.', score: 3 },
+        { label: 'Processed-heavy. Fast food 2–3 times a week.', score: 2 },
+        { label: 'Ultra-processed by default. Sugar and seed oils constant.', score: 1 },
+      ],
+    },
+    {
+      key: 'greying', topic: 'Somatic',
+      title: 'Any <em>premature</em> greying or thinning?',
+      hint: 'Picard\'s lab linked premature greying to mitochondrial stress in 2023.',
+      options: [
+        { label: 'None. Hair colour and density age-appropriate.', score: 5 },
+        { label: 'Minor greying, nothing unusual for my age.', score: 4 },
+        { label: 'Some premature greying or thinning.', score: 3 },
+        { label: 'Noticeable premature greying or shedding.', score: 2 },
+        { label: 'Significant — earlier than both parents.', score: 1 },
+      ],
+    },
+    {
+      key: 'cognition', topic: 'Cognition',
+      title: 'How clear is your <em>head</em> most days?',
+      hint: 'Not on your sharpest day. Most days. Afternoons especially.',
+      options: [
+        { label: 'Sharp. I stack deep work blocks without crashing.', score: 5 },
+        { label: 'Mostly clear, with occasional afternoon dips.', score: 4 },
+        { label: 'Decent in mornings, foggy by late afternoon.', score: 3 },
+        { label: 'Foggy most of the day. Caffeine-dependent.', score: 2 },
+        { label: 'Rarely sharp. Thought feels slow, memory patchy.', score: 1 },
+      ],
+    },
+  ];
+
+  const MITO_TYPES = [
+    { name: 'Electron Surfer', min: 90, chip: 'Electron Surfer', color: 'var(--forest)', desc: "Your mitochondria are humming. You're running close to the biological ceiling — sleep, stress, movement, and diet are all stacked. The work now is maintenance, not rescue." },
+    { name: 'Steady Current', min: 75, chip: 'Steady Current', color: 'var(--forest)', desc: "Your cellular energy is stable but not optimised. You recover well, think clearly, and handle stress — but there's headroom. One disciplined quarter and you'd cross into Electron Surfer territory." },
+    { name: 'Cortex Burner', min: 60, chip: 'Cortex Burner', color: 'var(--gold)', desc: "The classic knowledge-worker pattern. Cognitive load is high, movement is middling, recovery is borrowed from sleep you don't have. You're paying for output with mitochondrial debt." },
+    { name: 'Ghost Reactor', min: 40, chip: 'Ghost Reactor', color: 'var(--gold)', desc: "Your mitochondria are under-powered. Energy is inconsistent, mood drifts, recovery is slow. This is usually the price of chronic stress or a diet that's been quietly eating your reserve for years." },
+    { name: 'Overclocker', min: 0, chip: 'Overclocker', color: 'var(--stamp)', desc: "Your body is running on fumes and willpower. Multiple systems are compensating for each other. This isn't a character flaw — it's a signal. Start with sleep. Everything else follows." },
+  ];
+
+  function getMitoType(score){
+    return MITO_TYPES.find(t => score >= t.min) || MITO_TYPES[MITO_TYPES.length-1];
+  }
+
+  function calcZones(answers){
+    // answers keyed by QUESTIONS[i].key, score 1-5
+    const n = k => (answers[k] || 0);
+    const pct = x => Math.round((x / 5) * 100);
+    return {
+      brain: Math.round(pct(n('cognition')*0.40 + n('stress')*0.35 + n('sleep')*0.25)),
+      metabolism: Math.round(pct(n('diet')*0.40 + n('sleep')*0.30 + n('exercise')*0.30)),
+      muscle: Math.round(pct(n('exercise')*0.45 + n('diet')*0.25 + n('sleep')*0.30)),
+      hormonal: Math.round(pct(n('social')*0.35 + n('stress')*0.35 + n('greying')*0.30)),
+    };
+  }
+
+  function calcScore(answers){
+    const total = QUESTIONS.reduce((a,q) => a + (answers[q.key]||0), 0);
+    return Math.round((total / (7*5)) * 100);
+  }
+
+  function erClass(s){ return s>=75?'':s>=55?'mid':'lo' }
+  const erClsBig = s => s>=75?'':s>=55?' mid':' lo';
+
+  function getTopInterventions(answers){
+    // Lower scores = higher need
+    const need = QUESTIONS.map(q => ({ key: q.key, need: 6 - (answers[q.key]||3) }));
+    const INTERV = {
+      sleep: { title: 'Sleep — the foundation intervention', desc: 'Aim for 7.5–8.5 hours. Cold room (65–68°F). No food 3 hours before bed. Consistency beats total — go to bed at the same hour every night, even weekends. Within two weeks, every other metric improves.', impact: 'Highest leverage' },
+      exercise: { title: 'Movement — zone 2 plus lifting', desc: 'Four sessions a week minimum: two zone-2 cardio (45 min conversational pace), two full-body strength (compound lifts). Zone 2 grows mitochondrial density. Strength stops the slide.', impact: 'Structural' },
+      stress: { title: 'Stress — the silent killer', desc: '10 minutes of breath work daily. Walk before screens. Say no to one commitment this week. Chronic stress is the single fastest way to burn through mitochondrial reserve.', impact: 'Cumulative' },
+      social: { title: 'Connection — cheaper than supplements', desc: 'Picard\'s lab measured that social connection changes mitochondrial respiration. One real conversation a day. One gathering a week. This is longevity infrastructure, not a bonus.', impact: 'Underrated' },
+      diet: { title: 'Nutrition — remove before you add', desc: 'Before optimising, eliminate: ultra-processed food, seed oils, added sugar after 6pm. Then add: colour, fermented food, protein at every meal. The floor matters more than the ceiling.', impact: 'Foundational' },
+      cognition: { title: 'Cognitive load — protect the mornings', desc: 'Deep work in the first 90 minutes after waking, before email. Single-task. Protect this window like sleep — it\'s where the mitochondrially-expensive thinking happens well.', impact: 'Compounding' },
+      greying: { title: 'Somatic load — slow the clock', desc: 'Premature greying is a downstream signal. The upstream fix: reduce oxidative stress with a plants-first diet, lower alcohol, better sleep. You can\'t reverse it, but you can slow it.', impact: 'Downstream' },
+    };
+    return need
+      .sort((a,b) => b.need - a.need)
+      .slice(0, 5)
+      .map(x => ({ ...INTERV[x.key], key: x.key }));
+  }
+
+  // State
+  const state = { step: 0, answers: {} };
+
+  function renderQ(){
+    const q = QUESTIONS[state.step];
+    $('#qNum').textContent = state.step + 1;
+    $('#qTopic').textContent = q.topic;
+    $('#progFill').style.width = (((state.step+1)/QUESTIONS.length)*100) + '%';
+
+    const current = state.answers[q.key];
+    $('#qCard').innerHTML = `
+      <div class="q-kicker">${q.topic} · lever ${state.step+1} of 7</div>
+      <h2>${q.title}</h2>
+      <div class="q-hint">${q.hint}</div>
+      <div class="opts">
+        ${q.options.map((opt,i) => `
+          <button class="opt ${current===opt.score?'active':''}" data-score="${opt.score}">
+            <span class="tick"></span>
+            <span>${opt.label}</span>
+            <span class="kbd">${i+1}</span>
+          </button>`).join('')}
+      </div>
+      <div class="controls">
+        <button class="btn-sm ghost" id="backBtn" ${state.step===0?'disabled':''}>← Back</button>
+        <button class="btn-sm" id="nextBtn" ${current?'':'disabled'}>${state.step===QUESTIONS.length-1?'See my ER →':'Next →'}</button>
+      </div>
+    `;
+
+    $$('#qCard .opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.answers[q.key] = +btn.dataset.score;
+        // auto-advance after 220ms
+        setTimeout(advance, 220);
+      });
+    });
+    $('#backBtn').addEventListener('click', () => { if(state.step>0){ state.step--; renderQ(); } });
+    $('#nextBtn').addEventListener('click', advance);
+  }
+
+  function advance(){
+    const q = QUESTIONS[state.step];
+    if(!state.answers[q.key]) return;
+    if(state.step < QUESTIONS.length-1){
+      state.step++;
+      renderQ();
+    } else {
+      runLoading();
+    }
+  }
+
+  function runLoading(){
+    $('#quizScreen').style.display = 'none';
+    $('#loadingScreen').style.display = 'flex';
+    const steps = $$('#loaderSteps .loader-step');
+    steps.forEach((el,i) => {
+      setTimeout(() => el.classList.add('shown'), i*400);
+      setTimeout(() => el.classList.add('done'), i*400 + 500);
+    });
+    setTimeout(revealScore, steps.length * 400 + 600);
+  }
+
+  function revealScore(){
+    $('#loadingScreen').style.display = 'none';
+    const score = calcScore(state.answers);
+    const mito = getMitoType(score);
+    const zones = calcZones(state.answers);
+    const interv = getTopInterventions(state.answers);
+
+    const bigEl = $('#scoreBig');
+    bigEl.className = 'score-big' + erClsBig(score);
+    bigEl.innerHTML = score + '<span class="of">/100</span>';
+
+    $('#mitoName').innerHTML = esc(mito.name) + '<em>.</em>';
+    $('#mitoDesc').textContent = mito.desc;
+    $('#mitoChip').textContent = mito.chip;
+
+    // Zones
+    const zoneDesc = {
+      brain: 'Cognition + stress + sleep. Your thinking instrument.',
+      metabolism: 'Diet + sleep + exercise. Your energy engine.',
+      muscle: 'Exercise + diet + sleep. Your structural strength.',
+      hormonal: 'Connection + stress + somatic. Your endocrine baseline.',
+    };
+    $('#zonesGrid').innerHTML = Object.keys(zones).map(k => {
+      const v = zones[k];
+      const cls = v>=75?'':v>=55?'mid':'lo';
+      const fillCls = cls || '';
+      return `
+        <div class="zone-cell">
+          <div class="zone-lbl">${k.charAt(0).toUpperCase()+k.slice(1)}</div>
+          <div class="zone-val ${cls}">${v}<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);letter-spacing:0.12em;vertical-align:super;margin-left:2px">/100</span></div>
+          <div class="zone-bar"><div class="zone-bar-fill ${fillCls}" style="width:${v}%"></div></div>
+          <div class="zone-desc">${zoneDesc[k]}</div>
+        </div>`;
+    }).join('');
+
+    $('#intervList').innerHTML = interv.map((itv,i) => `
+      <div class="interv-row">
+        <div class="interv-rank">${String(i+1).padStart(2,'0')}</div>
+        <div>
+          <div class="interv-title">${esc(itv.title)}</div>
+          <div class="interv-desc">${esc(itv.desc)}</div>
+        </div>
+        <div class="interv-impact">${esc(itv.impact)}</div>
+      </div>
+    `).join('');
+
+    $('#revealScreen').style.display = 'block';
+    $('#revealScreen').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  function startQuiz(){
+    state.step = 0;
+    state.answers = {};
+    $('#heroScreen').style.display = 'none';
+    $('#revealScreen').style.display = 'none';
+    $('#quizScreen').style.display = 'block';
+    renderQ();
+    $('#quizScreen').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  $('#startBtn').addEventListener('click', startQuiz);
+  $('#retakeBtn').addEventListener('click', startQuiz);
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', e => {
+    if($('#quizScreen').style.display === 'none') return;
+    if(e.key >= '1' && e.key <= '9'){
+      const idx = +e.key - 1;
+      const opts = $$('#qCard .opt');
+      if(opts[idx]) opts[idx].click();
+    } else if(e.key === 'Enter'){
+      const nextBtn = $('#nextBtn');
+      if(nextBtn && !nextBtn.disabled) nextBtn.click();
+    } else if(e.key === 'Backspace' || e.key === 'ArrowLeft'){
+      const backBtn = $('#backBtn');
+      if(backBtn && !backBtn.disabled) backBtn.click();
+    }
+  });
+
+  // Celebrity ER strip
+  fetch('data/profiles.json?cb=' + Date.now())
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(j => {
+      const list = (j.profiles || [])
+        .filter(p => p.er_score)
+        .sort((a,b) => b.er_score - a.er_score)
+        .slice(0, 8);
+      const catLbl = c => ({longevity:'Longevity',tech:'Tech',music:'Music',directors:'Director',athletes:'Athlete · Actor'})[c] || c;
+      $('#celebRow').innerHTML = list.map(p => {
+        const cls = p.er_score>=80?'':p.er_score>=60?'mid':'lo';
+        return `
+          <a class="celeb-card" href="profile.html?id=${encodeURIComponent(p.slug||p.id)}">
+            <div class="celeb-top">
+              <span class="celeb-cat">${catLbl(p.category)}</span>
+              <span class="celeb-big ${cls}">${p.er_score}<span class="pts">/100</span></span>
+            </div>
+            <div class="celeb-name">${esc(p.name)}</div>
+            <div class="celeb-mito">${esc(p.mito_type || '—')}</div>
+          </a>`;
+      }).join('');
+    })
+    .catch(() => {
+      $('#celebRow').innerHTML = '<div style="padding:40px;grid-column:1/-1;text-align:center;font-family:\'Instrument Serif\',serif;font-style:italic;color:var(--ink-soft)">Dossier data still compiling — refresh in a moment.</div>';
+    });
+
+})();
+</script>
+
+</body>
+</html>
