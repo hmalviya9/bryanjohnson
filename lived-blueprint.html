@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Lived Blueprint · File № 002 · The Longevity Audit</title>
+<meta name="description" content="A four-pillar daily protocol — Food, Sleep, Movement, Attention — drawn from indigenous traditions and the mortality evidence the $2M protocol is built on. Companion to the Bryan Johnson dossier." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F2ECDD;
+    --paper-dark:#E8E0CC;
+    --paper-line:#D6CCAD;
+    --ink:#1A1611;
+    --ink-soft:#4A3F2E;
+    --blood:#B91C1C;
+    --blood-deep:#7F1D1D;
+    --forest:#1F5F3F;
+    --forest-deep:#0F3D24;
+    --gold:#B8860B;
+    --stamp:#A62020;
+    --warn-bg:#FBEFC8;
+    --danger-bg:#F8DAD8;
+    --clinical:#2C3E50;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Instrument Serif',Georgia,serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0px, transparent 31px, rgba(26,22,17,0.04) 31px, rgba(26,22,17,0.04) 32px),
+      radial-gradient(circle at 20% 10%, rgba(184,134,11,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(185,28,28,0.04) 0%, transparent 40%);
+    min-height:100vh;
+  }
+  a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink-soft)}
+  a:hover{color:var(--blood);border-bottom-color:var(--blood)}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:-0.01em}
+
+  /* Topbar */
+  .topbar{border-bottom:1px solid var(--ink);padding:14px 0;background:var(--paper);position:sticky;top:0;z-index:20}
+  .topbar-inner{
+    max-width:1200px;margin:0 auto;padding:0 24px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--ink-soft);
+  }
+  .topbar a{color:var(--ink-soft);border-bottom:none}
+  .topbar a:hover{color:var(--blood)}
+  .topbar-nav{display:flex;gap:22px;flex-wrap:wrap}
+  .topbar-nav a.active{color:var(--blood)}
+  .badge-mini{background:var(--ink);color:var(--paper);padding:3px 9px;letter-spacing:0.18em}
+
+  /* Reg banner */
+  .reg-banner{background:rgba(185,28,28,0.06);border-bottom:1px solid var(--ink)}
+  .reg-banner-inner{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;gap:16px;align-items:flex-start;font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.5;color:var(--ink-soft)}
+  .reg-banner-icon{flex-shrink:0;width:22px;height:22px;border:1.5px solid var(--blood);color:var(--blood);font-family:'Fraunces',serif;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:1px;font-style:italic}
+  .reg-banner strong{color:var(--ink);font-weight:500}
+  .reg-banner em{font-style:italic;color:var(--blood)}
+  .reg-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blood);display:block;margin-bottom:4px}
+
+  /* Masthead + hero */
+  .masthead{max-width:1200px;margin:0 auto;padding:44px 24px 20px;border-bottom:1px solid var(--ink)}
+  .masthead-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft)}
+  .masthead-row .file{color:var(--ink)}
+  .masthead-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(22px,2.6vw,32px);letter-spacing:-0.02em;margin:18px 0 6px;color:var(--ink)}
+  .masthead-sub{font-family:'Instrument Serif',serif;font-style:italic;color:var(--ink-soft);font-size:17px}
+
+  .hero{max-width:1200px;margin:0 auto;padding:64px 24px 40px}
+  .kicker{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.26em;
+    text-transform:uppercase;color:var(--blood);margin-bottom:22px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .kicker::before{content:"";width:40px;height:2px;background:var(--blood)}
+  h1.display{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(40px,7vw,88px);line-height:1.02;letter-spacing:-0.03em;
+    color:var(--ink);margin-bottom:24px;max-width:15ch;
+  }
+  h1.display em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--forest)}
+  .lede{
+    font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);
+    color:var(--ink-soft);max-width:62ch;margin-bottom:40px;line-height:1.4;
+  }
+  .stats-strip{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+    margin-top:32px;
+  }
+  .stat-cell{padding:18px 16px;border-right:1px solid var(--paper-line)}
+  .stat-cell:last-child{border-right:none}
+  .stat-num{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,3.2vw,40px);color:var(--ink);line-height:1;letter-spacing:-0.02em}
+  .stat-num em{font-style:italic;color:var(--blood)}
+  .stat-lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px}
+  .stat-src{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--forest);margin-top:4px}
+  @media (max-width:720px){.stats-strip{grid-template-columns:repeat(2,1fr)}.stat-cell{border-bottom:1px solid var(--paper-line)}.stat-cell:nth-last-child(-n+2){border-bottom:none}}
+
+  /* Verification legend */
+  .legend-block{max-width:1200px;margin:0 auto;padding:48px 24px 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:720px){.legend-block{grid-template-columns:1fr}}
+  .legend-card{border:1px solid var(--ink);padding:18px 20px;background:var(--paper);display:flex;flex-direction:column;gap:8px}
+  .legend-card .v-badge{align-self:flex-start}
+  .legend-card p{font-family:'Instrument Serif',serif;font-size:15px;color:var(--ink-soft);line-height:1.45}
+
+  /* Verification badges */
+  .v-badge{
+    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;
+    letter-spacing:0.22em;text-transform:uppercase;padding:3px 9px;border:1.5px solid;
+  }
+  .v-verified{background:var(--forest-deep);color:var(--paper);border-color:var(--forest-deep)}
+  .v-flagged{background:var(--gold);color:var(--paper);border-color:var(--gold)}
+  .v-unverified{background:transparent;color:var(--ink-soft);border-color:var(--ink-soft);border-style:dashed}
+
+  /* Section header */
+  .section{max-width:1200px;margin:0 auto;padding:64px 24px}
+  .section-head{border-top:1px solid var(--ink);padding-top:28px;margin-bottom:32px;display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  .section-head .lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:var(--ink-soft)}
+  .section-head h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(32px,4.6vw,60px);line-height:1.05;letter-spacing:-0.025em;color:var(--ink);margin-top:8px;max-width:18ch}
+  .section-head h2 em{font-style:italic}
+  .section-head .tag{font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;padding:4px 10px;border:1px solid}
+  .tag-forest{color:var(--forest-deep);border-color:var(--forest-deep)}
+  .tag-clinical{color:var(--clinical);border-color:var(--clinical)}
+  .tag-blood{color:var(--blood);border-color:var(--blood)}
+  .tag-gold{color:var(--gold);border-color:var(--gold)}
+  .section-intro{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(18px,2vw,21px);color:var(--ink-soft);max-width:64ch;margin-bottom:24px;line-height:1.45}
+  .section-intro strong{font-style:normal;color:var(--ink);font-weight:500}
+
+  /* Scope honesty */
+  .scope{background:var(--danger-bg);border:1px solid var(--blood);padding:22px 24px;margin:0 auto;max-width:1152px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.55;color:var(--ink)}
+  .scope strong{font-weight:500}
+  .scope .reg-tag{color:var(--blood);margin-bottom:6px}
+
+  /* Card grid — generic pillar cards */
+  .card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+  @media (max-width:1000px){.card-grid{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:760px){.card-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.card-grid{grid-template-columns:1fr}}
+  .card{
+    background:var(--paper);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:22px 20px;display:flex;flex-direction:column;gap:10px;min-height:260px;
+    transition:background .12s;
+  }
+  .card:hover{background:var(--paper-dark)}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .card-meta{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft)}
+  .card-name{font-family:'Fraunces',serif;font-weight:400;font-size:24px;line-height:1.05;letter-spacing:-0.02em;color:var(--ink);margin-top:2px}
+  .card-latin{font-family:'Instrument Serif',serif;font-style:italic;font-size:13.5px;color:var(--ink-soft)}
+  .card-targets{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--forest-deep);text-transform:uppercase}
+  .card-body{font-family:'Instrument Serif',serif;font-size:15.5px;color:var(--ink);line-height:1.45;flex-grow:1}
+  .card-foot{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);padding-top:8px;border-top:1px dashed var(--paper-line)}
+  details.caveat{margin-top:4px}
+  details.caveat summary{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;padding:4px 0;list-style:none}
+  details.caveat summary::before{content:"▸ ";color:var(--blood)}
+  details.caveat[open] summary::before{content:"▾ ";color:var(--blood)}
+  details.caveat summary:hover{color:var(--blood)}
+  details.caveat .disclosure{font-family:'Instrument Serif',serif;font-size:14px;color:var(--ink-soft);line-height:1.48;padding:6px 0 4px 16px;border-left:2px solid var(--paper-line)}
+  details.caveat.contra summary{color:var(--blood)}
+  details.caveat.contra .disclosure{border-left-color:var(--blood);color:var(--blood-deep)}
+
+  /* Raga table */
+  .raga-table-wrap{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-top:8px}
+  .raga-table{width:100%;border-collapse:collapse;font-family:'Instrument Serif',serif;font-size:15px}
+  .raga-table th{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;
+    text-transform:uppercase;color:var(--ink-soft);text-align:left;
+    padding:14px 14px;border-bottom:1px solid var(--ink);background:var(--paper-dark);
+  }
+  .raga-table td{padding:14px 14px;border-bottom:1px solid var(--paper-line);vertical-align:top}
+  .raga-table tr:last-child td{border-bottom:none}
+  .raga-table .r-name{font-family:'Fraunces',serif;font-weight:400;font-size:19px;color:var(--ink)}
+  .raga-table .r-meta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .raga-table .r-rasa{font-style:italic;color:var(--clinical)}
+  .raga-table .r-note{color:var(--ink-soft);font-size:14.5px}
+  @media (max-width:760px){
+    .raga-table thead{display:none}
+    .raga-table,.raga-table tbody,.raga-table tr,.raga-table td{display:block;width:100%}
+    .raga-table tr{border-bottom:1px solid var(--ink);padding:14px 14px}
+    .raga-table td{padding:3px 0;border:none}
+  }
+
+  /* Pranayama + asana compact list */
+  .practice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+  @media (max-width:760px){.practice-grid{grid-template-columns:1fr}}
+  .practice{padding:20px 22px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;flex-direction:column;gap:8px;background:var(--paper)}
+  .practice h4{font-family:'Fraunces',serif;font-weight:400;font-size:22px;letter-spacing:-0.02em;color:var(--ink)}
+  .practice .p-sanskrit{font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;color:var(--ink-soft)}
+  .practice .p-dose{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--forest-deep)}
+  .practice .p-body{font-family:'Instrument Serif',serif;font-size:15.5px;color:var(--ink);line-height:1.45}
+
+  /* Repackaged-ancients table */
+  .ancients-wrap{margin-top:24px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+  .ancients{width:100%;border-collapse:collapse;font-family:'Instrument Serif',serif;font-size:15px}
+  .ancients th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:14px;border-bottom:1px solid var(--ink);background:var(--paper-dark)}
+  .ancients td{padding:14px;border-bottom:1px solid var(--paper-line);vertical-align:top}
+  .ancients tr:last-child td{border-bottom:none}
+  .ancients .modern{font-family:'Fraunces',serif;font-size:18px;color:var(--ink)}
+  .ancients .arrow{font-family:'JetBrains Mono',monospace;color:var(--blood);text-align:center;font-size:14px}
+  .ancients .ancient{font-family:'Instrument Serif',serif;font-style:italic;color:var(--forest-deep);font-size:16px}
+  .ancients .cite{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.14em;color:var(--ink-soft);text-transform:uppercase}
+  @media (max-width:760px){
+    .ancients thead{display:none}
+    .ancients,.ancients tbody,.ancients tr,.ancients td{display:block;width:100%}
+    .ancients tr{border-bottom:1px solid var(--ink);padding:12px 14px}
+    .ancients td{padding:2px 0;border:none}
+    .ancients .arrow{text-align:left}
+  }
+
+  /* Attention rules */
+  .rules{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+  @media (max-width:760px){.rules{grid-template-columns:1fr}}
+  .rule{padding:22px 24px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper)}
+  .rule .rule-num{font-family:'Fraunces',serif;font-weight:300;font-size:32px;color:var(--gold);line-height:1;display:block}
+  .rule h4{font-family:'Fraunces',serif;font-weight:400;font-size:22px;letter-spacing:-0.02em;color:var(--ink);margin-top:4px}
+  .rule p{font-family:'Instrument Serif',serif;font-size:15.5px;color:var(--ink);line-height:1.45;margin-top:6px}
+  .rule cite{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-top:10px;font-style:normal}
+
+  /* Weekly template */
+  .week-wrap{margin-top:24px;overflow-x:auto;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+  .week{width:100%;min-width:720px;border-collapse:collapse;font-family:'Instrument Serif',serif;font-size:14.5px}
+  .week th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);padding:12px 10px;border-bottom:1px solid var(--ink);text-align:left;background:var(--paper-dark)}
+  .week td{padding:12px 10px;border-bottom:1px solid var(--paper-line);border-right:1px solid var(--paper-line);vertical-align:top;line-height:1.42}
+  .week td:last-child{border-right:none}
+  .week tr:last-child td{border-bottom:none}
+  .week .day{font-family:'Fraunces',serif;font-size:17px;color:var(--ink)}
+  .week .pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:2px 7px;margin-right:4px;margin-bottom:2px}
+  .pill-food{background:var(--forest-deep);color:var(--paper)}
+  .pill-sleep{background:var(--clinical);color:var(--paper)}
+  .pill-move{background:var(--blood);color:var(--paper)}
+  .pill-att{background:var(--gold);color:var(--paper)}
+
+  /* Contraindications */
+  .contra-panel{border:1px solid var(--blood);background:var(--danger-bg);padding:24px 26px;margin-top:24px}
+  .contra-panel h3{font-family:'Fraunces',serif;font-weight:400;font-size:26px;color:var(--blood);margin-bottom:12px}
+  .contra-panel ul{list-style:none;padding-left:0}
+  .contra-panel li{font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.55;color:var(--ink);padding:8px 0;border-bottom:1px dashed rgba(185,28,28,0.25)}
+  .contra-panel li:last-child{border-bottom:none}
+  .contra-panel li strong{color:var(--blood-deep);font-weight:500}
+
+  /* Sources */
+  .sources-wrap{margin-top:24px;border-top:1px solid var(--ink);padding-top:20px}
+  .sources-wrap h3{font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin-bottom:14px}
+  .sources{list-style:none;padding:0;counter-reset:src;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px}
+  @media (max-width:760px){.sources{grid-template-columns:1fr}}
+  .sources li{counter-increment:src;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.48;padding-left:30px;position:relative}
+  .sources li::before{content:counter(src,decimal-leading-zero);position:absolute;left:0;top:0;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blood);letter-spacing:0.14em}
+  .sources li strong{color:var(--ink);font-weight:500}
+  .sources li .tier{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.14em;color:var(--forest-deep);text-transform:uppercase}
+
+  /* Pull quote */
+  .pullquote{max-width:1000px;margin:64px auto;padding:0 24px;text-align:center}
+  .pullquote blockquote{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(24px,3.4vw,40px);line-height:1.25;color:var(--ink);letter-spacing:-0.02em}
+  .pullquote blockquote::before{content:"";display:block;width:48px;height:2px;background:var(--blood);margin:0 auto 22px}
+  .pullquote cite{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-top:18px;font-style:normal}
+
+  /* Blue zones anchor */
+  .zones{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);margin-top:24px}
+  @media (max-width:900px){.zones{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.zones{grid-template-columns:1fr}}
+  .zone{padding:20px 18px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper);display:flex;flex-direction:column;gap:8px}
+  .zone .z-place{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--forest-deep)}
+  .zone .z-food{font-family:'Fraunces',serif;font-size:22px;color:var(--ink);letter-spacing:-0.01em}
+  .zone .z-note{font-family:'Instrument Serif',serif;font-size:14.5px;color:var(--ink-soft);line-height:1.4}
+
+  /* Footer */
+  footer{border-top:1px solid var(--ink);padding:48px 24px;background:var(--paper);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:48px}
+  .foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .disclaimer{max-width:620px;font-family:'Instrument Serif',serif;font-style:italic;font-size:13px;letter-spacing:0;text-transform:none;line-height:1.5}
+
+  /* Stamp */
+  .stamp{display:inline-block;border:2px solid var(--stamp);color:var(--stamp);padding:6px 14px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.24em;text-transform:uppercase;transform:rotate(-3deg);font-weight:600}
+
+  /* Sticky disclaimer pill */
+  .pill-sticky{position:fixed;bottom:22px;right:22px;background:var(--ink);color:var(--paper);padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;border:1px solid var(--ink);z-index:30;box-shadow:0 6px 16px rgba(0,0,0,0.22);border-bottom:1px solid var(--ink)}
+  .pill-sticky:hover{background:var(--blood);color:var(--paper);border-color:var(--blood)}
+  @media (max-width:720px){.pill-sticky{left:50%;right:auto;transform:translateX(-50%);bottom:14px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div><span class="badge-mini">v3</span> &nbsp; The Longevity Audit</div>
+    <nav class="topbar-nav">
+      <a href="dashboard.html">Dossier</a>
+      <a href="blueprints.html">Blueprints · 50</a>
+      <a href="lived-blueprint.html" class="active">The Lived Blueprint</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="er-score.html">ER Score</a>
+      <a href="quiz.html">Take the quiz</a>
+    </nav>
+  </div>
+</div>
+
+<div class="reg-banner">
+  <div class="reg-banner-inner">
+    <div class="reg-banner-icon">i</div>
+    <div>
+      <span class="reg-tag">Editorial — not medical advice · not a diagnostic tool</span>
+      <strong>Read this first.</strong> This is a protocol floor assembled from peer-reviewed mortality research, indigenous food and movement traditions, and the attention-health literature. It is <em>not</em> a substitute for a physician, therapist, or prescribed medication. Items marked <em>FLAGGED</em> have real evidence but narrow caveats. Items in the contraindications panel are contraindicated for specific populations — pregnant, autoimmune, cardiovascular, thyroid, on anticoagulants — and must be cleared with a doctor before adoption.
+    </div>
+  </div>
+</div>
+
+<section class="masthead">
+  <div class="masthead-row">
+    <div><span class="file">File № 002</span> · Protocol / Lived Blueprint</div>
+    <div>Captured 2026-04-22 · Next refresh 2026-07-22</div>
+    <div>Companion to File № 001 (Dossier)</div>
+  </div>
+  <div class="masthead-title">Four pillars. No $2M. No asterisks that can't be named.</div>
+  <div class="masthead-sub">Food · Sleep · Movement · Attention — a daily floor drawn from traditions that outlived every fad diet, and the mortality evidence the $2M protocol is built on.</div>
+</section>
+
+<section class="hero">
+  <div class="kicker">Section S1 · Thesis</div>
+  <h1 class="display">The $2M protocol is optional. <em>These four pillars are not.</em></h1>
+  <p class="lede">Bryan Johnson's burn buys margin, not foundation. Before anyone reaches for NMN, HBOT, or a $4,000 red-light panel, the four interventions below move the needle further — and cost nothing. The price column is retired in this file. Sources are not.</p>
+
+  <div class="stats-strip">
+    <div class="stat-cell">
+      <div class="stat-num"><em>~50%</em></div>
+      <div class="stat-lbl">Mortality drop · quit smoking</div>
+      <div class="stat-src">Verified · CDC / US Surgeon General</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num"><em>~21%</em></div>
+      <div class="stat-lbl">Mortality drop · plant-forward diet</div>
+      <div class="stat-src">Verified · PREDIMED / Adventist</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num"><em>20–35%</em></div>
+      <div class="stat-lbl">Mortality drop · exercise (dose-dep.)</div>
+      <div class="stat-src">Verified · Arem 2015, JAMA</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num"><em>~15%</em></div>
+      <div class="stat-lbl">Mortality drop · social connection</div>
+      <div class="stat-src">Verified · Holt-Lunstad 2015</div>
+    </div>
+  </div>
+</section>
+
+<!-- S2 Verification legend -->
+<section class="section" id="s2" style="padding-top:24px">
+  <div class="section-head">
+    <div>
+      <div class="lbl">Section S2</div>
+      <h2>How to read the <em>badges</em></h2>
+    </div>
+    <div class="tag tag-gold">read me first</div>
+  </div>
+  <div class="legend-block">
+    <div class="legend-card">
+      <span class="v-badge v-verified">Verified</span>
+      <p>Tier-1 source cited (peer-reviewed RCT, meta-analysis, or major cohort). The claim and the number both match the source. Acts on the claim at your discretion.</p>
+    </div>
+    <div class="legend-card">
+      <span class="v-badge v-flagged">Flagged</span>
+      <p>Directionally true but with material caveats — dose, subgroup, cohort, bioavailability, seasonality, or Indian-cohort-specific genetic context. Read the caveat before acting.</p>
+    </div>
+    <div class="legend-card">
+      <span class="v-badge v-unverified">Unverified</span>
+      <p>Mentioned in traditional texts or popular literature; we have not yet sourced a tier-1 citation. <strong>Do not act on unverified items without your physician.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- S3 Scope honesty -->
+<section class="section" id="s3" style="padding-top:20px">
+  <div class="scope">
+    <span class="reg-tag">Scope honesty · S3</span>
+    This is a floor, not a ceiling. It is not medical advice. It cannot substitute for a physician, a therapist, or prescribed medication. If you are pregnant, nursing, managing a chronic condition, on blood thinners, recovering from surgery, or living with a history of disordered eating or cardiovascular disease — the starred items below are contraindicated and must be cleared with a doctor before adoption. When in doubt, skip the intervention and keep the pillar.
+  </div>
+</section>
+
+<!-- =========================================================================
+     PILLAR 1 — FOOD
+     ========================================================================= -->
+<section class="section" id="pillar-food">
+  <div class="section-head">
+    <div>
+      <div class="lbl">Pillar 1 · Section S4</div>
+      <h2>Food — <em>ancestral plates</em></h2>
+    </div>
+    <div class="tag tag-forest">p1 · food</div>
+  </div>
+  <p class="section-intro">
+    Every indigenous culture that outlived a famine did it on the same short list: <strong>whole grains, legumes, leafy greens, a fermented ferment, a seasonal fruit, a nut or seed, a spice, and an oil that didn't come from a factory.</strong> The Blue Zones, the Hunza valley, the Okinawan Ryukyu kitchen, the Keralan sadya, the Sardinian shepherd's table, the Andean campesino — different continents, same grammar. The cards below are pulled from that grammar.
+  </p>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">India · S. Asia</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Amla</div>
+      <div class="card-latin">Phyllanthus emblica · Indian gooseberry</div>
+      <div class="card-targets">Vit C · Chromium · Polyphenols</div>
+      <div class="card-body">Highest vitamin-C density of any common Indian fruit (~600 mg / 100 g, heat-stable). Anchor fruit of Charaka's Rasayana category. Lowers fasting glucose in small RCTs; chromium content supports insulin sensitivity.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Anticoagulant therapy (warfarin) — amla potentiates effect. Severe hyperacidity / active ulcer. Pre-surgery: stop 14 days prior.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Akhtar MS 2011, Int J Food Sci Nutr · Usharani P 2013, Diabetes Metab Syndr Obes · Charaka Samhita, Sūtrasthāna Ch. 27.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_amla</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">India · W. Africa</span>
+        <span class="v-badge v-flagged">Flagged</span>
+      </div>
+      <div class="card-name">Moringa</div>
+      <div class="card-latin">Moringa oleifera · drumstick / sahjan</div>
+      <div class="card-targets">Iron · Magnesium · Quercetin</div>
+      <div class="card-body">Leaves carry an unusual iron-to-plant-matter ratio for a green; magnesium content supports neurotransmitter synthesis (GABA, serotonin). Used in South-Indian sambar and in West-African sauces for centuries.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Pregnancy (root/bark especially — abortifacient traditionally). Powdered supplements have been flagged for heavy-metal load in some FSSAI audits — prefer fresh leaves or tested brands.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Gopalakrishnan L 2016, Food Science & Human Wellness · Stohs SJ 2015, Phytother Res. FLAGGED because mental-health endpoint data is thin; nutrient data is solid.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_moringa</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Japan</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Nattō</div>
+      <div class="card-latin">Fermented soybean · Bacillus subtilis natto</div>
+      <div class="card-targets">Vit K2 (MK-7) · Probiotics · Nattokinase</div>
+      <div class="card-body">Single richest dietary source of Vitamin K2 MK-7 — the form that actually reaches arteries and bone. Associated in Japanese cohorts with lower all-cause mortality (Katanoda 2017). Fermented → gut-brain axis hit.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Warfarin therapy (K2 interaction). Severe soy allergy. Acquired taste — start small.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Katanoda K 2017, Eur J Epidemiol (Takayama cohort) · Nakamura Y 2020, Heart.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_natto</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">India (staple) · Ethiopia (origin)</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Ragi</div>
+      <div class="card-latin">Eleusine coracana · finger millet</div>
+      <div class="card-targets">Calcium · Tryptophan · Fiber</div>
+      <div class="card-body">Highest calcium content of any common grain (~344 mg / 100 g). Tryptophan → serotonin precursor; low-GI slow carb. South Karnataka and Tamil Nadu weaning food; Ethiopian injera origin region.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Kidney stone history (oxalate) — pair with calcium-rich curd. Hypothyroidism — limit raw, prefer fermented/sprouted.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Chandra D 2016, J Food Sci Technol · ICRISAT millet dossier 2023.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_ragi</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">W. Africa</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Fonio</div>
+      <div class="card-latin">Digitaria exilis · the "hungry rice"</div>
+      <div class="card-targets">Methionine · Cystine · Slow carb</div>
+      <div class="card-body">Grows in 6–8 weeks on poor soil — famine staple of the Sahel for 5,000 years. One of the few plant grains with strong methionine + cystine. Low GI, gluten-free. Drought-resilient; climate-hedge food.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">None material. Rinse thoroughly — traditional processing removes chaff debris.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Cruz JF 2016, CIRAD monograph · Jideani AIO 2011, Comp Rev Food Sci.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_fonio</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Andean S. America</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Quinoa</div>
+      <div class="card-latin">Chenopodium quinoa · Inca staple</div>
+      <div class="card-targets">Complete protein · Lysine · Mg</div>
+      <div class="card-body">One of very few plant foods carrying all nine essential amino acids at useful ratios. Cultivated by the Inca for ~5,000 years. Rotates with amaranth in Andean altiplano diets.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Saponin coating — rinse before cooking. Oxalate load — moderate intake if kidney-stone history.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Vega-Gálvez A 2010, J Sci Food Agric · FAO Quinoa 2013 dossier.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_quinoa</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">India · Mexico</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Amaranth</div>
+      <div class="card-latin">Amaranthus cruentus · rajgira / chaulai</div>
+      <div class="card-targets">Lysine · Iron · Squalene</div>
+      <div class="card-body">Rajgira ladoo is a fasting-food across India for a reason — it holds up nutritionally where grain-rice does not. Aztec sacred crop; squalene content unusual for a seed.</div>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Caselato-Sousa VM 2012, J Food Sci.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_amaranth</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Andean Peru · Bolivia</span>
+        <span class="v-badge v-flagged">Flagged</span>
+      </div>
+      <div class="card-name">Maca</div>
+      <div class="card-latin">Lepidium meyenii · adaptogen</div>
+      <div class="card-targets">Adaptogen · Cortisol balance</div>
+      <div class="card-body">Root used for 2,000+ years at 4,000 m Andean altitude. Small trials show effects on energy, libido, mild mood; mechanism is multi-factorial, probably HPA-axis.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Thyroid conditions — goitrogen; cook, don't consume raw. Pregnancy — insufficient data.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Gonzales GF 2012, Evid Based Complement Alternat Med. FLAGGED because RCT sample sizes are small and heterogeneous.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_maca</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Japan · Korea · China</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Seaweeds</div>
+      <div class="card-latin">Kombu · Wakame · Nori</div>
+      <div class="card-targets">Iodine · L-glutamate · Fucoidans</div>
+      <div class="card-body">Dietary iodine sufficiency is the unglamorous reason the Japanese thyroid profile differs from the American one. Kombu in dashi, wakame in miso, nori in sushi — every meal touches the thyroid.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Hyperthyroidism (Graves). Autoimmune thyroid (Hashimoto) — moderate, don't binge. Monitor TSH if adding seaweed regularly.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Zava TT 2011, Thyroid Research · Teas J 2004, Thyroid.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_seaweed</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Okinawa, Japan</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Okinawan Sweet Potato</div>
+      <div class="card-latin">Ipomoea batatas · beni imo</div>
+      <div class="card-targets">Anthocyanins · Low GI · Polyphenols</div>
+      <div class="card-body">Pre-WWII Okinawan diet was ~67% sweet potato by calories — the anchor food of a Blue Zone. Purple pigment = anthocyanins = vascular protection. Low glycemic despite starch load.</div>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Willcox DC 2009, J Am Coll Nutr (Okinawa Centenarian Study).</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_okinawan_sp</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Nicoya, Costa Rica</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Black Bean + Corn</div>
+      <div class="card-latin">Gallo pinto — Nicoyan anchor</div>
+      <div class="card-targets">Fiber · Complete protein (pair) · Mg</div>
+      <div class="card-body">Beans + corn eaten together form a complete protein — the Mesoamerican invariant for 5,000 years. Loma Linda Adventist cohort legume data: every 20 g/day of legumes → ~8% lower mortality.</div>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Darmadi-Blackberry I 2004, Asia Pac J Clin Nutr · Buettner D 2008, Blue Zones.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_nicoyan_bean</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">India · S.E. Asia</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Turmeric</div>
+      <div class="card-latin">Curcuma longa · haldi</div>
+      <div class="card-targets">Curcumin · BDNF · Anti-inflammatory</div>
+      <div class="card-body">Curcumin modulates BDNF and inflammatory cytokines; meta-analysis shows modest antidepressant effect at 500–1,000 mg curcuminoid / day (Ng 2017). Bioavailability jumps ~2,000% with piperine (black pepper).</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Anticoagulant therapy. Gallstones / bile-duct obstruction. High-dose supplements, not dietary turmeric, carry hepatotoxicity reports — stick to food doses unless a physician says otherwise.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Ng QX 2017, J Am Med Dir Assoc meta-analysis · Shoba G 1998, Planta Medica (piperine).</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_turmeric</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Sub-Saharan Africa</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Baobab Fruit</div>
+      <div class="card-latin">Adansonia digitata</div>
+      <div class="card-targets">Vit C · Prebiotic fiber · Calcium</div>
+      <div class="card-body">Dried pulp is ~50% prebiotic fiber by weight and carries ~280 mg Vit C per 100 g. Fed into porridges across the Sahel for millennia. Recent western adoption as "superfruit" — the populations that ate it for 3,000 years are the proof.</div>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Coe SA 2013, Nutr Res · EFSA novel food assessment 2008.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_baobab</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Latin America · Peru</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Chia + Sacha Inchi</div>
+      <div class="card-latin">Salvia hispanica · Plukenetia volubilis</div>
+      <div class="card-targets">ALA omega-3 · Fiber · Protein</div>
+      <div class="card-body">Chia was Aztec warrior ration. Sacha Inchi ("Inca peanut") is among the most omega-3-dense plant seeds. For South Asians with FADS1/FADS2 low-conversion variants, dietary ALA is a weaker lever than EPA — so pair with fatty fish or algal omega-3 when possible.</div>
+      <details class="caveat">
+        <summary>Indian-cohort caveat</summary>
+        <div class="disclosure">FADS1/FADS2 low-conversion variants common in South Asians → ALA → EPA conversion ~5%. See dossier S8 on genetics.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Ulbricht C 2009, Rev Recent Clin Trials · Sergi D 2021, Nutrients (FADS in S. Asians).</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_chia</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Korea</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Kimchi</div>
+      <div class="card-latin">Lactic-fermented napa cabbage</div>
+      <div class="card-targets">Lactobacillus · Capsaicin · Vit K</div>
+      <div class="card-body">Fermented vegetables carry the gut-brain-axis argument as well as any food: Lactobacilli → vagal signaling → mood markers. The Korean invariant; Gochujang-heavy variants also deliver capsaicin.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Severe hypertension (sodium load — rinse, or make low-salt). Active GERD.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Park KY 2014, J Med Food · Valles-Colomer M 2019, Nature Microbiol (gut-brain axis).</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_kimchi</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">India</span>
+        <span class="v-badge v-flagged">Flagged</span>
+      </div>
+      <div class="card-name">A2 Desi Ghee</div>
+      <div class="card-latin">Cultured clarified butter · gir / sahiwal</div>
+      <div class="card-targets">Butyrate · CLA · Fat-soluble vits</div>
+      <div class="card-body">Ayurveda's "medhya rasayana" oil — nervine tonic in Charaka's framework. Butyrate supports colonocytes. BUT: saturated fat load is material for South Asian cohorts with elevated ApoB / Lp(a) baselines.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Elevated ApoB, Lp(a), CAD, NAFLD. Keep to 1–2 tsp/day at most for healthy adults. See dossier S8 (APOE) + S9 (lipid caveat).</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Sharma H 2010, Ayu (review). FLAGGED because the lipid trade-off is real for the target population.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim food_ghee_a2</div>
+    </div>
+
+  </div>
+
+  <!-- Blue Zones anchor -->
+  <div style="margin-top:48px">
+    <div class="section-head" style="border-top:none;padding-top:0;margin-bottom:16px">
+      <div>
+        <div class="lbl">S4c · Blue Zones anchor</div>
+        <h2 style="font-size:clamp(24px,3vw,34px)">One food per zone — what centenarians <em>actually</em> ate.</h2>
+      </div>
+    </div>
+    <div class="zones">
+      <div class="zone"><span class="z-place">Okinawa · Japan</span><span class="z-food">Beni imo</span><span class="z-note">Purple sweet potato — ~67% of pre-WWII calories.</span></div>
+      <div class="zone"><span class="z-place">Sardinia · Italy</span><span class="z-food">Fava bean</span><span class="z-note">Legume staple; shepherd cheese + fava is the anchor plate.</span></div>
+      <div class="zone"><span class="z-place">Nicoya · Costa Rica</span><span class="z-food">Gallo pinto</span><span class="z-note">Black beans + corn → complete protein, every day.</span></div>
+      <div class="zone"><span class="z-place">Ikaria · Greece</span><span class="z-food">Wild greens</span><span class="z-note">Horta — ~150 species foraged, polyphenol-dense.</span></div>
+      <div class="zone"><span class="z-place">Loma Linda · USA</span><span class="z-food">Nuts · 5×/week</span><span class="z-note">Adventist cohort: ~20% lower mortality with nut-eating.</span></div>
+    </div>
+    <div style="margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft)">Source · Buettner D (2008); Willcox DC 2009; Fraser GE 2001, Arch Intern Med.</div>
+  </div>
+</section>
+
+<!-- Pull quote -->
+<div class="pullquote">
+  <blockquote>"Let food be thy medicine" is misattributed to Hippocrates. What Hippocrates <em>did</em> write, though, was: <em>walk, fast, eat, sleep — in that order.</em></blockquote>
+  <cite>— Of Regimen, Book I · translator's paraphrase</cite>
+</div>
+
+<!-- =========================================================================
+     PILLAR 2 — SLEEP
+     ========================================================================= -->
+<section class="section" id="pillar-sleep">
+  <div class="section-head">
+    <div>
+      <div class="lbl">Pillar 2 · Section S5</div>
+      <h2>Sleep — <em>ragas &amp; Ayurveda</em></h2>
+    </div>
+    <div class="tag tag-clinical">p2 · sleep</div>
+  </div>
+  <p class="section-intro">
+    Indian classical music encodes a 24-hour emotional clock — <strong>prahar</strong> — where specific ragas belong to specific hours. Evening and late-night ragas are mostly in the shanta (peace), karuna (compassion), and gambhir (majestic-calm) rasas. Used as a wind-down listening protocol — not as a cure for insomnia — they do what slow-tempo instrumental music does best: downshift the sympathetic nervous system. Below: twelve ragas from that tradition, and an Ayurvedic sleep kit that pairs with them.
+  </p>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:24px 0 6px">S5a · The twelve-raga sleep playlist</h3>
+  <div class="raga-table-wrap">
+    <table class="raga-table">
+      <thead>
+        <tr>
+          <th style="width:22%">Raga</th>
+          <th style="width:18%">Prahar / time</th>
+          <th style="width:18%">Rasa (mood)</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="r-name">Yaman</div><div class="r-meta">Evening anchor</div></td>
+          <td class="r-meta">6 – 9 pm</td>
+          <td class="r-rasa">Shanta · peace</td>
+          <td class="r-note">The wind-down raga. Taught first in most gharanas because it's meditative without being sleepy.</td>
+        </tr>
+        <tr>
+          <td><div class="r-name">Bhupali</div><div class="r-meta">Early night</div></td>
+          <td class="r-meta">7 – 10 pm</td>
+          <td class="r-rasa">Shanta · bhakti</td>
+          <td class="r-note">Five-note pentatonic. Devotional, bare. Good for reading-in-bed segment.</td>
+        </tr>
+        <tr>
+          <td><div class="r-name">Malkauns</div><div class="r-meta">Late night</div></td>
+          <td class="r-meta">10 pm – 2 am</td>
+          <td class="r-rasa">Karuna · gambhir</td>
+          <td class="r-note">Deep pentatonic. Historically associated with transcendental mood; slow alaap recordings only.</td>
+        </tr>
+        <tr>
+          <td><div class="r-name">Darbari Kanada</div><div class="r-meta">Late night</div></td>
+          <td class="r-meta">10 pm – 1 am</td>
+          <td class="r-rasa">Gambhir</td>
+          <td class="r-note">Composed by Tansen for Akbar's court. Heavy andolan (oscillations). Anecdotal HR-lowering reports.</td>
+        </tr>
+        <tr>
+          <td><div class="r-name">Bhimpalasi</div><div class="r-meta">Late afternoon</div></td>
+          <td class="r-meta">3 – 6 pm</td>
+          <td class="r-rasa">Karuna</td>
+          <td class="r-note">Day-to-evening bridge. Good for the 4 pm slump without caffeine.</td>
+        </tr>
+        <tr>
+          <td><div class="r-name">Behag</div><div class="r-meta">Late night</div></td>
+          <td class="r-meta">10 pm – 1 am</td>
+          <td class="r-rasa">Shringar · chanchal</td>
+          <td class="r-note">Sweet, almost playful — but the slow exposition version is a proven wind-down.</td>
+        </tr>
+        <tr>
+          <td><div class="r-name">Bageshri</div><div class="r-meta">Midnight</div></td>
+          <td class="r-meta">12 – 3 am</td>
+          <td class="r-rasa">Shringar · karuna</td>
+          <td class="r-note">Longing and release. Use for intrusive-thought nights rather than anxiety-wakeups.</td>
+        </tr>
+        <tr>
+          <td><div class="r-name">Chandrakauns</div><div class="r-meta">Late night</div></td>
+          <td class="r-meta">11 pm – 2 am</td>
+          <td class="r-rasa">Shanta</td>
+          <td class="r-note">Cited in Sairam 2004 for reducing restlessness; most minor-modal of the twelve.</td>
+        </tr>
+        <tr>
+          <td><div class="r-name">Desh</div><div class="r-meta">Night</div></td>
+          <td class="r-meta">9 pm – 12 am</td>
+          <td class="r-rasa">Shringar · karuna</td>
+          <td class="r-note">Most commonly prescribed in Indian music-therapy clinics. Thumri tradition — intimate tempo.</td>
+        </tr>
+        <tr>
+          <td><div class="r-name">Jog</div><div class="r-meta">Late night</div></td>
+          <td class="r-meta">10 pm – 1 am</td>
+          <td class="r-rasa">Karuna</td>
+          <td class="r-note">Used in Nada Yoga for sleep-onset. The blended major/minor tension resolves; body follows.</td>
+        </tr>
+        <tr>
+          <td><div class="r-name">Khamaj</div><div class="r-meta">Night</div></td>
+          <td class="r-meta">9 pm – 12 am</td>
+          <td class="r-rasa">Shringar · chanchal</td>
+          <td class="r-note">Gentle, playful — try when Malkauns feels too heavy. Pairs well with reading.</td>
+        </tr>
+        <tr>
+          <td><div class="r-name">Puriya Dhanashri</div><div class="r-meta">Sandhi-prakash</div></td>
+          <td class="r-meta">5 – 8 pm</td>
+          <td class="r-rasa">Karuna · vairagya</td>
+          <td class="r-note">Evening twilight raga. Signals "day ending." Good companion to a no-screens dinner.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:16px">
+    <span class="v-badge v-flagged" style="margin-right:8px">Flagged · section</span>
+    Raga-sleep efficacy has a thin RCT layer. Effect on sympathetic downshift is well-attested (Mathur 2015); effect on sleep-onset latency specifically is promising but under-studied. Use as relaxation aid, not as an insomnia cure.
+  </p>
+
+  <!-- S5b Ayurveda kit -->
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:48px 0 16px">S5b · The Ayurvedic sleep kit</h3>
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Herb</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Ashwagandha</div>
+      <div class="card-latin">Withania somnifera · KSM-66 / Sensoril</div>
+      <div class="card-body">Adaptogen. 300–600 mg standardised extract, 60–90 min before bed. RCTs show reduced cortisol, improved sleep-onset latency, reduced anxiety markers. "Somnifera" literally = sleep-inducing.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Pregnancy · hyperthyroidism · autoimmune (Hashimoto, lupus) · anticoagulants · sedatives / benzodiazepines · upcoming surgery (stop 14 days prior).</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Langade D 2019, Cureus · Salve J 2019, Cureus · Chandrasekhar K 2012, Indian J Psychol Med.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim sleep_ashwagandha</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Herb</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Brahmi</div>
+      <div class="card-latin">Bacopa monnieri</div>
+      <div class="card-body">Classical Ayurvedic nervine. Improves cognitive function and reduces anxiety at 300 mg/day standardised to 55% bacosides. Use for 8–12 weeks — effects are cumulative, not acute.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Bradycardia (slows HR further). Thyroid meds (may interact). GI upset at higher doses.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Calabrese C 2008, J Altern Complement Med · Stough C 2008, Phytother Res.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim sleep_brahmi</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Herb</span>
+        <span class="v-badge v-flagged">Flagged</span>
+      </div>
+      <div class="card-name">Jatamansi</div>
+      <div class="card-latin">Nardostachys jatamansi</div>
+      <div class="card-body">Himalayan root with a long classical pedigree as a sleep and nervine herb. Preclinical data on GABAergic effect; human RCT evidence still thin.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Pregnancy (insufficient data). Sedatives — additive effect. Endangered species — source from cultivated stock only.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Rao VS 2005, Phytomedicine. FLAGGED for thin RCT layer.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim sleep_jatamansi</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Herb</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Tagar (Indian valerian)</div>
+      <div class="card-latin">Valeriana wallichii</div>
+      <div class="card-body">Indian cousin of the European valerian. Valerenic acid → GABA modulation → sleep onset. Classical sleep formulary ingredient.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Pregnancy · benzodiazepines · driving / machinery (morning grogginess at higher doses).</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Bent S 2006, Am J Med meta-analysis (valerian family).</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim sleep_tagar</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Herb</span>
+        <span class="v-badge v-flagged">Flagged</span>
+      </div>
+      <div class="card-name">Shankhpushpi</div>
+      <div class="card-latin">Convolvulus pluricaulis</div>
+      <div class="card-body">"Medhya rasayana" — classical brain tonic. Traditionally used for anxiety + insomnia. Preclinical data OK; human RCTs small.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Hypotension (lowers BP). Not combined with phenytoin — documented interaction.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Malik J 2011, Pharmacognosy Rev. FLAGGED, small human N.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim sleep_shankhpushpi</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Food practice</span>
+        <span class="v-badge v-verified">Verified</span>
+      </div>
+      <div class="card-name">Warm milk + jaiphal</div>
+      <div class="card-latin">Haldi-doodh / nutmeg milk</div>
+      <div class="card-body">Nutmeg contains myristicin and tryptophan-augmenting compounds; milk delivers tryptophan + L-tryptophan → 5-HT → melatonin. ¼ tsp grated nutmeg max — more is psychoactive, not sleep-inducing.</div>
+      <details class="caveat contra">
+        <summary>Contraindications</summary>
+        <div class="disclosure">Pregnancy (high-dose nutmeg contraindicated). Liver disease. Lactose intolerance — swap to almond milk.</div>
+      </details>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Hartmann E 1983, Psychopharmacology (tryptophan + sleep) · Forrester MB 2005, J Med Toxicol (nutmeg dose safety).</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim sleep_nutmeg_milk</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Practice</span>
+        <span class="v-badge v-flagged">Flagged</span>
+      </div>
+      <div class="card-name">Abhyanga</div>
+      <div class="card-latin">Warm sesame-oil self-massage</div>
+      <div class="card-body">10–15 min full-body warm oil rub, 20 min before bath. Classical dinacharya practice. Effect on parasympathetic tone is plausible (mechanoreceptor stimulation) and pleasant even if under-measured.</div>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Basler AJ 2011, J Altern Complement Med (massage + stress). FLAGGED — effect on sleep specifically is indirect.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim sleep_abhyanga</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-meta">Practice</span>
+        <span class="v-badge v-flagged">Flagged</span>
+      </div>
+      <div class="card-name">Padabhyanga</div>
+      <div class="card-latin">Foot-sole oil massage · bedtime</div>
+      <div class="card-body">5 min warm sesame or brahmi-oil foot massage right before bed. Marma-point theory aside, foot massage is one of the better-evidenced non-drug sleep aids — possibly via cutaneous warming / distal vasodilation.</div>
+      <details class="caveat">
+        <summary>Sources</summary>
+        <div class="disclosure">Oshvandi K 2014, Complement Ther Clin Pract.</div>
+      </details>
+      <div class="card-foot">Last verified 2026-04-22 · claim sleep_padabhyanga</div>
+    </div>
+
+  </div>
+
+  <!-- S5c sleep hygiene -->
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:48px 0 16px">S5c · Sleep hygiene — the non-negotiable five</h3>
+  <div class="rules">
+    <div class="rule"><span class="rule-num">01</span><h4>Same time, every day.</h4><p>Within ±30 min sleep and wake, seven days. Weekend drift is the single biggest circadian saboteur.</p><cite>Walker 2017 · Wittmann 2006 (social jetlag)</cite></div>
+    <div class="rule"><span class="rule-num">02</span><h4>Bedroom is 18–20°C.</h4><p>Core body temperature drop is a necessary signal. Hot bedrooms = fragmented REM.</p><cite>Okamoto-Mizuno 2012, J Physiol Anthropol</cite></div>
+    <div class="rule"><span class="rule-num">03</span><h4>Blackout + silence, or pink noise.</h4><p>Eye-mask + earplugs work as well as $2,000 blackout shades. Pink noise improves slow-wave in small studies.</p><cite>Papalambros 2017, Front Hum Neurosci</cite></div>
+    <div class="rule"><span class="rule-num">04</span><h4>No screens 90 min pre-bed.</h4><p>Not mainly about blue light — mainly about <em>content</em>. A feed is a stimulant regardless of wavelength.</p><cite>Hale 2015, Sleep Med Rev</cite></div>
+    <div class="rule"><span class="rule-num">05</span><h4>Morning sun within 30 min of waking.</h4><p>10 minutes outdoors is the strongest zeitgeber available. Fixes sleep timing without a pill.</p><cite>Blume 2019, Somnologie</cite></div>
+  </div>
+</section>
+
+<!-- Pull quote -->
+<div class="pullquote">
+  <blockquote>"Sleep that knits up the ravell'd sleeve of care, <em>the death of each day's life, sore labour's bath.</em>"</blockquote>
+  <cite>— Shakespeare · Macbeth II.ii</cite>
+</div>
+
+<!-- =========================================================================
+     PILLAR 3 — MOVEMENT
+     ========================================================================= -->
+<section class="section" id="pillar-movement">
+  <div class="section-head">
+    <div>
+      <div class="lbl">Pillar 3 · Section S6</div>
+      <h2>Movement — <em>ancient &amp; modern</em></h2>
+    </div>
+    <div class="tag tag-blood">p3 · movement</div>
+  </div>
+  <p class="section-intro">
+    The exercise literature converges on the same prescription every decade: <strong>move daily, lift something heavy twice a week, break a sweat, and get your heart rate up past conversation-pace for at least 75 minutes a week.</strong> Every modern branded protocol — HIIT, Tabata, Wim Hof, Animal Flow, Primal Movement, Box Breathing — is a repackaging of something older. The cards below show the originals and the packaging.
+  </p>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:24px 0 16px">S6a · Eight asanas with mental-health evidence</h3>
+  <div class="practice-grid">
+    <div class="practice"><h4>Balasana</h4><span class="p-sanskrit">Child's pose · बालासन</span><span class="p-dose">60–120 sec · passive</span><p class="p-body">Forward fold on knees, forehead on floor. Parasympathetic reset; good between poses or at day's end.</p></div>
+    <div class="practice"><h4>Shavasana</h4><span class="p-sanskrit">Corpse pose · शवासन</span><span class="p-dose">5–15 min · rest</span><p class="p-body">The hardest pose, paradoxically. Full supine relaxation, breath observed not controlled. Foundation of yoga nidra.</p></div>
+    <div class="practice"><h4>Setu Bandhasana</h4><span class="p-sanskrit">Bridge pose · सेतु बंधासन</span><span class="p-dose">30–60 sec × 3</span><p class="p-body">Supine hip-lift. Opens chest, stretches psoas, associated with mild antidepressant effect in yoga-depression RCTs (Cramer 2013).</p></div>
+    <div class="practice"><h4>Viparita Karani</h4><span class="p-sanskrit">Legs-up-the-wall · विपरीत करणी</span><span class="p-dose">5–10 min · passive inversion</span><p class="p-body">Mild inversion, no skill required. Calms nervous system; good for pre-sleep paired with Yaman raga.</p></div>
+    <div class="practice"><h4>Adho Mukha Svanasana</h4><span class="p-sanskrit">Downward dog · अधोमुख श्वानासन</span><span class="p-dose">30–60 sec × 3</span><p class="p-body">Full-body lengthener. Shoulder, hamstring, calf in one shape. Anchor pose of most Vinyasa flows.</p></div>
+    <div class="practice"><h4>Uttanasana</h4><span class="p-sanskrit">Standing forward fold · उत्तानासन</span><span class="p-dose">30–60 sec</span><p class="p-body">Decompresses spine; cheap anxiety reset — head below heart for 30 sec drops sympathetic tone measurably.</p></div>
+    <div class="practice"><h4>Sukhasana + breath-watch</h4><span class="p-sanskrit">Easy sitting · सुखासन</span><span class="p-dose">5–20 min</span><p class="p-body">Cross-legged upright seat; simplest meditation posture. The pose is the point — sit, notice, do nothing.</p></div>
+    <div class="practice"><h4>Vrikshasana</h4><span class="p-sanskrit">Tree pose · वृक्षासन</span><span class="p-dose">30–60 sec each side</span><p class="p-body">Single-leg balance. Balance training is under-rated for neurological ageing; 30 seconds is harder than it looks past 50.</p></div>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:48px 0 16px">S6b · Six pranayama, with dose + hard contraindications</h3>
+  <div class="practice-grid">
+    <div class="practice">
+      <h4>Nadi Shodhana</h4>
+      <span class="p-sanskrit">Alternate-nostril · नाड़ी शोधन</span>
+      <span class="p-dose">5–10 min · daily AM or PM</span>
+      <p class="p-body">4 sec in (L), 4 sec hold, 4 sec out (R), switch. Well-tolerated; HRV and calm markers improve in small RCTs.</p>
+      <details class="caveat contra" open>
+        <summary>Contraindications</summary>
+        <div class="disclosure">Acute sinusitis (discomfort). Safe for most populations. Stop if dizzy.</div>
+      </details>
+    </div>
+    <div class="practice">
+      <h4>Bhramari</h4>
+      <span class="p-sanskrit">Bee-breath · भ्रामरी</span>
+      <span class="p-dose">5–10 rounds · 2 min</span>
+      <p class="p-body">Humming exhale. Raises nitric-oxide output ~15×; vagal stimulation via laryngeal vibration. Cheap evening sympathetic-off switch.</p>
+      <details class="caveat contra" open>
+        <summary>Contraindications</summary>
+        <div class="disclosure">Active ear infection. Severe tinnitus (may amplify perception of ringing).</div>
+      </details>
+    </div>
+    <div class="practice">
+      <h4>Ujjayi</h4>
+      <span class="p-sanskrit">Ocean-breath · उज्जायी</span>
+      <span class="p-dose">Continuous · during asana or standalone 5 min</span>
+      <p class="p-body">Slight glottal constriction on in + out breath. Trains slow, resistance breathing. Used throughout Ashtanga practice.</p>
+      <details class="caveat contra" open>
+        <summary>Contraindications</summary>
+        <div class="disclosure">Uncontrolled asthma. Sore throat. Back off if light-headed.</div>
+      </details>
+    </div>
+    <div class="practice">
+      <h4>Kapalbhati</h4>
+      <span class="p-sanskrit">Skull-shining · कपालभाति</span>
+      <span class="p-dose">30–60 exhales × 3 rounds · AM only</span>
+      <p class="p-body">Short sharp exhales, passive inhale. Energising; not a wind-down practice. Morning only.</p>
+      <details class="caveat contra" open>
+        <summary>Contraindications — hard stops</summary>
+        <div class="disclosure"><strong>Hypertension · CAD · pregnancy · hernia · recent abdominal surgery · retinal conditions · vertigo.</strong> Do not attempt during menstruation.</div>
+      </details>
+    </div>
+    <div class="practice">
+      <h4>Anulom-Vilom</h4>
+      <span class="p-sanskrit">Channel-cleansing · अनुलोम विलोम</span>
+      <span class="p-dose">5–10 min · daily</span>
+      <p class="p-body">Simpler cousin of Nadi Shodhana, without retention. Good entry pranayama; safe for most including older adults.</p>
+      <details class="caveat contra" open>
+        <summary>Contraindications</summary>
+        <div class="disclosure">None material at beginner dose. Stop if dizzy.</div>
+      </details>
+    </div>
+    <div class="practice">
+      <h4>Sheetali</h4>
+      <span class="p-sanskrit">Cooling breath · शीतली</span>
+      <span class="p-dose">5–10 rounds · hot weather / evening</span>
+      <p class="p-body">Inhale through rolled tongue, exhale through nose. Cools body and mind; traditional prescription for pitta / summer heat.</p>
+      <details class="caveat contra" open>
+        <summary>Contraindications</summary>
+        <div class="disclosure">Low blood pressure. Asthma (cold-air sensitivity). Winter — skip or shorten.</div>
+      </details>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:48px 0 16px">S6c · Repackaged ancients — modern protocols, older roots</h3>
+  <div class="ancients-wrap">
+    <table class="ancients">
+      <thead><tr><th>Modern (branded)</th><th style="text-align:center">←</th><th>Traditional root</th><th>Citation</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="modern">Wim Hof Method</td>
+          <td class="arrow">←</td>
+          <td class="ancient">Tummo · Tibetan Buddhist (~1000 CE)</td>
+          <td class="cite">Kox M et al. 2014, PNAS · Benson H 1982, Nature (Tummo monks)</td>
+        </tr>
+        <tr>
+          <td class="modern">Box Breathing (Navy SEAL)</td>
+          <td class="arrow">←</td>
+          <td class="ancient">Sama Vritti Pranayama · 4:4:4:4</td>
+          <td class="cite">Divine M 2015, Unbeatable Mind · Iyengar BKS 1981, Light on Pranayama</td>
+        </tr>
+        <tr>
+          <td class="modern">HIIT / Tabata</td>
+          <td class="arrow">←</td>
+          <td class="ancient">Interval athletic training, Japan 1996</td>
+          <td class="cite">Tabata I 1996, Med Sci Sports Exerc</td>
+        </tr>
+        <tr>
+          <td class="modern">Cold plunge / ice bath</td>
+          <td class="arrow">←</td>
+          <td class="ancient">Ishnan (India) · Banya (Russia) · Sauna + lake (Finland)</td>
+          <td class="cite">Huttunen P 2004, Int J Circumpolar Health</td>
+        </tr>
+        <tr>
+          <td class="modern">Animal Flow</td>
+          <td class="arrow">←</td>
+          <td class="ancient">Yogic-gymnastic synthesis (Mike Fitch 2010)</td>
+          <td class="cite">Fitch M 2010, Animal Flow manual</td>
+        </tr>
+        <tr>
+          <td class="modern">Primal Movement / MovNat</td>
+          <td class="arrow">←</td>
+          <td class="ancient">Méthode Naturelle (Hébert 1902) + yoga</td>
+          <td class="cite">Hébert G 1912, L'Éducation Physique Virile</td>
+        </tr>
+        <tr>
+          <td class="modern">Mindful walking (Headspace etc)</td>
+          <td class="arrow">←</td>
+          <td class="ancient">Vipassana walking meditation · Theravada</td>
+          <td class="cite">Thera N 1954, Satipatthana (commentary)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:48px 0 16px">S6d · Dance as exercise</h3>
+  <p class="section-intro" style="margin-bottom:16px">Dance is the one form of exercise that carries social + rhythmic + cognitive load simultaneously — which is exactly why the meta-analysis on dance-as-intervention is unusually strong for mood and cognitive ageing.</p>
+  <div class="card-grid">
+    <div class="card"><div class="card-top"><span class="card-meta">Gujarat · India</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Garba</div><div class="card-body">Circular folk dance, 9 nights of Navratri. Moderate-intensity cardio in short-bursts; community-bound.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">Tamil Nadu · India</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Bharatanatyam</div><div class="card-body">Isometric strength in araimandi half-sit + abhinaya storytelling. Classical grounded power.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">N. India</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Kathak</div><div class="card-body">Footwork complexity ('tatkar') + spins ('chakkars') — VO₂ climb + balance training in one form.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">Kerala · India</span><span class="v-badge v-flagged">Flagged</span></div><div class="card-name">Kalaripayattu</div><div class="card-body">Ancient martial art / dance hybrid; closer to sport than dance. Exceptional mobility work — needs a teacher, risk of injury without one.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">Turkey / Mevlevi</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Sufi Whirling (Sema)</div><div class="card-body">Ritual spinning; vestibular training; meditative. Start with 30 sec; vertigo protection.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">Latin America</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Zumba · Salsa</div><div class="card-body">Group cardio dance; adherence is its killer feature — the boring treadmill is empirically worse at keeping people coming back.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">Brazil</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Capoeira</div><div class="card-body">Afro-Brazilian martial-art dance. Full-body agility + strength. Needs a roda (circle) to be fun.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">NZ · Māori</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Haka</div><div class="card-body">Short, explosive, vocal. Rare dance form that's explicitly heart-rate-spiking AND community-bonding.</div></div>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:48px 0 16px">S6e · Sport — low-barrier, high-return</h3>
+  <div class="card-grid">
+    <div class="card"><div class="card-top"><span class="card-meta">India</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Kabaddi</div><div class="card-body">Anaerobic bursts + breath-holding + tactical. Free, outdoor, needs 7 friends and a patch of dirt.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">India</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Kho-Kho</div><div class="card-body">Tag sport with brutal cardio; traditional school-yard staple across N. India.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">India · Maharashtra</span><span class="v-badge v-flagged">Flagged</span></div><div class="card-name">Mallakhamb</div><div class="card-body">Pole gymnastics tradition; extraordinary strength-to-weight adaptation. Requires instructor — injury risk high without one.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">Global</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Badminton</div><div class="card-body">Racquet sports have the largest longevity effect of any common sport in the Copenhagen cohort (~6 yr life-expectancy delta).</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">Global</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Swimming</div><div class="card-body">Low-impact full-body. Non-negotiable option if joints are the limiting factor.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">Global</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Cycling</div><div class="card-body">Zone-2 workhorse; commuter variant stacks on everything else.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">Global</span><span class="v-badge v-verified">Verified</span></div><div class="card-name">Pickup football / cricket</div><div class="card-body">Community sport = adherence + joy + HR spike. The single highest-leverage exercise is the one you'll actually show up for.</div></div>
+    <div class="card"><div class="card-top"><span class="card-meta">India</span><span class="v-badge v-unverified">Unverified</span></div><div class="card-name">Gilli-danda</div><div class="card-body">Street game; sprint + coordination + play. Evidence base = none; cultural-health argument = substantial.</div></div>
+  </div>
+</section>
+
+<!-- Pull quote -->
+<div class="pullquote">
+  <blockquote>"You don't have to figure out what you can <em>do</em>. You have to figure out what you'll <em>keep doing</em>."</blockquote>
+  <cite>— Anchor principle of the movement pillar</cite>
+</div>
+
+<!-- =========================================================================
+     PILLAR 4 — ATTENTION
+     ========================================================================= -->
+<section class="section" id="pillar-attention">
+  <div class="section-head">
+    <div>
+      <div class="lbl">Pillar 4 · Section S7</div>
+      <h2>Attention — <em>content &amp; connection</em></h2>
+    </div>
+    <div class="tag tag-gold">p4 · attention</div>
+  </div>
+  <p class="section-intro">
+    Nothing in the $2M protocol addresses the lever that is quietly doing the most damage: <strong>attention-economy optimisation + social isolation</strong>. Holt-Lunstad's 2015 meta-analysis puts loneliness mortality impact at roughly a 15-cigarette/day equivalent. Hunt 2018's RCT showed a 30-min/day social-media cap materially reduces depression and loneliness in three weeks. The protocol below is the cheapest pillar. It may also be the highest-leverage one.
+  </p>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:24px 0 16px">S7a · The digital floor — non-negotiables</h3>
+  <div class="rules">
+    <div class="rule"><span class="rule-num">01</span><h4>First 90 min · no phone.</h4><p>No feed, no email, no news. The morning cortisol window belongs to sunlight, water, movement, and one human if possible.</p><cite>Derks 2016, J Occup Health Psychol</cite></div>
+    <div class="rule"><span class="rule-num">02</span><h4>Last 90 min · no screens.</h4><p>Not the blue light — the content. A feed is a stimulant regardless of wavelength. Read a physical book.</p><cite>Hale 2015, Sleep Med Rev</cite></div>
+    <div class="rule"><span class="rule-num">03</span><h4>Phone out of the bedroom.</h4><p>Charges in another room, full stop. Buy a $10 alarm clock. This single change is the biggest lift any of us will make.</p><cite>Dunlop 2021, JMIR Form Res</cite></div>
+    <div class="rule"><span class="rule-num">04</span><h4>Grayscale mode on.</h4><p>iOS Accessibility → Display Filters → Color Filters → Grayscale. Kills ~40% of reward-loop pull in self-report.</p><cite>Holte 2021, Mobile Media & Communication</cite></div>
+    <div class="rule"><span class="rule-num">05</span><h4>Notifications: whitelist only.</h4><p>Phone calls + messages from a named list. Everything else silenced. Review quarterly.</p><cite>Stothart 2015, JEP: HPP</cite></div>
+    <div class="rule"><span class="rule-num">06</span><h4>Sunday digital sabbath.</h4><p>One day a week, phone in a drawer. Start with two hours if 24 is too much. Ratchet up.</p><cite>Mirbabaie 2020, Electron Mark</cite></div>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:48px 0 16px">S7b · The content diet</h3>
+  <div class="rules">
+    <div class="rule"><h4>Read &gt; watch.</h4><p>Reading is active; watching is passive. Default to the book when both are options.</p></div>
+    <div class="rule"><h4>Long-form &gt; short-form.</h4><p>A 90-minute documentary outperforms 90 one-minute reels on every metric that matters — retention, mood, stress hormones.</p></div>
+    <div class="rule"><h4>No news before breakfast.</h4><p>Nothing in the news cycle is more urgent than your blood sugar and your circadian rhythm at 7 a.m.</p></div>
+    <div class="rule"><h4>One book at a time.</h4><p>Five books half-read = zero books read. Serial, not parallel.</p></div>
+    <div class="rule"><h4>Quarterly feed audit.</h4><p>Once every three months: unfollow anyone whose content made you feel worse than it made you smarter.</p></div>
+    <div class="rule"><h4>Curate, don't consume.</h4><p>Every feed is editable. Every app is deletable. Every notification is negotiable.</p></div>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:48px 0 16px">S7c · Body defaults — sun, earth, heat, cold</h3>
+  <div class="practice-grid">
+    <div class="practice"><h4>10 min morning sun</h4><span class="p-dose">Within 30 min of waking · skin exposed</span><p class="p-body">Strongest circadian anchor available. Vitamin D bonus. Works even through light cloud.</p></div>
+    <div class="practice"><h4>15–20 min barefoot outdoor walk</h4><span class="p-dose">Grass · sand · clean soil · daily</span><p class="p-body">"Earthing" physiological effect is <em>FLAGGED</em> (Chevalier 2012, small N); the walk itself is not. Do it for the walk; the grounding is an anecdotal bonus.</p></div>
+    <div class="practice"><h4>Sauna · 4–7×/week · 19 min avg</h4><span class="p-dose">Traditional or IR</span><p class="p-body">Finnish KIHD cohort: ~40% all-cause mortality drop, ~50% fatal CVD drop. Cohort-flagged (middle-aged Finnish men) — generalisability unproven but trend robust.</p></div>
+    <div class="practice"><h4>Cold exposure · 2–5 min · 2–4×/week</h4><span class="p-dose">11–15°C plunge or cold shower</span><p class="p-body">Mood lift, brown-fat activation. Hard stops: uncontrolled hypertension, arrhythmia, Raynaud's. Never alone in open water.</p></div>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin:48px 0 16px">S7d · Connection defaults — the mortality equivalent of quitting smoking</h3>
+  <div class="rules">
+    <div class="rule"><h4>One meal/day shared · phones off.</h4><p>Phones off the table. One proper conversation beats ten distracted ones. Holt-Lunstad's mortality number sits here.</p><cite>Holt-Lunstad 2015, Perspectives Psych Sci</cite></div>
+    <div class="rule"><h4>Weekly call · elders.</h4><p>Parents, grandparents, older relatives. 20 minutes. A small amount of weekly effort outperforms a large amount of occasional effort.</p><cite>Carstensen 1999, American Psychologist</cite></div>
+    <div class="rule"><h4>One "third place" · recurring.</h4><p>Not work. Not home. A class, sport league, spiritual gathering, volunteer crew. Once a week minimum.</p><cite>Oldenburg 1989, The Great Good Place</cite></div>
+    <div class="rule"><h4>Long walk · old friend · monthly.</h4><p>No agenda, no phone, no screen. 60–90 min. The single most under-rated mental-health intervention of the decade.</p><cite>Clark 2018, J Epidemiol Community Health</cite></div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     S8 · WEEKLY TEMPLATE
+     ========================================================================= -->
+<section class="section" id="week">
+  <div class="section-head">
+    <div>
+      <div class="lbl">Section S8 · Synthesis</div>
+      <h2>A week, <em>four pillars stacked.</em></h2>
+    </div>
+    <div class="tag tag-forest">pattern · not a prison</div>
+  </div>
+  <p class="section-intro">A pattern to adapt, not a schedule to obey. Four pillars on every day; intensity rotates.</p>
+  <div class="week-wrap">
+    <table class="week">
+      <thead>
+        <tr>
+          <th style="width:11%">Day</th>
+          <th style="width:24%">AM · 0–90 min after waking</th>
+          <th style="width:24%">Midday · meal + mid-work</th>
+          <th style="width:24%">Evening · 6–9 pm</th>
+          <th style="width:17%">Before bed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day">Mon</td>
+          <td><span class="pill pill-att">sun</span><span class="pill pill-move">strength</span> 40 min lift. Ragi-uttapam + fruit.</td>
+          <td><span class="pill pill-food">plate</span> Dal + 2 veg + millet roti. Walk 10 min after.</td>
+          <td><span class="pill pill-move">zone-2</span> 30 min brisk walk. <span class="pill pill-att">third-place</span> class / league.</td>
+          <td><span class="pill pill-sleep">raga</span> Yaman. Read. Lights off 10:30.</td>
+        </tr>
+        <tr>
+          <td class="day">Tue</td>
+          <td><span class="pill pill-att">sun</span><span class="pill pill-move">pranayama</span> Nadi Shodhana 10 min + Sukhasana 5.</td>
+          <td><span class="pill pill-food">plate</span> Rajma-chawal or quinoa-bowl. Kimchi side.</td>
+          <td><span class="pill pill-move">dance</span> Zumba / Garba / Kathak 45 min.</td>
+          <td><span class="pill pill-sleep">kit</span> Warm milk + ¼ tsp jaiphal. Padabhyanga.</td>
+        </tr>
+        <tr>
+          <td class="day">Wed</td>
+          <td><span class="pill pill-att">sun</span><span class="pill pill-move">strength</span> 40 min lift. Okinawan-sweet-potato + eggs.</td>
+          <td><span class="pill pill-food">plate</span> Sambar + rice + moringa poriyal.</td>
+          <td><span class="pill pill-att">family</span> One meal, phones off. Long conversation.</td>
+          <td><span class="pill pill-sleep">raga</span> Malkauns. Bhramari 5 rounds.</td>
+        </tr>
+        <tr>
+          <td class="day">Thu</td>
+          <td><span class="pill pill-att">sun</span><span class="pill pill-move">yoga</span> 45-min asana flow + Shavasana 10.</td>
+          <td><span class="pill pill-food">plate</span> Natto + brown rice OR chickpea curry + ragi.</td>
+          <td><span class="pill pill-move">sport</span> Badminton / football / cricket pickup.</td>
+          <td><span class="pill pill-sleep">kit</span> Ashwagandha (if cleared). Book 20 min.</td>
+        </tr>
+        <tr>
+          <td class="day">Fri</td>
+          <td><span class="pill pill-att">sun</span><span class="pill pill-move">HIIT</span> 20 min Tabata. Amaranth porridge + baobab.</td>
+          <td><span class="pill pill-food">plate</span> Thali: dal + 2 subzi + curd + fruit.</td>
+          <td><span class="pill pill-att">friend</span> Long walk. No screens. 60–90 min.</td>
+          <td><span class="pill pill-sleep">raga</span> Desh. Room 18–20°C.</td>
+        </tr>
+        <tr>
+          <td class="day">Sat</td>
+          <td><span class="pill pill-att">sun</span><span class="pill pill-move">zone-2</span> 60 min cycle / swim / hike.</td>
+          <td><span class="pill pill-food">plate</span> Social meal · shared · phone-free.</td>
+          <td><span class="pill pill-move">dance</span> Social dance · Garba / salsa / capoeira.</td>
+          <td><span class="pill pill-sleep">raga</span> Bageshri. Lights off 11.</td>
+        </tr>
+        <tr>
+          <td class="day">Sun</td>
+          <td><span class="pill pill-att">sabbath</span> Phone in drawer until noon.</td>
+          <td><span class="pill pill-food">plate</span> Slow family meal. Fermented side.</td>
+          <td><span class="pill pill-att">third-place</span> Community / spiritual / volunteer.</td>
+          <td><span class="pill pill-sleep">raga</span> Yaman. Week-prep journaling.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:12px">Legend · <span class="pill pill-food">food</span><span class="pill pill-sleep">sleep</span><span class="pill pill-move">movement</span><span class="pill pill-att">attention</span></p>
+</section>
+
+<!-- =========================================================================
+     S9 · CONTRAINDICATIONS PANEL (consolidated)
+     ========================================================================= -->
+<section class="section" id="contra">
+  <div class="section-head">
+    <div>
+      <div class="lbl">Section S9 · Safety</div>
+      <h2>Contraindications — <em>read before you start.</em></h2>
+    </div>
+    <div class="tag tag-blood">do not skip</div>
+  </div>
+  <div class="contra-panel">
+    <h3>Populations that must clear items with a physician first</h3>
+    <ul>
+      <li><strong>Pregnancy / nursing:</strong> Ashwagandha, Jatamansi, Shankhpushpi, Moringa root/bark, high-dose nutmeg, Kapalbhati, cold-plunge ≤ 10°C, maca, sauna &gt; 15 min.</li>
+      <li><strong>Anticoagulants (warfarin, DOACs):</strong> Amla, turmeric supplements, nattō (K2), ashwagandha, ginkgo-family interactions.</li>
+      <li><strong>Thyroid conditions:</strong> Ashwagandha (caution with hyper- and Hashimoto), maca (goitrogen if raw), seaweed excess, brahmi (meds interaction).</li>
+      <li><strong>Autoimmune (lupus, RA, MS):</strong> Ashwagandha, high-dose turmeric supplements, Wim Hof / Tummo (cold exposure can flare some conditions).</li>
+      <li><strong>Hypertension (uncontrolled) / CAD / arrhythmia:</strong> Kapalbhati, inversions, cold plunge, sauna without clearance, high-dose caffeine.</li>
+      <li><strong>South Asian lipid profile (elevated ApoB / Lp(a)):</strong> High A2 ghee intake, mustard-oil daily cooking at large volume — see dossier S9.</li>
+      <li><strong>Eating-disorder history:</strong> No fasting protocols, no strict macro counting, no "perfect plate" framing. The pillar is food, not restriction.</li>
+      <li><strong>Psychiatric medication (SSRIs, MAOIs, lithium):</strong> St John's Wort (not in this module, noted here), high-dose turmeric, ashwagandha — all need clearance.</li>
+      <li><strong>Children &lt; 12:</strong> No adaptogens, no supplements of any kind without pediatrician. Pillars 1 + 4 apply fully; Pillars 2 + 3 at child-appropriate dose.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========================================================================
+     S10 · SOURCES
+     ========================================================================= -->
+<section class="section" id="sources">
+  <div class="section-head">
+    <div>
+      <div class="lbl">Section S10</div>
+      <h2>Sources &amp; <em>methodology</em></h2>
+    </div>
+    <div class="tag tag-forest">tier 1 · peer-reviewed</div>
+  </div>
+  <div class="sources-wrap">
+    <h3>Tier 1 — peer-reviewed RCTs, meta-analyses, large cohorts</h3>
+    <ol class="sources">
+      <li><strong>Cramer H et al. 2013.</strong> "Yoga for depression: a systematic review and meta-analysis." <em>Depression &amp; Anxiety</em>. <span class="tier">tier 1 · meta</span></li>
+      <li><strong>Kox M, Pickkers P et al. 2014.</strong> "Voluntary activation of the sympathetic nervous system and attenuation of the innate immune response in humans." <em>PNAS</em>. <span class="tier">tier 1 · rct</span></li>
+      <li><strong>Hunt MG et al. 2018.</strong> "No More FOMO: Limiting Social Media Decreases Loneliness and Depression." <em>J Soc Clin Psychol</em>. <span class="tier">tier 1 · rct</span></li>
+      <li><strong>Holt-Lunstad J et al. 2015.</strong> "Loneliness and social isolation as risk factors for mortality." <em>Perspectives Psych Sci</em>. <span class="tier">tier 1 · meta</span></li>
+      <li><strong>Laukkanen T et al. 2015.</strong> "Association between sauna bathing and fatal cardiovascular events." <em>JAMA Intern Med</em> (KIHD cohort). <span class="tier">tier 1 · cohort</span></li>
+      <li><strong>Ng QX et al. 2017.</strong> "Clinical use of curcumin in depression: a meta-analysis." <em>J Am Med Dir Assoc</em>. <span class="tier">tier 1 · meta</span></li>
+      <li><strong>Streeter CC et al. 2010.</strong> "Effects of yoga on brain GABA levels." <em>J Altern Complement Med</em>. <span class="tier">tier 1 · rct</span></li>
+      <li><strong>Tabata I et al. 1996.</strong> "Moderate-intensity endurance and high-intensity intermittent training." <em>Med Sci Sports Exerc</em>. <span class="tier">tier 1 · rct</span></li>
+      <li><strong>Katanoda K et al. 2017.</strong> "Natto intake and cardiovascular mortality (Takayama cohort)." <em>Eur J Epidemiol</em>. <span class="tier">tier 1 · cohort</span></li>
+      <li><strong>Papalambros NA et al. 2017.</strong> "Acoustic enhancement of sleep slow oscillations in older adults." <em>Front Hum Neurosci</em>. <span class="tier">tier 1 · rct</span></li>
+      <li><strong>Arem H et al. 2015.</strong> "Leisure time physical activity and mortality." <em>JAMA Intern Med</em>. <span class="tier">tier 1 · cohort</span></li>
+      <li><strong>Okamoto-Mizuno K, Mizuno K. 2012.</strong> "Effects of thermal environment on sleep and circadian rhythm." <em>J Physiol Anthropol</em>. <span class="tier">tier 1 · review</span></li>
+      <li><strong>Langade D et al. 2019.</strong> "Efficacy and safety of Ashwagandha root extract in insomnia and anxiety." <em>Cureus</em>. <span class="tier">tier 1 · rct</span></li>
+      <li><strong>Willcox DC et al. 2009.</strong> "The Okinawan Centenarian Study." <em>J Am Coll Nutr</em>. <span class="tier">tier 1 · cohort</span></li>
+      <li><strong>Darmadi-Blackberry I et al. 2004.</strong> "Legumes: the most important dietary predictor of survival." <em>Asia Pac J Clin Nutr</em>. <span class="tier">tier 1 · cohort</span></li>
+      <li><strong>Buettner D. 2008.</strong> <em>The Blue Zones</em>. Anchor for §S4c. <span class="tier">tier 3 · popular (author-tier-1)</span></li>
+    </ol>
+    <h3 style="margin-top:28px">Tier 2 — expert-authored, small trials, domain classics</h3>
+    <ol class="sources" style="counter-reset:src 16">
+      <li><strong>Sairam TV. 2004.</strong> <em>Music Therapy in India</em>. Nada Centre for Music Therapy. <span class="tier">tier 2 · classic</span></li>
+      <li><strong>Mathur A et al. 2015.</strong> "Effect of raga on autonomic parameters." <em>Indian J Physiol Pharmacol</em>. <span class="tier">tier 2 · small rct</span></li>
+      <li><strong>Iyengar BKS. 1981.</strong> <em>Light on Pranayama</em>. Primary source for pranayama doses. <span class="tier">tier 2 · classic</span></li>
+      <li><strong>Charaka Samhita · Sūtrasthāna.</strong> Ayurvedic primary text for Rasayana + dinacharya. <span class="tier">tier 2 · classic</span></li>
+      <li><strong>Gonzales GF. 2012.</strong> "Maca (Lepidium meyenii): A review." <em>Evid Based Complement Alternat Med</em>. <span class="tier">tier 2 · review</span></li>
+      <li><strong>Oshvandi K et al. 2014.</strong> "Foot massage on sleep quality." <em>Complement Ther Clin Pract</em>. <span class="tier">tier 2 · rct small</span></li>
+      <li><strong>Basler AJ. 2011.</strong> "Abhyanga and stress markers." <em>J Altern Complement Med</em>. <span class="tier">tier 2 · pilot</span></li>
+      <li><strong>Valles-Colomer M et al. 2019.</strong> "The neuroactive potential of the human gut microbiota." <em>Nature Microbiol</em>. <span class="tier">tier 2 · mechanism</span></li>
+      <li><strong>Oldenburg R. 1989.</strong> <em>The Great Good Place</em>. Origin of the "third place" framework. <span class="tier">tier 3 · sociology classic</span></li>
+      <li><strong>Chevalier G et al. 2012.</strong> "Earthing: reconnecting the body to the Earth's surface electrons." <em>J Environ Public Health</em>. <span class="tier">flagged · small N</span></li>
+      <li><strong>Hale L, Guan S. 2015.</strong> "Screen time and sleep among children and adolescents: a review." <em>Sleep Med Rev</em>. <span class="tier">tier 1 · review</span></li>
+      <li><strong>Blume C et al. 2019.</strong> "Effects of light on human circadian rhythms, sleep and mood." <em>Somnologie</em>. <span class="tier">tier 1 · review</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- =========================================================================
+     FOOTER (+ stamp + sticky pill)
+     ========================================================================= -->
+<section class="section" id="signoff" style="padding-top:16px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-top:1px solid var(--ink);padding-top:28px">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px">File № 002 · The Lived Blueprint</div>
+      <div style="font-family:'Fraunces',serif;font-weight:300;font-size:34px;letter-spacing:-0.02em;max-width:20ch">Four pillars. Every day. <em style="font-style:italic;color:var(--forest-deep)">For the rest of your life.</em></div>
+    </div>
+    <div class="stamp">Verified · 2026-04-22</div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>© The Longevity Audit v3 · File № 002 · not medical advice</div>
+    <div class="disclaimer">Every claim on this page carries a badge, a source, and a last-verified ISO date. FLAGGED items have real evidence but narrow caveats. UNVERIFIED items should be treated as cultural knowledge, not clinical advice. When in doubt, skip the intervention and keep the pillar.</div>
+  </div>
+</footer>
+
+<a class="pill-sticky" href="#contra">⚠ Not medical advice · Read disclaimers</a>
+
+</body>
+</html>

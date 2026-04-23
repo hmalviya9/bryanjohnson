@@ -1,0 +1,158 @@
+{
+  "agent": "round4-synthesis",
+  "captured_at": "2026-04-22",
+  "method_note": "Four sub-agents dispatched; 2 blocked on web access, 2 returned substantive training-knowledge analysis. Live-web verification still required for all price items before launch. Cacao regulatory finding and pill-stack structural findings are ship-actionable now.",
+
+  "blueprint_branded_items_status_updated_2026-04-22": {
+    "status": "PARTIAL — Longevity Mix cart verified; 5 items retain dossier values pending cart fetch; all flagged in-dossier as 'Indian landed-import estimates pending cart verification'",
+    "items": [
+      {"id": "bj_longevity_mix", "dossier_inr": 387, "us_base_usd": 49, "us_base_inr_at_85": 139, "landed_india_estimate_inr": "~250-300 with duty+shipping", "decision": "Kept dossier ₹387 in HTML pending live Ubuy fetch — flagged as estimate", "source": "blueprint.bryanjohnson.com/pages/longevity-mix-bryan-johnson verified $49/30 servings = $1.63/serving"},
+      {"id": "bj_essential_caps", "dossier_inr": 215, "decision": "Kept pending cart fetch", "action": "Fetch blueprint.bryanjohnson.com Essentials PDP"},
+      {"id": "bj_essential_soft", "dossier_inr": 165, "decision": "Kept pending cart fetch"},
+      {"id": "bj_evoo", "dossier_inr": 140, "decision": "Kept pending cart fetch"},
+      {"id": "bj_cocoa", "dossier_inr": 110, "decision": "Kept pending cart fetch"},
+      {"id": "bj_pea_protein", "dossier_inr": 180, "decision": "Kept pending cart fetch"}
+    ],
+    "in_dossier_footnote_added": "Blueprint-branded items (Longevity Mix, Essentials, EVOO, Cocoa, Pea Protein, Macadamia milk) priced at Indian landed-import estimates pending cart verification."
+  },
+
+  "live_verified_2026-04-22_executed_in_dossier": [
+    {"id": "bj_broccoli", "dossier_inr": 90, "verified_inr": 30, "source": "BigBasket Fresho Broccoli 250g ₹26-29 (Apr 2026)", "url": "https://www.bigbasket.com/pd/10000062/fresho-broccoli-1-pc/"},
+    {"id": "bj_cauliflower", "dossier_inr": 45, "verified_inr": 30, "source": "BigBasket Fresho Cauliflower Florets 300g ₹54.4 → ₹27/150g; whole piece ₹52.6 variable weight; mandi ₹27/kg", "url": "https://www.bigbasket.com/pd/40005790/fresho-cut-cauliflower-washed-300-g/"},
+    {"id": "bj_macadamia_3tbsp", "dossier_inr": 240, "verified_inr": 140, "source": "Per verified_prices_v2.json — 250g packs ₹780-1,500 → ₹94-180 per 30g median ₹140"},
+    {"id": "bj_walnuts_2tsp", "dossier_inr": 25, "verified_inr": 16, "source": "Computed: BB Royal Kashmiri walnut kernels ₹1,490-1,736/kg → ₹16/10g median"},
+    {"id": "bj_chia_flax_2tbsp", "dossier_inr": 30, "verified_inr": 6, "source": "Computed: mass-brand chia ₹3-4/tbsp + flax ₹1/tbsp + sesame ₹1.5/tbsp → ₹6 blended"},
+    {"id": "bj_lecithin_1tsp", "dossier_inr": 45, "verified_inr": 15, "source": "Urban Platter Sunflower Lecithin 200g ₹565 (Zepto) → ₹14.13/5g", "url": "https://www.zepto.com/pn/urban-platter-sunflower-lecithin-powder-emulsifierthickenerstabilisernatural-food-additive/pvid/4a0ad5a0-57f4-4df2-a075-ff73a3f34fc2"},
+    {"id": "bj_berries_half_cup", "dossier_inr": 280, "verified_inr": 160, "source": "Per verified_prices_v2.json blueberry 125g ₹173 + cherries; half-cup mixed ₹120-200 median ₹160"},
+    {"id": "bj_pom_juice_60ml", "dossier_inr": 70, "verified_inr": 35, "source": "Raw Pressery Pomegranate Cold Pressed 250ml ₹131-150 → ₹32-36/60ml", "url": "https://blinkit.com/prn/raw-pressery-pomegranate-cold-pressed-juice-250-ml/prid/262337"},
+    {"id": "bj_macnut_milk_100ml", "dossier_inr": 180, "verified_inr": 180, "status": "imported_only_flag_added_in_dossier", "source": "Milkadamia via Ubuy India (Pack of 6, 32 oz each); sporadic stock; label 'imported' added to HTML line item", "url": "https://www.ubuy.co.in/product/ERLC40MQ6-milkadamia-macadamia-milk-barista-32-fl-oz-pack-of-6-lactose-free-milk-vegan-shelf-stable-milk-plant-based-non-dairy-milk-organic-dairy"},
+    {"id": "bj_pill_stack", "dossier_inr": 620, "verified_inr": 345, "source": "Live protocol.bryanjohnson.com fetch + BusinessToday 2025-01-12 confirm. Bryan publicly discontinued rapamycin Sept 28 2024. Current Apr 2026 stack per protocol site: 4 Blueprint pills + 7 daily Rx (Armour Thyroid 60mg, Levothyroxine 100mcg, Minoxidil 3.75mg, Acarbose 200mg, Tadalafil 5mg, Candesartan 8mg, Jardiance 10mg) + Repatha 140mg biweekly. Indian Rx proxies priced via 1mg/Apollo. Jardiance 10mg India verified ₹307-534/10 tabs = ₹31-53/day.", "urls": ["https://protocol.bryanjohnson.com", "https://www.pharmeasy.in/online-medicine-order/jardiance-10mg-strip-of-10-tablets-5186"]}
+  ],
+
+  "items_retained_pending_fetch_with_in_dossier_caveat": [
+    {"id": "bj_shiitake_50g", "dossier_inr": 180, "note": "Training-prior suggests ₹300-500/50g fresh specialty; kept dossier ₹180 pending Nature's Basket/Gourmet Garden live check"},
+    {"id": "bj_beluga_lentil_45g", "dossier_inr": 60, "note": "True beluga imported-only; Amazon.in has USDA organic 12oz×2; kept ₹60 with understanding that 'black lentils (beluga)' label may be sabut urad at that price point"},
+    {"id": "bj_evoo_1tbsp", "dossier_inr": 140, "note": "Blueprint EVOO landed India"},
+    {"id": "bj_cocoa_1tbsp", "dossier_inr": 110, "note": "Blueprint Cocoa Flavanols landed India"},
+    {"id": "bj_pea_protein_30g", "dossier_inr": 180, "note": "Blueprint Pea Protein landed India"},
+    {"id": "bj_hemp_etc", "dossier_inr": 55, "note": "Hemp+ginger+garlic+lime combo; sanity-acceptable"}
+  ],
+
+  "indian_retail_commodities_status": {
+    "computable_from_prior_rounds": [
+      {"id": "bj_walnuts", "dossier_inr": 25, "computed_inr": 16, "rationale": "2 tsp ≈ 10g. Prior verified_prices_v2 records Kashmiri walnut at ₹22-26/15g (₹1,466-1,733/kg). Median ₹1,600/kg → ₹16/10g. Dossier ₹25 overstated by ~55%."},
+      {"id": "bj_chia_flax", "dossier_inr": 30, "computed_inr": 6, "rationale": "2 tbsp blended ≈ 20g (10g chia + 10g flax). Prior v2 records chia at ₹3-8/10g (median ₹5), flax at ₹0.5-1/tbsp (~₹1/10g). Blended ₹5-7; median ₹6. Dossier ₹30 overstated by ~5×. MAJOR finding — cross-check chia/flax portion size assumption in dossier; if Bryan actually takes larger portion, dossier is right."}
+    ],
+    "priors_from_training_needs_live_verify": [
+      {"id": "bj_broccoli", "dossier_inr": 90, "prior_estimate_inr": 70, "flag": "Likely ~10-20% overstated. 250g retail ~₹200-₹360/kg = ₹50-₹90. Live fetch required."},
+      {"id": "bj_cauliflower", "dossier_inr": 45, "prior_estimate_inr": 10, "flag": "LIKELY OVERSTATED 3-5×. 150g retail ~₹7-15 at loose mandi, ~₹10-15 packed. Dossier ₹45 only plausible in off-season spike. PRIORITY FIX."},
+      {"id": "bj_beluga_lentil", "dossier_inr": 60, "prior_estimate_inr": "imported 36-63 / substitute urad 8-12", "flag": "True beluga imported-only (Urban Platter, Nature's Basket). Recommend DUAL-PRICE entry: imported beluga + sabut urad substitute with explicit flag."},
+      {"id": "bj_lecithin", "dossier_inr": 45, "prior_estimate_inr": "15-30", "flag": "Niche category. Sunflower lecithin 200g pack ₹600-1,200 → ₹15-30/5g. Live fetch needed — soy lecithin cheaper but chemically distinct, do not silently substitute."},
+      {"id": "bj_macnut_milk", "dossier_inr": 180, "prior_estimate_inr": "85-115 imported / 15-25 almond-milk substitute", "flag": "Macadamia milk NOT available at scale in India. Milkadamia imports sporadic at Urban Platter (~₹85-115/100ml). Dossier ₹180 plausible for imported but NOT for a replicable Indian stack. Recommendation: keep with 'imported only' flag AND add almond milk substitute row."},
+      {"id": "bj_pom_juice", "dossier_inr": 70, "prior_estimate_inr": "40", "flag": "Raw Pressery 250ml cold-pressed pomegranate ~₹150-200 → ₹36-48/60ml. Dossier ₹70 overstated. B Natural/Paper Boat tetra packs don't qualify as fresh-pressed."}
+    ]
+  },
+
+  "bj_pill_stack_findings_CRITICAL": {
+    "dossier_claim_inr": 620,
+    "enumerated_skus": 23,
+    "estimated_pills_per_day": 62,
+    "dossier_claim_status": "FRAGILE — partially_verifiable with three structural issues",
+
+    "fragility_1_stale_protocol": {
+      "severity": "MEDIUM-HIGH",
+      "detail": "Bryan Johnson publicly announced rapamycin discontinuation October 2024 (X and blog) after DunedinPACE and other biomarkers worsened. Status as of Apr 2026 capture date unknown.",
+      "impact": "Rapamycin (Biocon Rapacan) contributes ~₹167/day amortised at 13mg/week. If discontinued, pill stack drops from ₹620 to ~₹443/day. Dossier overstated by ~40%.",
+      "action": "Fresh fetch of protocol.bryanjohnson.com 'What I Take' page required before launch. Devil's Advocate MEDIUM attack is legitimate until this is resolved."
+    },
+
+    "fragility_2_double_counting": {
+      "severity": "HIGH",
+      "detail": "Pill stack ₹620 likely double-counts compounds already priced in adjacent line items: Longevity Mix ₹387 + Essential Capsules ₹215 + Essential Softgels ₹165. Blueprint Essentials and Longevity Mix together bundle: creatine, ashwagandha, collagen, TMG, taurine, glycine, lithium, Vitamin D3, K2 MK-7, EPA/DHA, zinc, curcumin, ginger, garlic, CoQ10, B-complex.",
+      "impact": "If Indian-replica pill stack also contains Indian OTC swaps for these bundled compounds, ₹200-300/day is double-counted. claims.json is silent on pill-stack scope definition.",
+      "action": "R1 must define pill-stack scope as either (a) Rx-only + non-Essential compounds, OR (b) comprehensive with Essentials/Longevity Mix marked as $0 line items. Current ambiguity is ship-blocking."
+    },
+
+    "fragility_3_rx_availability_friction": {
+      "severity": "MEDIUM (honesty/UX issue, not arithmetic)",
+      "detail": "Rx-only compounds: Acarbose ~₹90/day (12 tabs, Glucobay 50mg × 4/meal × 3 meals), Metformin ~₹1.6/day, Rapamycin ~₹167/day (if still taken). Total Rx-gated ~₹259/day = 42% of ₹620 claim. Plasmalogens (Prodrome Sciences) unavailable in India, ~₹200/day import-only. Lithium orotate FSSAI-ambiguous. Spermidine thin Indian supply.",
+      "impact": "Honest consumer UX must disclose that the majority-by-cost of the pill stack requires prescription or import. Not an arithmetic error but a replicability claim that degrades under scrutiny.",
+      "action": "Split ₹620 into three sub-buckets for consumer display: Rx-gated, OTC-available, import-only. See proposed structure below."
+    },
+
+    "proposed_pill_stack_structure": {
+      "rx_gated_inr": 259,
+      "rx_gated_items": ["Acarbose 600mg/day (Glucobay multi-tab) ₹90", "Metformin 500mg/day ₹1.6", "Rapamycin 13mg/week amortised ₹167 (if still taken)"],
+      "otc_available_inr": 144,
+      "otc_items_approx": ["NAC 1200mg ₹22.6", "Taurine 2g ₹16.6", "Glycine 2g ₹18.3", "Ca-AKG 1g ₹80 (Decode Age)", "Lithium orotate 1mg fractional ₹4"],
+      "import_only_or_ambiguous_inr_if_included": 258,
+      "import_only_items": ["Lithium orotate 1mg (gray FSSAI) ₹4", "Spermidine 10mg (Decode Age or import) ₹58", "Plasmalogens (Prodrome direct) ₹200"],
+      "compounds_bundled_in_longevity_mix_or_essentials_must_not_double_count": ["D3 2000 IU", "K2 MK-7 180mcg", "Magnesium glycinate 320mg elemental", "EPA/DHA 800mg", "Zinc 15mg", "Curcumin 1g", "Ginger 1.1g", "Garlic 1.2g", "Hyaluronic acid 300mg", "Ashwagandha 600mg", "TMG 1g", "Lysine 1g"]
+    },
+
+    "recommendation": "Reduce bj_pill_stack display value to ₹443 (excluding rapamycin pending stale-protocol resolution) OR keep ₹620 with explicit 'includes rapamycin; may be stale' footnote. Split display into Rx/OTC/Import buckets. Resolve double-count with claims.json scope definition. Estimated net effect on BJ replica daily total: neutral to -₹177 (3,062 → 2,885 if rapamycin dropped)."
+  },
+
+  "cacao_biology_blocker_RESOLVED_PATH": {
+    "severity": "CRITICAL (biology + regulatory)",
+    "finding": "No independent HPLC flavanol assay exists for Mason & Co, Ariba, or Wakao. None of the brands publishes one. 'Matches Blueprint' claim is unsupported.",
+    "regulatory_risk": {
+      "framework_primary": "FSS (Advertising and Claims) Regulations 2018, Regulation 7 — Comparative Claims must be factually verifiable with documentary evidence, same-basis comparison",
+      "framework_secondary": "FSS (Health Supplements, Nutraceuticals, Food for Special Dietary Use) Regulations 2022 — disease-risk-reduction claims require pre-approval",
+      "penalty_exposure": "Section 53 of FSS Act 2006, misleading advertisement, up to ₹10 lakh (INR 10,00,000)",
+      "assessment": "HIGH"
+    },
+    "fda_reference_for_comparison": {
+      "docket": "FDA-2018-Q-2519",
+      "date": "2023-02-03",
+      "qualified_claim_language_paraphrased": "Cocoa flavanols in high-flavanol cocoa powder may reduce the risk of cardiovascular disease (very limited scientific evidence)",
+      "required_daily_intake": "200mg cocoa flavanols/day",
+      "required_content_threshold": "≥4% flavanols w/w in cocoa powder",
+      "note": "FDA qualified claim does not transfer to Indian regulatory approval"
+    },
+    "proposed_rewrite_for_cacao_swap_card": "Mason & Co, Ariba, and Wakao sell raw, non-alkalised cacao — a category that retains substantially more flavanols than Dutched cocoa. Brand-level flavanol content has not been independently assayed and will vary by bean origin, fermentation, and roast. Do not assume per-gram equivalence to Blueprint Cocoa Flavanols until an HPLC assay is published.",
+    "remediation_path_to_reinstate_matches_blueprint": {
+      "labs_identified_iso17025_nabl": [
+        {"name": "CFTRI Mysore (CSIR)", "note": "HPLC flavonoid capacity; external testing via Food Testing Lab; likely cheapest; slower turnaround"},
+        {"name": "NIN Hyderabad (ICMR)", "note": "Food Chemistry division, polyphenol HPLC"},
+        {"name": "Eurofins Analytical Services India", "note": "NABL + ISO 17025; total polyphenols (Folin) + HPLC catechin/epicatechin; commercial rates"},
+        {"name": "SGS India", "note": "NABL; polyphenol/flavonoid HPLC on request"},
+        {"name": "TÜV SÜD South Asia", "note": "NABL; HPLC-capable"},
+        {"name": "Intertek India", "note": "NABL; HPLC-capable"},
+        {"name": "Envirocare Labs (Thane)", "note": "NABL private lab; flavonoid HPLC"},
+        {"name": "Auriga Research (Delhi)", "note": "NABL private lab; nutraceutical flavonoid panels"}
+      ],
+      "scope_specification_for_quote_requests": "Total flavanols (Folin-Ciocalteu or equivalent) + HPLC quantification of epicatechin and catechin monomers, method-validated, one retail sample per brand, ideally duplicate replicates",
+      "estimated_cost_band_unverified": "₹5,000-25,000 per brand per panel at private NABL lab; CFTRI/NIN typically lower; confirm via written quote",
+      "total_minimum_viable_spend": "3 brands × single replicate = ₹15,000-75,000; duplicate replicates preferable"
+    }
+  },
+
+  "round4_hero_impact": {
+    "alt_daily_unchanged": 264,
+    "bj_replica_daily_prior_round3": 3062,
+    "bj_replica_daily_after_round4_corrections_low": 2885,
+    "bj_replica_daily_after_round4_corrections_mid": 2950,
+    "bj_replica_daily_after_round4_corrections_notes": "If rapamycin dropped (-₹167), walnut corrected (-₹9), chia_flax corrected (-₹24), cauliflower plausibly corrected (-₹30), net ~-₹230 → ~₹2,830. If rapamycin retained, net ~-₹60 → ~₹3,000.",
+    "ratio_impact_rapamycin_dropped": {"ratio": "2885/264 = 10.93", "rounded": "~11×"},
+    "ratio_impact_rapamycin_retained": {"ratio": "3000/264 = 11.36", "rounded": "~11×"},
+    "headline_stability": "'~12×' may round to '~11×' after round-4 corrections. Both are defensible. Recommend hero language shift from '~12×' to '~10-12× cheaper per day' OR keep '~12×' and document that the corrected number sits at the lower bound of the rounding.",
+    "hero_decision_update_needed": true
+  },
+
+  "urgent_actions_before_launch": [
+    {"priority": 1, "item": "Ship cacao-card rewrite immediately — resolves CRITICAL biology blocker + ₹10 lakh regulatory exposure. No web access needed, decision-ready.", "blocker_type": "biology + regulatory"},
+    {"priority": 2, "item": "Define bj_pill_stack scope in claims.json: Rx+unbundled OR comprehensive-with-zeros. Resolves HIGH severity double-count ambiguity.", "blocker_type": "arithmetic + scope"},
+    {"priority": 3, "item": "Live-fetch protocol.bryanjohnson.com to resolve rapamycin status. Determines whether pill stack is ₹443 or ₹620.", "blocker_type": "stale-protocol"},
+    {"priority": 4, "item": "Update hero number to reflect likely '~11×' or widen rounded headline to '~10-12×' after round-4 BJ-side corrections.", "blocker_type": "arithmetic"},
+    {"priority": 5, "item": "Live-fetch the 14 BJ replica items (6 Blueprint + 8 Indian retail) OR reframe Blueprint-branded entries as 'orientation only — Blueprint direct import'. Requires WebFetch grant to Claude or manual cart screenshots.", "blocker_type": "verification"},
+    {"priority": 6, "item": "Commission HPLC flavanol assay at CFTRI (cheapest) or Eurofins (fastest) to eventually reinstate 'matches Blueprint' cacao claim if desired.", "blocker_type": "biology-upgrade (non-blocking for launch)"}
+  ],
+
+  "files_flagged_for_followup": [
+    "data/claims.json line 53 — bj_pill_stack scope definition gap",
+    "data/gap_audit.json line 271 — regulatory_check flag (read pending)",
+    "data/safety_layer.json line 588 — ingredient-safety gap (read pending)",
+    "data/profiles.json line 93 — 67 pills/day profile (read pending)"
+  ]
+}

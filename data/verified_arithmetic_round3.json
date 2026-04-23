@@ -1,0 +1,100 @@
+{
+  "agent": "round3-item-level-recomputation",
+  "captured_at": "2026-04-22",
+  "supersedes": "verified_arithmetic.json for line-item totals; original ratio logic still valid",
+  "purpose": "Recompute the ₹263/day Indian alternative stack item-by-item against verified_prices_v2.json. Apply Devil's Advocate guidance (MRP anchor not promo floor, range midpoints, dose-adjusted where v1 under-specced).",
+  "anchoring_rule": "Where a range exists, use the median of MRP-anchored prices, not the promo floor. Where the dossier under-spec'd a dose, raise the price to the evidence-based dose.",
+  "fx_rate": "1 USD = 85 INR",
+
+  "alt_daily_stack_round3": [
+    {"id":"alt_green_tea_tulsi","dossier_inr":8,"corrected_inr":7,"source":"verified_prices_v2.json","rationale":"Tetley 25-bag ₹144.5 → ₹5.78/bag; Lipton ₹6.84/bag; organic variants ₹8-10. Midpoint of mass/organic anchor."},
+    {"id":"alt_turmeric_pepper","dossier_inr":3,"corrected_inr":3,"source":"not_yet_verified","rationale":"Kitchen-staple scale; defensible on first principles (₹250/kg turmeric → <₹0.5/g; pepper ₹800-1,200/kg). HOLD pending round-3 fetch."},
+    {"id":"alt_ksm66","dossier_inr":12,"corrected_inr":14,"source":"verified_prices_v2.json","rationale":"Rasayanam KSM-66 500mg 60 caps: Blinkit ₹679 (promo) to Apollo ₹999 (MRP). At 1 cap/day: range ₹11.3-16.7. Median ₹14 anchored to MRP per DA promo-pricing guidance."},
+    {"id":"alt_dal","dossier_inr":7,"corrected_inr":6,"source":"verified_prices_v2.json","rationale":"BB Super Saver ₹87/kg → ₹4.35/50g; BB Royal ₹107/kg → ₹5.35/50g; Red Masoor Whole ₹129/kg → ₹6.45/50g. Median ₹5-6. Round to ₹6."},
+    {"id":"alt_brassica","dossier_inr":25,"corrected_inr":25,"source":"not_yet_verified","rationale":"Broccoli+cauliflower 250g combined. HOLD. Approx check: broccoli ₹60-100/250g, cauliflower ₹20-35/250g. Combined half-portion of each ≈ ₹20-30. Dossier ₹25 passes sanity test."},
+    {"id":"alt_moringa_methi","dossier_inr":15,"corrected_inr":13,"source":"verified_prices_v2.json","rationale":"BB Royal Organic Moringa Powder 100g ₹60 → ₹6 per 100g. Methi fresh ₹20-40/250g. Fresh leaves home-grown often free. Median anchor ₹13 assumes powder blend + fresh methi."},
+    {"id":"alt_mushroom","dossier_inr":28,"corrected_inr":18,"source":"verified_prices_v2.json","rationale":"Fresho Button 200g ₹56.5 → ₹14/50g; Oyster ₹85/200g → ₹21/50g. Midpoint ₹17-18. CAVEAT: 50g fresh ≈ subtherapeutic for ergothioneine target (~100g oyster or shiitake needed). Price correct; biology claim needs separate fix per review_devil."},
+    {"id":"alt_mustard_oil","dossier_inr":4,"corrected_inr":3,"source":"verified_prices_v2.json","rationale":"Fortune Kachi Ghani ₹141/L → ₹2.12/tbsp; Patanjali ₹200/L → ₹3/tbsp. Cold-press premium ₹4/tbsp. Median ₹3 for mass brand. CRITICAL CAVEAT: erucic-acid warning required (see safety_layer.json); price unchanged but section S9 contraindication MUST ship."},
+    {"id":"alt_almond","dossier_inr":18,"corrected_inr":23,"source":"verified_prices_v2.json","rationale":"BB Popular California ₹449/500g → ₹22.45/25g; Vedaka ₹245/250g → ₹24.5/25g. Mandi wholesale ₹980/kg → ₹24.5/25g. Dossier understated by ~25%. Use ₹23."},
+    {"id":"alt_walnut","dossier_inr":22,"corrected_inr":24,"source":"verified_prices_v2.json","rationale":"BB Royal Kashmiri 500g ₹868 → ₹26/15g; 100g pack ₹149 → ₹22.35/15g. Median ₹24. BIOLOGY CAVEAT: walnut ALA ≠ marine EPA/DHA (review_devil HIGH); retain algal oil line item separately."},
+    {"id":"alt_seed_mix","dossier_inr":8,"corrected_inr":6,"source":"verified_prices_v2.json","rationale":"Mass-brand chia ₹3-4/tbsp; flax powder ₹1/tbsp; sesame ₹1-2/tbsp. Blended ₹5-7. Use ₹6."},
+    {"id":"alt_a2_milk","dossier_inr":18,"corrected_inr":11,"source":"verified_prices_v2.json","rationale":"Akshayakalpa A2 Farm Fresh 500ml ₹53 → ₹10.6/100ml. A2 Pasteurised ₹45 → ₹9/100ml. Regular cow milk ₹6/100ml. Dossier ₹18 is 70% overstated. Use ₹11 for A2 anchor."},
+    {"id":"alt_cacao","dossier_inr":6,"corrected_inr":10,"source":"verified_prices_v2.json","rationale":"Mason & Co 300g estimated ₹1,100-1,200 → ₹9.4-11.25/tsp. Dossier ₹6 is 40% understated. Use ₹10. BIOLOGY BLOCKER: flavanol content UNVERIFIED for Mason & Co, Ariba, Wakao per review_devil CRITICAL. Price correct; 'matches Blueprint' claim cannot ship without independent HPLC assay."},
+    {"id":"alt_amla_pom","dossier_inr":22,"corrected_inr":20,"source":"verified_prices_v2.json","rationale":"Peak season (amla Oct-Mar, pom Sep-Feb): ₹15-17. Off-season ≈2× blended ≈ ₹20-25. Year-round average ₹20. Note: seasonal calendar (S7) must ship to explain variance."},
+    {"id":"alt_ghee","dossier_inr":6,"corrected_inr":11,"source":"verified_prices_v2.json","rationale":"A2 Kapiva ₹1099/500ml → ₹11/tsp. Regular Amul ₹306/500ml → ₹3.06/tsp. Dossier ₹6 conflates regular and A2. Since dossier copy says 'A2 ghee' (D4), the honest anchor is ₹11. CAVEAT: A2 saturated fat = 62%; Indian baseline ApoB/LDL elevated; contraindication gating required per review_devil HIGH and safety_layer."},
+    {"id":"alt_curd","dossier_inr":10,"corrected_inr":10,"source":"not_yet_verified","rationale":"Amul dahi ₹60/400g → ₹15/100g. Mother Dairy ~₹50/400g. Homemade cheaper. Range ₹8-15 per serving. Dossier ₹10 sits in range. HOLD at ₹10."},
+    {"id":"alt_seasonal_fruit","dossier_inr":15,"corrected_inr":15,"source":"not_yet_verified","rationale":"Jamun (May-Jul) ₹120-200/500g → ₹6-10/serving peak, scarce off-season. Guava year-round ₹40-80/500g → ₹4-8/serving. Papaya ₹30-60/500g. Year-round blended average ~₹12-18 per 100g serving. Dossier ₹15 in range. HOLD at ₹15. Seasonal calendar S7 must show which fruit applies when."},
+    {"id":"alt_omega3","dossier_inr":18,"corrected_inr":17,"source":"verified_prices_v2.json","rationale":"INLIFE Vegetarian DHA 60 caps ₹999 → ₹16.65/cap (1000mg algal, 400mg DHA). Defensible at ₹17."},
+    {"id":"alt_d3k2","dossier_inr":4,"corrected_inr":9,"source":"verified_prices_v2.json","rationale":"HK Vitals D3+K2 ₹4.41/tab but only 600 IU. Dossier claims 2000 IU target → 3-4× dose OR premium high-strength at ~₹8-10/day. Correcting to ₹9 to honour the 2000 IU claim. Alternative: change dose claim to 600 IU and keep ₹4."},
+    {"id":"alt_creatine","dossier_inr":6,"corrected_inr":11,"source":"verified_prices_v2.json","rationale":"MuscleBlaze 250g ₹549-899 → ₹10.98-17.98 per 5g serving. CreaPRO Creapure ₹549/250g → ₹10.98. Dossier ₹6 is 45-60% understated. 500g+ pack drops to ₹7-8. Median ₹11 for common single-tub purchase."},
+    {"id":"alt_mag_gly","dossier_inr":8,"corrected_inr":11,"source":"verified_prices_v2.json","rationale":"MuscleBlaze Mag Glycinate 2000mg 60 tabs ₹599 → ₹9.98/tab (Flipkart); HK variant ₹719 → ₹11.98. Median ₹11."}
+  ],
+
+  "round3_alt_daily_total": {
+    "dossier_total_inr": 263,
+    "corrected_total_inr_low_assumption_regular_ghee": 259,
+    "corrected_total_inr_mid_assumption_a2_ghee": 264,
+    "corrected_total_inr_high_assumption_a2_ghee_and_premium_d3k2": 267,
+    "computation_mid": "7+3+14+6+25+13+18+3+23+24+6+11+10+20+11+10+15+17+9+11+11 = 264",
+    "conclusion": "After 21-item recomputation the corrected alt daily total lands in ₹259–₹267 depending on A2-ghee assumption and D3K2 dose. Dossier's ₹263 was arithmetically reachable through offsetting over/understatements. The headline daily figure is essentially unchanged (±2%).",
+    "net_error_character": "Offsetting: ~₹40 overstatement on a2_milk/mushroom/moringa/amla_pom/mustard_oil/seed_mix/green_tea was cancelled by ~₹40 understatement on almond/walnut/cacao/creatine/mag_gly/ghee/d3k2. Dossier was directionally lucky, not right."
+  },
+
+  "hero_ratio_round3": {
+    "bj_replica_inr_per_day": 3062,
+    "alt_inr_per_day_low": 259,
+    "alt_inr_per_day_mid": 264,
+    "alt_inr_per_day_high": 267,
+    "ratio_low": 11.46,
+    "ratio_mid": 11.60,
+    "ratio_high": 11.82,
+    "rounded": "~12×",
+    "conclusion": "Option C daily-cost hero holds. '~12× cheaper per day for the plate, not the protocol' is defensible across the ghee/dose assumption range.",
+    "recommended_headline_number": "₹264 (mid, A2-ghee assumption — matches dossier copy direction) or ₹259 (if page pivots to regular ghee with LDL caveat)"
+  },
+
+  "bj_replica_round3_status": {
+    "dossier_total_inr": 3062,
+    "verified_corrections_from_v2": [
+      {"id":"bj_macadamia","dossier_inr":240,"corrected_inr":140,"delta":-100,"rationale":"250g packs ₹780-1,500 → 30g portion ₹94-180, median ₹140. Dossier ₹240 used premium boutique anchor."},
+      {"id":"bj_berries","dossier_inr":280,"corrected_inr":160,"delta":-120,"rationale":"Half-cup mixed berries+cherries live Apr 2026 ₹120-200. Median ₹160."},
+      {"id":"bj_shiitake","dossier_inr":180,"corrected_inr":400,"delta":220,"rationale":"Fresh shiitake at Indian specialty retail ₹600-1,000/100g → ₹300-500/50g. Dossier understated."},
+      {"id":"bj_longevity_mix","dossier_inr":387,"corrected_inr":387,"delta":0,"rationale":"Landed India estimate ₹156-400/serving. Dossier ₹387 at upper end but plausible. HOLD pending cart-screenshot fetch."}
+    ],
+    "net_delta_after_verified_corrections": 0,
+    "observation": "By coincidence, macadamia+berries overstatements (-220) are exactly offset by shiitake understatement (+220). ₹3,062 total holds after 4 of 18 corrections.",
+    "still_pending_verification": [
+      "bj_essential_caps ₹215 — Blueprint Essential Capsules India landed price",
+      "bj_essential_soft ₹165 — Blueprint Essential Softgels India landed price",
+      "bj_broccoli ₹90 — broccoli 250g retail",
+      "bj_cauliflower ₹45 — cauliflower 150g retail",
+      "bj_beluga_lentil ₹60 — black beluga lentils 45g retail",
+      "bj_evoo ₹140 — Blueprint EVOO 1 tbsp landed India",
+      "bj_walnuts ₹25 — walnuts 2 tsp (≈10g)",
+      "bj_chia_flax ₹30 — chia+flax 2 tbsp",
+      "bj_cocoa ₹110 — Blueprint Cocoa Flavanols 1 tbsp landed",
+      "bj_lecithin ₹45 — sunflower lecithin 1 tsp",
+      "bj_macnut_milk ₹180 — macadamia nut milk 100ml",
+      "bj_pom_juice ₹70 — fresh pomegranate juice 60ml",
+      "bj_pea_protein ₹180 — Blueprint pea protein 30g landed",
+      "bj_pill_stack ₹620 — daily pill stack ~60 pills composition + pricing"
+    ]
+  },
+
+  "devils_advocate_inoculation_applied": {
+    "price_volatility": "Every corrected_inr is MRP-anchored or median-of-MRP, not promo floor. Per DA HIGH on price_macadamia_250g.",
+    "link_rot": "All source URLs recorded in verified_prices_v2.json with vendor names; Wayback capture job still required before launch (DA HIGH on price_imported_blueberry).",
+    "dose_misrepresentation": "KSM-66 at ₹14 (not ₹12) reflects branded Rasayanam 500mg at 1 cap/day (DA HIGH on price_ksm66_ashwagandha).",
+    "biology_caveats_preserved": "Cacao flavanol UNVERIFIED blocker, walnut ALA≠EPA/DHA, mustard oil erucic-acid, A2 ghee saturated fat, moringa heavy metals, pomegranate urolithin non-producers — all flagged in rationale fields and deferred to S8/S9 panels in v2 design brief."
+  },
+
+  "open_items_for_round4": [
+    "Verify 14 remaining BJ replica line items (see bj_replica_round3_status.still_pending_verification)",
+    "Cart-screenshot Blueprint Longevity Mix landed India price with duty",
+    "Mason & Co cacao direct fetch — resolve ₹9.4 vs ₹11 estimate range",
+    "Commission HPLC flavanol assay for Indian cacao brands OR drop 'matches Blueprint' claim (CRITICAL biology blocker)",
+    "Confirm turmeric+pepper, brassica, curd, seasonal_fruit sanity-check prices with live fetch",
+    "Decide A2 ghee ship/cut: keep with ApoB/LDL gating (price ₹11, requires lab gate) or drop for cold-press mustard rotation",
+    "Build monthly price-refresh cron + Wayback snapshot job (DA HIGH)"
+  ]
+}

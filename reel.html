@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reel · The Longevity Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2ECDD;--paper-dark:#E8E0CC;--paper-line:#D6CCAD;
+    --ink:#1A1611;--ink-soft:#4A3F2E;
+    --blood:#B91C1C;--blood-deep:#7F1D1D;
+    --forest:#1F5F3F;--gold:#B8860B;--stamp:#A62020;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;overflow:hidden;background:var(--ink);color:var(--paper);font-family:'Instrument Serif',Georgia,serif;-webkit-font-smoothing:antialiased}
+  body{
+    background:var(--paper);color:var(--ink);
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0px, transparent 31px, rgba(26,22,17,0.04) 31px, rgba(26,22,17,0.04) 32px),
+      radial-gradient(circle at 20% 10%, rgba(184,134,11,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(185,28,28,0.04) 0%, transparent 40%);
+  }
+
+  /* Stage — everything happens in a 1920x1080 viewport, scaled to fit */
+  #stage{
+    position:fixed;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .canvas{
+    width:1920px;height:1080px;
+    position:relative;
+    transform-origin:center center;
+    background:var(--paper);
+    overflow:hidden;
+  }
+  /* Scale canvas to fit viewport while keeping aspect ratio */
+  @media(max-aspect-ratio: 16/9){
+    .canvas{transform:scale(calc(100vw / 1920))}
+  }
+  @media(min-aspect-ratio: 16/9){
+    .canvas{transform:scale(calc(100vh / 1080))}
+  }
+
+  /* Scene */
+  .scene{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;
+    transition:opacity .6s ease;
+  }
+  .scene.active{opacity:1;pointer-events:auto}
+
+  /* Typography */
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:-0.01em}
+  .kicker{
+    font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.3em;
+    text-transform:uppercase;color:var(--blood);margin-bottom:36px;
+    display:flex;align-items:center;gap:20px;
+  }
+  .kicker::before{content:"";width:50px;height:2px;background:var(--blood)}
+
+  .display{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:180px;line-height:0.93;letter-spacing:-0.035em;color:var(--ink);
+    font-variation-settings:"opsz" 144;max-width:14ch;
+  }
+  .display em{font-style:italic;color:var(--blood);font-weight:300}
+  .display .strike{text-decoration:line-through;text-decoration-thickness:7px;text-decoration-color:var(--blood);opacity:0.5}
+  .display.mid{font-size:128px}
+  .display.sm{font-size:92px}
+  .display.xs{font-size:72px}
+  .lede{
+    font-family:'Instrument Serif',serif;font-style:italic;
+    font-size:42px;line-height:1.35;color:var(--ink-soft);max-width:30ch;margin-top:30px;
+  }
+  .lede strong{color:var(--ink);font-family:'Fraunces',serif;font-style:normal;font-weight:400}
+
+  /* Content wrapper inside scene */
+  .frame{padding:120px 140px;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center}
+  .frame.center-all{align-items:center;text-align:center}
+  .frame.two-col{flex-direction:row;align-items:center;gap:80px}
+
+  /* Iframe pane — live site preview */
+  .preview{
+    width:100%;height:700px;border:2px solid var(--ink);
+    background:var(--paper);overflow:hidden;position:relative;
+    box-shadow:14px 14px 0 var(--ink);
+  }
+  .preview iframe{width:100%;height:100%;border:0;display:block}
+  .preview.tall{height:820px}
+  .preview-caption{
+    margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:16px;
+    letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .preview-caption em{color:var(--blood);font-style:normal}
+
+  /* Receipt mini */
+  .receipt-mini{
+    background:#FBF7EC;border:1px solid var(--ink);padding:36px 32px;
+    font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.6;
+    box-shadow:10px 10px 0 var(--ink);max-width:560px;
+  }
+  .receipt-mini .head{text-align:center;border-bottom:1px dashed var(--ink-soft);padding-bottom:14px;margin-bottom:14px;font-size:14px;letter-spacing:0.1em;font-weight:700}
+  .receipt-mini .line{display:flex;justify-content:space-between;padding:4px 0}
+  .receipt-mini .total{display:flex;justify-content:space-between;padding-top:14px;margin-top:10px;border-top:2px solid var(--ink);font-weight:700;font-size:22px;color:var(--blood)}
+
+  /* Card grid (for "50 blueprints" reveal) */
+  .grid-50{
+    display:grid;grid-template-columns:repeat(10,1fr);gap:6px;
+    width:100%;max-width:1600px;
+  }
+  .grid-cell{
+    aspect-ratio:1;border:1px solid var(--ink);background:var(--paper);
+    font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--ink-soft);text-align:center;padding:4px;
+    opacity:0;transform:scale(.8);
+    transition:opacity .4s,transform .4s;
+  }
+  .grid-cell.on{opacity:1;transform:scale(1)}
+  .grid-cell.highlighted{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  /* Animated number */
+  .big-num{
+    font-family:'Fraunces',serif;font-weight:300;font-size:320px;line-height:1;
+    letter-spacing:-0.04em;color:var(--blood);
+    font-variation-settings:"opsz" 144;
+  }
+  .big-num.forest{color:var(--forest)}
+  .big-num .pts{font-family:'JetBrains Mono',monospace;font-size:32px;color:var(--ink-soft);letter-spacing:0.1em;vertical-align:top}
+
+  /* ER scoreboard */
+  .score-pair{display:flex;gap:120px;align-items:flex-end}
+  .score-item{text-align:center}
+  .score-item .name{font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:20px}
+  .score-item .spend{font-family:'Fraunces',serif;font-weight:300;font-size:44px;color:var(--ink);margin-top:10px;letter-spacing:-0.02em}
+  .score-item .er{font-family:'Fraunces',serif;font-weight:300;font-size:180px;line-height:1;color:var(--forest);letter-spacing:-0.04em}
+  .score-item .er em{font-style:italic}
+
+  /* Closing card */
+  .url-card{
+    font-family:'JetBrains Mono',monospace;font-size:28px;letter-spacing:0.1em;
+    padding:20px 36px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);
+    margin-top:50px;display:inline-block;
+  }
+
+  /* Progress / HUD */
+  #hud{
+    position:fixed;bottom:0;left:0;right:0;
+    padding:12px 20px;background:rgba(26,22,17,0.88);color:var(--paper);
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;
+    text-transform:uppercase;display:flex;gap:20px;align-items:center;
+    z-index:100;
+    transition:opacity .3s;
+  }
+  #hud.hidden{opacity:0;pointer-events:none}
+  #hud .bar{flex:1;height:3px;background:rgba(242,236,221,0.18)}
+  #hud .bar-fill{height:100%;background:var(--blood);width:0%;transition:width .2s linear}
+  #hud button{
+    background:transparent;color:var(--paper);border:1px solid var(--paper);
+    padding:6px 14px;cursor:pointer;font-family:inherit;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;
+  }
+  #hud button:hover{background:var(--paper);color:var(--ink)}
+
+  /* Play overlay */
+  #playOverlay{
+    position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+    background:var(--ink);color:var(--paper);z-index:200;
+    flex-direction:column;gap:32px;cursor:pointer;
+  }
+  #playOverlay h1{font-family:'Fraunces',serif;font-weight:300;font-size:120px;letter-spacing:-0.03em;line-height:1;text-align:center}
+  #playOverlay h1 em{font-style:italic;color:var(--blood)}
+  #playOverlay .sub{font-family:'Instrument Serif',serif;font-style:italic;font-size:28px;color:var(--paper);opacity:.7;text-align:center;max-width:40ch}
+  #playOverlay .play-btn{
+    font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.3em;text-transform:uppercase;
+    padding:22px 48px;border:2px solid var(--paper);background:transparent;color:var(--paper);
+    cursor:pointer;transition:background .2s,color .2s,transform .2s;
+  }
+  #playOverlay .play-btn:hover{background:var(--paper);color:var(--ink);transform:translateY(-2px)}
+  #playOverlay .hint{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:var(--paper);opacity:.5;text-transform:uppercase;margin-top:20px;text-align:center;max-width:60ch;line-height:1.6}
+
+  /* Keyframe animations */
+  @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes slideLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+  @keyframes zoom{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+  .anim-up{animation:slideUp .8s cubic-bezier(.22,.94,.42,1) both}
+  .anim-left{animation:slideLeft .8s cubic-bezier(.22,.94,.42,1) both}
+  .anim-zoom{animation:zoom 1s cubic-bezier(.22,.94,.42,1) both}
+  .d1{animation-delay:.2s}.d2{animation-delay:.5s}.d3{animation-delay:.9s}.d4{animation-delay:1.3s}.d5{animation-delay:1.8s}
+
+  .scene.active .anim-up, .scene.active .anim-left, .scene.active .anim-zoom{animation-play-state:running}
+
+  /* Stamp decoration */
+  .stamp{
+    position:absolute;top:80px;right:80px;
+    width:140px;height:140px;border:4px solid var(--blood);border-radius:50%;color:var(--blood);
+    display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;
+    font-size:16px;font-weight:700;letter-spacing:0.12em;text-align:center;
+    transform:rotate(-8deg);opacity:.9;line-height:1.2;
+  }
+
+  /* Call-out pill */
+  .pill{
+    display:inline-flex;align-items:center;gap:14px;padding:16px 28px;
+    background:var(--ink);color:var(--paper);
+    font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.2em;text-transform:uppercase;
+    margin-top:24px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Play overlay — user clicks to start, which is also when screen recording should begin -->
+<div id="playOverlay">
+  <div class="kicker" style="color:var(--paper);justify-content:center">The Longevity Audit — Reel · 2:00</div>
+  <h1>Fifty blueprints.<br><em>One question.</em></h1>
+  <div class="sub">Click to play. Press <strong>F</strong> for fullscreen — or Cmd+Shift+F. Start your screen recording (Cmd+Shift+5) <em>before</em> clicking play.</div>
+  <button class="play-btn" onclick="startReel()">▸ Start reel</button>
+  <div class="hint">Toggle voice-over with <strong>V</strong> (uses browser speech synthesis). Turn off with <strong>V</strong> again if you plan to add your own VO later.</div>
+</div>
+
+<div id="stage">
+  <div class="canvas">
+
+    <!-- SCENE 01 — Hook (00:00–00:13) -->
+    <div class="scene" data-scene="1">
+      <div class="frame">
+        <div class="kicker anim-up">Exhibit A · The two-million-dollar question</div>
+        <h1 class="display anim-up d1">Bryan Johnson<br>spends <em>two million</em><br>a year trying<br>not to <span class="strike">die</span>.</h1>
+        <div class="lede anim-up d3">He publishes every biomarker.<br>The question he doesn't answer — <strong>is it worth copying?</strong></div>
+      </div>
+    </div>
+
+    <!-- SCENE 02 — Receipt (00:13–00:30) -->
+    <div class="scene" data-scene="2">
+      <div class="frame two-col">
+        <div style="flex:1">
+          <div class="kicker anim-left">Exhibit A · Priced line by line</div>
+          <h2 class="display sm anim-up d1">So we built him <em>a receipt.</em></h2>
+          <div class="lede anim-up d2">Diagnostics. Supplements. Team. Therapies. Food.<br>Sometimes it's a swap. Sometimes it's a delusion.</div>
+          <div class="pill anim-up d3">Indian retail · verified Apr 2026</div>
+        </div>
+        <div class="receipt-mini anim-zoom d2">
+          <div class="head">LONGEVITY AUDIT — BRYAN JOHNSON</div>
+          <div class="line"><span>Diagnostics &amp; imaging</span><span>$500,000</span></div>
+          <div class="line"><span>Medical &amp; scientific team</span><span>$800,000</span></div>
+          <div class="line"><span>Therapies · red light, plasma, HBOT</span><span>$200,000</span></div>
+          <div class="line"><span>Supplements &amp; compounds</span><span>$180,000</span></div>
+          <div class="line"><span>Food · organic, triple-tested</span><span>$80,000</span></div>
+          <div class="line"><span>Equipment &amp; home facility</span><span>$240,000</span></div>
+          <div class="total"><span>TOTAL / YEAR</span><span>$2,000,000</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 03 — 50 blueprints reveal (00:30–00:52) -->
+    <div class="scene" data-scene="3">
+      <div class="frame center-all">
+        <div class="kicker">Version 03 · Fifty dossiers</div>
+        <h2 class="display mid" style="text-align:center;max-width:none">One receipt wasn't enough.</h2>
+        <div class="lede" style="text-align:center;max-width:48ch;margin-bottom:48px">
+          Tech founders. Pop stars. Directors. The fittest actors in Hollywood. Athletes chasing their last season.
+        </div>
+        <div class="grid-50" id="grid50"></div>
+      </div>
+    </div>
+
+    <!-- SCENE 04 — Profile dossier (00:52–01:12) -->
+    <div class="scene" data-scene="4">
+      <div class="frame">
+        <div class="kicker anim-up">The Dossier · six levers</div>
+        <h2 class="display sm anim-up d1">Each profile is <em>a standalone dossier.</em></h2>
+        <div class="preview tall anim-zoom d2" style="margin-top:40px">
+          <iframe src="https://bryanjohnson.vercel.app/profile.html?id=lebron-james" loading="eager" id="profileFrame"></iframe>
+        </div>
+        <div class="preview-caption anim-up d3">Bio · 24-hour routine · training · diet · sleep · breathwork · supplements · therapies · receipt · sources</div>
+      </div>
+    </div>
+
+    <!-- SCENE 05 — Leaderboard (01:12–01:32) -->
+    <div class="scene" data-scene="5">
+      <div class="frame center-all">
+        <div class="kicker">Leaderboard · Dollars vs. Decades</div>
+        <h2 class="display sm" style="text-align:center;max-width:none;margin-bottom:50px">Who's <em>earning it back?</em></h2>
+        <div class="score-pair">
+          <div class="score-item anim-up d1">
+            <div class="name">Bryan Johnson</div>
+            <div class="er"><em>92</em></div>
+            <div class="spend">$2.0M / year</div>
+          </div>
+          <div class="score-item anim-up d2">
+            <div class="name">David Goggins</div>
+            <div class="er"><em>86</em></div>
+            <div class="spend">$15K / year</div>
+          </div>
+        </div>
+        <div class="lede anim-up d3" style="text-align:center;margin-top:48px;max-width:46ch">
+          Both above <strong>85</strong> on Energy Resistance. <br>Discipline, not dollars.
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 06 — ER Score (01:32–01:50) -->
+    <div class="scene" data-scene="6">
+      <div class="frame">
+        <div class="kicker anim-up">Energy Resistance · 7 questions</div>
+        <h2 class="display sm anim-up d1">The <em>ER score</em> is yours in two minutes.</h2>
+        <div class="preview anim-zoom d2" style="margin-top:40px">
+          <iframe src="https://bryanjohnson.vercel.app/er-score.html" loading="eager"></iframe>
+        </div>
+        <div class="preview-caption anim-up d3">Your mito type · 4 zone breakdowns · 5 ranked interventions</div>
+      </div>
+    </div>
+
+    <!-- SCENE 07 — Closing (01:50–02:00) -->
+    <div class="scene" data-scene="7">
+      <div class="frame center-all">
+        <div class="kicker anim-up">Fifty blueprints · One question</div>
+        <h2 class="display anim-up d1" style="text-align:center;max-width:none">What does it <em>actually cost</em><br>to keep a body alive,<br>lean, <em>and lucid?</em></h2>
+        <div class="url-card anim-up d3">bryanjohnson.vercel.app</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- HUD -->
+<div id="hud">
+  <span id="hudClock">00:00 / 02:00</span>
+  <div class="bar"><div class="bar-fill" id="hudFill"></div></div>
+  <span id="hudScene">Scene —</span>
+  <button onclick="toggleVoice()">Voice: <span id="voiceState">OFF</span></button>
+  <button onclick="toggleHud()">Hide HUD</button>
+  <button onclick="location.reload()">↻ Restart</button>
+</div>
+
+<script>
+// ============================================================
+// Scene timeline — each scene has in/out times (ms) and narration
+// Total runtime: 120 seconds (02:00)
+// ============================================================
+const SCENES = [
+  { id: 1, in: 0,      out: 13000,  narr: "Bryan Johnson spends two million dollars a year trying not to die. He publishes every biomarker. The question he doesn't answer is the one that matters — is any of it actually worth copying?" },
+  { id: 2, in: 13000,  out: 30000,  narr: "So we built him a receipt. Priced every line — diagnostics, supplements, team, therapies, food — against the Indian retail equivalent. Sometimes it's a swap. Sometimes it's a delusion." },
+  { id: 3, in: 30000,  out: 52000,  narr: "Then we realised one receipt wasn't enough. The Longevity Audit, version three, opens fifty dossiers. Tech founders. Pop stars. Directors. The fittest actors in Hollywood. Athletes chasing their last season." },
+  { id: 4, in: 52000,  out: 72000,  narr: "Each dossier is standalone. A bio, a twenty-four-hour routine, six levers. Signature practices. A shareable receipt in the Bryan Johnson editorial style. Every source we could verify." },
+  { id: 5, in: 72000,  out: 92000,  narr: "The Leaderboard asks the sharper question. Who's actually earning it back? Bryan Johnson at two million. David Goggins at fifteen thousand. Both score above eighty-five on Energy Resistance. Discipline, not dollars." },
+  { id: 6, in: 92000,  out: 110000, narr: "Take the seven-question Energy Resistance test yourself. Your score, your mito type, four zone breakdowns, five ranked interventions. The nearest of the fifty is one hover away." },
+  { id: 7, in: 110000, out: 120000, narr: "Fifty blueprints. One question. What does it actually cost to keep a body alive, lean, and lucid? Visit Bryan Johnson dot Vercel dot app." },
+];
+const TOTAL = 120000;
+
+let startTs = 0;
+let voiceOn = false;
+let currentScene = 0;
+let rafId = null;
+
+// Build 50-cell grid
+const NAMES = [
+  'Bryan Johnson','Peter Attia','Chris Hemsworth','A. Huberman','D. Sinclair','Wim Hof','Jeff Bezos','M. Zuckerberg','Elon Musk','Jack Dorsey',
+  'Tim Ferriss','Peter Thiel','Larry Ellison','Naval','Jensen Huang','Sam Altman','Beyoncé','Rihanna','Madonna','L. Kravitz',
+  'Pharrell','Springsteen','J. Lopez','J. Bieber','H. Styles','Jay-Z','C. Nolan','J. Cameron','Tarantino','H. Zimmer',
+  'M. Abramović','D. Johnson','C. Hemsworth','H. Jackman','H. Cavill','Z. Efron','Arnold','Stallone','Statham','R. Reynolds',
+  'C. Pratt','T. Crews','M. Wahlberg','T. Brady','LeBron','Ronaldo','Djokovic','Serena','D. Goggins','M. Phelps'
+];
+const grid = document.getElementById('grid50');
+NAMES.forEach((n, i) => {
+  const d = document.createElement('div');
+  d.className = 'grid-cell';
+  d.textContent = n.toUpperCase();
+  if (i === 0 || i === 43 || i === 44 || i === 46 || i === 48) d.classList.add('highlighted');
+  grid.appendChild(d);
+});
+
+// Preload iframes so they're ready when their scene fires
+function preloadIframes(){
+  // They're loaded via src="" on initial render, nothing else to do.
+}
+
+function speak(text){
+  if (!voiceOn || !('speechSynthesis' in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 1.02;
+  u.pitch = 1.0;
+  u.volume = 1.0;
+  // Prefer a natural English voice if available
+  const voices = speechSynthesis.getVoices();
+  const preferred =
+    voices.find(v => /samantha|google us|daniel|karen/i.test(v.name) && /en/i.test(v.lang)) ||
+    voices.find(v => /en[-_]us/i.test(v.lang)) ||
+    voices[0];
+  if (preferred) u.voice = preferred;
+  speechSynthesis.speak(u);
+}
+
+function setScene(idx){
+  document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+  const scene = document.querySelector(`.scene[data-scene="${idx}"]`);
+  if (scene) scene.classList.add('active');
+  document.getElementById('hudScene').textContent = `Scene ${String(idx).padStart(2,'0')} / 07`;
+
+  // Scene 3 — animate the grid cells
+  if (idx === 3) {
+    const cells = document.querySelectorAll('.grid-cell');
+    cells.forEach((c, i) => {
+      setTimeout(() => c.classList.add('on'), 60 * i);
+    });
+  } else {
+    document.querySelectorAll('.grid-cell').forEach(c => c.classList.remove('on'));
+  }
+}
+
+function tick(now){
+  if (!startTs) startTs = now;
+  const elapsed = now - startTs;
+
+  // Update HUD
+  const pct = Math.min(1, elapsed / TOTAL);
+  document.getElementById('hudFill').style.width = (pct * 100) + '%';
+  const mm = Math.floor(elapsed / 60000);
+  const ss = Math.floor((elapsed % 60000) / 1000);
+  const tm = Math.floor(TOTAL / 60000);
+  const ts = Math.floor((TOTAL % 60000) / 1000);
+  document.getElementById('hudClock').textContent =
+    `${String(mm).padStart(2,'0')}:${String(ss).padStart(2,'0')} / ${String(tm).padStart(2,'0')}:${String(ts).padStart(2,'0')}`;
+
+  // Find current scene
+  const active = SCENES.find(s => elapsed >= s.in && elapsed < s.out);
+  if (active && active.id !== currentScene) {
+    currentScene = active.id;
+    setScene(active.id);
+    speak(active.narr);
+  }
+
+  if (elapsed < TOTAL) {
+    rafId = requestAnimationFrame(tick);
+  } else {
+    // End
+    document.getElementById('hudClock').textContent = '02:00 / 02:00';
+    speak(''); // stop
+  }
+}
+
+function startReel(){
+  document.getElementById('playOverlay').style.display = 'none';
+  startTs = 0;
+  currentScene = 0;
+  // Prime voices list (required before first utterance on Chrome)
+  if ('speechSynthesis' in window) speechSynthesis.getVoices();
+  // Initial scene at t=0
+  setScene(1);
+  speak(SCENES[0].narr);
+  currentScene = 1;
+  rafId = requestAnimationFrame(tick);
+}
+
+function toggleVoice(){
+  voiceOn = !voiceOn;
+  document.getElementById('voiceState').textContent = voiceOn ? 'ON' : 'OFF';
+  if (!voiceOn && 'speechSynthesis' in window) speechSynthesis.cancel();
+}
+
+function toggleHud(){
+  document.getElementById('hud').classList.toggle('hidden');
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'f' || e.key === 'F') {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+  }
+  if (e.key === 'v' || e.key === 'V') toggleVoice();
+  if (e.key === 'h' || e.key === 'H') toggleHud();
+});
+
+// Pre-warm voices (some browsers load async)
+if ('speechSynthesis' in window) {
+  speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+  speechSynthesis.getVoices();
+}
+</script>
+
+</body>
+</html>
